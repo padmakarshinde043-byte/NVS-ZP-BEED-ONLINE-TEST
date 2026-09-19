@@ -733,6 +733,13 @@
       <button class="btn-logout" onclick="performLogout()">लॉग आउट</button>
     </div>
 
+    <!-- ४ वेळा चाचणी सोडवण्याची सूचना -->
+    <div style="background: #e0f2fe; border: 1px solid #bae6fd; border-left: 5px solid #0284c7; border-radius: 10px; padding: 12px 14px; margin-bottom: 14px;">
+      <p style="font-size: 0.92rem; font-weight: 700; color: #0369a1; line-height: 1.4;">
+        📌 सूचना: प्रत्येक सराव चाचणी एका विद्यार्थ्याला जास्तीत जास्त ४ वेळेसच सोडवता येईल. चाचणी मधेच बंद पडल्यास शिल्लक वेळेसह तिथूनच पुन्हा सुरू (Resume) करता येईल.
+      </p>
+    </div>
+
     <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
       <h3 style="color:var(--primary); font-weight:800; font-size:1.05rem;">
         दैनिक 15 सराव चाचण्यांची सूची (80 प्रश्न | 100 गुण)
@@ -1075,7 +1082,6 @@
     });
   });
 
-  // मोबाईल नंबरनुसार युजरचा डेटाबेस सिंक ठेवणे
   function syncUserPersistentData() {
     if (!loggedInUser || !loggedInUser.mobile) return;
     const storeKey = "jnv_vault_" + loggedInUser.mobile;
@@ -1318,16 +1324,8 @@
     window.scrollTo(0, 0);
   }
 
-  // फुलस्क्रीन ट्रिगर
-  function triggerFullscreen() {
-    const el = document.documentElement;
-    if (el.requestFullscreen) el.requestFullscreen().catch(() => {});
-    else if (el.webkitRequestFullscreen) el.webkitRequestFullscreen();
-  }
-
   function startExamFromGuideline() {
     if (!currentPendingTest) return;
-    triggerFullscreen();
 
     fetch(currentPendingTest.file)
       .then(res => {
@@ -1345,7 +1343,6 @@
 
   function resumeTest(testId) {
     const testMeta = EXAM_SCHEDULE.find(t => t.id === testId);
-    triggerFullscreen();
 
     fetch(testMeta.file)
       .then(res => res.json())
@@ -1445,7 +1442,6 @@
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
-  // उत्तर निवडताच ऑटो-सेव्ह
   function markAnswer(qId, idx) {
     recordedChoices[qId] = idx;
     saveCurrentExamProgress();
@@ -1469,7 +1465,6 @@
       let s = currentQuizData.remainingSeconds % 60;
       document.getElementById("clockDisplay").innerText = m + ":" + (s < 10 ? "0" : "") + s;
 
-      // दर ५ सेकंदांनी शिल्लक वेळ सुरक्षित करणे
       if (currentQuizData.remainingSeconds % 5 === 0) {
         saveCurrentExamProgress();
       }
@@ -1580,25 +1575,21 @@
     const totalMarks = mentalMarks + mathMarks + langMarks;
     const perc = totalMarks.toFixed(1);
 
-    // प्रयत्न संख्या आणि सर्वोत्तम गुण अपडेट करणे
     loggedInUser.history = loggedInUser.history || {};
     loggedInUser.attempts = loggedInUser.attempts || {};
     
     loggedInUser.attempts[currentQuizData.id] = (loggedInUser.attempts[currentQuizData.id] || 0) + 1;
     
-    // सर्वोत्तम गुण सुरक्षित ठेवणे
     const prevBest = loggedInUser.history[currentQuizData.id] || 0;
     if (totalMarks > prevBest) {
       loggedInUser.history[currentQuizData.id] = totalMarks;
     }
 
-    // इन-प्रोग्रेस डेटा क्लिअर करणे
     if (loggedInUser.inProgress) {
       delete loggedInUser.inProgress[currentQuizData.id];
     }
     saveUserVault();
 
-    // Firebase वर निकाल पाठवणे
     fetch(`${FIREBASE_DB_URL}/results.json`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
