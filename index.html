@@ -61,7 +61,6 @@
       display: flex;
       align-items: center;
     }
-    /* डावा लोगो: जिल्हा परिषद बीड (३ वेळा टॅप केल्यास ॲडमिन मोड सुरू) */
     .zp-brand-logo {
       width: 44px;
       height: 44px;
@@ -111,7 +110,6 @@
       justify-content: center;
       gap: 4px;
     }
-    /* उजवा लोगो: नवोदय विद्यालय लोगो (nvs_logo.png) */
     .nvs-brand-logo {
       width: 44px;
       height: 44px;
@@ -289,7 +287,7 @@
     }
     .test-item.unlocked { border-left-color: var(--success); }
 
-    /* ---------------- GUIDELINES TABLE ---------------- */
+    /* ---------------- TABLES ---------------- */
     .guideline-table {
       width: 100%;
       border-collapse: collapse;
@@ -431,6 +429,63 @@
       margin-left: auto;
     }
 
+    /* ---------------- SUBMISSION SUMMARY MODAL ---------------- */
+    #summaryModalOverlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(15, 43, 72, 0.75);
+      z-index: 2000;
+      justify-content: center;
+      align-items: center;
+      backdrop-filter: blur(3px);
+      padding: 14px;
+    }
+    .summary-modal-content {
+      background: #ffffff;
+      border-radius: 16px;
+      max-width: 520px;
+      width: 100%;
+      padding: 22px 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      border-top: 5px solid var(--accent);
+      animation: popIn 0.25s ease-out;
+    }
+    @keyframes popIn {
+      from { transform: scale(0.9); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+    .summary-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 14px 0;
+      font-size: 0.92rem;
+    }
+    .summary-table th, .summary-table td {
+      border: 1px solid #cbd5e1;
+      padding: 8px 10px;
+      text-align: center;
+    }
+    .summary-table th {
+      background: #f1f5f9;
+      color: var(--primary);
+      font-weight: 800;
+    }
+    .badge-solved {
+      background: #dcfce7;
+      color: #166534;
+      font-weight: 800;
+      padding: 3px 8px;
+      border-radius: 6px;
+    }
+    .badge-unsolved {
+      background: #fee2e2;
+      color: #991b1b;
+      font-weight: 800;
+      padding: 3px 8px;
+      border-radius: 6px;
+    }
+
     /* ---------------- CELEBRATION RESULT ---------------- */
     .congrats-header {
       animation: pulse 1.5s infinite;
@@ -520,10 +575,8 @@
 </head>
 <body>
 
-<!-- हेडर: डावीकडे जि. प. बीड लोगो, मध्यभागी शीर्षक आणि उजवीकडे NVS लोगो -->
 <header>
   <div class="header-left">
-    <!-- डावा लोगो (३ वेळा क्लिक केल्यास ॲडमिन सुरू) -->
     <div class="zp-brand-logo" id="secretAdminTrigger" title="जिल्हा परिषद बीड (गुप्त ॲडमिनसाठी ३ वेळा टॅप करा)">
       <img src="logo.png" alt="जिल्हा परिषद बीड" onerror="this.onerror=null; this.src='https://upload.wikimedia.org/wikipedia/commons/8/84/Government_of_Maharashtra.png'">
     </div>
@@ -535,11 +588,9 @@
   </div>
 
   <div class="header-right">
-    <!-- उजवा लोगो: नवोदय विद्यालय अधिकृत लोगो -->
     <div class="nvs-brand-logo" title="जवाहर नवोदय विद्यालय">
       <img src="nvs_logo.png" alt="NVS Logo" onerror="this.onerror=null; this.src='https://navodaya.gov.in/nvs/assets/images/logo.png'">
     </div>
-    <!-- फक्त ॲडमिन मोड सुरू झाल्यावर दिसणारे एक्झिट बटण -->
     <button id="adminStatusBadge" onclick="exitAdminMode()">Admin Exit</button>
   </div>
 </header>
@@ -730,6 +781,41 @@
   </div>
 </div>
 
+<!-- चाचणी सबमिशन गोषवारा पॉप-अप (SUBMISSION SUMMARY MODAL) -->
+<div id="summaryModalOverlay">
+  <div class="summary-modal-content">
+    <div style="text-align:center; margin-bottom:12px;">
+      <h3 style="color:var(--primary); font-weight:800; font-size:1.2rem;">📊 चाचणी सोडवल्याचा गोषवारा</h3>
+      <p style="color:#64748b; font-size:0.85rem;">सबमिट करण्यापूर्वी आपले सोडवलेले व शिल्लक प्रश्न तपासा</p>
+    </div>
+
+    <table class="summary-table">
+      <thead>
+        <tr>
+          <th style="text-align:left;">परीक्षा विभाग (घटक)</th>
+          <th>एकूण</th>
+          <th>सोडवले</th>
+          <th>शिल्लक</th>
+        </tr>
+      </thead>
+      <tbody id="summaryTableBody">
+        <!-- JavaScript द्वारे गोषवारा लोड होईल -->
+      </tbody>
+    </table>
+
+    <div id="summaryAlertBox" style="padding:10px; border-radius:8px; font-size:0.88rem; font-weight:700; text-align:center; margin-bottom:14px;"></div>
+
+    <div style="display:flex; gap:10px;">
+      <button class="btn-main" style="background:#475569; flex:1; padding:10px;" onclick="closeSummaryModal()">
+        ⬅ पुन्हा सोडवा (Review)
+      </button>
+      <button class="btn-main" style="background:var(--danger); flex:1.2; padding:10px;" onclick="executeFinalSubmission()">
+        ✓ अंतिम सबमिट करा
+      </button>
+    </div>
+  </div>
+</div>
+
 <!-- तळटीप (FOOTER) -->
 <footer>
   <p>© All Rights Reserved | <span>शिक्षणाधिकारी प्राथमिक  जिल्हा परिषद बीड</span></p>
@@ -766,7 +852,6 @@
   let selectedSection = 'mental';
   let akSelectedSection = 'mental';
 
-  // सिक्रेट ॲडमिन ट्रिगर (डाव्या लोगोवर ३ वेळा टॅप करणे)
   let logoTapCount = 0;
   let logoTapTimeout = null;
 
@@ -779,7 +864,6 @@
       renderDashboard();
     }
 
-    // डाव्या लोगोवर सलग ३ वेळा टॅप केल्यास ॲडमिन सुरू
     const logoEl = document.getElementById("secretAdminTrigger");
     if (logoEl) {
       logoEl.addEventListener("click", () => {
@@ -794,7 +878,6 @@
       });
     }
 
-    // पर्यायी कीबोर्ड शॉर्टकट (Ctrl + Shift + A)
     window.addEventListener("keydown", (e) => {
       if ((e.ctrlKey && e.shiftKey && (e.key === 'A' || e.key === 'a')) || (e.altKey && (e.key === 'A' || e.key === 'a'))) {
         e.preventDefault();
@@ -870,6 +953,7 @@
     document.getElementById("testArena").style.display = "none";
     document.getElementById("resultCertArea").style.display = "none";
     document.getElementById("answerKeyArea").style.display = "none";
+    document.getElementById("summaryModalOverlay").style.display = "none";
     document.getElementById("dashboardArea").style.display = "block";
 
     document.getElementById("displayStudentName").innerText = loggedInUser.name;
@@ -1077,11 +1161,84 @@
     }, 1000);
   }
 
+  /* ---------------- भागनिहाय गोषवारा दाखवणे (SUBMISSION SUMMARY MODAL) ---------------- */
   function confirmSubmission() {
-    if (confirm("तुम्हाला चाचणी सबमिट करायची आहे का?")) {
-      clearInterval(quizInterval);
-      finalizeEvaluation();
+    // भागनिहाय सोडवलेले व शिल्लक प्रश्न मोजणे
+    let counts = {
+      mental: { total: 0, solved: 0 },
+      math: { total: 0, solved: 0 },
+      lang: { total: 0, solved: 0 }
+    };
+
+    currentQuizData.questions.forEach(q => {
+      if (counts[q.sec]) {
+        counts[q.sec].total++;
+        if (recordedChoices[q.id] !== undefined) {
+          counts[q.sec].solved++;
+        }
+      }
+    });
+
+    const mentalRemain = counts.mental.total - counts.mental.solved;
+    const mathRemain = counts.math.total - counts.math.solved;
+    const langRemain = counts.lang.total - counts.lang.solved;
+
+    const totalQuestions = counts.mental.total + counts.math.total + counts.lang.total;
+    const totalSolved = counts.mental.solved + counts.math.solved + counts.lang.solved;
+    const totalRemain = totalQuestions - totalSolved;
+
+    // टेबल भरणे
+    const tbody = document.getElementById("summaryTableBody");
+    tbody.innerHTML = `
+      <tr>
+        <td style="text-align:left; font-weight:700;">भाग 1: मानसिक क्षमता चाचणी</td>
+        <td>${counts.mental.total}</td>
+        <td><span class="badge-solved">${counts.mental.solved}</span></td>
+        <td><span class="${mentalRemain > 0 ? 'badge-unsolved' : 'badge-solved'}">${mentalRemain}</span></td>
+      </tr>
+      <tr>
+        <td style="text-align:left; font-weight:700;">भाग 2: अंकगणित चाचणी</td>
+        <td>${counts.math.total}</td>
+        <td><span class="badge-solved">${counts.math.solved}</span></td>
+        <td><span class="${mathRemain > 0 ? 'badge-unsolved' : 'badge-solved'}">${mathRemain}</span></td>
+      </tr>
+      <tr>
+        <td style="text-align:left; font-weight:700;">भाग 3: भाषा चाचणी (मराठी)</td>
+        <td>${counts.lang.total}</td>
+        <td><span class="badge-solved">${counts.lang.solved}</span></td>
+        <td><span class="${langRemain > 0 ? 'badge-unsolved' : 'badge-solved'}">${langRemain}</span></td>
+      </tr>
+      <tr style="background:#f8fafc; font-weight:800;">
+        <td style="text-align:left;">एकूण बेरीज (Total)</td>
+        <td>${totalQuestions}</td>
+        <td><span class="badge-solved">${totalSolved}</span></td>
+        <td><span class="${totalRemain > 0 ? 'badge-unsolved' : 'badge-solved'}">${totalRemain}</span></td>
+      </tr>
+    `;
+
+    // अलर्ट मेसेज
+    const alertBox = document.getElementById("summaryAlertBox");
+    if (totalRemain > 0) {
+      alertBox.style.background = "#fef2f2";
+      alertBox.style.color = "#991b1b";
+      alertBox.innerHTML = `⚠️ तुमचे अद्याप <b>${totalRemain}</b> प्रश्न सोडवायचे शिल्लक राहिले आहेत! आपण अंतिम सबमिट करू इच्छिता का?`;
+    } else {
+      alertBox.style.background = "#ecfdf5";
+      alertBox.style.color = "#065f46";
+      alertBox.innerHTML = `🌟 उत्तम! तुम्ही सर्व <b>${totalQuestions}</b> प्रश्न यशस्वीरीत्या सोडवले आहेत.`;
     }
+
+    document.getElementById("summaryModalOverlay").style.display = "flex";
+  }
+
+  function closeSummaryModal() {
+    document.getElementById("summaryModalOverlay").style.display = "none";
+  }
+
+  function executeFinalSubmission() {
+    document.getElementById("summaryModalOverlay").style.display = "none";
+    clearInterval(quizInterval);
+    finalizeEvaluation();
   }
 
   function finalizeEvaluation() {
