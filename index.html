@@ -12,11 +12,15 @@
   <link rel="icon" type="image/png" href="logo.png">
   <link rel="apple-touch-icon" href="logo.png">
   
-  <!-- PWA Web App Manifest (NVS TEST ZP BEED) -->
+  <!-- PWA Web App Manifest -->
   <link rel="manifest" href="data:application/manifest+json;utf-8,%7B%22name%22%3A%22NVS%20TEST%20ZP%20BEED%22%2C%22short_name%22%3A%22NVS%20TEST%20ZP%20BEED%22%2C%22start_url%22%3A%22.%2F%22%2C%22display%22%3A%22standalone%22%2C%22background_color%22%3A%22%23f8fafc%22%2C%22theme_color%22%3A%22%230f2b48%22%2C%22icons%22%3A%5B%7B%22src%22%3A%22logo.png%22%2C%22sizes%22%3A%22192x192%22%2C%22type%22%3A%22image%2Fpng%22%7D%2C%7B%22src%22%3A%22logo.png%22%2C%22sizes%22%3A%22512x512%22%2C%22type%22%3A%22image%2Fpng%22%7D%5D%7D">
   
   <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  
+  <!-- मराठी फॉन्ट अचूक दिसण्यासाठी अधिकृत SheetJS Excel Library -->
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+
   <style>
     :root {
       --primary: #0f2b48;
@@ -49,7 +53,6 @@
       min-height: 100vh;
     }
     
-    /* ---------------- HEADER ---------------- */
     header {
       background: linear-gradient(135deg, #091a2c 0%, #0f2b48 60%, #1a4a75 100%);
       color: white;
@@ -114,11 +117,9 @@
       white-space: nowrap;
     }
 
-    /* ---------------- LAYOUT ---------------- */
     .main-wrapper { flex: 1; max-width: 860px; width: 100%; margin: 16px auto; padding: 0 16px; }
     .card { background: var(--card-bg); border-radius: 16px; padding: 22px; box-shadow: 0 4px 20px rgba(15, 43, 72, 0.06); margin-bottom: 16px; border: 1px solid var(--border); }
 
-    /* ---------------- STUDENT BAR ---------------- */
     .student-bar {
       background: #ffffff;
       padding: 14px 18px;
@@ -136,7 +137,6 @@
     .student-bar h3 { font-size: 1.15rem; color: var(--primary); font-weight: 800; }
     .student-bar p { font-size: 0.85rem; color: #64748b; }
 
-    /* ---------------- BUTTONS ---------------- */
     .btn-main {
       width: 100%;
       background: linear-gradient(135deg, #1a4a75 0%, #0f2b48 100%);
@@ -173,14 +173,12 @@
     .btn-toggle-admin { color: white; padding: 6px 12px; font-size: 0.8rem; font-weight: 700; border-radius: 8px; border: none; cursor: pointer; margin-left: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.15); }
     .btn-logout { background: #fee2e2; color: #991b1b; border: 1px solid #fecaca; padding: 6px 12px; border-radius: 8px; font-weight: 700; cursor: pointer; font-size: 0.85rem; }
 
-    /* ---------------- FORMS ---------------- */
     .form-group { margin-bottom: 15px; }
     .form-group label { display: block; font-weight: 700; margin-bottom: 6px; color: #334155; font-size: 0.95rem; }
     .form-group input, .form-group select { width: 100%; padding: 12px 14px; border: 1.5px solid #cbd5e1; border-radius: 10px; font-size: 1rem; background: #ffffff; }
     .form-group input:focus, .form-group select:focus { outline: none; border-color: var(--secondary); box-shadow: 0 0 0 3px rgba(26, 74, 117, 0.12); }
     .input-hint { font-size: 0.8rem; color: #64748b; margin-top: 4px; }
 
-    /* ---------------- TEST LIST ---------------- */
     .test-item {
       background: #ffffff;
       border-radius: 14px;
@@ -196,12 +194,10 @@
     }
     .test-item.unlocked { border-left-color: var(--success); }
 
-    /* ---------------- TABLES ---------------- */
     .guideline-table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 0.95rem; }
     .guideline-table th, .guideline-table td { border: 1px solid #cbd5e1; padding: 10px; text-align: center; }
     .guideline-table th { background: #f1f5f9; color: var(--primary); font-weight: 700; }
 
-    /* ---------------- EXAM ARENA ---------------- */
     .exam-topbar { background: #e2e8f0; padding: 12px 16px; border-radius: 12px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
     
     .section-selector { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin-bottom: 14px; width: 100%; }
@@ -242,7 +238,6 @@
     .btn-nav-prev { background: #475569; color: white; border: none; padding: 10px 18px; border-radius: 10px; font-weight: 700; cursor: pointer; }
     .btn-nav-next { background: var(--secondary); color: white; border: none; padding: 10px 18px; border-radius: 10px; font-weight: 700; cursor: pointer; margin-left: auto; }
 
-    /* ---------------- SUBMISSION SUMMARY MODAL ---------------- */
     #summaryModalOverlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15, 43, 72, 0.75); z-index: 2000; justify-content: center; align-items: center; backdrop-filter: blur(3px); padding: 14px; }
     .summary-modal-content { background: #ffffff; border-radius: 16px; max-width: 520px; width: 100%; padding: 22px 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); border-top: 5px solid var(--accent); animation: popIn 0.25s ease-out; }
     @keyframes popIn { from { transform: scale(0.9); opacity: 0; } to { transform: scale(1); opacity: 1; } }
@@ -252,7 +247,6 @@
     .badge-solved { background: #dcfce7; color: #166534; font-weight: 800; padding: 3px 8px; border-radius: 6px; }
     .badge-unsolved { background: #fee2e2; color: #991b1b; font-weight: 800; padding: 3px 8px; border-radius: 6px; }
 
-    /* ---------------- CELEBRATION RESULT & REPORT CARD ---------------- */
     .congrats-header { animation: pulse 1.5s infinite; font-size: 1.7rem; font-weight: 800; color: #b45309; margin-bottom: 8px; }
     @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.03); } 100% { transform: scale(1); } }
     .flower-badge { font-size: 2.8rem; margin-bottom: 6px; display: inline-block; animation: bounce 1s infinite alternate; }
@@ -262,17 +256,14 @@
     .report-table th, .report-table td { border: 1px solid #cbd5e1; padding: 10px; text-align: center; }
     .report-table th { background: #f1f5f9; color: var(--primary); font-weight: 800; }
 
-    /* ---------------- ANSWER KEY ---------------- */
     .ak-correct { background: #ecfdf5 !important; border-color: #34d399 !important; color: #065f46; font-weight: 700; }
     .ak-wrong { background: #fef2f2 !important; border-color: #f87171 !important; color: #991b1b; font-weight: 700; }
     .ak-badge { display: inline-block; padding: 4px 10px; border-radius: 6px; font-size: 0.8rem; margin-top: 6px; font-weight: 700; }
 
-    /* ---------------- TOAST & SHORTCUT POPUP ---------------- */
     #exitToast { display: none; position: fixed; bottom: 25px; left: 50%; transform: translateX(-50%); background: rgba(15, 43, 72, 0.92); color: #ffffff; padding: 10px 20px; border-radius: 25px; font-size: 0.9rem; font-weight: 700; box-shadow: 0 4px 15px rgba(0,0,0,0.3); z-index: 3000; white-space: nowrap; border: 1px solid #fbbf24; }
     #installShortcutModal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15, 43, 72, 0.75); z-index: 2500; justify-content: center; align-items: center; backdrop-filter: blur(3px); padding: 14px; }
     .install-modal-content { background: #ffffff; border-radius: 16px; max-width: 440px; width: 100%; padding: 24px 20px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.3); border-top: 5px solid var(--accent); animation: popIn 0.25s ease-out; }
 
-    /* ---------------- FOOTER ---------------- */
     footer { background: #091a2c; color: #94a3b8; text-align: center; padding: 14px 16px; font-size: 0.82rem; border-top: 2px solid #1e293b; margin-top: auto; }
     footer span { color: #f8fafc; font-weight: 600; }
 
@@ -349,7 +340,7 @@
     <div class="form-group">
       <label>पालकांचा खरा मोबाईल नंबर (10 अंकी):</label>
       <input type="tel" id="sMobile" maxlength="10" placeholder="6, 7, 8 किंवा 9 ने सुरू होणारा 10 अंकी नंबर" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-      <div class="input-hint">नोंद: कोणताही बनावट, एकाच अंकाचा (उदा. 9999999999) किंवा साध्या क्रमाचा नंबर स्वीकारला जाणार नाही.</div>
+      <div class="input-hint">नोंद: बनावट, एकाच अंकाचा (उदा. 9999999999) किंवा साध्या क्रमाचा नंबर स्वीकारला जाणार नाही.</div>
     </div>
     <div class="form-group">
       <label>तालुका निवडा (जिल्हा बीड):</label>
@@ -386,7 +377,7 @@
       <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
         <h3 style="color:#c2410c; font-weight:800; font-size:1.1rem;">⚙️ ॲडमिन नियंत्रण कक्ष (Admin Panel)</h3>
         <div style="font-size:0.88rem; font-weight:700; color:#0f2b48;">
-          एकूण नोंदणीकृत विद्यार्थी: <span id="adminTotalStudentsBadge" style="background:#0f2b48; color:#fff; padding:2px 8px; border-radius:10px;">0</span>
+          एकूण युनिक नोंदणीकृत विद्यार्थी: <span id="adminTotalStudentsBadge" style="background:#0f2b48; color:#fff; padding:2px 8px; border-radius:10px;">0</span>
         </div>
       </div>
       <div style="display:flex; gap:10px; margin-top:12px; flex-wrap:wrap;">
@@ -584,7 +575,6 @@
     <div style="display:flex; gap:10px; margin-bottom:14px; align-items:center; flex-wrap:wrap;">
       <label style="font-weight:700; color:#334155;">चाचणी निवडा:</label>
       <select id="adminTestSelector" onchange="loadToppersForSelectedTest()" style="padding:8px 12px; border:1.5px solid #cbd5e1; border-radius:8px; font-weight:700;">
-        <!-- चाचण्यांचे पर्याय डायनॅमिकली भरले जातील -->
       </select>
       <button class="btn-action btn-start" style="padding:8px 14px;" onclick="downloadToppersExcel()">📥 Top 50 एक्सेल डाऊनलोड</button>
     </div>
@@ -647,10 +637,8 @@
   </div>
 </div>
 
-<!-- बाहेर पडताना दाखवणारा मेसेज -->
 <div id="exitToast">बाहेर पडण्यासाठी पुन्हा एकदा Back दाबा</div>
 
-<!-- तळटीप -->
 <footer>
   <p>© All Rights Reserved | <span>शिक्षणाधिकारी प्राथमिक  जिल्हा परिषद बीड</span></p>
 </footer>
@@ -693,7 +681,6 @@
   let logoTapCount = 0;
   let logoTapTimeout = null;
 
-  // ॲडमिनसाठी डेटा कॅशे
   let allFirebaseResults = [];
   let allFirebaseStudents = [];
 
@@ -768,7 +755,6 @@
     });
   });
 
-  /* ---------------- मोबाईल नंबर व्हॅलिडेशन ---------------- */
   function isValidIndianMobile(mobile) {
     const regex = /^[6-9]\d{9}$/;
     if (!regex.test(mobile)) {
@@ -796,6 +782,7 @@
     return { valid: true };
   }
 
+  /* ---------------- युनिक विद्यार्थी नोंदणी (Duplicate Entries थांबवणे) ---------------- */
   function handleRegistration() {
     const name = document.getElementById("sName").value.trim();
     const mobile = document.getElementById("sMobile").value.trim();
@@ -821,8 +808,9 @@
     loggedInUser = { name, mobile, taluka };
     syncUserPersistentData();
 
-    fetch(`${FIREBASE_DB_URL}/students.json`, {
-      method: "POST",
+    // मोबाईल नंबरला ID बनवून PUT द्वारे नोंदणी करणे; जेणेकरून एकाच नंबरची डुप्लिकेट नोंद होणार नाही
+    fetch(`${FIREBASE_DB_URL}/students/${mobile}.json`, {
+      method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         name: name,
@@ -895,7 +883,6 @@
     }
   }
 
-  /* ---------------- ॲडमिन मोड व TOPPERS लॉजिक ---------------- */
   function openAdminPrompt() {
     if (!isAdminMode) {
       const pin = prompt("🔐 ॲडमिन गुप्त पिन टाका:");
@@ -919,33 +906,34 @@
     }
   }
 
-  // ॲडमिनसाठी Firebase वरून सर्व निकाल व विद्यार्थ्यांची माहिती मिळवणे
   function fetchAdminDashboardData() {
-    // नोंदणीकृत विद्यार्थी संख्या
     fetch(`${FIREBASE_DB_URL}/students.json`)
       .then(res => res.json())
       .then(data => {
         if (data) {
+          // Object.values मुळे युनिक मोबाईल नंबर असलेली सर्व नोंदणीकृत खाती मिळतील
           allFirebaseStudents = Object.values(data);
           document.getElementById("adminTotalStudentsBadge").innerText = allFirebaseStudents.length;
+        } else {
+          allFirebaseStudents = [];
+          document.getElementById("adminTotalStudentsBadge").innerText = "0";
         }
       });
 
-    // सर्व निकाल
     fetch(`${FIREBASE_DB_URL}/results.json`)
       .then(res => res.json())
       .then(data => {
         if (data) {
           allFirebaseResults = Object.values(data);
+        } else {
+          allFirebaseResults = [];
         }
       });
   }
 
-  // Toppers Modal उघडणे
   function openAdminToppersModal() {
     document.getElementById("adminToppersModal").style.display = "flex";
     
-    // चाचण्यांचे पर्याय भरले नसल्यास भरणे
     const sel = document.getElementById("adminTestSelector");
     if (sel.children.length === 0) {
       EXAM_SCHEDULE.forEach(t => {
@@ -963,13 +951,11 @@
     document.getElementById("adminToppersModal").style.display = "none";
   }
 
-  // निवडलेल्या चाचणीतील TOP 50 गुणवंत दाखवणे
   function loadToppersForSelectedTest() {
     const selectedTitle = document.getElementById("adminTestSelector").value;
     const host = document.getElementById("toppersTableHost");
     host.innerHTML = "<p style='text-align:center; padding:15px; color:#64748b;'>निकाल शोधत आहे...</p>";
 
-    // त्या चाचणीचे निकाल फिल्टर करणे
     const filtered = allFirebaseResults.filter(r => r.testTitle === selectedTitle);
 
     if (filtered.length === 0) {
@@ -977,7 +963,6 @@
       return;
     }
 
-    // एकाच विद्यार्थ्याचा सर्वोच्च गुण घेणे
     const studentBest = {};
     filtered.forEach(item => {
       const key = item.mobile;
@@ -986,7 +971,6 @@
       }
     });
 
-    // गुणांनुसार उतरत्या क्रमाने क्रमवारी (Rank) लावणे व पहिले ५० विद्यार्थी घेणे
     const toppers = Object.values(studentBest)
       .sort((a, b) => b.score - a.score)
       .slice(0, 50);
@@ -1022,37 +1006,49 @@
     `;
   }
 
-  // सर्व नोंदणीकृत विद्यार्थ्यांची एक्सेल/CSV डाउनलोड करणे
+  /* ---------------- अस्सल .XLSX फाईल डाऊनलोड (फक्त युनिक विद्यार्थी) ---------------- */
   function downloadStudentsExcel() {
-    if (allFirebaseStudents.length === 0) {
+    if (!allFirebaseStudents || allFirebaseStudents.length === 0) {
       alert("अद्याप कोणतीही नोंदणी झालेली नाही किंवा डेटा लोड होत आहे.");
       return;
     }
 
-    let csvContent = "\uFEFF"; // UTF-8 BOM मराठी अक्षरांसाठी
-    csvContent += "अ.क्र.,विद्यार्थ्याचे नाव,पालकांचा मोबाईल नंबर,तालुका,नोंदणी दिनांक व वेळ\n";
+    const wsData = [
+      ["अ.क्र.", "विद्यार्थ्याचे नाव", "पालकांचा मोबाईल नंबर", "तालुका", "नोंदणी दिनांक व वेळ"]
+    ];
 
     allFirebaseStudents.forEach((st, idx) => {
-      csvContent += `"${idx + 1}","${st.name}","${st.mobile}","${st.taluka}","${st.timestamp}"\n`;
+      wsData.push([
+        idx + 1,
+        st.name || "",
+        st.mobile || "",
+        st.taluka || "",
+        st.timestamp || ""
+      ]);
     });
 
-    const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
-    const url = URL.createObjectURL(blob);
-    const link = document.createElement("a");
-    link.setAttribute("href", url);
-    link.setAttribute("download", `NVS_Registered_Students_List_${new Date().toISOString().slice(0,10)}.csv`);
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    const ws = XLSX.utils.aoa_to_sheet(wsData);
+    ws['!cols'] = [
+      { wch: 8 },
+      { wch: 30 },
+      { wch: 18 },
+      { wch: 18 },
+      { wch: 25 }
+    ];
+
+    const wb = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, "नोंदणीकृत_विद्यार्थी");
+
+    const today = new Date().toISOString().slice(0, 10);
+    XLSX.writeFile(wb, `NVS_Registered_Students_${today}.xlsx`);
   }
 
-  // Toppers ची एक्सेल/CSV डाऊनलोड करणे
   function downloadToppersExcel() {
     const selectedTitle = document.getElementById("adminTestSelector").value;
     const filtered = allFirebaseResults.filter(r => r.testTitle === selectedTitle);
 
     if (filtered.length === 0) {
-      alert("या चाचणीसाठी डाऊनलोड करण्याकरिता डेटा उपलब्ध नाही.");
+      alert("या चाचणीसाठी डाऊनलोड करण्याकरिता निकाल उपलब्ध नाही.");
       return;
     }
 
@@ -1068,21 +1064,37 @@
       .sort((a, b) => b.score - a.score)
       .slice(0, 50);
 
-    let csvContent = "\uFEFF";
-    csvContent += `रँक,विद्यार्थ्याचे नाव,तालुका,मोबाईल नंबर,गुण (100 पैकी),टक्केवारी,तारीख\n`;
+    const wsData = [
+      ["रँक", "विद्यार्थ्याचे नाव", "तालुका", "मोबाईल नंबर", "गुण (100 पैकी)", "टक्केवारी", "दिनांक व वेळ"]
+    ];
 
     toppers.forEach((t, i) => {
-      csvContent += `"${i + 1}","${t.name}","${t.taluka}","${t.mobile}","${t.score}","${t.percentage}%","${t.timestamp || ''}"\n`;
+      wsData.push([
+        i + 1,
+        t.name || "",
+        t.taluka || "",
+        t.mobile || "",
+        t.score || 0,
+        (t.percentage || 0) + "%",
+        t.timestamp || ""
+      ]);
     });
 
-    const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
-    const url = URL.createObjectURL(blob);
-    const link = document.createElement("a");
-    link.setAttribute("href", url);
-    link.setAttribute("download", `${selectedTitle}_Top_50_Toppers.csv`);
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    const ws = XLSX.utils.aoa_to_sheet(wsData);
+    ws['!cols'] = [
+      { wch: 8 },
+      { wch: 30 },
+      { wch: 18 },
+      { wch: 18 },
+      { wch: 15 },
+      { wch: 12 },
+      { wch: 25 }
+    ];
+
+    const wb = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, "Top_50_Toppers");
+
+    XLSX.writeFile(wb, `${selectedTitle}_Top_50_Toppers.xlsx`);
   }
 
   function fetchGlobalLockStatus() {
@@ -1112,7 +1124,6 @@
     document.getElementById("displayStudentName").innerText = loggedInUser.name;
     document.getElementById("displayStudentMeta").innerText = "मोबाईल: " + loggedInUser.mobile + " | तालुका: " + loggedInUser.taluka;
 
-    // ॲडमिन पॅनल दाखवणे किंवा लपवणे
     if (isAdminMode) {
       document.getElementById("adminPanelArea").style.display = "block";
       fetchAdminDashboardData();
