@@ -315,30 +315,48 @@
       align-items: center;
       margin-bottom: 16px;
     }
+    
+    /* सुधारित ३-कॉलम रिस्पॉन्सिव्ह सेक्शन सिलेक्टर */
     .section-selector {
-      display: flex;
-      gap: 8px;
-      margin-bottom: 16px;
-      overflow-x: auto;
-      padding-bottom: 4px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 6px;
+      margin-bottom: 14px;
+      width: 100%;
     }
     .section-selector button {
-      flex: 1;
-      min-width: 120px;
+      width: 100%;
       background: #ffffff;
       border: 1.5px solid #cbd5e1;
-      padding: 10px 12px;
-      border-radius: 10px;
+      padding: 6px 4px;
+      border-radius: 8px;
       font-weight: 700;
       cursor: pointer;
       color: #334155;
-      font-size: 0.9rem;
-      white-space: nowrap;
+      font-size: 0.85rem;
+      line-height: 1.25;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      transition: all 0.2s;
+    }
+    .section-selector button span.sec-sub {
+      font-size: 0.74rem;
+      font-weight: 600;
+      opacity: 0.85;
+      margin-top: 2px;
     }
     .section-selector button.active {
       background: var(--secondary);
       color: white;
       border-color: var(--secondary);
+      box-shadow: 0 2px 6px rgba(26, 74, 117, 0.25);
+    }
+    .section-selector button.active span.sec-sub {
+      color: #fef08a;
     }
     
     .question-card {
@@ -555,8 +573,16 @@
       .exam-topbar span { font-size: 0.75rem; }
       .exam-topbar > div:last-child { font-size: 1rem; padding: 2px 8px; }
 
-      .section-selector { gap: 6px; margin-bottom: 12px; }
-      .section-selector button { padding: 8px 10px; font-size: 0.82rem; min-width: 110px; border-radius: 8px; }
+      /* मोबाईलवर ३-कॉलम टॅबची अक्षरे योग्य आकाराची व चपखल बसणारी */
+      .section-selector { gap: 4px; margin-bottom: 10px; }
+      .section-selector button {
+        padding: 5px 2px;
+        font-size: 0.78rem;
+        min-height: 46px;
+      }
+      .section-selector button span.sec-sub {
+        font-size: 0.68rem;
+      }
 
       .question-card { padding: 12px 8px; margin-bottom: 10px; border-radius: 10px; }
       .options-grid { grid-template-columns: 1fr; gap: 8px; }
@@ -722,10 +748,20 @@
       </div>
     </div>
 
+    <!-- सुधारित ३-कॉलम टॅब (कुठेही कट न होणारे) -->
     <div class="section-selector">
-      <button id="tab-sec1" class="active" onclick="displaySection('mental')">भाग 1: मानसिक क्षमता (1 ते 40)</button>
-      <button id="tab-sec2" onclick="displaySection('math')">भाग 2: अंकगणित (41 ते 60)</button>
-      <button id="tab-sec3" onclick="displaySection('lang')">भाग 3: भाषा चाचणी (61 ते 80)</button>
+      <button id="tab-sec1" class="active" onclick="displaySection('mental')">
+        <span>भाग १: मानसिक क्षमता</span>
+        <span class="sec-sub">(१ ते ४०)</span>
+      </button>
+      <button id="tab-sec2" onclick="displaySection('math')">
+        <span>भाग २: अंकगणित</span>
+        <span class="sec-sub">(४१ ते ६०)</span>
+      </button>
+      <button id="tab-sec3" onclick="displaySection('lang')">
+        <span>भाग ३: भाषा चाचणी</span>
+        <span class="sec-sub">(६१ ते ८०)</span>
+      </button>
     </div>
 
     <div id="questionsHost"></div>
@@ -771,9 +807,18 @@
     </div>
 
     <div class="section-selector">
-      <button id="ak-tab-sec1" class="active" onclick="displayAkSection('mental')">भाग 1: मानसिक क्षमता (1 ते 40)</button>
-      <button id="ak-tab-sec2" onclick="displayAkSection('math')">भाग 2: अंकगणित (41 ते 60)</button>
-      <button id="ak-tab-sec3" onclick="displayAkSection('lang')">भाग 3: भाषा चाचणी (61 ते 80)</button>
+      <button id="ak-tab-sec1" class="active" onclick="displayAkSection('mental')">
+        <span>भाग १: मानसिक क्षमता</span>
+        <span class="sec-sub">(१ ते ४०)</span>
+      </button>
+      <button id="ak-tab-sec2" onclick="displayAkSection('math')">
+        <span>भाग २: अंकगणित</span>
+        <span class="sec-sub">(४१ ते ६०)</span>
+      </button>
+      <button id="ak-tab-sec3" onclick="displayAkSection('lang')">
+        <span>भाग ३: भाषा चाचणी</span>
+        <span class="sec-sub">(६१ ते ८०)</span>
+      </button>
     </div>
 
     <div id="akQuestionsHost"></div>
@@ -799,7 +844,6 @@
         </tr>
       </thead>
       <tbody id="summaryTableBody">
-        <!-- JavaScript द्वारे गोषवारा लोड होईल -->
       </tbody>
     </table>
 
@@ -1161,9 +1205,7 @@
     }, 1000);
   }
 
-  /* ---------------- भागनिहाय गोषवारा दाखवणे (SUBMISSION SUMMARY MODAL) ---------------- */
   function confirmSubmission() {
-    // भागनिहाय सोडवलेले व शिल्लक प्रश्न मोजणे
     let counts = {
       mental: { total: 0, solved: 0 },
       math: { total: 0, solved: 0 },
@@ -1187,7 +1229,6 @@
     const totalSolved = counts.mental.solved + counts.math.solved + counts.lang.solved;
     const totalRemain = totalQuestions - totalSolved;
 
-    // टेबल भरणे
     const tbody = document.getElementById("summaryTableBody");
     tbody.innerHTML = `
       <tr>
@@ -1216,7 +1257,6 @@
       </tr>
     `;
 
-    // अलर्ट मेसेज
     const alertBox = document.getElementById("summaryAlertBox");
     if (totalRemain > 0) {
       alertBox.style.background = "#fef2f2";
