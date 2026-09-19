@@ -7,7 +7,14 @@
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="NVS TEST ZP BEED">
   <title>नवोदय विद्यालय पात्रता परीक्षा दिनांक 28 नोव्हेंबर 2026 - जि. प. बीड</title>
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="apple-touch-icon" href="logo.png">
+  
+  <!-- PWA Web App Manifest (NVS TEST ZP BEED) -->
+  <link rel="manifest" href="data:application/manifest+json;utf-8,%7B%22name%22%3A%22NVS%20TEST%20ZP%20BEED%22%2C%22short_name%22%3A%22NVS%20TEST%20ZP%20BEED%22%2C%22start_url%22%3A%22.%2F%22%2C%22display%22%3A%22standalone%22%2C%22background_color%22%3A%22%23f8fafc%22%2C%22theme_color%22%3A%22%230f2b48%22%2C%22icons%22%3A%5B%7B%22src%22%3A%22logo.png%22%2C%22sizes%22%3A%22192x192%22%2C%22type%22%3A%22image%2Fpng%22%7D%2C%7B%22src%22%3A%22logo.png%22%2C%22sizes%22%3A%22512x512%22%2C%22type%22%3A%22image%2Fpng%22%7D%5D%7D">
+  
   <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
   <style>
@@ -316,7 +323,6 @@
       margin-bottom: 16px;
     }
     
-    /* सुधारित ३-कॉलम रिस्पॉन्सिव्ह सेक्शन सिलेक्टर */
     .section-selector {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -533,6 +539,48 @@
     .ak-wrong { background: #fef2f2 !important; border-color: #f87171 !important; color: #991b1b; font-weight: 700; }
     .ak-badge { display: inline-block; padding: 4px 10px; border-radius: 6px; font-size: 0.8rem; margin-top: 6px; font-weight: 700; }
 
+    /* ---------------- TOAST & SHORTCUT POPUP ---------------- */
+    #exitToast {
+      display: none;
+      position: fixed;
+      bottom: 25px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(15, 43, 72, 0.92);
+      color: #ffffff;
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      z-index: 3000;
+      white-space: nowrap;
+      border: 1px solid #fbbf24;
+    }
+
+    #installShortcutModal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(15, 43, 72, 0.75);
+      z-index: 2500;
+      justify-content: center;
+      align-items: center;
+      backdrop-filter: blur(3px);
+      padding: 14px;
+    }
+    .install-modal-content {
+      background: #ffffff;
+      border-radius: 16px;
+      max-width: 440px;
+      width: 100%;
+      padding: 24px 20px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      border-top: 5px solid var(--accent);
+      animation: popIn 0.25s ease-out;
+    }
+
     /* ---------------- FOOTER ---------------- */
     footer {
       background: #091a2c;
@@ -573,7 +621,6 @@
       .exam-topbar span { font-size: 0.75rem; }
       .exam-topbar > div:last-child { font-size: 1rem; padding: 2px 8px; }
 
-      /* मोबाईलवर ३-कॉलम टॅबची अक्षरे योग्य आकाराची व चपखल बसणारी */
       .section-selector { gap: 4px; margin-bottom: 10px; }
       .section-selector button {
         padding: 5px 2px;
@@ -601,6 +648,7 @@
 </head>
 <body>
 
+<!-- हेडर: वरती मध्यभागी ठळक शीर्षक, डावीकडे जि. प. बीड लोगो, उजवीकडे NVS लोगो -->
 <header>
   <div class="header-left">
     <div class="zp-brand-logo" id="secretAdminTrigger" title="जिल्हा परिषद बीड (गुप्त ॲडमिनसाठी ३ वेळा टॅप करा)">
@@ -748,7 +796,7 @@
       </div>
     </div>
 
-    <!-- सुधारित ३-कॉलम टॅब (कुठेही कट न होणारे) -->
+    <!-- ३-कॉलम टॅब -->
     <div class="section-selector">
       <button id="tab-sec1" class="active" onclick="displaySection('mental')">
         <span>भाग १: मानसिक क्षमता</span>
@@ -860,6 +908,28 @@
   </div>
 </div>
 
+<!-- होम स्क्रीन शॉर्टकट पॉप-अप (ADD TO HOME SCREEN POPUP) -->
+<div id="installShortcutModal">
+  <div class="install-modal-content">
+    <div style="font-size:2.4rem; margin-bottom:6px;">📲</div>
+    <h3 style="color:var(--primary); font-weight:800; font-size:1.2rem; margin-bottom:6px;">NVS TEST ZP BEED</h3>
+    <p style="color:#475569; font-size:0.9rem; margin-bottom:16px; line-height:1.4;">
+      नवोदय सराव परीक्षा दररोज सहज उघडण्यासाठी या ॲपचा शॉर्टकट तुमच्या मोबाईल किंवा डेस्कटॉप स्क्रीनवर जोडावा का?
+    </p>
+    <div style="display:flex; gap:10px;">
+      <button class="btn-main" style="background:#64748b; flex:1; padding:10px;" onclick="dismissInstallPrompt()">
+        नंतर करा
+      </button>
+      <button class="btn-main" style="background:var(--success); flex:1.3; padding:10px;" onclick="installAppShortcut()">
+        ✓ होय, ॲप जोडा
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- बाहेर पडताना दाखवणारा मेसेज (TOAST) -->
+<div id="exitToast">बाहेर पडण्यासाठी पुन्हा एकदा Back दाबा</div>
+
 <!-- तळटीप (FOOTER) -->
 <footer>
   <p>© All Rights Reserved | <span>शिक्षणाधिकारी प्राथमिक  जिल्हा परिषद बीड</span></p>
@@ -895,17 +965,31 @@
   let recordedChoices = {};
   let selectedSection = 'mental';
   let akSelectedSection = 'mental';
+  let currentScreen = 'login'; 
+
+  // PWA Install Prompt
+  let deferredPrompt = null;
+
+  // Double Back Exit
+  let lastBackPressTime = 0;
 
   let logoTapCount = 0;
   let logoTapTimeout = null;
 
+  window.addEventListener("beforeinstallprompt", (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+  });
+
   window.addEventListener("DOMContentLoaded", () => {
     fetchGlobalLockStatus();
 
+    // कायमस्वरूपी लॉगिन (Persistent Login Check)
     const stored = localStorage.getItem("jnv_beed_active_user");
     if (stored) {
       loggedInUser = JSON.parse(stored);
       renderDashboard();
+      checkAndShowInstallPrompt();
     }
 
     const logoEl = document.getElementById("secretAdminTrigger");
@@ -928,7 +1012,78 @@
         openAdminPrompt();
       }
     });
+
+    /* ---------------- मोबाईल HARDWARE BACK BUTTON & DOUBLE BACK EXIT ---------------- */
+    // सुरुवातीची हिस्ट्री स्टेट सेट करणे
+    history.replaceState({ screen: 'init' }, "");
+
+    window.addEventListener("popstate", (e) => {
+      if (currentScreen === 'exam') {
+        const leave = confirm("तुम्हाला चाचणी सोडून डॅशबोर्डवर परत जायचे आहे का?\n(सोडवलेली उत्तरे नष्ट होतील.)");
+        if (leave) {
+          clearInterval(quizInterval);
+          currentQuizData = null;
+          renderDashboard();
+        } else {
+          history.pushState({ screen: 'exam' }, "");
+        }
+      } else if (currentScreen === 'guidelines') {
+        cancelGuideline();
+      } else if (currentScreen === 'summary') {
+        closeSummaryModal();
+      } else if (currentScreen === 'answerkey') {
+        backToResult();
+      } else if (currentScreen === 'result') {
+        renderDashboard();
+      } else if (currentScreen === 'dashboard' || currentScreen === 'login') {
+        // डॅशबोर्ड किंवा लॉगिनवर २ वेळा Back दाबल्यास ॲपमधून बाहेर पडणे
+        const now = Date.now();
+        if (now - lastBackPressTime < 2000) {
+          // २ सेकंदांच्या आत दुसरा क्लिक - बाहेर पडा
+          history.back();
+        } else {
+          lastBackPressTime = now;
+          showToast();
+          history.pushState({ screen: 'root' }, "");
+        }
+      }
+    });
   });
+
+  function showToast() {
+    const toast = document.getElementById("exitToast");
+    toast.style.display = "block";
+    setTimeout(() => {
+      toast.style.display = "none";
+    }, 2000);
+  }
+
+  /* ---------------- पहिल्या २ वेळेस SHORTCUT POPUP लॉजिक ---------------- */
+  function checkAndShowInstallPrompt() {
+    let promptCount = parseInt(localStorage.getItem("jnv_install_prompt_count") || "0");
+    if (promptCount < 2) {
+      setTimeout(() => {
+        document.getElementById("installShortcutModal").style.display = "flex";
+        localStorage.setItem("jnv_install_prompt_count", (promptCount + 1).toString());
+      }, 1200);
+    }
+  }
+
+  function dismissInstallPrompt() {
+    document.getElementById("installShortcutModal").style.display = "none";
+  }
+
+  function installAppShortcut() {
+    document.getElementById("installShortcutModal").style.display = "none";
+    if (deferredPrompt) {
+      deferredPrompt.prompt();
+      deferredPrompt.userChoice.then(() => {
+        deferredPrompt = null;
+      });
+    } else {
+      alert("तुमच्या ब्राउझरमधील मेनू (३ ठिपके ⋮) वर क्लिक करून 'Add to Home screen' (किंवा Install app) पर्याय निवडा.");
+    }
+  }
 
   function openAdminPrompt() {
     if (!isAdminMode) {
@@ -974,6 +1129,7 @@
       return;
     }
 
+    // कायमस्वरूपी सेव्ह (Persistent Login)
     loggedInUser = { name, mobile, taluka, history: {} };
     localStorage.setItem("jnv_beed_active_user", JSON.stringify(loggedInUser));
 
@@ -989,9 +1145,13 @@
     }).catch(err => console.error("Firebase Error:", err));
 
     renderDashboard();
+    checkAndShowInstallPrompt();
   }
 
   function renderDashboard() {
+    currentScreen = 'dashboard';
+    history.pushState({ screen: 'dashboard' }, "");
+
     document.getElementById("registrationCard").style.display = "none";
     document.getElementById("guidelinesArea").style.display = "none";
     document.getElementById("testArena").style.display = "none";
@@ -1077,6 +1237,9 @@
     const testMeta = EXAM_SCHEDULE.find(t => t.id === testId);
     currentPendingTest = testMeta;
 
+    currentScreen = 'guidelines';
+    history.pushState({ screen: 'guidelines' }, "");
+
     document.getElementById("dashboardArea").style.display = "none";
     document.getElementById("guidelinesArea").style.display = "block";
     document.getElementById("guideTestTitle").innerText = testMeta.title;
@@ -1086,7 +1249,7 @@
   function cancelGuideline() {
     currentPendingTest = null;
     document.getElementById("guidelinesArea").style.display = "none";
-    document.getElementById("dashboardArea").style.display = "block";
+    renderDashboard();
     window.scrollTo(0, 0);
   }
 
@@ -1116,6 +1279,9 @@
     };
     recordedChoices = {};
     selectedSection = 'mental';
+
+    currentScreen = 'exam';
+    history.pushState({ screen: 'exam' }, "");
 
     document.getElementById("testArena").style.display = "block";
     document.getElementById("activeExamLabel").innerText = testData.title;
@@ -1206,6 +1372,9 @@
   }
 
   function confirmSubmission() {
+    currentScreen = 'summary';
+    history.pushState({ screen: 'summary' }, "");
+
     let counts = {
       mental: { total: 0, solved: 0 },
       math: { total: 0, solved: 0 },
@@ -1272,6 +1441,7 @@
   }
 
   function closeSummaryModal() {
+    currentScreen = 'exam';
     document.getElementById("summaryModalOverlay").style.display = "none";
   }
 
@@ -1307,6 +1477,9 @@
         timestamp: new Date().toLocaleString("en-IN")
       })
     }).catch(err => console.error("Firebase Result Error:", err));
+
+    currentScreen = 'result';
+    history.pushState({ screen: 'result' }, "");
 
     document.getElementById("testArena").style.display = "none";
     document.getElementById("resultCertArea").style.display = "block";
@@ -1356,6 +1529,9 @@
   }
 
   function showAnswerKeyView() {
+    currentScreen = 'answerkey';
+    history.pushState({ screen: 'answerkey' }, "");
+
     document.getElementById("resultCertArea").style.display = "none";
     document.getElementById("answerKeyArea").style.display = "block";
     document.getElementById("akSubtitle").innerText = `${currentQuizData.title} | एकूण 80 प्रश्न विश्लेषण`;
@@ -1366,6 +1542,7 @@
   }
 
   function backToResult() {
+    currentScreen = 'result';
     document.getElementById("answerKeyArea").style.display = "none";
     document.getElementById("resultCertArea").style.display = "block";
     window.scrollTo(0, 0);
@@ -1462,8 +1639,9 @@
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
+  // फक्त युजरने स्वतःहून क्लिक केल्यासच लॉग आउट होईल
   function performLogout() {
-    if (confirm("लॉग आउट करायचे आहे का?")) {
+    if (confirm("तुम्हाला लॉग आउट करायचे आहे का?")) {
       localStorage.removeItem("jnv_beed_active_user");
       location.reload();
     }
