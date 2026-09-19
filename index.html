@@ -4,11 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
   <meta name="theme-color" content="#0f2b48">
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <title>JNVST सराव परीक्षा - जिल्हा परिषद बीड</title>
   <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
   <style>
     :root {
       --primary: #0f2b48;
@@ -16,10 +14,10 @@
       --accent: #d97706;
       --danger: #dc2626;
       --success: #16a34a;
-      --bg: #f1f5f9;
+      --bg: #f8fafc;
       --card-bg: #ffffff;
       --text: #0f172a;
-      --border: #e2e8f0;
+      --border: #cbd5e1;
     }
     * { 
       box-sizing: border-box; 
@@ -30,7 +28,6 @@
     }
     html, body {
       width: 100%;
-      height: 100%;
       background-color: var(--bg);
       color: var(--text);
       font-size: 16px;
@@ -42,36 +39,35 @@
       min-height: 100vh;
     }
     
-    /* ---------------- ॲप हेडर (HEADER) ---------------- */
+    /* ---------------- HEADER ---------------- */
     header {
       background: linear-gradient(135deg, #091a2c 0%, #0f2b48 60%, #1a4a75 100%);
       color: white;
-      padding: 10px 16px;
+      padding: 10px 18px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       position: sticky;
       top: 0;
       z-index: 1000;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.18);
+      box-shadow: 0 3px 12px rgba(0,0,0,0.15);
       border-bottom: 3px solid var(--accent);
       min-height: 56px;
     }
     .header-left {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
     }
-    /* अधिकृत लोगो */
     .zp-brand-logo {
-      width: 42px;
-      height: 42px;
-      min-width: 42px;
+      width: 44px;
+      height: 44px;
+      min-width: 44px;
       border-radius: 50%;
       background: #ffffff;
       padding: 2px;
       border: 2px solid #fbbf24;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -86,13 +82,13 @@
     .header-center {
       text-align: left;
       flex: 1;
-      margin-left: 6px;
+      margin-left: 8px;
     }
     .header-center h2 {
-      font-size: 1.12rem;
+      font-size: 1.15rem;
       color: #fef08a;
       font-weight: 800;
-      letter-spacing: 0.3px;
+      letter-spacing: 0.5px;
       line-height: 1.2;
     }
     .header-center h4 {
@@ -106,20 +102,26 @@
     .header-right {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 10px;
     }
     .admin-pill {
-      background: rgba(255,255,255,0.15);
-      border: 1px solid rgba(255,255,255,0.35);
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.3);
       color: #fff;
       font-size: 0.75rem;
       font-weight: 700;
-      padding: 4px 10px;
+      padding: 5px 12px;
       border-radius: 20px;
       cursor: pointer;
+      transition: all 0.2s;
+    }
+    .admin-pill.active {
+      background: #ea580c;
+      border-color: #fef08a;
+      color: #fff;
     }
 
-    /* ---------------- लेआउट (LAYOUT) ---------------- */
+    /* ---------------- LAYOUT ---------------- */
     .main-wrapper {
       flex: 1;
       max-width: 860px;
@@ -129,45 +131,45 @@
     }
     .card {
       background: var(--card-bg);
-      border-radius: 14px;
-      padding: 20px;
-      box-shadow: 0 4px 16px rgba(15, 43, 72, 0.05);
+      border-radius: 16px;
+      padding: 22px;
+      box-shadow: 0 4px 20px rgba(15, 43, 72, 0.06);
       margin-bottom: 16px;
       border: 1px solid var(--border);
     }
 
-    /* ---------------- विद्यार्थी माहिती बार ---------------- */
+    /* ---------------- STUDENT BAR ---------------- */
     .student-bar {
       background: #ffffff;
-      padding: 12px 16px;
-      border-radius: 12px;
+      padding: 14px 18px;
+      border-radius: 14px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 14px;
+      margin-bottom: 16px;
       border-left: 5px solid var(--accent);
-      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.03);
       border-right: 1px solid var(--border);
       border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
     }
     .student-bar h3 {
-      font-size: 1.1rem;
+      font-size: 1.15rem;
       color: var(--primary);
       font-weight: 800;
     }
     .student-bar p {
-      font-size: 0.82rem;
+      font-size: 0.85rem;
       color: #64748b;
     }
 
-    /* ---------------- बटने (BUTTONS) ---------------- */
+    /* ---------------- BUTTONS ---------------- */
     .btn-main {
       width: 100%;
       background: linear-gradient(135deg, #1a4a75 0%, #0f2b48 100%);
       color: white;
       border: none;
-      padding: 13px;
+      padding: 13px 20px;
       border-radius: 10px;
       font-size: 1.05rem;
       font-weight: 800;
@@ -178,12 +180,17 @@
     .btn-main:active { transform: scale(0.98); }
 
     .btn-action {
-      padding: 8px 16px;
-      border-radius: 8px;
+      padding: 9px 16px;
+      border-radius: 10px;
       border: none;
       font-weight: 700;
       cursor: pointer;
       font-size: 0.88rem;
+      transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
       white-space: nowrap;
     }
     .btn-start {
@@ -191,11 +198,21 @@
       color: white;
       box-shadow: 0 2px 6px rgba(22, 163, 74, 0.25);
     }
-    .btn-locked { background: #e2e8f0; color: #64748b; cursor: not-allowed; }
+    .btn-locked { background: #f1f5f9; color: #94a3b8; border: 1px solid #e2e8f0; cursor: not-allowed; }
     .btn-retry {
       background: linear-gradient(135deg, #ea580c, #c2410c);
       color: white;
       box-shadow: 0 2px 6px rgba(234, 88, 12, 0.25);
+    }
+    .btn-toggle-admin {
+      background: #0284c7;
+      color: white;
+      padding: 5px 10px;
+      font-size: 0.78rem;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+      margin-left: 6px;
     }
     .btn-logout {
       background: #fee2e2;
@@ -205,17 +222,17 @@
       border-radius: 8px;
       font-weight: 700;
       cursor: pointer;
-      font-size: 0.82rem;
+      font-size: 0.85rem;
     }
 
-    /* ---------------- फॉर्म घटक ---------------- */
-    .form-group { margin-bottom: 14px; }
+    /* ---------------- FORMS ---------------- */
+    .form-group { margin-bottom: 15px; }
     .form-group label {
       display: block;
       font-weight: 700;
-      margin-bottom: 5px;
+      margin-bottom: 6px;
       color: #334155;
-      font-size: 0.92rem;
+      font-size: 0.95rem;
     }
     .form-group input, .form-group select {
       width: 100%;
@@ -231,12 +248,12 @@
       box-shadow: 0 0 0 3px rgba(26, 74, 117, 0.12);
     }
 
-    /* ---------------- चाचणी सूची ---------------- */
+    /* ---------------- TEST LIST ---------------- */
     .test-item {
       background: #ffffff;
-      border-radius: 12px;
-      padding: 14px 16px;
-      margin-bottom: 10px;
+      border-radius: 14px;
+      padding: 15px 18px;
+      margin-bottom: 12px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -247,22 +264,39 @@
     }
     .test-item.unlocked { border-left-color: var(--success); }
 
-    /* ---------------- परीक्षा परिसर (EXAM ARENA) ---------------- */
+    /* ---------------- GUIDELINES MODAL / SCREEN ---------------- */
+    .guideline-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 14px 0;
+      font-size: 0.95rem;
+    }
+    .guideline-table th, .guideline-table td {
+      border: 1px solid #cbd5e1;
+      padding: 10px;
+      text-align: center;
+    }
+    .guideline-table th {
+      background: #f1f5f9;
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    /* ---------------- EXAM ARENA ---------------- */
     .exam-topbar {
       background: #e2e8f0;
-      padding: 10px 14px;
-      border-radius: 10px;
+      padding: 12px 16px;
+      border-radius: 12px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 14px;
+      margin-bottom: 16px;
     }
     .section-selector {
       display: flex;
-      gap: 6px;
-      margin-bottom: 14px;
+      gap: 8px;
+      margin-bottom: 16px;
       overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
       padding-bottom: 4px;
     }
     .section-selector button {
@@ -270,12 +304,12 @@
       min-width: 120px;
       background: #ffffff;
       border: 1.5px solid #cbd5e1;
-      padding: 9px 10px;
-      border-radius: 8px;
+      padding: 10px 12px;
+      border-radius: 10px;
       font-weight: 700;
       cursor: pointer;
       color: #334155;
-      font-size: 0.88rem;
+      font-size: 0.9rem;
       white-space: nowrap;
     }
     .section-selector button.active {
@@ -287,44 +321,44 @@
     .question-card {
       background: white;
       border-radius: 12px;
-      padding: 15px;
+      padding: 16px;
       border: 1px solid var(--border);
-      margin-bottom: 14px;
+      margin-bottom: 16px;
     }
     .passage-box {
       background: #fffbeb;
-      border: 1px solid #fef3c7;
-      border-radius: 8px;
-      padding: 12px;
-      margin-bottom: 12px;
+      border: 1px solid #fde68a;
+      border-radius: 10px;
+      padding: 14px;
+      margin-bottom: 14px;
       font-size: 0.95rem;
-      line-height: 1.6;
+      line-height: 1.65;
       color: #92400e;
     }
     .fig-container {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
-      margin: 10px 0;
+      gap: 12px;
+      margin: 12px 0;
       background: #f8fafc;
-      padding: 10px;
-      border-radius: 8px;
+      padding: 12px;
+      border-radius: 10px;
       align-items: center;
       justify-content: center;
       border: 1px dashed #cbd5e1;
     }
     .fig-box {
-      width: 70px;
-      height: 70px;
+      width: 72px;
+      height: 72px;
       border: 2px solid #334155;
       background: #fff;
       display: flex;
       align-items: center;
       justify-content: center;
       margin: 0 auto 4px auto;
-      border-radius: 6px;
+      border-radius: 8px;
     }
-    .fig-box svg { width: 58px; height: 58px; }
+    .fig-box svg { width: 60px; height: 60px; }
     
     .options-grid {
       display: grid;
@@ -341,24 +375,23 @@
       cursor: pointer;
       background: #fff;
       font-size: 0.95rem;
-      min-height: 48px;
     }
-    .opt-label input { margin-right: 12px; width: 20px; height: 20px; accent-color: var(--secondary); }
+    .opt-label input { margin-right: 12px; width: 18px; height: 18px; accent-color: var(--secondary); }
 
     .section-nav-footer {
       display: flex;
       justify-content: space-between;
-      gap: 10px;
-      margin-top: 18px;
-      padding-top: 14px;
+      gap: 12px;
+      margin-top: 20px;
+      padding-top: 16px;
       border-top: 1.5px dashed #cbd5e1;
     }
     .btn-nav-prev {
       background: #475569;
       color: white;
       border: none;
-      padding: 11px 18px;
-      border-radius: 8px;
+      padding: 10px 18px;
+      border-radius: 10px;
       font-weight: 700;
       cursor: pointer;
     }
@@ -366,25 +399,49 @@
       background: var(--secondary);
       color: white;
       border: none;
-      padding: 11px 18px;
-      border-radius: 8px;
+      padding: 10px 18px;
+      border-radius: 10px;
       font-weight: 700;
       cursor: pointer;
       margin-left: auto;
     }
 
-    /* ---------------- उत्तरपत्रिका (ANSWER KEY) ---------------- */
+    /* ---------------- CELEBRATION RESULT ---------------- */
+    .congrats-header {
+      animation: pulse 1.5s infinite;
+      font-size: 1.7rem;
+      font-weight: 800;
+      color: #b45309;
+      margin-bottom: 8px;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.03); }
+      100% { transform: scale(1); }
+    }
+    .flower-badge {
+      font-size: 2.8rem;
+      margin-bottom: 6px;
+      display: inline-block;
+      animation: bounce 1s infinite alternate;
+    }
+    @keyframes bounce {
+      from { transform: translateY(0); }
+      to { transform: translateY(-8px); }
+    }
+
+    /* ---------------- ANSWER KEY ---------------- */
     .ak-correct { background: #ecfdf5 !important; border-color: #34d399 !important; color: #065f46; font-weight: 700; }
     .ak-wrong { background: #fef2f2 !important; border-color: #f87171 !important; color: #991b1b; font-weight: 700; }
-    .ak-badge { display: inline-block; padding: 4px 8px; border-radius: 6px; font-size: 0.8rem; margin-top: 6px; font-weight: 700; }
+    .ak-badge { display: inline-block; padding: 4px 10px; border-radius: 6px; font-size: 0.8rem; margin-top: 6px; font-weight: 700; }
 
-    /* ---------------- तळटीप (FOOTER) ---------------- */
+    /* ---------------- FOOTER ---------------- */
     footer {
       background: #091a2c;
       color: #94a3b8;
       text-align: center;
-      padding: 12px 16px;
-      font-size: 0.8rem;
+      padding: 14px 16px;
+      font-size: 0.82rem;
       border-top: 2px solid #1e293b;
       margin-top: auto;
     }
@@ -394,134 +451,51 @@
        मोबाईलसाठी खास ANDROID APP-LIKE FULL FIT VIEW (Width <= 650px)
        ========================================================================== */
     @media (max-width: 650px) {
-      body {
-        font-size: 15px;
-        background-color: #f8fafc;
-      }
-      header {
-        padding: 6px 10px;
-        min-height: 52px;
-      }
-      .zp-brand-logo { 
-        width: 36px; 
-        height: 36px; 
-        min-width: 36px; 
-      }
-      .header-center { margin-left: 6px; }
-      .header-center h2 { font-size: 0.95rem; line-height: 1.15; }
-      .header-center h4 { font-size: 0.7rem; }
-      .admin-pill { font-size: 0.68rem; padding: 3px 8px; }
+      body { font-size: 15px; background-color: #ffffff; }
+      header { padding: 8px 12px; height: 56px; }
+      .zp-brand-logo { width: 38px; height: 38px; min-width: 38px; }
+      .header-center { margin-left: 8px; }
+      .header-center h2 { font-size: 0.98rem; font-weight: 800; }
+      .header-center h4 { font-size: 0.72rem; }
+      .admin-pill { font-size: 0.7rem; padding: 4px 8px; }
 
-      /* १००% ॲप स्क्रीन फिटिंग */
-      .main-wrapper {
-        margin: 0;
-        padding: 8px 8px 40px 8px;
-        width: 100%;
-        max-width: 100%;
-      }
-      .card {
-        padding: 12px 10px;
-        border-radius: 12px;
-        margin-bottom: 10px;
-        border: 1px solid #e2e8f0;
-      }
+      .main-wrapper { margin: 0 auto; padding: 8px 8px 50px 8px; width: 100%; max-width: 100%; }
+      .card { padding: 14px 10px; border-radius: 12px; margin-bottom: 10px; border: 1px solid #e2e8f0; }
       
-      .student-bar {
-        padding: 10px 12px;
-        border-radius: 10px;
-        margin-bottom: 10px;
-      }
-      .student-bar h3 { font-size: 0.95rem; }
-      .student-bar p { font-size: 0.75rem; }
-      .btn-logout { padding: 5px 8px; font-size: 0.75rem; }
+      .student-bar { flex-direction: row; align-items: center; padding: 10px 12px; border-radius: 10px; }
+      .student-bar h3 { font-size: 1rem; }
+      .student-bar p { font-size: 0.78rem; }
+      .btn-logout { padding: 5px 8px; font-size: 0.78rem; }
       
-      .test-item {
-        padding: 10px 12px;
-        margin-bottom: 8px;
-        border-radius: 10px;
-      }
-      .test-item h4 { font-size: 0.92rem; }
-      .test-item span { font-size: 0.72rem; }
-      .btn-action { padding: 7px 12px; font-size: 0.82rem; }
+      .test-item { flex-direction: column; align-items: flex-start; gap: 8px; padding: 12px 10px; margin-bottom: 8px; border-radius: 10px; }
+      .test-item > div:last-child { width: 100%; display: flex; justify-content: flex-end; align-items: center; }
+      .btn-action { width: auto; padding: 7px 12px; font-size: 0.82rem; border-radius: 8px; }
 
-      .exam-topbar {
-        padding: 8px 10px;
-        border-radius: 8px;
-        margin-bottom: 8px;
-      }
-      .exam-topbar h3 { font-size: 0.92rem; }
-      .exam-topbar span { font-size: 0.72rem; }
-      .exam-topbar > div:last-child { font-size: 0.95rem; padding: 2px 8px; }
+      .exam-topbar { padding: 8px 10px; border-radius: 8px; margin-bottom: 10px; }
+      .exam-topbar h3 { font-size: 0.95rem; }
+      .exam-topbar span { font-size: 0.75rem; }
+      .exam-topbar > div:last-child { font-size: 1rem; padding: 2px 8px; }
 
-      .section-selector {
-        gap: 4px;
-        margin-bottom: 10px;
-      }
-      .section-selector button {
-        padding: 8px 6px;
-        font-size: 0.8rem;
-        min-width: 105px;
-        border-radius: 6px;
-      }
+      .section-selector { gap: 6px; margin-bottom: 12px; }
+      .section-selector button { padding: 8px 10px; font-size: 0.82rem; min-width: 110px; border-radius: 8px; }
 
-      .question-card {
-        padding: 12px 8px;
-        margin-bottom: 10px;
-        border-radius: 10px;
-      }
+      .question-card { padding: 12px 8px; margin-bottom: 10px; border-radius: 10px; }
+      .options-grid { grid-template-columns: 1fr; gap: 8px; }
+      .opt-label { padding: 10px 12px; font-size: 0.92rem; min-height: 44px; border-radius: 8px; }
+      .opt-label input { width: 20px; height: 20px; }
 
-      /* मोबाईलवर पर्याय १-कॉलममध्ये पूर्ण रुंदीत */
-      .options-grid {
-        grid-template-columns: 1fr;
-        gap: 8px;
-      }
-      .opt-label {
-        padding: 10px 12px;
-        font-size: 0.92rem;
-        min-height: 44px;
-        border-radius: 8px;
-      }
-      .opt-label input {
-        width: 18px;
-        height: 18px;
-        margin-right: 10px;
-      }
+      .fig-container { gap: 6px; padding: 8px; }
+      .fig-box { width: 62px; height: 62px; }
+      .fig-box svg { width: 50px; height: 50px; }
 
-      .fig-container {
-        gap: 6px;
-        padding: 6px;
-      }
-      .fig-box {
-        width: 60px;
-        height: 60px;
-      }
-      .fig-box svg {
-        width: 48px;
-        height: 48px;
-      }
-
-      .section-nav-footer {
-        flex-direction: column;
-        gap: 8px;
-        padding-top: 10px;
-      }
-      .btn-nav-prev, .btn-nav-next, .btn-main {
-        width: 100%;
-        padding: 11px;
-        font-size: 0.98rem;
-        border-radius: 8px;
-      }
-      
-      footer {
-        font-size: 0.72rem;
-        padding: 10px 8px;
-      }
+      .section-nav-footer { flex-direction: column; gap: 8px; padding-top: 12px; }
+      .btn-nav-prev, .btn-nav-next, .btn-main { width: 100%; padding: 12px; font-size: 1rem; border-radius: 8px; }
+      footer { font-size: 0.75rem; padding: 10px; }
     }
   </style>
 </head>
 <body>
 
-<!-- हेडर: डाव्या बाजूला एकच अधिकृत लोगो व संपूर्णवेळ हेडिंग -->
 <header>
   <div class="header-left">
     <div class="zp-brand-logo" title="जिल्हा परिषद बीड">
@@ -535,14 +509,14 @@
   </div>
 
   <div class="header-right">
-    <button class="admin-pill" onclick="triggerAdminModal()">Admin</button>
+    <button id="adminBtn" class="admin-pill" onclick="triggerAdminModal()">Admin</button>
   </div>
 </header>
 
 <div class="main-wrapper">
   <!-- १. नोंदणी / लॉगिन कार्ड -->
   <div id="registrationCard" class="card">
-    <div style="text-align:center; margin-bottom:14px;">
+    <div style="text-align:center; margin-bottom:16px;">
       <h2 style="color:var(--primary); font-weight:800; font-size:1.25rem;">विद्यार्थी नोंदणी व लॉगिन</h2>
       <p style="color:#64748b; font-size:0.85rem;">नवोदय सराव चाचणी सोडवण्यासाठी आपली माहिती भरा</p>
     </div>
@@ -584,7 +558,7 @@
       <button class="btn-logout" onclick="performLogout()">लॉग आउट</button>
     </div>
 
-    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
       <h3 style="color:var(--primary); font-weight:800; font-size:1.05rem;">
         दैनिक 15 सराव चाचण्यांची सूची (80 प्रश्न | 100 गुण)
       </h3>
@@ -593,7 +567,68 @@
     <div id="testsScheduleList"></div>
   </div>
 
-  <!-- ३. परीक्षा सोडवणे -->
+  <!-- ३. चाचणीपूर्व सूचना व विषय नियोजन स्क्रीन (Pre-Exam Guidelines) -->
+  <div id="guidelinesArea" style="display:none;" class="card">
+    <div style="text-align:center; border-bottom:2px solid var(--border); padding-bottom:12px; margin-bottom:14px;">
+      <h2 id="guideTestTitle" style="color:var(--primary); font-weight:800; font-size:1.3rem;"></h2>
+      <p style="color:#64748b; font-size:0.9rem;">अधिकृत नवोदय पॅटर्न - परीक्षेचे स्वरूप व महत्त्वाच्या सूचना</p>
+    </div>
+
+    <div style="background:#f1f5f9; padding:12px; border-radius:10px; margin-bottom:14px; border-left:4px solid var(--secondary);">
+      <p style="font-size:0.95rem; font-weight:700; color:var(--primary);">
+        ⏱️ एकूण वेळ: 120 मिनिटे (2 तास) | 📝 एकूण प्रश्न: 80 | 🎯 एकूण गुण: 100
+      </p>
+    </div>
+
+    <h4 style="color:var(--primary); font-weight:800; margin-bottom:6px;">विषय नियोजन व गुणभार:</h4>
+    <table class="guideline-table">
+      <thead>
+        <tr>
+          <th>विषय / घटक</th>
+          <th>प्रश्न संख्या</th>
+          <th>गुण</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="text-align:left; font-weight:600;">भाग 1: मानसिक क्षमता चाचणी (प्रश्न 1 ते 40)</td>
+          <td>40</td>
+          <td>50</td>
+        </tr>
+        <tr>
+          <td style="text-align:left; font-weight:600;">भाग 2: अंकगणित चाचणी (प्रश्न 41 ते 60)</td>
+          <td>20</td>
+          <td>25</td>
+        </tr>
+        <tr>
+          <td style="text-align:left; font-weight:600;">भाग 3: भाषा चाचणी - मराठी (प्रश्न 61 ते 80)</td>
+          <td>20</td>
+          <td>25</td>
+        </tr>
+        <tr style="background:#ecfdf5; font-weight:800; color:#065f46;">
+          <td>एकूण बेरीज</td>
+          <td>80 प्रश्न</td>
+          <td>100 गुण</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div style="background:#fffbeb; border:1px solid #fef3c7; border-radius:10px; padding:12px; margin-bottom:16px; font-size:0.9rem; color:#92400e;">
+      <b>महत्त्वाच्या सूचना:</b><br>
+      १. प्रत्येक बरोबर उत्तरासाठी <b>1.25 गुण</b> मिळतील. नकारात्मक गुण (Negative Marking) पद्धत नाही.<br>
+      २. वरील तिन्ही विभागांतील प्रश्न सोडवण्यासाठी 'पुढील भाग' व 'मागील भाग' बटणांचा वापर करा.<br>
+      ३. परीक्षा संपल्यानंतर निकाल पाहण्यासाठी 'चाचणी सबमिट करा' बटणावर क्लिक करा.
+    </div>
+
+    <div style="display:flex; gap:10px;">
+      <button class="btn-main" style="background:#475569; flex:1;" onclick="cancelGuideline()">रद्द करा</button>
+      <button id="btnStartRealExam" class="btn-main" style="background:var(--success); flex:2;" onclick="startExamFromGuideline()">
+        चाचणी सुरू करा ➔
+      </button>
+    </div>
+  </div>
+
+  <!-- ४. प्रत्यक्ष परीक्षा परिसर -->
   <div id="testArena" style="display:none;" class="card">
     <div class="exam-topbar">
       <div>
@@ -615,24 +650,25 @@
     <div id="sectionNavFooter" class="section-nav-footer"></div>
   </div>
 
-  <!-- ४. निकाल व प्रमाणपत्र -->
+  <!-- ५. निकाल व फुलांच्या स्वागताचे अभिनंदन पेज (Celebration Page) -->
   <div id="resultCertArea" style="display:none;" class="card" style="text-align:center;">
-    <div style="text-align:center; padding-bottom:10px; border-bottom:2px solid #e2e8f0; margin-bottom:12px;">
-      <h2 style="color:var(--primary); font-weight:800; font-size:1.3rem;">जिल्हा परिषद, बीड</h2>
-      <h4 style="color:#64748b; font-weight:600; font-size:0.9rem;">नवोदय सराव परीक्षा - निकाल पत्रक</h4>
+    <div style="text-align:center; padding:10px 0;">
+      <div class="flower-badge">🌸 🌺 💐 🌻</div>
+      <div class="congrats-header">🎉 मनःपूर्वक अभिनंदन! 🎉</div>
+      <p style="font-size:1.05rem; font-weight:700; color:#0f2b48;">आपली नवोदय सराव चाचणी यशस्वीरीत्या पूर्ण झाली आहे!</p>
     </div>
     
-    <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:10px; padding:10px; margin-bottom:12px; text-align:center;">
+    <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:10px; padding:12px; margin:12px 0; text-align:center;">
       <p style="font-size:0.95rem;">विद्यार्थी: <b><span id="cStudent"></span></b> | तालुका: <b><span id="cTaluka"></span></b></p>
     </div>
 
-    <div style="font-size:1.35rem; font-weight:800; color:var(--secondary); margin:10px 0; text-align:center;">
+    <div style="font-size:1.6rem; font-weight:800; color:var(--secondary); margin:12px 0; text-align:center;">
       प्राप्त गुण: <span id="cScore"></span> / 100 (<span id="cPerc"></span>%)
     </div>
     
-    <div id="cFeedback" style="padding:10px; border-radius:8px; font-weight:700; margin:10px 0; text-align:center;"></div>
+    <div id="cFeedback" style="padding:12px; border-radius:8px; font-weight:700; margin:12px 0; text-align:center;"></div>
     
-    <div style="display:flex; flex-wrap:wrap; gap:10px; margin-top:14px;">
+    <div style="display:flex; flex-wrap:wrap; gap:10px; margin-top:16px;">
       <button class="btn-main" style="background:var(--secondary); flex:1; min-width:160px;" onclick="showAnswerKeyView()">
         📝 Answer Key (उत्तरपत्रिका) पहा
       </button>
@@ -642,7 +678,7 @@
     </div>
   </div>
 
-  <!-- ५. सविस्तर उत्तरपत्रिका व विश्लेषण स्क्रीन -->
+  <!-- ६. सविस्तर उत्तरपत्रिका व विश्लेषण स्क्रीन -->
   <div id="answerKeyArea" style="display:none;" class="card">
     <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; border-bottom:2px solid var(--border); padding-bottom:10px;">
       <div>
@@ -671,26 +707,29 @@
 <script>
   const FIREBASE_DB_URL = "https://nvs-zp-beed-online-test-default-rtdb.firebaseio.com";
 
+  // तारखा मराठी फॉरमॅटसह (11 नोव्हेंबर 2026 इत्यादी)
   const EXAM_SCHEDULE = [
-    { id: 1, title: "नवोदय सराव चाचणी क्र. 01", date: "2026-11-11", file: "test1.json" },
-    { id: 2, title: "नवोदय सराव चाचणी क्र. 02", date: "2026-11-12", file: "test2.json" },
-    { id: 3, title: "नवोदय सराव चाचणी क्र. 03", date: "2026-11-13", file: "test3.json" },
-    { id: 4, title: "नवोदय सराव चाचणी क्र. 04", date: "2026-11-14", file: "test4.json" },
-    { id: 5, title: "नवोदय सराव चाचणी क्र. 05", date: "2026-11-15", file: "test5.json" },
-    { id: 6, title: "नवोदय सराव चाचणी क्र. 06", date: "2026-11-16", file: "test6.json" },
-    { id: 7, title: "नवोदय सराव चाचणी क्र. 07", date: "2026-11-17", file: "test7.json" },
-    { id: 8, title: "नवोदय सराव चाचणी क्र. 08", date: "2026-11-18", file: "test8.json" },
-    { id: 9, title: "नवोदय सराव चाचणी क्र. 09", date: "2026-11-19", file: "test9.json" },
-    { id: 10, title: "नवोदय सराव चाचणी क्र. 10", date: "2026-11-20", file: "test10.json" },
-    { id: 11, title: "नवोदय सराव चाचणी क्र. 11", date: "2026-11-21", file: "test11.json" },
-    { id: 12, title: "नवोदय सराव चाचणी क्र. 12", date: "2026-11-22", file: "test12.json" },
-    { id: 13, title: "नवोदय सराव चाचणी क्र. 13", date: "2026-11-23", file: "test13.json" },
-    { id: 14, title: "नवोदय सराव चाचणी क्र. 14", date: "2026-11-24", file: "test14.json" },
-    { id: 15, title: "नवोदय सराव चाचणी क्र. 15", date: "2026-11-25", file: "test15.json" }
+    { id: 1, title: "नवोदय सराव चाचणी क्र. 01", dateISO: "2026-11-11", dateMarathi: "11 नोव्हेंबर 2026", file: "test1.json" },
+    { id: 2, title: "नवोदय सराव चाचणी क्र. 02", dateISO: "2026-11-12", dateMarathi: "12 नोव्हेंबर 2026", file: "test2.json" },
+    { id: 3, title: "नवोदय सराव चाचणी क्र. 03", dateISO: "2026-11-13", dateMarathi: "13 नोव्हेंबर 2026", file: "test3.json" },
+    { id: 4, title: "नवोदय सराव चाचणी क्र. 04", dateISO: "2026-11-14", dateMarathi: "14 नोव्हेंबर 2026", file: "test4.json" },
+    { id: 5, title: "नवोदय सराव चाचणी क्र. 05", dateISO: "2026-11-15", dateMarathi: "15 नोव्हेंबर 2026", file: "test5.json" },
+    { id: 6, title: "नवोदय सराव चाचणी क्र. 06", dateISO: "2026-11-16", dateMarathi: "16 नोव्हेंबर 2026", file: "test6.json" },
+    { id: 7, title: "नवोदय सराव चाचणी क्र. 07", dateISO: "2026-11-17", dateMarathi: "17 नोव्हेंबर 2026", file: "test7.json" },
+    { id: 8, title: "नवोदय सराव चाचणी क्र. 08", dateISO: "2026-11-18", dateMarathi: "18 नोव्हेंबर 2026", file: "test8.json" },
+    { id: 9, title: "नवोदय सराव चाचणी क्र. 09", dateISO: "2026-11-19", dateMarathi: "19 नोव्हेंबर 2026", file: "test9.json" },
+    { id: 10, title: "नवोदय सराव चाचणी क्र. 10", dateISO: "2026-11-20", dateMarathi: "20 नोव्हेंबर 2026", file: "test10.json" },
+    { id: 11, title: "नवोदय सराव चाचणी क्र. 11", dateISO: "2026-11-21", dateMarathi: "21 नोव्हेंबर 2026", file: "test11.json" },
+    { id: 12, title: "नवोदय सराव चाचणी क्र. 12", dateISO: "2026-11-22", dateMarathi: "22 नोव्हेंबर 2026", file: "test12.json" },
+    { id: 13, title: "नवोदय सराव चाचणी क्र. 13", dateISO: "2026-11-23", dateMarathi: "23 नोव्हेंबर 2026", file: "test13.json" },
+    { id: 14, title: "नवोदय सराव चाचणी क्र. 14", dateISO: "2026-11-24", dateMarathi: "24 नोव्हेंबर 2026", file: "test14.json" },
+    { id: 15, title: "नवोदय सराव चाचणी क्र. 15", dateISO: "2026-11-25", dateMarathi: "25 नोव्हेंबर 2026", file: "test15.json" }
   ];
 
   let loggedInUser = null;
-  let isAdminUnlocked = false;
+  let isAdminMode = false;
+  let adminOverrides = {}; // मॅन्युअल lock/unlock स्थिती
+  let currentPendingTest = null;
   let currentQuizData = null;
   let quizInterval = null;
   let recordedChoices = {};
@@ -698,6 +737,12 @@
   let akSelectedSection = 'mental';
 
   window.addEventListener("DOMContentLoaded", () => {
+    // ॲडमिन मॅन्युअल लॉक-अनलॉक ओव्हरराईड लोड करणे
+    const savedOverrides = localStorage.getItem("jnv_admin_overrides");
+    if (savedOverrides) {
+      try { adminOverrides = JSON.parse(savedOverrides); } catch(e){}
+    }
+
     const stored = localStorage.getItem("jnv_beed_active_user");
     if (stored) {
       loggedInUser = JSON.parse(stored);
@@ -734,6 +779,7 @@
 
   function renderDashboard() {
     document.getElementById("registrationCard").style.display = "none";
+    document.getElementById("guidelinesArea").style.display = "none";
     document.getElementById("testArena").style.display = "none";
     document.getElementById("resultCertArea").style.display = "none";
     document.getElementById("answerKeyArea").style.display = "none";
@@ -747,39 +793,95 @@
     const todayDate = new Date().toISOString().split("T")[0];
 
     EXAM_SCHEDULE.forEach(item => {
-      const isAccessible = isAdminUnlocked || (todayDate >= item.date);
-      const savedScore = loggedInUser.history && loggedInUser.history[item.id];
+      // मॅन्युअल ओव्हरराईड प्राधान्य (Admin Override Priority)
+      let isAccessible = false;
+      if (adminOverrides[item.id] !== undefined) {
+        isAccessible = adminOverrides[item.id];
+      } else {
+        isAccessible = (todayDate >= item.dateISO);
+      }
 
+      const savedScore = loggedInUser.history && loggedInUser.history[item.id];
       const card = document.createElement("div");
       card.className = "test-item " + (isAccessible ? "unlocked" : "");
 
       let actionArea = "";
       if (!isAccessible) {
-        actionArea = '<button class="btn-action btn-locked">🔒 ' + item.date + ' अनलॉक</button>';
+        actionArea = `<button class="btn-action btn-locked">🔒 ${item.dateMarathi} रोजी अनलॉक</button>`;
       } else if (savedScore !== undefined) {
-        actionArea = '<div style="text-align:right;"><span style="font-weight:800; color:#1a4a75; display:block; font-size:0.9rem; margin-bottom:2px;">गुण: ' + savedScore + '/100</span><button class="btn-action btn-retry" onclick="fetchAndLaunchTest(' + item.id + ')">पुन्हा सोडवा</button></div>';
+        actionArea = `
+          <div style="text-align:right;">
+            <span style="font-weight:800; color:#1a4a75; display:block; font-size:0.9rem; margin-bottom:2px;">गुण: ${savedScore}/100</span>
+            <button class="btn-action btn-retry" onclick="openTestGuideline(${item.id})">पुन्हा सोडवा</button>
+          </div>
+        `;
       } else {
-        actionArea = '<button class="btn-action btn-start" onclick="fetchAndLaunchTest(' + item.id + ')">चाचणी सोडवा</button>';
+        actionArea = `<button class="btn-action btn-start" onclick="openTestGuideline(${item.id})">चाचणी सोडवा</button>`;
       }
 
-      card.innerHTML = '<div><h4 style="font-weight:700; font-size:1rem; color:#0f2b48;">' + item.title + '</h4><span style="font-size:0.8rem; color:#64748b;">80 प्रश्न | 100 गुण | 120 मिनिटे</span></div><div>' + actionArea + '</div>';
+      // ॲडमिन मोडमध्ये मॅन्युअल टॉगल बटन
+      let adminToggleHtml = "";
+      if (isAdminMode) {
+        if (isAccessible) {
+          adminToggleHtml = `<button class="btn-toggle-admin" style="background:#dc2626;" onclick="toggleTestStatus(${item.id}, false)">🔒 Lock करा</button>`;
+        } else {
+          adminToggleHtml = `<button class="btn-toggle-admin" style="background:#16a34a;" onclick="toggleTestStatus(${item.id}, true)">🔓 Unlock करा</button>`;
+        }
+      }
+
+      card.innerHTML = `
+        <div>
+          <h4 style="font-weight:700; font-size:1rem; color:#0f2b48;">${item.title}</h4>
+          <span style="font-size:0.8rem; color:#64748b;">दिनांक: ${item.dateMarathi} | 80 प्रश्न | 100 गुण</span>
+        </div>
+        <div style="display:flex; align-items:center;">
+          ${actionArea}
+          ${adminToggleHtml}
+        </div>
+      `;
       container.appendChild(card);
     });
   }
 
-  function fetchAndLaunchTest(testId) {
-    const testMeta = EXAM_SCHEDULE.find(t => t.id === testId);
+  // ॲडमिन मॅन्युअल टॉगल फंक्शन
+  function toggleTestStatus(testId, shouldUnlock) {
+    adminOverrides[testId] = shouldUnlock;
+    localStorage.setItem("jnv_admin_overrides", JSON.stringify(adminOverrides));
+    renderDashboard();
+  }
 
-    fetch(testMeta.file)
+  // चाचणी सुरू करण्यापूर्वी मार्गदर्शक सूचना दाखवणे
+  function openTestGuideline(testId) {
+    const testMeta = EXAM_SCHEDULE.find(t => t.id === testId);
+    currentPendingTest = testMeta;
+
+    document.getElementById("dashboardArea").style.display = "none";
+    document.getElementById("guidelinesArea").style.display = "block";
+    document.getElementById("guideTestTitle").innerText = testMeta.title;
+    window.scrollTo(0, 0);
+  }
+
+  function cancelGuideline() {
+    currentPendingTest = null;
+    document.getElementById("guidelinesArea").style.display = "none";
+    document.getElementById("dashboardArea").style.display = "block";
+    window.scrollTo(0, 0);
+  }
+
+  function startExamFromGuideline() {
+    if (!currentPendingTest) return;
+
+    fetch(currentPendingTest.file)
       .then(res => {
         if (!res.ok) throw new Error("File not found");
         return res.json();
       })
       .then(data => {
+        document.getElementById("guidelinesArea").style.display = "none";
         launchTestWithData(data);
       })
       .catch(err => {
-        alert(testMeta.file + " लोड करता आली नाही. कृपया फाईल GitHub वर योग्य नावाने अपलोड आहे का ते तपासा.");
+        alert(currentPendingTest.file + " लोड करता आली नाही. कृपया फाईल GitHub वर अपलोड आहे का ते तपासा.");
       });
   }
 
@@ -793,7 +895,6 @@
     recordedChoices = {};
     selectedSection = 'mental';
 
-    document.getElementById("dashboardArea").style.display = "none";
     document.getElementById("testArena").style.display = "block";
     document.getElementById("activeExamLabel").innerText = testData.title;
 
@@ -839,11 +940,11 @@
       let opts = '<div class="options-grid">';
       q.options.forEach((opt, idx) => {
         const isSel = recordedChoices[q.id] === idx ? "checked" : "";
-        opts += '<label class="opt-label"><input type="radio" name="q_' + q.id + '" value="' + idx + '" ' + isSel + ' onchange="markAnswer(' + q.id + ', ' + idx + ')"><span>' + opt + '</span></label>';
+        opts += `<label class="opt-label"><input type="radio" name="q_${q.id}" value="${idx}" ${isSel} onchange="markAnswer(${q.id}, ${idx})"><span>${opt}</span></label>`;
       });
       opts += '</div>';
 
-      qDiv.innerHTML = pText + '<div style="font-weight:700; margin-bottom:6px; font-size:0.98rem; line-height:1.4;">' + q.text + '</div>' + figHtml + opts;
+      qDiv.innerHTML = `${pText}<div style="font-weight:700; margin-bottom:6px; font-size:0.98rem; line-height:1.4;">${q.text}</div>${figHtml}${opts}`;
       container.appendChild(qDiv);
     });
 
@@ -889,6 +990,7 @@
     }
   }
 
+  // निकाल व फुलांचा वर्षाव (Celebration Confetti)
   function finalizeEvaluation() {
     let correct = 0;
     currentQuizData.questions.forEach(q => {
@@ -934,7 +1036,34 @@
       fBox.style.background = "#fef2f2"; fBox.style.color = "#991b1b";
       fBox.innerText = "🎯 नियमित सरावाची गरज आहे! संकल्पना समजून घेऊन पुन्हा प्रयत्न करा.";
     }
+
+    // फुलांचा व कन्फेटीचा आकर्षक वर्षाव (Flower/Confetti Blast)
+    triggerCelebration();
     window.scrollTo(0, 0);
+  }
+
+  function triggerCelebration() {
+    try {
+      confetti({
+        particleCount: 120,
+        spread: 80,
+        origin: { y: 0.6 }
+      });
+      setTimeout(() => {
+        confetti({
+          particleCount: 80,
+          angle: 60,
+          spread: 55,
+          origin: { x: 0 }
+        });
+        confetti({
+          particleCount: 80,
+          angle: 120,
+          spread: 55,
+          origin: { x: 1 }
+        });
+      }, 300);
+    } catch(e) {}
   }
 
   function showAnswerKeyView() {
@@ -1045,9 +1174,24 @@
   }
 
   function triggerAdminModal() {
-    if (prompt("ॲडमिन पिन टाका:") === "3506") {
-      isAdminUnlocked = true;
-      renderDashboard();
+    if (!isAdminMode) {
+      const pin = prompt("ॲडमिन पिन टाका:");
+      if (pin === "3506") {
+        isAdminMode = true;
+        document.getElementById("adminBtn").classList.add("active");
+        document.getElementById("adminBtn").innerText = "Admin (Active)";
+        alert("ॲडमिन मोड सुरू झाला आहे! आता तुम्ही प्रत्येक चाचणी मॅन्युअली Lock किंवा Unlock करू शकता.");
+        renderDashboard();
+      } else if (pin !== null) {
+        alert("चुकीचा पिन!");
+      }
+    } else {
+      if (confirm("ॲडमिन मोड बंद करायचा आहे का?")) {
+        isAdminMode = false;
+        document.getElementById("adminBtn").classList.remove("active");
+        document.getElementById("adminBtn").innerText = "Admin";
+        renderDashboard();
+      }
     }
   }
 
