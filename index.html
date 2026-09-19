@@ -62,6 +62,7 @@
       align-items: center;
       gap: 12px;
     }
+    /* सिक्रेट ॲडमिन ट्रिगरसाठी लोगो कंटेनर (३ वेळा टॅप करा) */
     .zp-brand-logo {
       width: 46px;
       height: 46px;
@@ -75,12 +76,15 @@
       align-items: center;
       justify-content: center;
       overflow: hidden;
+      cursor: pointer;
+      user-select: none;
     }
     .zp-brand-logo img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       border-radius: 50%;
+      pointer-events: none;
     }
     .header-center {
       text-align: center;
@@ -101,26 +105,18 @@
       letter-spacing: 0.3px;
       margin-top: 2px;
     }
-    .header-right {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .admin-pill {
-      background: rgba(255,255,255,0.12);
-      border: 1px solid rgba(255,255,255,0.3);
+    /* ॲडमिन बॅज (फक्त ॲडमिन मोड सक्रिय झाल्यावरच उजवीकडे दिसेल) */
+    #adminStatusBadge {
+      display: none;
+      background: #ea580c;
+      border: 1px solid #fef08a;
       color: #fff;
       font-size: 0.75rem;
-      font-weight: 700;
-      padding: 5px 12px;
+      font-weight: 800;
+      padding: 4px 10px;
       border-radius: 20px;
       cursor: pointer;
-      transition: all 0.2s;
-    }
-    .admin-pill.active {
-      background: #ea580c;
-      border-color: #fef08a;
-      color: #fff;
+      animation: pulse 1.5s infinite;
     }
 
     /* ---------------- LAYOUT ---------------- */
@@ -460,7 +456,6 @@
       .header-center { padding: 0 4px; }
       .header-center h2 { font-size: 0.95rem; line-height: 1.15; }
       .header-center h3 { font-size: 0.74rem; line-height: 1.2; }
-      .admin-pill { font-size: 0.68rem; padding: 3px 8px; }
 
       .main-wrapper { margin: 0 auto; padding: 8px 8px 50px 8px; width: 100%; max-width: 100%; }
       .card { padding: 14px 10px; border-radius: 12px; margin-bottom: 10px; border: 1px solid #e2e8f0; }
@@ -499,10 +494,10 @@
 </head>
 <body>
 
-<!-- हेडर: वरती मध्यभागी ठळक शीर्षक आणि डाव्या कोपऱ्यात लोगो -->
+<!-- हेडर: वरती मध्यभागी ठळक शीर्षक आणि डाव्या कोपऱ्यात लोगो (३ वेळा टॅप केल्यास ॲडमिन सुरू) -->
 <header>
   <div class="header-left">
-    <div class="zp-brand-logo" title="जिल्हा परिषद बीड">
+    <div class="zp-brand-logo" id="secretAdminTrigger" title="जिल्हा परिषद बीड">
       <img src="logo.png" alt="जिल्हा परिषद बीड" onerror="this.onerror=null; this.src='https://upload.wikimedia.org/wikipedia/commons/8/84/Government_of_Maharashtra.png'">
     </div>
   </div>
@@ -513,7 +508,8 @@
   </div>
 
   <div class="header-right">
-    <button id="adminBtn" class="admin-pill" onclick="triggerAdminModal()">Admin</button>
+    <!-- फक्त ॲडमिन मोड सुरू झाल्यावरच दिसणारे बॅज -->
+    <button id="adminStatusBadge" onclick="exitAdminMode()">Admin Exit</button>
   </div>
 </header>
 
@@ -712,7 +708,6 @@
   // Firebase Realtime Database URL
   const FIREBASE_DB_URL = "https://nvs-zp-beed-online-test-default-rtdb.firebaseio.com";
 
-  // प्रत्येक चाचणीच्या नावात "2026-27" जोडले आहे
   const EXAM_SCHEDULE = [
     { id: 1, title: "नवोदय सराव चाचणी क्र. 01 (2026-27)", dateISO: "2026-11-11", dateMarathi: "11 नोव्हेंबर 2026", file: "test1.json" },
     { id: 2, title: "नवोदय सराव चाचणी क्र. 02 (2026-27)", dateISO: "2026-11-12", dateMarathi: "12 नोव्हेंबर 2026", file: "test2.json" },
@@ -741,6 +736,10 @@
   let selectedSection = 'mental';
   let akSelectedSection = 'mental';
 
+  // सिक्रेट ॲडमिन ट्रिगर (लोगोवर ३ वेळा टॅप करणे)
+  let logoTapCount = 0;
+  let logoTapTimeout = null;
+
   window.addEventListener("DOMContentLoaded", () => {
     fetchGlobalLockStatus();
 
@@ -749,7 +748,52 @@
       loggedInUser = JSON.parse(stored);
       renderDashboard();
     }
+
+    // १. सिक्रेट पद्धत १: लोगोवर सलग ३ वेळा क्लिक करणे
+    const logoEl = document.getElementById("secretAdminTrigger");
+    if (logoEl) {
+      logoEl.addEventListener("click", () => {
+        logoTapCount++;
+        clearTimeout(logoTapTimeout);
+        logoTapTimeout = setTimeout(() => { logoTapCount = 0; }, 700);
+
+        if (logoTapCount >= 3) {
+          logoTapCount = 0;
+          openAdminPrompt();
+        }
+      });
+    }
+
+    // २. सिक्रेट पद्धत २: कीबोर्ड शॉर्टकट (Ctrl + Shift + A किंवा Alt + A)
+    window.addEventListener("keydown", (e) => {
+      if ((e.ctrlKey && e.shiftKey && (e.key === 'A' || e.key === 'a')) || (e.altKey && (e.key === 'A' || e.key === 'a'))) {
+        e.preventDefault();
+        openAdminPrompt();
+      }
+    });
   });
+
+  function openAdminPrompt() {
+    if (!isAdminMode) {
+      const pin = prompt("🔐 ॲडमिन गुप्त पिन टाका:");
+      if (pin === "3506") {
+        isAdminMode = true;
+        document.getElementById("adminStatusBadge").style.display = "block";
+        alert("ॲडमिन मोड सक्रिय झाला आहे! तुम्ही केलेल्या बदलांचे नियंत्रण सर्व युजर्ससाठी तत्काळ लागू होईल.");
+        renderDashboard();
+      } else if (pin !== null) {
+        alert("चुकीचा पिन!");
+      }
+    }
+  }
+
+  function exitAdminMode() {
+    if (confirm("ॲडमिन मोडमधून बाहेर पडायचे आहे का?")) {
+      isAdminMode = false;
+      document.getElementById("adminStatusBadge").style.display = "none";
+      renderDashboard();
+    }
+  }
 
   function fetchGlobalLockStatus() {
     fetch(`${FIREBASE_DB_URL}/unlocked_tests.json`)
@@ -760,7 +804,7 @@
           if (loggedInUser) renderDashboard();
         }
       })
-      .catch(err => console.log("Lock status fetch note:", err));
+      .catch(err => console.log("Lock status fetch:", err));
   }
 
   function handleRegistration() {
@@ -864,7 +908,7 @@
       body: JSON.stringify(shouldUnlock)
     })
     .then(() => {
-      alert(`चाचणी क्र. ${testId} आता सर्व युजर्ससाठी ${shouldUnlock ? 'अनलॉक (खुली)' : 'लॉक (बंद)'} झाली आहे.`);
+      alert(`चाचणी क्र. ${testId} आता सर्व विद्यार्थ्यांसाठी ${shouldUnlock ? 'अनलॉक (खुली)' : 'लॉक (बंद)'} झाली आहे.`);
     })
     .catch(err => {
       alert("स्टेटस अपडेट करताना त्रुटी आली. इंटरनेट कनेक्शन तपासा.");
@@ -1189,28 +1233,6 @@
   function goToAkSection(secKey) {
     displayAkSection(secKey);
     window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-
-  function triggerAdminModal() {
-    if (!isAdminMode) {
-      const pin = prompt("ॲडमिन पिन टाका:");
-      if (pin === "3506") {
-        isAdminMode = true;
-        document.getElementById("adminBtn").classList.add("active");
-        document.getElementById("adminBtn").innerText = "Admin (Active)";
-        alert("ॲडमिन मोड सक्रिय झाला आहे! तुम्ही जे बदल कराल ते Firebase द्वारे सर्व युजर्ससाठी एकाच वेळी लागू होतील.");
-        renderDashboard();
-      } else if (pin !== null) {
-        alert("चुकीचा पिन!");
-      }
-    } else {
-      if (confirm("ॲडमिन मोड बंद करायचा आहे का?")) {
-        isAdminMode = false;
-        document.getElementById("adminBtn").classList.remove("active");
-        document.getElementById("adminBtn").innerText = "Admin";
-        renderDashboard();
-      }
-    }
   }
 
   function performLogout() {
