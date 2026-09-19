@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
   <meta name="theme-color" content="#0f2b48">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <title>JNVST सराव परीक्षा - जिल्हा परिषद बीड</title>
   <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
@@ -205,14 +208,15 @@
       box-shadow: 0 2px 6px rgba(234, 88, 12, 0.25);
     }
     .btn-toggle-admin {
-      background: #0284c7;
       color: white;
-      padding: 5px 10px;
-      font-size: 0.78rem;
-      border-radius: 6px;
+      padding: 6px 12px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      border-radius: 8px;
       border: none;
       cursor: pointer;
-      margin-left: 6px;
+      margin-left: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.15);
     }
     .btn-logout {
       background: #fee2e2;
@@ -264,7 +268,7 @@
     }
     .test-item.unlocked { border-left-color: var(--success); }
 
-    /* ---------------- GUIDELINES MODAL / SCREEN ---------------- */
+    /* ---------------- GUIDELINES TABLE ---------------- */
     .guideline-table {
       width: 100%;
       border-collapse: collapse;
@@ -615,8 +619,8 @@
 
     <div style="background:#fffbeb; border:1px solid #fef3c7; border-radius:10px; padding:12px; margin-bottom:16px; font-size:0.9rem; color:#92400e;">
       <b>महत्त्वाच्या सूचना:</b><br>
-      १. प्रत्येक बरोबर उत्तरासाठी <b>1.25 गुण</b> मिळतील. नकारात्मक गुण (Negative Marking) पद्धत नाही.<br>
-      २. वरील तिन्ही विभागांतील प्रश्न सोडवण्यासाठी 'पुढील भाग' व 'मागील भाग' बटणांचा वापर करा.<br>
+      १. प्रत्येक बरोबर उत्तरासाठी <b>1.25 गुण</b> मिळतील. नकारात्मक गुण (Negative Marking) नाही.<br>
+      २. तिन्ही विभागांतील प्रश्न सोडवण्यासाठी 'पुढील भाग' व 'मागील भाग' बटणांचा वापर करा.<br>
       ३. परीक्षा संपल्यानंतर निकाल पाहण्यासाठी 'चाचणी सबमिट करा' बटणावर क्लिक करा.
     </div>
 
@@ -705,9 +709,9 @@
 </footer>
 
 <script>
+  // Firebase Realtime Database URL
   const FIREBASE_DB_URL = "https://nvs-zp-beed-online-test-default-rtdb.firebaseio.com";
 
-  // तारखा मराठी फॉरमॅटसह (11 नोव्हेंबर 2026 इत्यादी)
   const EXAM_SCHEDULE = [
     { id: 1, title: "नवोदय सराव चाचणी क्र. 01", dateISO: "2026-11-11", dateMarathi: "11 नोव्हेंबर 2026", file: "test1.json" },
     { id: 2, title: "नवोदय सराव चाचणी क्र. 02", dateISO: "2026-11-12", dateMarathi: "12 नोव्हेंबर 2026", file: "test2.json" },
@@ -728,7 +732,7 @@
 
   let loggedInUser = null;
   let isAdminMode = false;
-  let adminOverrides = {}; // मॅन्युअल lock/unlock स्थिती
+  let globalUnlockedTests = {}; // सर्व युजर्ससाठी क्लाऊड-सिंक केलेले अनलॉक रेकॉर्ड
   let currentPendingTest = null;
   let currentQuizData = null;
   let quizInterval = null;
@@ -737,11 +741,8 @@
   let akSelectedSection = 'mental';
 
   window.addEventListener("DOMContentLoaded", () => {
-    // ॲडमिन मॅन्युअल लॉक-अनलॉक ओव्हरराईड लोड करणे
-    const savedOverrides = localStorage.getItem("jnv_admin_overrides");
-    if (savedOverrides) {
-      try { adminOverrides = JSON.parse(savedOverrides); } catch(e){}
-    }
+    // 1. Firebase मधून सर्व युजर्ससाठी अनलॉक स्थिती लोड करणे
+    fetchGlobalLockStatus();
 
     const stored = localStorage.getItem("jnv_beed_active_user");
     if (stored) {
@@ -749,6 +750,19 @@
       renderDashboard();
     }
   });
+
+  // Firebase वरून क्लाऊड अनलॉक स्थिती आणणे
+  function fetchGlobalLockStatus() {
+    fetch(`${FIREBASE_DB_URL}/unlocked_tests.json`)
+      .then(res => res.json())
+      .then(data => {
+        if (data) {
+          globalUnlockedTests = data;
+          if (loggedInUser) renderDashboard();
+        }
+      })
+      .catch(err => console.log("Lock status fetch note:", err));
+  }
 
   function handleRegistration() {
     const name = document.getElementById("sName").value.trim();
@@ -793,10 +807,11 @@
     const todayDate = new Date().toISOString().split("T")[0];
 
     EXAM_SCHEDULE.forEach(item => {
-      // मॅन्युअल ओव्हरराईड प्राधान्य (Admin Override Priority)
+      // १. तारीख पूर्ण झाली असल्यास आपोआप अनलॉक, किंवा
+      // २. ॲडमिनने क्लाऊडवरून (Firebase) मॅन्युअली अनलॉक केले असल्यास सर्वांसाठी अनलॉक!
       let isAccessible = false;
-      if (adminOverrides[item.id] !== undefined) {
-        isAccessible = adminOverrides[item.id];
+      if (globalUnlockedTests[item.id] !== undefined) {
+        isAccessible = globalUnlockedTests[item.id];
       } else {
         isAccessible = (todayDate >= item.dateISO);
       }
@@ -819,13 +834,13 @@
         actionArea = `<button class="btn-action btn-start" onclick="openTestGuideline(${item.id})">चाचणी सोडवा</button>`;
       }
 
-      // ॲडमिन मोडमध्ये मॅन्युअल टॉगल बटन
+      // ॲडमिन मोडमध्ये मॅन्युअल टॉगल बटन (जे थेट Firebase मध्ये अपडेट होते)
       let adminToggleHtml = "";
       if (isAdminMode) {
         if (isAccessible) {
-          adminToggleHtml = `<button class="btn-toggle-admin" style="background:#dc2626;" onclick="toggleTestStatus(${item.id}, false)">🔒 Lock करा</button>`;
+          adminToggleHtml = `<button class="btn-toggle-admin" style="background:#dc2626;" onclick="toggleGlobalTestStatus(${item.id}, false)">🔒 सर्वांसाठी Lock करा</button>`;
         } else {
-          adminToggleHtml = `<button class="btn-toggle-admin" style="background:#16a34a;" onclick="toggleTestStatus(${item.id}, true)">🔓 Unlock करा</button>`;
+          adminToggleHtml = `<button class="btn-toggle-admin" style="background:#16a34a;" onclick="toggleGlobalTestStatus(${item.id}, true)">🔓 सर्वांसाठी Unlock करा</button>`;
         }
       }
 
@@ -843,14 +858,25 @@
     });
   }
 
-  // ॲडमिन मॅन्युअल टॉगल फंक्शन
-  function toggleTestStatus(testId, shouldUnlock) {
-    adminOverrides[testId] = shouldUnlock;
-    localStorage.setItem("jnv_admin_overrides", JSON.stringify(adminOverrides));
+  // ॲडमिन मॅन्युअल टॉगल: Firebase वर थेट अपडेट (ज्यामुळे सर्व युजर्ससाठी एकाच वेळी अनलॉक/लॉक होते)
+  function toggleGlobalTestStatus(testId, shouldUnlock) {
+    globalUnlockedTests[testId] = shouldUnlock;
     renderDashboard();
+
+    // क्लाऊड डेटाबेस (Firebase) मध्ये सेव्ह करणे
+    fetch(`${FIREBASE_DB_URL}/unlocked_tests/${testId}.json`, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(shouldUnlock)
+    })
+    .then(() => {
+      alert(`चाचणी क्र. ${testId} आता सर्व युजर्ससाठी ${shouldUnlock ? 'अनलॉक (खुली)' : 'लॉक (बंद)'} झाली आहे.`);
+    })
+    .catch(err => {
+      alert("स्टेटस अपडेट करताना त्रुटी आली. इंटरनेट कनेक्शन तपासा.");
+    });
   }
 
-  // चाचणी सुरू करण्यापूर्वी मार्गदर्शक सूचना दाखवणे
   function openTestGuideline(testId) {
     const testMeta = EXAM_SCHEDULE.find(t => t.id === testId);
     currentPendingTest = testMeta;
@@ -990,7 +1016,6 @@
     }
   }
 
-  // निकाल व फुलांचा वर्षाव (Celebration Confetti)
   function finalizeEvaluation() {
     let correct = 0;
     currentQuizData.questions.forEach(q => {
@@ -1037,7 +1062,6 @@
       fBox.innerText = "🎯 नियमित सरावाची गरज आहे! संकल्पना समजून घेऊन पुन्हा प्रयत्न करा.";
     }
 
-    // फुलांचा व कन्फेटीचा आकर्षक वर्षाव (Flower/Confetti Blast)
     triggerCelebration();
     window.scrollTo(0, 0);
   }
@@ -1180,7 +1204,7 @@
         isAdminMode = true;
         document.getElementById("adminBtn").classList.add("active");
         document.getElementById("adminBtn").innerText = "Admin (Active)";
-        alert("ॲडमिन मोड सुरू झाला आहे! आता तुम्ही प्रत्येक चाचणी मॅन्युअली Lock किंवा Unlock करू शकता.");
+        alert("ॲडमिन मोड सक्रिय झाला आहे! तुम्ही जे बदल कराल ते Firebase द्वारे सर्व युजर्ससाठी एकाच वेळी लागू होतील.");
         renderDashboard();
       } else if (pin !== null) {
         alert("चुकीचा पिन!");
