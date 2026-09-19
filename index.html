@@ -2,7 +2,8 @@
 <html lang="mr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#0f2b48">
   <title>JNVST सराव परीक्षा - जिल्हा परिषद बीड</title>
   <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
@@ -16,9 +17,15 @@
       --bg: #f8fafc;
       --card-bg: #ffffff;
       --text: #0f172a;
-      --border: #e2e8f0;
+      --border: #cbd5e1;
     }
-    * { box-sizing: border-box; font-family: 'Mukta', sans-serif; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+    * { 
+      box-sizing: border-box; 
+      font-family: 'Mukta', sans-serif; 
+      margin: 0; 
+      padding: 0; 
+      -webkit-tap-highlight-color: transparent; 
+    }
     body {
       background-color: var(--bg);
       color: var(--text);
@@ -39,7 +46,7 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+      box-shadow: 0 3px 12px rgba(0,0,0,0.15);
       border-bottom: 3px solid var(--accent);
     }
     .header-left {
@@ -47,7 +54,6 @@
       align-items: center;
       gap: 12px;
     }
-    /* वर डाव्या कोपऱ्यातील एकमेव अधिकृत लोगो */
     .zp-brand-logo {
       width: 44px;
       height: 44px;
@@ -99,13 +105,13 @@
     }
     .admin-pill:hover { background: rgba(255,255,255,0.25); }
 
-    /* ---------------- LAYOUT ---------------- */
+    /* ---------------- DESKTOP LAYOUT ---------------- */
     .main-wrapper {
       flex: 1;
       max-width: 860px;
       width: 100%;
-      margin: 16px auto;
-      padding: 0 14px;
+      margin: 18px auto;
+      padding: 0 16px;
     }
     .card {
       background: var(--card-bg);
@@ -141,7 +147,7 @@
       color: #64748b;
     }
 
-    /* ---------------- BUTTONS (PROFESSIONAL UI) ---------------- */
+    /* ---------------- BUTTONS ---------------- */
     .btn-main {
       width: 100%;
       background: linear-gradient(135deg, #1a4a75 0%, #0f2b48 100%);
@@ -179,7 +185,6 @@
       color: white;
       box-shadow: 0 3px 8px rgba(22, 163, 74, 0.25);
     }
-    .btn-start:hover { box-shadow: 0 4px 12px rgba(22, 163, 74, 0.4); }
     .btn-locked { background: #f1f5f9; color: #94a3b8; border: 1px solid #e2e8f0; cursor: not-allowed; }
     .btn-retry {
       background: linear-gradient(135deg, #ea580c, #c2410c);
@@ -197,7 +202,6 @@
       font-size: 0.85rem;
       transition: all 0.2s;
     }
-    .btn-logout:hover { background: #ffe4e6; }
 
     /* ---------------- FORMS ---------------- */
     .form-group { margin-bottom: 15px; }
@@ -215,7 +219,6 @@
       border-radius: 10px;
       font-size: 1rem;
       background: #ffffff;
-      transition: border-color 0.2s;
     }
     .form-group input:focus, .form-group select:focus {
       outline: none;
@@ -236,10 +239,8 @@
       border-top: 1px solid var(--border);
       border-right: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
-      transition: transform 0.15s;
     }
     .test-item.unlocked { border-left-color: var(--success); }
-    .test-item:hover { transform: translateX(2px); }
 
     /* ---------------- EXAM ARENA ---------------- */
     .exam-topbar {
@@ -270,13 +271,11 @@
       color: #334155;
       font-size: 0.9rem;
       white-space: nowrap;
-      transition: all 0.2s;
     }
     .section-selector button.active {
       background: var(--secondary);
       color: white;
       border-color: var(--secondary);
-      box-shadow: 0 3px 8px rgba(26, 74, 117, 0.25);
     }
     
     .question-card {
@@ -285,7 +284,6 @@
       padding: 16px;
       border: 1px solid var(--border);
       margin-bottom: 16px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.02);
     }
     .passage-box {
       background: #fffbeb;
@@ -337,9 +335,7 @@
       cursor: pointer;
       background: #fff;
       font-size: 0.95rem;
-      transition: all 0.2s;
     }
-    .opt-label:hover { background: #f8fafc; border-color: var(--secondary); }
     .opt-label input { margin-right: 12px; width: 18px; height: 18px; accent-color: var(--secondary); }
 
     .section-nav-footer {
@@ -387,36 +383,143 @@
     }
     footer span { color: #f8fafc; font-weight: 600; }
 
-    /* ---------------- MOBILE RESPONSIVE ---------------- */
+    /* ==========================================================================
+       मोबाईलसाठी खास ANDROID APP-LIKE FULL FIT VIEW (Width <= 650px)
+       ========================================================================== */
     @media (max-width: 650px) {
-      body { font-size: 15px; }
-      header { padding: 8px 12px; }
-      .zp-brand-logo { width: 40px; height: 40px; min-width: 40px; }
-      .header-center h2 { font-size: 1rem; }
+      body {
+        font-size: 15px;
+        background-color: #ffffff; /* ॲपसारखा स्वच्छ व्हाईट बॅकग्राउंड */
+      }
+      header {
+        padding: 8px 12px;
+        height: 56px; /* स्टँडर्ड ॲप बार उंची */
+      }
+      .zp-brand-logo { 
+        width: 38px; 
+        height: 38px; 
+        min-width: 38px; 
+      }
+      .zp-brand-logo svg {
+        width: 32px;
+        height: 32px;
+      }
+      .header-center { margin-left: 8px; }
+      .header-center h2 { font-size: 0.98rem; font-weight: 800; }
       .header-center h4 { font-size: 0.72rem; }
+      .admin-pill { font-size: 0.7rem; padding: 4px 10px; }
 
-      .main-wrapper { margin: 8px auto; padding: 0 8px; }
-      .card { padding: 14px 12px; border-radius: 12px; margin-bottom: 12px; }
+      /* स्क्रीनवर १००% फिटिंग - मार्जिन व पॅडिंग ॲपप्रमाणे */
+      .main-wrapper {
+        margin: 0 auto;
+        padding: 8px 8px 60px 8px; /* खाली फूटरसाठी स्पेस */
+        width: 100%;
+        max-width: 100%;
+      }
+      .card {
+        padding: 14px 10px;
+        border-radius: 12px;
+        margin-bottom: 10px;
+        border: 1px solid #e2e8f0;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+      }
       
-      .student-bar { flex-direction: column; align-items: flex-start; gap: 8px; }
-      .student-bar .btn-logout { align-self: flex-end; }
+      .student-bar {
+        flex-direction: row;
+        align-items: center;
+        padding: 10px 12px;
+        border-radius: 10px;
+      }
+      .student-bar h3 { font-size: 1rem; }
+      .student-bar p { font-size: 0.78rem; }
+      .btn-logout { padding: 5px 10px; font-size: 0.78rem; }
       
-      .test-item { flex-direction: column; align-items: flex-start; gap: 10px; padding: 12px; }
-      .test-item > div:last-child { width: 100%; text-align: right; }
-      .btn-action { width: 100%; padding: 10px; font-size: 0.95rem; }
+      .test-item {
+        flex-direction: row;
+        align-items: center;
+        padding: 12px 10px;
+        margin-bottom: 8px;
+        border-radius: 10px;
+      }
+      .test-item h4 { font-size: 0.95rem; }
+      .test-item span { font-size: 0.75rem; }
+      .test-item > div:last-child { width: auto; }
+      .btn-action { padding: 8px 12px; font-size: 0.85rem; border-radius: 8px; }
 
-      .exam-topbar { flex-direction: column; align-items: flex-start; gap: 8px; }
-      .exam-topbar > div:last-child { align-self: flex-end; }
+      .exam-topbar {
+        padding: 8px 10px;
+        border-radius: 8px;
+        margin-bottom: 10px;
+      }
+      .exam-topbar h3 { font-size: 0.95rem; }
+      .exam-topbar span { font-size: 0.75rem; }
+      .exam-topbar > div:last-child { font-size: 1rem; padding: 2px 8px; }
 
-      .options-grid { grid-template-columns: 1fr; gap: 8px; }
-      .opt-label { padding: 10px 12px; font-size: 0.95rem; }
+      .section-selector {
+        gap: 6px;
+        margin-bottom: 12px;
+      }
+      .section-selector button {
+        padding: 8px 10px;
+        font-size: 0.82rem;
+        min-width: 110px;
+        border-radius: 8px;
+      }
 
-      .fig-container { gap: 8px; padding: 8px; }
-      .fig-box { width: 64px; height: 64px; }
-      .fig-box svg { width: 52px; height: 52px; }
+      .question-card {
+        padding: 12px 8px;
+        margin-bottom: 10px;
+        border-radius: 10px;
+      }
+      .question-card > div[style*="font-weight:700"] {
+        font-size: 0.95rem;
+      }
 
-      .section-nav-footer { flex-direction: column; gap: 8px; }
-      .btn-nav-prev, .btn-nav-next, .btn-main { width: 100%; text-align: center; }
+      /* मोबाईलवर पर्याय पूर्ण स्क्रीन रुंदीत आणि टच-फ्रेंडली */
+      .options-grid {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+      .opt-label {
+        padding: 10px 12px;
+        font-size: 0.92rem;
+        min-height: 44px;
+        border-radius: 8px;
+      }
+      .opt-label input {
+        width: 20px;
+        height: 20px;
+      }
+
+      .fig-container {
+        gap: 6px;
+        padding: 8px;
+      }
+      .fig-box {
+        width: 62px;
+        height: 62px;
+      }
+      .fig-box svg {
+        width: 50px;
+        height: 50px;
+      }
+
+      .section-nav-footer {
+        flex-direction: column;
+        gap: 8px;
+        padding-top: 12px;
+      }
+      .btn-nav-prev, .btn-nav-next, .btn-main {
+        width: 100%;
+        padding: 12px;
+        font-size: 1rem;
+        border-radius: 8px;
+      }
+      
+      footer {
+        font-size: 0.75rem;
+        padding: 10px;
+      }
     }
   </style>
 </head>
@@ -425,9 +528,8 @@
 <!-- हेडर: वर डाव्या कोपऱ्यात एकच अधिकृत लोगो व संपूर्णवेळ हेडिंग -->
 <header>
   <div class="header-left">
-    <!-- वर डाव्या कोपऱ्यात जिल्हा परिषद बीड डिजिटल लोगो -->
     <div class="zp-brand-logo" title="जिल्हा परिषद बीड">
-      <svg viewBox="0 0 100 100" width="38" height="38">
+      <svg viewBox="0 0 100 100" width="36" height="36">
         <circle cx="50" cy="50" r="48" fill="#5c2411" stroke="#f69a1b" stroke-width="3"/>
         <circle cx="50" cy="50" r="38" fill="#fbb034" opacity="0.95"/>
         <g stroke="#fef08a" stroke-width="1.5" opacity="0.7">
@@ -462,8 +564,8 @@
   <!-- १. नोंदणी / लॉगिन कार्ड -->
   <div id="registrationCard" class="card">
     <div style="text-align:center; margin-bottom:16px;">
-      <h2 style="color:var(--primary); font-weight:800; font-size:1.3rem;">विद्यार्थी नोंदणी व लॉगिन</h2>
-      <p style="color:#64748b; font-size:0.88rem;">नवोदय सराव चाचणी सोडवण्यासाठी आपली माहिती भरा</p>
+      <h2 style="color:var(--primary); font-weight:800; font-size:1.25rem;">विद्यार्थी नोंदणी व लॉगिन</h2>
+      <p style="color:#64748b; font-size:0.85rem;">नवोदय सराव चाचणी सोडवण्यासाठी आपली माहिती भरा</p>
     </div>
     <div class="form-group">
       <label>विद्यार्थ्याचे संपूर्ण नाव:</label>
@@ -503,8 +605,8 @@
       <button class="btn-logout" onclick="performLogout()">लॉग आउट</button>
     </div>
 
-    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
-      <h3 style="color:var(--primary); font-weight:800; font-size:1.1rem;">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+      <h3 style="color:var(--primary); font-weight:800; font-size:1.05rem;">
         दैनिक 15 सराव चाचण्यांची सूची (80 प्रश्न | 100 गुण)
       </h3>
     </div>
@@ -516,10 +618,10 @@
   <div id="testArena" style="display:none;" class="card">
     <div class="exam-topbar">
       <div>
-        <h3 id="activeExamLabel" style="font-weight:800; color:var(--primary); font-size:1.05rem;"></h3>
-        <span style="font-size:0.82rem; color:#64748b;">80 प्रश्न | 100 गुण | वेळ: 120 मिनिटे</span>
+        <h3 id="activeExamLabel" style="font-weight:800; color:var(--primary); font-size:1rem;"></h3>
+        <span style="font-size:0.8rem; color:#64748b;">80 प्रश्न | 100 गुण | वेळ: 120 मिनिटे</span>
       </div>
-      <div style="font-size:1.15rem; font-weight:800; color:var(--danger); background:#ffffff; padding:4px 12px; border-radius:8px; border:1px solid #cbd5e1;">
+      <div style="font-weight:800; color:var(--danger); background:#ffffff; padding:4px 10px; border-radius:8px; border:1px solid #cbd5e1;">
         ⏱️ <span id="clockDisplay">120:00</span>
       </div>
     </div>
@@ -536,26 +638,26 @@
 
   <!-- ४. निकाल व प्रमाणपत्र -->
   <div id="resultCertArea" style="display:none;" class="card" style="text-align:center;">
-    <div style="text-align:center; padding-bottom:12px; border-bottom:2px solid #e2e8f0; margin-bottom:14px;">
-      <h2 style="color:var(--primary); font-weight:800; font-size:1.35rem;">जिल्हा परिषद, बीड</h2>
-      <h4 style="color:#64748b; font-weight:600; font-size:0.95rem;">नवोदय सराव परीक्षा - निकाल पत्रक</h4>
+    <div style="text-align:center; padding-bottom:10px; border-bottom:2px solid #e2e8f0; margin-bottom:12px;">
+      <h2 style="color:var(--primary); font-weight:800; font-size:1.3rem;">जिल्हा परिषद, बीड</h2>
+      <h4 style="color:#64748b; font-weight:600; font-size:0.9rem;">नवोदय सराव परीक्षा - निकाल पत्रक</h4>
     </div>
     
-    <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:10px; padding:12px; margin-bottom:14px; text-align:center;">
-      <p style="font-size:1rem;">विद्यार्थी: <b><span id="cStudent"></span></b> | तालुका: <b><span id="cTaluka"></span></b></p>
+    <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:10px; padding:10px; margin-bottom:12px; text-align:center;">
+      <p style="font-size:0.95rem;">विद्यार्थी: <b><span id="cStudent"></span></b> | तालुका: <b><span id="cTaluka"></span></b></p>
     </div>
 
-    <div style="font-size:1.4rem; font-weight:800; color:var(--secondary); margin:12px 0; text-align:center;">
+    <div style="font-size:1.35rem; font-weight:800; color:var(--secondary); margin:10px 0; text-align:center;">
       प्राप्त गुण: <span id="cScore"></span> / 100 (<span id="cPerc"></span>%)
     </div>
     
-    <div id="cFeedback" style="padding:10px; border-radius:8px; font-weight:700; margin:12px 0; text-align:center;"></div>
+    <div id="cFeedback" style="padding:10px; border-radius:8px; font-weight:700; margin:10px 0; text-align:center;"></div>
     
-    <div style="display:flex; flex-wrap:wrap; gap:10px; margin-top:16px;">
-      <button class="btn-main" style="background:var(--secondary); flex:1; min-width:180px;" onclick="showAnswerKeyView()">
+    <div style="display:flex; flex-wrap:wrap; gap:10px; margin-top:14px;">
+      <button class="btn-main" style="background:var(--secondary); flex:1; min-width:160px;" onclick="showAnswerKeyView()">
         📝 Answer Key (उत्तरपत्रिका) पहा
       </button>
-      <button class="btn-main" style="background:#475569; flex:1; min-width:180px;" onclick="renderDashboard()">
+      <button class="btn-main" style="background:#475569; flex:1; min-width:160px;" onclick="renderDashboard()">
         डॅशबोर्डवर परत जा
       </button>
     </div>
@@ -563,12 +665,12 @@
 
   <!-- ५. सविस्तर उत्तरपत्रिका व विश्लेषण स्क्रीन -->
   <div id="answerKeyArea" style="display:none;" class="card">
-    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; border-bottom:2px solid var(--border); padding-bottom:10px;">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; border-bottom:2px solid var(--border); padding-bottom:10px;">
       <div>
-        <h3 style="color:var(--primary); font-weight:800; font-size:1.15rem;">सविस्तर Answer Key व विश्लेषण</h3>
-        <span id="akSubtitle" style="font-size:0.82rem; color:#64748b;"></span>
+        <h3 style="color:var(--primary); font-weight:800; font-size:1.1rem;">सविस्तर Answer Key व विश्लेषण</h3>
+        <span id="akSubtitle" style="font-size:0.8rem; color:#64748b;"></span>
       </div>
-      <button class="btn-action btn-start" style="padding:6px 14px;" onclick="backToResult()">निकाल पानावर जा</button>
+      <button class="btn-action btn-start" style="padding:6px 12px;" onclick="backToResult()">निकाल पानावर जा</button>
     </div>
 
     <div class="section-selector">
@@ -676,12 +778,12 @@
       if (!isAccessible) {
         actionArea = '<button class="btn-action btn-locked">🔒 ' + item.date + ' अनलॉक</button>';
       } else if (savedScore !== undefined) {
-        actionArea = '<div style="text-align:right;"><span style="font-weight:800; color:#1a4a75; display:block; font-size:0.95rem; margin-bottom:4px;">गुण: ' + savedScore + '/100</span><button class="btn-action btn-retry" onclick="fetchAndLaunchTest(' + item.id + ')">पुन्हा सोडवा</button></div>';
+        actionArea = '<div style="text-align:right;"><span style="font-weight:800; color:#1a4a75; display:block; font-size:0.9rem; margin-bottom:2px;">गुण: ' + savedScore + '/100</span><button class="btn-action btn-retry" onclick="fetchAndLaunchTest(' + item.id + ')">पुन्हा सोडवा</button></div>';
       } else {
         actionArea = '<button class="btn-action btn-start" onclick="fetchAndLaunchTest(' + item.id + ')">चाचणी सोडवा</button>';
       }
 
-      card.innerHTML = '<div><h4 style="font-weight:700; font-size:1.02rem; color:#0f2b48;">' + item.title + '</h4><span style="font-size:0.82rem; color:#64748b;">80 प्रश्न | 100 गुण | 120 मिनिटे</span></div><div>' + actionArea + '</div>';
+      card.innerHTML = '<div><h4 style="font-weight:700; font-size:1rem; color:#0f2b48;">' + item.title + '</h4><span style="font-size:0.8rem; color:#64748b;">80 प्रश्न | 100 गुण | 120 मिनिटे</span></div><div>' + actionArea + '</div>';
       container.appendChild(card);
     });
   }
@@ -762,7 +864,7 @@
       });
       opts += '</div>';
 
-      qDiv.innerHTML = pText + '<div style="font-weight:700; margin-bottom:6px; font-size:1rem; line-height:1.4;">' + q.text + '</div>' + figHtml + opts;
+      qDiv.innerHTML = pText + '<div style="font-weight:700; margin-bottom:6px; font-size:0.98rem; line-height:1.4;">' + q.text + '</div>' + figHtml + opts;
       container.appendChild(qDiv);
     });
 
@@ -939,7 +1041,7 @@
       qDiv.innerHTML = `
         ${pText}
         <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:6px;">
-          <div style="font-weight:700; font-size:1rem;">${q.text}</div>
+          <div style="font-weight:700; font-size:0.98rem;">${q.text}</div>
           <div>${statusBadge}</div>
         </div>
         ${figHtml}
