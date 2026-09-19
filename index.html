@@ -62,7 +62,7 @@
       align-items: center;
       gap: 12px;
     }
-    /* सिक्रेट ॲडमिन ट्रिगरसाठी लोगो कंटेनर (३ वेळा टॅप करा) */
+    /* सिक्रेट ॲडमिन ट्रिगर: या लोगोवर ३ वेळा टॅप करावे */
     .zp-brand-logo {
       width: 46px;
       height: 46px;
@@ -89,7 +89,7 @@
     .header-center {
       text-align: center;
       flex: 1;
-      padding: 0 10px;
+      padding: 0 8px;
     }
     .header-center h2 {
       font-size: 1.15rem;
@@ -105,18 +105,18 @@
       letter-spacing: 0.3px;
       margin-top: 2px;
     }
-    /* ॲडमिन बॅज (फक्त ॲडमिन मोड सक्रिय झाल्यावरच उजवीकडे दिसेल) */
+    /* फक्त ॲडमिन सक्रिय झाल्यावरच दिसणारे तात्पुरते बाहेर पडण्याचे बटण */
     #adminStatusBadge {
       display: none;
       background: #ea580c;
       border: 1px solid #fef08a;
       color: #fff;
-      font-size: 0.75rem;
+      font-size: 0.72rem;
       font-weight: 800;
       padding: 4px 10px;
       border-radius: 20px;
       cursor: pointer;
-      animation: pulse 1.5s infinite;
+      white-space: nowrap;
     }
 
     /* ---------------- LAYOUT ---------------- */
@@ -508,7 +508,7 @@
   </div>
 
   <div class="header-right">
-    <!-- फक्त ॲडमिन मोड सुरू झाल्यावरच दिसणारे बॅज -->
+    <!-- फक्त ॲडमिन मोड सुरू झाल्यावरच दिसणारे एक्झिट बटण -->
     <button id="adminStatusBadge" onclick="exitAdminMode()">Admin Exit</button>
   </div>
 </header>
@@ -736,7 +736,7 @@
   let selectedSection = 'mental';
   let akSelectedSection = 'mental';
 
-  // सिक्रेट ॲडमिन ट्रिगर (लोगोवर ३ वेळा टॅप करणे)
+  // सिक्रेट ॲडमिन ट्रिगर लॉजिक (लोगोवर सलग ३ वेळा टॅप करणे)
   let logoTapCount = 0;
   let logoTapTimeout = null;
 
@@ -749,7 +749,7 @@
       renderDashboard();
     }
 
-    // १. सिक्रेट पद्धत १: लोगोवर सलग ३ वेळा क्लिक करणे
+    // पद्धत १: वर डाव्या लोगोवर सलग ३ वेळा क्लिक करणे
     const logoEl = document.getElementById("secretAdminTrigger");
     if (logoEl) {
       logoEl.addEventListener("click", () => {
@@ -764,7 +764,7 @@
       });
     }
 
-    // २. सिक्रेट पद्धत २: कीबोर्ड शॉर्टकट (Ctrl + Shift + A किंवा Alt + A)
+    // बॅकअप पद्धत: कीबोर्ड शॉर्टकट (लॅपटॉपसाठी: Ctrl + Shift + A)
     window.addEventListener("keydown", (e) => {
       if ((e.ctrlKey && e.shiftKey && (e.key === 'A' || e.key === 'a')) || (e.altKey && (e.key === 'A' || e.key === 'a'))) {
         e.preventDefault();
@@ -779,7 +779,7 @@
       if (pin === "3506") {
         isAdminMode = true;
         document.getElementById("adminStatusBadge").style.display = "block";
-        alert("ॲडमिन मोड सक्रिय झाला आहे! तुम्ही केलेल्या बदलांचे नियंत्रण सर्व युजर्ससाठी तत्काळ लागू होईल.");
+        alert("ॲडमिन मोड सक्रिय झाला आहे! तुम्ही जे बदल कराल ते Firebase द्वारे सर्व युजर्ससाठी एकाच वेळी लागू होतील.");
         renderDashboard();
       } else if (pin !== null) {
         alert("चुकीचा पिन!");
