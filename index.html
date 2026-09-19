@@ -64,10 +64,7 @@
       border-bottom: 3px solid var(--accent);
       min-height: 58px;
     }
-    .header-left {
-      display: flex;
-      align-items: center;
-    }
+    .header-left { display: flex; align-items: center; }
     .zp-brand-logo {
       width: 44px;
       height: 44px;
@@ -84,39 +81,11 @@
       cursor: pointer;
       user-select: none;
     }
-    .zp-brand-logo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 50%;
-      pointer-events: none;
-    }
-    .header-center {
-      text-align: center;
-      flex: 1;
-      padding: 0 8px;
-    }
-    .header-center h2 {
-      font-size: 1.15rem;
-      color: #fef08a;
-      font-weight: 800;
-      letter-spacing: 0.5px;
-      line-height: 1.2;
-    }
-    .header-center h3 {
-      font-size: 0.86rem;
-      color: #ffffff;
-      font-weight: 700;
-      letter-spacing: 0.3px;
-      margin-top: 2px;
-    }
-    .header-right {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 4px;
-    }
+    .zp-brand-logo img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; pointer-events: none; }
+    .header-center { text-align: center; flex: 1; padding: 0 8px; }
+    .header-center h2 { font-size: 1.15rem; color: #fef08a; font-weight: 800; letter-spacing: 0.5px; line-height: 1.2; }
+    .header-center h3 { font-size: 0.86rem; color: #ffffff; font-weight: 700; letter-spacing: 0.3px; margin-top: 2px; }
+    .header-right { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; }
     .nvs-brand-logo {
       width: 44px;
       height: 44px;
@@ -131,12 +100,7 @@
       justify-content: center;
       overflow: hidden;
     }
-    .nvs-brand-logo img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      border-radius: 50%;
-    }
+    .nvs-brand-logo img { width: 100%; height: 100%; object-fit: contain; border-radius: 50%; }
     #adminStatusBadge {
       display: none;
       background: #ea580c;
@@ -151,21 +115,8 @@
     }
 
     /* ---------------- LAYOUT ---------------- */
-    .main-wrapper {
-      flex: 1;
-      max-width: 860px;
-      width: 100%;
-      margin: 16px auto;
-      padding: 0 16px;
-    }
-    .card {
-      background: var(--card-bg);
-      border-radius: 16px;
-      padding: 22px;
-      box-shadow: 0 4px 20px rgba(15, 43, 72, 0.06);
-      margin-bottom: 16px;
-      border: 1px solid var(--border);
-    }
+    .main-wrapper { flex: 1; max-width: 860px; width: 100%; margin: 16px auto; padding: 0 16px; }
+    .card { background: var(--card-bg); border-radius: 16px; padding: 22px; box-shadow: 0 4px 20px rgba(15, 43, 72, 0.06); margin-bottom: 16px; border: 1px solid var(--border); }
 
     /* ---------------- STUDENT BAR ---------------- */
     .student-bar {
@@ -182,15 +133,8 @@
       border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
     }
-    .student-bar h3 {
-      font-size: 1.15rem;
-      color: var(--primary);
-      font-weight: 800;
-    }
-    .student-bar p {
-      font-size: 0.85rem;
-      color: #64748b;
-    }
+    .student-bar h3 { font-size: 1.15rem; color: var(--primary); font-weight: 800; }
+    .student-bar p { font-size: 0.85rem; color: #64748b; }
 
     /* ---------------- BUTTONS ---------------- */
     .btn-main {
@@ -222,66 +166,19 @@
       gap: 6px;
       white-space: nowrap;
     }
-    .btn-start {
-      background: linear-gradient(135deg, #16a34a, #15803d);
-      color: white;
-      box-shadow: 0 2px 6px rgba(22, 163, 74, 0.25);
-    }
+    .btn-start { background: linear-gradient(135deg, #16a34a, #15803d); color: white; box-shadow: 0 2px 6px rgba(22, 163, 74, 0.25); }
     .btn-locked { background: #f1f5f9; color: #94a3b8; border: 1px solid #e2e8f0; cursor: not-allowed; }
-    .btn-retry {
-      background: linear-gradient(135deg, #ea580c, #c2410c);
-      color: white;
-      box-shadow: 0 2px 6px rgba(234, 88, 12, 0.25);
-    }
-    .btn-resume {
-      background: linear-gradient(135deg, #0284c7, #0369a1);
-      color: white;
-      box-shadow: 0 2px 6px rgba(2, 132, 199, 0.25);
-    }
-    .btn-toggle-admin {
-      color: white;
-      padding: 6px 12px;
-      font-size: 0.8rem;
-      font-weight: 700;
-      border-radius: 8px;
-      border: none;
-      cursor: pointer;
-      margin-left: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.15);
-    }
-    .btn-logout {
-      background: #fee2e2;
-      color: #991b1b;
-      border: 1px solid #fecaca;
-      padding: 6px 12px;
-      border-radius: 8px;
-      font-weight: 700;
-      cursor: pointer;
-      font-size: 0.85rem;
-    }
+    .btn-retry { background: linear-gradient(135deg, #ea580c, #c2410c); color: white; box-shadow: 0 2px 6px rgba(234, 88, 12, 0.25); }
+    .btn-resume { background: linear-gradient(135deg, #0284c7, #0369a1); color: white; box-shadow: 0 2px 6px rgba(2, 132, 199, 0.25); }
+    .btn-toggle-admin { color: white; padding: 6px 12px; font-size: 0.8rem; font-weight: 700; border-radius: 8px; border: none; cursor: pointer; margin-left: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.15); }
+    .btn-logout { background: #fee2e2; color: #991b1b; border: 1px solid #fecaca; padding: 6px 12px; border-radius: 8px; font-weight: 700; cursor: pointer; font-size: 0.85rem; }
 
     /* ---------------- FORMS ---------------- */
     .form-group { margin-bottom: 15px; }
-    .form-group label {
-      display: block;
-      font-weight: 700;
-      margin-bottom: 6px;
-      color: #334155;
-      font-size: 0.95rem;
-    }
-    .form-group input, .form-group select {
-      width: 100%;
-      padding: 12px 14px;
-      border: 1.5px solid #cbd5e1;
-      border-radius: 10px;
-      font-size: 1rem;
-      background: #ffffff;
-    }
-    .form-group input:focus, .form-group select:focus {
-      outline: none;
-      border-color: var(--secondary);
-      box-shadow: 0 0 0 3px rgba(26, 74, 117, 0.12);
-    }
+    .form-group label { display: block; font-weight: 700; margin-bottom: 6px; color: #334155; font-size: 0.95rem; }
+    .form-group input, .form-group select { width: 100%; padding: 12px 14px; border: 1.5px solid #cbd5e1; border-radius: 10px; font-size: 1rem; background: #ffffff; }
+    .form-group input:focus, .form-group select:focus { outline: none; border-color: var(--secondary); box-shadow: 0 0 0 3px rgba(26, 74, 117, 0.12); }
+    .input-hint { font-size: 0.8rem; color: #64748b; margin-top: 4px; }
 
     /* ---------------- TEST LIST ---------------- */
     .test-item {
@@ -300,41 +197,14 @@
     .test-item.unlocked { border-left-color: var(--success); }
 
     /* ---------------- TABLES ---------------- */
-    .guideline-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 14px 0;
-      font-size: 0.95rem;
-    }
-    .guideline-table th, .guideline-table td {
-      border: 1px solid #cbd5e1;
-      padding: 10px;
-      text-align: center;
-    }
-    .guideline-table th {
-      background: #f1f5f9;
-      color: var(--primary);
-      font-weight: 700;
-    }
+    .guideline-table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 0.95rem; }
+    .guideline-table th, .guideline-table td { border: 1px solid #cbd5e1; padding: 10px; text-align: center; }
+    .guideline-table th { background: #f1f5f9; color: var(--primary); font-weight: 700; }
 
     /* ---------------- EXAM ARENA ---------------- */
-    .exam-topbar {
-      background: #e2e8f0;
-      padding: 12px 16px;
-      border-radius: 12px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 16px;
-    }
+    .exam-topbar { background: #e2e8f0; padding: 12px 16px; border-radius: 12px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
     
-    .section-selector {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 6px;
-      margin-bottom: 14px;
-      width: 100%;
-    }
+    .section-selector { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin-bottom: 14px; width: 100%; }
     .section-selector button {
       width: 100%;
       background: #ffffff;
@@ -354,207 +224,43 @@
       min-height: 50px;
       transition: all 0.2s;
     }
-    .section-selector button span.sec-sub {
-      font-size: 0.74rem;
-      font-weight: 600;
-      opacity: 0.85;
-      margin-top: 2px;
-    }
-    .section-selector button.active {
-      background: var(--secondary);
-      color: white;
-      border-color: var(--secondary);
-      box-shadow: 0 2px 6px rgba(26, 74, 117, 0.25);
-    }
-    .section-selector button.active span.sec-sub {
-      color: #fef08a;
-    }
+    .section-selector button span.sec-sub { font-size: 0.74rem; font-weight: 600; opacity: 0.85; margin-top: 2px; }
+    .section-selector button.active { background: var(--secondary); color: white; border-color: var(--secondary); box-shadow: 0 2px 6px rgba(26, 74, 117, 0.25); }
+    .section-selector button.active span.sec-sub { color: #fef08a; }
     
-    .question-card {
-      background: white;
-      border-radius: 12px;
-      padding: 16px;
-      border: 1px solid var(--border);
-      margin-bottom: 16px;
-    }
-    .passage-box {
-      background: #fffbeb;
-      border: 1px solid #fde68a;
-      border-radius: 10px;
-      padding: 14px;
-      margin-bottom: 14px;
-      font-size: 0.95rem;
-      line-height: 1.65;
-      color: #92400e;
-    }
-    .fig-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin: 12px 0;
-      background: #f8fafc;
-      padding: 12px;
-      border-radius: 10px;
-      align-items: center;
-      justify-content: center;
-      border: 1px dashed #cbd5e1;
-    }
-    .fig-box {
-      width: 72px;
-      height: 72px;
-      border: 2px solid #334155;
-      background: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 4px auto;
-      border-radius: 8px;
-    }
+    .question-card { background: white; border-radius: 12px; padding: 16px; border: 1px solid var(--border); margin-bottom: 16px; }
+    .passage-box { background: #fffbeb; border: 1px solid #fde68a; border-radius: 10px; padding: 14px; margin-bottom: 14px; font-size: 0.95rem; line-height: 1.65; color: #92400e; }
+    .fig-container { display: flex; flex-wrap: wrap; gap: 12px; margin: 12px 0; background: #f8fafc; padding: 12px; border-radius: 10px; align-items: center; justify-content: center; border: 1px dashed #cbd5e1; }
+    .fig-box { width: 72px; height: 72px; border: 2px solid #334155; background: #fff; display: flex; align-items: center; justify-content: center; margin: 0 auto 4px auto; border-radius: 8px; }
     .fig-box svg { width: 60px; height: 60px; }
     
-    .options-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-      margin-top: 12px;
-    }
-    .opt-label {
-      display: flex;
-      align-items: center;
-      padding: 12px 14px;
-      border: 1.5px solid var(--border);
-      border-radius: 10px;
-      cursor: pointer;
-      background: #fff;
-      font-size: 0.95rem;
-    }
+    .options-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 12px; }
+    .opt-label { display: flex; align-items: center; padding: 12px 14px; border: 1.5px solid var(--border); border-radius: 10px; cursor: pointer; background: #fff; font-size: 0.95rem; }
     .opt-label input { margin-right: 12px; width: 18px; height: 18px; accent-color: var(--secondary); }
 
-    .section-nav-footer {
-      display: flex;
-      justify-content: space-between;
-      gap: 12px;
-      margin-top: 20px;
-      padding-top: 16px;
-      border-top: 1.5px dashed #cbd5e1;
-    }
-    .btn-nav-prev {
-      background: #475569;
-      color: white;
-      border: none;
-      padding: 10px 18px;
-      border-radius: 10px;
-      font-weight: 700;
-      cursor: pointer;
-    }
-    .btn-nav-next {
-      background: var(--secondary);
-      color: white;
-      border: none;
-      padding: 10px 18px;
-      border-radius: 10px;
-      font-weight: 700;
-      cursor: pointer;
-      margin-left: auto;
-    }
+    .section-nav-footer { display: flex; justify-content: space-between; gap: 12px; margin-top: 20px; padding-top: 16px; border-top: 1.5px dashed #cbd5e1; }
+    .btn-nav-prev { background: #475569; color: white; border: none; padding: 10px 18px; border-radius: 10px; font-weight: 700; cursor: pointer; }
+    .btn-nav-next { background: var(--secondary); color: white; border: none; padding: 10px 18px; border-radius: 10px; font-weight: 700; cursor: pointer; margin-left: auto; }
 
     /* ---------------- SUBMISSION SUMMARY MODAL ---------------- */
-    #summaryModalOverlay {
-      display: none;
-      position: fixed;
-      top: 0; left: 0; width: 100%; height: 100%;
-      background: rgba(15, 43, 72, 0.75);
-      z-index: 2000;
-      justify-content: center;
-      align-items: center;
-      backdrop-filter: blur(3px);
-      padding: 14px;
-    }
-    .summary-modal-content {
-      background: #ffffff;
-      border-radius: 16px;
-      max-width: 520px;
-      width: 100%;
-      padding: 22px 20px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-      border-top: 5px solid var(--accent);
-      animation: popIn 0.25s ease-out;
-    }
-    @keyframes popIn {
-      from { transform: scale(0.9); opacity: 0; }
-      to { transform: scale(1); opacity: 1; }
-    }
-    .summary-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 14px 0;
-      font-size: 0.92rem;
-    }
-    .summary-table th, .summary-table td {
-      border: 1px solid #cbd5e1;
-      padding: 8px 10px;
-      text-align: center;
-    }
-    .summary-table th {
-      background: #f1f5f9;
-      color: var(--primary);
-      font-weight: 800;
-    }
-    .badge-solved {
-      background: #dcfce7;
-      color: #166534;
-      font-weight: 800;
-      padding: 3px 8px;
-      border-radius: 6px;
-    }
-    .badge-unsolved {
-      background: #fee2e2;
-      color: #991b1b;
-      font-weight: 800;
-      padding: 3px 8px;
-      border-radius: 6px;
-    }
+    #summaryModalOverlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15, 43, 72, 0.75); z-index: 2000; justify-content: center; align-items: center; backdrop-filter: blur(3px); padding: 14px; }
+    .summary-modal-content { background: #ffffff; border-radius: 16px; max-width: 520px; width: 100%; padding: 22px 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); border-top: 5px solid var(--accent); animation: popIn 0.25s ease-out; }
+    @keyframes popIn { from { transform: scale(0.9); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+    .summary-table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 0.92rem; }
+    .summary-table th, .summary-table td { border: 1px solid #cbd5e1; padding: 8px 10px; text-align: center; }
+    .summary-table th { background: #f1f5f9; color: var(--primary); font-weight: 800; }
+    .badge-solved { background: #dcfce7; color: #166534; font-weight: 800; padding: 3px 8px; border-radius: 6px; }
+    .badge-unsolved { background: #fee2e2; color: #991b1b; font-weight: 800; padding: 3px 8px; border-radius: 6px; }
 
     /* ---------------- CELEBRATION RESULT & REPORT CARD ---------------- */
-    .congrats-header {
-      animation: pulse 1.5s infinite;
-      font-size: 1.7rem;
-      font-weight: 800;
-      color: #b45309;
-      margin-bottom: 8px;
-    }
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.03); }
-      100% { transform: scale(1); }
-    }
-    .flower-badge {
-      font-size: 2.8rem;
-      margin-bottom: 6px;
-      display: inline-block;
-      animation: bounce 1s infinite alternate;
-    }
-    @keyframes bounce {
-      from { transform: translateY(0); }
-      to { transform: translateY(-8px); }
-    }
+    .congrats-header { animation: pulse 1.5s infinite; font-size: 1.7rem; font-weight: 800; color: #b45309; margin-bottom: 8px; }
+    @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.03); } 100% { transform: scale(1); } }
+    .flower-badge { font-size: 2.8rem; margin-bottom: 6px; display: inline-block; animation: bounce 1s infinite alternate; }
+    @keyframes bounce { from { transform: translateY(0); } to { transform: translateY(-8px); } }
 
-    .report-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 16px 0;
-      font-size: 0.95rem;
-    }
-    .report-table th, .report-table td {
-      border: 1px solid #cbd5e1;
-      padding: 10px;
-      text-align: center;
-    }
-    .report-table th {
-      background: #f1f5f9;
-      color: var(--primary);
-      font-weight: 800;
-    }
+    .report-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.95rem; }
+    .report-table th, .report-table td { border: 1px solid #cbd5e1; padding: 10px; text-align: center; }
+    .report-table th { background: #f1f5f9; color: var(--primary); font-weight: 800; }
 
     /* ---------------- ANSWER KEY ---------------- */
     .ak-correct { background: #ecfdf5 !important; border-color: #34d399 !important; color: #065f46; font-weight: 700; }
@@ -562,57 +268,12 @@
     .ak-badge { display: inline-block; padding: 4px 10px; border-radius: 6px; font-size: 0.8rem; margin-top: 6px; font-weight: 700; }
 
     /* ---------------- TOAST & SHORTCUT POPUP ---------------- */
-    #exitToast {
-      display: none;
-      position: fixed;
-      bottom: 25px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: rgba(15, 43, 72, 0.92);
-      color: #ffffff;
-      padding: 10px 20px;
-      border-radius: 25px;
-      font-size: 0.9rem;
-      font-weight: 700;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-      z-index: 3000;
-      white-space: nowrap;
-      border: 1px solid #fbbf24;
-    }
-
-    #installShortcutModal {
-      display: none;
-      position: fixed;
-      top: 0; left: 0; width: 100%; height: 100%;
-      background: rgba(15, 43, 72, 0.75);
-      z-index: 2500;
-      justify-content: center;
-      align-items: center;
-      backdrop-filter: blur(3px);
-      padding: 14px;
-    }
-    .install-modal-content {
-      background: #ffffff;
-      border-radius: 16px;
-      max-width: 440px;
-      width: 100%;
-      padding: 24px 20px;
-      text-align: center;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-      border-top: 5px solid var(--accent);
-      animation: popIn 0.25s ease-out;
-    }
+    #exitToast { display: none; position: fixed; bottom: 25px; left: 50%; transform: translateX(-50%); background: rgba(15, 43, 72, 0.92); color: #ffffff; padding: 10px 20px; border-radius: 25px; font-size: 0.9rem; font-weight: 700; box-shadow: 0 4px 15px rgba(0,0,0,0.3); z-index: 3000; white-space: nowrap; border: 1px solid #fbbf24; }
+    #installShortcutModal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15, 43, 72, 0.75); z-index: 2500; justify-content: center; align-items: center; backdrop-filter: blur(3px); padding: 14px; }
+    .install-modal-content { background: #ffffff; border-radius: 16px; max-width: 440px; width: 100%; padding: 24px 20px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.3); border-top: 5px solid var(--accent); animation: popIn 0.25s ease-out; }
 
     /* ---------------- FOOTER ---------------- */
-    footer {
-      background: #091a2c;
-      color: #94a3b8;
-      text-align: center;
-      padding: 14px 16px;
-      font-size: 0.82rem;
-      border-top: 2px solid #1e293b;
-      margin-top: auto;
-    }
+    footer { background: #091a2c; color: #94a3b8; text-align: center; padding: 14px 16px; font-size: 0.82rem; border-top: 2px solid #1e293b; margin-top: auto; }
     footer span { color: #f8fafc; font-weight: 600; }
 
     @media (max-width: 650px) {
@@ -622,43 +283,29 @@
       .header-center { padding: 0 4px; }
       .header-center h2 { font-size: 0.92rem; line-height: 1.15; }
       .header-center h3 { font-size: 0.72rem; line-height: 1.2; }
-
       .main-wrapper { margin: 0 auto; padding: 8px 8px 50px 8px; width: 100%; max-width: 100%; }
       .card { padding: 14px 10px; border-radius: 12px; margin-bottom: 10px; border: 1px solid #e2e8f0; }
-      
       .student-bar { flex-direction: row; align-items: center; padding: 10px 12px; border-radius: 10px; }
       .student-bar h3 { font-size: 1rem; }
       .student-bar p { font-size: 0.78rem; }
       .btn-logout { padding: 5px 8px; font-size: 0.78rem; }
-      
       .test-item { flex-direction: column; align-items: flex-start; gap: 8px; padding: 12px 10px; margin-bottom: 8px; border-radius: 10px; }
       .test-item > div:last-child { width: 100%; display: flex; justify-content: flex-end; align-items: center; }
       .btn-action { width: auto; padding: 7px 12px; font-size: 0.82rem; border-radius: 8px; }
-
       .exam-topbar { padding: 8px 10px; border-radius: 8px; margin-bottom: 10px; }
       .exam-topbar h3 { font-size: 0.95rem; }
       .exam-topbar span { font-size: 0.75rem; }
       .exam-topbar > div:last-child { font-size: 1rem; padding: 2px 8px; }
-
       .section-selector { gap: 4px; margin-bottom: 10px; }
-      .section-selector button {
-        padding: 5px 2px;
-        font-size: 0.78rem;
-        min-height: 46px;
-      }
-      .section-selector button span.sec-sub {
-        font-size: 0.68rem;
-      }
-
+      .section-selector button { padding: 5px 2px; font-size: 0.78rem; min-height: 46px; }
+      .section-selector button span.sec-sub { font-size: 0.68rem; }
       .question-card { padding: 12px 8px; margin-bottom: 10px; border-radius: 10px; }
       .options-grid { grid-template-columns: 1fr; gap: 8px; }
       .opt-label { padding: 10px 12px; font-size: 0.92rem; min-height: 44px; border-radius: 8px; }
       .opt-label input { width: 20px; height: 20px; }
-
       .fig-container { gap: 6px; padding: 8px; }
       .fig-box { width: 62px; height: 62px; }
       .fig-box svg { width: 50px; height: 50px; }
-
       .section-nav-footer { flex-direction: column; gap: 8px; padding-top: 12px; }
       .btn-nav-prev, .btn-nav-next, .btn-main { width: 100%; padding: 12px; font-size: 1rem; border-radius: 8px; }
       footer { font-size: 0.75rem; padding: 10px; }
@@ -693,15 +340,16 @@
   <div id="registrationCard" class="card">
     <div style="text-align:center; margin-bottom:16px;">
       <h2 style="color:var(--primary); font-weight:800; font-size:1.25rem;">विद्यार्थी नोंदणी व लॉगिन</h2>
-      <p style="color:#64748b; font-size:0.85rem;">नवोदय सराव चाचणी सोडवण्यासाठी आपली माहिती भरा</p>
+      <p style="color:#64748b; font-size:0.85rem;">नवोदय सराव चाचणी सोडवण्यासाठी आपली अचूक माहिती भरा</p>
     </div>
     <div class="form-group">
       <label>विद्यार्थ्याचे संपूर्ण नाव:</label>
       <input type="text" id="sName" placeholder="उदा. ओंकार प्रकाश देशमुख">
     </div>
     <div class="form-group">
-      <label>पालकांचा मोबाईल नंबर (10 अंकी):</label>
-      <input type="tel" id="sMobile" maxlength="10" placeholder="10 अंकी मोबाईल नंबर टाका">
+      <label>पालकांचा खरा मोबाईल नंबर (10 अंकी):</label>
+      <input type="tel" id="sMobile" maxlength="10" placeholder="6, 7, 8 किंवा 9 ने सुरू होणारा 10 अंकी नंबर" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+      <div class="input-hint">नोंद: कोणताही बनावट, एकाच अंकाचा (उदा. 9999999999) किंवा साध्या क्रमाचा नंबर स्वीकारला जाणार नाही.</div>
     </div>
     <div class="form-group">
       <label>तालुका निवडा (जिल्हा बीड):</label>
@@ -731,6 +379,20 @@
         <p id="displayStudentMeta"></p>
       </div>
       <button class="btn-logout" onclick="performLogout()">लॉग आउट</button>
+    </div>
+
+    <!-- ॲडमिनसाठी स्पेशल कंट्रोल बार (ॲडमिन मोडमध्येच दिसेल) -->
+    <div id="adminPanelArea" style="display:none; background:#fff7ed; border:2px solid #ea580c; border-radius:12px; padding:16px; margin-bottom:16px;">
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+        <h3 style="color:#c2410c; font-weight:800; font-size:1.1rem;">⚙️ ॲडमिन नियंत्रण कक्ष (Admin Panel)</h3>
+        <div style="font-size:0.88rem; font-weight:700; color:#0f2b48;">
+          एकूण नोंदणीकृत विद्यार्थी: <span id="adminTotalStudentsBadge" style="background:#0f2b48; color:#fff; padding:2px 8px; border-radius:10px;">0</span>
+        </div>
+      </div>
+      <div style="display:flex; gap:10px; margin-top:12px; flex-wrap:wrap;">
+        <button class="btn-action btn-resume" onclick="openAdminToppersModal()">🏆 Top 50 Toppers पहा</button>
+        <button class="btn-action btn-start" onclick="downloadStudentsExcel()">📥 सर्व नोंदणीकृत विद्यार्थी एक्सेल डाउनलोड</button>
+      </div>
     </div>
 
     <!-- ४ वेळा चाचणी सोडवण्याची सूचना -->
@@ -822,7 +484,6 @@
       </div>
     </div>
 
-    <!-- ३-कॉलम टॅब -->
     <div class="section-selector">
       <button id="tab-sec1" class="active" onclick="displaySection('mental')">
         <span>भाग १: मानसिक क्षमता</span>
@@ -858,7 +519,6 @@
       प्राप्त गुण: <span id="cScore"></span> / 100 (<span id="cPerc"></span>%)
     </div>
 
-    <!-- तपशीलवार Report Card -->
     <table class="report-table">
       <thead>
         <tr>
@@ -910,6 +570,28 @@
 
     <div id="akQuestionsHost"></div>
     <div id="akSectionNavFooter" class="section-nav-footer"></div>
+  </div>
+</div>
+
+<!-- ॲडमिन TOPPERS व संपूर्ण निकाल MODAL -->
+<div id="adminToppersModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(15,43,72,0.85); z-index:3500; justify-content:center; align-items:center; backdrop-filter:blur(4px); padding:12px;">
+  <div style="background:#ffffff; border-radius:16px; max-width:800px; width:100%; max-height:90vh; overflow-y:auto; padding:24px 20px; box-shadow:0 12px 35px rgba(0,0,0,0.3); border-top:5px solid #ea580c;">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; border-bottom:2px solid #e2e8f0; padding-bottom:10px;">
+      <h3 style="color:#0f2b48; font-weight:800; font-size:1.25rem;">🏆 चाचणीनिहाय Top 50 गुणवंत विद्यार्थी (Toppers)</h3>
+      <button onclick="closeAdminToppersModal()" style="background:#fee2e2; color:#991b1b; border:none; padding:4px 10px; border-radius:8px; font-weight:800; cursor:pointer;">✕ बंद करा</button>
+    </div>
+
+    <div style="display:flex; gap:10px; margin-bottom:14px; align-items:center; flex-wrap:wrap;">
+      <label style="font-weight:700; color:#334155;">चाचणी निवडा:</label>
+      <select id="adminTestSelector" onchange="loadToppersForSelectedTest()" style="padding:8px 12px; border:1.5px solid #cbd5e1; border-radius:8px; font-weight:700;">
+        <!-- चाचण्यांचे पर्याय डायनॅमिकली भरले जातील -->
+      </select>
+      <button class="btn-action btn-start" style="padding:8px 14px;" onclick="downloadToppersExcel()">📥 Top 50 एक्सेल डाऊनलोड</button>
+    </div>
+
+    <div id="toppersTableHost" style="overflow-x:auto;">
+      <p style="text-align:center; padding:20px; color:#64748b;">माहिती लोड होत आहे...</p>
+    </div>
   </div>
 </div>
 
@@ -975,7 +657,7 @@
 
 <script>
   const FIREBASE_DB_URL = "https://nvs-zp-beed-online-test-default-rtdb.firebaseio.com";
-  const MAX_ATTEMPTS = 4; // कमाल ४ प्रयत्न मर्यादा
+  const MAX_ATTEMPTS = 4;
 
   const EXAM_SCHEDULE = [
     { id: 1, title: "नवोदय सराव चाचणी क्र. 01 (2026-27)", dateISO: "2026-11-11", dateMarathi: "11 नोव्हेंबर 2026", file: "test1.json" },
@@ -1010,6 +692,10 @@
   let lastBackPressTime = 0;
   let logoTapCount = 0;
   let logoTapTimeout = null;
+
+  // ॲडमिनसाठी डेटा कॅशे
+  let allFirebaseResults = [];
+  let allFirebaseStudents = [];
 
   window.addEventListener("beforeinstallprompt", (e) => {
     e.preventDefault();
@@ -1082,6 +768,74 @@
     });
   });
 
+  /* ---------------- मोबाईल नंबर व्हॅलिडेशन ---------------- */
+  function isValidIndianMobile(mobile) {
+    const regex = /^[6-9]\d{9}$/;
+    if (!regex.test(mobile)) {
+      return { valid: false, msg: "मोबाईल नंबर बरोबर 10 अंकी आणि 6, 7, 8 किंवा 9 ने सुरू होणारा असावा." };
+    }
+
+    if (/^(\d)\1{9}$/.test(mobile)) {
+      return { valid: false, msg: "हा बनावट नंबर वाटतो (एकाच अंकाची पुनरावृत्ती). कृपया खरा नंबर टाका." };
+    }
+
+    const dummyList = [
+      "9876543210", "6789012345", "9898989898", "9192939495", 
+      "9090909090", "8989898989", "7878787878", "9988776655",
+      "9876501234", "9123456789", "8123456789", "7123456789"
+    ];
+    if (dummyList.includes(mobile)) {
+      return { valid: false, msg: "हा सामान्य डमी नंबर प्रणालीत स्वीकारला जाणार नाही. पालकांचा खरा नंबर टाका." };
+    }
+
+    const uniqueDigits = new Set(mobile.split(""));
+    if (uniqueDigits.size < 4) {
+      return { valid: false, msg: "अवैध नंबर रचना! कृपया खरा १० अंकी मोबाईल नंबर टाका." };
+    }
+
+    return { valid: true };
+  }
+
+  function handleRegistration() {
+    const name = document.getElementById("sName").value.trim();
+    const mobile = document.getElementById("sMobile").value.trim();
+    const taluka = document.getElementById("sTaluka").value;
+
+    if (!name || name.length < 3) {
+      alert("कृपया विद्यार्थ्याचे पूर्ण नाव टाका (किमान ३ अक्षरे).");
+      return;
+    }
+
+    const check = isValidIndianMobile(mobile);
+    if (!check.valid) {
+      alert(check.msg);
+      document.getElementById("sMobile").focus();
+      return;
+    }
+
+    if (!taluka) {
+      alert("कृपया तालुका निवडा.");
+      return;
+    }
+
+    loggedInUser = { name, mobile, taluka };
+    syncUserPersistentData();
+
+    fetch(`${FIREBASE_DB_URL}/students.json`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        name: name,
+        mobile: mobile,
+        taluka: taluka,
+        timestamp: new Date().toLocaleString("en-IN")
+      })
+    }).catch(err => console.error("Firebase Error:", err));
+
+    renderDashboard();
+    checkAndShowInstallPrompt();
+  }
+
   function syncUserPersistentData() {
     if (!loggedInUser || !loggedInUser.mobile) return;
     const storeKey = "jnv_vault_" + loggedInUser.mobile;
@@ -1141,6 +895,7 @@
     }
   }
 
+  /* ---------------- ॲडमिन मोड व TOPPERS लॉजिक ---------------- */
   function openAdminPrompt() {
     if (!isAdminMode) {
       const pin = prompt("🔐 ॲडमिन गुप्त पिन टाका:");
@@ -1149,6 +904,7 @@
         document.getElementById("adminStatusBadge").style.display = "block";
         alert("ॲडमिन मोड सक्रिय झाला आहे!");
         renderDashboard();
+        fetchAdminDashboardData();
       } else if (pin !== null) {
         alert("चुकीचा पिन!");
       }
@@ -1163,6 +919,172 @@
     }
   }
 
+  // ॲडमिनसाठी Firebase वरून सर्व निकाल व विद्यार्थ्यांची माहिती मिळवणे
+  function fetchAdminDashboardData() {
+    // नोंदणीकृत विद्यार्थी संख्या
+    fetch(`${FIREBASE_DB_URL}/students.json`)
+      .then(res => res.json())
+      .then(data => {
+        if (data) {
+          allFirebaseStudents = Object.values(data);
+          document.getElementById("adminTotalStudentsBadge").innerText = allFirebaseStudents.length;
+        }
+      });
+
+    // सर्व निकाल
+    fetch(`${FIREBASE_DB_URL}/results.json`)
+      .then(res => res.json())
+      .then(data => {
+        if (data) {
+          allFirebaseResults = Object.values(data);
+        }
+      });
+  }
+
+  // Toppers Modal उघडणे
+  function openAdminToppersModal() {
+    document.getElementById("adminToppersModal").style.display = "flex";
+    
+    // चाचण्यांचे पर्याय भरले नसल्यास भरणे
+    const sel = document.getElementById("adminTestSelector");
+    if (sel.children.length === 0) {
+      EXAM_SCHEDULE.forEach(t => {
+        const opt = document.createElement("option");
+        opt.value = t.title;
+        opt.innerText = t.title;
+        sel.appendChild(opt);
+      });
+    }
+
+    loadToppersForSelectedTest();
+  }
+
+  function closeAdminToppersModal() {
+    document.getElementById("adminToppersModal").style.display = "none";
+  }
+
+  // निवडलेल्या चाचणीतील TOP 50 गुणवंत दाखवणे
+  function loadToppersForSelectedTest() {
+    const selectedTitle = document.getElementById("adminTestSelector").value;
+    const host = document.getElementById("toppersTableHost");
+    host.innerHTML = "<p style='text-align:center; padding:15px; color:#64748b;'>निकाल शोधत आहे...</p>";
+
+    // त्या चाचणीचे निकाल फिल्टर करणे
+    const filtered = allFirebaseResults.filter(r => r.testTitle === selectedTitle);
+
+    if (filtered.length === 0) {
+      host.innerHTML = "<p style='text-align:center; padding:20px; color:#dc2626; font-weight:700;'>या चाचणीचा अद्याप कोणताही निकाल नोंदवला गेलेला नाही.</p>";
+      return;
+    }
+
+    // एकाच विद्यार्थ्याचा सर्वोच्च गुण घेणे
+    const studentBest = {};
+    filtered.forEach(item => {
+      const key = item.mobile;
+      if (!studentBest[key] || item.score > studentBest[key].score) {
+        studentBest[key] = item;
+      }
+    });
+
+    // गुणांनुसार उतरत्या क्रमाने क्रमवारी (Rank) लावणे व पहिले ५० विद्यार्थी घेणे
+    const toppers = Object.values(studentBest)
+      .sort((a, b) => b.score - a.score)
+      .slice(0, 50);
+
+    let rows = "";
+    toppers.forEach((t, i) => {
+      rows += `
+        <tr>
+          <td style="font-weight:800; color:#0f2b48;">#${i + 1}</td>
+          <td style="text-align:left; font-weight:700;">${t.name}</td>
+          <td>${t.taluka}</td>
+          <td>${t.mobile}</td>
+          <td style="font-weight:800; color:#16a34a;">${t.score} / 100</td>
+          <td style="font-weight:700;">${t.percentage}%</td>
+        </tr>
+      `;
+    });
+
+    host.innerHTML = `
+      <table class="report-table" style="margin:0;">
+        <thead>
+          <tr>
+            <th>रँक</th>
+            <th style="text-align:left;">विद्यार्थ्याचे नाव</th>
+            <th>तालुका</th>
+            <th>मोबाईल नंबर</th>
+            <th>मिळालेले गुण</th>
+            <th>टक्केवारी</th>
+          </tr>
+        </thead>
+        <tbody>${rows}</tbody>
+      </table>
+    `;
+  }
+
+  // सर्व नोंदणीकृत विद्यार्थ्यांची एक्सेल/CSV डाउनलोड करणे
+  function downloadStudentsExcel() {
+    if (allFirebaseStudents.length === 0) {
+      alert("अद्याप कोणतीही नोंदणी झालेली नाही किंवा डेटा लोड होत आहे.");
+      return;
+    }
+
+    let csvContent = "\uFEFF"; // UTF-8 BOM मराठी अक्षरांसाठी
+    csvContent += "अ.क्र.,विद्यार्थ्याचे नाव,पालकांचा मोबाईल नंबर,तालुका,नोंदणी दिनांक व वेळ\n";
+
+    allFirebaseStudents.forEach((st, idx) => {
+      csvContent += `"${idx + 1}","${st.name}","${st.mobile}","${st.taluka}","${st.timestamp}"\n`;
+    });
+
+    const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.setAttribute("href", url);
+    link.setAttribute("download", `NVS_Registered_Students_List_${new Date().toISOString().slice(0,10)}.csv`);
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
+
+  // Toppers ची एक्सेल/CSV डाऊनलोड करणे
+  function downloadToppersExcel() {
+    const selectedTitle = document.getElementById("adminTestSelector").value;
+    const filtered = allFirebaseResults.filter(r => r.testTitle === selectedTitle);
+
+    if (filtered.length === 0) {
+      alert("या चाचणीसाठी डाऊनलोड करण्याकरिता डेटा उपलब्ध नाही.");
+      return;
+    }
+
+    const studentBest = {};
+    filtered.forEach(item => {
+      const key = item.mobile;
+      if (!studentBest[key] || item.score > studentBest[key].score) {
+        studentBest[key] = item;
+      }
+    });
+
+    const toppers = Object.values(studentBest)
+      .sort((a, b) => b.score - a.score)
+      .slice(0, 50);
+
+    let csvContent = "\uFEFF";
+    csvContent += `रँक,विद्यार्थ्याचे नाव,तालुका,मोबाईल नंबर,गुण (100 पैकी),टक्केवारी,तारीख\n`;
+
+    toppers.forEach((t, i) => {
+      csvContent += `"${i + 1}","${t.name}","${t.taluka}","${t.mobile}","${t.score}","${t.percentage}%","${t.timestamp || ''}"\n`;
+    });
+
+    const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.setAttribute("href", url);
+    link.setAttribute("download", `${selectedTitle}_Top_50_Toppers.csv`);
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
+
   function fetchGlobalLockStatus() {
     fetch(`${FIREBASE_DB_URL}/unlocked_tests.json`)
       .then(res => res.json())
@@ -1173,34 +1095,6 @@
         }
       })
       .catch(err => console.log("Lock status fetch:", err));
-  }
-
-  function handleRegistration() {
-    const name = document.getElementById("sName").value.trim();
-    const mobile = document.getElementById("sMobile").value.trim();
-    const taluka = document.getElementById("sTaluka").value;
-
-    if (!name || mobile.length !== 10 || !taluka) {
-      alert("कृपया नाव, 10 अंकी मोबाईल नंबर आणि तालुका अचूक भरा.");
-      return;
-    }
-
-    loggedInUser = { name, mobile, taluka };
-    syncUserPersistentData();
-
-    fetch(`${FIREBASE_DB_URL}/students.json`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        name: name,
-        mobile: mobile,
-        taluka: taluka,
-        timestamp: new Date().toLocaleString("en-IN")
-      })
-    }).catch(err => console.error("Firebase Error:", err));
-
-    renderDashboard();
-    checkAndShowInstallPrompt();
   }
 
   function renderDashboard() {
@@ -1217,6 +1111,14 @@
 
     document.getElementById("displayStudentName").innerText = loggedInUser.name;
     document.getElementById("displayStudentMeta").innerText = "मोबाईल: " + loggedInUser.mobile + " | तालुका: " + loggedInUser.taluka;
+
+    // ॲडमिन पॅनल दाखवणे किंवा लपवणे
+    if (isAdminMode) {
+      document.getElementById("adminPanelArea").style.display = "block";
+      fetchAdminDashboardData();
+    } else {
+      document.getElementById("adminPanelArea").style.display = "none";
+    }
 
     const container = document.getElementById("testsScheduleList");
     container.innerHTML = "";
@@ -1590,6 +1492,7 @@
     }
     saveUserVault();
 
+    // Firebase वर निकाल पाठवणे
     fetch(`${FIREBASE_DB_URL}/results.json`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -1614,7 +1517,6 @@
     document.getElementById("cScore").innerText = totalMarks;
     document.getElementById("cPerc").innerText = perc;
 
-    // तपशीलवार Report Card भरणे
     const repBody = document.getElementById("cReportCardBody");
     repBody.innerHTML = `
       <tr>
