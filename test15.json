@@ -1,1229 +1,387 @@
 {
   "testId": 15,
-  "title": "????? ???? ????? ???. 15 (2026-27)",
+  "title": "नवोदय सराव चाचणी क्र. 15 (2026-27)",
   "questions": [
     {
       "id": 1,
       "sec": "mental",
-      "text": "?????? ???. 1: ????? ??? ???????????? ?????? ????? ????:",
+      "text": "प्रश्न क्र. 1: खालील चार आकृत्यांपैकी विसंगत आकृती ओळखा:",
       "figures": [
-        {
-          "l": "(A)",
-          "s": "<svg viewBox='0 0 50 50'><polygon points='25,6 6,44 44,44' stroke='black' stroke-width='2' fill='none'/><rect x='18' y='22' width='14' height='14' stroke='#c53030' stroke-width='2' fill='none'/></svg>"
-        },
-        {
-          "l": "(B)",
-          "s": "<svg viewBox='0 0 50 50'><rect x='7' y='7' width='36' height='36' stroke='black' stroke-width='2' fill='none'/><polygon points='25,12 12,38 38,38' stroke='#c53030' stroke-width='2' fill='none'/></svg>"
-        },
-        {
-          "l": "(C)",
-          "s": "<svg viewBox='0 0 50 50'><polygon points='25,5 45,19 38,44 12,44 5,19' stroke='black' stroke-width='2' fill='none'/><rect x='17' y='17' width='16' height='16' stroke='#1a365d' stroke-width='2' fill='none'/></svg>"
-        },
-        {
-          "l": "(D)",
-          "s": "<svg viewBox='0 0 50 50'><circle cx='25' cy='25' r='18' stroke='black' stroke-width='2' fill='none'/><polygon points='25,10 10,38 40,38' stroke='#c53030' stroke-width='2' fill='none'/></svg>"
-        }
+        { "l": "(A)", "s": "<svg viewBox='0 0 50 50'><rect x='8' y='8' width='34' height='34' stroke='black' stroke-width='2' fill='none'/><line x1='8' y1='8' x2='42' y2='42' stroke='black' stroke-width='1.5'/></svg>" },
+        { "l": "(B)", "s": "<svg viewBox='0 0 50 50'><circle cx='25' cy='25' r='18' stroke='black' stroke-width='2' fill='none'/><line x1='7' y1='25' x2='43' y2='25' stroke='black' stroke-width='1.5'/></svg>" },
+        { "l": "(C)", "s": "<svg viewBox='0 0 50 50'><polygon points='25,6 6,44 44,44' stroke='black' stroke-width='2' fill='none'/><line x1='25' y1='6' x2='25' y2='44' stroke='black' stroke-width='1.5'/></svg>" },
+        { "l": "(D)", "s": "<svg viewBox='0 0 50 50'><polygon points='10,12 40,12 45,42 5,42' stroke='black' stroke-width='2' fill='none'/><circle cx='25' cy='27' r='12' fill='black'/></svg>" }
       ],
-      "options": [
-        "(A)",
-        "(B)",
-        "(C)",
-        "(D)"
-      ],
+      "options": ["(A)", "(B)", "(C)", "(D)"],
       "correct": 3
     },
     {
       "id": 2,
       "sec": "mental",
-      "text": "?????? ???. 2: ????? ??? ???????????? ?????? ????? ????:",
+      "text": "प्रश्न क्र. 2: खालील चार आकृत्यांपैकी विसंगत आकृती ओळखा:",
       "figures": [
-        {
-          "l": "(A)",
-          "s": "<svg viewBox='0 0 50 50'><circle cx='25' cy='25' r='18' stroke='black' stroke-width='2' fill='none'/><line x1='25' y1='25' x2='25' y2='8' stroke='black' stroke-width='2'/><polyline points='21,12 25,8 29,12' stroke='black' stroke-width='2' fill='none'/></svg>"
-        },
-        {
-          "l": "(B)",
-          "s": "<svg viewBox='0 0 50 50'><circle cx='25' cy='25' r='18' stroke='black' stroke-width='2' fill='none'/><line x1='25' y1='25' x2='42' y2='25' stroke='black' stroke-width='2'/><polyline points='38,21 42,25 38,29' stroke='black' stroke-width='2' fill='none'/></svg>"
-        },
-        {
-          "l": "(C)",
-          "s": "<svg viewBox='0 0 50 50'><circle cx='25' cy='25' r='18' stroke='black' stroke-width='2' fill='none'/><line x1='25' y1='25' x2='25' y2='42' stroke='black' stroke-width='2'/><polyline points='21,38 25,42 29,38' stroke='black' stroke-width='2' fill='none'/></svg>"
-        },
-        {
-          "l": "(D)",
-          "s": "<svg viewBox='0 0 50 50'><circle cx='25' cy='25' r='18' stroke='black' stroke-width='2' fill='none'/><line x1='25' y1='25' x2='8' y2='25' stroke='#c53030' stroke-width='2'/><polyline points='12,21 8,25 12,29' stroke='#c53030' stroke-width='2' fill='none'/></svg>"
-        }
+        { "l": "(A)", "s": "<svg viewBox='0 0 50 50'><circle cx='25' cy='25' r='18' stroke='black' stroke-width='2' fill='none'/><circle cx='25' cy='12' r='3' fill='black'/></svg>" },
+        { "l": "(B)", "s": "<svg viewBox='0 0 50 50'><rect x='8' y='8' width='34' height='34' stroke='black' stroke-width='2' fill='none'/><circle cx='38' cy='25' r='3' fill='black'/></svg>" },
+        { "l": "(C)", "s": "<svg viewBox='0 0 50 50'><polygon points='25,6 6,44 44,44' stroke='black' stroke-width='2' fill='none'/><circle cx='25' cy='38' r='3' fill='black'/></svg>" },
+        { "l": "(D)", "s": "<svg viewBox='0 0 50 50'><polygon points='25,5 45,20 38,44 12,44 5,20' stroke='black' stroke-width='2' fill='none'/><circle cx='36' cy='36' r='3' fill='black'/></svg>" }
       ],
-      "options": [
-        "(A)",
-        "(B)",
-        "(C)",
-        "(D)"
-      ],
-      "correct": 1
+      "options": ["(A)", "(B)", "(C)", "(D)"],
+      "correct": 3
     },
     {
       "id": 3,
       "sec": "mental",
-      "text": "?????? ???. 3: ????? ??? ???????????? ?????? ????? ????:",
+      "text": "प्रश्न क्र. 3: खालील चार आकृत्यांपैकी विसंगत आकृती ओळखा:",
       "figures": [
-        {
-          "l": "(A)",
-          "s": "<svg viewBox='0 0 50 50'><rect x='7' y='7' width='36' height='36' stroke='black' stroke-width='2' fill='none'/><polygon points='7,7 20,7 7,20' fill='#c53030'/></svg>"
-        },
-        {
-          "l": "(B)",
-          "s": "<svg viewBox='0 0 50 50'><circle cx='25' cy='25' r='18' stroke='black' stroke-width='2' fill='none'/><path d='M 25,7 A 18,18 0 0,1 25,43 Z' fill='#1a365d'/></svg>"
-        },
-        {
-          "l": "(C)",
-          "s": "<svg viewBox='0 0 50 50'><polygon points='25,6 6,44 44,44' stroke='black' stroke-width='2' fill='none'/><polygon points='25,6 25,44 44,44' fill='#1a365d'/></svg>"
-        },
-        {
-          "l": "(D)",
-          "s": "<svg viewBox='0 0 50 50'><rect x='7' y='7' width='36' height='36' stroke='black' stroke-width='2' fill='none'/><rect x='7' y='7' width='18' height='36' fill='#1a365d'/></svg>"
-        }
+        { "l": "(A)", "s": "<svg viewBox='0 0 50 50'><line x1='12' y1='14' x2='38' y2='14' stroke='black' stroke-width='2'/><line x1='12' y1='36' x2='38' y2='36' stroke='black' stroke-width='2'/></svg>" },
+        { "l": "(B)", "s": "<svg viewBox='0 0 50 50'><line x1='14' y1='12' x2='14' y2='38' stroke='black' stroke-width='2'/><line x1='36' y1='12' x2='36' y2='38' stroke='black' stroke-width='2'/></svg>" },
+        { "l": "(C)", "s": "<svg viewBox='0 0 50 50'><line x1='10' y1='10' x2='40' y2='40' stroke='black' stroke-width='2'/><line x1='10' y1='40' x2='40' y2='10' stroke='black' stroke-width='2'/></svg>" },
+        { "l": "(D)", "s": "<svg viewBox='0 0 50 50'><line x1='10' y1='10' x2='40' y2='10' stroke='black' stroke-width='2'/><line x1='10' y1='40' x2='40' y2='40' stroke='black' stroke-width='2'/></svg>" }
       ],
-      "options": [
-        "(A)",
-        "(B)",
-        "(C)",
-        "(D)"
-      ],
-      "correct": 0
+      "options": ["(A)", "(B)", "(C)", "(D)"],
+      "correct": 2
     },
     {
       "id": 4,
       "sec": "mental",
-      "text": "?????? ???. 4: ????? ??? ???????????? ?????? ????? ????:",
+      "text": "प्रश्न क्र. 4: खालील चार आकृत्यांपैकी विसंगत आकृती ओळखा:",
       "figures": [
-        {
-          "l": "(A)",
-          "s": "<svg viewBox='0 0 50 50'><line x1='8' y1='8' x2='42' y2='42' stroke='black' stroke-width='2'/><circle cx='8' cy='8' r='3' fill='black'/><rect x='39' y='39' width='6' height='6' fill='#1a365d'/></svg>"
-        },
-        {
-          "l": "(B)",
-          "s": "<svg viewBox='0 0 50 50'><line x1='42' y1='8' x2='8' y2='42' stroke='black' stroke-width='2'/><circle cx='42' cy='8' r='3' fill='black'/><rect x='5' y='39' width='6' height='6' fill='#1a365d'/></svg>"
-        },
-        {
-          "l": "(C)",
-          "s": "<svg viewBox='0 0 50 50'><line x1='25' y1='8' x2='25' y2='42' stroke='black' stroke-width='2'/><circle cx='25' cy='8' r='3' fill='black'/><circle cx='25' cy='42' r='3' fill='black'/></svg>"
-        },
-        {
-          "l": "(D)",
-          "s": "<svg viewBox='0 0 50 50'><line x1='8' y1='25' x2='42' y2='25' stroke='black' stroke-width='2'/><circle cx='8' cy='25' r='3' fill='black'/><rect x='39' y='22' width='6' height='6' fill='#1a365d'/></svg>"
-        }
+        { "l": "(A)", "s": "<svg viewBox='0 0 50 50'><rect x='8' y='8' width='34' height='34' stroke='black' stroke-width='2' fill='none'/><circle cx='18' cy='18' r='3' fill='black'/></svg>" },
+        { "l": "(B)", "s": "<svg viewBox='0 0 50 50'><polygon points='25,8 10,40 40,40' stroke='black' stroke-width='2' fill='none'/><circle cx='25' cy='25' r='3' fill='black'/></svg>" },
+        { "l": "(C)", "s": "<svg viewBox='0 0 50 50'><circle cx='25' cy='25' r='18' stroke='black' stroke-width='2' fill='none'/><circle cx='25' cy='25' r='3' fill='black'/></svg>" },
+        { "l": "(D)", "s": "<svg viewBox='0 0 50 50'><polygon points='25,5 45,20 38,44 12,44 5,20' stroke='black' stroke-width='2' fill='none'/><circle cx='12' cy='20' r='3' fill='black'/></svg>" }
       ],
-      "options": [
-        "(A)",
-        "(B)",
-        "(C)",
-        "(D)"
-      ],
-      "correct": 2
+      "options": ["(A)", "(B)", "(C)", "(D)"],
+      "correct": 3
     },
     {
       "id": 5,
       "sec": "mental",
-      "text": "?????? ???. 5: ?????? ???????? ?????? ??????? ??????? ??????? ????? ????:",
-      "problemFig": "<svg viewBox='0 0 50 50'><rect x='7' y='7' width='36' height='36' stroke='black' stroke-width='2' fill='none'/><line x1='7' y1='25' x2='43' y2='25' stroke='black' stroke-width='1.5'/><circle cx='18' cy='16' r='3.5' stroke='black' stroke-width='1.5' fill='none'/><polygon points='32,12 37,20 27,20' fill='black'/><rect x='14' y='30' width='8' height='8' fill='black'/><line x1='30' y1='30' x2='38' y2='38' stroke='#c53030' stroke-width='2'/></svg>",
+      "text": "प्रश्न क्र. 5: डाव्या बाजूच्या प्रश्न आकृतीशी तंतोतंत जुळणारी आकृती शोधा:",
+      "problemFig": "<svg viewBox='0 0 50 50'><circle cx='25' cy='25' r='18' stroke='black' stroke-width='2' fill='none'/><line x1='12' y1='25' x2='38' y2='25' stroke='black' stroke-width='2'/><circle cx='25' cy='42' r='3' fill='black'/></svg>",
       "figures": [
-        {
-          "l": "(A)",
-          "s": "<svg viewBox='0 0 50 50'><rect x='7' y='7' width='36' height='36' stroke='black' stroke-width='2' fill='none'/><line x1='7' y1='25' x2='43' y2='25' stroke='black' stroke-width='1.5'/><circle cx='18' cy='16' r='3.5' fill='black'/><polygon points='32,12 37,20 27,20' fill='black'/><rect x='14' y='30' width='8' height='8' fill='black'/><line x1='30' y1='30' x2='38' y2='38' stroke='#c53030' stroke-width='2'/></svg>"
-        },
-        {
-          "l": "(B)",
-          "s": "<svg viewBox='0 0 50 50'><rect x='7' y='7' width='36' height='36' stroke='black' stroke-width='2' fill='none'/><line x1='7' y1='25' x2='43' y2='25' stroke='black' stroke-width='1.5'/><circle cx='18' cy='16' r='3.5' stroke='black' stroke-width='1.5' fill='none'/><polygon points='32,12 37,20 27,20' fill='black'/><rect x='14' y='30' width='8' height='8' fill='black'/><line x1='30' y1='30' x2='38' y2='38' stroke='#c53030' stroke-width='2'/></svg>"
-        },
-        {
-          "l": "(C)",
-          "s": "<svg viewBox='0 0 50 50'><rect x='7' y='7' width='36' height='36' stroke='black' stroke-width='2' fill='none'/><line x1='7' y1='25' x2='43' y2='25' stroke='black' stroke-width='1.5'/><circle cx='18' cy='16' r='3.5' stroke='black' stroke-width='1.5' fill='none'/><polygon points='32,20 37,12 27,12' fill='black'/><rect x='14' y='30' width='8' height='8' fill='black'/><line x1='30' y1='30' x2='38' y2='38' stroke='#c53030' stroke-width='2'/></svg>"
-        },
-        {
-          "l": "(D)",
-          "s": "<svg viewBox='0 0 50 50'><rect x='7' y='7' width='36' height='36' stroke='black' stroke-width='2' fill='none'/><circle cx='18' cy='16' r='3.5' fill='none'/></svg>"
-        }
+        { "l": "(A)", "s": "<svg viewBox='0 0 50 50'><circle cx='25' cy='25' r='18' stroke='black' stroke-width='2' fill='none'/><line x1='25' y1='12' x2='25' y2='38' stroke='black' stroke-width='2'/><circle cx='25' cy='42' r='3' fill='black'/></svg>" },
+        { "l": "(B)", "s": "<svg viewBox='0 0 50 50'><circle cx='25' cy='25' r='18' stroke='black' stroke-width='2' fill='none'/><line x1='12' y1='25' x2='38' y2='25' stroke='black' stroke-width='2'/><circle cx='25' cy='42' r='3' fill='black'/></svg>" },
+        { "l": "(C)", "s": "<svg viewBox='0 0 50 50'><circle cx='25' cy='25' r='18' stroke='black' stroke-width='2' fill='none'/><line x1='12' y1='25' x2='38' y2='25' stroke='black' stroke-width='2'/><circle cx='25' cy='8' r='3' fill='black'/></svg>" },
+        { "l": "(D)", "s": "<svg viewBox='0 0 50 50'><circle cx='25' cy='25' r='18' stroke='black' stroke-width='2' fill='none'/><circle cx='25' cy='42' r='3' fill='black'/></svg>" }
       ],
-      "options": [
-        "(A)",
-        "(B)",
-        "(C)",
-        "(D)"
-      ],
+      "options": ["(A)", "(B)", "(C)", "(D)"],
       "correct": 1
     },
     {
       "id": 6,
       "sec": "mental",
-      "text": "?????? ???. 6: ?????? ???????? ?????? ??????? ??????? ??????? ????? ????:",
-      "problemFig": "<svg viewBox='0 0 50 50'><polygon points='25,6 44,44 6,44' stroke='black' stroke-width='2' fill='none'/><circle cx='25' cy='28' r='7' stroke='#1a365d' stroke-width='2' fill='none'/><line x1='25' y1='6' x2='25' y2='21' stroke='#c53030' stroke-width='2'/></svg>",
+      "text": "प्रश्न क्र. 6: डाव्या बाजूच्या प्रश्न आकृतीशी तंतोतंत जुळणारी आकृती शोधा:",
+      "problemFig": "<svg viewBox='0 0 50 50'><polygon points='25,8 10,40 40,40' stroke='black' stroke-width='2' fill='none'/><circle cx='25' cy='16' r='4' stroke='black' stroke-width='1.5' fill='none'/></svg>",
       "figures": [
-        {
-          "l": "(A)",
-          "s": "<svg viewBox='0 0 50 50'><polygon points='25,44 44,6 6,6' stroke='black' stroke-width='2' fill='none'/><circle cx='25' cy='22' r='7' stroke='#1a365d' stroke-width='2' fill='none'/><line x1='25' y1='44' x2='25' y2='29' stroke='#c53030' stroke-width='2'/></svg>"
-        },
-        {
-          "l": "(B)",
-          "s": "<svg viewBox='0 0 50 50'><polygon points='25,6 44,44 6,44' stroke='black' stroke-width='2' fill='none'/><circle cx='25' cy='28' r='7' fill='#1a365d'/><line x1='25' y1='6' x2='25' y2='21' stroke='#c53030' stroke-width='2'/></svg>"
-        },
-        {
-          "l": "(C)",
-          "s": "<svg viewBox='0 0 50 50'><polygon points='25,6 44,44 6,44' stroke='black' stroke-width='2' fill='none'/><circle cx='25' cy='28' r='7' stroke='#1a365d' stroke-width='2' fill='none'/><line x1='25' y1='6' x2='25' y2='21' stroke='#c53030' stroke-width='2'/></svg>"
-        },
-        {
-          "l": "(D)",
-          "s": "<svg viewBox='0 0 50 50'><polygon points='25,6 44,44 6,44' stroke='black' stroke-width='2' fill='none'/><line x1='25' y1='6' x2='25' y2='44' stroke='#c53030' stroke-width='2'/></svg>"
-        }
+        { "l": "(A)", "s": "<svg viewBox='0 0 50 50'><polygon points='25,40 10,8 40,8' stroke='black' stroke-width='2' fill='none'/><circle cx='25' cy='16' r='4' stroke='black' stroke-width='1.5' fill='none'/></svg>" },
+        { "l": "(B)", "s": "<svg viewBox='0 0 50 50'><polygon points='25,8 10,40 40,40' stroke='black' stroke-width='2' fill='none'/><circle cx='25' cy='16' r='4' fill='black'/></svg>" },
+        { "l": "(C)", "s": "<svg viewBox='0 0 50 50'><polygon points='25,8 10,40 40,40' stroke='black' stroke-width='2' fill='none'/><circle cx='25' cy='16' r='4' stroke='black' stroke-width='1.5' fill='none'/></svg>" },
+        { "l": "(D)", "s": "<svg viewBox='0 0 50 50'><polygon points='25,8 10,40 40,40' stroke='black' stroke-width='2' fill='none'/><rect x='22' y='22' width='6' height='6' fill='black'/></svg>" }
       ],
-      "options": [
-        "(A)",
-        "(B)",
-        "(C)",
-        "(D)"
-      ],
+      "options": ["(A)", "(B)", "(C)", "(D)"],
       "correct": 2
     },
     {
       "id": 7,
       "sec": "mental",
-      "text": "?????? ???. 7: ???????????????? ???? ????? ????? ?????? ????? ????? ???:",
-      "problemFig": "<svg viewBox='0 0 50 50'><rect x='6' y='6' width='38' height='38' stroke='black' stroke-width='2' fill='none'/><line x1='25' y1='6' x2='25' y2='44' stroke='black' stroke-width='1.5'/><line x1='6' y1='25' x2='44' y2='25' stroke='black' stroke-width='1.5'/><circle cx='15' cy='15' r='5' fill='#1a365d'/><rect x='30' y='10' width='10' height='10' fill='#1a365d'/><rect x='10' y='30' width='10' height='10' fill='#1a365d'/><text x='30' y='40' font-size='16' fill='#c53030'>?</text></svg>",
+      "text": "प्रश्न क्र. 7: प्रश्नचिन्हाच्या जागी योग्य तुकडा निवडून आकृती पूर्ण करा:",
+      "problemFig": "<svg viewBox='0 0 50 50'><rect x='6' y='6' width='38' height='38' stroke='black' stroke-width='2' fill='none'/><line x1='25' y1='6' x2='25' y2='44' stroke='black' stroke-width='1.5'/><line x1='6' y1='25' x2='44' y2='25' stroke='black' stroke-width='1.5'/><circle cx='15' cy='15' r='5' fill='black'/><circle cx='35' cy='15' r='5' fill='black'/><circle cx='15' cy='35' r='5' fill='black'/><text x='30' y='40' font-size='16' fill='#c53030'>?</text></svg>",
       "figures": [
-        {
-          "l": "(A)",
-          "s": "<svg viewBox='0 0 50 50'><circle cx='25' cy='25' r='6' fill='#1a365d'/></svg>"
-        },
-        {
-          "l": "(B)",
-          "s": "<svg viewBox='0 0 50 50'><rect x='18' y='18' width='14' height='14' fill='#1a365d'/></svg>"
-        },
-        {
-          "l": "(C)",
-          "s": "<svg viewBox='0 0 50 50'><circle cx='25' cy='25' r='6' stroke='#1a365d' stroke-width='2' fill='none'/></svg>"
-        },
-        {
-          "l": "(D)",
-          "s": "<svg viewBox='0 0 50 50'><line x1='10' y1='10' x2='40' y2='40' stroke='black' stroke-width='2'/></svg>"
-        }
+        { "l": "(A)", "s": "<svg viewBox='0 0 50 50'><circle cx='25' cy='25' r='5' fill='black'/></svg>" },
+        { "l": "(B)", "s": "<svg viewBox='0 0 50 50'><rect x='20' y='20' width='10' height='10' fill='black'/></svg>" },
+        { "l": "(C)", "s": "<svg viewBox='0 0 50 50'><circle cx='25' cy='25' r='5' stroke='black' stroke-width='1.5' fill='none'/></svg>" },
+        { "l": "(D)", "s": "<svg viewBox='0 0 50 50'><line x1='15' y1='15' x2='35' y2='35' stroke='black' stroke-width='2'/></svg>" }
       ],
-      "options": [
-        "(A)",
-        "(B)",
-        "(C)",
-        "(D)"
-      ],
+      "options": ["(A)", "(B)", "(C)", "(D)"],
       "correct": 0
     },
     {
       "id": 8,
       "sec": "mental",
-      "text": "?????? ???. 8: ???????? ????? ???? ????? ?????? ????? ?????:",
+      "text": "प्रश्न क्र. 8: मालिकेचा पुढील क्रम पूर्ण करणारी आकृती निवडा:",
       "figures": [
-        {
-          "l": "(A)",
-          "s": "<svg viewBox='0 0 50 50'><polygon points='25,8 10,42 40,42' stroke='black' stroke-width='2' fill='none'/><circle cx='25' cy='32' r='3' fill='black'/></svg>"
-        },
-        {
-          "l": "(B)",
-          "s": "<svg viewBox='0 0 50 50'><rect x='8' y='8' width='34' height='34' stroke='black' stroke-width='2' fill='none'/><circle cx='18' cy='25' r='3' fill='black'/><circle cx='32' cy='25' r='3' fill='black'/></svg>"
-        },
-        {
-          "l": "(C)",
-          "s": "<svg viewBox='0 0 50 50'><polygon points='25,5 45,19 38,44 12,44 5,19' stroke='black' stroke-width='2' fill='none'/><circle cx='18' cy='25' r='3' fill='black'/><circle cx='25' cy='25' r='3' fill='black'/><circle cx='32' cy='25' r='3' fill='black'/></svg>"
-        },
-        {
-          "l": "(D)",
-          "s": "<svg viewBox='0 0 50 50'><polygon points='25,5 44,15 44,35 25,45 6,35 6,15' stroke='black' stroke-width='2' fill='none'/><circle cx='16' cy='25' r='2.5' fill='black'/><circle cx='22' cy='25' r='2.5' fill='black'/><circle cx='28' cy='25' r='2.5' fill='black'/><circle cx='34' cy='25' r='2.5' fill='black'/></svg>"
-        }
+        { "l": "(A)", "s": "<svg viewBox='0 0 50 50'><circle cx='25' cy='25' r='18' stroke='black' stroke-width='2' fill='none'/><line x1='25' y1='25' x2='25' y2='4' stroke='black' stroke-width='2'/></svg>" },
+        { "l": "(B)", "s": "<svg viewBox='0 0 50 50'><circle cx='25' cy='25' r='18' stroke='black' stroke-width='2' fill='none'/><line x1='25' y1='25' x2='46' y2='25' stroke='black' stroke-width='2'/></svg>" },
+        { "l": "(C)", "s": "<svg viewBox='0 0 50 50'><circle cx='25' cy='25' r='18' stroke='black' stroke-width='2' fill='none'/><line x1='25' y1='25' x2='25' y2='46' stroke='black' stroke-width='2'/></svg>" },
+        { "l": "(D)", "s": "<svg viewBox='0 0 50 50'><circle cx='25' cy='25' r='18' stroke='black' stroke-width='2' fill='none'/><line x1='25' y1='25' x2='4' y2='25' stroke='black' stroke-width='2'/></svg>" }
       ],
-      "options": [
-        "(A)",
-        "(B)",
-        "(C)",
-        "(D)"
-      ],
+      "options": ["(A)", "(B)", "(C)", "(D)"],
       "correct": 3
     },
     {
       "id": 9,
       "sec": "mental",
-      "text": "?????? ???. 9: ???????????????? ???? ????? ????? ?????? ????? ????:",
-      "problemFig": "<svg viewBox='0 0 50 50'><rect x='8' y='8' width='34' height='34' stroke='black' stroke-width='2' fill='none'/><line x1='8' y1='25' x2='42' y2='25' stroke='#1a365d' stroke-width='2'/></svg>",
+      "text": "प्रश्न क्र. 9: प्रश्नचिन्हाच्या जागी योग्य संबंध असणारी आकृती शोधा:",
+      "problemFig": "<svg viewBox='0 0 50 50'><polygon points='25,8 10,40 40,40' stroke='black' stroke-width='2' fill='none'/><circle cx='25' cy='20' r='6' stroke='black' stroke-width='1.5' fill='none'/></svg>",
       "figures": [
-        {
-          "l": "(A)",
-          "s": "<svg viewBox='0 0 50 50'><circle cx='25' cy='25' r='18' stroke='black' stroke-width='2' fill='none'/></svg>"
-        },
-        {
-          "l": "(B)",
-          "s": "<svg viewBox='0 0 50 50'><circle cx='25' cy='25' r='18' stroke='black' stroke-width='2' fill='none'/><line x1='25' y1='7' x2='25' y2='43' stroke='#1a365d' stroke-width='2'/></svg>"
-        },
-        {
-          "l": "(C)",
-          "s": "<svg viewBox='0 0 50 50'><polygon points='25,6 6,44 44,44' stroke='black' stroke-width='2' fill='none'/></svg>"
-        },
-        {
-          "l": "(D)",
-          "s": "<svg viewBox='0 0 50 50'><rect x='8' y='8' width='34' height='34' fill='#1a365d'/></svg>"
-        }
+        { "l": "(A)", "s": "<svg viewBox='0 0 50 50'><rect x='8' y='8' width='34' height='34' stroke='black' stroke-width='2' fill='none'/><circle cx='25' cy='25' r='6' stroke='black' stroke-width='1.5' fill='none'/></svg>" },
+        { "l": "(B)", "s": "<svg viewBox='0 0 50 50'><circle cx='25' cy='25' r='18' stroke='black' stroke-width='2' fill='none'/></svg>" },
+        { "l": "(C)", "s": "<svg viewBox='0 0 50 50'><rect x='10' y='10' width='30' height='30' fill='black'/></svg>" },
+        { "l": "(D)", "s": "<svg viewBox='0 0 50 50'><line x1='10' y1='25' x2='40' y2='25' stroke='black' stroke-width='2'/></svg>" }
       ],
-      "options": [
-        "(A)",
-        "(B)",
-        "(C)",
-        "(D)"
-      ],
-      "correct": 1
+      "options": ["(A)", "(B)", "(C)", "(D)"],
+      "correct": 0
     },
     {
       "id": 10,
       "sec": "mental",
-      "text": "?????? ???. 10: ?????? ???????? ??????? ???? ??????? ?????:",
-      "problemFig": "<svg viewBox='0 0 50 50'><text x='8' y='36' font-size='28' font-weight='bold' fill='#1a365d'>B4</text></svg>",
+      "text": "प्रश्न क्र. 10: उजव्या बाजूच्या आरशातील अचूक प्रतिमा निवडा:",
+      "problemFig": "<svg viewBox='0 0 50 50'><text x='10' y='36' font-size='26' font-weight='bold' fill='black'>J4</text></svg>",
       "figures": [
-        {
-          "l": "(A)",
-          "s": "<svg viewBox='0 0 50 50'><text x='8' y='36' font-size='28' font-weight='bold' fill='#1a365d'>B4</text></svg>"
-        },
-        {
-          "l": "(B)",
-          "s": "<svg viewBox='0 0 50 50'><text x='8' y='36' font-size='28' font-weight='bold' fill='#1a365d' transform='translate(0,50) scale(1,-1)'>B4</text></svg>"
-        },
-        {
-          "l": "(C)",
-          "s": "<svg viewBox='0 0 50 50'><text x='8' y='36' font-size='28' font-weight='bold' fill='#1a365d' transform='translate(50,0) scale(-1,1)'>B4</text></svg>"
-        },
-        {
-          "l": "(D)",
-          "s": "<svg viewBox='0 0 50 50'><circle cx='25' cy='25' r='16' fill='#1a365d'/></svg>"
-        }
+        { "l": "(A)", "s": "<svg viewBox='0 0 50 50'><text x='10' y='36' font-size='26' font-weight='bold' fill='black'>J4</text></svg>" },
+        { "l": "(B)", "s": "<svg viewBox='0 0 50 50'><text x='10' y='36' font-size='26' font-weight='bold' fill='black' transform='translate(50,0) scale(-1,1)'>J4</text></svg>" },
+        { "l": "(C)", "s": "<svg viewBox='0 0 50 50'><text x='10' y='36' font-size='26' font-weight='bold' fill='black' transform='translate(0,50) scale(1,-1)'>J4</text></svg>" },
+        { "l": "(D)", "s": "<svg viewBox='0 0 50 50'><circle cx='25' cy='25' r='14' fill='black'/></svg>" }
       ],
-      "options": [
-        "(A)",
-        "(B)",
-        "(C)",
-        "(D)"
-      ],
-      "correct": 2
+      "options": ["(A)", "(B)", "(C)", "(D)"],
+      "correct": 1
     },
     {
       "id": 11,
       "sec": "mental",
-      "text": "?????? ???. 11: ??????? ??? ???????????? ??????? ????? ?????:",
+      "text": "प्रश्न क्र. 11: कागदाची घडी उलगडल्यानंतर दिसणारी आकृती निवडा:",
       "figures": [
-        {
-          "l": "(A)",
-          "s": "<svg viewBox='0 0 50 50'><rect x='6' y='6' width='38' height='38' stroke='black' stroke-width='2' fill='none'/><circle cx='25' cy='25' r='6' fill='black'/></svg>"
-        },
-        {
-          "l": "(B)",
-          "s": "<svg viewBox='0 0 50 50'><circle cx='25' cy='25' r='18' stroke='black' stroke-width='2' fill='none'/></svg>"
-        },
-        {
-          "l": "(C)",
-          "s": "<svg viewBox='0 0 50 50'><rect x='6' y='6' width='38' height='38' fill='black'/></svg>"
-        },
-        {
-          "l": "(D)",
-          "s": "<svg viewBox='0 0 50 50'><rect x='6' y='6' width='38' height='38' stroke='black' stroke-width='2' fill='none'/><polygon points='25,6 21,12 29,12' fill='black'/><polygon points='44,25 38,21 38,29' fill='black'/><polygon points='25,44 21,38 29,38' fill='black'/><polygon points='6,25 12,21 12,29' fill='black'/></svg>"
-        }
+        { "l": "(A)", "s": "<svg viewBox='0 0 50 50'><rect x='8' y='8' width='34' height='34' stroke='black' stroke-width='2' fill='none'/><polygon points='25,20 18,34 32,34' stroke='black' stroke-width='1.5' fill='none'/></svg>" },
+        { "l": "(B)", "s": "<svg viewBox='0 0 50 50'><circle cx='25' cy='25' r='16' stroke='black' stroke-width='2' fill='none'/></svg>" },
+        { "l": "(C)", "s": "<svg viewBox='0 0 50 50'><rect x='8' y='8' width='34' height='34' stroke='black' stroke-width='2' fill='none'/><rect x='20' y='20' width='10' height='10' fill='black'/></svg>" },
+        { "l": "(D)", "s": "<svg viewBox='0 0 50 50'><polygon points='25,10 10,40 40,40' fill='black'/></svg>" }
       ],
-      "options": [
-        "(A)",
-        "(B)",
-        "(C)",
-        "(D)"
-      ],
-      "correct": 3
+      "options": ["(A)", "(B)", "(C)", "(D)"],
+      "correct": 0
     },
     {
       "id": 12,
       "sec": "mental",
-      "text": "?????? ???. 12: ????? ????? ?????????? ???????? ????? ?????? ????? ????? ?????:",
-      "problemFig": "<svg viewBox='0 0 50 50'><path d='M 6,6 L 44,6 L 44,44 L 6,44 L 6,36 L 22,36 L 22,14 L 6,14 Z' stroke='#1a365d' stroke-width='2' fill='#edf2f7'/></svg>",
+      "text": "प्रश्न क्र. 12: आकृती पूर्ण करण्यासाठी रिकाम्या जागेत बसणारा योग्य तुकडा निवडा:",
+      "problemFig": "<svg viewBox='0 0 50 50'><path d='M 8,8 L 42,8 L 42,42 L 8,42 L 8,30 L 22,30 L 22,12 L 8,12 Z' stroke='black' stroke-width='2' fill='#f1f5f9'/></svg>",
       "figures": [
-        {
-          "l": "(A)",
-          "s": "<svg viewBox='0 0 50 50'><rect x='16' y='14' width='14' height='22' stroke='#1a365d' stroke-width='2' fill='#2b6cb0'/></svg>"
-        },
-        {
-          "l": "(B)",
-          "s": "<svg viewBox='0 0 50 50'><circle cx='25' cy='25' r='10' fill='#2b6cb0'/></svg>"
-        },
-        {
-          "l": "(C)",
-          "s": "<svg viewBox='0 0 50 50'><polygon points='25,10 10,40 40,40' fill='#2b6cb0'/></svg>"
-        },
-        {
-          "l": "(D)",
-          "s": "<svg viewBox='0 0 50 50'><line x1='10' y1='10' x2='40' y2='40' stroke='#1a365d' stroke-width='3'/></svg>"
-        }
+        { "l": "(A)", "s": "<svg viewBox='0 0 50 50'><rect x='15' y='12' width='14' height='18' fill='black'/></svg>" },
+        { "l": "(B)", "s": "<svg viewBox='0 0 50 50'><circle cx='25' cy='25' r='8' fill='black'/></svg>" },
+        { "l": "(C)", "s": "<svg viewBox='0 0 50 50'><polygon points='25,12 12,38 38,38' fill='black'/></svg>" },
+        { "l": "(D)", "s": "<svg viewBox='0 0 50 50'><line x1='12' y1='25' x2='38' y2='25' stroke='black' stroke-width='3'/></svg>" }
       ],
-      "options": [
-        "(A)",
-        "(B)",
-        "(C)",
-        "(D)"
-      ],
+      "options": ["(A)", "(B)", "(C)", "(D)"],
       "correct": 0
     },
     {
       "id": 13,
       "sec": "mental",
-      "text": "?????? ???. 13: ???????? ?????????? ????? ????? ???? ?????? ????? ????:",
+      "text": "प्रश्न क्र. 13: दिलेल्या आकृत्यांचे तुकडे जोडून तयार होणारी आकृती शोधा:",
       "figures": [
-        {
-          "l": "(A)",
-          "s": "<svg viewBox='0 0 50 50'><circle cx='25' cy='25' r='18' stroke='black' stroke-width='2' fill='none'/></svg>"
-        },
-        {
-          "l": "(B)",
-          "s": "<svg viewBox='0 0 50 50'><polygon points='25,6 6,44 44,44' stroke='#1a365d' stroke-width='2' fill='none'/><polygon points='25,44 15.5,25 34.5,25' stroke='#1a365d' stroke-width='1.5' fill='none'/></svg>"
-        },
-        {
-          "l": "(C)",
-          "s": "<svg viewBox='0 0 50 50'><rect x='8' y='8' width='34' height='34' stroke='black' stroke-width='2' fill='none'/></svg>"
-        },
-        {
-          "l": "(D)",
-          "s": "<svg viewBox='0 0 50 50'><line x1='6' y1='25' x2='44' y2='25' stroke='black' stroke-width='3'/></svg>"
-        }
+        { "l": "(A)", "s": "<svg viewBox='0 0 50 50'><polygon points='25,8 10,40 40,40' stroke='black' stroke-width='2' fill='none'/><circle cx='25' cy='25' r='7' stroke='black' stroke-width='1.5' fill='none'/></svg>" },
+        { "l": "(B)", "s": "<svg viewBox='0 0 50 50'><rect x='8' y='8' width='34' height='34' stroke='black' stroke-width='2' fill='none'/></svg>" },
+        { "l": "(C)", "s": "<svg viewBox='0 0 50 50'><circle cx='25' cy='25' r='18' stroke='black' stroke-width='2' fill='none'/></svg>" },
+        { "l": "(D)", "s": "<svg viewBox='0 0 50 50'><line x1='10' y1='10' x2='40' y2='40' stroke='black' stroke-width='3'/></svg>" }
       ],
-      "options": [
-        "(A)",
-        "(B)",
-        "(C)",
-        "(D)"
-      ],
-      "correct": 1
+      "options": ["(A)", "(B)", "(C)", "(D)"],
+      "correct": 0
     },
     {
       "id": 14,
       "sec": "mental",
-      "text": "?????? ???. 14: ???????? ????? ????????? ??????? ?????????? ?????? ????",
-      "problemFig": "<svg viewBox='0 0 50 50'><line x1='10' y1='15' x2='40' y2='15' stroke='#c53030' stroke-width='3.5'/><line x1='25' y1='15' x2='25' y2='42' stroke='#c53030' stroke-width='3.5'/></svg>",
+      "text": "प्रश्न क्र. 14: डावीकडील आकृती खालीलपैकी कोणत्या आकृतीमध्ये दडलेली आहे?",
+      "problemFig": "<svg viewBox='0 0 50 50'><line x1='15' y1='15' x2='35' y2='15' stroke='black' stroke-width='3'/><line x1='15' y1='34' x2='34' y2='34' stroke='black' stroke-width='3'/><line x1='15' y1='15' x2='15' y2='35' stroke='black' stroke-width='3'/></svg>",
       "figures": [
-        {
-          "l": "(A)",
-          "s": "<svg viewBox='0 0 50 50'><circle cx='25' cy='25' r='19' stroke='black' stroke-width='2' fill='none'/></svg>"
-        },
-        {
-          "l": "(B)",
-          "s": "<svg viewBox='0 0 50 50'><polygon points='25,6 6,44 44,44' stroke='black' stroke-width='2' fill='none'/></svg>"
-        },
-        {
-          "l": "(C)",
-          "s": "<svg viewBox='0 0 50 50'><rect x='6' y='6' width='38' height='38' stroke='black' stroke-width='2' fill='none'/><line x1='10' y1='15' x2='40' y2='15' stroke='#c53030' stroke-width='3'/><line x1='25' y1='15' x2='25' y2='42' stroke='#c53030' stroke-width='3'/></svg>"
-        },
-        {
-          "l": "(D)",
-          "s": "<svg viewBox='0 0 50 50'><line x1='6' y1='25' x2='44' y2='25' stroke='black' stroke-width='3'/></svg>"
-        }
+        { "l": "(A)", "s": "<svg viewBox='0 0 50 50'><circle cx='25' cy='25' r='18' stroke='black' stroke-width='2' fill='none'/></svg>" },
+        { "l": "(B)", "s": "<svg viewBox='0 0 50 50'><rect x='8' y='8' width='34' height='34' stroke='black' stroke-width='2' fill='none'/><line x1='15' y1='15' x2='35' y2='15' stroke='black' stroke-width='2'/><line x1='15' y1='34' x2='34' y2='34' stroke='black' stroke-width='2'/><line x1='15' y1='15' x2='15' y2='35' stroke='black' stroke-width='2'/></svg>" },
+        { "l": "(C)", "s": "<svg viewBox='0 0 50 50'><polygon points='25,6 6,44 44,44' stroke='black' stroke-width='2' fill='none'/></svg>" },
+        { "l": "(D)", "s": "<svg viewBox='0 0 50 50'><line x1='8' y1='8' x2='42' y2='42' stroke='black' stroke-width='2'/></svg>" }
       ],
-      "options": [
-        "(A)",
-        "(B)",
-        "(C)",
-        "(D)"
-      ],
-      "correct": 2
-    },
-    {
-      "id": 15,
-      "sec": "mental",
-      "text": "?????? ???. 15: ?????? ?????? ????:",
-      "options": [
-        "27",
-        "64",
-        "125",
-        "144"
-      ],
-      "correct": 3
-    },
-    {
-      "id": 16,
-      "sec": "mental",
-      "text": "?????? ???. 16: CAT = DBU, ?? DOG = ?",
-      "options": [
-        "EPH",
-        "FQI",
-        "ENG",
-        "EPI"
-      ],
-      "correct": 0
-    },
-    {
-      "id": 17,
-      "sec": "mental",
-      "text": "?????? ???. 17: 5 : 25 :: 8 : ?",
-      "options": [
-        "56",
-        "64",
-        "72",
-        "60"
-      ],
+      "options": ["(A)", "(B)", "(C)", "(D)"],
       "correct": 1
     },
-    {
-      "id": 18,
-      "sec": "mental",
-      "text": "?????? ???. 18: 40 ????????? ?????? ?????? ??????? ????????????? 15 ?? ??????? ????????? ????? ?????",
-      "options": [
-        "24 ??",
-        "25 ??",
-        "26 ??",
-        "27 ??"
-      ],
-      "correct": 2
-    },
-    {
-      "id": 19,
-      "sec": "mental",
-      "text": "?????? ???. 19: 1 ?????????? ?????? ??????? ????? ???????? 29 ?????????? ????? ??? ?????",
-      "options": [
-        "??????",
-        "???????",
-        "??????",
-        "??????"
-      ],
-      "correct": 3
-    },
-    {
-      "id": 20,
-      "sec": "mental",
-      "text": "?????? ???. 20: A = 1, B = 2, C = 3 ??????? PEN ?? ???? ????? ?????",
-      "options": [
-        "35",
-        "32",
-        "30",
-        "38"
-      ],
-      "correct": 0
-    },
-    {
-      "id": 21,
-      "sec": "mental",
-      "text": "?????? ???. 21: ???? : ??? ?????? :: ?????????? : ?",
-      "options": [
-        "??????",
-        "?????",
-        "?????",
-        "????"
-      ],
-      "correct": 1
-    },
-    {
-      "id": 22,
-      "sec": "mental",
-      "text": "?????? ???. 22: ?? ????? ????????? 12 ???? ? ???? ????????? 5 ???? ???????? ?? ??? ??????????? ???? ??????? ?????",
-      "options": [
-        "17 ????",
-        "15 ????",
-        "13 ????",
-        "14 ????"
-      ],
-      "correct": 2
-    },
-    {
-      "id": 23,
-      "sec": "mental",
-      "text": "?????? ???. 23: ????? ???????, '?? ????? ?????? ?????????? ???????? ??? ?????? ????? ???.' ?? ???? ?????? ??????? ???? ????",
-      "options": [
-        "????",
-        "????",
-        "?????",
-        "?????"
-      ],
-      "correct": 3
-    },
-    {
-      "id": 24,
-      "sec": "mental",
-      "text": "?????? ???. 24: ???????? 3 ????? ?????? ???????????? ???? ??????? ??? ?????",
-      "options": [
-        "90�",
-        "60�",
-        "120�",
-        "180�"
-      ],
-      "correct": 0
-    },
-    {
-      "id": 25,
-      "sec": "mental",
-      "text": "?????? ???. 25: ?????? ?????? ????:",
-      "options": [
-        "???",
-        "???",
-        "????",
-        "?????"
-      ],
-      "correct": 1
-    },
-    {
-      "id": 26,
-      "sec": "mental",
-      "text": "?????? ???. 26: ?????? ?????? ????? ???: 2, 4, 8, 16, 32, ?",
-      "options": [
-        "48",
-        "60",
-        "64",
-        "72"
-      ],
-      "correct": 2
-    },
-    {
-      "id": 27,
-      "sec": "mental",
-      "text": "?????? ???. 27: ????? ?????? ????? ???: A, C, E, G, ?",
-      "options": [
-        "H",
-        "J",
-        "K",
-        "I"
-      ],
-      "correct": 3
-    },
-    {
-      "id": 28,
-      "sec": "mental",
-      "text": "?????? ???. 28: ??? : ?????? :: ???? : ?",
-      "options": [
-        "?????",
-        "??????",
-        "??????",
-        "????"
-      ],
-      "correct": 0
-    },
-    {
-      "id": 29,
-      "sec": "mental",
-      "text": "?????? ???. 29: ?? '+' ?????? '�' ??? '�' ?????? '+' ????, ??: 5 + 4 � 6 = ?",
-      "options": [
-        "24",
-        "26",
-        "29",
-        "30"
-      ],
-      "correct": 1
-    },
-    {
-      "id": 30,
-      "sec": "mental",
-      "text": "?????? ???. 30: ??? ?????? ???? ???? ???? ??????",
-      "options": [
-        "364",
-        "365",
-        "366",
-        "367"
-      ],
-      "correct": 2
-    },
-    {
-      "id": 31,
-      "sec": "mental",
-      "text": "?????? ???. 31: ????????? ???? ????: 1. ?? 2. ??? 3. ??? 4. ??",
-      "options": [
-        "2, 1, 3, 4",
-        "4, 3, 2, 1",
-        "1, 3, 2, 4",
-        "1, 2, 3, 4"
-      ],
-      "correct": 3
-    },
-    {
-      "id": 32,
-      "sec": "mental",
-      "text": "?????? ???. 32: ?????? ????? ????:",
-      "options": [
-        "????",
-        "???",
-        "??????",
-        "????????"
-      ],
-      "correct": 0
-    },
-    {
-      "id": 33,
-      "sec": "mental",
-      "text": "?????? ???. 33: ????? : ???? :: ????? : ?",
-      "options": [
-        "????",
-        "??",
-        "????",
-        "??????"
-      ],
-      "correct": 1
-    },
-    {
-      "id": 34,
-      "sec": "mental",
-      "text": "?????? ???. 34: ?????? ?????? ????? ???: 5, 10, 15, 20, ?",
-      "options": [
-        "22",
-        "24",
-        "25",
-        "30"
-      ],
-      "correct": 2
-    },
-    {
-      "id": 35,
-      "sec": "mental",
-      "text": "?????? ???. 35: ?????????? ???? ???? ???? ??????",
-      "options": [
-        "2",
-        "4",
-        "5",
-        "3"
-      ],
-      "correct": 3
-    },
-    {
-      "id": 36,
-      "sec": "mental",
-      "text": "?????? ???. 36: ????????? ????? ??????? ????? ???? ??? ?????",
-      "options": [
-        "360�",
-        "180�",
-        "270�",
-        "90�"
-      ],
-      "correct": 0
-    },
-    {
-      "id": 37,
-      "sec": "mental",
-      "text": "?????? ???. 37: ?????? : ??????? :: ??? : ?",
-      "options": [
-        "?????",
-        "???????",
-        "?????????",
-        "??????"
-      ],
-      "correct": 1
-    },
-    {
-      "id": 38,
-      "sec": "mental",
-      "text": "?????? ???. 38: ?? ???????? ??????? ??????? 15 ???? ????? ????? ??? ?????",
-      "options": [
-        "??????",
-        "??????",
-        "??????",
-        "????????"
-      ],
-      "correct": 2
-    },
-    {
-      "id": 39,
-      "sec": "mental",
-      "text": "?????? ???. 39: ?????? ???? ??? ?????? ??????",
-      "options": [
-        "1",
-        "3",
-        "5",
-        "2"
-      ],
-      "correct": 3
-    },
-    {
-      "id": 40,
-      "sec": "mental",
-      "text": "?????? ???. 40: ???? : ????? :: ??? : ?",
-      "options": [
-        "????",
-        "?????",
-        "??????",
-        "?????"
-      ],
-      "correct": 0
-    },
-    {
-      "id": 41,
-      "sec": "math",
-      "text": "?????? ???. 41: 12, 18 ??? 24 ?? ????? ?????",
-      "options": [
-        "36",
-        "72",
-        "48",
-        "96"
-      ],
-      "correct": 1
-    },
-    {
-      "id": 42,
-      "sec": "math",
-      "text": "?????? ???. 42: 50 ????????????????? ?????? 60% ???? ??????? ??????? ?????? ?????",
-      "options": [
-        "15",
-        "25",
-        "20",
-        "30"
-      ],
-      "correct": 2
-    },
-    {
-      "id": 43,
-      "sec": "math",
-      "text": "?????? ???. 43: (0.5 � 0.5 + 0.2 � 0.2) = ?",
-      "options": [
-        "0.04",
-        "0.25",
-        "0.49",
-        "0.29"
-      ],
-      "correct": 3
-    },
-    {
-      "id": 44,
-      "sec": "math",
-      "text": "?????? ???. 44: ????? ????? 400 ????? ? ?????? ????? 480 ????? ??????? ????? ??? ?????",
-      "options": [
-        "20%",
-        "18%",
-        "15%",
-        "25%"
-      ],
-      "correct": 0
-    },
-    {
-      "id": 45,
-      "sec": "math",
-      "text": "?????? ???. 45: ????? ??????? 10 ????? 2000 ???????? 3 ???????? ???????? ?????",
-      "options": [
-        "500 ?????",
-        "600 ?????",
-        "700 ?????",
-        "800 ?????"
-      ],
-      "correct": 1
-    },
-    {
-      "id": 46,
-      "sec": "math",
-      "text": "?????? ???. 46: ????? 15 ???? ? ????? 10 ???? ???????? ?????? ??????? ?????",
-      "options": [
-        "25 ????",
-        "60 ????",
-        "50 ????",
-        "150 ????"
-      ],
-      "correct": 2
-    },
-    {
-      "id": 47,
-      "sec": "math",
-      "text": "?????? ???. 47: ???? 72 ???? ?????? ?????? ???? ??????? 10 ??????? ???????, ?? ?????? ????? ?????",
-      "options": [
-        "180 ????",
-        "220 ????",
-        "250 ????",
-        "200 ????"
-      ],
-      "correct": 3
-    },
-    {
-      "id": 48,
-      "sec": "math",
-      "text": "?????? ???. 48: 10, 20, 30, 40 ??? 50 ?? ????????? ?????? ?????",
-      "options": [
-        "30",
-        "25",
-        "35",
-        "40"
-      ],
-      "correct": 0
-    },
-    {
-      "id": 49,
-      "sec": "math",
-      "text": "?????? ???. 49: ???? 12 ???? ???????? ??????? ????????? ?????",
-      "options": [
-        "24 ??????",
-        "144 ??????",
-        "96 ??????",
-        "48 ??????"
-      ],
-      "correct": 1
-    },
-    {
-      "id": 50,
-      "sec": "math",
-      "text": "?????? ???. 50: ??? ???? ?????? ???? ????????? ??? ???? ??????? ???? ?????? ??? ??????? ????? ??? ?????",
-      "options": [
-        "0",
-        "9",
-        "1",
-        "10"
-      ],
-      "correct": 2
-    },
-    {
-      "id": 51,
-      "sec": "math",
-      "text": "?????? ???. 51: 500 ?? 25% + 200 ?? 10% = ?",
-      "options": [
-        "125",
-        "140",
-        "150",
-        "145"
-      ],
-      "correct": 3
-    },
-    {
-      "id": 52,
-      "sec": "math",
-      "text": "?????? ???. 52: 14 ??? 21 ?? ????? ?????",
-      "options": [
-        "7",
-        "3",
-        "1",
-        "14"
-      ],
-      "correct": 0
-    },
-    {
-      "id": 53,
-      "sec": "math",
-      "text": "?????? ???. 53: 3/4 + 2/5 = ?",
-      "options": [
-        "1/20",
-        "23/20",
-        "5/9",
-        "5/20"
-      ],
-      "correct": 1
-    },
-    {
-      "id": 54,
-      "sec": "math",
-      "text": "?????? ???. 54: 5 ??? ?????? ???? ???? ??????",
-      "options": [
-        "48",
-        "50",
-        "60",
-        "72"
-      ],
-      "correct": 2
-    },
-    {
-      "id": 55,
-      "sec": "math",
-      "text": "?????? ???. 55: 25 ???? ??? 8 ??? ??? ???? ?? ??? 12 ??????? ?????, ?? 20 ???? ??? 6 ??? ??? ???? ?? ??? ???? ??????? ??????",
-      "options": [
-        "16 ????",
-        "18 ????",
-        "24 ????",
-        "20 ????"
-      ],
-      "correct": 3
-    },
-    {
-      "id": 56,
-      "sec": "math",
-      "text": "?????? ???. 56: 500 ???? ?????????? ??????? 35% ???? ??????, ?? ????? ???? ???? ???? ?????? ???????",
-      "options": [
-        "325 ????",
-        "300 ????",
-        "175 ????",
-        "350 ????"
-      ],
-      "correct": 0
-    },
-    {
-      "id": 57,
-      "sec": "math",
-      "text": "?????? ???. 57: 4.5 ?????? ??????? ????? 180 ????? ??????? 1 ?????? ??????? ????? ?????",
-      "options": [
-        "38 ?????",
-        "40 ?????",
-        "42 ?????",
-        "45 ?????"
-      ],
-      "correct": 1
-    },
-    {
-      "id": 58,
-      "sec": "math",
-      "text": "?????? ???. 58: ??? ????????? ???????? 3 : 5 ???? ????? 80 ???, ?? ???? ?????? ??????",
-      "options": [
-        "30",
-        "45",
-        "50",
-        "55"
-      ],
-      "correct": 2
-    },
-    {
-      "id": 59,
-      "sec": "math",
-      "text": "?????? ???. 59: 4.25 + 3.75 - 2.50 = ?",
-      "options": [
-        "5.25",
-        "5.75",
-        "6.00",
-        "5.50"
-      ],
-      "correct": 3
-    },
-    {
-      "id": 60,
-      "sec": "math",
-      "text": "?????? ???. 60: 20 + [15 - (8 � 2)] = ?",
-      "options": [
-        "31",
-        "29",
-        "27",
-        "33"
-      ],
-      "correct": 0
-    },
+    { "id": 15, "sec": "mental", "text": "प्रश्न क्र. 15: विसंगत जोडी ओळखा:", "options": ["सत्य असत्य", "उंच बुटका", "कठीण मऊ", "शांत शांतता"], "correct": 3 },
+    { "id": 16, "sec": "mental", "text": "प्रश्न क्र. 16: महाराष्ट्र : सह्याद्री :: आसाम : ?", "options": ["कामरूप", "हिमालय", "सातपुडा", "अरवली"], "correct": 0 },
+    { "id": 17, "sec": "mental", "text": "प्रश्न क्र. 17: क्रिकेट : षटकार :: बास्केटबॉल : ?", "options": ["चौकार", "डंक", "धाव", "पॉईंट"], "correct": 1 },
+    { "id": 18, "sec": "mental", "text": "प्रश्न क्र. 18: शिक्षक : शाळा :: शास्त्रज्ञ : ?", "options": ["शेतात", "न्यायालयात", "प्रयोगशाळा", "दवाखान्यात"], "correct": 2 },
+    { "id": 19, "sec": "mental", "text": "प्रश्न क्र. 19: नदी : जल :: सूर्य : ?", "options": ["पाऊस", "माती", "झाड", "प्रकाश"], "correct": 3 },
+    { "id": 20, "sec": "mental", "text": "प्रश्न क्र. 20: उन्हाळा : ऊन :: हिवाळा : ?", "options": ["गारठा", "पाऊस", "धूर", "उष्णता"], "correct": 0 },
+    { "id": 21, "sec": "mental", "text": "प्रश्न क्र. 21: कान : ऐकणे :: डोळे : ?", "options": ["बोलणे", "पाहणे", "सुंगणे", "चालणे"], "correct": 1 },
+    { "id": 22, "sec": "mental", "text": "प्रश्न क्र. 22: घोडा : शिंगरू :: म्हैस : ?", "options": ["वासरू", "बछडा", "रेडू", "पाडस"], "correct": 2 },
+    { "id": 23, "sec": "mental", "text": "प्रश्न क्र. 23: झाड : फळ :: शेत : ?", "options": ["माती", "खत", "पाणी", "पीक"], "correct": 3 },
+    { "id": 24, "sec": "mental", "text": "प्रश्न क्र. 24: चित्रकार : कुंचला :: लेखक : ?", "options": ["लेखणी", "कात्री", "करवत", "हातोडी"], "correct": 0 },
+    { "id": 25, "sec": "mental", "text": "प्रश्न क्र. 25: अक्षर मालिका पूर्ण करा: M, P, S, V, ?", "options": ["X", "Y", "Z", "A"], "correct": 1 },
+    { "id": 26, "sec": "mental", "text": "प्रश्न क्र. 26: डॉक्टर : रुग्ण :: शिक्षक : ?", "options": ["पालक", "दुकानदार", "विद्यार्थी", "अधिकारी"], "correct": 2 },
+    { "id": 27, "sec": "mental", "text": "प्रश्न क्र. 27: विसंगत घटक ओळखा:", "options": ["संत्री", "मोसंबी", "लिंबू", "हळद"], "correct": 3 },
+    { "id": 28, "sec": "mental", "text": "प्रश्न क्र. 28: विसंगत प्राणी ओळखा:", "options": ["गाय", "बैल", "शेळी", "कोल्हा"], "correct": 3 },
+    { "id": 29, "sec": "mental", "text": "प्रश्न क्र. 29: थर्मामीटर : तापमान :: स्पीडोमीटर : ?", "options": ["वेग", "वेळ", "दिशा", "वजन"], "correct": 0 },
+    { "id": 30, "sec": "mental", "text": "प्रश्न क्र. 30: संख्या मालिका पूर्ण करा: 13, 26, 52, 104, ?", "options": ["156", "208", "216", "224"], "correct": 1 },
+    { "id": 31, "sec": "mental", "text": "प्रश्न क्र. 31: संख्या मालिका पूर्ण करा: 98, 89, 80, 71, ?", "options": ["60", "61", "62", "63"], "correct": 2 },
+    { "id": 32, "sec": "mental", "text": "प्रश्न क्र. 32: एका रांगेत 60 मुले आहेत. सुरुवातीपासून 35 वा असलेला मुलगा शेवटाकडून कितवा असेल?", "options": ["24 वा", "25 वा", "27 वा", "26 वा"], "correct": 3 },
+    { "id": 33, "sec": "mental", "text": "प्रश्न क्र. 33: एका सांकेतिक भाषेत GO = 22, तर TO = ?", "options": ["35", "36", "37", "34"], "correct": 0 },
+    { "id": 34, "sec": "mental", "text": "प्रश्न क्र. 34: उत्तर दिशेकडे तोंड असलेली व्यक्ती एकदा उजवीकडे काटकोनात वळल्यास तिचे तोंड कोणत्या दिशेला होईल?", "options": ["पश्चिम", "पूर्व", "दक्षिण", "वायव्य"], "correct": 1 },
+    { "id": 35, "sec": "mental", "text": "प्रश्न क्र. 35: घड्याळाचा मिनिटकाटा 50 मिनिटांत किती अंशांमधून फिरतो?", "options": ["240°", "270°", "300°", "330°"], "correct": 2 },
+    { "id": 36, "sec": "mental", "text": "प्रश्न क्र. 36: खालीलपैकी मूळ संख्या कोणती आहे?", "options": ["55", "65", "75", "73"], "correct": 3 },
+    { "id": 37, "sec": "mental", "text": "प्रश्न क्र. 37: शिक्षक : शाळा :: ग्रंथपाल : ?", "options": ["ग्रंथालय", "कारखाना", "दुकान", "न्यायालय"], "correct": 0 },
+    { "id": 38, "sec": "mental", "text": "प्रश्न क्र. 38: झाड : पाने :: पक्षी : ?", "options": ["चोंच", "पिसे", "पाय", "डोळे"], "correct": 1 },
+    { "id": 39, "sec": "mental", "text": "प्रश्न क्र. 39: विसंगत संख्या जोडी ओळखा:", "options": ["2 आणि 10", "3 आणि 15", "4 आणि 22", "5 आणि 25"], "correct": 2 },
+    { "id": 40, "sec": "mental", "text": "प्रश्न क्र. 40: सायकल : हँडल :: गाडी : ?", "options": ["चाक", "पायंडल", "सीट", "स्टिअरिंग"], "correct": 3 },
+
+    { "id": 41, "sec": "math", "text": "प्रश्न क्र. 41: 30, 40 आणि 50 या संख्यांचा लसावि किती?", "options": ["600", "500", "400", "800"], "correct": 0 },
+    { "id": 42, "sec": "math", "text": "प्रश्न क्र. 42: एका परीक्षेत 400 पैकी 75% गुण मिळवणाऱ्या मुलाला मिळालेले गुण किती?", "options": ["280", "300", "320", "340"], "correct": 1 },
+    { "id": 43, "sec": "math", "text": "प्रश्न क्र. 43: (0.7 × 0.7 - 0.2 × 0.2) = ?", "options": ["0.40", "0.42", "0.45", "0.48"], "correct": 2 },
+    { "id": 44, "sec": "math", "text": "प्रश्न क्र. 44: एका वस्तूची खरेदी किंमत 1200 रुपये व विक्री किंमत 1440 रुपये असल्यास शेकडा नफा किती?", "options": ["15%", "18%", "25%", "20%"], "correct": 3 },
+    { "id": 45, "sec": "math", "text": "प्रश्न क्र. 45: दरसाल दरशेकडा 8 दराने 6500 रुपयांचे 2 वर्षांचे सरळव्याज किती?", "options": ["1040 रुपये", "1000 रुपये", "980 रुपये", "1050 रुपये"], "correct": 0 },
+    { "id": 46, "sec": "math", "text": "प्रश्न क्र. 46: बाजू 28 सेमी असणाऱ्या चौरसाची परिमिती किती?", "options": ["108 सेमी", "112 सेमी", "116 सेमी", "120 सेमी"], "correct": 1 },
+    { "id": 47, "sec": "math", "text": "प्रश्न क्र. 47: ताशी 90 किमी वेगाने जाणारी गाडी 22 सेकंदात किती मीटर अंतर पार करेल?", "options": ["500 मीटर", "520 मीटर", "550 मीटर", "580 मीटर"], "correct": 2 },
+    { "id": 48, "sec": "math", "text": "प्रश्न क्र. 48: 28, 30, 32, 34 आणि 36 या संख्यांची सरासरी किती?", "options": ["30", "31", "34", "32"], "correct": 3 },
+    { "id": 49, "sec": "math", "text": "प्रश्न क्र. 49: लांबी 38 सेमी व रुंदी 10 सेमी असणाऱ्या आयताचे क्षेत्रफळ किती?", "options": ["380 चौसेमी", "360 चौसेमी", "370 चौसेमी", "400 चौसेमी"], "correct": 0 },
+    { "id": 50, "sec": "math", "text": "प्रश्न क्र. 50: सहा अंकी मोठ्यात मोठ्या संख्येतून तीन अंकी मोठ्यात मोठी संख्या वजा केल्यास काय उरेल?", "options": ["999900", "999000", "990000", "989900"], "correct": 1 },
+    { "id": 51, "sec": "math", "text": "प्रश्न क्र. 51: 650 चे 30% - 150 चे 20% = ?", "options": ["155", "160", "165", "170"], "correct": 2 },
+    { "id": 52, "sec": "math", "text": "प्रश्न क्र. 52: 50 आणि 75 चा मसावि किती?", "options": ["5", "10", "15", "25"], "correct": 3 },
+    { "id": 53, "sec": "math", "text": "प्रश्न क्र. 53: 8/15 - 1/3 = ?", "options": ["1/5", "2/5", "1/3", "4/15"], "correct": 0 },
+    { "id": 54, "sec": "math", "text": "प्रश्न क्र. 54: 2 डझन संत्र्यांची किंमत 264 रुपये असल्यास एका संत्र्याची किंमत किती?", "options": ["9 रुपये", "11 रुपये", "12 रुपये", "14 रुपये"], "correct": 1 },
+    { "id": 55, "sec": "math", "text": "प्रश्न क्र. 55: 18 मजूर एक काम 15 दिवसांत पूर्ण करतात, तर तेच काम 10 दिवसांत संपवण्यासाठी किती मजूर लागतील?", "options": ["24 मजूर", "25 मजूर", "27 मजूर", "30 मजूर"], "correct": 2 },
+    { "id": 56, "sec": "math", "text": "प्रश्न क्र. 56: एका पाण्याच्या टाकीची क्षमता 900 लिटर आहे. त्यातील 40% पाणी वापरले असल्यास किती लिटर पाणी शिल्लक राहिले?", "options": ["500 लिटर", "520 लिटर", "530 लिटर", "540 लिटर"], "correct": 3 },
+    { "id": 57, "sec": "math", "text": "प्रश्न क्र. 57: 5 किग्रॅ डाळीची किंमत 475 रुपये असल्यास 4 किग्रॅ डाळीची किंमत किती?", "options": ["380 रुपये", "360 रुपये", "370 रुपये", "390 रुपये"], "correct": 0 },
+    { "id": 58, "sec": "math", "text": "प्रश्न क्र. 58: दोन संख्यांचे गुणोत्तर 4 : 5 असून त्यांची बेरीज 99 आहे, तर त्यांपैकी लहान संख्या कोणती?", "options": ["40", "44", "48", "55"], "correct": 1 },
+    { "id": 59, "sec": "math", "text": "प्रश्न क्र. 59: 8.50 + 3.25 - 4.25 = ?", "options": ["7.25", "7.40", "7.50", "7.75"], "correct": 2 },
+    { "id": 60, "sec": "math", "text": "प्रश्न क्र. 60: 85 - [35 + (36 ÷ 4)] = ?", "options": ["38", "40", "43", "41"], "correct": 3 },
+
     {
       "id": 61,
       "sec": "lang",
-      "passage": "????? ???. 1: ??????? ?????? ?????? ?? ?????? ???? ????. ??????? ?????????? ????? ???? ???????? ?????? ????. ??????? ????????? ????? ???? ???? ??? ??????????? ????? ??? ????. ????????????? ??????? ??? ???????????? ??? ?????????? ?????? ????????????? ????. ?????????? ????????? ?????????? ??????? ??????????? ??????. ???????? ???????? ???????? ??? ???? ??? ??? ???????? ???? ????? ????. ?????????? ????? ???? ??????? ?????.",
-      "text": "?????? ???. 61: ??????? ?????? ?????????? ?????? ????? ???? ???????? ?????? ?????",
-      "options": [
-        "?????????",
-        "??????????",
-        "?????????",
-        "??????????"
-      ],
-      "correct": 1
+      "passage": "उतारा क्र. 1: छत्रपती संभाजी महाराज हे अत्यंत पराक्रमी, मुत्सद्दी आणि संस्कृत पंडित होते. वयाच्या अवघ्या चौदाव्या वर्षी त्यांनी 'बुधभूषणम्' हा अद्वितीय संस्कृत ग्रंथ लिहिला. छत्रपती शिवाजी महाराजांनंतर त्यांनी स्वराज्याची धुरा अत्यंत समर्थपणे सांभाळली. त्यांनी नऊ वर्षांच्या अल्प काळात सलग सव्वाशे लढाया लढल्या आणि एकाही लढाईत पराभव पत्करला नाही. अनेक आघाड्यांवर एकाच वेळी लढा देऊन त्यांनी स्वराज्याचा विस्तार केला आणि धर्माचे रक्षण केले.",
+      "text": "प्रश्न क्र. 61: छत्रपती संभाजी महाराजांनी चौदाव्या वर्षी कोणता ग्रंथ लिहिला?",
+      "options": ["बुधभूषणम्", "ज्ञानेश्वरी", "दासबोध", "गीतारहस्य"],
+      "correct": 0
     },
     {
       "id": 62,
       "sec": "lang",
-      "text": "?????? ???. 62: ?????????? ????? ?????? ????????????? ?????",
-      "options": [
-        "?????? ????????",
-        "?? ???????",
-        "???????????????",
-        "???? ????????"
-      ],
-      "correct": 2
+      "text": "प्रश्न क्र. 62: संभाजी महाराजांनी सलग किती लढाया जिंकल्या?",
+      "options": ["पन्नास", "सव्वाशे लढाया", "दोनशे", "शंभर"],
+      "correct": 1
     },
     {
       "id": 63,
       "sec": "lang",
-      "text": "?????? ???. 63: ??????? ?????????? ?????? ????? ??? ?????",
-      "options": [
-        "????????",
-        "??????????",
-        "????????????",
-        "???????????"
-      ],
-      "correct": 3
+      "text": "प्रश्न क्र. 63: छत्रपती संभाजी महाराज कोणत्या भाषेचे गाढे पंडित होते?",
+      "options": ["इंग्रजी", "हिंदी", "संस्कृत", "फारसी"],
+      "correct": 2
     },
     {
       "id": 64,
       "sec": "lang",
-      "text": "?????? ???. 64: ?????????? ???????? ????? ???? ????? ???? ?????",
-      "options": [
-        "???????? ???????? ??? ???? ???",
-        "?????? ??????? ???? ?????",
-        "??????? ???? ????? ???????",
-        "??????? ????? ??????"
-      ],
-      "correct": 0
+      "text": "प्रश्न क्र. 64: संभाजी महाराजांनी कशाची धुरा समर्थपणे सांभाळली?",
+      "options": ["व्यापाराची", "परकीय सत्तेची", "शत्रूंची", "स्वराज्याची"],
+      "correct": 3
     },
     {
       "id": 65,
       "sec": "lang",
-      "text": "?????? ???. 65: '???????' ?? ??????? ????????? ???? ??????",
-      "options": [
-        "?????",
-        "???????",
-        "?????????",
-        "???"
-      ],
-      "correct": 1
+      "text": "प्रश्न क्र. 65: 'समर्थपणे' या शब्दाचा योग्य समानार्थी शब्द कोणता?",
+      "options": ["सक्षमपणे", "कमकुवतपणे", "घाबरून", "अचानक"],
+      "correct": 0
     },
     {
       "id": 66,
       "sec": "lang",
-      "passage": "????? ???. 2: ????? ?? ??????? ??? ????? ????. ????? ???????? ???????, ???, ???? ??? ????? ?????. ??????? ???? ??????? ??? ???????? ??? ???? ???????? ??? ?????. ?? ??????? ????????? ???????????? ?????? ????????? ??????? ???? ???? ???. ?????? ??????????? ??? ????? ???? ????????? ??? ??????? ?????????? ?????? ??????? ?????? ????. ???? ?????? ????? ?? ???? ?????? ???? ??????? ????.",
-      "text": "?????? ???. 66: ????? ??????? ???????????? ??? ??????",
-      "options": [
-        "?????????",
-        "???",
-        "???????",
-        "????"
-      ],
-      "correct": 2
+      "passage": "उतारा क्र. 2: इंटरनेट हे आधुनिक मानवी जीवनातील दळणवळणाचे आणि ज्ञानाचे सर्वात मोठे जाळे आहे. इंटरनेटमुळे जगातील कोणतीही माहिती सेकंदात आपल्या स्क्रीनवर उपलब्ध होते. शिक्षण, व्यापार, बँकिंग आणि मनोरंजन यासाठी इंटरनेटचा वापर जगभर केला जात आहे. दुर्गम भागातील विद्यार्थ्यांनाही इंटरनेटमुळे उत्तम शिक्षणाची संधी मिळाली आहे. मात्र इंटरनेटचा विनाकारण अतिवापर केल्याने वेळ आणि आरोग्याचे नुकसान होते. म्हणून प्रत्येकाने इंटरनेटचा वापर जबाबदारीने आणि योग्य कामासाठीच केला पाहिजे.",
+      "text": "प्रश्न क्र. 66: इंटरनेटमुळे दुर्गम भागातील विद्यार्थ्यांना कोणती संधी मिळाली?",
+      "options": ["खेळण्याची", "शिक्षणाची संधी", "चित्रपट पाहण्याची", "झोपण्याची"],
+      "correct": 1
     },
     {
       "id": 67,
       "sec": "lang",
-      "text": "?????? ???. 67: ?????? ????????? ??????? ???????? ??? ?????",
-      "options": [
-        "???? ?????",
-        "?????? ???????",
-        "????? ?????? ?????",
-        "?????? ?????"
-      ],
-      "correct": 3
+      "text": "प्रश्न क्र. 67: इंटरनेटचा विनाकारण अतिवापर केल्याने कशाचे नुकसान होते?",
+      "options": ["पैशांचे", "इमारतींचे", "वेळ आणि आरोग्याचे", "कपड्यांचे"],
+      "correct": 2
     },
     {
       "id": 68,
       "sec": "lang",
-      "text": "?????? ???. 68: ??????? ???? ??????? ????? ??? ??????",
-      "options": [
-        "??? ???????",
-        "???? ????? ????",
-        "???? ????? ????",
-        "??? ?????"
-      ],
-      "correct": 0
+      "text": "प्रश्न क्र. 68: इंटरनेटचा वापर कसा केला पाहिजे?",
+      "options": ["सतत दिवसभर", "फक्त खेळासाठी", "कधीच नाही", "जबाबदारीने"],
+      "correct": 3
     },
     {
       "id": 69,
       "sec": "lang",
-      "text": "?????? ???. 69: ??????????? ????? ??????????? ??? ?????? ????",
-      "options": [
-        "???? ??????",
-        "?????????? ????",
-        "??????? ??????",
-        "??????? ????"
-      ],
-      "correct": 1
+      "text": "प्रश्न क्र. 69: माहिती सेकंदात उपलब्ध करून देणारे जाळे कोणते?",
+      "options": ["इंटरनेट", "वर्तमानपत्र", "रेडिओ", "पुस्तकालय"],
+      "correct": 0
     },
     {
       "id": 70,
       "sec": "lang",
-      "text": "?????? ???. 70: '???' ?? ??????? ?????????? ???? ??????",
-      "options": [
-        "?????? ??????",
-        "???????",
-        "?????? ???",
-        "???"
-      ],
-      "correct": 2
+      "text": "प्रश्न क्र. 70: 'दुर्गम' या शब्दाचा योग्य विरुद्धार्थी शब्द कोणता?",
+      "options": ["कठीण", "सुगम", "लांब", "उंच"],
+      "correct": 1
     },
     {
       "id": 71,
       "sec": "lang",
-      "passage": "????? ???. 3: ???? ??? ???? ???. ???????? ????? ?????? ???? ??? ??????????? ???????? ?????? ?????? ??? ???. ????? ?????????, ?????????? ??? ???????? ?????? ?????? ???????? ????? ????? ????? ????? ???. ?????????? ???????? ????? ?????????? ???? ??? ???. ?????? ??????? ???? ????? ??? ?????? ?????? ???. ???????? ???????? ???? ???? ?????? ?? ???????? ????????? ??????? ???.",
-      "text": "?????? ???. 71: ???????? ??????? ???????? ?????? ?????? ??? ????",
-      "options": [
-        "??????????? ????????",
-        "???????????? ????????",
-        "???? ????????",
-        "?????????? ????????"
-      ],
-      "correct": 3
+      "passage": "उतारा क्र. 3: पुस्तके ही मानवाची सर्वात विश्वासू आणि निष्ठावान मित्र असतात. पुस्तकांमधून आपल्याला जगातील विविध संस्कृती, इतिहास आणि विज्ञानाची अमूल्य माहिती मिळते. जेव्हा माणूस संकटात किंवा दुःखात असतो, तेव्हा पुस्तके त्याला सकारात्मक विचार देऊन नवीन उमेद देतात. वाचनामुळे एकाग्रता वाढते आणि मन शांत राहते. आजच्या डिजिटल युगातही छापील पुस्तकांचे महत्त्व अजिबात कमी झालेले नाही. प्रत्येकाने स्वतःचे एक छोटे वैयक्तिक ग्रंथालय तयार केले पाहिजे.",
+      "text": "प्रश्न क्र. 71: माणसाचे सर्वात निष्ठावान मित्र कोण असतात?",
+      "options": ["वाहने", "मोबाईल", "पुस्तके", "खेळणी"],
+      "correct": 2
     },
     {
       "id": 72,
       "sec": "lang",
-      "text": "?????? ???. 72: ???????? ????? ??????? ???????? ????? ???? ??????",
-      "options": [
-        "???????? ??????",
-        "??????????",
-        "?????? ???????",
-        "???? ????"
-      ],
-      "correct": 0
+      "text": "प्रश्न क्र. 72: प्रत्येकाने स्वतःचे काय तयार केले पाहिजे?",
+      "options": ["मोठे दुकान", "खेळाचे मैदान", "कारखाना", "छोटे ग्रंथालय"],
+      "correct": 3
     },
     {
       "id": 73,
       "sec": "lang",
-      "text": "?????? ???. 73: ?????????? ???? ???????????? ????? ???? ?????? ????",
-      "options": [
-        "???????? ?????",
-        "???? ????? ? ??????",
-        "????? ???? ???????? ?????",
-        "???????? ???? ????"
-      ],
-      "correct": 1
+      "text": "प्रश्न क्र. 73: संकटाच्या काळात पुस्तके माणसाला काय देतात?",
+      "options": ["सकारात्मक विचार आणि उमेद", "निराशा आणि भीती", "राग आणि मत्सर", "आळस"],
+      "correct": 0
     },
     {
       "id": 74,
       "sec": "lang",
-      "text": "?????? ???. 74: ???????? ????? ????????? ??????? ??? ????",
-      "options": [
-        "???????? ?????? ????",
-        "?? ???? ?????",
-        "???? ???? ??????",
-        "???? ?????? ?????"
-      ],
-      "correct": 2
+      "text": "प्रश्न क्र. 74: वाचनामुळे मनावर कोणता चांगला परिणाम होतो?",
+      "options": ["मन चंचल होते", "मन शांत राहते", "चिडचिड वाढते", "थकवा येतो"],
+      "correct": 1
     },
     {
       "id": 75,
       "sec": "lang",
-      "text": "?????? ???. 75: '???' ?? ??????? ???????????? ???? ??????",
-      "options": [
-        "????",
-        "????",
-        "??????",
-        "?????"
-      ],
-      "correct": 3
+      "text": "प्रश्न क्र. 75: 'अमूल्य' या शब्दाचा योग्य समानार्थी शब्द कोणता?",
+      "options": ["कमी किमतीचे", "टाकाऊ", "अनमोल किंवा बहुमूल्य", "मोफत"],
+      "correct": 2
     },
     {
       "id": 76,
       "sec": "lang",
-      "passage": "????? ???. 4: ???? ?? ??????? ?????? ?????? ????? ??? ???. ????????? ??????? ????? ???????? ????? ????????, ?????????? ????? ??? ??????? ?? ????. ???????????? ??????? ????????? ???????? ??? ???????? ??? ???? ?????. ??????????? ???????? ????? ?????? ????. ?? ?????? ??? ?????????? ???????????? ??????? ???????????? ??? ??? ????? ???. ?????? ????????? ????? ???????? ?????.",
-      "text": "?????? ???. 76: ?????? ????????? ????? ????? ?????",
-      "options": [
-        "??????? ?? ????",
-        "??????? ???? ????",
-        "??? ???? ????",
-        "??? ?????"
-      ],
-      "correct": 0
+      "passage": "उतारा क्र. 4: निसर्गाचे रक्षण करणे हे प्रत्येक सजग मानवाचे परम कर्तव्य आहे. निसर्गातून आपल्याला श्वास घेण्यासाठी हवा, पिण्यासाठी पाणी आणि खाण्यासाठी अन्न मिळते. परंतु आज मानवाने स्वार्थासाठी जंगले तोडली, नद्या प्रदूषित केल्या आणि हवेत विषारी वायू सोडले. यामुळे जागतिक तापमानवाढ आणि ऋतूचक्रात मोठे बदल झाले आहेत. जर आपण आताच निसर्गाचे संवर्धन केले नाही तर मानवाचे अस्तित्वच संकटात येईल. झाडे लावणे आणि प्रदूषण टाळणे ही आपली जबाबदारी आहे.",
+      "text": "प्रश्न क्र. 76: मानवाचे अस्तित्व संकटात का येऊ शकते?",
+      "options": ["पाऊस जास्त पडल्याने", "थंडी वाढल्याने", "वारा सुटल्याने", "निसर्गाचे संवर्धन न केल्याने"],
+      "correct": 3
     },
     {
       "id": 77,
       "sec": "lang",
-      "text": "?????? ???. 77: ???????? ??? ???????? ???? ??????? ??????",
-      "options": [
-        "?????? ???????",
-        "?????? ?????????",
-        "???????? ??????????",
-        "????? ?????????"
-      ],
-      "correct": 1
+      "text": "प्रश्न क्र. 77: सजग मानवाचे परम कर्तव्य कोणते मानले आहे?",
+      "options": ["निसर्गाचे रक्षण करणे", "झाडे तोडणे", "कारखाने वाढवणे", "पाणी वाया घालवणे"],
+      "correct": 0
     },
     {
       "id": 78,
       "sec": "lang",
-      "text": "?????? ???. 78: ???????? '???????? ?????' ?????? ?????? ????",
-      "options": [
-        "????????",
-        "?????????????",
-        "???????????",
-        "???????????"
-      ],
-      "correct": 2
+      "text": "प्रश्न क्र. 78: प्रदूषण वाढल्यामुळे कशामध्ये मोठे बदल झाले आहेत?",
+      "options": ["घरांमध्ये", "ऋतूचक्रात", "रस्त्यांवर", "दुकानांमध्ये"],
+      "correct": 1
     },
     {
       "id": 79,
       "sec": "lang",
-      "text": "?????? ???. 79: ???????????? ??? ???????? ????? ???? ??????",
-      "options": [
-        "?????????? ??????",
-        "???????????? ???",
-        "????????? ???",
-        "???????? ???????"
-      ],
-      "correct": 3
+      "text": "प्रश्न क्र. 79: निसर्गाकडून मानवाला जगण्यासाठी काय मिळते?",
+      "options": ["सिमेंट आणि लोखंड", "प्लास्टिक आणि काच", "हवा पाणी आणि अन्न", "गाड्या आणि रस्ते"],
+      "correct": 2
     },
     {
       "id": 80,
       "sec": "lang",
-      "text": "?????? ???. 80: '????' ?? ??????? ????? ???? ??????",
-      "options": [
-        "??????",
-        "??????",
-        "????",
-        "????"
-      ],
-      "correct": 0
+      "text": "प्रश्न क्र. 80: 'सजग' या शब्दाचा योग्य समानार्थी शब्द कोणता?",
+      "options": ["झोपलेला", "आळशी", "अज्ञानी", "जागरूक किंवा सावध"],
+      "correct": 3
     }
   ]
 }
