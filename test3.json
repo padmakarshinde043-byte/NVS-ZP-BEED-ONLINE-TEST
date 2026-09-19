@@ -1,16 +1,16 @@
 {
   "testId": 3,
-  "title": "नवोदय सराव चाचणी क्र. 03",
+  "title": "नवोदय सराव चाचणी क्र. 03 (2026-27)",
   "questions": [
     {
       "id": 1,
       "sec": "mental",
-      "text": "प्रश्न क्र. 1 [वेगळी आकृती]: आतील व बाहेरील आकारांच्या संबंधावरून विसंगत आकृती ओळखा:",
+      "text": "प्रश्न क्र. 1: खालील चार आकृत्यांपैकी विसंगत आकृती ओळखा:",
       "figures": [
-        { "l": "(A)", "s": "<svg viewBox='0 0 50 50'><rect x='6' y='6' width='38' height='38' stroke='#1a365d' stroke-width='2' fill='none'/><circle cx='25' cy='25' r='12' stroke='#c53030' stroke-width='1.5' fill='none'/></svg>" },
-        { "l": "(B)", "s": "<svg viewBox='0 0 50 50'><circle cx='25' cy='25' r='19' stroke='#1a365d' stroke-width='2' fill='none'/><polygon points='25,12 14,35 36,35' stroke='#c53030' stroke-width='1.5' fill='none'/></svg>" },
-        { "l": "(C)", "s": "<svg viewBox='0 0 50 50'><polygon points='25,6 6,44 44,44' stroke='#1a365d' stroke-width='2' fill='none'/><rect x='18' y='24' width='14' height='14' stroke='#c53030' stroke-width='1.5' fill='none'/></svg>" },
-        { "l": "(D)", "s": "<svg viewBox='0 0 50 50'><circle cx='25' cy='25' r='19' stroke='#1a365d' stroke-width='2' fill='none'/><circle cx='25' cy='25' r='10' stroke='#c53030' stroke-width='1.5' fill='none'/></svg>" }
+        { "l": "(A)", "s": "<svg viewBox='0 0 50 50'><rect x='8' y='8' width='34' height='34' stroke='black' stroke-width='2' fill='none'/><circle cx='25' cy='25' r='8' stroke='black' stroke-width='1.5' fill='none'/></svg>" },
+        { "l": "(B)", "s": "<svg viewBox='0 0 50 50'><polygon points='25,6 6,44 44,44' stroke='black' stroke-width='2' fill='none'/><circle cx='25' cy='28' r='6' stroke='black' stroke-width='1.5' fill='none'/></svg>" },
+        { "l": "(C)", "s": "<svg viewBox='0 0 50 50'><circle cx='25' cy='25' r='18' stroke='black' stroke-width='2' fill='none'/><circle cx='25' cy='25' r='8' stroke='black' stroke-width='1.5' fill='none'/></svg>" },
+        { "l": "(D)", "s": "<svg viewBox='0 0 50 50'><polygon points='25,5 45,20 38,44 12,44 5,20' stroke='black' stroke-width='2' fill='none'/><line x1='12' y1='44' x2='38' y2='44' stroke='#c53030' stroke-width='2'/></svg>" }
       ],
       "options": ["(A)", "(B)", "(C)", "(D)"],
       "correct": 3
@@ -18,52 +18,52 @@
     {
       "id": 2,
       "sec": "mental",
-      "text": "प्रश्न क्र. 2 [वेगळी आकृती]: रेषांच्या समांतरतेवरून विसंगत आकृती ओळखा:",
+      "text": "प्रश्न क्र. 2: खालील चार आकृत्यांपैकी विसंगत आकृती ओळखा:",
       "figures": [
-        { "l": "(A)", "s": "<svg viewBox='0 0 50 50'><line x1='8' y1='15' x2='42' y2='15' stroke='black' stroke-width='2.5'/><line x1='8' y1='35' x2='42' y2='35' stroke='black' stroke-width='2.5'/></svg>" },
-        { "l": "(B)", "s": "<svg viewBox='0 0 50 50'><line x1='15' y1='8' x2='15' y2='42' stroke='black' stroke-width='2.5'/><line x1='35' y1='8' x2='35' y2='42' stroke='black' stroke-width='2.5'/></svg>" },
-        { "l": "(C)", "s": "<svg viewBox='0 0 50 50'><line x1='8' y1='10' x2='40' y2='42' stroke='black' stroke-width='2.5'/><line x1='12' y1='42' x2='44' y2='10' stroke='black' stroke-width='2.5'/></svg>" },
-        { "l": "(D)", "s": "<svg viewBox='0 0 50 50'><line x1='8' y1='20' x2='38' y2='10' stroke='black' stroke-width='2.5'/><line x1='12' y1='40' x2='42' y2='30' stroke='black' stroke-width='2.5'/></svg>" }
+        { "l": "(A)", "s": "<svg viewBox='0 0 50 50'><line x1='10' y1='25' x2='40' y2='25' stroke='black' stroke-width='2'/><circle cx='40' cy='25' r='3' fill='black'/></svg>" },
+        { "l": "(B)", "s": "<svg viewBox='0 0 50 50'><line x1='25' y1='40' x2='25' y2='10' stroke='black' stroke-width='2'/><circle cx='25' cy='10' r='3' fill='black'/></svg>" },
+        { "l": "(C)", "s": "<svg viewBox='0 0 50 50'><line x1='40' y1='25' x2='10' y2='25' stroke='black' stroke-width='2'/><circle cx='10' cy='25' r='3' fill='black'/></svg>" },
+        { "l": "(D)", "s": "<svg viewBox='0 0 50 50'><line x1='10' y1='10' x2='40' y2='40' stroke='black' stroke-width='2'/><rect x='36' y='36' width='6' height='6' fill='black'/></svg>" }
       ],
       "options": ["(A)", "(B)", "(C)", "(D)"],
-      "correct": 2
+      "correct": 3
     },
     {
       "id": 3,
       "sec": "mental",
-      "text": "प्रश्न क्र. 3 [वेगळी आकृती]: चारही भागांतील बिंदूंच्या समान वाटणीवरून वेगळा पर्याय निवडा:",
+      "text": "प्रश्न क्र. 3: खालील चार आकृत्यांपैकी विसंगत आकृती ओळखा:",
       "figures": [
-        { "l": "(A)", "s": "<svg viewBox='0 0 50 50'><rect x='6' y='6' width='38' height='38' stroke='black' stroke-width='2' fill='none'/><line x1='25' y1='6' x2='25' y2='44' stroke='black' stroke-width='1'/><line x1='6' y1='25' x2='44' y2='25' stroke='black' stroke-width='1'/><circle cx='15' cy='15' r='3' fill='black'/><circle cx='35' cy='15' r='3' fill='black'/><circle cx='15' cy='35' r='3' fill='black'/><circle cx='35' cy='35' r='3' fill='black'/></svg>" },
-        { "l": "(B)", "s": "<svg viewBox='0 0 50 50'><rect x='6' y='6' width='38' height='38' stroke='black' stroke-width='2' fill='none'/><line x1='25' y1='6' x2='25' y2='44' stroke='black' stroke-width='1'/><line x1='6' y1='25' x2='44' y2='25' stroke='black' stroke-width='1'/><circle cx='15' cy='15' r='3' fill='black'/><circle cx='35' cy='15' r='3' fill='black'/><circle cx='15' cy='35' r='3' fill='black'/></svg>" },
-        { "l": "(C)", "s": "<svg viewBox='0 0 50 50'><circle cx='25' cy='25' r='19' stroke='black' stroke-width='2' fill='none'/><line x1='25' y1='6' x2='25' y2='44' stroke='black' stroke-width='1'/><line x1='6' y1='25' x2='44' y2='25' stroke='black' stroke-width='1'/><circle cx='17' cy='17' r='3' fill='black'/><circle cx='33' cy='17' r='3' fill='black'/><circle cx='17' cy='33' r='3' fill='black'/><circle cx='33' cy='33' r='3' fill='black'/></svg>" },
-        { "l": "(D)", "s": "<svg viewBox='0 0 50 50'><rect x='6' y='6' width='38' height='38' stroke='black' stroke-width='2' fill='none'/><line x1='6' y1='6' x2='44' y2='44' stroke='black' stroke-width='1'/><line x1='6' y1='44' x2='44' y2='6' stroke='black' stroke-width='1'/><circle cx='25' cy='13' r='3' fill='black'/><circle cx='37' cy='25' r='3' fill='black'/><circle cx='25' cy='37' r='3' fill='black'/><circle cx='13' cy='25' r='3' fill='black'/></svg>" }
-      ],
-      "options": ["(A)", "(B)", "(C)", "(D)"],
-      "correct": 1
-    },
-    {
-      "id": 4,
-      "sec": "mental",
-      "text": "प्रश्न क्र. 4 [वेगळी आकृती]: आतील चिन्हांच्या आकारावरून विसंगत आकृती ओळखा:",
-      "figures": [
-        { "l": "(A)", "s": "<svg viewBox='0 0 50 50'><polygon points='25,6 6,44 44,44' stroke='black' stroke-width='2' fill='none'/><line x1='20' y1='25' x2='30' y2='25' stroke='#c53030' stroke-width='3'/></svg>" },
-        { "l": "(B)", "s": "<svg viewBox='0 0 50 50'><polygon points='25,6 6,44 44,44' stroke='black' stroke-width='2' fill='none'/><line x1='25' y1='20' x2='25' y2='30' stroke='#c53030' stroke-width='3'/></svg>" },
-        { "l": "(C)", "s": "<svg viewBox='0 0 50 50'><polygon points='25,6 6,44 44,44' stroke='black' stroke-width='2' fill='none'/><circle cx='25' cy='28' r='5' fill='#c53030'/></svg>" },
-        { "l": "(D)", "s": "<svg viewBox='0 0 50 50'><polygon points='25,6 6,44 44,44' stroke='black' stroke-width='2' fill='none'/><line x1='21' y1='22' x2='29' y2='30' stroke='#c53030' stroke-width='3'/></svg>" }
+        { "l": "(A)", "s": "<svg viewBox='0 0 50 50'><rect x='8' y='8' width='34' height='34' stroke='black' stroke-width='2' fill='none'/><line x1='8' y1='8' x2='42' y2='42' stroke='black' stroke-width='1.5'/><line x1='8' y1='42' x2='42' y2='8' stroke='black' stroke-width='1.5'/></svg>" },
+        { "l": "(B)", "s": "<svg viewBox='0 0 50 50'><circle cx='25' cy='25' r='18' stroke='black' stroke-width='2' fill='none'/><line x1='7' y1='25' x2='43' y2='25' stroke='black' stroke-width='1.5'/><line x1='25' y1='7' x2='25' y2='43' stroke='black' stroke-width='1.5'/></svg>" },
+        { "l": "(C)", "s": "<svg viewBox='0 0 50 50'><polygon points='25,6 6,44 44,44' stroke='black' stroke-width='2' fill='none'/><circle cx='25' cy='30' r='4' fill='black'/></svg>" },
+        { "l": "(D)", "s": "<svg viewBox='0 0 50 50'><rect x='10' y='14' width='30' height='22' stroke='black' stroke-width='2' fill='none'/><line x1='10' y1='14' x2='40' y2='36' stroke='black' stroke-width='1.5'/><line x1='10' y1='36' x2='40' y2='14' stroke='black' stroke-width='1.5'/></svg>" }
       ],
       "options": ["(A)", "(B)", "(C)", "(D)"],
       "correct": 2
     },
     {
+      "id": 4,
+      "sec": "mental",
+      "text": "प्रश्न क्र. 4: खालील चार आकृत्यांपैकी विसंगत आकृती ओळखा:",
+      "figures": [
+        { "l": "(A)", "s": "<svg viewBox='0 0 50 50'><polygon points='25,8 10,40 40,40' stroke='black' stroke-width='2' fill='none'/><circle cx='25' cy='25' r='3' fill='black'/></svg>" },
+        { "l": "(B)", "s": "<svg viewBox='0 0 50 50'><rect x='8' y='8' width='34' height='34' stroke='black' stroke-width='2' fill='none'/><circle cx='25' cy='25' r='3' fill='black'/></svg>" },
+        { "l": "(C)", "s": "<svg viewBox='0 0 50 50'><polygon points='25,5 45,20 38,44 12,44 5,20' stroke='black' stroke-width='2' fill='none'/><circle cx='25' cy='25' r='3' fill='black'/></svg>" },
+        { "l": "(D)", "s": "<svg viewBox='0 0 50 50'><circle cx='25' cy='25' r='18' stroke='black' stroke-width='2' fill='none'/><rect x='22' y='22' width='6' height='6' fill='black'/></svg>" }
+      ],
+      "options": ["(A)", "(B)", "(C)", "(D)"],
+      "correct": 3
+    },
+    {
       "id": 5,
       "sec": "mental",
-      "text": "प्रश्न क्र. 5 [जुळणारी आकृती]: प्रश्न आकृतीशी तंतोतंत जुळणारी उत्तर आकृती शोधा:",
-      "problemFig": "<svg viewBox='0 0 50 50'><polygon points='25,6 44,44 6,44' stroke='black' stroke-width='2' fill='none'/><line x1='25' y1='24' x2='25' y2='44' stroke='black' stroke-width='2'/><circle cx='18' cy='36' r='3' fill='black'/><rect x='28' y='33' width='6' height='6' fill='black'/></svg>",
+      "text": "प्रश्न क्र. 5: डाव्या बाजूच्या प्रश्न आकृतीशी तंतोतंत जुळणारी आकृती शोधा:",
+      "problemFig": "<svg viewBox='0 0 50 50'><rect x='8' y='8' width='34' height='34' stroke='black' stroke-width='2' fill='none'/><line x1='8' y1='8' x2='25' y2='25' stroke='black' stroke-width='2'/><circle cx='34' cy='34' r='4' fill='black'/></svg>",
       "figures": [
-        { "l": "(A)", "s": "<svg viewBox='0 0 50 50'><polygon points='25,6 44,44 6,44' stroke='black' stroke-width='2' fill='none'/><line x1='25' y1='24' x2='25' y2='44' stroke='black' stroke-width='2'/><rect x='15' y='33' width='6' height='6' fill='black'/><circle cx='31' cy='36' r='3' fill='black'/></svg>" },
-        { "l": "(B)", "s": "<svg viewBox='0 0 50 50'><polygon points='25,6 44,44 6,44' stroke='black' stroke-width='2' fill='none'/><line x1='25' y1='24' x2='25' y2='44' stroke='black' stroke-width='2'/><circle cx='18' cy='36' r='3' fill='black'/><rect x='28' y='33' width='6' height='6' fill='black'/></svg>" },
-        { "l": "(C)", "s": "<svg viewBox='0 0 50 50'><polygon points='25,44 44,6 6,6' stroke='black' stroke-width='2' fill='none'/><circle cx='18' cy='16' r='3' fill='black'/><rect x='28' y='13' width='6' height='6' fill='black'/></svg>" },
-        { "l": "(D)", "s": "<svg viewBox='0 0 50 50'><polygon points='25,6 44,44 6,44' stroke='black' stroke-width='2' fill='none'/><circle cx='18' cy='36' r='3' fill='black'/></svg>" }
+        { "l": "(A)", "s": "<svg viewBox='0 0 50 50'><rect x='8' y='8' width='34' height='34' stroke='black' stroke-width='2' fill='none'/><line x1='8' y1='8' x2='25' y2='25' stroke='black' stroke-width='2'/><circle cx='34' cy='16' r='4' fill='black'/></svg>" },
+        { "l": "(B)", "s": "<svg viewBox='0 0 50 50'><rect x='8' y='8' width='34' height='34' stroke='black' stroke-width='2' fill='none'/><line x1='8' y1='8' x2='25' y2='25' stroke='black' stroke-width='2'/><circle cx='34' cy='34' r='4' fill='black'/></svg>" },
+        { "l": "(C)", "s": "<svg viewBox='0 0 50 50'><rect x='8' y='8' width='34' height='34' stroke='black' stroke-width='2' fill='none'/><line x1='42' y1='8' x2='25' y2='25' stroke='black' stroke-width='2'/><circle cx='34' cy='34' r='4' fill='black'/></svg>" },
+        { "l": "(D)", "s": "<svg viewBox='0 0 50 50'><rect x='8' y='8' width='34' height='34' stroke='black' stroke-width='2' fill='none'/><circle cx='34' cy='34' r='4' fill='black'/></svg>" }
       ],
       "options": ["(A)", "(B)", "(C)", "(D)"],
       "correct": 1
@@ -71,13 +71,13 @@
     {
       "id": 6,
       "sec": "mental",
-      "text": "प्रश्न क्र. 6 [जुळणारी आकृती]: प्रश्न आकृतीशी तंतोतंत जुळणारी आकृती कोणती?",
-      "problemFig": "<svg viewBox='0 0 50 50'><circle cx='25' cy='25' r='19' stroke='black' stroke-width='2' fill='none'/><path d='M 12,25 Q 25,10 38,25' stroke='#2b6cb0' stroke-width='2' fill='none'/><path d='M 12,25 Q 25,40 38,25' stroke='#c53030' stroke-width='2' fill='none'/></svg>",
+      "text": "प्रश्न क्र. 6: डाव्या बाजूच्या प्रश्न आकृतीशी तंतोतंत जुळणारी आकृती शोधा:",
+      "problemFig": "<svg viewBox='0 0 50 50'><polygon points='25,8 10,40 40,40' stroke='black' stroke-width='2' fill='none'/><line x1='10' y1='40' x2='32' y2='24' stroke='black' stroke-width='1.5'/></svg>",
       "figures": [
-        { "l": "(A)", "s": "<svg viewBox='0 0 50 50'><circle cx='25' cy='25' r='19' stroke='black' stroke-width='2' fill='none'/><path d='M 12,25 Q 25,10 38,25' stroke='#c53030' stroke-width='2' fill='none'/><path d='M 12,25 Q 25,40 38,25' stroke='#2b6cb0' stroke-width='2' fill='none'/></svg>" },
-        { "l": "(B)", "s": "<svg viewBox='0 0 50 50'><circle cx='25' cy='25' r='19' stroke='black' stroke-width='2' fill='none'/><path d='M 25,12 Q 10,25 25,38' stroke='#2b6cb0' stroke-width='2' fill='none'/><path d='M 25,12 Q 40,25 25,38' stroke='#c53030' stroke-width='2' fill='none'/></svg>" },
-        { "l": "(C)", "s": "<svg viewBox='0 0 50 50'><circle cx='25' cy='25' r='19' stroke='black' stroke-width='2' fill='none'/><path d='M 12,25 Q 25,10 38,25' stroke='#2b6cb0' stroke-width='2' fill='none'/><path d='M 12,25 Q 25,40 38,25' stroke='#c53030' stroke-width='2' fill='none'/></svg>" },
-        { "l": "(D)", "s": "<svg viewBox='0 0 50 50'><circle cx='25' cy='25' r='19' stroke='black' stroke-width='2' fill='none'/><line x1='12' y1='25' x2='38' y2='25' stroke='black' stroke-width='2'/></svg>" }
+        { "l": "(A)", "s": "<svg viewBox='0 0 50 50'><polygon points='25,8 10,40 40,40' stroke='black' stroke-width='2' fill='none'/><line x1='40' y1='40' x2='18' y2='24' stroke='black' stroke-width='1.5'/></svg>" },
+        { "l": "(B)", "s": "<svg viewBox='0 0 50 50'><polygon points='25,40 10,8 40,8' stroke='black' stroke-width='2' fill='none'/><line x1='10' y1='8' x2='32' y2='24' stroke='black' stroke-width='1.5'/></svg>" },
+        { "l": "(C)", "s": "<svg viewBox='0 0 50 50'><polygon points='25,8 10,40 40,40' stroke='black' stroke-width='2' fill='none'/><line x1='10' y1='40' x2='32' y2='24' stroke='black' stroke-width='1.5'/></svg>" },
+        { "l": "(D)", "s": "<svg viewBox='0 0 50 50'><polygon points='25,8 10,40 40,40' stroke='black' stroke-width='2' fill='none'/><line x1='25' y1='8' x2='25' y2='40' stroke='black' stroke-width='1.5'/></svg>" }
       ],
       "options": ["(A)", "(B)", "(C)", "(D)"],
       "correct": 2
@@ -85,13 +85,13 @@
     {
       "id": 7,
       "sec": "mental",
-      "text": "प्रश्न क्र. 7 [आकृती पूर्ण करा]: प्रश्नचिन्हाच्या जागी योग्य नक्षी पूर्ण करणारा पर्याय निवडा:",
-      "problemFig": "<svg viewBox='0 0 50 50'><rect x='6' y='6' width='38' height='38' stroke='black' stroke-width='2' fill='none'/><line x1='25' y1='6' x2='25' y2='44' stroke='black' stroke-width='1.5'/><line x1='6' y1='25' x2='44' y2='25' stroke='black' stroke-width='1.5'/><circle cx='15' cy='15' r='6' stroke='#1a365d' stroke-width='2' fill='none'/><rect x='30' y='10' width='10' height='10' stroke='#1a365d' stroke-width='2' fill='none'/><circle cx='15' cy='35' r='6' stroke='#1a365d' stroke-width='2' fill='none'/><text x='31' y='40' font-size='16' fill='#c53030'>?</text></svg>",
+      "text": "प्रश्न क्र. 7: प्रश्नचिन्हाच्या जागी योग्य तुकडा निवडून आकृती पूर्ण करा:",
+      "problemFig": "<svg viewBox='0 0 50 50'><circle cx='25' cy='25' r='18' stroke='black' stroke-width='2' fill='none'/><line x1='7' y1='25' x2='43' y2='25' stroke='black' stroke-width='1.5'/><line x1='25' y1='7' x2='25' y2='43' stroke='black' stroke-width='1.5'/><circle cx='16' cy='16' r='3' fill='black'/><circle cx='34' cy='16' r='3' fill='black'/><circle cx='16' cy='34' r='3' fill='black'/><text x='30' y='38' font-size='14' fill='#c53030'>?</text></svg>",
       "figures": [
-        { "l": "(A)", "s": "<svg viewBox='0 0 50 50'><rect x='18' y='18' width='14' height='14' stroke='#1a365d' stroke-width='2' fill='none'/></svg>" },
-        { "l": "(B)", "s": "<svg viewBox='0 0 50 50'><circle cx='25' cy='25' r='8' stroke='#1a365d' stroke-width='2' fill='none'/></svg>" },
-        { "l": "(C)", "s": "<svg viewBox='0 0 50 50'><polygon points='25,12 12,38 38,38' fill='#1a365d'/></svg>" },
-        { "l": "(D)", "s": "<svg viewBox='0 0 50 50'><line x1='10' y1='10' x2='40' y2='40' stroke='black' stroke-width='3'/></svg>" }
+        { "l": "(A)", "s": "<svg viewBox='0 0 50 50'><circle cx='25' cy='25' r='3' fill='black'/></svg>" },
+        { "l": "(B)", "s": "<svg viewBox='0 0 50 50'><rect x='20' y='20' width='10' height='10' fill='black'/></svg>" },
+        { "l": "(C)", "s": "<svg viewBox='0 0 50 50'><circle cx='25' cy='25' r='6' stroke='black' stroke-width='1.5' fill='none'/></svg>" },
+        { "l": "(D)", "s": "<svg viewBox='0 0 50 50'><line x1='15' y1='15' x2='35' y2='35' stroke='black' stroke-width='2'/></svg>" }
       ],
       "options": ["(A)", "(B)", "(C)", "(D)"],
       "correct": 0
@@ -99,12 +99,12 @@
     {
       "id": 8,
       "sec": "mental",
-      "text": "प्रश्न क्र. 8 [मालिका पूर्ण करा]: घड्याळाच्या काट्याच्या उलट दिशेने (Anticlockwise) फिरणाऱ्या बाणाचे पुढील पद ओळखा:",
+      "text": "प्रश्न क्र. 8: मालिकेचा पुढील क्रम पूर्ण करणारी आकृती निवडा:",
       "figures": [
-        { "l": "(A)", "s": "<svg viewBox='0 0 50 50'><line x1='25' y1='40' x2='25' y2='10' stroke='black' stroke-width='3'/><polyline points='15,20 25,10 35,20' stroke='black' stroke-width='3' fill='none'/></svg>" },
-        { "l": "(B)", "s": "<svg viewBox='0 0 50 50'><line x1='40' y1='25' x2='10' y2='25' stroke='black' stroke-width='3'/><polyline points='20,15 10,25 20,35' stroke='black' stroke-width='3' fill='none'/></svg>" },
-        { "l": "(C)", "s": "<svg viewBox='0 0 50 50'><line x1='25' y1='10' x2='25' y2='40' stroke='black' stroke-width='3'/><polyline points='15,30 25,40 35,30' stroke='black' stroke-width='3' fill='none'/></svg>" },
-        { "l": "(D)", "s": "<svg viewBox='0 0 50 50'><line x1='10' y1='25' x2='40' y2='25' stroke='black' stroke-width='3'/><polyline points='30,15 40,25 30,35' stroke='black' stroke-width='3' fill='none'/></svg>" }
+        { "l": "(A)", "s": "<svg viewBox='0 0 50 50'><circle cx='25' cy='25' r='18' stroke='black' stroke-width='2' fill='none'/><line x1='25' y1='7' x2='25' y2='43' stroke='black' stroke-width='1.5'/></svg>" },
+        { "l": "(B)", "s": "<svg viewBox='0 0 50 50'><circle cx='25' cy='25' r='18' stroke='black' stroke-width='2' fill='none'/><line x1='7' y1='25' x2='43' y2='25' stroke='black' stroke-width='1.5'/></svg>" },
+        { "l": "(C)", "s": "<svg viewBox='0 0 50 50'><circle cx='25' cy='25' r='18' stroke='black' stroke-width='2' fill='none'/><line x1='12' y1='12' x2='38' y2='38' stroke='black' stroke-width='1.5'/></svg>" },
+        { "l": "(D)", "s": "<svg viewBox='0 0 50 50'><circle cx='25' cy='25' r='18' stroke='black' stroke-width='2' fill='none'/><line x1='12' y1='38' x2='38' y2='12' stroke='black' stroke-width='1.5'/></svg>" }
       ],
       "options": ["(A)", "(B)", "(C)", "(D)"],
       "correct": 3
@@ -112,13 +112,13 @@
     {
       "id": 9,
       "sec": "mental",
-      "text": "प्रश्न क्र. 9 [सादृश्यता]: जर [ चौरस : २ कर्ण रेषा ] तर [ वर्तुळ : ? ]",
-      "problemFig": "<svg viewBox='0 0 50 50'><rect x='6' y='6' width='38' height='38' stroke='black' stroke-width='2' fill='none'/><line x1='6' y1='6' x2='44' y2='44' stroke='#c53030' stroke-width='2'/><line x1='6' y1='44' x2='44' y2='6' stroke='#c53030' stroke-width='2'/></svg>",
+      "text": "प्रश्न क्र. 9: प्रश्नचिन्हाच्या जागी योग्य संबंध असणारी आकृती शोधा:",
+      "problemFig": "<svg viewBox='0 0 50 50'><circle cx='25' cy='25' r='18' stroke='black' stroke-width='2' fill='none'/><rect x='15' y='15' width='20' height='20' stroke='black' stroke-width='2' fill='none'/></svg>",
       "figures": [
-        { "l": "(A)", "s": "<svg viewBox='0 0 50 50'><circle cx='25' cy='25' r='19' stroke='black' stroke-width='2' fill='none'/><line x1='6' y1='25' x2='44' y2='25' stroke='#c53030' stroke-width='2'/><line x1='25' y1='6' x2='25' y2='44' stroke='#c53030' stroke-width='2'/></svg>" },
-        { "l": "(B)", "s": "<svg viewBox='0 0 50 50'><circle cx='25' cy='25' r='19' stroke='black' stroke-width='2' fill='none'/><line x1='6' y1='25' x2='44' y2='25' stroke='#c53030' stroke-width='2'/></svg>" },
-        { "l": "(C)", "s": "<svg viewBox='0 0 50 50'><circle cx='25' cy='25' r='19' stroke='black' stroke-width='2' fill='none'/></svg>" },
-        { "l": "(D)", "s": "<svg viewBox='0 0 50 50'><polygon points='25,6 6,44 44,44' stroke='black' stroke-width='2' fill='none'/></svg>" }
+        { "l": "(A)", "s": "<svg viewBox='0 0 50 50'><rect x='8' y='8' width='34' height='34' stroke='black' stroke-width='2' fill='none'/><circle cx='25' cy='25' r='10' stroke='black' stroke-width='2' fill='none'/></svg>" },
+        { "l": "(B)", "s": "<svg viewBox='0 0 50 50'><polygon points='25,8 10,40 40,40' stroke='black' stroke-width='2' fill='none'/></svg>" },
+        { "l": "(C)", "s": "<svg viewBox='0 0 50 50'><rect x='15' y='15' width='20' height='20' fill='black'/></svg>" },
+        { "l": "(D)", "s": "<svg viewBox='0 0 50 50'><circle cx='25' cy='25' r='18' fill='black'/></svg>" }
       ],
       "options": ["(A)", "(B)", "(C)", "(D)"],
       "correct": 0
@@ -126,40 +126,40 @@
     {
       "id": 10,
       "sec": "mental",
-      "text": "प्रश्न क्र. 10 [आरशातील प्रतिमा]: \"B\" या अक्षराची उजव्या बाजूच्या आरशातील अचूक प्रतिमा कोणती?",
-      "problemFig": "<svg viewBox='0 0 50 50'><text x='15' y='38' font-size='36' font-weight='bold' fill='#1a365d'>B</text></svg>",
+      "text": "प्रश्न क्र. 10: उजव्या बाजूच्या आरशातील अचूक प्रतिमा निवडा:",
+      "problemFig": "<svg viewBox='0 0 50 50'><text x='10' y='36' font-size='26' font-weight='bold' fill='black'>P7</text></svg>",
       "figures": [
-        { "l": "(A)", "s": "<svg viewBox='0 0 50 50'><text x='15' y='38' font-size='36' font-weight='bold' fill='#1a365d' transform='translate(50,0) scale(-1,1)'>B</text></svg>" },
-        { "l": "(B)", "s": "<svg viewBox='0 0 50 50'><text x='15' y='38' font-size='36' font-weight='bold' fill='#1a365d'>B</text></svg>" },
-        { "l": "(C)", "s": "<svg viewBox='0 0 50 50'><text x='15' y='38' font-size='36' font-weight='bold' fill='#1a365d' transform='translate(0,50) scale(1,-1)'>B</text></svg>" },
-        { "l": "(D)", "s": "<svg viewBox='0 0 50 50'><circle cx='25' cy='25' r='16' fill='#1a365d'/></svg>" }
-      ],
-      "options": ["(A)", "(B)", "(C)", "(D)"],
-      "correct": 0
-    },
-    {
-      "id": 11,
-      "sec": "mental",
-      "text": "प्रश्न क्र. 11 [घडी उलगडणे]: चौरस कागदाच्या कोपऱ्यावर त्रिकोणी घडी घालून मध्यभागी छिद्र पाडल्यास उलगडल्यावर कोणती आकृती दिसेल?",
-      "figures": [
-        { "l": "(A)", "s": "<svg viewBox='0 0 50 50'><rect x='6' y='6' width='38' height='38' stroke='black' stroke-width='2' fill='none'/><circle cx='25' cy='25' r='5' fill='black'/></svg>" },
-        { "l": "(B)", "s": "<svg viewBox='0 0 50 50'><rect x='6' y='6' width='38' height='38' stroke='black' stroke-width='2' fill='none'/><circle cx='15' cy='15' r='4' fill='black'/><circle cx='35' cy='15' r='4' fill='black'/><circle cx='15' cy='35' r='4' fill='black'/><circle cx='35' cy='35' r='4' fill='black'/></svg>" },
-        { "l": "(C)", "s": "<svg viewBox='0 0 50 50'><rect x='6' y='6' width='38' height='38' stroke='black' stroke-width='2' fill='none'/><line x1='6' y1='6' x2='44' y2='44' stroke='black' stroke-width='2'/></svg>" },
-        { "l": "(D)", "s": "<svg viewBox='0 0 50 50'><circle cx='25' cy='25' r='18' stroke='black' stroke-width='2' fill='none'/></svg>" }
+        { "l": "(A)", "s": "<svg viewBox='0 0 50 50'><text x='10' y='36' font-size='26' font-weight='bold' fill='black'>P7</text></svg>" },
+        { "l": "(B)", "s": "<svg viewBox='0 0 50 50'><text x='10' y='36' font-size='26' font-weight='bold' fill='black' transform='translate(50,0) scale(-1,1)'>P7</text></svg>" },
+        { "l": "(C)", "s": "<svg viewBox='0 0 50 50'><text x='10' y='36' font-size='26' font-weight='bold' fill='black' transform='translate(0,50) scale(1,-1)'>P7</text></svg>" },
+        { "l": "(D)", "s": "<svg viewBox='0 0 50 50'><circle cx='25' cy='25' r='14' fill='black'/></svg>" }
       ],
       "options": ["(A)", "(B)", "(C)", "(D)"],
       "correct": 1
     },
     {
+      "id": 11,
+      "sec": "mental",
+      "text": "प्रश्न क्र. 11: कागदाची घडी उलगडल्यानंतर दिसणारी आकृती निवडा:",
+      "figures": [
+        { "l": "(A)", "s": "<svg viewBox='0 0 50 50'><rect x='8' y='8' width='34' height='34' stroke='black' stroke-width='2' fill='none'/><circle cx='25' cy='25' r='5' fill='black'/></svg>" },
+        { "l": "(B)", "s": "<svg viewBox='0 0 50 50'><rect x='8' y='8' width='34' height='34' stroke='black' stroke-width='2' fill='none'/><rect x='20' y='20' width='10' height='10' fill='black'/></svg>" },
+        { "l": "(C)", "s": "<svg viewBox='0 0 50 50'><circle cx='25' cy='25' r='16' stroke='black' stroke-width='2' fill='none'/></svg>" },
+        { "l": "(D)", "s": "<svg viewBox='0 0 50 50'><polygon points='25,10 10,40 40,40' fill='black'/></svg>" }
+      ],
+      "options": ["(A)", "(B)", "(C)", "(D)"],
+      "correct": 0
+    },
+    {
       "id": 12,
       "sec": "mental",
-      "text": "प्रश्न क्र. 12 [भूमितीय आकृती]: काटकोन त्रिकोण पूर्ण करण्यासाठी डाव्या बाजूच्या प्रश्न आकृतीत बसणारा तुकडा ओळखा:",
-      "problemFig": "<svg viewBox='0 0 50 50'><path d='M 8,8 L 8,42 L 32,42 Z' stroke='#1a365d' stroke-width='2' fill='#edf2f7'/></svg>",
+      "text": "प्रश्न क्र. 12: आकृती पूर्ण करण्यासाठी रिकाम्या जागेत बसणारा योग्य तुकडा निवडा:",
+      "problemFig": "<svg viewBox='0 0 50 50'><path d='M 8,8 L 42,8 L 42,42 L 8,42 L 8,32 L 24,32 L 24,18 L 8,18 Z' stroke='black' stroke-width='2' fill='#f1f5f9'/></svg>",
       "figures": [
-        { "l": "(A)", "s": "<svg viewBox='0 0 50 50'><path d='M 8,8 L 42,42 L 8,42 Z' stroke='#1a365d' stroke-width='2' fill='#2b6cb0'/></svg>" },
-        { "l": "(B)", "s": "<svg viewBox='0 0 50 50'><rect x='15' y='15' width='20' height='20' fill='#2b6cb0'/></svg>" },
-        { "l": "(C)", "s": "<svg viewBox='0 0 50 50'><circle cx='25' cy='25' r='12' fill='#2b6cb0'/></svg>" },
-        { "l": "(D)", "s": "<svg viewBox='0 0 50 50'><polygon points='25,6 6,44 44,44' fill='#2b6cb0'/></svg>" }
+        { "l": "(A)", "s": "<svg viewBox='0 0 50 50'><rect x='16' y='18' width='16' height='14' fill='black'/></svg>" },
+        { "l": "(B)", "s": "<svg viewBox='0 0 50 50'><circle cx='25' cy='25' r='8' fill='black'/></svg>" },
+        { "l": "(C)", "s": "<svg viewBox='0 0 50 50'><polygon points='25,12 12,38 38,38' fill='black'/></svg>" },
+        { "l": "(D)", "s": "<svg viewBox='0 0 50 50'><line x1='12' y1='25' x2='38' y2='25' stroke='black' stroke-width='3'/></svg>" }
       ],
       "options": ["(A)", "(B)", "(C)", "(D)"],
       "correct": 0
@@ -167,12 +167,12 @@
     {
       "id": 13,
       "sec": "mental",
-      "text": "प्रश्न क्र. 13 [तुकडे जोडणे]: तीन समान लहान चौरस एकत्र जोडल्यास कोणती आकृती बनेल?",
+      "text": "प्रश्न क्र. 13: दिलेल्या आकृत्यांचे तुकडे जोडून तयार होणारी आकृती शोधा:",
       "figures": [
-        { "l": "(A)", "s": "<svg viewBox='0 0 50 50'><rect x='5' y='18' width='40' height='14' stroke='#1a365d' stroke-width='2' fill='none'/><line x1='18' y1='18' x2='18' y2='32' stroke='#1a365d' stroke-width='1.5'/><line x1='31' y1='18' x2='31' y2='32' stroke='#1a365d' stroke-width='1.5'/></svg>" },
-        { "l": "(B)", "s": "<svg viewBox='0 0 50 50'><circle cx='25' cy='25' r='18' stroke='black' stroke-width='2' fill='none'/></svg>" },
-        { "l": "(C)", "s": "<svg viewBox='0 0 50 50'><polygon points='25,6 6,44 44,44' stroke='black' stroke-width='2' fill='none'/></svg>" },
-        { "l": "(D)", "s": "<svg viewBox='0 0 50 50'><rect x='10' y='10' width='30' height='30' fill='#1a365d'/></svg>" }
+        { "l": "(A)", "s": "<svg viewBox='0 0 50 50'><circle cx='25' cy='25' r='18' stroke='black' stroke-width='2' fill='none'/><line x1='7' y1='25' x2='43' y2='25' stroke='black' stroke-width='1.5'/></svg>" },
+        { "l": "(B)", "s": "<svg viewBox='0 0 50 50'><rect x='8' y='8' width='34' height='34' stroke='black' stroke-width='2' fill='none'/></svg>" },
+        { "l": "(C)", "s": "<svg viewBox='0 0 50 50'><polygon points='25,8 10,40 40,40' stroke='black' stroke-width='2' fill='none'/></svg>" },
+        { "l": "(D)", "s": "<svg viewBox='0 0 50 50'><line x1='10' y1='10' x2='40' y2='40' stroke='black' stroke-width='3'/></svg>" }
       ],
       "options": ["(A)", "(B)", "(C)", "(D)"],
       "correct": 0
@@ -180,208 +180,208 @@
     {
       "id": 14,
       "sec": "mental",
-      "text": "प्रश्न क्र. 14 [लपलेली आकृती]: \"W\" हा आकार खालीलपैकी कोणत्या आकृतीत सामावलेला आहे?",
-      "problemFig": "<svg viewBox='0 0 50 50'><polyline points='8,14 16,36 25,22 34,36 42,14' stroke='#c53030' stroke-width='3.5' fill='none'/></svg>",
+      "text": "प्रश्न क्र. 14: डावीकडील आकृती खालीलपैकी कोणत्या आकृतीमध्ये दडलेली आहे?",
+      "problemFig": "<svg viewBox='0 0 50 50'><line x1='25' y1='10' x2='25' y2='40' stroke='black' stroke-width='3'/><line x1='25' y1='25' x2='40' y2='25' stroke='black' stroke-width='3'/></svg>",
       "figures": [
-        { "l": "(A)", "s": "<svg viewBox='0 0 50 50'><rect x='6' y='6' width='38' height='38' stroke='black' stroke-width='2' fill='none'/><polyline points='8,14 16,36 25,22 34,36 42,14' stroke='#c53030' stroke-width='3' fill='none'/></svg>" },
-        { "l": "(B)", "s": "<svg viewBox='0 0 50 50'><circle cx='25' cy='25' r='20' stroke='black' stroke-width='2' fill='none'/></svg>" },
+        { "l": "(A)", "s": "<svg viewBox='0 0 50 50'><circle cx='25' cy='25' r='18' stroke='black' stroke-width='2' fill='none'/></svg>" },
+        { "l": "(B)", "s": "<svg viewBox='0 0 50 50'><rect x='8' y='8' width='34' height='34' stroke='black' stroke-width='2' fill='none'/><line x1='25' y1='8' x2='25' y2='42' stroke='black' stroke-width='2'/><line x1='25' y1='25' x2='42' y2='25' stroke='black' stroke-width='2'/></svg>" },
         { "l": "(C)", "s": "<svg viewBox='0 0 50 50'><polygon points='25,6 6,44 44,44' stroke='black' stroke-width='2' fill='none'/></svg>" },
-        { "l": "(D)", "s": "<svg viewBox='0 0 50 50'><line x1='5' y1='25' x2='45' y2='25' stroke='black' stroke-width='3'/></svg>" }
+        { "l": "(D)", "s": "<svg viewBox='0 0 50 50'><line x1='8' y1='8' x2='42' y2='42' stroke='black' stroke-width='2'/></svg>" }
       ],
       "options": ["(A)", "(B)", "(C)", "(D)"],
-      "correct": 0
+      "correct": 1
     },
-    { "id": 15, "sec": "mental", "text": "प्रश्न क्र. 15: विसंगत शब्द ओळखा: तांबे, पितळ, सोने, लोखंड", "options": ["तांबे", "पितळ", "सोने", "लोखंड"], "correct": 1 },
-    { "id": 16, "sec": "mental", "text": "प्रश्न क्र. 16: विसंगत जोडी ओळखा: दिवस-रात्र, गरम-थंड, प्रकाश-उजेड, वर-खाली", "options": ["दिवस-रात्र", "गरम-थंड", "प्रकाश-उजेड", "वर-खाली"], "correct": 2 },
-    { "id": 17, "sec": "mental", "text": "प्रश्न क्र. 17: संबंध ओळखा: सिंह : गुहा :: घोडा : ?", "options": ["पागा (तबेला)", "खुराडे", "घरटे", "गोठा"], "correct": 0 },
-    { "id": 18, "sec": "mental", "text": "प्रश्न क्र. 18: संबंध ओळखा: भारत : नवी दिल्ली :: जपान : ?", "options": ["बीजिंग", "टोकियो", "लंडन", "न्यूयॉर्क"], "correct": 1 },
-    { "id": 19, "sec": "mental", "text": "प्रश्न क्र. 19: 40 मुलांच्या रांगेत अनिकेतचा पुढून 12 वा क्रमांक आहे, तर मागून कितवा क्रमांक असेल?", "options": ["28 वा", "29 वा", "30 वा", "27 वा"], "correct": 1 },
-    { "id": 20, "sec": "mental", "text": "प्रश्न क्र. 20: जर एका सांकेतिक भाषेत 'SUN' ला 'TVO' लिहिले, तर 'MOON' ला काय लिहिले जाईल?", "options": ["NPPO", "NPOP", "NOOP", "OPPN"], "correct": 0 },
-    { "id": 21, "sec": "mental", "text": "प्रश्न क्र. 21: विसंगत संख्या ओळखा: 21, 28, 35, 43, 49", "options": ["21", "28", "43", "49"], "correct": 2 },
-    { "id": 22, "sec": "mental", "text": "प्रश्न क्र. 22: सूर्योदयाच्या वेळी तुम्ही सूर्याकडे तोंड करून उभे राहिल्यास तुमची सावली कोणत्या दिशेला पडेल?", "options": ["पूर्व", "पश्चिम", "उत्तर", "दक्षिण"], "correct": 1 },
-    { "id": 23, "sec": "mental", "text": "प्रश्न क्र. 23: सीमा ही विकासच्या वडिलांची आई आहे, तर सीमा विकासची कोण?", "options": ["आजी", "आई", "मावशी", "काकू"], "correct": 0 },
-    { "id": 24, "sec": "mental", "text": "प्रश्न क्र. 24: वर्षातील कोणत्या महिन्यात नेहमी 28 किंवा 29 दिवस असतात?", "options": ["जानेवारी", "फेब्रुवारी", "मार्च", "एप्रिल"], "correct": 1 },
-    { "id": 25, "sec": "mental", "text": "प्रश्न क्र. 25: संबंध ओळखा: सुतार : लाकूड :: लोहार : ?", "options": ["लोखंड", "माती", "कापड", "कागद"], "correct": 0 },
-    { "id": 26, "sec": "mental", "text": "प्रश्न क्र. 26: संख्या मालिका पूर्ण करा: 7, 14, 21, 28, ?", "options": ["32", "35", "42", "36"], "correct": 1 },
-    { "id": 27, "sec": "mental", "text": "प्रश्न क्र. 27: अक्षरांची मालिका पूर्ण करा: B, D, F, H, ?", "options": ["I", "J", "K", "L"], "correct": 1 },
-    { "id": 28, "sec": "mental", "text": "प्रश्न क्र. 28: संबंध ओळखा: सैनिक : देश :: पोलीस : ?", "options": ["समाज / कायदा", "दवाखाना", "शेती", "दुकान"], "correct": 0 },
-    { "id": 29, "sec": "mental", "text": "प्रश्न क्र. 29: विसंगत घटक ओळखा: सफरचंद, आंबा, बटाटा, केळी", "options": ["सफरचंद", "आंबा", "बटाटा", "केळी"], "correct": 2 },
-    { "id": 30, "sec": "mental", "text": "प्रश्न क्र. 30: जर 5 ऑगस्टला मंगळवार असेल, तर 19 ऑगस्टला कोणता वार असेल?", "options": ["सोमवार", "मंगळवार", "बुधवार", "रविवार"], "correct": 1 },
-    { "id": 31, "sec": "mental", "text": "प्रश्न क्र. 31: अर्थपूर्ण क्रम लावा: 1. कापूस 2. शर्ट 3. धागा 4. कापड", "options": ["1, 3, 4, 2", "1, 2, 3, 4", "4, 1, 2, 3", "3, 1, 4, 2"], "correct": 0 },
-    { "id": 32, "sec": "mental", "text": "प्रश्न क्र. 32: विसंगत पक्षी ओळखा: पोपट, कबूतर, कावळा, वटवाघूळ", "options": ["पोपट", "कबूतर", "कावळा", "वटवाघूळ"], "correct": 3 },
-    { "id": 33, "sec": "mental", "text": "प्रश्न क्र. 33: संबंध ओळखा: ओडोमीटर : अंतर :: स्पीडोमीटर : ?", "options": ["वेग (गती)", "वजन", "वेळ", "दिशा"], "correct": 0 },
-    { "id": 34, "sec": "mental", "text": "प्रश्न क्र. 34: संख्या मालिका पूर्ण करा: 1, 4, 9, 16, 25, ?", "options": ["30", "36", "49", "35"], "correct": 1 },
-    { "id": 35, "sec": "mental", "text": "प्रश्न क्र. 35: घड्याळात 6 वाजता दोन्ही काट्यांमध्ये किती अंशांचा कोन तयार होतो?", "options": ["90°", "180°", "360°", "120°"], "correct": 1 },
-    { "id": 36, "sec": "mental", "text": "प्रश्न क्र. 36: द्विमितीय (2D) भौमितिक आकृती कोणती?", "options": ["घन", "गोल", "इष्टिकाचिती", "आयत"], "correct": 3 },
-    { "id": 37, "sec": "mental", "text": "प्रश्न क्र. 37: संबंध ओळखा: बर्फ : घन :: पाणी : ?", "options": ["द्रव", "वायू", "माती", "बाष्प"], "correct": 0 },
-    { "id": 38, "sec": "mental", "text": "प्रश्न क्र. 38: जर उद्या रविवार असेल, तर कालच्या आधीचा वार कोणता होता?", "options": ["गुरुवार", "शुक्रवार", "बुधवार", "शनिवार"], "correct": 0 },
-    { "id": 39, "sec": "mental", "text": "प्रश्न क्र. 39: मूळ संख्या नसलेली संख्या ओळखा: 2, 3, 5, 9, 11", "options": ["2", "5", "9", "11"], "correct": 2 },
-    { "id": 40, "sec": "mental", "text": "प्रश्न क्र. 40: संबंध ओळखा: पाय : चालणे :: हात : ?", "options": ["काम करणे / लिहिणे", "पाहणे", "ऐकणे", "धावणे"], "correct": 0 },
+    { "id": 15, "sec": "mental", "text": "प्रश्न क्र. 15: विसंगत जोडी ओळखा:", "options": ["दिवस रात्र", "गरम थंड", "प्रकाश उजेड", "वर खाली"], "correct": 2 },
+    { "id": 16, "sec": "mental", "text": "प्रश्न क्र. 16: सिंह : गुहा :: घोडा : ?", "options": ["पागा", "खुराडे", "घरटे", "गोठा"], "correct": 0 },
+    { "id": 17, "sec": "mental", "text": "प्रश्न क्र. 17: भारत : नवी दिल्ली :: जपान : ?", "options": ["बीजिंग", "टोकियो", "सोल", "ढाका"], "correct": 1 },
+    { "id": 18, "sec": "mental", "text": "प्रश्न क्र. 18: शिक्षक : शाळा :: डॉक्टर : ?", "options": ["शेतात", "न्यायालयात", "दवाखान्यात", "कारखान्यात"], "correct": 2 },
+    { "id": 19, "sec": "mental", "text": "प्रश्न क्र. 19: नदी : प्रवाह :: तलाव : ?", "options": ["वाहते पाणी", "लाटा", "झरा", "साचलेले पाणी"], "correct": 3 },
+    { "id": 20, "sec": "mental", "text": "प्रश्न क्र. 20: सूर्य : दिवस :: चंद्र : ?", "options": ["रात्र", "सकाळ", "दुपार", "संध्याकाळ"], "correct": 0 },
+    { "id": 21, "sec": "mental", "text": "प्रश्न क्र. 21: कान : ऐकणे :: जीभ : ?", "options": ["पाहणे", "चव घेणे", "सुंगणे", "बोलणे"], "correct": 1 },
+    { "id": 22, "sec": "mental", "text": "प्रश्न क्र. 22: गाय : वासरू :: शेळी : ?", "options": ["बछडा", "शावक", "करडू", "पाडस"], "correct": 2 },
+    { "id": 23, "sec": "mental", "text": "प्रश्न क्र. 23: पक्षी : पिसे :: ससा : ?", "options": ["खवले", "कातडी", "शिंगे", "मऊ केस"], "correct": 3 },
+    { "id": 24, "sec": "mental", "text": "प्रश्न क्र. 24: पुस्तक : वाचन :: अन्न : ?", "options": ["जेवण", "पाहणे", "फेकणे", "ठेवणे"], "correct": 0 },
+    { "id": 25, "sec": "mental", "text": "प्रश्न क्र. 25: अक्षरांची मालिका पूर्ण करा: B, D, F, H, ?", "options": ["I", "J", "K", "L"], "correct": 1 },
+    { "id": 26, "sec": "mental", "text": "प्रश्न क्र. 26: सैनिक : देश :: पोलीस : ?", "options": ["दवाखाना", "शेती", "समाज", "दुकान"], "correct": 2 },
+    { "id": 27, "sec": "mental", "text": "प्रश्न क्र. 27: विसंगत घटक ओळखा:", "options": ["सफरचंद", "आंबा", "केळी", "बटाटा"], "correct": 3 },
+    { "id": 28, "sec": "mental", "text": "प्रश्न क्र. 28: विसंगत घटक ओळखा:", "options": ["कावळा", "कबूतर", "चिमणी", "वटवाघूळ"], "correct": 3 },
+    { "id": 29, "sec": "mental", "text": "प्रश्न क्र. 29: ओडोमीटर : अंतर :: स्पीडोमीटर : ?", "options": ["वेग", "वजन", "वेळ", "दिशा"], "correct": 0 },
+    { "id": 30, "sec": "mental", "text": "प्रश्न क्र. 30: संख्या मालिका पूर्ण करा: 1, 4, 9, 16, 25, ?", "options": ["30", "36", "49", "64"], "correct": 1 },
+    { "id": 31, "sec": "mental", "text": "प्रश्न क्र. 31: संख्या मालिका पूर्ण करा: 100, 90, 80, 70, ?", "options": ["50", "65", "60", "55"], "correct": 2 },
+    { "id": 32, "sec": "mental", "text": "प्रश्न क्र. 32: 24 मुलांच्या रांगेत अमरचा दोन्ही बाजूंकडून कितवा क्रमांक असेल जर तो बरोबर मध्यभागी उभा नसेल व डावीकडून 10 वा असेल?", "options": ["14 वा", "16 वा", "13 वा", "15 वा"], "correct": 3 },
+    { "id": 33, "sec": "mental", "text": "प्रश्न क्र. 33: एका सांकेतिक भाषेत RED = 27, तर BLUE = ?", "options": ["40", "42", "38", "44"], "correct": 0 },
+    { "id": 34, "sec": "mental", "text": "प्रश्न क्र. 34: उत्तर दिशेकडे तोंड करून उभा असलेला मुलगा उजवीकडे दोनदा काटकोनात वळल्यास त्याचे तोंड कोणत्या दिशेला होईल?", "options": ["पूर्व", "दक्षिण", "पश्चिम", "उत्तर"], "correct": 1 },
+    { "id": 35, "sec": "mental", "text": "प्रश्न क्र. 35: मिनिटकाटा एका तासात किती अंशांमधून फिरतो?", "options": ["90°", "180°", "360°", "270°"], "correct": 2 },
+    { "id": 36, "sec": "mental", "text": "प्रश्न क्र. 36: खालील पर्यायांपैकी मूळ संख्या कोणती?", "options": ["9", "15", "21", "29"], "correct": 3 },
+    { "id": 37, "sec": "mental", "text": "प्रश्न क्र. 37: आई : ममता :: शिक्षक : ?", "options": ["ज्ञान", "राग", "लोभ", "आळस"], "correct": 0 },
+    { "id": 38, "sec": "mental", "text": "प्रश्न क्र. 38: झाड : पाने :: घर : ?", "options": ["जमीन", "खिडक्या", "रस्ता", "आकाश"], "correct": 1 },
+    { "id": 39, "sec": "mental", "text": "प्रश्न क्र. 39: विसंगत संख्या जोडी ओळखा:", "options": ["2 आणि 4", "3 आणि 9", "4 आणि 18", "5 आणि 25"], "correct": 2 },
+    { "id": 40, "sec": "mental", "text": "प्रश्न क्र. 40: सायकल : दोन चाके :: रिक्षा : ?", "options": ["दोन", "चार", "पाच", "तीन"], "correct": 3 },
 
-    { "id": 41, "sec": "math", "text": "प्रश्न क्र. 41: 6 अंकी लहानात लहान संख्येतून 5 अंकी मोठ्यात मोठी संख्या वजा केल्यास बाकी किती उरेल?", "options": ["1", "10", "100", "0"], "correct": 0 },
-    { "id": 42, "sec": "math", "text": "प्रश्न क्र. 42: एका संख्येला 24 ने भागल्यास भागाकार 16 येतो आणि बाकी 5 उरते, तर ती संख्या कोणती?", "options": ["384", "389", "390", "379"], "correct": 1 },
-    { "id": 43, "sec": "math", "text": "प्रश्न क्र. 43: 15, 25 आणि 30 यांचा लसावि (LCM) किती?", "options": ["150", "75", "300", "120"], "correct": 0 },
-    { "id": 44, "sec": "math", "text": "प्रश्न क्र. 44: 7.07 + 7.7 + 0.77 + 70 चे अचूक मूल्य किती?", "options": ["85.54", "84.54", "85.44", "86.54"], "correct": 0 },
-    { "id": 45, "sec": "math", "text": "प्रश्न क्र. 45: 4/5 × 15/16 ÷ 3/8 चे सरळरूप काय येईल?", "options": ["2", "1", "3/2", "5/4"], "correct": 0 },
-    { "id": 46, "sec": "math", "text": "प्रश्न क्र. 46: एका वर्गात 60 मुले असून 25% मुले गैरहजर आहेत, तर उपस्थित मुलांची संख्या किती?", "options": ["15", "45", "40", "50"], "correct": 1 },
-    { "id": 47, "sec": "math", "text": "प्रश्न क्र. 47: एका घड्याळाची खरेदी किंमत 800 रुपये असून ते 960 रुपयांना विकले, तर शेकडा नफा किती?", "options": ["15%", "20%", "25%", "16%"], "correct": 1 },
-    { "id": 48, "sec": "math", "text": "प्रश्न क्र. 48: 4000 रुपये मुद्दलाचे दरसाल दरशेकडा 6 दराने 2 वर्षांचे सरळव्याज किती होईल?", "options": ["480 रुपये", "240 रुपये", "500 रुपये", "360 रुपये"], "correct": 0 },
-    { "id": 49, "sec": "math", "text": "प्रश्न क्र. 49: एका चौरसाचे क्षेत्रफळ 225 चौसेमी असल्यास त्याची परिमिती किती सेमी भरेल?", "options": ["60 सेमी", "45 सेमी", "50 सेमी", "75 सेमी"], "correct": 0 },
-    { "id": 50, "sec": "math", "text": "प्रश्न क्र. 50: ताशी 54 किमी वेगाने जाणारी गाडी 15 सेकंदात किती मीटर अंतर कापेल?", "options": ["225 मी", "250 मी", "200 मी", "180 मी"], "correct": 0 },
-    { "id": 51, "sec": "math", "text": "प्रश्न क्र. 51: पहिल्या 6 सम नैसर्गिक संख्यांची सरासरी किती येईल?", "options": ["6", "7", "8", "5"], "correct": 1 },
-    { "id": 52, "sec": "math", "text": "प्रश्न क्र. 52: 18 मजुरांना एक काम करण्यास 10 दिवस लागतात, तर 15 मजुरांना तेच काम करण्यास किती दिवस लागतील?", "options": ["12 दिवस", "14 दिवस", "11 दिवस", "15 दिवस"], "correct": 0 },
-    { "id": 53, "sec": "math", "text": "प्रश्न क्र. 53: इष्टिकाचितीची लांबी 12 सेमी, रुंदी 6 सेमी आणि उंची 4 सेमी असल्यास तिचे घनफळ किती घसेमी?", "options": ["288", "240", "300", "256"], "correct": 0 },
-    { "id": 54, "sec": "math", "text": "प्रश्न क्र. 54: 9, 3, 0, 7 या अंकांचा एकदाच वापर करून तयार होणारी सर्वात लहान 4 अंकी विषम संख्या कोणती?", "options": ["3079", "3097", "0379", "3709"], "correct": 0 },
-    { "id": 55, "sec": "math", "text": "प्रश्न क्र. 55: 800 लिटर क्षमतेच्या टाकीत 3/4 पाणी भरलेले आहे, तर ती पूर्ण भरण्यासाठी आणखी किती लिटर पाणी हवे?", "options": ["200 लिटर", "600 लिटर", "150 लिटर", "250 लिटर"], "correct": 0 },
-    { "id": 56, "sec": "math", "text": "प्रश्न क्र. 56: एका समद्विभुज त्रिकोणाची समान बाजू 10 सेमी असून तिसरी बाजू 12 सेमी आहे, तर त्याची परिमिती किती?", "options": ["32 सेमी", "22 सेमी", "30 सेमी", "24 सेमी"], "correct": 0 },
-    { "id": 57, "sec": "math", "text": "प्रश्न क्र. 57: 4 तास 15 मिनिटे म्हणजे एकूण किती सेकंद होतात?", "options": ["15300", "14400", "15000", "16200"], "correct": 0 },
-    { "id": 58, "sec": "math", "text": "प्रश्न क्र. 58: 400 चे 15% अधिक 600 चे 10% = एकूण किती?", "options": ["120", "100", "110", "130"], "correct": 0 },
-    { "id": 59, "sec": "math", "text": "प्रश्न क्र. 59: संख्या मालिकेतील पुढील पद शोधा: 1, 8, 27, 64, ?", "options": ["125", "100", "216", "120"], "correct": 0 },
-    { "id": 60, "sec": "math", "text": "प्रश्न क्र. 60: दोन क्रमवार विषम संख्यांची बेरीज 44 आहे, तर त्या संख्या कोणत्या?", "options": ["21 आणि 23", "19 आणि 25", "23 आणि 25", "17 आणि 27"], "correct": 0 },
+    { "id": 41, "sec": "math", "text": "प्रश्न क्र. 41: 8, 12 आणि 16 या संख्यांचा लसावि किती?", "options": ["48", "36", "24", "64"], "correct": 0 },
+    { "id": 42, "sec": "math", "text": "प्रश्न क्र. 42: एका वर्गातील 60 विद्यार्थ्यांपैकी 40% मुली असल्यास मुलांची संख्या किती?", "options": ["32", "36", "30", "24"], "correct": 1 },
+    { "id": 43, "sec": "math", "text": "प्रश्न क्र. 43: (0.6 × 0.6 - 0.4 × 0.4) = ?", "options": ["0.16", "0.36", "0.20", "0.52"], "correct": 2 },
+    { "id": 44, "sec": "math", "text": "प्रश्न क्र. 44: एका वस्तूची खरेदी किंमत 250 रुपये असून विक्री किंमत 300 रुपये आहे, तर शेकडा नफा किती?", "options": ["15%", "18%", "25%", "20%"], "correct": 3 },
+    { "id": 45, "sec": "math", "text": "प्रश्न क्र. 45: दरसाल दरशेकडा 8 दराने 5000 रुपयांचे 2 वर्षांचे सरळव्याज किती?", "options": ["800 रुपये", "600 रुपये", "700 रुपये", "900 रुपये"], "correct": 0 },
+    { "id": 46, "sec": "math", "text": "प्रश्न क्र. 46: बाजू 14 सेमी असणाऱ्या चौरसाची परिमिती किती?", "options": ["48 सेमी", "56 सेमी", "64 सेमी", "72 सेमी"], "correct": 1 },
+    { "id": 47, "sec": "math", "text": "प्रश्न क्र. 47: ताशी 90 किमी वेगाने जाणारी गाडी 15 सेकंदात किती मीटर अंतर पार करेल?", "options": ["350 मीटर", "360 मीटर", "375 मीटर", "400 मीटर"], "correct": 2 },
+    { "id": 48, "sec": "math", "text": "प्रश्न क्र. 48: 5, 10, 15, 20, 25 आणि 30 या संख्यांची सरासरी किती?", "options": ["16.5", "17.0", "18.0", "17.5"], "correct": 3 },
+    { "id": 49, "sec": "math", "text": "प्रश्न क्र. 49: लांबी 20 सेमी व रुंदी 12 सेमी असणाऱ्या आयताचे क्षेत्रफळ किती?", "options": ["240 चौसेमी", "220 चौसेमी", "200 चौसेमी", "260 चौसेमी"], "correct": 0 },
+    { "id": 50, "sec": "math", "text": "प्रश्न क्र. 50: तीन अंकी लहानात लहान संख्येतून दोन अंकी लहानात लहान संख्या वजा केल्यास फरक किती?", "options": ["80", "90", "99", "89"], "correct": 1 },
+    { "id": 51, "sec": "math", "text": "प्रश्न क्र. 51: 600 चे 30% - 400 चे 20% = ?", "options": ["90", "80", "100", "110"], "correct": 2 },
+    { "id": 52, "sec": "math", "text": "प्रश्न क्र. 52: 24 आणि 36 चा मसावि किती?", "options": ["6", "8", "16", "12"], "correct": 3 },
+    { "id": 53, "sec": "math", "text": "प्रश्न क्र. 53: 7/8 - 3/8 = ?", "options": ["1/2", "1/4", "3/4", "5/8"], "correct": 0 },
+    { "id": 54, "sec": "math", "text": "प्रश्न क्र. 54: 2 डझन पेन्सिलांची किंमत 72 रुपये असल्यास 5 पेन्सिलांची किंमत किती?", "options": ["12 रुपये", "15 रुपये", "18 रुपये", "20 रुपये"], "correct": 1 },
+    { "id": 55, "sec": "math", "text": "प्रश्न क्र. 55: 15 मजूर रोज 6 तास काम करून एक काम 10 दिवसांत संपवतात, तर 10 मजूर रोज 9 तास काम करून तेच काम किती दिवसांत संपवतील?", "options": ["8 दिवस", "9 दिवस", "10 दिवस", "12 दिवस"], "correct": 2 },
+    { "id": 56, "sec": "math", "text": "प्रश्न क्र. 56: एका टाकीची क्षमता 800 लिटर आहे. त्यातील 60% पाणी वापरले असल्यास किती लिटर पाणी शिल्लक राहिले?", "options": ["300 लिटर", "340 लिटर", "360 लिटर", "320 लिटर"], "correct": 3 },
+    { "id": 57, "sec": "math", "text": "प्रश्न क्र. 57: 3 किग्रॅ गव्हाची किंमत 105 रुपये असल्यास 7 किग्रॅ गव्हाची किंमत किती?", "options": ["245 रुपये", "235 रुपये", "255 रुपये", "240 रुपये"], "correct": 0 },
+    { "id": 58, "sec": "math", "text": "प्रश्न क्र. 58: दोन संख्यांचे गुणोत्तर 4 : 5 असून त्यांची बेरीज 90 आहे, तर त्यांपैकी लहान संख्या कोणती?", "options": ["36", "40", "45", "50"], "correct": 1 },
+    { "id": 59, "sec": "math", "text": "प्रश्न क्र. 59: 5.50 + 4.25 - 3.75 = ?", "options": ["5.75", "5.90", "6.00", "6.25"], "correct": 2 },
+    { "id": 60, "sec": "math", "text": "प्रश्न क्र. 60: 30 - [12 + (16 ÷ 4)] = ?", "options": ["12", "16", "18", "14"], "correct": 3 },
 
     {
       "id": 61,
       "sec": "lang",
-      "passage": "उतारा क्र. 1: छत्रपती शिवाजी महाराज हे महाराष्ट्राचे दैवत आणि कुशल प्रशासक होते. त्यांनी अठरापगड जाती-धर्मांच्या मावळ्यांना एकत्र करून 'रयतेचे स्वराज्य' स्थापन केले. त्यांनी गडकिल्ल्यांचे महत्त्व ओळखून जलदुर्गांची निर्मिती केली आणि स्वतंत्र आरमार उभारले. म्हणूनच त्यांना 'भारतीय आरमाराचे जनक' मानले जाते. महाराजांनी स्त्रियांचा नेहमी सन्मान केला आणि शेतकऱ्यांवर कधीही अन्याय होऊ दिला नाही.",
+      "passage": "उतारा क्र. 1: छत्रपती शिवाजी महाराज हे महाराष्ट्राचे दैवत आणि कुशल प्रशासक होते. त्यांनी अठरापगड जातींच्या मावळ्यांना एकत्र करून रयतेचे स्वराज्य स्थापन केले. त्यांनी गडकिल्ल्यांचे महत्त्व ओळखून जलदुर्गांची निर्मिती केली आणि स्वतंत्र आरमार उभारले. म्हणूनच त्यांना भारतीय आरमाराचे जनक मानले जाते. महाराजांनी स्त्रियांचा नेहमी सन्मान केला आणि शेतकऱ्यांवर कधीही अन्याय होऊ दिला नाही.",
       "text": "प्रश्न क्र. 61: छत्रपती शिवाजी महाराजांनी कोणासाठी स्वराज्य स्थापन केले?",
-      "options": ["रयतेसाठी (प्रजेसाठी)", "स्वतःच्या कुटुंबासाठी", "सरदारांसाठी", "व्यापाऱ्यांसाठी"],
+      "options": ["रयतेसाठी", "स्वतःच्या कुटुंबासाठी", "सरदारांसाठी", "व्यापाऱ्यांसाठी"],
       "correct": 0
     },
     {
       "id": 62,
       "sec": "lang",
       "text": "प्रश्न क्र. 62: शिवाजी महाराजांना कशाचे जनक मानले जाते?",
-      "options": ["भारतीय आरमाराचे", "घोडेस्वारीचे", "व्यापाराचे", "शेतीचे"],
-      "correct": 0
+      "options": ["व्यापाराचे", "भारतीय आरमाराचे", "शेतीचे", "उद्योगधंद्यांचे"],
+      "correct": 1
     },
     {
       "id": 63,
       "sec": "lang",
-      "text": "प्रश्न क्र. 63: समुद्रातील किल्ल्यांना काय म्हणतात?",
-      "options": ["जलदुर्ग", "भुईकोट किल्ला", "गिरीदुर्ग", "वनदुर्ग"],
-      "correct": 0
+      "text": "प्रश्न क्र. 63: महाराजांनी समुद्रात कोणते किल्ले बांधले?",
+      "options": ["भुईकोट", "डोंगरी", "जलदुर्ग", "लाकडी"],
+      "correct": 2
     },
     {
       "id": 64,
       "sec": "lang",
-      "text": "प्रश्न क्र. 64: महाराजांनी सैन्यात कोणाला एकत्र केले?",
-      "options": ["अठरापगड जाती-धर्मांच्या मावळ्यांना", "फक्त श्रीमंत लोकांना", "परदेशी सैनिकांना", "केवळ नातेवाईकांना"],
-      "correct": 0
+      "text": "प्रश्न क्र. 64: शिवरायांच्या सैन्यातील लढवय्या निष्ठावंत सहकाऱ्यांना काय म्हटले जात असे?",
+      "options": ["सेवक", "अधिकारी", "सावकार", "मावळे"],
+      "correct": 3
     },
     {
       "id": 65,
       "sec": "lang",
-      "text": "प्रश्न क्र. 65: 'सन्मान' या शब्दाचा विरुद्धार्थी शब्द कोणता?",
-      "options": ["अपमान", "आदर", "गौरव", "सत्कार"],
+      "text": "प्रश्न क्र. 65: 'सन्मान' या शब्दाचा योग्य विरुद्धार्थी शब्द कोणता?",
+      "options": ["अपमान", "आदर", "सत्कार", "गौरव"],
       "correct": 0
     },
     {
       "id": 66,
       "sec": "lang",
-      "passage": "उतारा क्र. 2: डॉ. ए.पी.जे. अब्दुल कलाम हे भारताचे महान शास्त्रज्ञ आणि माजी राष्ट्रपती होते. त्यांचे बालपण अतिशय गरिबीत गेले, परंतु अथांग ज्ञानसाधनेच्या जोरावर त्यांनी भारताला अंतराळ आणि क्षेपणास्त्र क्षेत्रात महासत्ता बनवले. त्यांना 'मिसाईल मॅन' म्हणून ओळखले जाते. मुलांना मोठी स्वप्ने पाहण्याचा आणि ती पूर्ण करण्यासाठी कठोर परिश्रम करण्याचा संदेश त्यांनी दिला. 'अग्निपंख' हे त्यांचे आत्मचरित्र प्रत्येकाने वाचले पाहिजे.",
-      "text": "प्रश्न क्र. 66: डॉ. कलाम यांना कोणत्या टोपणनावाने ओळखले जाते?",
-      "options": ["मिसाईल मॅन", "लोहपुरुष", "क्रांतिसूर्य", "राष्ट्रपिता"],
-      "correct": 0
+      "passage": "उतारा क्र. 2: डॉ. ए. पी. जे. अब्दुल कलाम हे भारताचे अकरावे राष्ट्रपती आणि थोर शास्त्रज्ञ होते. त्यांनी भारताच्या अंतराळ आणि क्षेपणास्त्र क्षेत्रात मोलाचे योगदान दिले. म्हणूनच त्यांना 'मिसाइल मॅन' म्हणून ओळखले जाते. अत्यंत साधी राहणी आणि उच्च विचारसरणी हे त्यांचे वैशिष्ट्य होते. 'अग्निपंख' हे त्यांचे आत्मचरित्र तरुणांना मोठी स्वप्ने पाहण्याची आणि ती पूर्ण करण्यासाठी कठोर परिश्रम करण्याची प्रेरणा देते.",
+      "text": "प्रश्न क्र. 66: डॉ. कलाम यांनी कोणत्या क्षेत्रात मोठे योगदान दिले?",
+      "options": ["खेळात", "अंतराळ क्षेत्रात", "चित्रपटात", "व्यापारात"],
+      "correct": 1
     },
     {
       "id": 67,
       "sec": "lang",
-      "text": "प्रश्न क्र. 67: डॉ. कलाम यांनी भारताला कोणत्या क्षेत्रात महासत्ता बनवले?",
-      "options": ["अंतराळ आणि क्षेपणास्त्र क्षेत्रात", "खेळात", "चित्रपटात", "व्यापारात"],
-      "correct": 0
+      "text": "प्रश्न क्र. 67: डॉ. कलाम यांना कोणत्या नावाने ओळखले जाते?",
+      "options": ["लोहपुरुष", "क्रांतिसूर्य", "मिसाइल मॅन", "राष्ट्रपिता"],
+      "correct": 2
     },
     {
       "id": 68,
       "sec": "lang",
       "text": "प्रश्न क्र. 68: डॉ. कलाम यांच्या आत्मचरित्राचे नाव काय आहे?",
-      "options": ["अग्निपंख (Wings of Fire)", "माझे बालपण", "भारत 2020", "विज्ञान गाथा"],
-      "correct": 0
+      "options": ["माझे बालपण", "भारत 2020", "विज्ञान गाथा", "अग्निपंख"],
+      "correct": 3
     },
     {
       "id": 69,
       "sec": "lang",
-      "text": "प्रश्न क्र. 69: डॉ. कलाम यांनी लहान मुलांना कोणता महत्त्वाचा संदेश दिला?",
-      "options": ["मोठी स्वप्ने पहा आणि परिश्रम करा", "खूप आराम करा", "मोबाईल वापरा", "श्रीमंत व्हा"],
+      "text": "प्रश्न क्र. 69: डॉ. कलाम यांनी मुलांना कोणता संदेश दिला?",
+      "options": ["मोठी स्वप्ने पहा", "आराम करा", "खेळत राहा", "विचार करू नका"],
       "correct": 0
     },
     {
       "id": 70,
       "sec": "lang",
-      "text": "प्रश्न क्र. 70: 'कठोर' या शब्दाचा समानार्थी शब्द कोणता?",
-      "options": ["अथक / खडतर", "मऊ", "सोपे", "सहज"],
-      "correct": 0
+      "text": "प्रश्न क्र. 70: 'परिश्रम' या शब्दाचा समानार्थी शब्द कोणता?",
+      "options": ["विश्रांती", "कष्ट", "आळस", "झोप"],
+      "correct": 1
     },
     {
       "id": 71,
       "sec": "lang",
-      "passage": "उतारा क्र. 3: संगणक आणि इंटरनेटने मानवी जीवन पूर्णपणे बदलून टाकले आहे. आज शिक्षणापासून ते बँकिंगपर्यंतची सर्व कामे घरबसल्या एका क्लिकवर होतात. ज्ञानाचा अमर्याद खजिना इंटरनेटवर उपलब्ध आहे. परंतु संगणक आणि मोबाईलचा अतिवापर विद्यार्थ्यांच्या डोळ्यांवर व आरोग्यावर वाईट परिणाम करतो. म्हणून तंत्रज्ञानाचा वापर केवळ चांगल्या गोष्टी शिकण्यासाठी आणि योग्य प्रमाणातच केला पाहिजे.",
-      "text": "प्रश्न क्र. 71: मानवी जीवन कशामुळे पूर्णपणे बदलले आहे?",
-      "options": ["संगणक आणि इंटरनेटमुळे", "वाहनांमुळे", "टीव्हीमुळे", "रेडिओमुळे"],
-      "correct": 0
+      "passage": "उतारा क्र. 3: मधमाशी हा कीटक अत्यंत कष्टाळू आणि शिस्तप्रिय मानला जातो. मधमाश्या फुलांफुलांवर फिरून मकरंद गोळा करतात आणि आपल्या पोळ्यात मध साठवतात. मधमाश्यांच्या समाजात राणी माशी, कामकरी माशी आणि नर माशी असे कार्यविभागलेले असते. त्या वनस्पतींच्या परागीभवनात मोलाची मदत करतात, ज्यामुळे पिकांचे उत्पादन वाढते. मधमाशीकडून मानवाने संघटन आणि सातत्यपूर्ण परिश्रमाचा गुण घेतला पाहिजे.",
+      "text": "प्रश्न क्र. 71: मधमाश्या फुलांमधून काय गोळा करतात?",
+      "options": ["पाने", "बिया", "मकरंद", "माती"],
+      "correct": 2
     },
     {
       "id": 72,
       "sec": "lang",
-      "text": "प्रश्न क्र. 72: इंटरनेटवर कशाचा खजिना उपलब्ध आहे?",
-      "options": ["ज्ञानाचा", "सोन्याचा", "पैशांचा", "खेळण्यांचा"],
-      "correct": 0
+      "text": "प्रश्न क्र. 72: मधमाश्यांच्या मदतीने वनस्पतींमध्ये कोणती महत्त्वाची प्रक्रिया घडते?",
+      "options": ["पाने गळणे", "झाडे सुकणे", "फळे सडणे", "परागीभवन"],
+      "correct": 3
     },
     {
       "id": 73,
       "sec": "lang",
-      "text": "प्रश्न क्र. 73: मोबाईलच्या अतिवापरामुळे कशावर वाईट परिणाम होतो?",
-      "options": ["डोळ्यांवर व आरोग्यावर", "कपड्यांवर", "घरावर", "झाडांवर"],
+      "text": "प्रश्न क्र. 73: मधमाशीकडून मानवाने कोणता मुख्य गुण घेतला पाहिजे?",
+      "options": ["कष्ट आणि शिस्त", "राग आणि मत्सर", "आळस आणि झोप", "एकटे राहणे"],
       "correct": 0
     },
     {
       "id": 74,
       "sec": "lang",
-      "text": "प्रश्न क्र. 74: उताऱ्यात कोणता महत्त्वाचा इशारा दिला आहे?",
-      "options": ["तंत्रज्ञानाचा वापर मर्यादित व योग्य कामासाठी करा", "इंटरनेट बंद करा", "संगणक वापरू नका", "फक्त गेम खेळा"],
-      "correct": 0
+      "text": "प्रश्न क्र. 74: मधमाश्या मध कुठे साठवतात?",
+      "options": ["झाडाच्या ढोलीत", "पोळ्यात", "पानांवर", "मातीत"],
+      "correct": 1
     },
     {
       "id": 75,
       "sec": "lang",
-      "text": "प्रश्न क्र. 75: 'अमर्याद' या शब्दाचा अर्थ काय?",
-      "options": ["मर्यादा नसलेला / अथांग", "कमी", "निसरडा", "मर्यादित"],
-      "correct": 0
+      "text": "प्रश्न क्र. 75: 'कष्टाळू' या शब्दाचा विरुद्धार्थी शब्द कोणता?",
+      "options": ["मेहनती", "उद्यमी", "आळशी", "हुशार"],
+      "correct": 2
     },
     {
       "id": 76,
       "sec": "lang",
-      "passage": "उतारा क्र. 4: मधमाशी हा निसर्गातील सर्वात उपयुक्त कीटक आहे. मधमाश्या फुलाफुलांवर फिरून मकरंद गोळा करतात आणि पोळ्यात चविष्ट व पौष्टिक मध तयार करतात. मधमाश्या फुलांमधील परागीभवन घडवून आणतात, ज्यामुळे शेतात भरपूर फळे आणि धान्य पिकते. जर पृथ्वीवरून मधमाश्या नष्ट झाल्या, तर मानवाला अन्नटंचाईचा सामना करावा लागेल. म्हणूनच मधमाश्यांचे संरक्षण करणे निसर्गासाठी अत्यंत गरजेचे आहे.",
-      "text": "प्रश्न क्र. 76: मधमाश्या फुलांवरून काय गोळा करतात?",
-      "options": ["मकरंद (फुलांचा रस)", "पाणी", "माती", "पाने"],
-      "correct": 0
+      "passage": "उतारा क्र. 4: सौर ऊर्जा ही सूर्यप्रकाशापासून मिळणारी अपारंपरिक ऊर्जा आहे. ही ऊर्जा कधीही न संपणारी आणि पर्यावरणाला हानी न पोहोचवणारी असते. सौर ऊर्जेचा वापर करून पाणी तापवणे, वीज तयार करणे आणि स्वयंपाक करणे शक्य झाले आहे. सौर ऊर्जेमुळे कोळसा आणि पेट्रोल यांसारख्या पारंपारिक इंधनांची बचत होते. वाढत्या प्रदूषणावर मात करण्यासाठी सौर ऊर्जेचा जास्तीत जास्त वापर करणे काळाची गरज बनली आहे.",
+      "text": "प्रश्न क्र. 76: सौर ऊर्जा कशापासून मिळते?",
+      "options": ["वाऱ्यापासून", "पाण्यापासून", "कोळशापासून", "सूर्यप्रकाशापासून"],
+      "correct": 3
     },
     {
       "id": 77,
       "sec": "lang",
-      "text": "प्रश्न क्र. 77: शेतात भरपूर फळे व पिके येण्यासाठी मधमाश्या कोणती प्रक्रिया करतात?",
-      "options": ["परागीभवन", "पाणी देणे", "खत घालणे", "रोग घालवणे"],
+      "text": "प्रश्न क्र. 77: सौर ऊर्जेचा मुख्य फायदा कोणता आहे?",
+      "options": ["प्रदूषण होत नाही", "फार महाग असते", "धूर होतो", "कमी मिळते"],
       "correct": 0
     },
     {
       "id": 78,
       "sec": "lang",
-      "text": "प्रश्न क्र. 78: मधमाश्या नष्ट झाल्यास मानवावर कोणते संकट येईल?",
-      "options": ["अन्नटंचाई निर्माण होईल", "पूर येईल", "थंडी वाढेल", "सूर्य उगवणार नाही"],
-      "correct": 0
+      "text": "प्रश्न क्र. 78: सौर ऊर्जेच्या वापरामुळे कशाची बचत होते?",
+      "options": ["पाण्याची", "पारंपारिक इंधनाची", "झाडांची", "मातीची"],
+      "correct": 1
     },
     {
       "id": 79,
       "sec": "lang",
-      "text": "प्रश्न क्र. 79: मधमाशीचे घर कोणत्या नावाने ओळखले जाते?",
-      "options": ["पोळे", "घरटे", "वारूळ", "गुहा"],
-      "correct": 0
+      "text": "प्रश्न क्र. 79: वाढत्या प्रदूषणावर मात करण्यासाठी काय करणे गरजेचे आहे?",
+      "options": ["झाडे तोडणे", "कारखाने वाढवणे", "सौर ऊर्जा वापरणे", "वाहने वाढवणे"],
+      "correct": 2
     },
     {
       "id": 80,
       "sec": "lang",
-      "text": "प्रश्न क्र. 80: 'पौष्टिक' या शब्दाचा योग्य अर्थ ओळखा:",
-      "options": ["आरोग्याला पोषक / सकस", "विषारी", "कडू", "हानीकारक"],
-      "correct": 0
+      "text": "प्रश्न क्र. 80: 'बचत' या शब्दाचा योग्य विरुद्धार्थी शब्द कोणता?",
+      "options": ["साठा", "नफा", "शिल्लक", "अपव्यय"],
+      "correct": 3
     }
   ]
 }
