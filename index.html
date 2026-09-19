@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
   <meta name="theme-color" content="#0f2b48">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <title>JNVST सराव परीक्षा - जिल्हा परिषद बीड</title>
   <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
@@ -11,13 +14,12 @@
       --primary: #0f2b48;
       --secondary: #1a4a75;
       --accent: #d97706;
-      --accent-hover: #b45309;
       --danger: #dc2626;
       --success: #16a34a;
-      --bg: #f8fafc;
+      --bg: #f1f5f9;
       --card-bg: #ffffff;
       --text: #0f172a;
-      --border: #cbd5e1;
+      --border: #e2e8f0;
     }
     * { 
       box-sizing: border-box; 
@@ -26,44 +28,50 @@
       padding: 0; 
       -webkit-tap-highlight-color: transparent; 
     }
-    body {
+    html, body {
+      width: 100%;
+      height: 100%;
       background-color: var(--bg);
       color: var(--text);
-      min-height: 100vh;
+      font-size: 16px;
+      overflow-x: hidden;
+    }
+    body {
       display: flex;
       flex-direction: column;
-      font-size: 16px;
+      min-height: 100vh;
     }
     
-    /* ---------------- HEADER ---------------- */
+    /* ---------------- ॲप हेडर (HEADER) ---------------- */
     header {
       background: linear-gradient(135deg, #091a2c 0%, #0f2b48 60%, #1a4a75 100%);
       color: white;
-      padding: 10px 18px;
+      padding: 10px 16px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       position: sticky;
       top: 0;
       z-index: 1000;
-      box-shadow: 0 3px 12px rgba(0,0,0,0.15);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.18);
       border-bottom: 3px solid var(--accent);
+      min-height: 56px;
     }
     .header-left {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
     }
-    /* वर डाव्या कोपऱ्यातील अधिकृत लोगो कंटेनर */
+    /* अधिकृत लोगो */
     .zp-brand-logo {
-      width: 46px;
-      height: 46px;
-      min-width: 46px;
+      width: 42px;
+      height: 42px;
+      min-width: 42px;
       border-radius: 50%;
       background: #ffffff;
-      padding: 1.5px;
+      padding: 2px;
       border: 2px solid #fbbf24;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -78,13 +86,13 @@
     .header-center {
       text-align: left;
       flex: 1;
-      margin-left: 8px;
+      margin-left: 6px;
     }
     .header-center h2 {
-      font-size: 1.15rem;
+      font-size: 1.12rem;
       color: #fef08a;
       font-weight: 800;
-      letter-spacing: 0.5px;
+      letter-spacing: 0.3px;
       line-height: 1.2;
     }
     .header-center h4 {
@@ -98,127 +106,116 @@
     .header-right {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
     }
     .admin-pill {
-      background: rgba(255,255,255,0.12);
-      border: 1px solid rgba(255,255,255,0.3);
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.35);
       color: #fff;
       font-size: 0.75rem;
       font-weight: 700;
-      padding: 5px 12px;
+      padding: 4px 10px;
       border-radius: 20px;
       cursor: pointer;
-      transition: all 0.2s;
     }
-    .admin-pill:hover { background: rgba(255,255,255,0.25); }
 
-    /* ---------------- DESKTOP LAYOUT ---------------- */
+    /* ---------------- लेआउट (LAYOUT) ---------------- */
     .main-wrapper {
       flex: 1;
       max-width: 860px;
       width: 100%;
-      margin: 18px auto;
+      margin: 16px auto;
       padding: 0 16px;
     }
     .card {
       background: var(--card-bg);
-      border-radius: 16px;
-      padding: 22px;
-      box-shadow: 0 4px 20px rgba(15, 43, 72, 0.06);
+      border-radius: 14px;
+      padding: 20px;
+      box-shadow: 0 4px 16px rgba(15, 43, 72, 0.05);
       margin-bottom: 16px;
       border: 1px solid var(--border);
     }
 
-    /* ---------------- STUDENT BAR ---------------- */
+    /* ---------------- विद्यार्थी माहिती बार ---------------- */
     .student-bar {
       background: #ffffff;
-      padding: 14px 18px;
-      border-radius: 14px;
+      padding: 12px 16px;
+      border-radius: 12px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
       border-left: 5px solid var(--accent);
-      box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
       border-right: 1px solid var(--border);
       border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
     }
     .student-bar h3 {
-      font-size: 1.15rem;
+      font-size: 1.1rem;
       color: var(--primary);
       font-weight: 800;
     }
     .student-bar p {
-      font-size: 0.85rem;
+      font-size: 0.82rem;
       color: #64748b;
     }
 
-    /* ---------------- BUTTONS ---------------- */
+    /* ---------------- बटने (BUTTONS) ---------------- */
     .btn-main {
       width: 100%;
       background: linear-gradient(135deg, #1a4a75 0%, #0f2b48 100%);
       color: white;
       border: none;
-      padding: 13px 20px;
+      padding: 13px;
       border-radius: 10px;
       font-size: 1.05rem;
       font-weight: 800;
       cursor: pointer;
       box-shadow: 0 4px 12px rgba(15, 43, 72, 0.2);
-      transition: transform 0.15s, box-shadow 0.15s;
+      transition: transform 0.1s;
     }
-    .btn-main:hover {
-      box-shadow: 0 6px 16px rgba(15, 43, 72, 0.3);
-      transform: translateY(-1px);
-    }
-    .btn-main:active { transform: translateY(1px); }
+    .btn-main:active { transform: scale(0.98); }
 
     .btn-action {
-      padding: 9px 18px;
-      border-radius: 10px;
+      padding: 8px 16px;
+      border-radius: 8px;
       border: none;
       font-weight: 700;
       cursor: pointer;
-      font-size: 0.9rem;
-      transition: all 0.2s;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
+      font-size: 0.88rem;
+      white-space: nowrap;
     }
     .btn-start {
       background: linear-gradient(135deg, #16a34a, #15803d);
       color: white;
-      box-shadow: 0 3px 8px rgba(22, 163, 74, 0.25);
+      box-shadow: 0 2px 6px rgba(22, 163, 74, 0.25);
     }
-    .btn-locked { background: #f1f5f9; color: #94a3b8; border: 1px solid #e2e8f0; cursor: not-allowed; }
+    .btn-locked { background: #e2e8f0; color: #64748b; cursor: not-allowed; }
     .btn-retry {
       background: linear-gradient(135deg, #ea580c, #c2410c);
       color: white;
-      box-shadow: 0 3px 8px rgba(234, 88, 12, 0.25);
+      box-shadow: 0 2px 6px rgba(234, 88, 12, 0.25);
     }
     .btn-logout {
-      background: #fff1f2;
-      color: #e11d48;
-      border: 1px solid #fecdd3;
-      padding: 7px 14px;
+      background: #fee2e2;
+      color: #991b1b;
+      border: 1px solid #fecaca;
+      padding: 6px 12px;
       border-radius: 8px;
       font-weight: 700;
       cursor: pointer;
-      font-size: 0.85rem;
-      transition: all 0.2s;
+      font-size: 0.82rem;
     }
 
-    /* ---------------- FORMS ---------------- */
-    .form-group { margin-bottom: 15px; }
+    /* ---------------- फॉर्म घटक ---------------- */
+    .form-group { margin-bottom: 14px; }
     .form-group label {
       display: block;
       font-weight: 700;
-      margin-bottom: 6px;
+      margin-bottom: 5px;
       color: #334155;
-      font-size: 0.95rem;
+      font-size: 0.92rem;
     }
     .form-group input, .form-group select {
       width: 100%;
@@ -234,12 +231,12 @@
       box-shadow: 0 0 0 3px rgba(26, 74, 117, 0.12);
     }
 
-    /* ---------------- TEST LIST ---------------- */
+    /* ---------------- चाचणी सूची ---------------- */
     .test-item {
       background: #ffffff;
-      border-radius: 14px;
-      padding: 15px 18px;
-      margin-bottom: 12px;
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-bottom: 10px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -250,21 +247,22 @@
     }
     .test-item.unlocked { border-left-color: var(--success); }
 
-    /* ---------------- EXAM ARENA ---------------- */
+    /* ---------------- परीक्षा परिसर (EXAM ARENA) ---------------- */
     .exam-topbar {
       background: #e2e8f0;
-      padding: 12px 16px;
-      border-radius: 12px;
+      padding: 10px 14px;
+      border-radius: 10px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
     }
     .section-selector {
       display: flex;
-      gap: 8px;
-      margin-bottom: 16px;
+      gap: 6px;
+      margin-bottom: 14px;
       overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
       padding-bottom: 4px;
     }
     .section-selector button {
@@ -272,12 +270,12 @@
       min-width: 120px;
       background: #ffffff;
       border: 1.5px solid #cbd5e1;
-      padding: 10px 12px;
-      border-radius: 10px;
+      padding: 9px 10px;
+      border-radius: 8px;
       font-weight: 700;
       cursor: pointer;
       color: #334155;
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       white-space: nowrap;
     }
     .section-selector button.active {
@@ -289,44 +287,44 @@
     .question-card {
       background: white;
       border-radius: 12px;
-      padding: 16px;
+      padding: 15px;
       border: 1px solid var(--border);
-      margin-bottom: 16px;
+      margin-bottom: 14px;
     }
     .passage-box {
       background: #fffbeb;
-      border: 1px solid #fde68a;
-      border-radius: 10px;
-      padding: 14px;
-      margin-bottom: 14px;
+      border: 1px solid #fef3c7;
+      border-radius: 8px;
+      padding: 12px;
+      margin-bottom: 12px;
       font-size: 0.95rem;
-      line-height: 1.65;
+      line-height: 1.6;
       color: #92400e;
     }
     .fig-container {
       display: flex;
       flex-wrap: wrap;
-      gap: 12px;
-      margin: 12px 0;
+      gap: 10px;
+      margin: 10px 0;
       background: #f8fafc;
-      padding: 12px;
-      border-radius: 10px;
+      padding: 10px;
+      border-radius: 8px;
       align-items: center;
       justify-content: center;
       border: 1px dashed #cbd5e1;
     }
     .fig-box {
-      width: 72px;
-      height: 72px;
+      width: 70px;
+      height: 70px;
       border: 2px solid #334155;
       background: #fff;
       display: flex;
       align-items: center;
       justify-content: center;
       margin: 0 auto 4px auto;
-      border-radius: 8px;
+      border-radius: 6px;
     }
-    .fig-box svg { width: 60px; height: 60px; }
+    .fig-box svg { width: 58px; height: 58px; }
     
     .options-grid {
       display: grid;
@@ -343,23 +341,24 @@
       cursor: pointer;
       background: #fff;
       font-size: 0.95rem;
+      min-height: 48px;
     }
-    .opt-label input { margin-right: 12px; width: 18px; height: 18px; accent-color: var(--secondary); }
+    .opt-label input { margin-right: 12px; width: 20px; height: 20px; accent-color: var(--secondary); }
 
     .section-nav-footer {
       display: flex;
       justify-content: space-between;
-      gap: 12px;
-      margin-top: 20px;
-      padding-top: 16px;
+      gap: 10px;
+      margin-top: 18px;
+      padding-top: 14px;
       border-top: 1.5px dashed #cbd5e1;
     }
     .btn-nav-prev {
       background: #475569;
       color: white;
       border: none;
-      padding: 10px 18px;
-      border-radius: 10px;
+      padding: 11px 18px;
+      border-radius: 8px;
       font-weight: 700;
       cursor: pointer;
     }
@@ -367,25 +366,25 @@
       background: var(--secondary);
       color: white;
       border: none;
-      padding: 10px 18px;
-      border-radius: 10px;
+      padding: 11px 18px;
+      border-radius: 8px;
       font-weight: 700;
       cursor: pointer;
       margin-left: auto;
     }
 
-    /* ---------------- ANSWER KEY ---------------- */
+    /* ---------------- उत्तरपत्रिका (ANSWER KEY) ---------------- */
     .ak-correct { background: #ecfdf5 !important; border-color: #34d399 !important; color: #065f46; font-weight: 700; }
     .ak-wrong { background: #fef2f2 !important; border-color: #f87171 !important; color: #991b1b; font-weight: 700; }
-    .ak-badge { display: inline-block; padding: 4px 10px; border-radius: 6px; font-size: 0.8rem; margin-top: 6px; font-weight: 700; }
+    .ak-badge { display: inline-block; padding: 4px 8px; border-radius: 6px; font-size: 0.8rem; margin-top: 6px; font-weight: 700; }
 
-    /* ---------------- FOOTER ---------------- */
+    /* ---------------- तळटीप (FOOTER) ---------------- */
     footer {
       background: #091a2c;
       color: #94a3b8;
       text-align: center;
-      padding: 14px 16px;
-      font-size: 0.82rem;
+      padding: 12px 16px;
+      font-size: 0.8rem;
       border-top: 2px solid #1e293b;
       margin-top: auto;
     }
@@ -397,76 +396,72 @@
     @media (max-width: 650px) {
       body {
         font-size: 15px;
-        background-color: #ffffff;
+        background-color: #f8fafc;
       }
       header {
-        padding: 8px 12px;
-        height: 56px;
+        padding: 6px 10px;
+        min-height: 52px;
       }
       .zp-brand-logo { 
-        width: 38px; 
-        height: 38px; 
-        min-width: 38px; 
+        width: 36px; 
+        height: 36px; 
+        min-width: 36px; 
       }
-      .header-center { margin-left: 8px; }
-      .header-center h2 { font-size: 0.98rem; font-weight: 800; }
-      .header-center h4 { font-size: 0.72rem; }
-      .admin-pill { font-size: 0.7rem; padding: 4px 10px; }
+      .header-center { margin-left: 6px; }
+      .header-center h2 { font-size: 0.95rem; line-height: 1.15; }
+      .header-center h4 { font-size: 0.7rem; }
+      .admin-pill { font-size: 0.68rem; padding: 3px 8px; }
 
+      /* १००% ॲप स्क्रीन फिटिंग */
       .main-wrapper {
-        margin: 0 auto;
-        padding: 8px 8px 60px 8px;
+        margin: 0;
+        padding: 8px 8px 40px 8px;
         width: 100%;
         max-width: 100%;
       }
       .card {
-        padding: 14px 10px;
+        padding: 12px 10px;
         border-radius: 12px;
         margin-bottom: 10px;
         border: 1px solid #e2e8f0;
-        box-shadow: 0 2px 6px rgba(0,0,0,0.03);
       }
       
       .student-bar {
-        flex-direction: row;
-        align-items: center;
         padding: 10px 12px;
         border-radius: 10px;
+        margin-bottom: 10px;
       }
-      .student-bar h3 { font-size: 1rem; }
-      .student-bar p { font-size: 0.78rem; }
-      .btn-logout { padding: 5px 10px; font-size: 0.78rem; }
+      .student-bar h3 { font-size: 0.95rem; }
+      .student-bar p { font-size: 0.75rem; }
+      .btn-logout { padding: 5px 8px; font-size: 0.75rem; }
       
       .test-item {
-        flex-direction: row;
-        align-items: center;
-        padding: 12px 10px;
+        padding: 10px 12px;
         margin-bottom: 8px;
         border-radius: 10px;
       }
-      .test-item h4 { font-size: 0.95rem; }
-      .test-item span { font-size: 0.75rem; }
-      .test-item > div:last-child { width: auto; }
-      .btn-action { padding: 8px 12px; font-size: 0.85rem; border-radius: 8px; }
+      .test-item h4 { font-size: 0.92rem; }
+      .test-item span { font-size: 0.72rem; }
+      .btn-action { padding: 7px 12px; font-size: 0.82rem; }
 
       .exam-topbar {
         padding: 8px 10px;
         border-radius: 8px;
-        margin-bottom: 10px;
+        margin-bottom: 8px;
       }
-      .exam-topbar h3 { font-size: 0.95rem; }
-      .exam-topbar span { font-size: 0.75rem; }
-      .exam-topbar > div:last-child { font-size: 1rem; padding: 2px 8px; }
+      .exam-topbar h3 { font-size: 0.92rem; }
+      .exam-topbar span { font-size: 0.72rem; }
+      .exam-topbar > div:last-child { font-size: 0.95rem; padding: 2px 8px; }
 
       .section-selector {
-        gap: 6px;
-        margin-bottom: 12px;
+        gap: 4px;
+        margin-bottom: 10px;
       }
       .section-selector button {
-        padding: 8px 10px;
-        font-size: 0.82rem;
-        min-width: 110px;
-        border-radius: 8px;
+        padding: 8px 6px;
+        font-size: 0.8rem;
+        min-width: 105px;
+        border-radius: 6px;
       }
 
       .question-card {
@@ -474,10 +469,8 @@
         margin-bottom: 10px;
         border-radius: 10px;
       }
-      .question-card > div[style*="font-weight:700"] {
-        font-size: 0.95rem;
-      }
 
+      /* मोबाईलवर पर्याय १-कॉलममध्ये पूर्ण रुंदीत */
       .options-grid {
         grid-template-columns: 1fr;
         gap: 8px;
@@ -489,50 +482,50 @@
         border-radius: 8px;
       }
       .opt-label input {
-        width: 20px;
-        height: 20px;
+        width: 18px;
+        height: 18px;
+        margin-right: 10px;
       }
 
       .fig-container {
         gap: 6px;
-        padding: 8px;
+        padding: 6px;
       }
       .fig-box {
-        width: 62px;
-        height: 62px;
+        width: 60px;
+        height: 60px;
       }
       .fig-box svg {
-        width: 50px;
-        height: 50px;
+        width: 48px;
+        height: 48px;
       }
 
       .section-nav-footer {
         flex-direction: column;
         gap: 8px;
-        padding-top: 12px;
+        padding-top: 10px;
       }
       .btn-nav-prev, .btn-nav-next, .btn-main {
         width: 100%;
-        padding: 12px;
-        font-size: 1rem;
+        padding: 11px;
+        font-size: 0.98rem;
         border-radius: 8px;
       }
       
       footer {
-        font-size: 0.75rem;
-        padding: 10px;
+        font-size: 0.72rem;
+        padding: 10px 8px;
       }
     }
   </style>
 </head>
 <body>
 
-<!-- हेडर: वर डाव्या कोपऱ्यात अधिकृत लोगो व संपूर्णवेळ हेडिंग -->
+<!-- हेडर: डाव्या बाजूला एकच अधिकृत लोगो व संपूर्णवेळ हेडिंग -->
 <header>
   <div class="header-left">
     <div class="zp-brand-logo" title="जिल्हा परिषद बीड">
-      <!-- आपण पुरवलेला अधिकृत लोगो: logo.png किंवा सुरक्षित बॅकअप -->
-      <img src="logo.png" alt="ZP Beed Logo" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'><circle cx=\'50\' cy=\'50\' r=\'48\' fill=\'%235c2411\' stroke=\'%23f69a1b\' stroke-width=\'3\'/><circle cx=\'50\' cy=\'50\' r=\'38\' fill=\'%23fbb034\'/><path d=\'M30,62 Q45,55 52,60 Q60,52 68,54 Q72,50 67,46 Q62,43 56,46 Q54,42 50,38 Q48,34 51,32 Q54,30 52,26 Q48,27 46,31 Q42,32 40,36 Q38,40 44,43 Q41,47 36,49 Q31,52 28,58 Z\' fill=\'%23111827\'/><polygon points=\'50,26 53,20 48,22\' fill=\'%23d97706\'/><path d=\'M34,74 L66,74 L62,84 L38,84 Z\' fill=\'%236b7280\' stroke=\'%23374151\' stroke-width=\'1.5\'/><text x=\'50\' y=\'82\' font-size=\'7.5\' font-family=\'sans-serif\' font-weight=\'bold\' fill=\'%23ffffff\' text-anchor=\'middle\'>बीड</text></svg>'">
+      <img src="logo.png" alt="जिल्हा परिषद बीड" onerror="this.onerror=null; this.src='https://upload.wikimedia.org/wikipedia/commons/8/84/Government_of_Maharashtra.png'">
     </div>
   </div>
   
@@ -549,7 +542,7 @@
 <div class="main-wrapper">
   <!-- १. नोंदणी / लॉगिन कार्ड -->
   <div id="registrationCard" class="card">
-    <div style="text-align:center; margin-bottom:16px;">
+    <div style="text-align:center; margin-bottom:14px;">
       <h2 style="color:var(--primary); font-weight:800; font-size:1.25rem;">विद्यार्थी नोंदणी व लॉगिन</h2>
       <p style="color:#64748b; font-size:0.85rem;">नवोदय सराव चाचणी सोडवण्यासाठी आपली माहिती भरा</p>
     </div>
@@ -670,7 +663,7 @@
   </div>
 </div>
 
-<!-- तळटीप (Footer) -->
+<!-- तळटीप (FOOTER) -->
 <footer>
   <p>© All Rights Reserved | <span>शिक्षणाधिकारी प्राथमिक  जिल्हा परिषद बीड</span></p>
 </footer>
@@ -1027,7 +1020,7 @@
       qDiv.innerHTML = `
         ${pText}
         <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:6px;">
-          <div style="font-weight:700; font-size:1rem;">${q.text}</div>
+          <div style="font-weight:700; font-size:0.98rem;">${q.text}</div>
           <div>${statusBadge}</div>
         </div>
         ${figHtml}
