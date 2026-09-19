@@ -18,7 +18,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
   
-  <!-- मराठी फॉन्ट अचूक दिसण्यासाठी अधिकृत SheetJS Excel Library -->
+  <!-- मराठी फॉन्ट अचूक दिसण्यासाठी SheetJS Excel Library -->
   <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
 
   <style>
@@ -119,6 +119,22 @@
 
     .main-wrapper { flex: 1; max-width: 860px; width: 100%; margin: 16px auto; padding: 0 16px; }
     .card { background: var(--card-bg); border-radius: 16px; padding: 22px; box-shadow: 0 4px 20px rgba(15, 43, 72, 0.06); margin-bottom: 16px; border: 1px solid var(--border); }
+
+    /* जिल्हा स्तर कडक सूचना बॉक्स */
+    .district-warning-box {
+      background: #fff7ed;
+      border: 1.5px solid #fdba74;
+      border-left: 5px solid #ea580c;
+      border-radius: 10px;
+      padding: 12px 14px;
+      margin-bottom: 16px;
+      font-size: 0.88rem;
+      line-height: 1.5;
+      color: #9a3412;
+    }
+    .district-warning-box b {
+      color: #c2410c;
+    }
 
     .student-bar {
       background: #ffffff;
@@ -329,10 +345,17 @@
 <div class="main-wrapper">
   <!-- १. नोंदणी / लॉगिन कार्ड -->
   <div id="registrationCard" class="card">
-    <div style="text-align:center; margin-bottom:16px;">
+    <div style="text-align:center; margin-bottom:14px;">
       <h2 style="color:var(--primary); font-weight:800; font-size:1.25rem;">विद्यार्थी नोंदणी व लॉगिन</h2>
       <p style="color:#64748b; font-size:0.85rem;">नवोदय सराव चाचणी सोडवण्यासाठी आपली अचूक माहिती भरा</p>
     </div>
+
+    <!-- जिल्हास्तरीय ठळक सूचना -->
+    <div class="district-warning-box">
+      ⚠️ <b>महत्त्वाची अधिकृत सूचना:</b><br>
+      विद्यार्थ्यांनी आपले <b>नाव, तालुका आणि मोबाईल क्रमांक अचूक भरावा</b>. आपल्या माहितीची व गुणांची थेट <b>जिल्हा स्तरावर नोंद</b> घेतली जात आहे. कुणीही डमी नाव किंवा इतरांचा मोबाईल क्रमांक टाकू नये, <b>आपल्या स्वतःच्या पालकांचाच १० अंकी खरा मोबाईल क्रमांक टाकावा.</b>
+    </div>
+
     <div class="form-group">
       <label>विद्यार्थ्याचे संपूर्ण नाव:</label>
       <input type="text" id="sName" placeholder="उदा. ओंकार प्रकाश देशमुख">
@@ -372,7 +395,7 @@
       <button class="btn-logout" onclick="performLogout()">लॉग आउट</button>
     </div>
 
-    <!-- ॲडमिनसाठी स्पेशल कंट्रोल बार (ॲडमिन मोडमध्येच दिसेल) -->
+    <!-- ॲडमिनसाठी स्पेशल कंट्रोल बार -->
     <div id="adminPanelArea" style="display:none; background:#fff7ed; border:2px solid #ea580c; border-radius:12px; padding:16px; margin-bottom:16px;">
       <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
         <h3 style="color:#c2410c; font-weight:800; font-size:1.1rem;">⚙️ ॲडमिन नियंत्रण कक्ष (Admin Panel)</h3>
@@ -782,7 +805,7 @@
     return { valid: true };
   }
 
-  /* ---------------- युनिक विद्यार्थी नोंदणी (Duplicate Entries थांबवणे) ---------------- */
+  /* ---------------- युनिक विद्यार्थी नोंदणी (केवळ नवीन असल्यास Firebase वर पाठवणे) ---------------- */
   function handleRegistration() {
     const name = document.getElementById("sName").value.trim();
     const mobile = document.getElementById("sMobile").value.trim();
@@ -808,17 +831,27 @@
     loggedInUser = { name, mobile, taluka };
     syncUserPersistentData();
 
-    // मोबाईल नंबरला ID बनवून PUT द्वारे नोंदणी करणे; जेणेकरून एकाच नंबरची डुप्लिकेट नोंद होणार नाही
-    fetch(`${FIREBASE_DB_URL}/students/${mobile}.json`, {
-      method: "PUT",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        name: name,
-        mobile: mobile,
-        taluka: taluka,
-        timestamp: new Date().toLocaleString("en-IN")
+    // Firebase वरून आधीच हा विद्यार्थी नोंदणीकृत आहे का ते तपासणे
+    fetch(`${FIREBASE_DB_URL}/students/${mobile}.json`)
+      .then(res => res.json())
+      .then(existing => {
+        if (!existing) {
+          // नवीन युजर असेल तरच Firebase वर नोंदवणे
+          fetch(`${FIREBASE_DB_URL}/students/${mobile}.json`, {
+            method: "PUT",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              name: name,
+              mobile: mobile,
+              taluka: taluka,
+              timestamp: new Date().toLocaleString("en-IN")
+            })
+          }).catch(err => console.error("Firebase Error:", err));
+        }
       })
-    }).catch(err => console.error("Firebase Error:", err));
+      .catch(() => {
+        // ऑफलाइन किंवा एरर आल्यास सुरक्षिततेसाठी लोकल नोंदणी पुढे चालू ठेवणे
+      });
 
     renderDashboard();
     checkAndShowInstallPrompt();
@@ -911,8 +944,17 @@
       .then(res => res.json())
       .then(data => {
         if (data) {
-          // Object.values मुळे युनिक मोबाईल नंबर असलेली सर्व नोंदणीकृत खाती मिळतील
-          allFirebaseStudents = Object.values(data);
+          // मोबाईल नंबरनुसार युनिक विद्यार्थी फिल्टर करणे (Deduplication)
+          const uniqueStudentsMap = {};
+          Object.values(data).forEach(st => {
+            if (st && st.mobile) {
+              // सर्वात जुनी किंवा पहिली नोंद कायम ठेवणे
+              if (!uniqueStudentsMap[st.mobile]) {
+                uniqueStudentsMap[st.mobile] = st;
+              }
+            }
+          });
+          allFirebaseStudents = Object.values(uniqueStudentsMap);
           document.getElementById("adminTotalStudentsBadge").innerText = allFirebaseStudents.length;
         } else {
           allFirebaseStudents = [];
@@ -1503,9 +1545,9 @@
     }
     saveUserVault();
 
-    // Firebase वर निकाल पाठवणे
-    fetch(`${FIREBASE_DB_URL}/results.json`, {
-      method: "POST",
+    // Firebase वर निकाल पाठवणे (विद्यार्थी व चाचणीनुसार एकच सर्वोत्तम निकाल सेव्ह करणे)
+    fetch(`${FIREBASE_DB_URL}/results/${loggedInUser.mobile}_${currentQuizData.id}.json`, {
+      method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         name: loggedInUser.name,
