@@ -46,7 +46,7 @@
     header {
       background: linear-gradient(135deg, #091a2c 0%, #0f2b48 60%, #1a4a75 100%);
       color: white;
-      padding: 10px 18px;
+      padding: 10px 14px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -60,13 +60,12 @@
     .header-left {
       display: flex;
       align-items: center;
-      gap: 12px;
     }
-    /* सिक्रेट ॲडमिन ट्रिगर: या लोगोवर ३ वेळा टॅप करावे */
+    /* डावा लोगो: जिल्हा परिषद बीड (३ वेळा टॅप केल्यास ॲडमिन मोड सुरू) */
     .zp-brand-logo {
-      width: 46px;
-      height: 46px;
-      min-width: 46px;
+      width: 44px;
+      height: 44px;
+      min-width: 44px;
       border-radius: 50%;
       background: #ffffff;
       padding: 2px;
@@ -99,22 +98,49 @@
       line-height: 1.2;
     }
     .header-center h3 {
-      font-size: 0.88rem;
+      font-size: 0.86rem;
       color: #ffffff;
       font-weight: 700;
       letter-spacing: 0.3px;
       margin-top: 2px;
     }
-    /* फक्त ॲडमिन सक्रिय झाल्यावरच दिसणारे तात्पुरते बाहेर पडण्याचे बटण */
+    .header-right {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+    }
+    /* उजवा लोगो: नवोदय विद्यालय लोगो (nvs_logo.png) */
+    .nvs-brand-logo {
+      width: 44px;
+      height: 44px;
+      min-width: 44px;
+      border-radius: 50%;
+      background: #ffffff;
+      padding: 2px;
+      border: 2px solid #fbbf24;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .nvs-brand-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 50%;
+    }
     #adminStatusBadge {
       display: none;
       background: #ea580c;
       border: 1px solid #fef08a;
       color: #fff;
-      font-size: 0.72rem;
+      font-size: 0.65rem;
       font-weight: 800;
-      padding: 4px 10px;
-      border-radius: 20px;
+      padding: 2px 8px;
+      border-radius: 12px;
       cursor: pointer;
       white-space: nowrap;
     }
@@ -451,11 +477,11 @@
        ========================================================================== */
     @media (max-width: 650px) {
       body { font-size: 15px; background-color: #ffffff; }
-      header { padding: 6px 10px; min-height: 56px; }
-      .zp-brand-logo { width: 38px; height: 38px; min-width: 38px; }
+      header { padding: 6px 8px; min-height: 56px; }
+      .zp-brand-logo, .nvs-brand-logo { width: 36px; height: 36px; min-width: 36px; }
       .header-center { padding: 0 4px; }
-      .header-center h2 { font-size: 0.95rem; line-height: 1.15; }
-      .header-center h3 { font-size: 0.74rem; line-height: 1.2; }
+      .header-center h2 { font-size: 0.92rem; line-height: 1.15; }
+      .header-center h3 { font-size: 0.72rem; line-height: 1.2; }
 
       .main-wrapper { margin: 0 auto; padding: 8px 8px 50px 8px; width: 100%; max-width: 100%; }
       .card { padding: 14px 10px; border-radius: 12px; margin-bottom: 10px; border: 1px solid #e2e8f0; }
@@ -494,10 +520,11 @@
 </head>
 <body>
 
-<!-- हेडर: वरती मध्यभागी ठळक शीर्षक आणि डाव्या कोपऱ्यात लोगो (३ वेळा टॅप केल्यास ॲडमिन सुरू) -->
+<!-- हेडर: डावीकडे जि. प. बीड लोगो, मध्यभागी शीर्षक आणि उजवीकडे NVS लोगो -->
 <header>
   <div class="header-left">
-    <div class="zp-brand-logo" id="secretAdminTrigger" title="जिल्हा परिषद बीड">
+    <!-- डावा लोगो (३ वेळा क्लिक केल्यास ॲडमिन सुरू) -->
+    <div class="zp-brand-logo" id="secretAdminTrigger" title="जिल्हा परिषद बीड (गुप्त ॲडमिनसाठी ३ वेळा टॅप करा)">
       <img src="logo.png" alt="जिल्हा परिषद बीड" onerror="this.onerror=null; this.src='https://upload.wikimedia.org/wikipedia/commons/8/84/Government_of_Maharashtra.png'">
     </div>
   </div>
@@ -508,7 +535,11 @@
   </div>
 
   <div class="header-right">
-    <!-- फक्त ॲडमिन मोड सुरू झाल्यावरच दिसणारे एक्झिट बटण -->
+    <!-- उजवा लोगो: नवोदय विद्यालय अधिकृत लोगो -->
+    <div class="nvs-brand-logo" title="जवाहर नवोदय विद्यालय">
+      <img src="nvs_logo.png" alt="NVS Logo" onerror="this.onerror=null; this.src='https://navodaya.gov.in/nvs/assets/images/logo.png'">
+    </div>
+    <!-- फक्त ॲडमिन मोड सुरू झाल्यावर दिसणारे एक्झिट बटण -->
     <button id="adminStatusBadge" onclick="exitAdminMode()">Admin Exit</button>
   </div>
 </header>
@@ -705,7 +736,6 @@
 </footer>
 
 <script>
-  // Firebase Realtime Database URL
   const FIREBASE_DB_URL = "https://nvs-zp-beed-online-test-default-rtdb.firebaseio.com";
 
   const EXAM_SCHEDULE = [
@@ -736,7 +766,7 @@
   let selectedSection = 'mental';
   let akSelectedSection = 'mental';
 
-  // सिक्रेट ॲडमिन ट्रिगर लॉजिक (लोगोवर सलग ३ वेळा टॅप करणे)
+  // सिक्रेट ॲडमिन ट्रिगर (डाव्या लोगोवर ३ वेळा टॅप करणे)
   let logoTapCount = 0;
   let logoTapTimeout = null;
 
@@ -749,7 +779,7 @@
       renderDashboard();
     }
 
-    // पद्धत १: वर डाव्या लोगोवर सलग ३ वेळा क्लिक करणे
+    // डाव्या लोगोवर सलग ३ वेळा टॅप केल्यास ॲडमिन सुरू
     const logoEl = document.getElementById("secretAdminTrigger");
     if (logoEl) {
       logoEl.addEventListener("click", () => {
@@ -764,7 +794,7 @@
       });
     }
 
-    // बॅकअप पद्धत: कीबोर्ड शॉर्टकट (लॅपटॉपसाठी: Ctrl + Shift + A)
+    // पर्यायी कीबोर्ड शॉर्टकट (Ctrl + Shift + A)
     window.addEventListener("keydown", (e) => {
       if ((e.ctrlKey && e.shiftKey && (e.key === 'A' || e.key === 'a')) || (e.altKey && (e.key === 'A' || e.key === 'a'))) {
         e.preventDefault();
@@ -779,7 +809,7 @@
       if (pin === "3506") {
         isAdminMode = true;
         document.getElementById("adminStatusBadge").style.display = "block";
-        alert("ॲडमिन मोड सक्रिय झाला आहे! तुम्ही जे बदल कराल ते Firebase द्वारे सर्व युजर्ससाठी एकाच वेळी लागू होतील.");
+        alert("ॲडमिन मोड सक्रिय झाला आहे! तुम्ही केलेले बदल Firebase द्वारे सर्व युजर्ससाठी तत्काळ लागू होतील.");
         renderDashboard();
       } else if (pin !== null) {
         alert("चुकीचा पिन!");
