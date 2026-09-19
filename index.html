@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>नवोदय सराव परीक्षा पोर्टल (2026-27)</title>
+  <title>NVS TEST ZP BEED - नवोदय सराव परीक्षा पोर्टल (2026-27)</title>
   
   <!-- PWA Meta Tags -->
   <meta name="theme-color" content="#0f2b48">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <link rel="manifest" href="data:application/manifest+json;base64,eyJuYW1lIjoiTlZTIFByYWN0aWNlIFBvcnRhbCIsInNob3J0X25hbWUiOiJOVlMgUG9ydGFsIiwic3RhcnRfdXJsIjoiLiIsImRpc3BsYXkiOiJzdGFuZGFsb25lIiwiYmFja2dyb3VuZF9jb2xvciI6IiNmOGZhZmMiLCJ0aGVtZV9jb2xvciI6IiMwZjJiNDgifQ==">
+  <link rel="manifest" href="data:application/manifest+json;base64,eyJuYW1lIjoiTlZTIFRFU1QgWlAgQkVFRCIsInNob3J0X25hbWUiOiJOVlMgUG9ydGFsIiwic3RhcnRfdXJsIjoiLiIsImRpc3BsYXkiOiJzdGFuZGFsb25lIiwiYmFja2dyb3VuZF9jb2xvciI6IiNmOGZhZmMiLCJ0aGVtZV9jb2xvciI6IiMwZjJiNDgifQ==">
 
   <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;600;700;800&display=swap" rel="stylesheet">
   <style>
@@ -24,53 +24,58 @@
     * { box-sizing: border-box; font-family: 'Mukta', sans-serif; margin: 0; padding: 0; }
     body { background: var(--bg); color: var(--text); display: flex; flex-direction: column; min-height: 100vh; }
     
-    header { background: var(--primary); color: white; padding: 12px 18px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 100; }
-    header h1 { font-size: 1.15rem; font-weight: 700; }
-    .user-pill { font-size: 0.85rem; background: rgba(255,255,255,0.15); padding: 4px 10px; border-radius: 20px; }
+    header { background: var(--primary); color: white; padding: 14px 24px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 100; }
+    header h1 { font-size: 1.2rem; font-weight: 700; }
+    .user-pill { font-size: 0.9rem; background: rgba(255,255,255,0.15); padding: 5px 12px; border-radius: 20px; }
     
-    .container { max-width: 900px; width: 100%; margin: 20px auto; padding: 0 16px; flex: 1; }
-    .card { background: var(--card-bg); border-radius: 14px; padding: 22px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid #e2e8f0; margin-bottom: 20px; }
+    .container { max-width: 960px; width: 100%; margin: 24px auto; padding: 0 16px; flex: 1; }
+    .card { background: var(--card-bg); border-radius: 14px; padding: 26px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid #e2e8f0; margin-bottom: 20px; }
     
-    .btn { background: var(--primary); color: white; border: none; padding: 11px 20px; font-size: 0.95rem; font-weight: 600; border-radius: 8px; cursor: pointer; transition: 0.2s; }
+    .btn { background: var(--primary); color: white; border: none; padding: 12px 22px; font-size: 1rem; font-weight: 600; border-radius: 8px; cursor: pointer; transition: 0.2s; text-align: center; }
     .btn:hover { opacity: 0.9; }
     .btn-green { background: var(--accent); }
     .btn-red { background: var(--danger); }
-    .btn-outline { background: transparent; border: 1px solid var(--primary); color: var(--primary); }
+    .btn-outline { background: transparent; border: 1px solid white; color: white; }
     
-    /* Login Screen */
-    .login-box { max-width: 400px; margin: 50px auto; text-align: center; }
-    .login-box input { width: 100%; padding: 12px; margin: 12px 0; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 1rem; }
+    /* लॉगिन स्क्रीन (हुबेहूब मूळ स्क्रीनशॉटप्रमाणे) */
+    .login-box { max-width: 440px; margin: 60px auto; text-align: center; }
+    .login-box h2 { font-size: 1.5rem; color: var(--primary); font-weight: 800; margin-bottom: 6px; }
+    .login-box p { color: #64748b; font-size: 0.92rem; margin-bottom: 20px; }
+    .login-box input { width: 100%; padding: 13px 16px; margin-bottom: 14px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 1rem; outline: none; }
+    .login-box input:focus { border-color: var(--primary); }
     
-    /* Dashboard Grid */
-    .test-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 14px; margin-top: 16px; }
-    .test-card { border: 1px solid #e2e8f0; border-radius: 10px; padding: 16px; background: #fff; display: flex; flex-direction: column; justify-content: space-between; }
-    .test-card h3 { font-size: 1.05rem; margin-bottom: 6px; color: var(--primary); }
-    .badge { display: inline-block; font-size: 0.75rem; font-weight: 700; padding: 2px 8px; border-radius: 12px; }
+    /* डॅशबोर्ड ग्रीड (३ कॉलम मूळ स्क्रीनशॉटप्रमाणे) */
+    .test-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 20px; }
+    @media (max-width: 768px) {
+      .test-grid { grid-template-columns: 1fr; }
+    }
+    .test-card { border: 1px solid #e2e8f0; border-radius: 12px; padding: 20px; background: #fff; display: flex; flex-direction: column; justify-content: space-between; }
+    .test-card h3 { font-size: 1.15rem; margin: 8px 0 14px 0; color: var(--primary); font-weight: 700; }
+    .badge { display: inline-block; font-size: 0.8rem; font-weight: 700; padding: 3px 10px; border-radius: 12px; }
     .badge-blue { background: #e0f2fe; color: #0369a1; }
     .badge-gray { background: #f1f5f9; color: #475569; }
 
-    /* Test Arena */
-    .timer-bar { display: flex; justify-content: space-between; align-items: center; background: #fff; padding: 12px 18px; border-radius: 10px; border: 1px solid #e2e8f0; margin-bottom: 15px; font-weight: 700; }
-    .timer { font-size: 1.2rem; color: var(--accent); }
+    /* चाचणी स्क्रीन */
+    .timer-bar { display: flex; justify-content: space-between; align-items: center; background: #fff; padding: 14px 20px; border-radius: 10px; border: 1px solid #e2e8f0; margin-bottom: 16px; font-weight: 700; }
+    .timer { font-size: 1.25rem; color: var(--accent); }
     .timer.urgent { color: var(--danger); animation: pulse 1s infinite; }
     @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.5; } 100% { opacity: 1; } }
 
-    .q-box { margin-bottom: 24px; border-bottom: 1px solid #e2e8f0; padding-bottom: 16px; }
+    .q-box { margin-bottom: 26px; border-bottom: 1px solid #e2e8f0; padding-bottom: 18px; }
     .q-title { font-weight: 700; font-size: 1.05rem; margin-bottom: 10px; }
-    .q-passage { background: #f8fafc; padding: 12px; border-left: 4px solid var(--primary); margin-bottom: 12px; border-radius: 4px; font-size: 0.95rem; }
-    .fig-container { display: flex; gap: 10px; margin: 10px 0; flex-wrap: wrap; }
-    .fig-box { width: 65px; height: 65px; border: 1px solid #cbd5e1; border-radius: 6px; padding: 4px; }
+    .q-passage { background: #f8fafc; padding: 14px; border-left: 4px solid var(--primary); margin-bottom: 14px; border-radius: 4px; font-size: 0.95rem; line-height: 1.6; }
+    .fig-box { width: 70px; height: 70px; border: 1px solid #cbd5e1; border-radius: 6px; padding: 4px; }
     
-    .options-grid { display: grid; grid-template-columns: 1fr; gap: 8px; margin-top: 10px; }
-    .opt-label { display: flex; align-items: center; padding: 10px 14px; border: 1px solid #cbd5e1; border-radius: 8px; cursor: pointer; transition: 0.15s; }
+    .options-grid { display: grid; grid-template-columns: 1fr; gap: 8px; margin-top: 12px; }
+    .opt-label { display: flex; align-items: center; padding: 11px 16px; border: 1px solid #cbd5e1; border-radius: 8px; cursor: pointer; transition: 0.15s; }
     .opt-label:hover { background: #f1f5f9; }
     .opt-label input { margin-right: 12px; width: 18px; height: 18px; }
 
-    /* Report Card */
-    .score-banner { text-align: center; padding: 20px; background: linear-gradient(135deg, #0f2b48, #1e40af); color: white; border-radius: 12px; margin-bottom: 20px; }
-    .score-banner h2 { font-size: 2.2rem; margin: 8px 0; }
-    .table-report { width: 100%; border-collapse: collapse; margin-top: 12px; }
-    .table-report th, .table-report td { border: 1px solid #e2e8f0; padding: 10px; text-align: center; }
+    /* रिपोर्ट कार्ड */
+    .score-banner { text-align: center; padding: 24px; background: linear-gradient(135deg, #0f2b48, #1e40af); color: white; border-radius: 12px; margin-bottom: 22px; }
+    .score-banner h2 { font-size: 2.4rem; margin: 10px 0; }
+    .table-report { width: 100%; border-collapse: collapse; margin-top: 14px; }
+    .table-report th, .table-report td { border: 1px solid #e2e8f0; padding: 12px; text-align: center; }
     .table-report th { background: #f8fafc; font-weight: 700; }
   </style>
 </head>
@@ -80,16 +85,16 @@
   <h1>नवोदय सराव चाचणी परीक्षा पोर्टल</h1>
   <div id="headerUser" style="display: none;">
     <span class="user-pill" id="userNameTag"></span>
-    <button class="btn btn-outline" style="color:white; border-color:white; padding:4px 10px; font-size:0.8rem; margin-left:8px;" onclick="logout()">बाहेर पडा</button>
+    <button class="btn btn-outline" style="padding: 5px 12px; font-size: 0.85rem; margin-left: 10px;" onclick="logout()">बाहेर पडा</button>
   </div>
 </header>
 
 <div class="container">
   
-  <!-- १. लॉगिन स्क्रीन -->
+  <!-- १. लॉगिन स्क्रीन (हुबेहूब मूळ स्क्रीनशॉटप्रमाणे) -->
   <div id="loginSection" class="card login-box">
-    <h2 style="color: var(--primary);">विद्यार्थी लॉगिन</h2>
-    <p style="color: #64748b; font-size: 0.9rem; margin-top: 4px;">तुमचा सराव सुरू करण्यासाठी नाव व रोल नंबर टाका</p>
+    <h2>विद्यार्थी लॉगिन</h2>
+    <p>तुमचा सराव सुरू करण्यासाठी नाव व रोल नंबर टाका</p>
     <input type="text" id="inName" placeholder="विद्यार्थ्याचे पूर्ण नाव">
     <input type="text" id="inRoll" placeholder="रोल नंबर / मोबाईल नंबर">
     <button class="btn btn-green" style="width: 100%;" onclick="handleLogin()">प्रवेश करा</button>
@@ -98,13 +103,13 @@
   <!-- २. डॅशबोर्ड (चाचण्यांची यादी व जुने गुण) -->
   <div id="dashSection" style="display: none;">
     <div class="card">
-      <h2>सराव चाचण्यांची यादी</h2>
-      <p style="color: #64748b; font-size: 0.9rem;">प्रत्येक चाचणी तुम्ही जास्तीत जास्त ४ वेळेस सोडवू शकता. अर्धवट राहिलेली चाचणी तिथूनच पुढे सुरू होईल.</p>
+      <h2 style="font-size: 1.4rem; color: var(--primary); font-weight: 800; margin-bottom: 4px;">सराव चाचण्यांची यादी</h2>
+      <p style="color: #64748b; font-size: 0.95rem;">प्रत्येक चाचणी तुम्ही जास्तीत जास्त ४ वेळेस सोडवू शकता. अर्धवट राहिलेली चाचणी तिथूनच पुढे सुरू होईल.</p>
       <div class="test-grid" id="testListGrid"></div>
     </div>
   </div>
 
-  <!-- ३. चाचणी सोडवण्याचा स्क्रीन (Test Arena) -->
+  <!-- ३. चाचणी स्क्रीन (Test Arena) -->
   <div id="testArenaSection" style="display: none;">
     <div class="timer-bar">
       <div><span id="activeTestTitle">चाचणी</span></div>
@@ -112,19 +117,19 @@
     </div>
     <div class="card" id="questionsContainer"></div>
     <div style="text-align: center; margin-bottom: 40px;">
-      <button class="btn btn-green" style="padding: 14px 40px; font-size: 1.1rem;" onclick="submitExamPrompt()">परीक्षा पूर्ण करा (Submit)</button>
+      <button class="btn btn-green" style="padding: 14px 44px; font-size: 1.1rem;" onclick="submitExamPrompt()">परीक्षा पूर्ण करा (Submit)</button>
     </div>
   </div>
 
   <!-- ४. तपशीलवार गुणपत्रिका (Report Card) -->
   <div id="reportSection" class="card" style="display: none;">
     <div class="score-banner">
-      <p>अभिनंदन! चाचणी पूर्ण झाली.</p>
+      <p style="font-size: 1.05rem;">अभिनंदन! चाचणी यशस्वीरीत्या पूर्ण झाली.</p>
       <h2 id="repTotalScore">0 / 100</h2>
-      <p id="repPercentage">टक्केवारी: 0%</p>
+      <p id="repPercentage" style="font-size: 1.1rem; font-weight: 600;">टक्केवारी: 0%</p>
     </div>
     
-    <h3 style="margin-bottom: 8px;">विभागवार गुण पृथक्करण (Report Card)</h3>
+    <h3 style="margin-bottom: 8px; color: var(--primary);">विभागवार गुण पृथक्करण (Report Card)</h3>
     <table class="table-report">
       <thead>
         <tr>
@@ -137,7 +142,7 @@
       <tbody id="repTableBody"></tbody>
     </table>
 
-    <div style="text-align: center; margin-top: 24px;">
+    <div style="text-align: center; margin-top: 26px;">
       <button class="btn btn-green" onclick="showDashboard()">डॅशबोर्डवर परत जा</button>
     </div>
   </div>
@@ -145,7 +150,6 @@
 </div>
 
 <script>
-// एकूण १५ चाचण्यांची कॉन्फिगरेशन
 const TOTAL_TESTS = 15;
 const MAX_ATTEMPTS = 4;
 const DURATION_SECONDS = 120 * 60; // २ तास
@@ -155,7 +159,7 @@ let currentExamData = null;
 let timerInterval = null;
 let remainingSeconds = DURATION_SECONDS;
 
-// लॉगिन हाताळणे
+// लॉगिन
 function handleLogin() {
   const name = document.getElementById("inName").value.trim();
   const roll = document.getElementById("inRoll").value.trim();
@@ -164,14 +168,14 @@ function handleLogin() {
     return;
   }
 
-  currentUser = { name, roll, key: "NVS_" + roll };
+  currentUser = { name, roll, key: "NVS_USER_" + roll };
   
-  // युजर डेटाबेस नसलेस तयार करणे (हा डेटा कायम राहतो)
+  // रोल नंबरनुसार डेटाबेस तयार करणे किंवा जुना मिळवणे
   if (!localStorage.getItem(currentUser.key)) {
     const initialUserData = {
       profile: { name, roll },
-      history: {}, // चाचणी निकाल
-      inProgress: {} // अर्धवट राहिलेल्या चाचण्या (Auto-save)
+      history: {},    // जुने निकाल कायम राहण्यासाठी
+      inProgress: {} // अर्धवट चाचणी ऑटो-सेव्हसाठी
     };
     localStorage.setItem(currentUser.key, JSON.stringify(initialUserData));
   }
@@ -194,7 +198,7 @@ function logout() {
   document.getElementById("loginSection").style.display = "block";
 }
 
-// डॅशबोर्ड दाखवणे
+// डॅशबोर्ड
 function showDashboard() {
   document.getElementById("testArenaSection").style.display = "none";
   document.getElementById("reportSection").style.display = "none";
@@ -212,17 +216,16 @@ function showDashboard() {
     let statusHTML = "";
     let btnHTML = "";
 
-    // सर्वोत्तम गुण काढणे
-    let maxMarks = 0;
+    // सर्वोत्तम गुण दाखवणे
     if (attemptsUsed > 0) {
-      maxMarks = Math.max(...history.map(h => h.totalMarks));
-      statusHTML = `<div style="font-size:0.85rem; color:#16a34a; font-weight:700;">सर्वोत्तम गुण: ${maxMarks}/100</div>`;
+      const maxMarks = Math.max(...history.map(h => h.totalMarks));
+      statusHTML = `<div style="font-size:0.85rem; color:#16a34a; font-weight:700; margin-bottom:4px;">सर्वोत्तम गुण: ${maxMarks}/100</div>`;
     }
 
     if (attemptsUsed >= MAX_ATTEMPTS) {
-      btnHTML = `<button class="btn btn-red" disabled style="width:100%; opacity:0.6;">प्रयत्न मर्यादा संपली (4/4)</button>`;
+      btnHTML = `<button class="btn btn-red" disabled style="width:100%; opacity:0.65; cursor:not-allowed;">प्रयत्न मर्यादा संपली (4/4)</button>`;
     } else if (inProg) {
-      btnHTML = `<button class="btn btn-green" style="width:100%;" onclick="startTest(${i}, true)">अर्धवट चाचणी पूर्ण करा (Resume)</button>`;
+      btnHTML = `<button class="btn btn-green" style="width:100%; font-size:0.95rem;" onclick="startTest(${i}, true)">अर्धवट चाचणी पूर्ण करा (Resume)</button>`;
     } else {
       btnHTML = `<button class="btn" style="width:100%;" onclick="startTest(${i}, false)">चाचणी सुरू करा</button>`;
     }
@@ -237,20 +240,20 @@ function showDashboard() {
         <h3>चाचणी क्र. ${i < 10 ? '0' + i : i}</h3>
         ${statusHTML}
       </div>
-      <div style="margin-top:14px;">${btnHTML}</div>
+      <div>${btnHTML}</div>
     `;
     grid.appendChild(card);
   }
 }
 
-// फुलस्क्रीन सुरू करणे
+// फुलस्क्रीन
 function triggerFullscreen() {
   const el = document.documentElement;
-  if (el.requestFullscreen) el.requestFullscreen();
+  if (el.requestFullscreen) el.requestFullscreen().catch(() => {});
   else if (el.webkitRequestFullscreen) el.webkitRequestFullscreen();
 }
 
-// चाचणी सुरू करणे
+// चाचणी सुरू / रिझ्युम करणे
 async function startTest(testNum, isResume) {
   triggerFullscreen();
   
@@ -259,7 +262,7 @@ async function startTest(testNum, isResume) {
     if (!res.ok) throw new Error("फाईल सापडली नाही");
     currentExamData = await res.json();
   } catch (err) {
-    alert(`test${testNum}.json फाईल लोड होऊ शकली नाही. कृपया तपासा.`);
+    alert(`test${testNum}.json फाईल लोड होऊ शकली नाही. कृपया फाईल GitHub वर अपलोड आहे का ते तपासा.`);
     return;
   }
 
@@ -283,12 +286,12 @@ async function startTest(testNum, isResume) {
   startTimer(testNum);
 }
 
-// प्रश्न रेंडर करणे
+// प्रश्न मांडणे
 function renderQuestions(savedAnswers) {
   const container = document.getElementById("questionsContainer");
   container.innerHTML = "";
 
-  currentExamData.questions.forEach((q, idx) => {
+  currentExamData.questions.forEach((q) => {
     const qDiv = document.createElement("div");
     qDiv.className = "q-box";
 
@@ -322,7 +325,7 @@ function renderQuestions(savedAnswers) {
   });
 }
 
-// उत्तर तात्काळ सेव्ह करणे (Auto-Save)
+// ऑटो-सेव्ह (निवडलेले उत्तर तात्काळ सुरक्षित)
 function autoSaveAnswer(testNum, qId, optIndex) {
   const userData = JSON.parse(localStorage.getItem(currentUser.key));
   if (!userData.inProgress[testNum]) {
@@ -333,14 +336,14 @@ function autoSaveAnswer(testNum, qId, optIndex) {
   localStorage.setItem(currentUser.key, JSON.stringify(userData));
 }
 
-// टाइमर सुरू करणे
+// टाइमर
 function startTimer(testNum) {
   if (timerInterval) clearInterval(timerInterval);
 
   timerInterval = setInterval(() => {
     remainingSeconds--;
     
-    // दर ५ सेकंदांनी वेळ ऑटो-सेव्ह करणे
+    // दर ५ सेकंदांनी शिल्लक वेळ सुरक्षित करणे
     if (remainingSeconds % 5 === 0) {
       const userData = JSON.parse(localStorage.getItem(currentUser.key));
       if (userData.inProgress[testNum]) {
@@ -359,13 +362,13 @@ function startTimer(testNum) {
 
     if (remainingSeconds <= 0) {
       clearInterval(timerInterval);
-      alert("परीक्षेची वेळ संपली आहे! तुमची चाचणी आपोआप सबमिट होत आहे.");
+      alert("परीक्षेची वेळ संपली आहे! चाचणी सबमिट होत आहे.");
       finalizeExam(testNum);
     }
   }, 1000);
 }
 
-// सबमिट करण्याची खात्री
+// सबमिट खात्री
 function submitExamPrompt() {
   if (confirm("तुम्हाला खात्री आहे का की तुम्ही चाचणी सबमिट करू इच्छिता?")) {
     clearInterval(timerInterval);
@@ -373,7 +376,7 @@ function submitExamPrompt() {
   }
 }
 
-// निकाल मोजणे व सुरक्षित ठेवणे
+// निकाल तपासणी आणि कायमस्वरूपी सेव्ह
 function finalizeExam(testNum) {
   const userData = JSON.parse(localStorage.getItem(currentUser.key));
   const userAnswers = userData.inProgress[testNum]?.answers || {};
@@ -402,18 +405,18 @@ function finalizeExam(testNum) {
     percentage
   };
 
-  // निकाल इतिहासामध्ये सुरक्षित ठेवणे (हा डेटा लॉगआउटनंतरही कायम राहतो)
+  // निकाल कायमस्वरूपी हिस्ट्रीमध्ये सेव्ह (लॉगआउटनंतरही नष्ट होणार नाही)
   if (!userData.history[testNum]) userData.history[testNum] = [];
   userData.history[testNum].push(attemptResult);
 
-  // इन-प्रोग्रेस डेटा काढून टाकणे
+  // इन-प्रोग्रेस रिस्पॉन्स क्लिअर करणे
   delete userData.inProgress[testNum];
   localStorage.setItem(currentUser.key, JSON.stringify(userData));
 
   displayReportCard(attemptResult);
 }
 
-// सविस्तर रिपोर्ट कार्ड दाखवणे
+// तपशीलवार गुणपत्रिका दाखवणे
 function displayReportCard(res) {
   document.getElementById("testArenaSection").style.display = "none";
   document.getElementById("reportSection").style.display = "block";
@@ -424,22 +427,22 @@ function displayReportCard(res) {
   const tbody = document.getElementById("repTableBody");
   tbody.innerHTML = `
     <tr>
-      <td>मानसिक क्षमता चाचणी</td>
+      <td style="font-weight:600; text-align:left;">मानसिक क्षमता चाचणी</td>
       <td>40</td>
       <td>${res.mentalScore / 1.25}</td>
-      <td>${res.mentalScore} / 50</td>
+      <td style="font-weight:700; color:var(--primary);">${res.mentalScore} / 50</td>
     </tr>
     <tr>
-      <td>अंकगणित चाचणी</td>
+      <td style="font-weight:600; text-align:left;">अंकगणित चाचणी</td>
       <td>20</td>
       <td>${res.mathScore / 1.25}</td>
-      <td>${res.mathScore} / 25</td>
+      <td style="font-weight:700; color:var(--primary);">${res.mathScore} / 25</td>
     </tr>
     <tr>
-      <td>भाषा चाचणी</td>
+      <td style="font-weight:600; text-align:left;">भाषा चाचणी</td>
       <td>20</td>
       <td>${res.langScore / 1.25}</td>
-      <td>${res.langScore} / 25</td>
+      <td style="font-weight:700; color:var(--primary);">${res.langScore} / 25</td>
     </tr>
   `;
 }
