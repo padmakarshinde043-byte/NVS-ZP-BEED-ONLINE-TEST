@@ -5,322 +5,602 @@
     {
       "id": 1,
       "sec": "mental",
-      "text": "प्रश्न 1 [वेगळे पद ओळखा]: खालीलपैकी इतर तीन आकृत्यांपेक्षा वेगळा पर्याय कोणता?",
-      "options": ["आतील बाजूस 3 ठिपके असलेला त्रिकोण", "आतील बाजूस 4 ठिपके असलेला चौकोन", "आतील बाजूस 5 ठिपके असलेला पंचकोन", "आतील बाजूस 5 ठिपके असलेला षटकोन"],
+      "text": "प्रश्न 1: खालील चार आकृत्यांपैकी इतर तीन आकृत्यांपेक्षा वेगळी असणारी आकृती ओळखा.",
+      "problemFig": "",
+      "figures": [
+        { "s": "<svg viewBox='0 0 100 100'><polygon points='50,15 15,85 85,85' fill='none' stroke='#0f2b48' stroke-width='4'/><circle cx='50' cy='60' r='5' fill='#0f2b48'/><circle cx='40' cy='75' r='5' fill='#0f2b48'/><circle cx='60' cy='75' r='5' fill='#0f2b48'/></svg>", "l": "(A)" },
+        { "s": "<svg viewBox='0 0 100 100'><rect x='20' y='20' width='60' height='60' fill='none' stroke='#0f2b48' stroke-width='4'/><circle cx='35' cy='35' r='5' fill='#0f2b48'/><circle cx='65' cy='35' r='5' fill='#0f2b48'/><circle cx='35' cy='65' r='5' fill='#0f2b48'/><circle cx='65' cy='65' r='5' fill='#0f2b48'/></svg>", "l": "(B)" },
+        { "s": "<svg viewBox='0 0 100 100'><polygon points='50,15 85,40 70,85 30,85 15,40' fill='none' stroke='#0f2b48' stroke-width='4'/><circle cx='50' cy='35' r='4' fill='#0f2b48'/><circle cx='65' cy='50' r='4' fill='#0f2b48'/><circle cx='60' cy='70' r='4' fill='#0f2b48'/><circle cx='40' cy='70' r='4' fill='#0f2b48'/><circle cx='35' cy='50' r='4' fill='#0f2b48'/></svg>", "l": "(C)" },
+        { "s": "<svg viewBox='0 0 100 100'><polygon points='30,15 70,15 90,50 70,85 30,85 10,50' fill='none' stroke='#0f2b48' stroke-width='4'/><circle cx='40' cy='35' r='4' fill='#0f2b48'/><circle cx='60' cy='35' r='4' fill='#0f2b48'/><circle cx='50' cy='50' r='4' fill='#0f2b48'/><circle cx='40' cy='65' r='4' fill='#0f2b48'/><circle cx='60' cy='65' r='4' fill='#0f2b48'/></svg>", "l": "(D)" }
+      ],
+      "options": ["(A)", "(B)", "(C)", "(D)"],
       "correct": 3,
-      "exp": "इतर सर्व आकृत्यांमध्ये जेवढ्या बाजू आहेत तेवढेच ठिपके आत आहेत (त्रिकोणात 3, चौकोनात 4, पंचकोनात 5). परंतु षटकोनाला 6 बाजू असताना आत फक्त 5 ठिपके दिले आहेत, म्हणून पर्याय 4 वेगळा आहे."
+      "exp": "पर्याय (A), (B) आणि (C) मध्ये जेवढ्या बाजू आहेत तेवढेच ठिपके आत आहेत (त्रिकोणात 3, चौकोनात 4, पंचकोनात 5). पर्याय (D) मध्ये षटकोनाला 6 बाजू असताना आत फक्त 5 ठिपके दिले आहेत, म्हणून ही आकृती वेगळी आहे."
     },
     {
       "id": 2,
       "sec": "mental",
-      "text": "प्रश्न 2 [वेगळे पद ओळखा]: खालीलपैकी वेगळा पर्याय ओळखा.",
-      "options": ["गाजर", "बटाटा", "मुळा", "टोमॅटो"],
+      "text": "प्रश्न 2: खालील चार आकृत्यांपैकी इतर तीन आकृत्यांपेक्षा वेगळी असणारी आकृती ओळखा.",
+      "problemFig": "",
+      "figures": [
+        { "s": "<svg viewBox='0 0 100 100'><line x1='20' y1='50' x2='80' y2='50' stroke='#0f2b48' stroke-width='4'/><circle cx='20' cy='50' r='5' fill='#0f2b48'/><circle cx='80' cy='50' r='5' fill='#0f2b48'/></svg>", "l": "(A)" },
+        { "s": "<svg viewBox='0 0 100 100'><line x1='50' y1='20' x2='50' y2='80' stroke='#0f2b48' stroke-width='4'/><circle cx='50' cy='20' r='5' fill='#0f2b48'/><circle cx='50' cy='80' r='5' fill='#0f2b48'/></svg>", "l": "(B)" },
+        { "s": "<svg viewBox='0 0 100 100'><line x1='25' y1='25' x2='75' y2='75' stroke='#0f2b48' stroke-width='4'/><circle cx='25' cy='25' r='5' fill='#0f2b48'/><circle cx='75' cy='75' r='5' fill='#0f2b48'/></svg>", "l": "(C)" },
+        { "s": "<svg viewBox='0 0 100 100'><line x1='20' y1='50' x2='80' y2='50' stroke='#0f2b48' stroke-width='4'/><circle cx='20' cy='50' r='5' fill='#0f2b48'/><rect x='75' y='45' width='10' height='10' fill='#0f2b48'/></svg>", "l": "(D)" }
+      ],
+      "options": ["(A)", "(B)", "(C)", "(D)"],
       "correct": 3,
-      "exp": "गाजर, बटाटा आणि मुळा हे जमिनीच्या खाली (मुळाच्या भागात) वाढतात, तर टोमॅटो जमिनीच्या वर झाडाला लागतो."
+      "exp": "पर्याय (A), (B) आणि (C) मध्ये रेषेच्या दोन्ही टोकांना समान गोल ठिपके आहेत, तर पर्याय (D) मध्ये एका टोकाला ठिपका व दुसऱ्या टोकाला चौकोन आहे."
     },
     {
       "id": 3,
       "sec": "mental",
-      "text": "प्रश्न 3 [वेगळे पद ओळखा]: भौमितिक सममितीनुसार (Symmetry) वेगळे इंग्रजी अक्षर कोणते?",
-      "options": ["A", "M", "H", "P"],
+      "text": "प्रश्न 3: खालील चार आकृत्यांपैकी वेगळी आकृती निवडा.",
+      "problemFig": "",
+      "figures": [
+        { "s": "<svg viewBox='0 0 100 100'><text x='35' y='65' font-size='45' font-family='sans-serif' font-weight='bold' fill='#0f2b48'>A</text></svg>", "l": "(A)" },
+        { "s": "<svg viewBox='0 0 100 100'><text x='35' y='65' font-size='45' font-family='sans-serif' font-weight='bold' fill='#0f2b48'>M</text></svg>", "l": "(B)" },
+        { "s": "<svg viewBox='0 0 100 100'><text x='35' y='65' font-size='45' font-family='sans-serif' font-weight='bold' fill='#0f2b48'>H</text></svg>", "l": "(C)" },
+        { "s": "<svg viewBox='0 0 100 100'><text x='35' y='65' font-size='45' font-family='sans-serif' font-weight='bold' fill='#0f2b48'>P</text></svg>", "l": "(D)" }
+      ],
+      "options": ["(A)", "(B)", "(C)", "(D)"],
       "correct": 3,
-      "exp": "A, M आणि H या अक्षरांचे उभे समान दोन भाग (Symmetry) होतात, परंतु P चे समान दोन भाग करता येत नाहीत."
+      "exp": "A, M आणि H या अक्षरांना उभी सममिती रेषा (Vertical Symmetry) असते, तर P या अक्षराला सममिती रेषा नसते."
     },
     {
       "id": 4,
       "sec": "mental",
-      "text": "प्रश्न 4 [वेगळे पद ओळखा]: संख्यांच्या वैशिष्ट्यांवरून वेगळा पर्याय ओळखा.",
-      "options": ["49", "64", "81", "72"],
+      "text": "प्रश्न 4: खालील चार आकृत्यांपैकी वेगळी असणारी आकृती शोधा.",
+      "problemFig": "",
+      "figures": [
+        { "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='35' fill='none' stroke='#0f2b48' stroke-width='4'/><polygon points='50,25 30,70 70,70' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(A)" },
+        { "s": "<svg viewBox='0 0 100 100'><rect x='20' y='20' width='60' height='60' fill='none' stroke='#0f2b48' stroke-width='4'/><circle cx='50' cy='50' r='20' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(B)" },
+        { "s": "<svg viewBox='0 0 100 100'><polygon points='50,20 20,75 80,75' fill='none' stroke='#0f2b48' stroke-width='4'/><rect x='35' y='45' width='30' height='25' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(C)" },
+        { "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='35' fill='none' stroke='#0f2b48' stroke-width='4'/><circle cx='50' cy='50' r='20' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(D)" }
+      ],
+      "options": ["(A)", "(B)", "(C)", "(D)"],
       "correct": 3,
-      "exp": "49 (7 चा वर्ग), 64 (8 चा वर्ग) आणि 81 (9 चा वर्ग) या पूर्ण वर्ग संख्या आहेत, तर 72 ही पूर्ण वर्ग संख्या नाही."
+      "exp": "पर्याय (A), (B) आणि (C) मध्ये बाहेरील आणि आतील आकारांचे प्रकार वेगवेगळे आहेत, तर पर्याय (D) मध्ये दोन्ही आकृत्या एकाच प्रकारच्या (वर्तुळात वर्तुळ) आहेत."
     },
     {
       "id": 5,
       "sec": "mental",
-      "text": "प्रश्न 5 [समान आकृती]: प्रश्न आकृतीत समद्विभुज त्रिकोणात मध्यभागी एक वर्तुळ व खाली एक रेषा आहे. तंतोतंत समान आकृती कोणती?",
-      "options": ["त्रिकोणात वरच्या टोकाला वर्तुळ", "हुबेहूब मध्यभागी वर्तुळ व खाली रेषा", "त्रिकोणात दोन वर्तुळे", "रेषा त्रिकोणाच्या बाहेर"],
+      "text": "प्रश्न 5: प्रश्न आकृतीशी तंतोतंत जुळणारी आकृती कोणती?",
+      "problemFig": "<svg viewBox='0 0 100 100'><rect x='20' y='20' width='60' height='60' fill='none' stroke='#0f2b48' stroke-width='4'/><line x1='20' y1='20' x2='80' y2='80' stroke='#0f2b48' stroke-width='3'/><circle cx='35' cy='65' r='6' fill='#0f2b48'/></svg>",
+      "figures": [
+        { "s": "<svg viewBox='0 0 100 100'><rect x='20' y='20' width='60' height='60' fill='none' stroke='#0f2b48' stroke-width='4'/><line x1='80' y1='20' x2='20' y2='80' stroke='#0f2b48' stroke-width='3'/><circle cx='35' cy='65' r='6' fill='#0f2b48'/></svg>", "l": "(A)" },
+        { "s": "<svg viewBox='0 0 100 100'><rect x='20' y='20' width='60' height='60' fill='none' stroke='#0f2b48' stroke-width='4'/><line x1='20' y1='20' x2='80' y2='80' stroke='#0f2b48' stroke-width='3'/><circle cx='35' cy='65' r='6' fill='#0f2b48'/></svg>", "l": "(B)" },
+        { "s": "<svg viewBox='0 0 100 100'><rect x='20' y='20' width='60' height='60' fill='none' stroke='#0f2b48' stroke-width='4'/><line x1='20' y1='20' x2='80' y2='80' stroke='#0f2b48' stroke-width='3'/><circle cx='65' cy='35' r='6' fill='#0f2b48'/></svg>", "l": "(C)" },
+        { "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='35' fill='none' stroke='#0f2b48' stroke-width='4'/></svg>", "l": "(D)" }
+      ],
+      "options": ["(A)", "(B)", "(C)", "(D)"],
       "correct": 1,
-      "exp": "पर्याय 2 मधील त्रिकोण, वर्तुळाची मध्यवर्ती जागा आणि खालील रेषा प्रश्न आकृतीशी तंतोतंत जुळतात."
+      "exp": "पर्याय (B) मध्ये कर्णरेषेची दिशा आणि डाव्या खालच्या त्रिकोणातील काळा ठिपका प्रश्न आकृतीशी तंतोतंत जुळतो."
     },
     {
       "id": 6,
       "sec": "mental",
-      "text": "प्रश्न 6 [समान आकृती]: स्वास्तिक चिन्हाच्या चारही कोपऱ्यांवर प्रत्येकी एक लहान बाण असणारी हुबेहूब आकृती ओळखा.",
-      "options": ["फक्त 2 बाण असलेली आकृती", "चारही टोकांवर घड्याळाच्या दिशेने बाण असलेली आकृती", "उलटे चिन्ह असलेली आकृती", "बाण नसलेली आकृती"],
+      "text": "प्रश्न 6: प्रश्न आकृतीशी हुबेहूब जुळणारी उत्तर आकृती ओळखा.",
+      "problemFig": "<svg viewBox='0 0 100 100'><polygon points='50,15 20,80 80,80' fill='none' stroke='#0f2b48' stroke-width='4'/><circle cx='50' cy='45' r='8' fill='none' stroke='#0f2b48' stroke-width='3'/><line x1='35' y1='70' x2='65' y2='70' stroke='#0f2b48' stroke-width='3'/></svg>",
+      "figures": [
+        { "s": "<svg viewBox='0 0 100 100'><polygon points='50,15 20,80 80,80' fill='none' stroke='#0f2b48' stroke-width='4'/><circle cx='50' cy='45' r='8' fill='#0f2b48'/><line x1='35' y1='70' x2='65' y2='70' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(A)" },
+        { "s": "<svg viewBox='0 0 100 100'><polygon points='50,15 20,80 80,80' fill='none' stroke='#0f2b48' stroke-width='4'/><circle cx='50' cy='45' r='8' fill='none' stroke='#0f2b48' stroke-width='3'/><line x1='35' y1='70' x2='65' y2='70' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(B)" },
+        { "s": "<svg viewBox='0 0 100 100'><polygon points='50,80 20,20 80,20' fill='none' stroke='#0f2b48' stroke-width='4'/></svg>", "l": "(C)" },
+        { "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='35' fill='none' stroke='#0f2b48' stroke-width='4'/></svg>", "l": "(D)" }
+      ],
+      "options": ["(A)", "(B)", "(C)", "(D)"],
       "correct": 1,
-      "exp": "पर्याय 2 मध्ये स्वास्तिकचे मूळ वळण आणि चारही टोकांवरील बाणांची दिशा प्रश्न आकृतीप्रमाणेच आहे."
+      "exp": "पर्याय (B) मधील पोकळ वर्तुळ आणि पायाकडील आडवी रेषा प्रश्न आकृतीशी हुबेहूब समान आहे."
     },
     {
       "id": 7,
       "sec": "mental",
-      "text": "प्रश्न 7 [समान आकृती]: एका चौरसात कर्णरेषेवर 3 काळे ठिपके असणारी तंतोतंत समान आकृती कोणती?",
-      "options": ["कर्णरेषेवर 2 ठिपके", "कर्णरेषेवर समान अंतरावर 3 काळे ठिपके", "बाजूवर 3 ठिपके", "मध्यभागी 1 मोठा ठिपका"],
+      "text": "प्रश्न 7: प्रश्न आकृतीशी तंतोतंत समान असणारी आकृती निवडा.",
+      "problemFig": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='35' fill='none' stroke='#0f2b48' stroke-width='4'/><line x1='50' y1='15' x2='50' y2='50' stroke='#0f2b48' stroke-width='4'/><line x1='50' y1='50' x2='85' y2='50' stroke='#0f2b48' stroke-width='4'/></svg>",
+      "figures": [
+        { "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='35' fill='none' stroke='#0f2b48' stroke-width='4'/><line x1='50' y1='50' x2='50' y2='85' stroke='#0f2b48' stroke-width='4'/><line x1='15' y1='50' x2='50' y2='50' stroke='#0f2b48' stroke-width='4'/></svg>", "l": "(A)" },
+        { "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='35' fill='none' stroke='#0f2b48' stroke-width='4'/><line x1='50' y1='15' x2='50' y2='50' stroke='#0f2b48' stroke-width='4'/><line x1='50' y1='50' x2='85' y2='50' stroke='#0f2b48' stroke-width='4'/></svg>", "l": "(B)" },
+        { "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='35' fill='none' stroke='#0f2b48' stroke-width='4'/><line x1='15' y1='15' x2='85' y2='85' stroke='#0f2b48' stroke-width='4'/></svg>", "l": "(C)" },
+        { "s": "<svg viewBox='0 0 100 100'><rect x='20' y='20' width='60' height='60' fill='none' stroke='#0f2b48' stroke-width='4'/></svg>", "l": "(D)" }
+      ],
+      "options": ["(A)", "(B)", "(C)", "(D)"],
       "correct": 1,
-      "exp": "पर्याय 2 मध्ये कर्णरेषेची दिशा आणि त्यावरील 3 काळे ठिपके प्रश्न आकृतीशी तंतोतंत समान आहेत."
+      "exp": "पर्याय (B) मध्ये १२ आणि ३ वाजल्याप्रमाणे काटकोन करणाऱ्या रेषा प्रश्न आकृतीसारख्या तंतोतंत आहेत."
     },
     {
       "id": 8,
       "sec": "mental",
-      "text": "प्रश्न 8 [समान आकृती]: घड्याळात 3 वाजलेले दाखवणारी (काटे 90 अंशात असणारी) समान आकृती ओळखा.",
-      "options": ["काटे 180 अंशात सरळ", "काटे तंतोतंत 3 वाजलेले दाखवणारे (काटकोनात)", "काटे 12 वर एकत्र", "काटे 6 वाजलेले दाखवणारे"],
-      "correct": 1,
-      "exp": "पर्याय 2 मध्ये लहान काटा 3 वर आणि मोठा काटा 12 वर असून काटकोनाची रचना प्रश्न आकृतीसारखीच आहे."
+      "text": "प्रश्न 8: खालीलपैकी प्रश्न आकृतीशी हुबेहूब जुळणारी आकृती शोधा.",
+      "problemFig": "<svg viewBox='0 0 100 100'><rect x='20' y='20' width='60' height='60' fill='none' stroke='#0f2b48' stroke-width='4'/><line x1='20' y1='50' x2='80' y2='50' stroke='#0f2b48' stroke-width='3'/><polygon points='50,25 40,45 60,45' fill='#0f2b48'/></svg>",
+      "figures": [
+        { "s": "<svg viewBox='0 0 100 100'><rect x='20' y='20' width='60' height='60' fill='none' stroke='#0f2b48' stroke-width='4'/><line x1='20' y1='50' x2='80' y2='50' stroke='#0f2b48' stroke-width='3'/><polygon points='50,25 40,45 60,45' fill='#0f2b48'/></svg>", "l": "(A)" },
+        { "s": "<svg viewBox='0 0 100 100'><rect x='20' y='20' width='60' height='60' fill='none' stroke='#0f2b48' stroke-width='4'/><line x1='20' y1='50' x2='80' y2='50' stroke='#0f2b48' stroke-width='3'/><polygon points='50,75 40,55 60,55' fill='#0f2b48'/></svg>", "l": "(B)" },
+        { "s": "<svg viewBox='0 0 100 100'><rect x='20' y='20' width='60' height='60' fill='none' stroke='#0f2b48' stroke-width='4'/><circle cx='50' cy='35' r='8' fill='#0f2b48'/></svg>", "l": "(C)" },
+        { "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='35' fill='none' stroke='#0f2b48' stroke-width='4'/></svg>", "l": "(D)" }
+      ],
+      "options": ["(A)", "(B)", "(C)", "(D)"],
+      "correct": 0,
+      "exp": "पर्याय (A) मध्ये चौरसाच्या वरील भागात असलेला काळा त्रिकोण आणि मधली आडवी रेषा तंतोतंत जुळते."
     },
     {
       "id": 9,
       "sec": "mental",
-      "text": "प्रश्न 9 [आकृती पूर्ण करा]: वर्तुळाच्या चार भागांपैकी डावा खालचा पाव भाग रिकामा आहे, तो पूर्ण करणारा तुकडा कोणता?",
-      "options": ["उजवीकडे वळलेला कंस", "डाव्या खालच्या कोपऱ्यात जुळणारा वक्र कंस व तिरपी रेषा", "सरळ उभी रेषा", "चौरस"],
-      "correct": 1,
-      "exp": "पर्याय 2 मधील वक्र कंस आणि तिरपी रेषा बसवल्यास वर्तुळाची बाह्य कडा आणि अंतर्गत नक्षी अखंड पूर्ण होते."
+      "text": "प्रश्न 9: प्रश्न आकृतीचा नमुना पूर्ण करणारा योग्य तुकडा निवडा.",
+      "problemFig": "<svg viewBox='0 0 100 100'><rect x='10' y='10' width='80' height='80' fill='none' stroke='#0f2b48' stroke-width='3'/><line x1='10' y1='50' x2='90' y2='50' stroke='#0f2b48' stroke-width='2'/><line x1='50' y1='10' x2='50' y2='90' stroke='#0f2b48' stroke-width='2'/><rect x='20' y='20' width='20' height='20' fill='#0f2b48'/><rect x='60' y='20' width='20' height='20' fill='#0f2b48'/><rect x='20' y='60' width='20' height='20' fill='#0f2b48'/><rect x='55' y='55' width='30' height='30' fill='#f1f5f9' stroke='#dc2626' stroke-dasharray='4'/></svg>",
+      "figures": [
+        { "s": "<svg viewBox='0 0 100 100'><rect x='30' y='30' width='40' height='40' fill='#0f2b48'/></svg>", "l": "(A)" },
+        { "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='20' fill='#0f2b48'/></svg>", "l": "(B)" },
+        { "s": "<svg viewBox='0 0 100 100'><line x1='20' y1='20' x2='80' y2='80' stroke='#0f2b48' stroke-width='4'/></svg>", "l": "(C)" },
+        { "s": "<svg viewBox='0 0 100 100'><polygon points='50,20 20,80 80,80' fill='#0f2b48'/></svg>", "l": "(D)" }
+      ],
+      "options": ["(A)", "(B)", "(C)", "(D)"],
+      "correct": 0,
+      "exp": "इतर तिन्ही कोपऱ्यांप्रमाणे चौथ्या रिक्त भागातही समान काळा भरीव चौरस (पर्याय A) नमुना पूर्ण करेल."
     },
     {
       "id": 10,
       "sec": "mental",
-      "text": "प्रश्न 10 [आकृती पूर्ण करा]: मोठ्या चौरसातील तिरप्या सममित रेषांचे जाळे पूर्ण करणारा चौथा तुकडा कोणता?",
-      "options": ["उलटी नक्षी", "समांतर तिरप्या रेषांचा अचूक तुकडा", "आडव्या रेषा", "ठिपके असलेला तुकडा"],
-      "correct": 1,
-      "exp": "इतर तीन भागांतील तिरप्या रेषांची दिशा पाहता रिकाम्या जागी पर्याय 2 चा तुकडाच योग्य बसतो."
+      "text": "प्रश्न 10: खालील आकृती पूर्ण करणारा अचूक पर्याय शोधा.",
+      "problemFig": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='40' fill='none' stroke='#0f2b48' stroke-width='3'/><line x1='10' y1='50' x2='90' y2='50' stroke='#0f2b48' stroke-width='2'/><line x1='50' y1='10' x2='50' y2='90' stroke='#0f2b48' stroke-width='2'/><circle cx='30' cy='30' r='6' fill='#0f2b48'/><circle cx='70' cy='30' r='6' fill='#0f2b48'/><circle cx='70' cy='70' r='6' fill='#0f2b48'/></svg>",
+      "figures": [
+        { "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='12' fill='#0f2b48'/></svg>", "l": "(A)" },
+        { "s": "<svg viewBox='0 0 100 100'><path d='M20,20 A40,40 0 0,1 80,80' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(B)" },
+        { "s": "<svg viewBox='0 0 100 100'><rect x='30' y='30' width='40' height='40' fill='#0f2b48'/></svg>", "l": "(C)" },
+        { "s": "<svg viewBox='0 0 100 100'><line x1='10' y1='50' x2='90' y2='50' stroke='#0f2b48' stroke-width='4'/></svg>", "l": "(D)" }
+      ],
+      "options": ["(A)", "(B)", "(C)", "(D)"],
+      "correct": 0,
+      "exp": "डाव्या खालच्या चतुर्थांशात सममिती राखण्यासाठी काळा भरीव ठिपका (पर्याय A) आवश्यक आहे."
     },
     {
       "id": 11,
       "sec": "mental",
-      "text": "प्रश्न 11 [आकृती पूर्ण करा]: एका आयताकृती डिझाईनचा उजवा वरचा कोपरा पूर्ण करणारा योग्य पर्याय ओळखा.",
-      "options": ["काटकोन पूर्ण करणारा व आत काळा ठिपका असलेला तुकडा", "फक्त सरळ रेषा", "वर्तुळाकार तुकडा", "उलटा काटकोन"],
+      "text": "प्रश्न 11: चौरसातील नमुना पूर्ण करणारा योग्य तुकडा कोणता?",
+      "problemFig": "<svg viewBox='0 0 100 100'><rect x='10' y='10' width='80' height='80' fill='none' stroke='#0f2b48' stroke-width='3'/><line x1='90' y1='10' x2='10' y2='90' stroke='#0f2b48' stroke-width='3'/></svg>",
+      "figures": [
+        { "s": "<svg viewBox='0 0 100 100'><line x1='90' y1='10' x2='10' y2='90' stroke='#0f2b48' stroke-width='4'/></svg>", "l": "(A)" },
+        { "s": "<svg viewBox='0 0 100 100'><line x1='10' y1='10' x2='90' y2='90' stroke='#0f2b48' stroke-width='4'/></svg>", "l": "(B)" },
+        { "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='20' fill='#0f2b48'/></svg>", "l": "(C)" },
+        { "s": "<svg viewBox='0 0 100 100'><rect x='30' y='30' width='40' height='40' fill='#0f2b48'/></svg>", "l": "(D)" }
+      ],
+      "options": ["(A)", "(B)", "(C)", "(D)"],
       "correct": 0,
-      "exp": "पर्याय 1 मुळे आयताची बाह्य सीमा बंद होते आणि आतील काळ्या ठिपक्याची सममिती साधली जाते."
+      "exp": "उजवीकडून डावीकडे येणारी कर्णरेषा अखंड जोडण्यासाठी पर्याय (A) चा रेषाखंड योग्य बसतो."
     },
     {
       "id": 12,
       "sec": "mental",
-      "text": "प्रश्न 12 [आकृती पूर्ण करा]: 4 पाकळ्यांच्या नक्षीतील उर्वरित एक पाकळी पूर्ण करणारा पर्याय निवडा.",
-      "options": ["उलटी पाकळी", "अचूक वळण असलेली योग्य पाकळी", "त्रिकोणी पाकळी", "गोल कडा"],
+      "text": "प्रश्न 12: प्रश्न आकृती पूर्ण करणारा चौथा भाग ओळखा.",
+      "problemFig": "<svg viewBox='0 0 100 100'><rect x='10' y='10' width='80' height='80' fill='none' stroke='#0f2b48' stroke-width='3'/><line x1='10' y1='50' x2='90' y2='50' stroke='#0f2b48' stroke-width='2'/><line x1='50' y1='10' x2='50' y2='90' stroke='#0f2b48' stroke-width='2'/><line x1='20' y1='20' x2='40' y2='40' stroke='#0f2b48' stroke-width='3'/><line x1='80' y1='20' x2='60' y2='40' stroke='#0f2b48' stroke-width='3'/><line x1='20' y1='80' x2='40' y2='60' stroke='#0f2b48' stroke-width='3'/></svg>",
+      "figures": [
+        { "s": "<svg viewBox='0 0 100 100'><line x1='40' y1='40' x2='20' y2='20' stroke='#0f2b48' stroke-width='4'/></svg>", "l": "(A)" },
+        { "s": "<svg viewBox='0 0 100 100'><line x1='80' y1='80' x2='60' y2='60' stroke='#0f2b48' stroke-width='4'/></svg>", "l": "(B)" },
+        { "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='15' fill='#0f2b48'/></svg>", "l": "(C)" },
+        { "s": "<svg viewBox='0 0 100 100'><rect x='30' y='30' width='40' height='40' fill='#0f2b48'/></svg>", "l": "(D)" }
+      ],
+      "options": ["(A)", "(B)", "(C)", "(D)"],
       "correct": 1,
-      "exp": "पर्याय 2 मुळे केंद्राकडून बाहेर जाणारी चौथी पाकळी इतर तीन पाकळ्यांसारखीच हुबेहूब पूर्ण होते."
+      "exp": "केंद्राकडे रोखलेली तिरपी रेषा (पर्याय B) उजव्या खालच्या भागात बसवल्यास चारही कोपऱ्यांची रचना सममित होते."
     },
     {
       "id": 13,
       "sec": "mental",
-      "text": "प्रश्न 13 [मालिका पूर्ण करा]: घड्याळातील काटा 12:00 -> 3:00 -> 6:00 -> ?",
-      "options": ["7:00", "8:00", "9:00", "10:00"],
-      "correct": 2,
-      "exp": "काटा दर वेळी घड्याळाच्या दिशेने 90 अंश (3 तास) पुढे सरकत आहे: 12 -> 3 -> 6 नंतर 9:00 वाजतील."
+      "text": "प्रश्न 13: आकृती मालिका पूर्ण करा: ? च्या जागी काय येईल?",
+      "problemFig": "<svg viewBox='0 0 100 100'><circle cx='25' cy='50' r='8' fill='#0f2b48'/><circle cx='50' cy='50' r='14' fill='#0f2b48'/><text x='75' y='60' font-size='24' fill='#dc2626'>?</text></svg>",
+      "figures": [
+        { "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='20' fill='#0f2b48'/></svg>", "l": "(A)" },
+        { "s": "<svg viewBox='0 0 100 100'><rect x='25' y='25' width='50' height='50' fill='#0f2b48'/></svg>", "l": "(B)" },
+        { "s": "<svg viewBox='0 0 100 100'><polygon points='50,20 20,80 80,80' fill='#0f2b48'/></svg>", "l": "(C)" },
+        { "s": "<svg viewBox='0 0 100 100'><line x1='20' y1='50' x2='80' y2='50' stroke='#0f2b48' stroke-width='4'/></svg>", "l": "(D)" }
+      ],
+      "options": ["(A)", "(B)", "(C)", "(D)"],
+      "correct": 0,
+      "exp": "वर्तुळाचा आकार क्रमशः मोठा होत आहे (लहान -> मध्यम -> मोठा), म्हणून पुढील वर्तुळ मोठे (पर्याय A) येईल."
     },
     {
       "id": 14,
       "sec": "mental",
-      "text": "प्रश्न 14 [मालिका पूर्ण करा]: त्रिकोण (3 बाजू) -> चौकोन (4 बाजू) -> पंचकोन (5 बाजू) -> ?",
-      "options": ["सप्तकोन (7 बाजू)", "षटकोन (6 बाजू)", "अष्टकोन (8 बाजू)", "वर्तुळ"],
-      "correct": 1,
-      "exp": "प्रत्येक पायरीवर बाजूंची संख्या 1 ने वाढत आहे (3 -> 4 -> 5 -> 6). म्हणून 6 बाजूंचा षटकोन येईल."
+      "text": "प्रश्न 14: आकृती मालिका पूर्ण करणारा योग्य पर्याय निवडा.",
+      "problemFig": "<svg viewBox='0 0 100 100'><defs><marker id='m14' markerWidth='6' markerHeight='6' refX='5' refY='3' orient='auto'><polygon points='0 0, 6 3, 0 6' fill='#0f2b48'/></marker></defs><line x1='20' y1='50' x2='80' y2='50' stroke='#0f2b48' stroke-width='4' marker-end='url(#m14)'/></svg>",
+      "figures": [
+        { "s": "<svg viewBox='0 0 100 100'><defs><marker id='m14a' markerWidth='6' markerHeight='6' refX='5' refY='3' orient='auto'><polygon points='0 0, 6 3, 0 6' fill='#0f2b48'/></marker></defs><line x1='50' y1='20' x2='50' y2='80' stroke='#0f2b48' stroke-width='4' marker-end='url(#m14a)'/></svg>", "l": "(A)" },
+        { "s": "<svg viewBox='0 0 100 100'><defs><marker id='m14b' markerWidth='6' markerHeight='6' refX='5' refY='3' orient='auto'><polygon points='0 0, 6 3, 0 6' fill='#0f2b48'/></marker></defs><line x1='80' y1='50' x2='20' y2='50' stroke='#0f2b48' stroke-width='4' marker-end='url(#m14b)'/></svg>", "l": "(B)" },
+        { "s": "<svg viewBox='0 0 100 100'><defs><marker id='m14c' markerWidth='6' markerHeight='6' refX='5' refY='3' orient='auto'><polygon points='0 0, 6 3, 0 6' fill='#0f2b48'/></marker></defs><line x1='50' y1='80' x2='50' y2='20' stroke='#0f2b48' stroke-width='4' marker-end='url(#m14c)'/></svg>", "l": "(C)" },
+        { "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='20' fill='#0f2b48'/></svg>", "l": "(D)" }
+      ],
+      "options": ["(A)", "(B)", "(C)", "(D)"],
+      "correct": 0,
+      "exp": "पूर्व दिशेकडील (→) बाण घड्याळाच्या दिशेने ९० अंशाने फिरल्यास त्याची दिशा दक्षिण (↓) (पर्याय A) होईल."
     },
     {
       "id": 15,
       "sec": "mental",
-      "text": "प्रश्न 15 [मालिका पूर्ण करा]: 1 काळा ठिपका -> 2 काळे ठिपके -> 3 काळे ठिपके -> ?",
-      "options": ["3 पांढरे ठिपके", "4 काळे ठिपके", "5 काळे ठिपके", "1 मोठा ठिपका"],
-      "correct": 1,
-      "exp": "ठिपक्यांच्या संख्येत क्रमशः 1 ने वाढ होत आहे (1, 2, 3, 4)."
+      "text": "प्रश्न 15: पुढील आकृती मालिकेत प्रश्नचिन्हाच्या जागी येणारी आकृती शोधा.",
+      "problemFig": "<svg viewBox='0 0 100 100'><rect x='15' y='15' width='20' height='20' fill='#0f2b48'/><rect x='40' y='15' width='20' height='20' fill='#0f2b48'/><rect x='65' y='15' width='20' height='20' fill='#0f2b48'/><text x='45' y='75' font-size='24' fill='#dc2626'>?</text></svg>",
+      "figures": [
+        { "s": "<svg viewBox='0 0 100 100'><rect x='15' y='15' width='20' height='20' fill='#0f2b48'/><rect x='40' y='15' width='20' height='20' fill='#0f2b48'/><rect x='65' y='15' width='20' height='20' fill='#0f2b48'/><rect x='40' y='40' width='20' height='20' fill='#0f2b48'/></svg>", "l": "(A)" },
+        { "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='20' fill='#0f2b48'/></svg>", "l": "(B)" },
+        { "s": "<svg viewBox='0 0 100 100'><polygon points='50,20 20,80 80,80' fill='#0f2b48'/></svg>", "l": "(C)" },
+        { "s": "<svg viewBox='0 0 100 100'><line x1='20' y1='50' x2='80' y2='50' stroke='#0f2b48' stroke-width='4'/></svg>", "l": "(D)" }
+      ],
+      "options": ["(A)", "(B)", "(C)", "(D)"],
+      "correct": 0,
+      "exp": "चौरसांची संख्या क्रमशः वाढत असल्याने ३ नंतर ४ चौरसांची रचना (पर्याय A) येईल."
     },
     {
       "id": 16,
       "sec": "mental",
-      "text": "प्रश्न 16 [मालिका पूर्ण करा]: बाणाची दिशा: पूर्व (→) -> दक्षिण (↓) -> पश्चिम (←) -> ?",
-      "options": ["उत्तर (↑)", "पूर्व (→)", "दक्षिण (↓)", "आग्नेय"],
+      "text": "प्रश्न 16: आकृती मालिका पूर्ण करा.",
+      "problemFig": "<svg viewBox='0 0 100 100'><line x1='50' y1='80' x2='50' y2='20' stroke='#0f2b48' stroke-width='4'/><line x1='35' y1='35' x2='50' y2='20' stroke='#0f2b48' stroke-width='4'/></svg>",
+      "figures": [
+        { "s": "<svg viewBox='0 0 100 100'><line x1='50' y1='80' x2='50' y2='20' stroke='#0f2b48' stroke-width='4'/><line x1='35' y1='35' x2='50' y2='20' stroke='#0f2b48' stroke-width='4'/><line x1='65' y1='35' x2='50' y2='20' stroke='#0f2b48' stroke-width='4'/></svg>", "l": "(A)" },
+        { "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='25' fill='#0f2b48'/></svg>", "l": "(B)" },
+        { "s": "<svg viewBox='0 0 100 100'><rect x='25' y='25' width='50' height='50' fill='#0f2b48'/></svg>", "l": "(C)" },
+        { "s": "<svg viewBox='0 0 100 100'><polygon points='50,20 20,80 80,80' fill='#0f2b48'/></svg>", "l": "(D)" }
+      ],
+      "options": ["(A)", "(B)", "(C)", "(D)"],
       "correct": 0,
-      "exp": "बाण घड्याळाच्या काट्याच्या दिशेने 90 अंश फिरत आहे. पश्चिम दिशेनंतर बाण उत्तरेकडे (↑) जाईल."
+      "exp": "बाणाचे एक पाऊल पूर्ण झाल्यावर दुसरी सममित तिरपी रेषा जोडून पूर्ण बाण (पर्याय A) तयार होईल."
     },
     {
       "id": 17,
       "sec": "mental",
-      "text": "प्रश्न 17 [सादृश्यता / संबंध]: पक्षी : घरटे :: माणूस : ?",
-      "options": ["गुहा", "घर / निवासस्थान", "झाड", "आकाश"],
-      "correct": 1,
-      "exp": "पक्षाचे राहण्याचे ठिकाण घरटे असते, तसेच माणसाचे राहण्याचे ठिकाण घर असते."
+      "text": "प्रश्न 17 [सादृश्यता]: पहिल्या दोन आकृत्यांमधील संबंध ओळखून प्रश्नचिन्हाच्या जागी योग्य आकृती निवडा.",
+      "problemFig": "<svg viewBox='0 0 100 100'><rect x='20' y='30' width='30' height='30' fill='none' stroke='#0f2b48' stroke-width='3'/><line x1='20' y1='30' x2='50' y2='60' stroke='#0f2b48' stroke-width='3'/><circle cx='75' cy='45' r='15' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>",
+      "figures": [
+        { "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='25' fill='none' stroke='#0f2b48' stroke-width='4'/><line x1='32' y1='32' x2='68' y2='68' stroke='#0f2b48' stroke-width='4'/></svg>", "l": "(A)" },
+        { "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='25' fill='#0f2b48'/></svg>", "l": "(B)" },
+        { "s": "<svg viewBox='0 0 100 100'><rect x='25' y='25' width='50' height='50' fill='#0f2b48'/></svg>", "l": "(C)" },
+        { "s": "<svg viewBox='0 0 100 100'><polygon points='50,20 20,80 80,80' fill='#0f2b48'/></svg>", "l": "(D)" }
+      ],
+      "options": ["(A)", "(B)", "(C)", "(D)"],
+      "correct": 0,
+      "exp": "पहिल्या जोडीत चौरसात तिरपी रेषा ओढली आहे; तसेच वर्तुळात तिरपा व्यास (पर्याय A) येईल."
     },
     {
       "id": 18,
       "sec": "mental",
-      "text": "प्रश्न 18 [सादृश्यता / संबंध]: वर्तुळ : 1 व्यास रेषेने 2 भाग :: चौरस : 1 कर्ण रेषेने ?",
-      "options": ["2 समान त्रिकोण", "3 भाग", "4 चौरस", "वर्तुळ"],
+      "text": "प्रश्न 18 [सादृश्यता]: योग्य संबंध ओळखून उत्तर आकृती शोधा.",
+      "problemFig": "<svg viewBox='0 0 100 100'><circle cx='30' cy='50' r='18' fill='#0f2b48'/><circle cx='70' cy='50' r='18' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>",
+      "figures": [
+        { "s": "<svg viewBox='0 0 100 100'><polygon points='50,20 20,80 80,80' fill='none' stroke='#0f2b48' stroke-width='4'/></svg>", "l": "(A)" },
+        { "s": "<svg viewBox='0 0 100 100'><polygon points='50,20 20,80 80,80' fill='#0f2b48'/></svg>", "l": "(B)" },
+        { "s": "<svg viewBox='0 0 100 100'><rect x='25' y='25' width='50' height='50' fill='#0f2b48'/></svg>", "l": "(C)" },
+        { "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='25' fill='#0f2b48'/></svg>", "l": "(D)" }
+      ],
+      "options": ["(A)", "(B)", "(C)", "(D)"],
       "correct": 0,
-      "exp": "वर्तुळाच्या व्यासाने वर्तुळाचे 2 समान अर्धवर्तुळ होतात; तसेच चौरसाच्या एका कर्णाने त्याचे 2 समान काटकोन त्रिकोण बनतात."
+      "exp": "भरीव आकृतीचे रूपांतर पोकळ आकृतीमध्ये झाले आहे. म्हणून भरीव त्रिकोणाचा पोकळ त्रिकोण (पर्याय A) बनेल."
     },
     {
       "id": 19,
       "sec": "mental",
-      "text": "प्रश्न 19 [सादृश्यता / संबंध]: मोठा त्रिकोण : आत उलटा लहान त्रिकोण :: मोठा चौकोन : ?",
-      "options": ["आत लहान वर्तुळ", "आत तिरपा लहान चौरस", "आत तारा", "फक्त रेषा"],
+      "text": "प्रश्न 19 [सादृश्यता]: आकृतींमधील परस्परसंबंध ओळखा.",
+      "problemFig": "<svg viewBox='0 0 100 100'><polygon points='30,30 15,65 45,65' fill='none' stroke='#0f2b48' stroke-width='3'/><polygon points='30,65 15,30 45,30' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>",
+      "figures": [
+        { "s": "<svg viewBox='0 0 100 100'><path d='M30,70 A25,25 0 0,1 70,70 Z' fill='none' stroke='#0f2b48' stroke-width='4'/></svg>", "l": "(A)" },
+        { "s": "<svg viewBox='0 0 100 100'><path d='M30,30 A25,25 0 0,0 70,30 Z' fill='none' stroke='#0f2b48' stroke-width='4'/></svg>", "l": "(B)" },
+        { "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='25' fill='#0f2b48'/></svg>", "l": "(C)" },
+        { "s": "<svg viewBox='0 0 100 100'><rect x='25' y='25' width='50' height='50' fill='#0f2b48'/></svg>", "l": "(D)" }
+      ],
+      "options": ["(A)", "(B)", "(C)", "(D)"],
       "correct": 1,
-      "exp": "पहिल्या रचनेत त्याच आकाराची उलटी लहान आकृती आत ठेवली आहे; तसेच चौरसाच्या आत तिरपा लहान चौरस (समभुज चौकोन) येईल."
+      "exp": "आकृती १८० अंशात उलटी झाली आहे, त्यामुळे सरळ अर्धवर्तुळाचे उलटे अर्धवर्तुळ (पर्याय B) होईल."
     },
     {
       "id": 20,
       "sec": "mental",
-      "text": "प्रश्न 20 [सादृश्यता / संबंध]: पुस्तक : पाने :: झाड : ?",
-      "options": ["पाने / फांद्या", "पाणी", "माती", "सूर्य"],
+      "text": "प्रश्न 20 [सादृश्यता]: प्रश्नचिन्हाच्या जागी येणारी आकृती कोणती?",
+      "problemFig": "<svg viewBox='0 0 100 100'><rect x='20' y='35' width='30' height='30' fill='none' stroke='#0f2b48' stroke-width='3'/><polygon points='75,35 60,65 90,65' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>",
+      "figures": [
+        { "s": "<svg viewBox='0 0 100 100'><polygon points='50,15 85,40 70,85 30,85 15,40' fill='none' stroke='#0f2b48' stroke-width='4'/></svg>", "l": "(A)" },
+        { "s": "<svg viewBox='0 0 100 100'><rect x='25' y='25' width='50' height='50' fill='#0f2b48'/></svg>", "l": "(B)" },
+        { "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='25' fill='#0f2b48'/></svg>", "l": "(C)" },
+        { "s": "<svg viewBox='0 0 100 100'><line x1='20' y1='50' x2='80' y2='50' stroke='#0f2b48' stroke-width='4'/></svg>", "l": "(D)" }
+      ],
+      "options": ["(A)", "(B)", "(C)", "(D)"],
       "correct": 0,
-      "exp": "अनेक पानांनी मिळून पुस्तक बनते, तसेच अनेक पाने व फांद्यांनी मिळून झाड बनते."
+      "exp": "बाजूंची संख्या १ ने कमी झाली (४ बाजूंचा चौरस -> ३ बाजूंचा त्रिकोण). म्हणून ६ बाजूंच्या षटकोनानंतर ५ बाजूंचा पंचकोन (पर्याय A) येईल."
     },
     {
       "id": 21,
       "sec": "mental",
-      "text": "प्रश्न 21 [भौमितिक रचना पूर्ण करणे]: एका वर्तुळाचा अर्ध्याहून अधिक भाग दिला आहे, तो पूर्ण करणारा तुकडा कोणता?",
-      "options": ["वर्तुळाचा लहान कंस खंड", "चौरस तुकडा", "मोठा त्रिकोण", "काटकोन"],
+      "text": "प्रश्न 21 [भौमितिक आकृती पूर्ण करा]: चौरस पूर्ण करणारा योग्य तुकडा कोणता?",
+      "problemFig": "<svg viewBox='0 0 100 100'><path d='M20,20 L80,20 L80,80 L20,80 L20,55 L40,55 L40,45 L20,45 Z' fill='none' stroke='#0f2b48' stroke-width='4'/></svg>",
+      "figures": [
+        { "s": "<svg viewBox='0 0 100 100'><rect x='35' y='40' width='30' height='20' fill='none' stroke='#0f2b48' stroke-width='4'/></svg>", "l": "(A)" },
+        { "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='20' fill='none' stroke='#0f2b48' stroke-width='4'/></svg>", "l": "(B)" },
+        { "s": "<svg viewBox='0 0 100 100'><polygon points='50,20 20,80 80,80' fill='none' stroke='#0f2b48' stroke-width='4'/></svg>", "l": "(C)" },
+        { "s": "<svg viewBox='0 0 100 100'><line x1='20' y1='50' x2='80' y2='50' stroke='#0f2b48' stroke-width='4'/></svg>", "l": "(D)" }
+      ],
+      "options": ["(A)", "(B)", "(C)", "(D)"],
       "correct": 0,
-      "exp": "वर्तुळाचा अपूर्ण भाग भरून काढण्यासाठी योग्य वक्र असलेला वर्तुळ कंस खंडच आवश्यक आहे."
+      "exp": "डाव्या कडेच्या लहान आयताकृती खाचेमध्ये पर्याय (A) चा तुकडा अचूक बसून चौरस पूर्ण करतो."
     },
     {
       "id": 22,
       "sec": "mental",
-      "text": "प्रश्न 22 [भौमितिक रचना पूर्ण करणे]: चौरसाच्या उजव्या बाजूला V आकाराची खाच आहे, ती पूर्ण करणारा तुकडा कोणता?",
-      "options": ["V आकाराचा बाहेर आलेला टोकदार तुकडा", "चौकोनी तुकडा", "गोल तुकडा", "सपाट तुकडा"],
+      "text": "प्रश्न 22 [भौमितिक आकृती पूर्ण करा]: त्रिकोण पूर्ण करणारा योग्य भाग निवडा.",
+      "problemFig": "<svg viewBox='0 0 100 100'><path d='M50,20 L25,75 L75,75 Z' fill='none' stroke='#0f2b48' stroke-width='4'/><polygon points='40,75 50,60 60,75' fill='#fff' stroke='#0f2b48' stroke-width='3'/></svg>",
+      "figures": [
+        { "s": "<svg viewBox='0 0 100 100'><polygon points='50,35 35,65 65,65' fill='none' stroke='#0f2b48' stroke-width='4'/></svg>", "l": "(A)" },
+        { "s": "<svg viewBox='0 0 100 100'><rect x='30' y='30' width='40' height='40' fill='none' stroke='#0f2b48' stroke-width='4'/></svg>", "l": "(B)" },
+        { "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='20' fill='none' stroke='#0f2b48' stroke-width='4'/></svg>", "l": "(C)" },
+        { "s": "<svg viewBox='0 0 100 100'><line x1='20' y1='50' x2='80' y2='50' stroke='#0f2b48' stroke-width='4'/></svg>", "l": "(D)" }
+      ],
+      "options": ["(A)", "(B)", "(C)", "(D)"],
       "correct": 0,
-      "exp": "V आकाराच्या खाचेत तंतोतंत बसण्यासाठी V आकाराचा टोकदार (प्रक्षेप असलेला) तुकडाच चौरस पूर्ण करू शकतो."
+      "exp": "पायाकडील त्रिकोणी खाचेत पर्याय (A) चा त्रिकोण बसवल्यास अखंड त्रिकोण तयार होतो."
     },
     {
       "id": 23,
       "sec": "mental",
-      "text": "प्रश्न 23 [भौमितिक रचना पूर्ण करणे]: समभुज त्रिकोणाचा पाया पूर्ण करणारा योग्य भाग कोणता?",
-      "options": ["लांबट समलंब तुकडा", "गोल", "विषमभुज त्रिकोण", "चौरस"],
+      "text": "प्रश्न 23 [भौमितिक आकृती पूर्ण करा]: वर्तुळ पूर्ण करणारा तुकडा ओळखा.",
+      "problemFig": "<svg viewBox='0 0 100 100'><path d='M50,20 A30,30 0 0,1 80,50 A30,30 0 0,1 50,80 L50,50 Z' fill='none' stroke='#0f2b48' stroke-width='4'/></svg>",
+      "figures": [
+        { "s": "<svg viewBox='0 0 100 100'><path d='M50,20 A30,30 0 0,0 50,80 L50,50 Z' fill='none' stroke='#0f2b48' stroke-width='4'/></svg>", "l": "(A)" },
+        { "s": "<svg viewBox='0 0 100 100'><rect x='25' y='25' width='50' height='50' fill='none' stroke='#0f2b48' stroke-width='4'/></svg>", "l": "(B)" },
+        { "s": "<svg viewBox='0 0 100 100'><polygon points='50,20 20,80 80,80' fill='none' stroke='#0f2b48' stroke-width='4'/></svg>", "l": "(C)" },
+        { "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='20' fill='#0f2b48'/></svg>", "l": "(D)" }
+      ],
+      "options": ["(A)", "(B)", "(C)", "(D)"],
       "correct": 0,
-      "exp": "त्रिकोणाचा वरचा भाग उपलब्ध असताना खालचा समलंब तुकडा जोडल्यास संपूर्ण समभुज त्रिकोण तयार होतो."
+      "exp": "उजवे अर्धवर्तुळ दिलेले असताना डावे अर्धवर्तुळ (पर्याय A) जोडल्यास पूर्ण वर्तुळ तयार होते."
     },
     {
       "id": 24,
       "sec": "mental",
-      "text": "प्रश्न 24 [भौमितिक रचना पूर्ण करणे]: षटकोनाचा अर्धा भाग दिला असल्यास दुसरा अर्धा भाग कोणता?",
-      "options": ["समान आकाराचा सममित अर्धा षटकोन", "पंचकोन", "चौकोन", "त्रिकोण"],
+      "text": "प्रश्न 24 [भौमितिक आकृती पूर्ण करा]: चौरस पूर्ण करणारा अचूक तुकडा कोणता?",
+      "problemFig": "<svg viewBox='0 0 100 100'><path d='M20,20 L80,20 L80,80 L20,80 L40,50 Z' fill='none' stroke='#0f2b48' stroke-width='4'/></svg>",
+      "figures": [
+        { "s": "<svg viewBox='0 0 100 100'><polygon points='30,20 60,50 30,80' fill='none' stroke='#0f2b48' stroke-width='4'/></svg>", "l": "(A)" },
+        { "s": "<svg viewBox='0 0 100 100'><rect x='30' y='30' width='40' height='40' fill='none' stroke='#0f2b48' stroke-width='4'/></svg>", "l": "(B)" },
+        { "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='25' fill='none' stroke='#0f2b48' stroke-width='4'/></svg>", "l": "(C)" },
+        { "s": "<svg viewBox='0 0 100 100'><line x1='20' y1='50' x2='80' y2='50' stroke='#0f2b48' stroke-width='4'/></svg>", "l": "(D)" }
+      ],
+      "options": ["(A)", "(B)", "(C)", "(D)"],
       "correct": 0,
-      "exp": "षटकोनाच्या सममिती रेषेवरून दुसरा समान भाग जोडल्यास संपूर्ण षटकोन तयार होतो."
+      "exp": "डाव्या बाजूच्या त्रिकोणी खाचेमध्ये टोकदार त्रिकोणी तुकडा (पर्याय A) बसवल्यास चौरस पूर्ण होतो."
     },
     {
       "id": 25,
       "sec": "mental",
-      "text": "प्रश्न 25 [आरशातील प्रतिमा]: उजव्या बाजूस आरसा ठेवल्यास 'B' अक्षराची प्रतिमा कशी दिसेल?",
-      "options": ["B", "डावीकडे वळलेला उलटा ᗺ", "पाण्यातील उलटा B", "D"],
+      "text": "प्रश्न 25 [आरशातील प्रतिमा]: उजव्या बाजूला आरसा ठेवल्यास प्रश्न आकृतीची आरशातील प्रतिमा कशी दिसेल?",
+      "problemFig": "<svg viewBox='0 0 100 100'><text x='35' y='65' font-size='45' font-family='sans-serif' font-weight='bold' fill='#0f2b48'>B</text><line x1='80' y1='10' x2='80' y2='90' stroke='#dc2626' stroke-width='3' stroke-dasharray='4'/></svg>",
+      "figures": [
+        { "s": "<svg viewBox='0 0 100 100'><text x='35' y='65' font-size='45' font-family='sans-serif' font-weight='bold' fill='#0f2b48'>B</text></svg>", "l": "(A)" },
+        { "s": "<svg viewBox='0 0 100 100'><text x='65' y='65' font-size='45' font-family='sans-serif' font-weight='bold' fill='#0f2b48' transform='scale(-1,1) translate(-100,0)'>B</text></svg>", "l": "(B)" },
+        { "s": "<svg viewBox='0 0 100 100'><text x='35' y='65' font-size='45' font-family='sans-serif' font-weight='bold' fill='#0f2b48' transform='scale(1,-1) translate(0,-80)'>B</text></svg>", "l": "(C)" },
+        { "s": "<svg viewBox='0 0 100 100'><text x='35' y='65' font-size='45' font-family='sans-serif' font-weight='bold' fill='#0f2b48'>D</text></svg>", "l": "(D)" }
+      ],
+      "options": ["(A)", "(B)", "(C)", "(D)"],
       "correct": 1,
-      "exp": "आरशात अक्षराचे उजवे भाग डावीकडे परावर्तित होतात, म्हणून B ची वक्र बाजू डावीकडे वळलेली (ᗺ) दिसेल."
+      "exp": "आरशात डावी व उजवी बाजू परावर्तित होते, त्यामुळे B ची वक्र तोंडे डावीकडे उलटी (पर्याय B) दिसतील."
     },
     {
       "id": 26,
       "sec": "mental",
-      "text": "प्रश्न 26 [आरशातील प्रतिमा]: आरशात 'RED' या शब्दाची प्रतिमा कशी दिसेल?",
-      "options": ["DER", "D चे उलटे रूप, E चे उलटे रूप, R चे उलटे रूप", "RED", "BER"],
-      "correct": 1,
-      "exp": "आरशात शेवटचे अक्षर 'D' डावीकडे उलट दिसेल, मध्यभागी 'E' उलट दिसेल आणि शेवटी 'R' उलट दिसेल."
+      "text": "प्रश्न 26 [आरशातील प्रतिमा]: आरशातील अचूक प्रतिमा ओळखा.",
+      "problemFig": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='30' fill='none' stroke='#0f2b48' stroke-width='3'/><circle cx='65' cy='50' r='6' fill='#0f2b48'/><line x1='85' y1='10' x2='85' y2='90' stroke='#dc2626' stroke-width='3' stroke-dasharray='4'/></svg>",
+      "figures": [
+        { "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='30' fill='none' stroke='#0f2b48' stroke-width='3'/><circle cx='35' cy='50' r='6' fill='#0f2b48'/></svg>", "l": "(A)" },
+        { "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='30' fill='none' stroke='#0f2b48' stroke-width='3'/><circle cx='65' cy='50' r='6' fill='#0f2b48'/></svg>", "l": "(B)" },
+        { "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='30' fill='none' stroke='#0f2b48' stroke-width='3'/><circle cx='50' cy='35' r='6' fill='#0f2b48'/></svg>", "l": "(C)" },
+        { "s": "<svg viewBox='0 0 100 100'><rect x='25' y='25' width='50' height='50' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(D)" }
+      ],
+      "options": ["(A)", "(B)", "(C)", "(D)"],
+      "correct": 0,
+      "exp": "उजव्या बाजूचा काळा ठिपका आरशात डाव्या बाजूला (पर्याय A) दिसेल."
     },
     {
       "id": 27,
       "sec": "mental",
-      "text": "प्रश्न 27 [आरशातील प्रतिमा]: उजवीकडे वरच्या दिशेला तोंड असलेल्या बाणाची (↗) आरशातील प्रतिमा कोणती?",
-      "options": ["डावीकडे वरच्या दिशेला तोंड असलेला बाण (↖)", "खालील बाण (↘)", "उभा बाण (↑)", "आडवा बाण (→)"],
+      "text": "प्रश्न 27 [आरशातील प्रतिमा]: आरशातील अचूक प्रतिमा कोणती?",
+      "problemFig": "<svg viewBox='0 0 100 100'><polygon points='30,30 70,50 30,70' fill='none' stroke='#0f2b48' stroke-width='4'/><line x1='85' y1='10' x2='85' y2='90' stroke='#dc2626' stroke-width='3' stroke-dasharray='4'/></svg>",
+      "figures": [
+        { "s": "<svg viewBox='0 0 100 100'><polygon points='70,30 30,50 70,70' fill='none' stroke='#0f2b48' stroke-width='4'/></svg>", "l": "(A)" },
+        { "s": "<svg viewBox='0 0 100 100'><polygon points='30,30 70,50 30,70' fill='none' stroke='#0f2b48' stroke-width='4'/></svg>", "l": "(B)" },
+        { "s": "<svg viewBox='0 0 100 100'><polygon points='30,70 50,30 70,70' fill='none' stroke='#0f2b48' stroke-width='4'/></svg>", "l": "(C)" },
+        { "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='25' fill='#0f2b48'/></svg>", "l": "(D)" }
+      ],
+      "options": ["(A)", "(B)", "(C)", "(D)"],
       "correct": 0,
-      "exp": "आरशात डावी-उजवी दिशा बदलते, त्यामुळे ईशान्येकडील (↗) बाण वायव्येकडे (↖) तोंड करेल."
+      "exp": "उजवीकडे तोंड असलेला त्रिकोण आरशातील प्रतिमेत डावीकडे तोंड केलेला (पर्याय A) दिसेल."
     },
     {
       "id": 28,
       "sec": "mental",
-      "text": "प्रश्न 28 [आरशातील प्रतिमा]: '7' या अंकाची आरशातील अचूक प्रतिमा ओळखा.",
-      "options": ["7", "उलटा डावीकडे झुकलेला 7", "L", "T"],
+      "text": "प्रश्न 28 [आरशातील प्रतिमा]: आरशातील योग्य प्रतिमा ओळखा.",
+      "problemFig": "<svg viewBox='0 0 100 100'><text x='35' y='65' font-size='45' font-family='sans-serif' font-weight='bold' fill='#0f2b48'>7</text><line x1='80' y1='10' x2='80' y2='90' stroke='#dc2626' stroke-width='3' stroke-dasharray='4'/></svg>",
+      "figures": [
+        { "s": "<svg viewBox='0 0 100 100'><text x='35' y='65' font-size='45' font-family='sans-serif' font-weight='bold' fill='#0f2b48'>7</text></svg>", "l": "(A)" },
+        { "s": "<svg viewBox='0 0 100 100'><text x='65' y='65' font-size='45' font-family='sans-serif' font-weight='bold' fill='#0f2b48' transform='scale(-1,1) translate(-100,0)'>7</text></svg>", "l": "(B)" },
+        { "s": "<svg viewBox='0 0 100 100'><text x='35' y='65' font-size='45' font-family='sans-serif' font-weight='bold' fill='#0f2b48' transform='scale(1,-1) translate(0,-80)'>7</text></svg>", "l": "(C)" },
+        { "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='25' fill='#0f2b48'/></svg>", "l": "(D)" }
+      ],
+      "options": ["(A)", "(B)", "(C)", "(D)"],
       "correct": 1,
-      "exp": "7 ची आडवी वरची रेषा उजवीकडून डावीकडे उलट झुकलेली दिसेल."
+      "exp": "७ ची आडवी वरची बाजू आरशात उजवीकडून डावीकडे उलटी झुकलेली (पर्याय B) दिसेल."
     },
     {
       "id": 29,
       "sec": "mental",
-      "text": "प्रश्न 29 [घडी घाला व उलगडा]: चौरस कागदाची 1 घडी घालून मध्यभागी 1 चौकोनी काप दिला, तर उलगडल्यावर काय दिसेल?",
-      "options": ["1 चौकोन", "2 सममित चौकोन", "4 चौकोन", "वर्तुळ"],
-      "correct": 1,
-      "exp": "कागदाची एकच घडी घातल्याने 2 पदर तयार होतात. एक काप उलगडल्यावर सममित रेषेच्या दोन्ही बाजूंना मिळून 2 चौकोन दिसतील."
+      "text": "प्रश्न 29 [घडी घाला व उलगडा]: कागदाची घडी उलगडल्यावर कोणती आकृती दिसेल?",
+      "problemFig": "<svg viewBox='0 0 100 100'><rect x='20' y='20' width='60' height='60' fill='none' stroke='#0f2b48' stroke-width='2'/><circle cx='20' cy='20' r='8' fill='#0f2b48'/></svg>",
+      "figures": [
+        { "s": "<svg viewBox='0 0 100 100'><rect x='20' y='20' width='60' height='60' fill='none' stroke='#0f2b48' stroke-width='3'/><circle cx='20' cy='20' r='8' fill='#0f2b48'/><circle cx='80' cy='20' r='8' fill='#0f2b48'/><circle cx='20' cy='80' r='8' fill='#0f2b48'/><circle cx='80' cy='80' r='8' fill='#0f2b48'/></svg>", "l": "(A)" },
+        { "s": "<svg viewBox='0 0 100 100'><rect x='20' y='20' width='60' height='60' fill='none' stroke='#0f2b48' stroke-width='3'/><circle cx='50' cy='50' r='8' fill='#0f2b48'/></svg>", "l": "(B)" },
+        { "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='30' fill='#0f2b48'/></svg>", "l": "(C)" },
+        { "s": "<svg viewBox='0 0 100 100'><line x1='20' y1='50' x2='80' y2='50' stroke='#0f2b48' stroke-width='4'/></svg>", "l": "(D)" }
+      ],
+      "options": ["(A)", "(B)", "(C)", "(D)"],
+      "correct": 0,
+      "exp": "चारही पदरांच्या कोपऱ्यावर काप दिल्याने कागद उलगडल्यावर चारही कोपऱ्यांवर सममित अर्धगोलाकार काप (पर्याय A) दिसतील."
     },
     {
       "id": 30,
       "sec": "mental",
-      "text": "प्रश्न 30 [घडी घाला व उलगडा]: त्रिकोणी घडी घालून टोकावर अर्धगोलाकार काप दिल्यास उलगडल्यावर काय तयार होईल?",
-      "options": ["मध्यभागी पूर्ण वर्तुळ", "दोन रेषा", "चौकोन", "काहीच नाही"],
+      "text": "प्रश्न 30 [घडी घाला व उलगडा]: घडी उलगडल्यावर मिळणारी अचूक रचना कोणती?",
+      "problemFig": "<svg viewBox='0 0 100 100'><rect x='20' y='20' width='60' height='60' fill='none' stroke='#0f2b48' stroke-width='2'/><rect x='45' y='45' width='10' height='10' fill='#0f2b48'/></svg>",
+      "figures": [
+        { "s": "<svg viewBox='0 0 100 100'><rect x='20' y='20' width='60' height='60' fill='none' stroke='#0f2b48' stroke-width='3'/><rect x='35' y='35' width='10' height='10' fill='#0f2b48'/><rect x='55' y='35' width='10' height='10' fill='#0f2b48'/><rect x='35' y='55' width='10' height='10' fill='#0f2b48'/><rect x='55' y='55' width='10' height='10' fill='#0f2b48'/></svg>", "l": "(A)" },
+        { "s": "<svg viewBox='0 0 100 100'><rect x='20' y='20' width='60' height='60' fill='none' stroke='#0f2b48' stroke-width='3'/><circle cx='50' cy='50' r='10' fill='#0f2b48'/></svg>", "l": "(B)" },
+        { "s": "<svg viewBox='0 0 100 100'><polygon points='50,20 20,80 80,80' fill='#0f2b48'/></svg>", "l": "(C)" },
+        { "s": "<svg viewBox='0 0 100 100'><line x1='20' y1='50' x2='80' y2='50' stroke='#0f2b48' stroke-width='4'/></svg>", "l": "(D)" }
+      ],
+      "options": ["(A)", "(B)", "(C)", "(D)"],
       "correct": 0,
-      "exp": "घडीच्या केंद्रबिंदूवर अर्धगोलाकार कापल्यास कागद पूर्ण उलगडल्यावर मध्यभागी पूर्ण वर्तुळ तयार होते."
+      "exp": "घडी उलगडल्यावर मध्यभागाभोवती सममित अंतरावर ४ लहान चौकोनी छिद्रे (पर्याय A) तयार होतील."
     },
     {
       "id": 31,
       "sec": "mental",
-      "text": "प्रश्न 31 [घडी घाला व उलगडा]: कागदाच्या चार घड्या घालून कडेवर 2 लहान छिद्रे पाडली, तर उलगडल्यावर एकूण छिद्रे किती दिसतील?",
-      "options": ["4", "6", "8", "16"],
-      "correct": 2,
-      "exp": "चार पदरी घडी असल्याने प्रत्येक छिद्राचे 4 पट होतात; म्हणून 2 × 4 = 8 छिद्रे सममित रचनेत दिसतील."
+      "text": "प्रश्न 31 [घडी घाला व उलगडा]: उलगडलेली योग्य आकृती शोधा.",
+      "problemFig": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='35' fill='none' stroke='#0f2b48' stroke-width='2'/><polygon points='50,15 40,30 60,30' fill='#0f2b48'/></svg>",
+      "figures": [
+        { "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='35' fill='none' stroke='#0f2b48' stroke-width='3'/><polygon points='50,15 40,30 60,30' fill='#0f2b48'/><polygon points='50,85 40,70 60,70' fill='#0f2b48'/></svg>", "l": "(A)" },
+        { "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='35' fill='none' stroke='#0f2b48' stroke-width='3'/><circle cx='50' cy='50' r='10' fill='#0f2b48'/></svg>", "l": "(B)" },
+        { "s": "<svg viewBox='0 0 100 100'><rect x='25' y='25' width='50' height='50' fill='#0f2b48'/></svg>", "l": "(C)" },
+        { "s": "<svg viewBox='0 0 100 100'><line x1='15' y1='50' x2='85' y2='50' stroke='#0f2b48' stroke-width='4'/></svg>", "l": "(D)" }
+      ],
+      "options": ["(A)", "(B)", "(C)", "(D)"],
+      "correct": 0,
+      "exp": "मध्यरेषेवर सममित घडी असल्याने वर आणि खाली २ सममित त्रिकोणी काप (पर्याय A) दिसतील."
     },
     {
       "id": 32,
       "sec": "mental",
-      "text": "प्रश्न 32 [घडी घाला व उलगडा]: कागदाची आडवी घडी घालून वरून त्रिकोणी तुकडा कापल्यास उलगडल्यावर कोणती आकृती बनेल?",
-      "options": ["पतंगाकार / समभुज चौकोनी काप", "वर्तुळ", "आयत", "फक्त रेषा"],
+      "text": "प्रश्न 32 [घडी घाला व उलगडा]: घडी उलगडल्यावर कोणती आकृती बनेल?",
+      "problemFig": "<svg viewBox='0 0 100 100'><rect x='20' y='20' width='60' height='60' fill='none' stroke='#0f2b48' stroke-width='2'/><circle cx='20' cy='50' r='6' fill='#0f2b48'/></svg>",
+      "figures": [
+        { "s": "<svg viewBox='0 0 100 100'><rect x='20' y='20' width='60' height='60' fill='none' stroke='#0f2b48' stroke-width='3'/><circle cx='20' cy='50' r='6' fill='#0f2b48'/><circle cx='80' cy='50' r='6' fill='#0f2b48'/></svg>", "l": "(A)" },
+        { "s": "<svg viewBox='0 0 100 100'><rect x='20' y='20' width='60' height='60' fill='none' stroke='#0f2b48' stroke-width='3'/><circle cx='50' cy='50' r='8' fill='#0f2b48'/></svg>", "l": "(B)" },
+        { "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='30' fill='#0f2b48'/></svg>", "l": "(C)" },
+        { "s": "<svg viewBox='0 0 100 100'><line x1='20' y1='20' x2='80' y2='80' stroke='#0f2b48' stroke-width='4'/></svg>", "l": "(D)" }
+      ],
+      "options": ["(A)", "(B)", "(C)", "(D)"],
       "correct": 0,
-      "exp": "घडीच्या रेषेवर त्रिकोण कापल्याने कागद उलगडल्यावर दोन्ही बाजू जुळून समभुज चौकोनी (पतंगासारखी) नक्षी बनते."
+      "exp": "कागदाच्या डाव्या व उजव्या कडेवर २ सममित अर्धगोलाकार काप (पर्याय A) उलगडल्यावर स्पष्ट दिसतील."
     },
     {
       "id": 33,
       "sec": "mental",
-      "text": "प्रश्न 33 [तुकडे जोडून आकृती]: 2 चौरस आणि 1 आयत एकत्र जोडल्यास कोणती मोठी आकृती बनू शकते?",
-      "options": ["लांब मोठा आयत", "वर्तुळ", "त्रिकोण", "पंचकोन"],
+      "text": "प्रश्न 33 [तुकडे जोडून आकृती]: दिलेले तुकडे जोडून तयार होणारी आकृती शोधा.",
+      "problemFig": "<svg viewBox='0 0 100 100'><polygon points='20,20 50,50 20,50' fill='#0f2b48'/><polygon points='60,20 60,50 90,50' fill='#0f2b48'/></svg>",
+      "figures": [
+        { "s": "<svg viewBox='0 0 100 100'><polygon points='50,20 20,70 80,70' fill='#0f2b48'/></svg>", "l": "(A)" },
+        { "s": "<svg viewBox='0 0 100 100'><rect x='25' y='25' width='50' height='50' fill='#0f2b48'/></svg>", "l": "(B)" },
+        { "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='25' fill='#0f2b48'/></svg>", "l": "(C)" },
+        { "s": "<svg viewBox='0 0 100 100'><line x1='20' y1='50' x2='80' y2='50' stroke='#0f2b48' stroke-width='4'/></svg>", "l": "(D)" }
+      ],
+      "options": ["(A)", "(B)", "(C)", "(D)"],
       "correct": 0,
-      "exp": "चौरस आणि आयत सरळ रेषेत जोडल्यास एक अखंड लांब आयताकृती रचना तयार होते."
+      "exp": "दोन समान काटकोन त्रिकोण जोडल्यास एक मोठा समद्विभुज त्रिकोण (पर्याय A) तयार होतो."
     },
     {
       "id": 34,
       "sec": "mental",
-      "text": "प्रश्न 34 [तुकडे जोडून आकृती]: 4 लहान त्रिकोण कर्णाकडून जोडल्यास कोणता आकार बनतो?",
-      "options": ["चौरस", "वर्तुळ", "दंडगोल", "शंकू"],
+      "text": "प्रश्न 34 [तुकडे जोडून आकृती]: तुकडे जुळवून बनणारी अचूक आकृती कोणती?",
+      "problemFig": "<svg viewBox='0 0 100 100'><rect x='15' y='35' width='30' height='30' fill='#0f2b48'/><rect x='55' y='35' width='30' height='30' fill='#0f2b48'/></svg>",
+      "figures": [
+        { "s": "<svg viewBox='0 0 100 100'><rect x='20' y='35' width='60' height='30' fill='#0f2b48'/></svg>", "l": "(A)" },
+        { "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='25' fill='#0f2b48'/></svg>", "l": "(B)" },
+        { "s": "<svg viewBox='0 0 100 100'><polygon points='50,20 20,80 80,80' fill='#0f2b48'/></svg>", "l": "(C)" },
+        { "s": "<svg viewBox='0 0 100 100'><line x1='20' y1='50' x2='80' y2='50' stroke='#0f2b48' stroke-width='4'/></svg>", "l": "(D)" }
+      ],
+      "options": ["(A)", "(B)", "(C)", "(D)"],
       "correct": 0,
-      "exp": "चार काटकोन त्रिकोण मध्यबिंदूभोवती काटकोनात जोडल्यास एक परिपूर्ण चौरस तयार होतो."
+      "exp": "दोन चौरस शेजारी जोडल्यास एक सलग आयताकृती रचना (पर्याय A) बनते."
     },
     {
       "id": 35,
       "sec": "mental",
-      "text": "प्रश्न 35 [तुकडे जोडून आकृती]: एक वर्तुळ चतुर्थांश (पाव भाग) आणि तीन उर्वरित तुकडे एकत्र आणल्यास काय बनेल?",
-      "options": ["पूर्ण वर्तुळ", "अर्धवर्तुळ", "चौरस", "लंबवर्तुळ"],
+      "text": "प्रश्न 35 [तुकडे जोडून आकृती]: तीन लहान चौरस एकत्र केल्यास कोणती आकृती बनेल?",
+      "problemFig": "<svg viewBox='0 0 100 100'><rect x='15' y='40' width='20' height='20' fill='#0f2b48'/><rect x='40' y='40' width='20' height='20' fill='#0f2b48'/><rect x='65' y='40' width='20' height='20' fill='#0f2b48'/></svg>",
+      "figures": [
+        { "s": "<svg viewBox='0 0 100 100'><rect x='20' y='35' width='60' height='20' fill='#0f2b48'/></svg>", "l": "(A)" },
+        { "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='25' fill='#0f2b48'/></svg>", "l": "(B)" },
+        { "s": "<svg viewBox='0 0 100 100'><polygon points='50,20 20,80 80,80' fill='#0f2b48'/></svg>", "l": "(C)" },
+        { "s": "<svg viewBox='0 0 100 100'><line x1='20' y1='50' x2='80' y2='50' stroke='#0f2b48' stroke-width='4'/></svg>", "l": "(D)" }
+      ],
+      "options": ["(A)", "(B)", "(C)", "(D)"],
       "correct": 0,
-      "exp": "वर्तुळाचे चारही पाव (1/4) तुकडे एकत्र जोडल्यास संपूर्ण अखंड वर्तुळ बनते."
+      "exp": "तीन समान चौरस एका रेषेत जोडल्याने १:३ गुणोत्तराचा लांब आयत (पर्याय A) तयार होतो."
     },
     {
       "id": 36,
       "sec": "mental",
-      "text": "प्रश्न 36 [तुकडे जोडून आकृती]: दोन समांतरभुज चौकोनांचे तुकडे जोडल्यास कोणती आकृती शक्य आहे?",
-      "options": ["मोठा समांतरभुज चौकोन किंवा षटकोनी रचना", "गोल", "त्रिकोण", "दंडगोल"],
+      "text": "प्रश्न 36 [तुकडे जोडून आकृती]: दोन अर्धवर्तुळे एकत्र जोडल्यास काय तयार होईल?",
+      "problemFig": "<svg viewBox='0 0 100 100'><path d='M20,50 A15,15 0 0,1 50,50 Z' fill='#0f2b48'/><path d='M55,50 A15,15 0 0,1 85,50 Z' fill='#0f2b48'/></svg>",
+      "figures": [
+        { "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='20' fill='#0f2b48'/></svg>", "l": "(A)" },
+        { "s": "<svg viewBox='0 0 100 100'><rect x='30' y='30' width='40' height='40' fill='#0f2b48'/></svg>", "l": "(B)" },
+        { "s": "<svg viewBox='0 0 100 100'><polygon points='50,20 20,80 80,80' fill='#0f2b48'/></svg>", "l": "(C)" },
+        { "s": "<svg viewBox='0 0 100 100'><line x1='20' y1='50' x2='80' y2='50' stroke='#0f2b48' stroke-width='4'/></svg>", "l": "(D)" }
+      ],
+      "options": ["(A)", "(B)", "(C)", "(D)"],
       "correct": 0,
-      "exp": "समान बाजू जुळवून दोन समांतरभुज चौकोन जोडल्यास एक मोठा समांतरभुज चौकोन तयार होतो."
+      "exp": "दोन समान अर्धवर्तुळे समोरासमोर जोडल्यास एक अखंड वर्तुळ (पर्याय A) तयार होते."
     },
     {
       "id": 37,
       "sec": "mental",
-      "text": "प्रश्न 37 [लपलेली आकृती]: इंग्रजी अक्षर 'L' हा काटकोनी आकार कोणत्या आकृतीत दडलेला आहे?",
-      "options": ["आयताच्या कोपऱ्यात", "वर्तुळाच्या वक्रात", "बिंदूमध्ये", "अंडाकृतीत"],
+      "text": "प्रश्न 37 [लपलेली आकृती]: प्रश्न आकृती खालीलपैकी कोणत्या उत्तर आकृतीत दडलेली आहे?",
+      "problemFig": "<svg viewBox='0 0 100 100'><polyline points='30,30 50,50 30,70' fill='none' stroke='#0f2b48' stroke-width='4'/></svg>",
+      "figures": [
+        { "s": "<svg viewBox='0 0 100 100'><polygon points='30,20 70,50 30,80' fill='none' stroke='#0f2b48' stroke-width='4'/></svg>", "l": "(A)" },
+        { "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='30' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(B)" },
+        { "s": "<svg viewBox='0 0 100 100'><rect x='25' y='25' width='50' height='50' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(C)" },
+        { "s": "<svg viewBox='0 0 100 100'><line x1='20' y1='50' x2='80' y2='50' stroke='#0f2b48' stroke-width='4'/></svg>", "l": "(D)" }
+      ],
+      "options": ["(A)", "(B)", "(C)", "(D)"],
       "correct": 0,
-      "exp": "आयताचे चारही कोपरे काटकोनात असल्याने त्याच्या प्रत्येक कोपऱ्यात 'L' आकार स्पष्ट दडलेला असतो."
+      "exp": "उजवीकडे वळलेला कोन (< आकार) पर्याय (A) मधील त्रिकोणाच्या रचनेमध्ये स्पष्ट दडलेला आढळतो."
     },
     {
       "id": 38,
       "sec": "mental",
-      "text": "प्रश्न 38 [लपलेली आकृती]: त्रिकोणाचा आकार खालीलपैकी कोणत्या संमिश्र चित्रात स्पष्ट लपलेला आहे?",
-      "options": ["घराच्या छताची रचना (Roof)", "फक्त चाकाचे चित्र", "सरळ रस्ता", "विहीर"],
+      "text": "प्रश्न 38 [लपलेली आकृती]: प्रश्न आकृती कोणत्या पर्यायात अंतर्भूत आहे?",
+      "problemFig": "<svg viewBox='0 0 100 100'><line x1='25' y1='50' x2='75' y2='50' stroke='#0f2b48' stroke-width='4'/></svg>",
+      "figures": [
+        { "s": "<svg viewBox='0 0 100 100'><rect x='20' y='20' width='60' height='60' fill='none' stroke='#0f2b48' stroke-width='3'/><line x1='20' y1='50' x2='80' y2='50' stroke='#0f2b48' stroke-width='4'/></svg>", "l": "(A)" },
+        { "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='30' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(B)" },
+        { "s": "<svg viewBox='0 0 100 100'><polygon points='50,20 20,80 80,80' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(C)" },
+        { "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='10' fill='#0f2b48'/></svg>", "l": "(D)" }
+      ],
+      "options": ["(A)", "(B)", "(C)", "(D)"],
       "correct": 0,
-      "exp": "घराच्या छताची उतरती रचना त्रिकोणी असते, त्यामुळे छताच्या चित्रात त्रिकोण सामावलेला असतो."
+      "exp": "सरळ आडवी मध्यरेषा पर्याय (A) च्या चौरसाच्या मध्यभागी स्पष्टपणे उपस्थित आहे."
     },
     {
       "id": 39,
       "sec": "mental",
-      "text": "प्रश्न 39 [लपलेली आकृती]: बाणाची खूण (Arrow) कोणत्या रचनेत अंतर्भूत आहे?",
-      "options": ["दिशादर्शक फलक (Signboard)", "गोल रिंग", "साधी काठी", "दगड"],
+      "text": "प्रश्न 39 [लपलेली आकृती]: चौरस ही रचना कोणत्या आकृतीत सामावलेली आहे?",
+      "problemFig": "<svg viewBox='0 0 100 100'><rect x='35' y='35' width='30' height='30' fill='none' stroke='#0f2b48' stroke-width='4'/></svg>",
+      "figures": [
+        { "s": "<svg viewBox='0 0 100 100'><rect x='20' y='20' width='60' height='60' fill='none' stroke='#0f2b48' stroke-width='3'/><line x1='20' y1='50' x2='80' y2='50' stroke='#0f2b48' stroke-width='2'/><line x1='50' y1='20' x2='50' y2='80' stroke='#0f2b48' stroke-width='2'/></svg>", "l": "(A)" },
+        { "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='30' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(B)" },
+        { "s": "<svg viewBox='0 0 100 100'><polygon points='50,20 20,80 80,80' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(C)" },
+        { "s": "<svg viewBox='0 0 100 100'><line x1='20' y1='20' x2='80' y2='80' stroke='#0f2b48' stroke-width='4'/></svg>", "l": "(D)" }
+      ],
+      "options": ["(A)", "(B)", "(C)", "(D)"],
       "correct": 0,
-      "exp": "दिशादर्शक फलकामध्ये त्रिकोणी टोक आणि दांडी मिळून बाणाची खूण स्पष्टपणे असते."
+      "exp": "चार खाणांच्या मोठ्या चौरसातील प्रत्येक कप्पा हा चौरसाकार असल्याने त्यात चौरस सामावलेला आहे."
     },
     {
       "id": 40,
       "sec": "mental",
-      "text": "प्रश्न 40 [लपलेली आकृती]: इंग्रजी अक्षर 'X' ही रचना कोठे आढळते?",
-      "options": ["कात्रीच्या रचनेमध्ये (Scissor)", "सरळ पेन्सिलमध्ये", "नाण्यामध्ये", "पुस्तकाच्या पानात"],
+      "text": "प्रश्न 40 [लपलेली आकृती]: त्रिकोणी आकार कोणत्या आकृतीत लपलेला आहे?",
+      "problemFig": "<svg viewBox='0 0 100 100'><polygon points='50,30 30,70 70,70' fill='none' stroke='#0f2b48' stroke-width='4'/></svg>",
+      "figures": [
+        { "s": "<svg viewBox='0 0 100 100'><rect x='20' y='20' width='60' height='60' fill='none' stroke='#0f2b48' stroke-width='3'/><line x1='20' y1='20' x2='80' y2='80' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(A)" },
+        { "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='30' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(B)" },
+        { "s": "<svg viewBox='0 0 100 100'><line x1='20' y1='50' x2='80' y2='50' stroke='#0f2b48' stroke-width='4'/></svg>", "l": "(C)" },
+        { "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='10' fill='#0f2b48'/></svg>", "l": "(D)" }
+      ],
+      "options": ["(A)", "(B)", "(C)", "(D)"],
       "correct": 0,
-      "exp": "कात्रीची दोन पाती आणि मुठी एकमेकांना मध्यभागी छेदत असल्याने त्यात 'X' आकार स्पष्टपणे दडलेला असतो."
+      "exp": "चौरसाच्या एका कर्णाने त्याचे २ काटकोन त्रिकोण बनतात, त्यामुळे पर्याय (A) मध्ये त्रिकोण स्पष्ट लपलेला आहे."
     },
     {
       "id": 41,
@@ -566,7 +846,8 @@
     {
       "id": 70,
       "sec": "lang",
-      "passage": "उतारा क्र. 2: डॉ. ए. पी. जे. अब्दुल कलाम हे भारताचे कितवे राष्ट्रपती होते?",
+      "passage": "उतारा क्र. 2: डॉ. ए. पी. जे. अब्दुल कलाम हे भारताचे अकरावे राष्ट्रपती आणि थोर शास्त्रज्ञ होते. त्यांना प्रेमाने 'भारताचे मिसाईल मॅन' म्हणून ओळखले जाते. अत्यंत प्रतिकूल परिस्थितीत शिक्षण घेऊन त्यांनी भारताच्या अवकाश आणि संरक्षण संशोधन क्षेत्रात मोलाचे योगदान दिले. अग्नि आणि पृथ्वी यांसारखी शक्तिशाली क्षेपणास्त्रे त्यांनी भारताला मिळवून दिली. राष्ट्रपती असतानाही त्यांनी लहान मुलांशी आणि विद्यार्थ्यांशी संवाद साधण्यात मोठा आनंद मानला. 'स्वप्ने ती नव्हेत जी झोपेत पडतात, स्वप्ने ती असतात जी तुम्हाला झोपूच देत नाहीत' हा त्यांचा प्रेरक विचार आजही तरुणांना प्रेरित करतो.",
+      "text": "प्रश्न 70: डॉ. ए. पी. जे. अब्दुल कलाम हे भारताचे कितवे राष्ट्रपती होते?",
       "options": ["नववे", "दहावे", "अकरावे", "बारावे"],
       "correct": 2,
       "exp": "उताऱ्याच्या पहिल्या ओळीत स्पष्ट नमूद केले आहे की ते 'भारताचे अकरावे राष्ट्रपती' होते."
