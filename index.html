@@ -120,7 +120,6 @@
     .main-wrapper { flex: 1; max-width: 860px; width: 100%; margin: 16px auto; padding: 0 16px; }
     .card { background: var(--card-bg); border-radius: 16px; padding: 22px; box-shadow: 0 4px 20px rgba(15, 43, 72, 0.06); margin-bottom: 16px; border: 1px solid var(--border); }
 
-    /* जिल्हा स्तर कडक सूचना बॉक्स */
     .district-warning-box {
       background: #fff7ed;
       border: 1.5px solid #fdba74;
@@ -132,9 +131,7 @@
       line-height: 1.5;
       color: #9a3412;
     }
-    .district-warning-box b {
-      color: #c2410c;
-    }
+    .district-warning-box b { color: #c2410c; }
 
     .student-bar {
       background: #ffffff;
@@ -250,6 +247,20 @@
     .opt-label { display: flex; align-items: center; padding: 12px 14px; border: 1.5px solid var(--border); border-radius: 10px; cursor: pointer; background: #fff; font-size: 0.95rem; }
     .opt-label input { margin-right: 12px; width: 18px; height: 18px; accent-color: var(--secondary); }
 
+    /* स्पष्टीकरण बॉक्स */
+    .exp-box {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-left: 4px solid #2563eb;
+      border-radius: 8px;
+      padding: 10px 14px;
+      margin-top: 12px;
+      font-size: 0.92rem;
+      line-height: 1.5;
+      color: #1e3a8a;
+    }
+    .exp-box b { color: #1d4ed8; }
+
     .section-nav-footer { display: flex; justify-content: space-between; gap: 12px; margin-top: 20px; padding-top: 16px; border-top: 1.5px dashed #cbd5e1; }
     .btn-nav-prev { background: #475569; color: white; border: none; padding: 10px 18px; border-radius: 10px; font-weight: 700; cursor: pointer; }
     .btn-nav-next { background: var(--secondary); color: white; border: none; padding: 10px 18px; border-radius: 10px; font-weight: 700; cursor: pointer; margin-left: auto; }
@@ -277,8 +288,50 @@
     .ak-badge { display: inline-block; padding: 4px 10px; border-radius: 6px; font-size: 0.8rem; margin-top: 6px; font-weight: 700; }
 
     #exitToast { display: none; position: fixed; bottom: 25px; left: 50%; transform: translateX(-50%); background: rgba(15, 43, 72, 0.92); color: #ffffff; padding: 10px 20px; border-radius: 25px; font-size: 0.9rem; font-weight: 700; box-shadow: 0 4px 15px rgba(0,0,0,0.3); z-index: 3000; white-space: nowrap; border: 1px solid #fbbf24; }
-    #installShortcutModal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15, 43, 72, 0.75); z-index: 2500; justify-content: center; align-items: center; backdrop-filter: blur(3px); padding: 14px; }
-    .install-modal-content { background: #ffffff; border-radius: 16px; max-width: 440px; width: 100%; padding: 24px 20px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.3); border-top: 5px solid var(--accent); animation: popIn 0.25s ease-out; }
+
+    /* SHORTCUT POPUP */
+    #installShortcutModal { 
+      display: none; 
+      position: fixed; 
+      top: 0; left: 0; width: 100%; height: 100%; 
+      background: rgba(15, 43, 72, 0.82); 
+      z-index: 3700; 
+      justify-content: center; 
+      align-items: center; 
+      backdrop-filter: blur(4px); 
+      padding: 16px; 
+    }
+    .install-modal-content { 
+      background: #ffffff; 
+      border-radius: 18px; 
+      max-width: 520px; 
+      width: 100%; 
+      padding: 24px 22px; 
+      box-shadow: 0 14px 40px rgba(0,0,0,0.35); 
+      border-top: 6px solid var(--accent); 
+      animation: popIn 0.25s ease-out; 
+      text-align: left;
+    }
+    .shortcut-benefit-box {
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      border-radius: 10px;
+      padding: 12px 14px;
+      margin: 14px 0;
+      font-size: 0.92rem;
+      color: #166534;
+      line-height: 1.5;
+    }
+    .shortcut-steps-box {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 12px 14px;
+      margin-bottom: 16px;
+      font-size: 0.88rem;
+      color: #334155;
+      line-height: 1.5;
+    }
 
     footer { background: #091a2c; color: #94a3b8; text-align: center; padding: 14px 16px; font-size: 0.82rem; border-top: 2px solid #1e293b; margin-top: auto; }
     footer span { color: #f8fafc; font-weight: 600; }
@@ -405,6 +458,7 @@
       </div>
       <div style="display:flex; gap:10px; margin-top:12px; flex-wrap:wrap;">
         <button class="btn-action btn-resume" onclick="openAdminToppersModal()">🏆 Top 50 Toppers पहा</button>
+        <button class="btn-action" style="background:#7c3aed; color:#fff;" onclick="openAdminVipModal()">⭐ विशेष VIP मोबाईल नंबर व्यवस्थापन</button>
         <button class="btn-action btn-start" onclick="downloadStudentsExcel()">📥 सर्व नोंदणीकृत विद्यार्थी एक्सेल डाउनलोड</button>
       </div>
     </div>
@@ -608,6 +662,29 @@
   </div>
 </div>
 
+<!-- ॲडमिन VIP मोबाईल नंबर व्यवस्थापन MODAL (केवळ मोबाईल नंबरवर आधारित) -->
+<div id="adminVipModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(15,43,72,0.85); z-index:3600; justify-content:center; align-items:center; backdrop-filter:blur(4px); padding:12px;">
+  <div style="background:#ffffff; border-radius:16px; max-width:620px; width:100%; max-height:90vh; overflow-y:auto; padding:24px 20px; box-shadow:0 12px 35px rgba(0,0,0,0.3); border-top:5px solid #7c3aed;">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; border-bottom:2px solid #e2e8f0; padding-bottom:10px;">
+      <h3 style="color:#6d28d9; font-weight:800; font-size:1.2rem;">⭐ विशेष VIP मोबाईल नंबर (सर्व चाचण्या अनलॉक)</h3>
+      <button onclick="closeAdminVipModal()" style="background:#fee2e2; color:#991b1b; border:none; padding:4px 10px; border-radius:8px; font-weight:800; cursor:pointer;">✕ बंद करा</button>
+    </div>
+
+    <p style="font-size:0.85rem; color:#64748b; margin-bottom:12px; line-height:1.4;">
+      विद्यार्थ्याने नाव व तालुका कोणताही टाकला तरी <b>खालील मोबाईल नंबरवरून लॉगिन होताच</b> त्याला सर्व १५ चाचण्या पूर्णवेळ अनलॉक मिळतील.
+    </p>
+
+    <div style="display:flex; gap:8px; margin-bottom:14px; flex-wrap:wrap;">
+      <input type="tel" id="inVipMobile" maxlength="10" placeholder="१० अंकी मोबाईल नंबर टाका" oninput="this.value = this.value.replace(/[^0-9]/g, '')" style="flex:1.5; min-width:200px; padding:10px; border:1.5px solid #cbd5e1; border-radius:8px; font-weight:700;">
+      <button class="btn-action" style="background:#7c3aed; color:#fff;" onclick="addVipStudent()">+ VIP नंबर जोडा</button>
+    </div>
+
+    <div id="vipListHost">
+      <p style="text-align:center; padding:15px; color:#64748b;">VIP नंबर यादी लोड होत आहे...</p>
+    </div>
+  </div>
+</div>
+
 <!-- चाचणी सबमिशन गोषवारा पॉप-अप -->
 <div id="summaryModalOverlay">
   <div class="summary-modal-content">
@@ -641,20 +718,34 @@
   </div>
 </div>
 
-<!-- होम स्क्रीन शॉर्टकट पॉप-अप -->
+<!-- पहिल्या ५ वेळा दाखवणारा माहितीपूर्ण SHORTCUT POPUP -->
 <div id="installShortcutModal">
   <div class="install-modal-content">
-    <div style="font-size:2.4rem; margin-bottom:6px;">📲</div>
-    <h3 style="color:var(--primary); font-weight:800; font-size:1.2rem; margin-bottom:6px;">NVS TEST ZP BEED</h3>
-    <p style="color:#475569; font-size:0.9rem; margin-bottom:16px; line-height:1.4;">
-      नवोदय सराव परीक्षा दररोज सहज उघडण्यासाठी या ॲपचा शॉर्टकट तुमच्या स्क्रीनवर जोडावा का?
-    </p>
+    <div style="display:flex; align-items:center; gap:12px; margin-bottom:10px;">
+      <div style="font-size:2.4rem;">📲</div>
+      <div>
+        <h3 style="color:var(--primary); font-weight:800; font-size:1.22rem; line-height:1.2;">NVS TEST ZP BEED</h3>
+        <span style="font-size:0.8rem; color:#64748b; font-weight:700;">जिल्हा परिषद, बीड - अधिकृत सराव पोर्टल</span>
+      </div>
+    </div>
+
+    <div class="shortcut-benefit-box">
+      🎯 <b>दरवेळी लिंक शोधण्याची अजिबात आवश्यकता नाही!</b><br>
+      हे ॲप तुमच्या मोबाईल किंवा लॅपटॉपच्या <b>स्क्रीनवर (Desktop / Home Screen)</b> जोडा. स्क्रीनवर थेट ॲपचा आयकॉन तयार होईल आणि तिथूनच एका क्लिकवर तुम्हाला दररोजच्या सराव चाचण्या सहज सोडवता येतील.
+    </div>
+
+    <div class="shortcut-steps-box">
+      <b>📌 शॉर्टकट कसा तयार करावा?</b><br>
+      १. खालील <b>'✓ ॲप स्क्रीनवर जोडा'</b> बटणावर क्लिक करा.<br>
+      २. किंवा ब्राऊझरच्या वरच्या उजव्या कोपऱ्यातील <b>तीन ठिपक्यांवर (⋮)</b> क्लिक करून <b>'Add to Home screen'</b> किंवा <b>'Install app'</b> पर्याय निवडा.
+    </div>
+
     <div style="display:flex; gap:10px;">
-      <button class="btn-main" style="background:#64748b; flex:1; padding:10px;" onclick="dismissInstallPrompt()">
-        नंतर करा
+      <button class="btn-main" style="background:#64748b; flex:1; padding:11px; font-size:0.95rem;" onclick="dismissInstallPrompt()">
+        नंतर करा (Dismiss)
       </button>
-      <button class="btn-main" style="background:var(--success); flex:1.3; padding:10px;" onclick="installAppShortcut()">
-        ✓ होय, ॲप जोडा
+      <button class="btn-main" style="background:var(--success); flex:1.4; padding:11px; font-size:1rem;" onclick="installAppShortcut()">
+        ✓ ॲप स्क्रीनवर जोडा
       </button>
     </div>
   </div>
@@ -669,6 +760,7 @@
 <script>
   const FIREBASE_DB_URL = "https://nvs-zp-beed-online-test-default-rtdb.firebaseio.com";
   const MAX_ATTEMPTS = 4;
+  const MAX_SHORTCUT_PROMPTS = 5;
 
   const EXAM_SCHEDULE = [
     { id: 1, title: "नवोदय सराव चाचणी क्र. 01 (2026-27)", dateISO: "2026-11-11", dateMarathi: "11 नोव्हेंबर 2026", file: "test1.json" },
@@ -691,6 +783,7 @@
   let loggedInUser = null;
   let isAdminMode = false;
   let globalUnlockedTests = {};
+  let whitelistedMobiles = {}; // केवळ मोबाईल नंबरवर आधारित VIP यादी
   let currentPendingTest = null;
   let currentQuizData = null;
   let quizInterval = null;
@@ -714,6 +807,7 @@
 
   window.addEventListener("DOMContentLoaded", () => {
     fetchGlobalLockStatus();
+    fetchWhitelistedMobiles();
 
     const stored = localStorage.getItem("jnv_beed_active_user");
     if (stored) {
@@ -805,7 +899,7 @@
     return { valid: true };
   }
 
-  /* ---------------- युनिक विद्यार्थी नोंदणी (केवळ नवीन असल्यास Firebase वर पाठवणे) ---------------- */
+  /* ---------------- युनिक विद्यार्थी नोंदणी ---------------- */
   function handleRegistration() {
     const name = document.getElementById("sName").value.trim();
     const mobile = document.getElementById("sMobile").value.trim();
@@ -831,12 +925,11 @@
     loggedInUser = { name, mobile, taluka };
     syncUserPersistentData();
 
-    // Firebase वरून आधीच हा विद्यार्थी नोंदणीकृत आहे का ते तपासणे
+    // आधी तपासणे व केवळ नवीन असल्यास Firebase वर पाठवणे
     fetch(`${FIREBASE_DB_URL}/students/${mobile}.json`)
       .then(res => res.json())
       .then(existing => {
         if (!existing) {
-          // नवीन युजर असेल तरच Firebase वर नोंदवणे
           fetch(`${FIREBASE_DB_URL}/students/${mobile}.json`, {
             method: "PUT",
             headers: { "Content-Type": "application/json" },
@@ -849,9 +942,7 @@
           }).catch(err => console.error("Firebase Error:", err));
         }
       })
-      .catch(() => {
-        // ऑफलाइन किंवा एरर आल्यास सुरक्षिततेसाठी लोकल नोंदणी पुढे चालू ठेवणे
-      });
+      .catch(() => {});
 
     renderDashboard();
     checkAndShowInstallPrompt();
@@ -893,12 +984,15 @@
   }
 
   function checkAndShowInstallPrompt() {
+    const isStandalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone;
+    if (isStandalone) return;
+
     let promptCount = parseInt(localStorage.getItem("jnv_install_prompt_count") || "0");
-    if (promptCount < 2) {
+    if (promptCount < MAX_SHORTCUT_PROMPTS) {
       setTimeout(() => {
         document.getElementById("installShortcutModal").style.display = "flex";
         localStorage.setItem("jnv_install_prompt_count", (promptCount + 1).toString());
-      }, 1200);
+      }, 1000);
     }
   }
 
@@ -912,7 +1006,7 @@
       deferredPrompt.prompt();
       deferredPrompt.userChoice.then(() => { deferredPrompt = null; });
     } else {
-      alert("तुमच्या ब्राउझर मेनूवर (⋮) क्लिक करून 'Add to Home screen' किंवा 'Install app' निवडा.");
+      alert("तुमच्या मोबाईल किंवा लॅपटॉप ब्राऊझर मेनूवर (⋮ किंवा शेअर चिन्ह) क्लिक करून 'Add to Home screen' किंवा 'Install app' निवडा.");
     }
   }
 
@@ -944,11 +1038,9 @@
       .then(res => res.json())
       .then(data => {
         if (data) {
-          // मोबाईल नंबरनुसार युनिक विद्यार्थी फिल्टर करणे (Deduplication)
           const uniqueStudentsMap = {};
           Object.values(data).forEach(st => {
             if (st && st.mobile) {
-              // सर्वात जुनी किंवा पहिली नोंद कायम ठेवणे
               if (!uniqueStudentsMap[st.mobile]) {
                 uniqueStudentsMap[st.mobile] = st;
               }
@@ -971,6 +1063,102 @@
           allFirebaseResults = [];
         }
       });
+  }
+
+  /* ---------------- केवळ मोबाईल नंबरवर आधारित VIP LOGIC ---------------- */
+  function fetchWhitelistedMobiles() {
+    fetch(`${FIREBASE_DB_URL}/whitelisted_mobiles.json`)
+      .then(res => res.json())
+      .then(data => {
+        whitelistedMobiles = data || {};
+        if (loggedInUser) renderDashboard();
+      })
+      .catch(err => console.log("VIP fetch error:", err));
+  }
+
+  function openAdminVipModal() {
+    document.getElementById("adminVipModal").style.display = "flex";
+    renderVipList();
+  }
+
+  function closeAdminVipModal() {
+    document.getElementById("adminVipModal").style.display = "none";
+  }
+
+  function renderVipList() {
+    const host = document.getElementById("vipListHost");
+    const keys = Object.keys(whitelistedMobiles);
+
+    if (keys.length === 0) {
+      host.innerHTML = "<p style='text-align:center; padding:15px; color:#64748b;'>अद्याप कोणताही VIP मोबाईल नंबर जोडलेला नाही.</p>";
+      return;
+    }
+
+    let rows = "";
+    keys.forEach((mob, idx) => {
+      rows += `
+        <tr>
+          <td style="text-align:center;">${idx + 1}</td>
+          <td style="font-weight:800; color:#0f2b48; font-size:1.05rem; letter-spacing:1px;">${mob}</td>
+          <td style="text-align:center;">
+            <span style="background:#f3e8ff; color:#7c3aed; font-weight:700; padding:3px 8px; border-radius:6px; font-size:0.8rem;">सर्व चाचण्या अनलॉक</span>
+          </td>
+          <td style="text-align:center;">
+            <button onclick="removeVipStudent('${mob}')" style="background:#fee2e2; color:#991b1b; border:none; padding:4px 10px; border-radius:6px; font-weight:700; cursor:pointer;">हटवा ✕</button>
+          </td>
+        </tr>
+      `;
+    });
+
+    host.innerHTML = `
+      <table class="report-table" style="margin:0;">
+        <thead>
+          <tr>
+            <th>अ.क्र.</th>
+            <th>VIP मोबाईल नंबर</th>
+            <th>सवलत दर्जा</th>
+            <th>कृती</th>
+          </tr>
+        </thead>
+        <tbody>${rows}</tbody>
+      </table>
+    `;
+  }
+
+  function addVipStudent() {
+    const mob = document.getElementById("inVipMobile").value.trim();
+
+    if (mob.length !== 10) {
+      alert("कृपया १० अंकी खरा मोबाईल नंबर टाका.");
+      return;
+    }
+
+    whitelistedMobiles[mob] = true;
+    renderVipList();
+    document.getElementById("inVipMobile").value = "";
+
+    fetch(`${FIREBASE_DB_URL}/whitelisted_mobiles/${mob}.json`, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(true)
+    }).then(() => {
+      alert(`मोबाईल क्रमांक ${mob} VIP यादीत यशस्वीरीत्या जोडला गेला! या नंबरवरून लॉगिन करणाऱ्या विद्यार्थ्याला (नाव व तालुका काहीही असला तरी) सर्व चाचण्या पूर्णवेळ अनलॉक राहतील.`);
+      renderDashboard();
+    });
+  }
+
+  function removeVipStudent(mob) {
+    if (confirm(`तुम्हाला खात्री आहे का की ${mob} चा VIP दर्जा काढून टाकायचा आहे?`)) {
+      delete whitelistedMobiles[mob];
+      renderVipList();
+
+      fetch(`${FIREBASE_DB_URL}/whitelisted_mobiles/${mob}.json`, {
+        method: "DELETE"
+      }).then(() => {
+        alert(`${mob} यादीतून काढला गेला.`);
+        renderDashboard();
+      });
+    }
   }
 
   function openAdminToppersModal() {
@@ -1048,7 +1236,6 @@
     `;
   }
 
-  /* ---------------- अस्सल .XLSX फाईल डाऊनलोड (फक्त युनिक विद्यार्थी) ---------------- */
   function downloadStudentsExcel() {
     if (!allFirebaseStudents || allFirebaseStudents.length === 0) {
       alert("अद्याप कोणतीही नोंदणी झालेली नाही किंवा डेटा लोड होत आहे.");
@@ -1177,9 +1364,16 @@
     container.innerHTML = "";
     const todayDate = new Date().toISOString().split("T")[0];
 
+    // केवळ मोबाईल नंबरवरून VIP तपासणे
+    const isUserVip = loggedInUser && loggedInUser.mobile && (whitelistedMobiles[loggedInUser.mobile] !== undefined);
+
     EXAM_SCHEDULE.forEach(item => {
       let isAccessible = false;
-      if (globalUnlockedTests[item.id] !== undefined) {
+
+      // जर विद्यार्थ्याचा मोबाईल नंबर VIP असेल तर सर्व चाचण्या तात्काळ अनलॉक
+      if (isUserVip) {
+        isAccessible = true;
+      } else if (globalUnlockedTests[item.id] !== undefined) {
         isAccessible = globalUnlockedTests[item.id];
       } else {
         isAccessible = (todayDate >= item.dateISO);
@@ -1230,7 +1424,9 @@
 
       card.innerHTML = `
         <div>
-          <h4 style="font-weight:700; font-size:1rem; color:#0f2b48;">${item.title}</h4>
+          <h4 style="font-weight:700; font-size:1rem; color:#0f2b48;">
+            ${item.title} ${isUserVip ? '<span style="color:#7c3aed; font-size:0.75rem; font-weight:800;">(⭐ VIP अनलॉक)</span>' : ''}
+          </h4>
           <span style="font-size:0.8rem; color:#64748b;">दिनांक: ${item.dateMarathi} | 80 प्रश्न | 100 गुण</span>
         </div>
         <div style="display:flex; align-items:center;">
@@ -1545,7 +1741,6 @@
     }
     saveUserVault();
 
-    // Firebase वर निकाल पाठवणे (विद्यार्थी व चाचणीनुसार एकच सर्वोत्तम निकाल सेव्ह करणे)
     fetch(`${FIREBASE_DB_URL}/results/${loggedInUser.mobile}_${currentQuizData.id}.json`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
@@ -1708,6 +1903,11 @@
       });
       opts += '</div>';
 
+      let expHtml = "";
+      if (q.exp && q.exp.trim() !== "") {
+        expHtml = `<div class="exp-box">💡 <b>स्पष्टीकरण:</b> ${q.exp}</div>`;
+      }
+
       qDiv.innerHTML = `
         ${pText}
         <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:6px;">
@@ -1716,6 +1916,7 @@
         </div>
         ${figHtml}
         ${opts}
+        ${expHtml}
       `;
       container.appendChild(qDiv);
     });
