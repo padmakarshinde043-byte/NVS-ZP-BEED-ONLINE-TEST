@@ -1,0 +1,1446 @@
+{
+  "testId": 15,
+  "title": "नवोदय सराव चाचणी क्र. 15 (2026-27)",
+  "questions": [
+    {
+      "id": 1,
+      "sec": "mental",
+      "text": "प्रश्न 1 [वेगळी आकृती ओळखा]: दिलेल्या पर्यायांमधून योग्य उत्तर आकृती निवडा.",
+      "problemFig": "",
+      "figures": [
+        {
+          "s": "<svg viewBox='0 0 100 100'><polygon points='50,15 15,85 85,85' fill='none' stroke='#0f2b48' stroke-width='4' transform='rotate(315 50 50)'/><circle cx='35' cy='35' r='5' fill='#0f2b48'/></svg>",
+          "l": "(A)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><rect x='20' y='20' width='60' height='60' fill='none' stroke='#0f2b48' stroke-width='4' transform='rotate(315 50 50)'/><circle cx='50' cy='50' r='5' fill='#0f2b48'/></svg>",
+          "l": "(B)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='35' fill='none' stroke='#0f2b48' stroke-width='4'/><circle cx='50' cy='50' r='5' fill='#0f2b48'/></svg>",
+          "l": "(C)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><polygon points='50,15 85,40 70,85 30,85 15,40' fill='none' stroke='#0f2b48' stroke-width='4' transform='rotate(315 50 50)'/><circle cx='50' cy='50' r='5' fill='#0f2b48'/></svg>",
+          "l": "(D)"
+        }
+      ],
+      "options": [
+        "(A)",
+        "(B)",
+        "(C)",
+        "(D)"
+      ],
+      "correct": 0,
+      "exp": "स्पष्टीकरण: घटक 'वेगळी आकृती ओळखा' च्या नियमांनुसार पर्याय (A) ही रचना अचूक ठरते."
+    },
+    {
+      "id": 2,
+      "sec": "mental",
+      "text": "प्रश्न 2 [वेगळी आकृती ओळखा]: दिलेल्या पर्यायांमधून योग्य उत्तर आकृती निवडा.",
+      "problemFig": "",
+      "figures": [
+        {
+          "s": "<svg viewBox='0 0 100 100'><polygon points='50,15 15,85 85,85' fill='none' stroke='#0f2b48' stroke-width='4' transform='rotate(330 50 50)'/><circle cx='50' cy='50' r='5' fill='#0f2b48'/></svg>",
+          "l": "(A)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><rect x='20' y='20' width='60' height='60' fill='none' stroke='#0f2b48' stroke-width='4' transform='rotate(330 50 50)'/><circle cx='35' cy='35' r='5' fill='#0f2b48'/></svg>",
+          "l": "(B)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='35' fill='none' stroke='#0f2b48' stroke-width='4'/><circle cx='50' cy='50' r='5' fill='#0f2b48'/></svg>",
+          "l": "(C)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><polygon points='50,15 85,40 70,85 30,85 15,40' fill='none' stroke='#0f2b48' stroke-width='4' transform='rotate(330 50 50)'/><circle cx='50' cy='50' r='5' fill='#0f2b48'/></svg>",
+          "l": "(D)"
+        }
+      ],
+      "options": [
+        "(A)",
+        "(B)",
+        "(C)",
+        "(D)"
+      ],
+      "correct": 1,
+      "exp": "स्पष्टीकरण: घटक 'वेगळी आकृती ओळखा' च्या नियमांनुसार पर्याय (B) ही रचना अचूक ठरते."
+    },
+    {
+      "id": 3,
+      "sec": "mental",
+      "text": "प्रश्न 3 [समान आकृती शोधा]: दिलेल्या पर्यायांमधून योग्य उत्तर आकृती निवडा.",
+      "problemFig": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='35' fill='none' stroke='#0f2b48' stroke-width='4'/><circle cx='35' cy='35' r='5' fill='#0f2b48'/></svg>",
+      "figures": [
+        {
+          "s": "<svg viewBox='0 0 100 100'><polygon points='50,15 15,85 85,85' fill='none' stroke='#0f2b48' stroke-width='4' transform='rotate(345 50 50)'/><circle cx='50' cy='50' r='5' fill='#0f2b48'/></svg>",
+          "l": "(A)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><rect x='20' y='20' width='60' height='60' fill='none' stroke='#0f2b48' stroke-width='4' transform='rotate(345 50 50)'/><circle cx='50' cy='50' r='5' fill='#0f2b48'/></svg>",
+          "l": "(B)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='35' fill='none' stroke='#0f2b48' stroke-width='4'/><circle cx='35' cy='35' r='5' fill='#0f2b48'/></svg>",
+          "l": "(C)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><polygon points='50,15 85,40 70,85 30,85 15,40' fill='none' stroke='#0f2b48' stroke-width='4' transform='rotate(345 50 50)'/><circle cx='50' cy='50' r='5' fill='#0f2b48'/></svg>",
+          "l": "(D)"
+        }
+      ],
+      "options": [
+        "(A)",
+        "(B)",
+        "(C)",
+        "(D)"
+      ],
+      "correct": 2,
+      "exp": "स्पष्टीकरण: घटक 'समान आकृती शोधा' च्या नियमांनुसार पर्याय (C) ही रचना अचूक ठरते."
+    },
+    {
+      "id": 4,
+      "sec": "mental",
+      "text": "प्रश्न 4 [समान आकृती शोधा]: दिलेल्या पर्यायांमधून योग्य उत्तर आकृती निवडा.",
+      "problemFig": "<svg viewBox='0 0 100 100'><polygon points='50,15 85,40 70,85 30,85 15,40' fill='none' stroke='#0f2b48' stroke-width='4' transform='rotate(0 50 50)'/><circle cx='35' cy='35' r='5' fill='#0f2b48'/></svg>",
+      "figures": [
+        {
+          "s": "<svg viewBox='0 0 100 100'><polygon points='50,15 15,85 85,85' fill='none' stroke='#0f2b48' stroke-width='4' transform='rotate(0 50 50)'/><circle cx='50' cy='50' r='5' fill='#0f2b48'/></svg>",
+          "l": "(A)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><rect x='20' y='20' width='60' height='60' fill='none' stroke='#0f2b48' stroke-width='4' transform='rotate(0 50 50)'/><circle cx='50' cy='50' r='5' fill='#0f2b48'/></svg>",
+          "l": "(B)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='35' fill='none' stroke='#0f2b48' stroke-width='4'/><circle cx='50' cy='50' r='5' fill='#0f2b48'/></svg>",
+          "l": "(C)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><polygon points='50,15 85,40 70,85 30,85 15,40' fill='none' stroke='#0f2b48' stroke-width='4' transform='rotate(0 50 50)'/><circle cx='35' cy='35' r='5' fill='#0f2b48'/></svg>",
+          "l": "(D)"
+        }
+      ],
+      "options": [
+        "(A)",
+        "(B)",
+        "(C)",
+        "(D)"
+      ],
+      "correct": 3,
+      "exp": "स्पष्टीकरण: घटक 'समान आकृती शोधा' च्या नियमांनुसार पर्याय (D) ही रचना अचूक ठरते."
+    },
+    {
+      "id": 5,
+      "sec": "mental",
+      "text": "प्रश्न 5 [आकृती नमुना पूर्ण करा]: दिलेल्या पर्यायांमधून योग्य उत्तर आकृती निवडा.",
+      "problemFig": "<svg viewBox='0 0 100 100'><polygon points='50,15 15,85 85,85' fill='none' stroke='#0f2b48' stroke-width='4' transform='rotate(15 50 50)'/><circle cx='35' cy='35' r='5' fill='#0f2b48'/></svg>",
+      "figures": [
+        {
+          "s": "<svg viewBox='0 0 100 100'><polygon points='50,15 15,85 85,85' fill='none' stroke='#0f2b48' stroke-width='4' transform='rotate(15 50 50)'/><circle cx='35' cy='35' r='5' fill='#0f2b48'/></svg>",
+          "l": "(A)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><rect x='20' y='20' width='60' height='60' fill='none' stroke='#0f2b48' stroke-width='4' transform='rotate(15 50 50)'/><circle cx='50' cy='50' r='5' fill='#0f2b48'/></svg>",
+          "l": "(B)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='35' fill='none' stroke='#0f2b48' stroke-width='4'/><circle cx='50' cy='50' r='5' fill='#0f2b48'/></svg>",
+          "l": "(C)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><polygon points='50,15 85,40 70,85 30,85 15,40' fill='none' stroke='#0f2b48' stroke-width='4' transform='rotate(15 50 50)'/><circle cx='50' cy='50' r='5' fill='#0f2b48'/></svg>",
+          "l": "(D)"
+        }
+      ],
+      "options": [
+        "(A)",
+        "(B)",
+        "(C)",
+        "(D)"
+      ],
+      "correct": 0,
+      "exp": "स्पष्टीकरण: घटक 'आकृती नमुना पूर्ण करा' च्या नियमांनुसार पर्याय (A) ही रचना अचूक ठरते."
+    },
+    {
+      "id": 6,
+      "sec": "mental",
+      "text": "प्रश्न 6 [आकृती नमुना पूर्ण करा]: दिलेल्या पर्यायांमधून योग्य उत्तर आकृती निवडा.",
+      "problemFig": "<svg viewBox='0 0 100 100'><rect x='20' y='20' width='60' height='60' fill='none' stroke='#0f2b48' stroke-width='4' transform='rotate(30 50 50)'/><circle cx='35' cy='35' r='5' fill='#0f2b48'/></svg>",
+      "figures": [
+        {
+          "s": "<svg viewBox='0 0 100 100'><polygon points='50,15 15,85 85,85' fill='none' stroke='#0f2b48' stroke-width='4' transform='rotate(30 50 50)'/><circle cx='50' cy='50' r='5' fill='#0f2b48'/></svg>",
+          "l": "(A)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><rect x='20' y='20' width='60' height='60' fill='none' stroke='#0f2b48' stroke-width='4' transform='rotate(30 50 50)'/><circle cx='35' cy='35' r='5' fill='#0f2b48'/></svg>",
+          "l": "(B)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='35' fill='none' stroke='#0f2b48' stroke-width='4'/><circle cx='50' cy='50' r='5' fill='#0f2b48'/></svg>",
+          "l": "(C)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><polygon points='50,15 85,40 70,85 30,85 15,40' fill='none' stroke='#0f2b48' stroke-width='4' transform='rotate(30 50 50)'/><circle cx='50' cy='50' r='5' fill='#0f2b48'/></svg>",
+          "l": "(D)"
+        }
+      ],
+      "options": [
+        "(A)",
+        "(B)",
+        "(C)",
+        "(D)"
+      ],
+      "correct": 1,
+      "exp": "स्पष्टीकरण: घटक 'आकृती नमुना पूर्ण करा' च्या नियमांनुसार पर्याय (B) ही रचना अचूक ठरते."
+    },
+    {
+      "id": 7,
+      "sec": "mental",
+      "text": "प्रश्न 7 [आकृती मालिका पूर्ण करा]: दिलेल्या पर्यायांमधून योग्य उत्तर आकृती निवडा.",
+      "problemFig": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='35' fill='none' stroke='#0f2b48' stroke-width='4'/><circle cx='35' cy='35' r='5' fill='#0f2b48'/></svg>",
+      "figures": [
+        {
+          "s": "<svg viewBox='0 0 100 100'><polygon points='50,15 15,85 85,85' fill='none' stroke='#0f2b48' stroke-width='4' transform='rotate(45 50 50)'/><circle cx='50' cy='50' r='5' fill='#0f2b48'/></svg>",
+          "l": "(A)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><rect x='20' y='20' width='60' height='60' fill='none' stroke='#0f2b48' stroke-width='4' transform='rotate(45 50 50)'/><circle cx='50' cy='50' r='5' fill='#0f2b48'/></svg>",
+          "l": "(B)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='35' fill='none' stroke='#0f2b48' stroke-width='4'/><circle cx='35' cy='35' r='5' fill='#0f2b48'/></svg>",
+          "l": "(C)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><polygon points='50,15 85,40 70,85 30,85 15,40' fill='none' stroke='#0f2b48' stroke-width='4' transform='rotate(45 50 50)'/><circle cx='50' cy='50' r='5' fill='#0f2b48'/></svg>",
+          "l": "(D)"
+        }
+      ],
+      "options": [
+        "(A)",
+        "(B)",
+        "(C)",
+        "(D)"
+      ],
+      "correct": 2,
+      "exp": "स्पष्टीकरण: घटक 'आकृती मालिका पूर्ण करा' च्या नियमांनुसार पर्याय (C) ही रचना अचूक ठरते."
+    },
+    {
+      "id": 8,
+      "sec": "mental",
+      "text": "प्रश्न 8 [आकृती मालिका पूर्ण करा]: दिलेल्या पर्यायांमधून योग्य उत्तर आकृती निवडा.",
+      "problemFig": "<svg viewBox='0 0 100 100'><polygon points='50,15 85,40 70,85 30,85 15,40' fill='none' stroke='#0f2b48' stroke-width='4' transform='rotate(60 50 50)'/><circle cx='35' cy='35' r='5' fill='#0f2b48'/></svg>",
+      "figures": [
+        {
+          "s": "<svg viewBox='0 0 100 100'><polygon points='50,15 15,85 85,85' fill='none' stroke='#0f2b48' stroke-width='4' transform='rotate(60 50 50)'/><circle cx='50' cy='50' r='5' fill='#0f2b48'/></svg>",
+          "l": "(A)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><rect x='20' y='20' width='60' height='60' fill='none' stroke='#0f2b48' stroke-width='4' transform='rotate(60 50 50)'/><circle cx='50' cy='50' r='5' fill='#0f2b48'/></svg>",
+          "l": "(B)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='35' fill='none' stroke='#0f2b48' stroke-width='4'/><circle cx='50' cy='50' r='5' fill='#0f2b48'/></svg>",
+          "l": "(C)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><polygon points='50,15 85,40 70,85 30,85 15,40' fill='none' stroke='#0f2b48' stroke-width='4' transform='rotate(60 50 50)'/><circle cx='35' cy='35' r='5' fill='#0f2b48'/></svg>",
+          "l": "(D)"
+        }
+      ],
+      "options": [
+        "(A)",
+        "(B)",
+        "(C)",
+        "(D)"
+      ],
+      "correct": 3,
+      "exp": "स्पष्टीकरण: घटक 'आकृती मालिका पूर्ण करा' च्या नियमांनुसार पर्याय (D) ही रचना अचूक ठरते."
+    },
+    {
+      "id": 9,
+      "sec": "mental",
+      "text": "प्रश्न 9 [सादृश्यता संबंध ओळखा]: दिलेल्या पर्यायांमधून योग्य उत्तर आकृती निवडा.",
+      "problemFig": "<svg viewBox='0 0 100 100'><polygon points='50,15 15,85 85,85' fill='none' stroke='#0f2b48' stroke-width='4' transform='rotate(75 50 50)'/><circle cx='35' cy='35' r='5' fill='#0f2b48'/></svg>",
+      "figures": [
+        {
+          "s": "<svg viewBox='0 0 100 100'><polygon points='50,15 15,85 85,85' fill='none' stroke='#0f2b48' stroke-width='4' transform='rotate(75 50 50)'/><circle cx='35' cy='35' r='5' fill='#0f2b48'/></svg>",
+          "l": "(A)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><rect x='20' y='20' width='60' height='60' fill='none' stroke='#0f2b48' stroke-width='4' transform='rotate(75 50 50)'/><circle cx='50' cy='50' r='5' fill='#0f2b48'/></svg>",
+          "l": "(B)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='35' fill='none' stroke='#0f2b48' stroke-width='4'/><circle cx='50' cy='50' r='5' fill='#0f2b48'/></svg>",
+          "l": "(C)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><polygon points='50,15 85,40 70,85 30,85 15,40' fill='none' stroke='#0f2b48' stroke-width='4' transform='rotate(75 50 50)'/><circle cx='50' cy='50' r='5' fill='#0f2b48'/></svg>",
+          "l": "(D)"
+        }
+      ],
+      "options": [
+        "(A)",
+        "(B)",
+        "(C)",
+        "(D)"
+      ],
+      "correct": 0,
+      "exp": "स्पष्टीकरण: घटक 'सादृश्यता संबंध ओळखा' च्या नियमांनुसार पर्याय (A) ही रचना अचूक ठरते."
+    },
+    {
+      "id": 10,
+      "sec": "mental",
+      "text": "प्रश्न 10 [सादृश्यता संबंध ओळखा]: दिलेल्या पर्यायांमधून योग्य उत्तर आकृती निवडा.",
+      "problemFig": "<svg viewBox='0 0 100 100'><rect x='20' y='20' width='60' height='60' fill='none' stroke='#0f2b48' stroke-width='4' transform='rotate(90 50 50)'/><circle cx='35' cy='35' r='5' fill='#0f2b48'/></svg>",
+      "figures": [
+        {
+          "s": "<svg viewBox='0 0 100 100'><polygon points='50,15 15,85 85,85' fill='none' stroke='#0f2b48' stroke-width='4' transform='rotate(90 50 50)'/><circle cx='50' cy='50' r='5' fill='#0f2b48'/></svg>",
+          "l": "(A)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><rect x='20' y='20' width='60' height='60' fill='none' stroke='#0f2b48' stroke-width='4' transform='rotate(90 50 50)'/><circle cx='35' cy='35' r='5' fill='#0f2b48'/></svg>",
+          "l": "(B)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='35' fill='none' stroke='#0f2b48' stroke-width='4'/><circle cx='50' cy='50' r='5' fill='#0f2b48'/></svg>",
+          "l": "(C)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><polygon points='50,15 85,40 70,85 30,85 15,40' fill='none' stroke='#0f2b48' stroke-width='4' transform='rotate(90 50 50)'/><circle cx='50' cy='50' r='5' fill='#0f2b48'/></svg>",
+          "l": "(D)"
+        }
+      ],
+      "options": [
+        "(A)",
+        "(B)",
+        "(C)",
+        "(D)"
+      ],
+      "correct": 1,
+      "exp": "स्पष्टीकरण: घटक 'सादृश्यता संबंध ओळखा' च्या नियमांनुसार पर्याय (B) ही रचना अचूक ठरते."
+    },
+    {
+      "id": 11,
+      "sec": "mental",
+      "text": "प्रश्न 11 [भौमितिक रचना पूर्ण करा]: दिलेल्या पर्यायांमधून योग्य उत्तर आकृती निवडा.",
+      "problemFig": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='35' fill='none' stroke='#0f2b48' stroke-width='4'/><circle cx='35' cy='35' r='5' fill='#0f2b48'/></svg>",
+      "figures": [
+        {
+          "s": "<svg viewBox='0 0 100 100'><polygon points='50,15 15,85 85,85' fill='none' stroke='#0f2b48' stroke-width='4' transform='rotate(105 50 50)'/><circle cx='50' cy='50' r='5' fill='#0f2b48'/></svg>",
+          "l": "(A)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><rect x='20' y='20' width='60' height='60' fill='none' stroke='#0f2b48' stroke-width='4' transform='rotate(105 50 50)'/><circle cx='50' cy='50' r='5' fill='#0f2b48'/></svg>",
+          "l": "(B)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='35' fill='none' stroke='#0f2b48' stroke-width='4'/><circle cx='35' cy='35' r='5' fill='#0f2b48'/></svg>",
+          "l": "(C)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><polygon points='50,15 85,40 70,85 30,85 15,40' fill='none' stroke='#0f2b48' stroke-width='4' transform='rotate(105 50 50)'/><circle cx='50' cy='50' r='5' fill='#0f2b48'/></svg>",
+          "l": "(D)"
+        }
+      ],
+      "options": [
+        "(A)",
+        "(B)",
+        "(C)",
+        "(D)"
+      ],
+      "correct": 2,
+      "exp": "स्पष्टीकरण: घटक 'भौमितिक रचना पूर्ण करा' च्या नियमांनुसार पर्याय (C) ही रचना अचूक ठरते."
+    },
+    {
+      "id": 12,
+      "sec": "mental",
+      "text": "प्रश्न 12 [भौमितिक रचना पूर्ण करा]: दिलेल्या पर्यायांमधून योग्य उत्तर आकृती निवडा.",
+      "problemFig": "<svg viewBox='0 0 100 100'><polygon points='50,15 85,40 70,85 30,85 15,40' fill='none' stroke='#0f2b48' stroke-width='4' transform='rotate(120 50 50)'/><circle cx='35' cy='35' r='5' fill='#0f2b48'/></svg>",
+      "figures": [
+        {
+          "s": "<svg viewBox='0 0 100 100'><polygon points='50,15 15,85 85,85' fill='none' stroke='#0f2b48' stroke-width='4' transform='rotate(120 50 50)'/><circle cx='50' cy='50' r='5' fill='#0f2b48'/></svg>",
+          "l": "(A)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><rect x='20' y='20' width='60' height='60' fill='none' stroke='#0f2b48' stroke-width='4' transform='rotate(120 50 50)'/><circle cx='50' cy='50' r='5' fill='#0f2b48'/></svg>",
+          "l": "(B)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='35' fill='none' stroke='#0f2b48' stroke-width='4'/><circle cx='50' cy='50' r='5' fill='#0f2b48'/></svg>",
+          "l": "(C)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><polygon points='50,15 85,40 70,85 30,85 15,40' fill='none' stroke='#0f2b48' stroke-width='4' transform='rotate(120 50 50)'/><circle cx='35' cy='35' r='5' fill='#0f2b48'/></svg>",
+          "l": "(D)"
+        }
+      ],
+      "options": [
+        "(A)",
+        "(B)",
+        "(C)",
+        "(D)"
+      ],
+      "correct": 3,
+      "exp": "स्पष्टीकरण: घटक 'भौमितिक रचना पूर्ण करा' च्या नियमांनुसार पर्याय (D) ही रचना अचूक ठरते."
+    },
+    {
+      "id": 13,
+      "sec": "mental",
+      "text": "प्रश्न 13 [आरशातील प्रतिमा ओळखा]: दिलेल्या पर्यायांमधून योग्य उत्तर आकृती निवडा.",
+      "problemFig": "<svg viewBox='0 0 100 100'><polygon points='50,15 15,85 85,85' fill='none' stroke='#0f2b48' stroke-width='4' transform='rotate(135 50 50)'/><circle cx='35' cy='35' r='5' fill='#0f2b48'/></svg>",
+      "figures": [
+        {
+          "s": "<svg viewBox='0 0 100 100'><polygon points='50,15 15,85 85,85' fill='none' stroke='#0f2b48' stroke-width='4' transform='rotate(135 50 50)'/><circle cx='35' cy='35' r='5' fill='#0f2b48'/></svg>",
+          "l": "(A)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><rect x='20' y='20' width='60' height='60' fill='none' stroke='#0f2b48' stroke-width='4' transform='rotate(135 50 50)'/><circle cx='50' cy='50' r='5' fill='#0f2b48'/></svg>",
+          "l": "(B)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='35' fill='none' stroke='#0f2b48' stroke-width='4'/><circle cx='50' cy='50' r='5' fill='#0f2b48'/></svg>",
+          "l": "(C)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><polygon points='50,15 85,40 70,85 30,85 15,40' fill='none' stroke='#0f2b48' stroke-width='4' transform='rotate(135 50 50)'/><circle cx='50' cy='50' r='5' fill='#0f2b48'/></svg>",
+          "l": "(D)"
+        }
+      ],
+      "options": [
+        "(A)",
+        "(B)",
+        "(C)",
+        "(D)"
+      ],
+      "correct": 0,
+      "exp": "स्पष्टीकरण: घटक 'आरशातील प्रतिमा ओळखा' च्या नियमांनुसार पर्याय (A) ही रचना अचूक ठरते."
+    },
+    {
+      "id": 14,
+      "sec": "mental",
+      "text": "प्रश्न 14 [आरशातील प्रतिमा ओळखा]: दिलेल्या पर्यायांमधून योग्य उत्तर आकृती निवडा.",
+      "problemFig": "<svg viewBox='0 0 100 100'><rect x='20' y='20' width='60' height='60' fill='none' stroke='#0f2b48' stroke-width='4' transform='rotate(150 50 50)'/><circle cx='35' cy='35' r='5' fill='#0f2b48'/></svg>",
+      "figures": [
+        {
+          "s": "<svg viewBox='0 0 100 100'><polygon points='50,15 15,85 85,85' fill='none' stroke='#0f2b48' stroke-width='4' transform='rotate(150 50 50)'/><circle cx='50' cy='50' r='5' fill='#0f2b48'/></svg>",
+          "l": "(A)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><rect x='20' y='20' width='60' height='60' fill='none' stroke='#0f2b48' stroke-width='4' transform='rotate(150 50 50)'/><circle cx='35' cy='35' r='5' fill='#0f2b48'/></svg>",
+          "l": "(B)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='35' fill='none' stroke='#0f2b48' stroke-width='4'/><circle cx='50' cy='50' r='5' fill='#0f2b48'/></svg>",
+          "l": "(C)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><polygon points='50,15 85,40 70,85 30,85 15,40' fill='none' stroke='#0f2b48' stroke-width='4' transform='rotate(150 50 50)'/><circle cx='50' cy='50' r='5' fill='#0f2b48'/></svg>",
+          "l": "(D)"
+        }
+      ],
+      "options": [
+        "(A)",
+        "(B)",
+        "(C)",
+        "(D)"
+      ],
+      "correct": 1,
+      "exp": "स्पष्टीकरण: घटक 'आरशातील प्रतिमा ओळखा' च्या नियमांनुसार पर्याय (B) ही रचना अचूक ठरते."
+    },
+    {
+      "id": 15,
+      "sec": "mental",
+      "text": "प्रश्न 15 [कागदाची घडी व काप उलगडा]: दिलेल्या पर्यायांमधून योग्य उत्तर आकृती निवडा.",
+      "problemFig": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='35' fill='none' stroke='#0f2b48' stroke-width='4'/><circle cx='35' cy='35' r='5' fill='#0f2b48'/></svg>",
+      "figures": [
+        {
+          "s": "<svg viewBox='0 0 100 100'><polygon points='50,15 15,85 85,85' fill='none' stroke='#0f2b48' stroke-width='4' transform='rotate(165 50 50)'/><circle cx='50' cy='50' r='5' fill='#0f2b48'/></svg>",
+          "l": "(A)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><rect x='20' y='20' width='60' height='60' fill='none' stroke='#0f2b48' stroke-width='4' transform='rotate(165 50 50)'/><circle cx='50' cy='50' r='5' fill='#0f2b48'/></svg>",
+          "l": "(B)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='35' fill='none' stroke='#0f2b48' stroke-width='4'/><circle cx='35' cy='35' r='5' fill='#0f2b48'/></svg>",
+          "l": "(C)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><polygon points='50,15 85,40 70,85 30,85 15,40' fill='none' stroke='#0f2b48' stroke-width='4' transform='rotate(165 50 50)'/><circle cx='50' cy='50' r='5' fill='#0f2b48'/></svg>",
+          "l": "(D)"
+        }
+      ],
+      "options": [
+        "(A)",
+        "(B)",
+        "(C)",
+        "(D)"
+      ],
+      "correct": 2,
+      "exp": "स्पष्टीकरण: घटक 'कागदाची घडी व काप उलगडा' च्या नियमांनुसार पर्याय (C) ही रचना अचूक ठरते."
+    },
+    {
+      "id": 16,
+      "sec": "mental",
+      "text": "प्रश्न 16 [कागदाची घडी व काप उलगडा]: दिलेल्या पर्यायांमधून योग्य उत्तर आकृती निवडा.",
+      "problemFig": "<svg viewBox='0 0 100 100'><polygon points='50,15 85,40 70,85 30,85 15,40' fill='none' stroke='#0f2b48' stroke-width='4' transform='rotate(180 50 50)'/><circle cx='35' cy='35' r='5' fill='#0f2b48'/></svg>",
+      "figures": [
+        {
+          "s": "<svg viewBox='0 0 100 100'><polygon points='50,15 15,85 85,85' fill='none' stroke='#0f2b48' stroke-width='4' transform='rotate(180 50 50)'/><circle cx='50' cy='50' r='5' fill='#0f2b48'/></svg>",
+          "l": "(A)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><rect x='20' y='20' width='60' height='60' fill='none' stroke='#0f2b48' stroke-width='4' transform='rotate(180 50 50)'/><circle cx='50' cy='50' r='5' fill='#0f2b48'/></svg>",
+          "l": "(B)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='35' fill='none' stroke='#0f2b48' stroke-width='4'/><circle cx='50' cy='50' r='5' fill='#0f2b48'/></svg>",
+          "l": "(C)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><polygon points='50,15 85,40 70,85 30,85 15,40' fill='none' stroke='#0f2b48' stroke-width='4' transform='rotate(180 50 50)'/><circle cx='35' cy='35' r='5' fill='#0f2b48'/></svg>",
+          "l": "(D)"
+        }
+      ],
+      "options": [
+        "(A)",
+        "(B)",
+        "(C)",
+        "(D)"
+      ],
+      "correct": 3,
+      "exp": "स्पष्टीकरण: घटक 'कागदाची घडी व काप उलगडा' च्या नियमांनुसार पर्याय (D) ही रचना अचूक ठरते."
+    },
+    {
+      "id": 17,
+      "sec": "mental",
+      "text": "प्रश्न 17 [तुकडे जोडून आकृती बनवा]: दिलेल्या पर्यायांमधून योग्य उत्तर आकृती निवडा.",
+      "problemFig": "<svg viewBox='0 0 100 100'><polygon points='50,15 15,85 85,85' fill='none' stroke='#0f2b48' stroke-width='4' transform='rotate(195 50 50)'/><circle cx='35' cy='35' r='5' fill='#0f2b48'/></svg>",
+      "figures": [
+        {
+          "s": "<svg viewBox='0 0 100 100'><polygon points='50,15 15,85 85,85' fill='none' stroke='#0f2b48' stroke-width='4' transform='rotate(195 50 50)'/><circle cx='35' cy='35' r='5' fill='#0f2b48'/></svg>",
+          "l": "(A)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><rect x='20' y='20' width='60' height='60' fill='none' stroke='#0f2b48' stroke-width='4' transform='rotate(195 50 50)'/><circle cx='50' cy='50' r='5' fill='#0f2b48'/></svg>",
+          "l": "(B)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='35' fill='none' stroke='#0f2b48' stroke-width='4'/><circle cx='50' cy='50' r='5' fill='#0f2b48'/></svg>",
+          "l": "(C)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><polygon points='50,15 85,40 70,85 30,85 15,40' fill='none' stroke='#0f2b48' stroke-width='4' transform='rotate(195 50 50)'/><circle cx='50' cy='50' r='5' fill='#0f2b48'/></svg>",
+          "l": "(D)"
+        }
+      ],
+      "options": [
+        "(A)",
+        "(B)",
+        "(C)",
+        "(D)"
+      ],
+      "correct": 0,
+      "exp": "स्पष्टीकरण: घटक 'तुकडे जोडून आकृती बनवा' च्या नियमांनुसार पर्याय (A) ही रचना अचूक ठरते."
+    },
+    {
+      "id": 18,
+      "sec": "mental",
+      "text": "प्रश्न 18 [तुकडे जोडून आकृती बनवा]: दिलेल्या पर्यायांमधून योग्य उत्तर आकृती निवडा.",
+      "problemFig": "<svg viewBox='0 0 100 100'><rect x='20' y='20' width='60' height='60' fill='none' stroke='#0f2b48' stroke-width='4' transform='rotate(210 50 50)'/><circle cx='35' cy='35' r='5' fill='#0f2b48'/></svg>",
+      "figures": [
+        {
+          "s": "<svg viewBox='0 0 100 100'><polygon points='50,15 15,85 85,85' fill='none' stroke='#0f2b48' stroke-width='4' transform='rotate(210 50 50)'/><circle cx='50' cy='50' r='5' fill='#0f2b48'/></svg>",
+          "l": "(A)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><rect x='20' y='20' width='60' height='60' fill='none' stroke='#0f2b48' stroke-width='4' transform='rotate(210 50 50)'/><circle cx='35' cy='35' r='5' fill='#0f2b48'/></svg>",
+          "l": "(B)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='35' fill='none' stroke='#0f2b48' stroke-width='4'/><circle cx='50' cy='50' r='5' fill='#0f2b48'/></svg>",
+          "l": "(C)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><polygon points='50,15 85,40 70,85 30,85 15,40' fill='none' stroke='#0f2b48' stroke-width='4' transform='rotate(210 50 50)'/><circle cx='50' cy='50' r='5' fill='#0f2b48'/></svg>",
+          "l": "(D)"
+        }
+      ],
+      "options": [
+        "(A)",
+        "(B)",
+        "(C)",
+        "(D)"
+      ],
+      "correct": 1,
+      "exp": "स्पष्टीकरण: घटक 'तुकडे जोडून आकृती बनवा' च्या नियमांनुसार पर्याय (B) ही रचना अचूक ठरते."
+    },
+    {
+      "id": 19,
+      "sec": "mental",
+      "text": "प्रश्न 19 [लपलेली आकृती शोधा]: दिलेल्या पर्यायांमधून योग्य उत्तर आकृती निवडा.",
+      "problemFig": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='35' fill='none' stroke='#0f2b48' stroke-width='4'/><circle cx='35' cy='35' r='5' fill='#0f2b48'/></svg>",
+      "figures": [
+        {
+          "s": "<svg viewBox='0 0 100 100'><polygon points='50,15 15,85 85,85' fill='none' stroke='#0f2b48' stroke-width='4' transform='rotate(225 50 50)'/><circle cx='50' cy='50' r='5' fill='#0f2b48'/></svg>",
+          "l": "(A)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><rect x='20' y='20' width='60' height='60' fill='none' stroke='#0f2b48' stroke-width='4' transform='rotate(225 50 50)'/><circle cx='50' cy='50' r='5' fill='#0f2b48'/></svg>",
+          "l": "(B)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='35' fill='none' stroke='#0f2b48' stroke-width='4'/><circle cx='35' cy='35' r='5' fill='#0f2b48'/></svg>",
+          "l": "(C)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><polygon points='50,15 85,40 70,85 30,85 15,40' fill='none' stroke='#0f2b48' stroke-width='4' transform='rotate(225 50 50)'/><circle cx='50' cy='50' r='5' fill='#0f2b48'/></svg>",
+          "l": "(D)"
+        }
+      ],
+      "options": [
+        "(A)",
+        "(B)",
+        "(C)",
+        "(D)"
+      ],
+      "correct": 2,
+      "exp": "स्पष्टीकरण: घटक 'लपलेली आकृती शोधा' च्या नियमांनुसार पर्याय (C) ही रचना अचूक ठरते."
+    },
+    {
+      "id": 20,
+      "sec": "mental",
+      "text": "प्रश्न 20 [लपलेली आकृती शोधा]: दिलेल्या पर्यायांमधून योग्य उत्तर आकृती निवडा.",
+      "problemFig": "<svg viewBox='0 0 100 100'><polygon points='50,15 85,40 70,85 30,85 15,40' fill='none' stroke='#0f2b48' stroke-width='4' transform='rotate(240 50 50)'/><circle cx='35' cy='35' r='5' fill='#0f2b48'/></svg>",
+      "figures": [
+        {
+          "s": "<svg viewBox='0 0 100 100'><polygon points='50,15 15,85 85,85' fill='none' stroke='#0f2b48' stroke-width='4' transform='rotate(240 50 50)'/><circle cx='50' cy='50' r='5' fill='#0f2b48'/></svg>",
+          "l": "(A)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><rect x='20' y='20' width='60' height='60' fill='none' stroke='#0f2b48' stroke-width='4' transform='rotate(240 50 50)'/><circle cx='50' cy='50' r='5' fill='#0f2b48'/></svg>",
+          "l": "(B)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='35' fill='none' stroke='#0f2b48' stroke-width='4'/><circle cx='50' cy='50' r='5' fill='#0f2b48'/></svg>",
+          "l": "(C)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><polygon points='50,15 85,40 70,85 30,85 15,40' fill='none' stroke='#0f2b48' stroke-width='4' transform='rotate(240 50 50)'/><circle cx='35' cy='35' r='5' fill='#0f2b48'/></svg>",
+          "l": "(D)"
+        }
+      ],
+      "options": [
+        "(A)",
+        "(B)",
+        "(C)",
+        "(D)"
+      ],
+      "correct": 3,
+      "exp": "स्पष्टीकरण: घटक 'लपलेली आकृती शोधा' च्या नियमांनुसार पर्याय (D) ही रचना अचूक ठरते."
+    },
+    {
+      "id": 21,
+      "sec": "mental",
+      "text": "प्रश्न 21 [तार्किक क्षमता]: एका सांकेतिक भाषेत STAR हा शब्द TUBS असा लिहिला, तर त्याच भाषेत MOON हा शब्द कसा लिहिला जाईल?",
+      "options": [
+        "NPPO",
+        "NQQP",
+        "OPPN",
+        "MOON"
+      ],
+      "correct": 0,
+      "exp": "स्पष्टीकरण: M->N, O->P, O->P, N->O असा +1 चा नियम आहे."
+    },
+    {
+      "id": 22,
+      "sec": "mental",
+      "text": "प्रश्न 22 [तार्किक क्षमता]: संख्या मालिका पूर्ण करा: 1, 3, 6, 10, 15, ?",
+      "options": [
+        "18",
+        "20",
+        "21",
+        "25"
+      ],
+      "correct": 2,
+      "exp": "स्पष्टीकरण: फरक +2, +3, +4, +5, +6: 15 + 6 = 21."
+    },
+    {
+      "id": 23,
+      "sec": "mental",
+      "text": "प्रश्न 23 [तार्किक क्षमता]: एका रांगेत रोहनचा क्रमांक दोन्ही बाजूंकडून 25 वा आहे, तर त्या रांगेत एकूण किती मुले उभी आहेत?",
+      "options": [
+        "48",
+        "49",
+        "50",
+        "51"
+      ],
+      "correct": 1,
+      "exp": "स्पष्टीकरण: सूत्र = (दोन्ही बाजूंचे स्थान - 1) = (25 + 25) - 1 = 49."
+    },
+    {
+      "id": 24,
+      "sec": "mental",
+      "text": "प्रश्न 24 [तार्किक क्षमता]: संबंध ओळखून प्रश्नचिन्हाच्या जागी योग्य पर्याय निवडा: हात : बोटे :: पाय : ?",
+      "options": [
+        "पायाची बोटे",
+        "डोळे",
+        "नाक",
+        "कान"
+      ],
+      "correct": 0,
+      "exp": "स्पष्टीकरण: हाताला बोटे असतात, तसेच पायालाही बोटे असतात."
+    },
+    {
+      "id": 25,
+      "sec": "mental",
+      "text": "प्रश्न 25 [तार्किक क्षमता]: जर आज बुधवार असेल, तर आजपासून बरोबर १५ दिवसांनी कोणता वार येईल?",
+      "options": [
+        "गुरुवार",
+        "शुक्रवार",
+        "बुधवार",
+        "शनिवार"
+      ],
+      "correct": 0,
+      "exp": "स्पष्टीकरण: १५ ला ७ ने भागल्यास बाकी १ उरते. म्हणून बुधवार च्या पुढील १ वार = गुरुवार येईल."
+    },
+    {
+      "id": 26,
+      "sec": "mental",
+      "text": "प्रश्न 26 [तार्किक क्षमता]: माझ्या वडिलांचे वडील माझे कोण लागतात?",
+      "options": [
+        "आजोबा",
+        "काका",
+        "मामा",
+        "वडील"
+      ],
+      "correct": 0,
+      "exp": "स्पष्टीकरण: वडिलांच्या वडिलांना 'आजोबा' म्हणतात."
+    },
+    {
+      "id": 27,
+      "sec": "mental",
+      "text": "प्रश्न 27 [तार्किक क्षमता]: होकायंत्राची (Compass) सुई नेहमी कोणती दिशा दाखवते?",
+      "options": [
+        "उत्तर-दक्षिण",
+        "पूर्व-पश्चिम",
+        "ईशान्य",
+        "नैऋत्य"
+      ],
+      "correct": 0,
+      "exp": "स्पष्टीकरण: होकायंत्राची चुंबकीय सुई नेहमी उत्तर-दक्षिण दिशेत स्थिर राहते."
+    },
+    {
+      "id": 28,
+      "sec": "mental",
+      "text": "प्रश्न 28 [तार्किक क्षमता]: पत्र पाठवण्याचा क्रम: 1. पत्र लिहिणे  2. पाकीट बंद करणे  3. पोस्ट पेटीत टाकणे  4. पत्र पोहोचणे",
+      "options": [
+        "1, 2, 3, 4",
+        "2, 1, 3, 4",
+        "3, 2, 1, 4",
+        "4, 3, 2, 1"
+      ],
+      "correct": 0,
+      "exp": "स्पष्टीकरण: लिहिणे -> पाकिटात ठेवणे -> पेटीत टाकणे -> पोहोचणे."
+    },
+    {
+      "id": 29,
+      "sec": "mental",
+      "text": "प्रश्न 29 [तार्किक क्षमता]: गटात न बसणारा शब्द कोणता?",
+      "options": [
+        "वाचन",
+        "लेखन",
+        "श्रवण",
+        "झोपणे"
+      ],
+      "correct": 3,
+      "exp": "स्पष्टीकरण: झोपणे ही विश्रांती आहे, तर वाचन, लेखन, श्रवण ही भाषिक कौशल्ये आहेत."
+    },
+    {
+      "id": 30,
+      "sec": "mental",
+      "text": "प्रश्न 30 [तार्किक क्षमता]: अक्षर मालिका पूर्ण करा: A, E, I, O, ?",
+      "options": [
+        "U",
+        "V",
+        "W",
+        "Y"
+      ],
+      "correct": 0,
+      "exp": "स्पष्टीकरण: इंग्रजीतील स्वर (Vowels): A, E, I, O, U."
+    },
+    {
+      "id": 31,
+      "sec": "mental",
+      "text": "प्रश्न 31 [पर्यावरण अभ्यास]: भारतातील यमुना नदीचा उगम कोठे होतो?",
+      "options": [
+        "हिमालयात किंवा सह्याद्रीत",
+        "अरबी समुद्रात",
+        "बंगालच्या उपसागरात",
+        "वाळवंटात"
+      ],
+      "correct": 0,
+      "exp": "स्पष्टीकरण: नद्यांचा उगम पर्वतीय भागात होतो."
+    },
+    {
+      "id": 32,
+      "sec": "mental",
+      "text": "प्रश्न 32 [पर्यावरण अभ्यास]: शरीराच्या सर्व भागांना शुद्ध रक्त पुरवण्याचे कार्य कोणता अवयव करतो?",
+      "options": [
+        "मेंदू",
+        "हृदय",
+        "फुप्फुसे",
+        "जठर"
+      ],
+      "correct": 1,
+      "exp": "स्पष्टीकरण: हृदय शरीरामध्ये पंपिंग करून रक्त पुरवते."
+    },
+    {
+      "id": 33,
+      "sec": "mental",
+      "text": "प्रश्न 33 [पर्यावरण अभ्यास]: श्वासोच्छवासासाठी मानवाला कोणत्या वायूची आवश्यकता असते?",
+      "options": [
+        "कार्बन डायऑक्साईड",
+        "ऑक्सिजन",
+        "नायट्रोजन",
+        "मिथेन"
+      ],
+      "correct": 1,
+      "exp": "स्पष्टीकरण: सजीव श्वसनासाठी ऑक्सिजन वायू घेतात."
+    },
+    {
+      "id": 34,
+      "sec": "mental",
+      "text": "प्रश्न 34 [पर्यावरण अभ्यास]: अन्नपदार्थांचे निर्जंतुकीकरण करून ते हवाबंद डब्यात ठेवण्याच्या क्रियेस काय म्हणतात?",
+      "options": [
+        "किण्वन",
+        "कॅनिंग (डबाबंद करणे)",
+        "उकळणे",
+        "धूप देणे"
+      ],
+      "correct": 1,
+      "exp": "स्पष्टीकरण: अन्न दीर्घकाळ सुरक्षित ठेवण्यासाठी कॅनिंग वापरतात."
+    },
+    {
+      "id": 35,
+      "sec": "mental",
+      "text": "प्रश्न 35 [पर्यावरण अभ्यास]: खालीलपैकी कोणता सण प्रकाशाचा सण म्हणून ओळखला जातो?",
+      "options": [
+        "दिवाळी",
+        "होळी",
+        "नाताळ",
+        "रमजान ईद"
+      ],
+      "correct": 0,
+      "exp": "स्पष्टीकरण: दिवाळी हा दिव्यांचा आणि प्रकाशाचा सण मानला जातो."
+    },
+    {
+      "id": 36,
+      "sec": "mental",
+      "text": "प्रश्न 36 [पर्यावरण अभ्यास]: महाराष्ट्रातील सर्वोच्च पर्वतशिखर कोणते आहे?",
+      "options": [
+        "कळसुबाई",
+        "महाबळेश्वर",
+        "साल्हेर",
+        "रायगड"
+      ],
+      "correct": 0,
+      "exp": "स्पष्टीकरण: कळसुबाई हे महाराष्ट्रातील सर्वोच्च शिखर (१६४६ मीटर) आहे."
+    },
+    {
+      "id": 37,
+      "sec": "mental",
+      "text": "प्रश्न 37 [पर्यावरण अभ्यास]: क जीवनसत्त्वाच्या अभावामुळे कोणता आजार होतो?",
+      "options": [
+        "स्कर्व्ही (हिरड्यांचे आजार)",
+        "रातांधळेपणा",
+        "मुडदूस",
+        "गॉयटर"
+      ],
+      "correct": 0,
+      "exp": "स्पष्टीकरण: क जीवनसत्त्वाच्या अभावाने स्कर्व्ही होतो; लिंबू, संत्री यांत क जीवनसत्त्व असते."
+    },
+    {
+      "id": 38,
+      "sec": "mental",
+      "text": "प्रश्न 38 [पर्यावरण अभ्यास]: ध्वनी प्रदूषणाची तीव्रता कोणत्या एककात मोजली जाते?",
+      "options": [
+        "मीटर",
+        "डेसिबल (dB)",
+        "लिटर",
+        "किलोग्रॅम"
+      ],
+      "correct": 1,
+      "exp": "स्पष्टीकरण: आवाजाची तीव्रता डेसिबल एककात मोजली जाते."
+    },
+    {
+      "id": 39,
+      "sec": "mental",
+      "text": "प्रश्न 39 [पर्यावरण अभ्यास]: झाडे वातावरणातील तापमान नियंत्रित करण्यास कशी मदत करतात?",
+      "options": [
+        "बाष्पोत्सर्जन करून",
+        "माती खाऊन",
+        "पाणी पिऊन",
+        "सावली न देऊन"
+      ],
+      "correct": 0,
+      "exp": "स्पष्टीकरण: झाडे पानांमधून पाण्याची वाफ सोडून परिसर थंड ठेवतात."
+    },
+    {
+      "id": 40,
+      "sec": "mental",
+      "text": "प्रश्न 40 [पर्यावरण अभ्यास]: स्वच्छ भारत अभियानाची सुरुवात कोणत्या राष्ट्रपुरुषाच्या जयंतीदिनी झाली?",
+      "options": [
+        "महात्मा गांधी",
+        "पंडित जवाहरलाल नेहरू",
+        "डॉ. बाबासाहेब आंबेडकर",
+        "सरदार वल्लभभाई पटेल"
+      ],
+      "correct": 0,
+      "exp": "स्पष्टीकरण: २ ऑक्टोबर रोजी महात्मा गांधी यांच्या जयंतीदिनी स्वच्छ भारत अभियान सुरू झाले."
+    },
+    {
+      "id": 41,
+      "sec": "math",
+      "text": "प्रश्न 41 [अंकगणित]: ५15३४२ या संख्येतील '15' या अंकाची स्थानिक किंमत किती?",
+      "options": [
+        "15०००",
+        "15००",
+        "15०",
+        "15"
+      ],
+      "correct": 0,
+      "exp": "स्पष्टीकरण: अंक '15' हजार स्थानी असल्याने स्थानिक किंमत 15००० आहे."
+    },
+    {
+      "id": 42,
+      "sec": "math",
+      "text": "प्रश्न 42 [अंकगणित]: ४15६७८ या संख्येचा सर्वात जवळचा हजार कोणता?",
+      "options": [
+        "४15०००",
+        "४16०००",
+        "४०५००",
+        "५००००"
+      ],
+      "correct": 1,
+      "exp": "स्पष्टीकरण: शतक स्थानी ६ (५ पेक्षा मोठा) असल्याने हजार स्थान १ ने वाढून ४{t_id+1}००० होते."
+    },
+    {
+      "id": 43,
+      "sec": "math",
+      "text": "प्रश्न 43 [अंकगणित]: एका संख्येतून 4000 वजा केल्यास 4500 उरतात, तर ती संख्या कोणती?",
+      "options": [
+        "8500",
+        "8000",
+        "7500",
+        "5000"
+      ],
+      "correct": 0,
+      "exp": "स्पष्टीकरण: संख्या = 4500 + 4000 = 8500."
+    },
+    {
+      "id": 44,
+      "sec": "math",
+      "text": "प्रश्न 44 [अंकगणित]: सोडवा: ४० + [२० - {१२ ÷ (2 + 4)}]",
+      "options": [
+        "५६",
+        "५८",
+        "६०",
+        "६२"
+      ],
+      "correct": 1,
+      "exp": "स्पष्टीकरण: कंसाचे नियम: कंसात बेरीज ६, १२÷६ = २, २०-२ = १८, ४०+१८ = ५८."
+    },
+    {
+      "id": 45,
+      "sec": "math",
+      "text": "प्रश्न 45 [अंकगणित]: १२ आणि 42 यांचा मसावि (HCF) किती?",
+      "options": [
+        "2",
+        "६",
+        "८",
+        "१२"
+      ],
+      "correct": 0,
+      "exp": "स्पष्टीकरण: सामाईक अवयवांपैकी सर्वात मोठा अवयव मसावि असतो."
+    },
+    {
+      "id": 46,
+      "sec": "math",
+      "text": "प्रश्न 46 [अंकगणित]: १५ आणि २५ चा लसावि (LCM) किती?",
+      "options": [
+        "५०",
+        "७५",
+        "१००",
+        "१२५"
+      ],
+      "correct": 1,
+      "exp": "स्पष्टीकरण: १५ = ३×५, २५ = ५×५. लसावि = ३ × ५ × ५ = ७५."
+    },
+    {
+      "id": 47,
+      "sec": "math",
+      "text": "प्रश्न 47 [अंकगणित]: ३/५ + २/५ या अपूर्णांकांची बेरीज किती येईल?",
+      "options": [
+        "५/१०",
+        "५/५ (म्हणजेच १)",
+        "६/५",
+        "१/५"
+      ],
+      "correct": 1,
+      "exp": "स्पष्टीकरण: छेद समान असल्याने अंशांची बेरीज: (३ + २)/५ = ५/५ = १."
+    },
+    {
+      "id": 48,
+      "sec": "math",
+      "text": "प्रश्न 48 [अंकगणित]: ०.५ × ०.०7 चा गुणाकार किती?",
+      "options": [
+        "०.०35",
+        "०.००35",
+        "०.35",
+        "१.०"
+      ],
+      "correct": 1,
+      "exp": "स्पष्टीकरण: दशांश स्थळांची बेरीज करून गुणाकार केला जातो."
+    },
+    {
+      "id": 49,
+      "sec": "math",
+      "text": "प्रश्न 49 [अंकगणित]: 17 लीटर ५०० मिली म्हणजे एकूण किती मिलीलीटर?",
+      "options": [
+        "17५०० मिली",
+        "17०५० मिली",
+        "17००५ मिली",
+        "17५० मिली"
+      ],
+      "correct": 0,
+      "exp": "स्पष्टीकरण: १ लीटर = १००० मिली. 17 लीटर = 17000 + ५०० = 17५०० मिली."
+    },
+    {
+      "id": 50,
+      "sec": "math",
+      "text": "प्रश्न 50 [अंकगणित]: 16 तास ३० मिनिटे म्हणजे एकूण किती मिनिटे?",
+      "options": [
+        "990 मिनिटे",
+        "960 मिनिटे",
+        "930 मिनिटे",
+        "२०० मिनिटे"
+      ],
+      "correct": 0,
+      "exp": "स्पष्टीकरण: १ तास = ६० मिनिटे. 16 × ६० + ३० = 990 मिनिटे."
+    },
+    {
+      "id": 51,
+      "sec": "math",
+      "text": "प्रश्न 51 [अंकगणित]: सोडवा: १०० - (१० × 8)",
+      "options": [
+        "20",
+        "60",
+        "५०",
+        "४०"
+      ],
+      "correct": 0,
+      "exp": "स्पष्टीकरण: आधी गुणाकार: १० × 8 = 80, नंतर वजाबाकी: १०० - 80 = 20."
+    },
+    {
+      "id": 52,
+      "sec": "math",
+      "text": "प्रश्न 52 [अंकगणित]: २०० चे 15% किती होतात?",
+      "options": [
+        "30",
+        "45",
+        "५०",
+        "६०"
+      ],
+      "correct": 0,
+      "exp": "स्पष्टीकरण: २०० × (15 / १००) = २ × 15 = 30."
+    },
+    {
+      "id": 53,
+      "sec": "math",
+      "text": "प्रश्न 53 [अंकगणित]: एका परीक्षेत ४०० पैकी 350 गुण मिळाले, तर शेकडा किती गुण मिळाले?",
+      "options": [
+        "87.5%",
+        "70.0%",
+        "६०%",
+        "७०%"
+      ],
+      "correct": 0,
+      "exp": "स्पष्टीकरण: शेकडा = (350 / ४००) × १०० = 87.5%."
+    },
+    {
+      "id": 54,
+      "sec": "math",
+      "text": "प्रश्न 54 [अंकगणित]: एका वस्तूची खरेदी किंमत ₹ 1150 असून ती ₹ 1380 ला विकली, तर किती रुपये नफा झाला?",
+      "options": [
+        "₹ 230",
+        "₹ 220",
+        "₹ 240",
+        "₹ 250"
+      ],
+      "correct": 0,
+      "exp": "स्पष्टीकरण: नफा = विक्री - खरेदी = 1380 - 1150 = ₹ 230."
+    },
+    {
+      "id": 55,
+      "sec": "math",
+      "text": "प्रश्न 55 [अंकगणित]: एका वस्तूवर ₹ ५० नफा होतो व खरेदी किंमत ₹ २५० आहे, तर शेकडा नफा किती?",
+      "options": [
+        "१५%",
+        "२०%",
+        "२५%",
+        "३०%"
+      ],
+      "correct": 1,
+      "exp": "स्पष्टीकरण: शेकडा नफा = (५० / २५०) × १०० = २०%."
+    },
+    {
+      "id": 56,
+      "sec": "math",
+      "text": "प्रश्न 56 [अंकगणित]: ₹ 4000 चे 5% दराने 2 वर्षांचे सरळव्याज किती रुपये होईल?",
+      "options": [
+        "₹ 400",
+        "₹ 450",
+        "₹ 350",
+        "₹ 500"
+      ],
+      "correct": 0,
+      "exp": "स्पष्टीकरण: सरळव्याज = (4000 × 5 × 2) / १०० = ₹ 400."
+    },
+    {
+      "id": 57,
+      "sec": "math",
+      "text": "प्रश्न 57 [अंकगणित]: ₹ १००० चे १०% दराने २ वर्षांचे सरळव्याज ₹ २०० आहे, तर रास किती रुपये होईल?",
+      "options": [
+        "₹ ११००",
+        "₹ १२ळ०",
+        "₹ १२५०",
+        "₹ १३००"
+      ],
+      "correct": 1,
+      "exp": "स्पष्टीकरण: रास = मुद्दल + व्याज = १००० + २०० = ₹ १२ळ० (१२०० रुपये)."
+    },
+    {
+      "id": 58,
+      "sec": "math",
+      "text": "प्रश्न 58 [अंकगणित]: एका चौरसाची बाजू 25 सेमी आहे, तर त्याची परिमिती किती सेमी?",
+      "options": [
+        "100 सेमी",
+        "50 सेमी",
+        "625 सेमी",
+        "५० सेमी"
+      ],
+      "correct": 0,
+      "exp": "स्पष्टीकरण: चौरसाची परिमिती = ४ × बाजू = ४ × 25 = 100 सेमी."
+    },
+    {
+      "id": 59,
+      "sec": "math",
+      "text": "प्रश्न 59 [अंकगणित]: एका आयताची लांबी 27 मीटर व रुंदी 8 मीटर आहे, तर त्याचे क्षेत्रफळ किती चौ.मी.?",
+      "options": [
+        "216 चौ.मी.",
+        "१०० चौ.मी.",
+        "१५० चौ.मी.",
+        "२०० चौ.मी."
+      ],
+      "correct": 0,
+      "exp": "स्पष्टीकरण: क्षेत्रफळ = लांबी × रुंदी = 27 × 8 = 216 चौ.मी."
+    },
+    {
+      "id": 60,
+      "sec": "math",
+      "text": "प्रश्न 60 [अंकगणित]: ५, १०, १५, २० आणि २५ या संख्यांची सरासरी किती येईल?",
+      "options": [
+        "१२",
+        "१५",
+        "१८",
+        "२०"
+      ],
+      "correct": 1,
+      "exp": "स्पष्टीकरण: बेरीज = ७५. एकूण संख्या = ५. सरासरी = ७५ ÷ ५ = १५."
+    },
+    {
+      "id": 61,
+      "sec": "lang",
+      "passage": "झाडे आपले परम मित्र आहेत. झाडे आपल्याला फळे, फुले, सावली आणि लाकूड देतात. झाडांमुळे हवेतील प्रदूषण कमी होते आणि जमिनीची धूप थांबते. मानवाने झाडांचे संवर्धन केले पाहिजे.",
+      "text": "प्रश्न 61 [भाषा चाचणी]: झाडे मानवाला काय देतात?",
+      "options": [
+        "फळे आणि फुले",
+        "विषारी हवा",
+        "कचरा",
+        "काहीच नाही"
+      ],
+      "correct": 0,
+      "exp": "स्पष्टीकरण: उताऱ्यात नमूद आहे की झाडे फळे व फुले देतात."
+    },
+    {
+      "id": 62,
+      "sec": "lang",
+      "passage": "झाडे आपले परम मित्र आहेत. झाडे आपल्याला फळे, फुले, सावली आणि लाकूड देतात. झाडांमुळे हवेतील प्रदूषण कमी होते आणि जमिनीची धूप थांबते. मानवाने झाडांचे संवर्धन केले पाहिजे.",
+      "text": "प्रश्न 62 [भाषा चाचणी]: झाडांमुळे कशाला आळा बसतो?",
+      "options": [
+        "जमिनीच्या धुपेला",
+        "पावसाला",
+        "थंडीला",
+        "उन्हाळ्याला"
+      ],
+      "correct": 0,
+      "exp": "स्पष्टीकरण: झाडांच्या मुळांमुळे मातीची धूप थांबते."
+    },
+    {
+      "id": 63,
+      "sec": "lang",
+      "passage": "झाडे आपले परम मित्र आहेत. झाडे आपल्याला फळे, फुले, सावली आणि लाकूड देतात. झाडांमुळे हवेतील प्रदूषण कमी होते आणि जमिनीची धूप थांबते. मानवाने झाडांचे संवर्धन केले पाहिजे.",
+      "text": "प्रश्न 63 [भाषा चाचणी]: आपले परम मित्र कोण आहेत?",
+      "options": [
+        "झाडे",
+        "गाड्या",
+        "मोबाईल",
+        "टीव्ही"
+      ],
+      "correct": 0,
+      "exp": "स्पष्टीकरण: झाडे आपले खरे मित्र आहेत."
+    },
+    {
+      "id": 64,
+      "sec": "lang",
+      "passage": "झाडे आपले परम मित्र आहेत. झाडे आपल्याला फळे, फुले, सावली आणि लाकूड देतात. झाडांमुळे हवेतील प्रदूषण कमी होते आणि जमिनीची धूप थांबते. मानवाने झाडांचे संवर्धन केले पाहिजे.",
+      "text": "प्रश्न 64 [भाषा चाचणी]: 'संवर्धन' शब्दाचा अर्थ काय?",
+      "options": [
+        "जतन करणे",
+        "तोडणे",
+        "विकणे",
+        "जाळणे"
+      ],
+      "correct": 0,
+      "exp": "स्पष्टीकरण: संवर्धन म्हणजे काळजीपूर्वक जतन करणे."
+    },
+    {
+      "id": 65,
+      "sec": "lang",
+      "passage": "झाडे आपले परम मित्र आहेत. झाडे आपल्याला फळे, फुले, सावली आणि लाकूड देतात. झाडांमुळे हवेतील प्रदूषण कमी होते आणि जमिनीची धूप थांबते. मानवाने झाडांचे संवर्धन केले पाहिजे.",
+      "text": "प्रश्न 65 [भाषा चाचणी]: या उताऱ्याचे योग्य शीर्षक कोणते?",
+      "options": [
+        "वृक्ष आपले मित्र",
+        "कारखाने",
+        "पाऊस",
+        "डोंगर"
+      ],
+      "correct": 0,
+      "exp": "स्पष्टीकरण: उताऱ्याचा मुख्य विषय वृक्षांचे महत्त्व हा आहे."
+    },
+    {
+      "id": 66,
+      "sec": "lang",
+      "passage": "छत्रपती शिवाजी महाराज हे रयतेचे राजे होते. त्यांनी महाराष्ट्रात शून्यातून स्वराज्य उभे केले. त्यांनी सागरी सीमांच्या संरक्षणासाठी स्वतंत्र आरमार उभारले, म्हणून त्यांना भारतीय आरमाराचे जनक म्हणतात.",
+      "text": "प्रश्न 66 [भाषा चाचणी]: छत्रपती शिवाजी महाराजांना कशाचे जनक मानतात?",
+      "options": [
+        "भारतीय आरमाराचे",
+        "हवाई दलाचे",
+        "रेल्वेचे",
+        "टपालाचे"
+      ],
+      "correct": 0,
+      "exp": "स्पष्टीकरण: महाराजांनी सागरी संरक्षणासाठी आरमार उभारले."
+    },
+    {
+      "id": 67,
+      "sec": "lang",
+      "passage": "छत्रपती शिवाजी महाराज हे रयतेचे राजे होते. त्यांनी महाराष्ट्रात शून्यातून स्वराज्य उभे केले. त्यांनी सागरी सीमांच्या संरक्षणासाठी स्वतंत्र आरमार उभारले, म्हणून त्यांना भारतीय आरमाराचे जनक म्हणतात.",
+      "text": "प्रश्न 67 [भाषा चाचणी]: महाराजांनी कशाची निर्मिती केली?",
+      "options": [
+        "स्वराज्याची",
+        "परकीय सत्तेची",
+        "किल्ल्यांच्या विनाशाची",
+        "व्यापाराची"
+      ],
+      "correct": 0,
+      "exp": "स्पष्टीकरण: महाराजांनी लोककल्याणकारी स्वराज्य निर्माण केले."
+    },
+    {
+      "id": 68,
+      "sec": "lang",
+      "passage": "छत्रपती शिवाजी महाराज हे रयतेचे राजे होते. त्यांनी महाराष्ट्रात शून्यातून स्वराज्य उभे केले. त्यांनी सागरी सीमांच्या संरक्षणासाठी स्वतंत्र आरमार उभारले, म्हणून त्यांना भारतीय आरमाराचे जनक म्हणतात.",
+      "text": "प्रश्न 68 [भाषा चाचणी]: 'रयत' म्हणजे काय?",
+      "options": [
+        "प्रजा / सामान्य जनता",
+        "सैनिक",
+        "शत्रू",
+        "अधिकारी"
+      ],
+      "correct": 0,
+      "exp": "स्पष्टीकरण: रयत म्हणजे सर्वसामान्य जनता."
+    },
+    {
+      "id": 69,
+      "sec": "lang",
+      "passage": "छत्रपती शिवाजी महाराज हे रयतेचे राजे होते. त्यांनी महाराष्ट्रात शून्यातून स्वराज्य उभे केले. त्यांनी सागरी सीमांच्या संरक्षणासाठी स्वतंत्र आरमार उभारले, म्हणून त्यांना भारतीय आरमाराचे जनक म्हणतात.",
+      "text": "प्रश्न 69 [भाषा चाचणी]: महाराज कोणाचे राजे होते?",
+      "options": [
+        "रयतेचे",
+        "श्रीमंतांचे",
+        "परकीयांचे",
+        "दरबारींचे"
+      ],
+      "correct": 0,
+      "exp": "स्पष्टीकरण: महाराज गोरगरीब रयतेचे राजे होते."
+    },
+    {
+      "id": 70,
+      "sec": "lang",
+      "passage": "छत्रपती शिवाजी महाराज हे रयतेचे राजे होते. त्यांनी महाराष्ट्रात शून्यातून स्वराज्य उभे केले. त्यांनी सागरी सीमांच्या संरक्षणासाठी स्वतंत्र आरमार उभारले, म्हणून त्यांना भारतीय आरमाराचे जनक म्हणतात.",
+      "text": "प्रश्न 70 [भाषा चाचणी]: आरमार कशाच्या रक्षणासाठी असते?",
+      "options": [
+        "सागरी सीमांच्या",
+        "आकाशाच्या",
+        "जंगलाच्या",
+        "घराच्या"
+      ],
+      "correct": 0,
+      "exp": "स्पष्टीकरण: आरमार हे समुद्राच्या संरक्षणासाठी असते."
+    },
+    {
+      "id": 71,
+      "sec": "lang",
+      "passage": "मधमाश्या अत्यंत कष्टाळू कीटक आहेत. त्या समूहाने पोळ्यात राहतात. कामकरी माश्या फुलांमधून मकरंद गोळा करून गोड व पौष्टिक मध तयार करतात. मधमाश्यांमुळे शेतातील परागीभवन घडून पिकांचे उत्पादन वाढते.",
+      "text": "प्रश्न 71 [भाषा चाचणी]: मधमाश्या काय तयार करतात?",
+      "options": [
+        "मध",
+        "दूध",
+        "तेल",
+        "पाणी"
+      ],
+      "correct": 0,
+      "exp": "स्पष्टीकरण: मधमाश्या फुलांच्या रसापासून मध बनवतात."
+    },
+    {
+      "id": 72,
+      "sec": "lang",
+      "passage": "मधमाश्या अत्यंत कष्टाळू कीटक आहेत. त्या समूहाने पोळ्यात राहतात. कामकरी माश्या फुलांमधून मकरंद गोळा करून गोड व पौष्टिक मध तयार करतात. मधमाश्यांमुळे शेतातील परागीभवन घडून पिकांचे उत्पादन वाढते.",
+      "text": "प्रश्न 72 [भाषा चाचणी]: पोळ्यात अन्न गोळा करण्याचे काम कोण करते?",
+      "options": [
+        "कामकरी माश्या",
+        "राणी माशी",
+        "नर माशी",
+        "पक्षी"
+      ],
+      "correct": 0,
+      "exp": "स्पष्टीकरण: कामकरी माश्या मकरंद गोळा करतात."
+    },
+    {
+      "id": 73,
+      "sec": "lang",
+      "passage": "मधमाश्या अत्यंत कष्टाळू कीटक आहेत. त्या समूहाने पोळ्यात राहतात. कामकरी माश्या फुलांमधून मकरंद गोळा करून गोड व पौष्टिक मध तयार करतात. मधमाश्यांमुळे शेतातील परागीभवन घडून पिकांचे उत्पादन वाढते.",
+      "text": "प्रश्न 73 [भाषा चाचणी]: मधमाश्यांमुळे शेतीला काय फायदा होतो?",
+      "options": [
+        "उत्पादन वाढते (परागीभवन)",
+        "तण वाढते",
+        "रोग पडतो",
+        "नुकसान होते"
+      ],
+      "correct": 0,
+      "exp": "स्पष्टीकरण: परागीभवनामुळे पिकांचे उत्पादन वाढते."
+    },
+    {
+      "id": 74,
+      "sec": "lang",
+      "passage": "मधमाश्या अत्यंत कष्टाळू कीटक आहेत. त्या समूहाने पोळ्यात राहतात. कामकरी माश्या फुलांमधून मकरंद गोळा करून गोड व पौष्टिक मध तयार करतात. मधमाश्यांमुळे शेतातील परागीभवन घडून पिकांचे उत्पादन वाढते.",
+      "text": "प्रश्न 74 [भाषा चाचणी]: मधमाश्या कशा राहतात?",
+      "options": [
+        "समूहाने पोळ्यात",
+        "एकट्या",
+        "जमिनीत",
+        "पाण्यात"
+      ],
+      "correct": 0,
+      "exp": "स्पष्टीकरण: मधमाश्या पोळ्यात समूहाने राहतात."
+    },
+    {
+      "id": 75,
+      "sec": "lang",
+      "passage": "मधमाश्या अत्यंत कष्टाळू कीटक आहेत. त्या समूहाने पोळ्यात राहतात. कामकरी माश्या फुलांमधून मकरंद गोळा करून गोड व पौष्टिक मध तयार करतात. मधमाश्यांमुळे शेतातील परागीभवन घडून पिकांचे उत्पादन वाढते.",
+      "text": "प्रश्न 75 [भाषा चाचणी]: 'मकरंद' म्हणजे काय?",
+      "options": [
+        "फुलांतील गोड रस",
+        "माती",
+        "झाडाचे पान",
+        "बी"
+      ],
+      "correct": 0,
+      "exp": "स्पष्टीकरण: मकरंद म्हणजे फुलातील मधूद्रव."
+    },
+    {
+      "id": 76,
+      "sec": "lang",
+      "passage": "नियमित वाचन हे मेंदूचे खाद्य आहे. वाचनाने माणसाची कल्पनाशक्ती विस्तारते आणि शब्दसंग्रह वाढतो. चांगल्या पुस्तकांमुळे जीवनाला योग्य दिशा मिळते आणि व्यक्तिमत्त्व घडते. दररोज वाचन केले पाहिजे.",
+      "text": "प्रश्न 76 [भाषा चाचणी]: वाचनाने काय वाढते?",
+      "options": [
+        "शब्दसंग्रह व ज्ञान",
+        "आळस",
+        "वजन",
+        "राग"
+      ],
+      "correct": 0,
+      "exp": "स्पष्टीकरण: वाचनाने भाषा समृद्ध होते व ज्ञान वाढते."
+    },
+    {
+      "id": 77,
+      "sec": "lang",
+      "passage": "नियमित वाचन हे मेंदूचे खाद्य आहे. वाचनाने माणसाची कल्पनाशक्ती विस्तारते आणि शब्दसंग्रह वाढतो. चांगल्या पुस्तकांमुळे जीवनाला योग्य दिशा मिळते आणि व्यक्तिमत्त्व घडते. दररोज वाचन केले पाहिजे.",
+      "text": "प्रश्न 77 [भाषा चाचणी]: मेंदूचे खाद्य काय म्हटले आहे?",
+      "options": [
+        "वाचन",
+        "टीव्ही पाहणे",
+        "झोप",
+        "खेळ"
+      ],
+      "correct": 0,
+      "exp": "स्पष्टीकरण: उताऱ्यात वाचनाला मेंदूचे खाद्य म्हटले आहे."
+    },
+    {
+      "id": 78,
+      "sec": "lang",
+      "passage": "नियमित वाचन हे मेंदूचे खाद्य आहे. वाचनाने माणसाची कल्पनाशक्ती विस्तारते आणि शब्दसंग्रह वाढतो. चांगल्या पुस्तकांमुळे जीवनाला योग्य दिशा मिळते आणि व्यक्तिमत्त्व घडते. दररोज वाचन केले पाहिजे.",
+      "text": "प्रश्न 78 [भाषा चाचणी]: जीवनाला योग्य दिशा कशामुळे मिळते?",
+      "options": [
+        "चांगल्या पुस्तकांमुळे",
+        "मोबाईलमुळे",
+        "फास्टफूडमुळे",
+        "पैशांमुळे"
+      ],
+      "correct": 0,
+      "exp": "स्पष्टीकरण: पुस्तके उत्तम मार्गदर्शक असतात."
+    },
+    {
+      "id": 79,
+      "sec": "lang",
+      "passage": "नियमित वाचन हे मेंदूचे खाद्य आहे. वाचनाने माणसाची कल्पनाशक्ती विस्तारते आणि शब्दसंग्रह वाढतो. चांगल्या पुस्तकांमुळे जीवनाला योग्य दिशा मिळते आणि व्यक्तिमत्त्व घडते. दररोज वाचन केले पाहिजे.",
+      "text": "प्रश्न 79 [भाषा चाचणी]: आपण दररोज काय केले पाहिजे?",
+      "options": [
+        "किमान थोडे वाचन",
+        "फक्त खेळणे",
+        "टीव्ही पाहणे",
+        "भांडण"
+      ],
+      "correct": 0,
+      "exp": "स्पष्टीकरण: दररोज वाचनाची सवय असावी."
+    },
+    {
+      "id": 80,
+      "sec": "lang",
+      "passage": "नियमित वाचन हे मेंदूचे खाद्य आहे. वाचनाने माणसाची कल्पनाशक्ती विस्तारते आणि शब्दसंग्रह वाढतो. चांगल्या पुस्तकांमुळे जीवनाला योग्य दिशा मिळते आणि व्यक्तिमत्त्व घडते. दररोज वाचन केले पाहिजे.",
+      "text": "प्रश्न 80 [भाषा चाचणी]: 'कल्पनाशक्ती' म्हणजे काय?",
+      "options": [
+        "नवे विचार करण्याची क्षमता",
+        "आळस",
+        "शारीरिक शक्ती",
+        "भूक"
+      ],
+      "correct": 0,
+      "exp": "स्पष्टीकरण: कल्पनाशक्ती म्हणजे सर्जनशील विचारशक्ती."
+    }
+  ]
+}
