@@ -18,7 +18,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
   
-  <!-- मराठी फॉन्ट अचूक दिसण्यासाठी SheetJS Excel Library -->
+  <!-- SheetJS Excel Library -->
   <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
 
   <style>
@@ -238,6 +238,27 @@
     .section-selector button.active span.sec-sub { color: #fef08a; }
     
     .question-card { background: white; border-radius: 12px; padding: 16px; border: 1px solid var(--border); margin-bottom: 16px; }
+    
+    /* प्रश्न क्रमांक व नाव वेगळ्या चौकतीत (Badge) दाखवण्यासाठी */
+    .q-badge {
+      display: inline-block;
+      background: #e0f2fe;
+      color: #0369a1;
+      font-weight: 800;
+      font-size: 0.9rem;
+      padding: 3px 10px;
+      border-radius: 6px;
+      margin-bottom: 8px;
+      border: 1px solid #bae6fd;
+    }
+    .q-text-content {
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--text);
+      line-height: 1.4;
+      margin-bottom: 10px;
+    }
+
     .passage-box { background: #fffbeb; border: 1px solid #fde68a; border-radius: 10px; padding: 14px; margin-bottom: 14px; font-size: 0.95rem; line-height: 1.65; color: #92400e; }
     .fig-container { display: flex; flex-wrap: wrap; gap: 12px; margin: 12px 0; background: #f8fafc; padding: 12px; border-radius: 10px; align-items: center; justify-content: center; border: 1px dashed #cbd5e1; }
     .fig-box { width: 72px; height: 72px; border: 2px solid #334155; background: #fff; display: flex; align-items: center; justify-content: center; margin: 0 auto 4px auto; border-radius: 8px; }
@@ -247,7 +268,29 @@
     .opt-label { display: flex; align-items: center; padding: 12px 14px; border: 1.5px solid var(--border); border-radius: 10px; cursor: pointer; background: #fff; font-size: 0.95rem; }
     .opt-label input { margin-right: 12px; width: 18px; height: 18px; accent-color: var(--secondary); }
 
-    /* स्पष्टीकरण बॉक्स */
+    /* रुपयाचे चिन्ह व ओव्हरलॅपिंग दूर करण्यासाठी व अपूर्णांकासाठी सुरक्षित स्टाइल */
+    .currency-symbol {
+      display: inline-block;
+      margin-right: 4px;
+      font-weight: 700;
+    }
+    .math-fraction {
+      display: inline-flex;
+      flex-direction: column;
+      vertical-align: middle;
+      text-align: center;
+      margin: 0 3px;
+      font-size: 0.95rem;
+      font-weight: 700;
+    }
+    .math-fraction .numerator {
+      border-bottom: 1.5px solid currentColor;
+      padding-bottom: 1px;
+    }
+    .math-fraction .denominator {
+      padding-top: 1px;
+    }
+
     .exp-box {
       background: #eff6ff;
       border: 1px solid #bfdbfe;
@@ -403,10 +446,9 @@
       <p style="color:#64748b; font-size:0.85rem;">नवोदय सराव चाचणी सोडवण्यासाठी आपली अचूक माहिती भरा</p>
     </div>
 
-    <!-- जिल्हास्तरीय ठळक सूचना -->
     <div class="district-warning-box">
       ⚠️ <b>महत्त्वाची अधिकृत सूचना:</b><br>
-      विद्यार्थ्यांनी आपले <b>नाव, तालुका आणि मोबाईल क्रमांक अचूक भरावा</b>. आपल्या माहितीची व गुणांची थेट <b>जिल्हा स्तरावर नोंद</b> घेतली जात आहे. कुणीही डमी नाव किंवा इतरांचा मोबाईल क्रमांक टाकू नये, <b>आपल्या स्वतःच्या पालकांचाच १० अंकी खरा मोबाईल क्रमांक टाकावा.</b>
+      विद्यार्थ्यांनी आपले <b>नाव, तालुका आणि मोबाईल क्रमांक अचूक भरावा</b>. एकाच मोबाईल नंबरवरून घरातील इतर भावंडे किंवा इतर विद्यार्थीही स्वतःचे नाव टाकून स्वतंत्रपणे परीक्षा देऊ शकतात. <b>कृपया पालकांचाच १० अंकी खरा मोबाईल क्रमांक वापरावा.</b>
     </div>
 
     <div class="form-group">
@@ -416,7 +458,7 @@
     <div class="form-group">
       <label>पालकांचा खरा मोबाईल नंबर (10 अंकी):</label>
       <input type="tel" id="sMobile" maxlength="10" placeholder="6, 7, 8 किंवा 9 ने सुरू होणारा 10 अंकी नंबर" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-      <div class="input-hint">नोंद: बनावट, एकाच अंकाचा (उदा. 9999999999) किंवा साध्या क्रमाचा नंबर स्वीकारला जाणार नाही.</div>
+      <div class="input-hint">नोंद: एकाच मोबाईल नंबरवरून वेगवेगळ्या नावांनी एकापेक्षा जास्त विद्यार्थी स्वतंत्र लॉगिन करू शकतात.</div>
     </div>
     <div class="form-group">
       <label>तालुका निवडा (जिल्हा बीड):</label>
@@ -453,7 +495,7 @@
       <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
         <h3 style="color:#c2410c; font-weight:800; font-size:1.1rem;">⚙️ ॲडमिन नियंत्रण कक्ष (Admin Panel)</h3>
         <div style="font-size:0.88rem; font-weight:700; color:#0f2b48;">
-          एकूण युनिक नोंदणीकृत विद्यार्थी: <span id="adminTotalStudentsBadge" style="background:#0f2b48; color:#fff; padding:2px 8px; border-radius:10px;">0</span>
+          एकूण नोंदणीकृत विद्यार्थी: <span id="adminTotalStudentsBadge" style="background:#0f2b48; color:#fff; padding:2px 8px; border-radius:10px;">0</span>
         </div>
       </div>
       <div style="display:flex; gap:10px; margin-top:12px; flex-wrap:wrap;">
@@ -463,7 +505,6 @@
       </div>
     </div>
 
-    <!-- ४ वेळा चाचणी सोडवण्याची सूचना -->
     <div style="background: #e0f2fe; border: 1px solid #bae6fd; border-left: 5px solid #0284c7; border-radius: 10px; padding: 12px 14px; margin-bottom: 14px;">
       <p style="font-size: 0.92rem; font-weight: 700; color: #0369a1; line-height: 1.4;">
         📌 सूचना: प्रत्येक सराव चाचणी एका विद्यार्थ्याला जास्तीत जास्त ४ वेळेसच सोडवता येईल. चाचणी मधेच बंद पडल्यास शिल्लक वेळेसह तिथूनच पुन्हा सुरू (Resume) करता येईल.
@@ -662,7 +703,7 @@
   </div>
 </div>
 
-<!-- ॲडमिन VIP मोबाईल नंबर व्यवस्थापन MODAL (केवळ मोबाईल नंबरवर आधारित) -->
+<!-- ॲडमिन VIP मोबाईल नंबर व्यवस्थापन MODAL -->
 <div id="adminVipModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(15,43,72,0.85); z-index:3600; justify-content:center; align-items:center; backdrop-filter:blur(4px); padding:12px;">
   <div style="background:#ffffff; border-radius:16px; max-width:620px; width:100%; max-height:90vh; overflow-y:auto; padding:24px 20px; box-shadow:0 12px 35px rgba(0,0,0,0.3); border-top:5px solid #7c3aed;">
     <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; border-bottom:2px solid #e2e8f0; padding-bottom:10px;">
@@ -671,7 +712,7 @@
     </div>
 
     <p style="font-size:0.85rem; color:#64748b; margin-bottom:12px; line-height:1.4;">
-      विद्यार्थ्याने नाव व तालुका कोणताही टाकला तरी <b>खालील मोबाईल नंबरवरून लॉगिन होताच</b> त्याला सर्व १५ चाचण्या पूर्णवेळ अनलॉक मिळतील.
+      विद्यार्थ्याने नाव व तालुका कोणताही टाकला तरी <b>खालील मोबाईल नंबरवरून लॉगिन होताच</b> त्याला सर्व १५ चाचण्या पूर्णवेळ अनलॉक मिळतील. एकाच मोबाईल नंबरवरून एकापेक्षा जास्त विद्यार्थ्यांनी लॉगिन केल्यास त्या सर्वांना ही सवलत मिळेल.
     </p>
 
     <div style="display:flex; gap:8px; margin-bottom:14px; flex-wrap:wrap;">
@@ -718,7 +759,7 @@
   </div>
 </div>
 
-<!-- पहिल्या ५ वेळा दाखवणारा माहितीपूर्ण SHORTCUT POPUP -->
+<!-- शॉर्टकट पॉपअप -->
 <div id="installShortcutModal">
   <div class="install-modal-content">
     <div style="display:flex; align-items:center; gap:12px; margin-bottom:10px;">
@@ -783,7 +824,7 @@
   let loggedInUser = null;
   let isAdminMode = false;
   let globalUnlockedTests = {};
-  let whitelistedMobiles = {}; // केवळ मोबाईल नंबरवर आधारित VIP यादी
+  let whitelistedMobiles = {};
   let currentPendingTest = null;
   let currentQuizData = null;
   let quizInterval = null;
@@ -799,6 +840,11 @@
 
   let allFirebaseResults = [];
   let allFirebaseStudents = [];
+
+  function makeStudentId(mobile, name) {
+    const cleanName = (name || "").trim().toLowerCase().replace(/[^a-z0-9\u0900-\u097F]/g, "_");
+    return `${mobile}_${cleanName}`;
+  }
 
   window.addEventListener("beforeinstallprompt", (e) => {
     e.preventDefault();
@@ -899,7 +945,6 @@
     return { valid: true };
   }
 
-  /* ---------------- युनिक विद्यार्थी नोंदणी ---------------- */
   function handleRegistration() {
     const name = document.getElementById("sName").value.trim();
     const mobile = document.getElementById("sMobile").value.trim();
@@ -922,18 +967,19 @@
       return;
     }
 
-    loggedInUser = { name, mobile, taluka };
+    const studentUid = makeStudentId(mobile, name);
+    loggedInUser = { uid: studentUid, name: name, mobile: mobile, taluka: taluka };
     syncUserPersistentData();
 
-    // आधी तपासणे व केवळ नवीन असल्यास Firebase वर पाठवणे
-    fetch(`${FIREBASE_DB_URL}/students/${mobile}.json`)
+    fetch(`${FIREBASE_DB_URL}/students/${studentUid}.json`)
       .then(res => res.json())
       .then(existing => {
         if (!existing) {
-          fetch(`${FIREBASE_DB_URL}/students/${mobile}.json`, {
+          fetch(`${FIREBASE_DB_URL}/students/${studentUid}.json`, {
             method: "PUT",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
+              uid: studentUid,
               name: name,
               mobile: mobile,
               taluka: taluka,
@@ -949,8 +995,11 @@
   }
 
   function syncUserPersistentData() {
-    if (!loggedInUser || !loggedInUser.mobile) return;
-    const storeKey = "jnv_vault_" + loggedInUser.mobile;
+    if (!loggedInUser || !loggedInUser.mobile || !loggedInUser.name) return;
+    const studentUid = loggedInUser.uid || makeStudentId(loggedInUser.mobile, loggedInUser.name);
+    loggedInUser.uid = studentUid;
+
+    const storeKey = "jnv_vault_" + studentUid;
     const vault = localStorage.getItem(storeKey);
     if (vault) {
       const parsed = JSON.parse(vault);
@@ -966,8 +1015,8 @@
   }
 
   function saveUserVault() {
-    if (!loggedInUser || !loggedInUser.mobile) return;
-    const storeKey = "jnv_vault_" + loggedInUser.mobile;
+    if (!loggedInUser || !loggedInUser.uid) return;
+    const storeKey = "jnv_vault_" + loggedInUser.uid;
     const payload = {
       history: loggedInUser.history || {},
       attempts: loggedInUser.attempts || {},
@@ -1040,9 +1089,10 @@
         if (data) {
           const uniqueStudentsMap = {};
           Object.values(data).forEach(st => {
-            if (st && st.mobile) {
-              if (!uniqueStudentsMap[st.mobile]) {
-                uniqueStudentsMap[st.mobile] = st;
+            if (st && st.name && st.mobile) {
+              const uKey = makeStudentId(st.mobile, st.name);
+              if (!uniqueStudentsMap[uKey]) {
+                uniqueStudentsMap[uKey] = st;
               }
             }
           });
@@ -1065,7 +1115,6 @@
       });
   }
 
-  /* ---------------- केवळ मोबाईल नंबरवर आधारित VIP LOGIC ---------------- */
   function fetchWhitelistedMobiles() {
     fetch(`${FIREBASE_DB_URL}/whitelisted_mobiles.json`)
       .then(res => res.json())
@@ -1142,7 +1191,7 @@
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(true)
     }).then(() => {
-      alert(`मोबाईल क्रमांक ${mob} VIP यादीत यशस्वीरीत्या जोडला गेला! या नंबरवरून लॉगिन करणाऱ्या विद्यार्थ्याला (नाव व तालुका काहीही असला तरी) सर्व चाचण्या पूर्णवेळ अनलॉक राहतील.`);
+      alert(`मोबाईल क्रमांक ${mob} VIP यादीत जोडला गेला!`);
       renderDashboard();
     });
   }
@@ -1195,7 +1244,7 @@
 
     const studentBest = {};
     filtered.forEach(item => {
-      const key = item.mobile;
+      const key = item.uid || makeStudentId(item.mobile, item.name);
       if (!studentBest[key] || item.score > studentBest[key].score) {
         studentBest[key] = item;
       }
@@ -1283,7 +1332,7 @@
 
     const studentBest = {};
     filtered.forEach(item => {
-      const key = item.mobile;
+      const key = item.uid || makeStudentId(item.mobile, item.name);
       if (!studentBest[key] || item.score > studentBest[key].score) {
         studentBest[key] = item;
       }
@@ -1364,13 +1413,11 @@
     container.innerHTML = "";
     const todayDate = new Date().toISOString().split("T")[0];
 
-    // केवळ मोबाईल नंबरवरून VIP तपासणे
     const isUserVip = loggedInUser && loggedInUser.mobile && (whitelistedMobiles[loggedInUser.mobile] !== undefined);
 
     EXAM_SCHEDULE.forEach(item => {
       let isAccessible = false;
 
-      // जर विद्यार्थ्याचा मोबाईल नंबर VIP असेल तर सर्व चाचण्या तात्काळ अनलॉक
       if (isUserVip) {
         isAccessible = true;
       } else if (globalUnlockedTests[item.id] !== undefined) {
@@ -1574,7 +1621,18 @@
       });
       opts += '</div>';
 
-      qDiv.innerHTML = `${pText}<div style="font-weight:700; margin-bottom:6px; font-size:0.98rem; line-height:1.4;">${q.text}</div>${figHtml}${opts}`;
+      // प्रश्न क्रमांक आणि नाव वेगळ्या चौकतीत (Badge) दाखवण्यासाठी
+      let qTitleParts = q.text.split(":");
+      let badgeText = qTitleParts[0] || ("प्रश्न " + q.id);
+      let restText = qTitleParts.slice(1).join(":") || q.text;
+
+      qDiv.innerHTML = `
+        ${pText}
+        <div style="margin-bottom:8px;"><span class="q-badge">${badgeText}</span></div>
+        <div class="q-text-content">${restText}</div>
+        ${figHtml}
+        ${opts}
+      `;
       container.appendChild(qDiv);
     });
 
@@ -1745,6 +1803,7 @@
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
+        uid: loggedInUser.uid,
         name: loggedInUser.name,
         mobile: loggedInUser.mobile,
         taluka: loggedInUser.taluka,
@@ -1908,12 +1967,14 @@
         expHtml = `<div class="exp-box">💡 <b>स्पष्टीकरण:</b> ${q.exp}</div>`;
       }
 
+      let qTitleParts = q.text.split(":");
+      let badgeText = qTitleParts[0] || ("प्रश्न " + q.id);
+      let restText = qTitleParts.slice(1).join(":") || q.text;
+
       qDiv.innerHTML = `
         ${pText}
-        <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:6px;">
-          <div style="font-weight:700; font-size:0.98rem;">${q.text}</div>
-          <div>${statusBadge}</div>
-        </div>
+        <div style="margin-bottom:8px;"><span class="q-badge">${badgeText}</span></div>
+        <div class="q-text-content">${restText}</div>
         ${figHtml}
         ${opts}
         ${expHtml}
@@ -1927,7 +1988,7 @@
     } else if (secKey === 'math') {
       akFooterNav.innerHTML = `<button class="btn-nav-prev" onclick="goToAkSection('mental')">⬅ मागील भाग: मानसिक क्षमता</button><button class="btn-nav-next" onclick="goToAkSection('lang')">पुढील भाग: भाषा चाचणी ➔</button>`;
     } else if (secKey === 'lang') {
-      akFooterNav.innerHTML = `<button class="btn-nav-prev" onclick="goToAkSection('math')">⬅ मागील भाग: अंकगणित</button><button class="btn-main" style="background:#475569; width:auto; padding:10px 24px; margin-left:auto;" onclick="renderDashboard()">डॅशबोर्डवर परत जा</button>`;
+      akFooterNav.innerHTML = `<button class="btn-nav-prev" onclick="goToAkSection('math')">⬅ मागील भाग: अंकगणित</button><button class="btn-main" style="background:var(--danger); width:auto; padding:10px 24px; margin-left:auto;" onclick="renderDashboard()">डॅशबोर्डवर परत जा</button>`;
     }
   }
 
