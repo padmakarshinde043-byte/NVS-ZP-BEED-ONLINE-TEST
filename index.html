@@ -111,7 +111,7 @@
     
     .question-card { background: white; border-radius: 12px; padding: 16px; border: 1px solid var(--border); margin-bottom: 16px; }
     
-    /* प्रश्न क्रमांकासाठी स्पष्ट आणि वेगळा डबा */
+    /* प्रश्न क्रमांक फक्त एकदाच दाखवणारा स्वतंत्र डबा */
     .q-badge-box {
       display: inline-block;
       background: #e0f2fe;
@@ -698,6 +698,7 @@
       }
     });
 
+    // Recent Apps / Background switch protection (Auto-Save state)
     document.addEventListener("visibilitychange", () => {
       if (document.visibilityState === "hidden" && currentScreen === 'exam') {
         saveCurrentExamProgress();
@@ -977,7 +978,7 @@
       .catch(() => alert("एक्सेल डाउनलोड करताना त्रुटी आली."));
   }
 
-  // --- ॲडमिन Visual Editor (Q1-20 - Main Image + 4 Options) ---
+  // --- ॲडमिन Visual Editor (Q1-20) ---
   function openAdminVisualEditorModal() {
     document.getElementById("adminVisualEditorModal").style.display = "flex";
     const sel = document.getElementById("vEditTestId");
@@ -1299,7 +1300,7 @@
     const container = document.getElementById("questionsHost");
     container.innerHTML = "";
 
-    const filtered = currentQuizData.questions.filter(q => q.sec === selectedSection);
+    const filtered = currentQuizData.questions.filter(q => q.sec === secKey);
     let lastPassage = "";
 
     filtered.forEach(q => {
@@ -1326,8 +1327,10 @@
       });
       opts += '</div>';
 
-      // प्रश्न क्रमांक फक्‍त एकाच वेगळ्या डब्यात (Badge Box) आणि मजकूर एकदाच
-      qDiv.innerHTML = `${pText}<div class="q-badge-box">प्रश्न ${q.id}</div><div class="q-text-content">${q.text}</div>${figHtml}${opts}`;
+      // --- येथे सुधारणा: प्रश्न क्रमांक फक्त एकदाच वरच्या डब्यात येईल आणि मजकुरातून "प्रश्न X:" हा भाग पूर्णपणे काढला आहे जेणेकरून तो दोनदा दिसणार नाही ---
+      let cleanText = (q.text || "").replace(/^प्रश्न\s*\d+[:|-]?\s*/i, "");
+
+      qDiv.innerHTML = `${pText}<div class="q-badge-box">प्रश्न ${q.id}</div><div class="q-text-content">${cleanText}</div>${figHtml}${opts}`;
       container.appendChild(qDiv);
     });
 
@@ -1477,7 +1480,9 @@
         opts += `<div class="opt-label ${optClass}">${optDisplay} ${idx === q.correct ? '<b>[अचूक]</b>' : ''}</div>`;
       });
       opts += '</div>';
-      qDiv.innerHTML = `<div class="q-badge-box">प्रश्न ${q.id}</div><div class="q-text-content">${q.text}</div>${opts}<div class="exp-box">💡 <b>स्पष्टीकरण:</b> ${q.exp}</div>`;
+
+      let cleanText = (q.text || "").replace(/^प्रश्न\s*\d+[:|-]?\s*/i, "");
+      qDiv.innerHTML = `<div class="q-badge-box">प्रश्न ${q.id}</div><div class="q-text-content">${cleanText}</div>${opts}<div class="exp-box">💡 <b>स्पष्टीकरण:</b> ${q.exp}</div>`;
       container.appendChild(qDiv);
     });
   }
