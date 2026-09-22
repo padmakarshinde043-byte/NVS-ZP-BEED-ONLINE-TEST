@@ -115,6 +115,7 @@
     .passage-box { background: #fffbeb; border: 1px solid #fde68a; border-radius: 10px; padding: 14px; margin-bottom: 14px; font-size: 0.95rem; line-height: 1.65; color: #92400e; }
     .fig-container { display: flex; flex-wrap: wrap; gap: 12px; margin: 12px 0; background: #f8fafc; padding: 12px; border-radius: 10px; align-items: center; justify-content: center; border: 1px dashed #cbd5e1; }
     .fig-box { width: 72px; height: 72px; border: 2px solid #334155; background: #fff; display: flex; align-items: center; justify-content: center; margin: 0 auto 4px auto; border-radius: 8px; }
+    .fig-box img { width: 100%; height: 100%; object-fit: contain; }
     .fig-box svg { width: 60px; height: 60px; }
     
     .options-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 12px; }
@@ -252,16 +253,17 @@
         </div>
       </div>
       <div style="display:flex; gap:10px; margin-top:12px; flex-wrap:wrap;">
-        <button class="btn-action btn-resume" onclick="openAdminToppersModal()">🏆 Top 50 Toppers पहा</button>
-        <button class="btn-action" style="background:#0284c7; color:#fff;" onclick="openAdminQuestionEditorModal()">✏️ प्रश्न क्र. 21 ते 80 संपादक</button>
-        <button class="btn-action" style="background:#7c3aed; color:#fff;" onclick="openAdminVipModal()">⭐ विशेष VIP मोबाईल नंबर</button>
+        <button class="btn-action btn-resume" onclick="openAdminToppersModal()">🏆 Top 50 Toppers</button>
+        <button class="btn-action" style="background:#0284c7; color:#fff;" onclick="openAdminVisualEditorModal()">🖼️ आकृती प्रश्न संपादक (Q1-20)</button>
+        <button class="btn-action" style="background:#0d9488; color:#fff;" onclick="openAdminQuestionEditorModal()">✏️ प्रश्न क्र. 21-80 संपादक</button>
+        <button class="btn-action" style="background:#7c3aed; color:#fff;" onclick="openAdminVipModal()">⭐ VIP मोबाईल नंबर</button>
         <button class="btn-action btn-start" onclick="downloadStudentsExcel()">📥 एक्सेल डाउनलोड</button>
       </div>
     </div>
 
     <div style="background: #e0f2fe; border: 1px solid #bae6fd; border-left: 5px solid #0284c7; border-radius: 10px; padding: 12px 14px; margin-bottom: 14px;">
       <p style="font-size: 0.92rem; font-weight: 700; color: #0369a1; line-height: 1.4;">
-        📌 सूचना: प्रत्येक सराव चाचणी एका विद्यार्थ्याला जास्तीत जास्त ४ वेळेसच सोडवता येईल.
+        📌 सूचना: सामान्य विद्यार्थ्यांना चाचणीसाठी ४ प्रयत्नांची मर्यादा आहे, तर <b>VIP विद्यार्थ्यांना अमर्याद (Unlimited) प्रयत्न</b> उपलब्ध आहेत.
       </p>
     </div>
 
@@ -388,7 +390,7 @@
     </div>
   </div>
 
-  <!-- उत्तरपत्रिका (Answer Key) -->
+  <!-- उत्तरपत्रिका -->
   <div id="answerKeyArea" style="display:none;" class="card">
     <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; border-bottom:2px solid var(--border); padding-bottom:10px;">
       <div>
@@ -418,11 +420,101 @@
   </div>
 </div>
 
-<!-- ॲडमिन स्वतंत्र प्रश्न क्र. 21 ते 80 संपादक MODAL -->
-<div id="adminQuestionEditorModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(15,43,72,0.85); z-index:3800; justify-content:center; align-items:center; backdrop-filter:blur(4px); padding:12px;">
-  <div style="background:#ffffff; border-radius:16px; max-width:650px; width:100%; max-height:90vh; overflow-y:auto; padding:24px 20px; box-shadow:0 12px 35px rgba(0,0,0,0.3); border-top:5px solid #0284c7;">
+<!-- ॲडमिन आकृती प्रश्न संपादक (Visual Editor for Q1-20 with Image Upload & Preview) MODAL -->
+<div id="adminVisualEditorModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(15,43,72,0.85); z-index:3900; justify-content:center; align-items:center; backdrop-filter:blur(4px); padding:12px;">
+  <div style="background:#ffffff; border-radius:16px; max-width:700px; width:100%; max-height:90vh; overflow-y:auto; padding:24px 20px; box-shadow:0 12px 35px rgba(0,0,0,0.3); border-top:5px solid #0284c7;">
     <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; border-bottom:2px solid #e2e8f0; padding-bottom:10px;">
-      <h3 style="color:#0369a1; font-weight:800; font-size:1.15rem;">✏️ प्रश्न क्र. 21 ते 80 संपादक (Admin Panel)</h3>
+      <h3 style="color:#0284c7; font-weight:800; font-size:1.15rem;">🖼️ आकृती प्रश्न संपादक (Q1 ते Q20 Visual Editor)</h3>
+      <button onclick="closeAdminVisualEditorModal()" style="background:#fee2e2; color:#991b1b; border:none; padding:4px 10px; border-radius:8px; font-weight:800; cursor:pointer;">✕ बंद करा</button>
+    </div>
+
+    <p style="font-size:0.84rem; color:#64748b; margin-bottom:12px;">
+      येथून तुम्ही प्रश्न क्र. 1 ते 20 साठी इमेज अपलोड करून आकृत्या बदलू शकता व लाईव्ह प्रीव्ह्यू पाहू शकता.
+    </p>
+
+    <div style="display:flex; gap:10px; margin-bottom:12px; flex-wrap:wrap;">
+      <div style="flex:1; min-width:140px;">
+        <label style="font-weight:700; font-size:0.85rem; color:#334155;">चाचणी निवडा:</label>
+        <select id="vEditTestId" onchange="loadVisualQuestionForEditing()" style="padding:8px; border:1.5px solid #cbd5e1; border-radius:8px; font-weight:700; width:100%;"></select>
+      </div>
+      <div style="flex:1; min-width:140px;">
+        <label style="font-weight:700; font-size:0.85rem; color:#334155;">प्रश्न क्रमांक (1 ते 20):</label>
+        <input type="number" id="vEditQId" min="1" max="20" value="1" onchange="loadVisualQuestionForEditing()" style="padding:8px; border:1.5px solid #cbd5e1; border-radius:8px; font-weight:700; width:100%;">
+      </div>
+    </div>
+
+    <div id="vEditorFormContainer" style="display:none;">
+      <div class="form-group">
+        <label>प्रश्न मजकूर:</label>
+        <input type="text" id="vEditQText">
+      </div>
+
+      <!-- प्रश्न आकृती इमेज अपलोड व प्रीव्ह्यू -->
+      <div class="form-group" style="background:#f8fafc; padding:10px; border-radius:8px; border:1px solid #cbd5e1;">
+        <label style="color:#0f2b48; font-weight:800;">प्रश्न आकृती (Problem Figure Image):</label>
+        <input type="file" id="vProbImgFile" accept="image/*" onchange="previewImage(this, 'vProbPreview')" style="margin-bottom:6px;">
+        <div style="display:flex; align-items:center; gap:10px;">
+          <div class="fig-box" id="vProbPreview" style="width:60px; height:60px;">[Preview]</div>
+          <span style="font-size:0.78rem; color:#64748b;">किंवा थेट प्रतिमा URL टाका:</span>
+        </div>
+        <input type="text" id="vProbImgUrl" placeholder="https://..." oninput="updateUrlPreview(this.value, 'vProbPreview')" style="margin-top:4px;">
+      </div>
+
+      <!-- उत्तर आकृत्या (A, B, C, D) इमेज अपलोड व प्रीव्ह्यू -->
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
+        <div class="form-group" style="background:#f8fafc; padding:8px; border-radius:8px;">
+          <label style="font-size:0.85rem; font-weight:700;">पर्याय (A) इमेज:</label>
+          <input type="file" id="vOptImg0" accept="image/*" onchange="previewImage(this, 'vPrev0')" style="font-size:0.8rem; margin-bottom:4px;">
+          <div class="fig-box" id="vPrev0" style="width:50px; height:50px;">A</div>
+          <input type="text" id="vOptUrl0" placeholder="Image URL A" oninput="updateUrlPreview(this.value, 'vPrev0')" style="font-size:0.8rem; margin-top:2px;">
+        </div>
+        <div class="form-group" style="background:#f8fafc; padding:8px; border-radius:8px;">
+          <label style="font-size:0.85rem; font-weight:700;">पर्याय (B) इमेज:</label>
+          <input type="file" id="vOptImg1" accept="image/*" onchange="previewImage(this, 'vPrev1')" style="font-size:0.8rem; margin-bottom:4px;">
+          <div class="fig-box" id="vPrev1" style="width:50px; height:50px;">B</div>
+          <input type="text" id="vOptUrl1" placeholder="Image URL B" oninput="updateUrlPreview(this.value, 'vPrev1')" style="font-size:0.8rem; margin-top:2px;">
+        </div>
+        <div class="form-group" style="background:#f8fafc; padding:8px; border-radius:8px;">
+          <label style="font-size:0.85rem; font-weight:700;">पर्याय (C) इमेज:</label>
+          <input type="file" id="vOptImg2" accept="image/*" onchange="previewImage(this, 'vPrev2')" style="font-size:0.8rem; margin-bottom:4px;">
+          <div class="fig-box" id="vPrev2" style="width:50px; height:50px;">C</div>
+          <input type="text" id="vOptUrl2" placeholder="Image URL C" oninput="updateUrlPreview(this.value, 'vPrev2')" style="font-size:0.8rem; margin-top:2px;">
+        </div>
+        <div class="form-group" style="background:#f8fafc; padding:8px; border-radius:8px;">
+          <label style="font-size:0.85rem; font-weight:700;">पर्याय (D) इमेज:</label>
+          <input type="file" id="vOptImg3" accept="image/*" onchange="previewImage(this, 'vPrev3')" style="font-size:0.8rem; margin-bottom:4px;">
+          <div class="fig-box" id="vPrev3" style="width:50px; height:50px;">D</div>
+          <input type="text" id="vOptUrl3" placeholder="Image URL D" oninput="updateUrlPreview(this.value, 'vPrev3')" style="font-size:0.8rem; margin-top:2px;">
+        </div>
+      </div>
+
+      <div class="form-group" style="margin-top:10px;">
+        <label>अचूक उत्तर (0 = A, 1 = B, 2 = C, 3 = D):</label>
+        <select id="vEditCorrect" style="padding:8px; border:1.5px solid #cbd5e1; border-radius:8px; font-weight:700; width:100%;">
+          <option value="0">पर्याय A</option>
+          <option value="1">पर्याय B</option>
+          <option value="2">पर्याय C</option>
+          <option value="3">पर्याय D</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>स्पष्टीकरण (अचूक उत्तरासह आपोआप अपडेट होईल):</label>
+        <textarea id="vEditExp" rows="2"></textarea>
+      </div>
+
+      <button class="btn-main" style="background:#0284c7; margin-top:10px;" onclick="saveVisualEditedQuestion()">
+        ✓ आकृती प्रश्न व इमेज सेव्ह करा
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ॲडमिन प्रश्न क्र. 21 ते 80 संपादक MODAL -->
+<div id="adminQuestionEditorModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(15,43,72,0.85); z-index:3800; justify-content:center; align-items:center; backdrop-filter:blur(4px); padding:12px;">
+  <div style="background:#ffffff; border-radius:16px; max-width:650px; width:100%; max-height:90vh; overflow-y:auto; padding:24px 20px; box-shadow:0 12px 35px rgba(0,0,0,0.3); border-top:5px solid #0d9488;">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; border-bottom:2px solid #e2e8f0; padding-bottom:10px;">
+      <h3 style="color:#0d9488; font-weight:800; font-size:1.15rem;">✏️ प्रश्न क्र. 21 ते 80 संपादक (Admin Panel)</h3>
       <button onclick="closeAdminQuestionEditorModal()" style="background:#fee2e2; color:#991b1b; border:none; padding:4px 10px; border-radius:8px; font-weight:800; cursor:pointer;">✕ बंद करा</button>
     </div>
 
@@ -433,8 +525,7 @@
     <div style="display:flex; gap:10px; margin-bottom:12px; flex-wrap:wrap;">
       <div style="flex:1; min-width:140px;">
         <label style="font-weight:700; font-size:0.85rem; color:#334155;">चाचणी निवडा:</label>
-        <select id="editTestIdSelect" onchange="loadQuestionForEditing()" style="padding:8px; border:1.5px solid #cbd5e1; border-radius:8px; font-weight:700; width:100%;">
-        </select>
+        <select id="editTestIdSelect" onchange="loadQuestionForEditing()" style="padding:8px; border:1.5px solid #cbd5e1; border-radius:8px; font-weight:700; width:100%;"></select>
       </div>
       <div style="flex:1; min-width:140px;">
         <label style="font-weight:700; font-size:0.85rem; color:#334155;">प्रश्न क्रमांक (21 ते 80):</label>
@@ -477,7 +568,7 @@
         <textarea id="editQExp" rows="2"></textarea>
       </div>
 
-      <button class="btn-main" style="background:#0284c7; margin-top:10px;" onclick="saveEditedQuestion()">
+      <button class="btn-main" style="background:#0d9488; margin-top:10px;" onclick="saveEditedQuestion()">
         ✓ हा प्रश्न व स्पष्टीकरण सेव्ह करा
       </button>
     </div>
@@ -502,7 +593,7 @@
 <div id="adminVipModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(15,43,72,0.85); z-index:3600; justify-content:center; align-items:center; backdrop-filter:blur(4px); padding:12px;">
   <div style="background:#ffffff; border-radius:16px; max-width:620px; width:100%; max-height:90vh; overflow-y:auto; padding:24px 20px; box-shadow:0 12px 35px rgba(0,0,0,0.3); border-top:5px solid #7c3aed;">
     <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; border-bottom:2px solid #e2e8f0; padding-bottom:10px;">
-      <h3 style="color:#6d28d9; font-weight:800; font-size:1.2rem;">⭐ विशेष VIP मोबाईल नंबर (सर्व चाचण्या अनलॉक)</h3>
+      <h3 style="color:#6d28d9; font-weight:800; font-size:1.2rem;">⭐ विशेष VIP मोबाईल नंबर (अमर्याद चाचण्या)</h3>
       <button onclick="closeAdminVipModal()" style="background:#fee2e2; color:#991b1b; border:none; padding:4px 10px; border-radius:8px; font-weight:800; cursor:pointer;">✕ बंद करा</button>
     </div>
     <div style="display:flex; gap:8px; margin-bottom:14px; flex-wrap:wrap;">
@@ -517,7 +608,6 @@
   <div class="summary-modal-content">
     <div style="text-align:center; margin-bottom:12px;">
       <h3 style="color:var(--primary); font-weight:800; font-size:1.2rem;">📊 चाचणी सोडवल्याचा गोषवारा</h3>
-      <p style="color:#64748b; font-size:0.85rem;">सबमिट करण्यापूर्वी आपले सोडवलेले व शिल्लक प्रश्न तपासा</p>
     </div>
     <table class="summary-table">
       <thead>
@@ -527,8 +617,8 @@
     </table>
     <div id="summaryAlertBox" style="padding:10px; border-radius:8px; font-size:0.88rem; font-weight:700; text-align:center; margin-bottom:14px;"></div>
     <div style="display:flex; gap:10px;">
-      <button class="btn-main" style="background:#475569; flex:1; padding:10px;" onclick="closeSummaryModal()">⬅ पुन्हा तपासा</button>
-      <button class="btn-main" style="background:var(--danger); flex:1.2; padding:10px;" onclick="executeFinalSubmission()">✓ अंतिम सबमिट करा</button>
+      <button class="btn-main" style="background:#475569; flex:1;" onclick="closeSummaryModal()">⬅ पुन्हा तपासा</button>
+      <button class="btn-main" style="background:var(--danger); flex:1.2;" onclick="executeFinalSubmission()">✓ अंतिम सबमिट करा</button>
     </div>
   </div>
 </div>
@@ -541,7 +631,7 @@
 
 <script>
   const FIREBASE_DB_URL = "https://nvs-zp-beed-online-test-default-rtdb.firebaseio.com";
-  const MAX_ATTEMPTS = 4;
+  const MAX_ATTEMPTS = 4; // ಸಾಮಾನ್ಯ विद्यार्थ्यांसाठी
 
   const EXAM_SCHEDULE = [
     { id: 1, title: "नवोदय सराव चाचणी क्र. 01 (2026-27)", dateISO: "2026-11-11", dateMarathi: "11 नोव्हेंबर 2026", file: "test1.json" },
@@ -742,6 +832,132 @@
     }).catch(() => {});
   }
 
+  // --- ॲडमिन आकृती प्रश्न संपादक (Visual Editor Q1-20) फंक्शन्स ---
+  function openAdminVisualEditorModal() {
+    document.getElementById("adminVisualEditorModal").style.display = "flex";
+    const sel = document.getElementById("vEditTestId");
+    if (sel.children.length === 0) {
+      EXAM_SCHEDULE.forEach(t => {
+        const opt = document.createElement("option");
+        opt.value = t.id;
+        opt.innerText = `चाचणी क्र. ${t.id} (${t.title})`;
+        sel.appendChild(opt);
+      });
+    }
+    loadVisualQuestionForEditing();
+  }
+
+  function closeAdminVisualEditorModal() {
+    document.getElementById("adminVisualEditorModal").style.display = "none";
+  }
+
+  function previewImage(input, previewBoxId) {
+    if (input.files && input.files[0]) {
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        const box = document.getElementById(previewBoxId);
+        box.innerHTML = `<img src="${e.target.result}" style="width:100%; height:100%; object-fit:contain; border-radius:6px;">`;
+        // input वर आधारित URL तयार करून hidden data किंवा field मध्ये ठेवू शकतो
+        box.dataset.imgSrc = e.target.result;
+      }
+      reader.readAsDataURL(input.files[0]);
+    }
+  }
+
+  function updateUrlPreview(url, previewBoxId) {
+    if (url && url.trim() !== "") {
+      const box = document.getElementById(previewBoxId);
+      box.innerHTML = `<img src="${url.trim()}" style="width:100%; height:100%; object-fit:contain; border-radius:6px;" onerror="this.src=''; this.innerText='Error';">`;
+      box.dataset.imgSrc = url.trim();
+    }
+  }
+
+  function loadVisualQuestionForEditing() {
+    const testId = parseInt(document.getElementById("vEditTestId").value);
+    const qId = parseInt(document.getElementById("vEditQId").value);
+
+    if (qId < 1 || qId > 20) {
+      alert("आकृती संपादक केवळ प्रश्न क्रमांक 1 ते 20 साठी आहे.");
+      document.getElementById("vEditQId").value = 1;
+      return;
+    }
+
+    const testMeta = EXAM_SCHEDULE.find(t => t.id === testId);
+    fetch(testMeta.file)
+      .then(res => res.json())
+      .then(data => {
+        const overrideKey = `jnv_override_t${testId}_q${qId}`;
+        const savedOverride = localStorage.getItem(overrideKey);
+        let qObj = savedOverride ? JSON.parse(savedOverride) : data.questions.find(q => q.id === qId);
+
+        if (qObj) {
+          document.getElementById("vEditorFormContainer").style.display = "block";
+          document.getElementById("vEditQText").value = qObj.text || "";
+          document.getElementById("vEditCorrect").value = qObj.correct !== undefined ? qObj.correct : 0;
+          document.getElementById("vEditExp").value = qObj.exp || "";
+
+          // प्रश्न आकृती (problemFig)
+          const probFig = qObj.problemFig || "";
+          document.getElementById("vProbImgUrl").value = probFig.startsWith("http") || probFig.startsWith("data:") ? probFig : "";
+          if (probFig.startsWith("http") || probFig.startsWith("data:")) {
+            updateUrlPreview(probFig, 'vProbPreview');
+          } else {
+            document.getElementById("vProbPreview").innerHTML = probFig ? probFig : "[SVG]";
+            document.getElementById("vProbPreview").dataset.imgSrc = probFig;
+          }
+
+          // पर्याय (figures A, B, C, D)
+          for (let i = 0; i < 4; i++) {
+            const figObj = (qObj.figures && qObj.figures[i]) ? qObj.figures[i].s : "";
+            const isImg = figObj.startsWith("http") || figObj.startsWith("data:") || figObj.includes("<img");
+            
+            document.getElementById(`vOptUrl${i}`).value = figObj.startsWith("http") || figObj.startsWith("data:") ? figObj : "";
+            const prevBox = document.getElementById(`vPrev${i}`);
+            
+            if (figObj.startsWith("http") || figObj.startsWith("data:")) {
+              updateUrlPreview(figObj, `vPrev${i}`);
+            } else {
+              prevBox.innerHTML = figObj ? figObj : chr(65+i);
+              prevBox.dataset.imgSrc = figObj;
+            }
+          }
+        }
+      })
+      .catch(() => alert("डेटा लोड करताना त्रुटी आली."));
+  }
+
+  function saveVisualEditedQuestion() {
+    const testId = parseInt(document.getElementById("vEditTestId").value);
+    const qId = parseInt(document.getElementById("vEditQId").value);
+
+    const probSrc = document.getElementById("vProbPreview").dataset.imgSrc || document.getElementById("vProbImgUrl").value.trim();
+    
+    let figuresArr = [];
+    for (let i = 0; i < 4; i++) {
+      const src = document.getElementById(`vPrev${i}`).dataset.imgSrc || document.getElementById(`vOptUrl${i}`).value.trim();
+      figuresArr.push({ s: src, l: `(${String.fromCharCode(65 + i)})` });
+    }
+
+    const corr = parseInt(document.getElementById("vEditCorrect").value);
+    const corrLetter = String.fromCharCode(65 + corr);
+    const expText = `स्पष्टीकरण: अचूक निरीक्षण केल्यास आकृतीसाठी योग्य उत्तर पर्याय (${corrLetter}) ठरतो.`;
+
+    const updatedQ = {
+      id: qId,
+      sec: "mental",
+      text: document.getElementById("vEditQText").value,
+      problemFig: probSrc,
+      figures: figuresArr,
+      options: ["(A)", "(B)", "(C)", "(D)"],
+      correct: corr,
+      exp: document.getElementById("vEditExp").value.trim() !== "" ? document.getElementById("vEditExp").value : expText
+    };
+
+    localStorage.setItem(`jnv_override_t${testId}_q${qId}`, JSON.stringify(updatedQ));
+    alert(`चाचणी क्र. ${testId} मधील आकृती प्रश्न क्र. ${qId} इमेज व प्रीव्ह्यूसह यशस्वीरीत्या सेव्ह झाला!`);
+    closeAdminVisualEditorModal();
+  }
+
   // --- ॲडमिन स्वतंत्र प्रश्न क्र. 21 ते 80 संपादक फंक्शन्स ---
   function openAdminQuestionEditorModal() {
     document.getElementById("adminQuestionEditorModal").style.display = "flex";
@@ -765,15 +981,13 @@
     const testId = parseInt(document.getElementById("editTestIdSelect").value);
     const qId = parseInt(document.getElementById("editQuestionIdInput").value);
     
-    // प्रतिबंध: फक्त 21 ते 80 प्रश्न एडिट करता येतील
     if (qId < 21 || qId > 80) {
-      alert("कृपया 21 ते 80 मधीलच प्रश्न क्रमांक प्रविष्ट करा.");
+      alert("हा संपादक केवळ प्रश्न क्रमांक 21 ते 80 साठी आहे.");
       document.getElementById("editQuestionIdInput").value = 21;
       return;
     }
 
     const testMeta = EXAM_SCHEDULE.find(t => t.id === testId);
-
     fetch(testMeta.file)
       .then(res => res.json())
       .then(data => {
@@ -790,11 +1004,9 @@
           document.getElementById("editOpt3").value = (qObj.options && qObj.options[3]) || "";
           document.getElementById("editQCorrect").value = qObj.correct !== undefined ? qObj.correct : 0;
           document.getElementById("editQExp").value = qObj.exp || "";
-        } else {
-          alert("हा प्रश्न सापडला नाही.");
         }
       })
-      .catch(() => alert("चाचणी फाईल लोड करण्यात अडचण आली."));
+      .catch(() => alert("डेटा लोड करण्यात त्रुटी आली."));
   }
 
   function saveEditedQuestion() {
@@ -816,7 +1028,7 @@
     };
 
     localStorage.setItem(`jnv_override_t${testId}_q${qId}`, JSON.stringify(updatedQ));
-    alert(`चाचणी क्र. ${testId} मधील प्रश्न क्र. ${qId} आणि त्याचे स्पष्टीकरण यशस्वीरीत्या अपडेट व सेव्ह केले गेले! इतर भागावर काहीही परिणाम झालेला नाही.`);
+    alert(`चाचणी क्र. ${testId} मधील प्रश्न क्र. ${qId} आणि स्पष्टीकरण यशस्वीरीत्या अपडेट व सेव्ह केले गेले!`);
     closeAdminQuestionEditorModal();
   }
 
@@ -858,12 +1070,15 @@
       let actionArea = "";
       if (!isAccessible) {
         actionArea = `<button class="btn-action btn-locked">🔒 ${item.dateMarathi} रोजी अनलॉक</button>`;
-      } else if (attemptCount >= MAX_ATTEMPTS) {
+      } else if (!isUserVip && attemptCount >= MAX_ATTEMPTS) {
         actionArea = `<div><span style="font-weight:800; color:#1a4a75; font-size:0.9rem;">सर्वोत्तम गुण: ${savedScore || 0}/100</span><button class="btn-action btn-locked" style="background:#fee2e2; color:#991b1b;">🔒 मर्यादा संपली (4/4)</button></div>`;
+      } else if (isUserVip && attemptCount >= MAX_ATTEMPTS) {
+        // VIP विद्यार्थ्यांसाठी मर्यादा काढून अमर्याद प्रयत्न दिले आहेत
+        actionArea = `<div><span style="font-weight:800; color:#7c3aed; font-size:0.9rem;">⭐ VIP अमर्याद प्रयत्न (गुण: ${savedScore || 0})</span><button class="btn-action btn-retry" onclick="openTestGuideline(${item.id})">पुन्हा सोडवा</button></div>`;
       } else if (inProg) {
         actionArea = `<button class="btn-action btn-resume" onclick="resumeTest(${item.id})">⚡ अर्धवट चाचणी पूर्ण करा</button>`;
       } else if (savedScore !== undefined) {
-        actionArea = `<div><span style="font-weight:800; color:#1a4a75; font-size:0.9rem;">गुण: ${savedScore}/100 (${attemptCount}/${MAX_ATTEMPTS})</span><button class="btn-action btn-retry" onclick="openTestGuideline(${item.id})">पुन्हा सोडवा</button></div>`;
+        actionArea = `<div><span style="font-weight:800; color:#1a4a75; font-size:0.9rem;">गुण: ${savedScore}/100 (${attemptCount}/${isUserVip?'∞':MAX_ATTEMPTS})</span><button class="btn-action btn-retry" onclick="openTestGuideline(${item.id})">पुन्हा सोडवा</button></div>`;
       } else {
         actionArea = `<button class="btn-action btn-start" onclick="openTestGuideline(${item.id})">चाचणी सोडवा</button>`;
       }
@@ -872,7 +1087,7 @@
 
       card.innerHTML = `
         <div>
-          <h4 style="font-weight:700; font-size:1rem; color:#0f2b48;">${item.title} ${isUserVip ? '<span style="color:#7c3aed; font-size:0.75rem;">(⭐ VIP)</span>' : ''}</h4>
+          <h4 style="font-weight:700; font-size:1rem; color:#0f2b48;">${item.title} ${isUserVip ? '<span style="color:#7c3aed; font-size:0.75rem;">(⭐ VIP अमर्याद)</span>' : ''}</h4>
           <span style="font-size:0.8rem; color:#64748b;">दिनांक: ${item.dateMarathi} | 80 प्रश्न | 100 गुण</span>
         </div>
         <div style="display:flex; align-items:center;">${actionArea}${adminToggleHtml}</div>
@@ -983,12 +1198,14 @@
 
       let figHtml = "";
       if (q.problemFig) {
-        figHtml += '<div style="font-weight:700; margin-bottom:4px; color:#0f2b48;">[प्रश्न आकृती]:</div><div class="fig-box">' + q.problemFig + '</div>';
+        let probContent = q.problemFig.startsWith("http") || q.problemFig.startsWith("data:") ? `<img src="${q.problemFig}" style="width:100%; height:100%; object-fit:contain;">` : q.problemFig;
+        figHtml += '<div style="font-weight:700; margin-bottom:4px; color:#0f2b48;">[प्रश्न आकृती]:</div><div class="fig-box">' + probContent + '</div>';
       }
       if (q.figures) {
         figHtml += '<div class="fig-container">';
         q.figures.forEach(f => {
-          figHtml += '<div style="text-align:center;"><div class="fig-box">' + f.s + '</div><b>' + f.l + '</b></div>';
+          let fContent = f.s.startsWith("http") || f.s.startsWith("data:") ? `<img src="${f.s}" style="width:100%; height:100%; object-fit:contain;">` : f.s;
+          figHtml += '<div style="text-align:center;"><div class="fig-box">' + fContent + '</div><b>' + f.l + '</b></div>';
         });
         figHtml += '</div>';
       }
