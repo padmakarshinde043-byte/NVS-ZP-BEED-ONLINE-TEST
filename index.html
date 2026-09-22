@@ -111,7 +111,7 @@
     
     .question-card { background: white; border-radius: 12px; padding: 16px; border: 1px solid var(--border); margin-bottom: 16px; }
     
-    /* प्रश्न क्रमांकासाठी छोटा स्पष्ट वेगळा डबा (Badge Box) */
+    /* प्रश्न क्रमांकासाठी स्पष्ट आणि वेगळा डबा */
     .q-badge-box {
       display: inline-block;
       background: #e0f2fe;
@@ -122,7 +122,6 @@
       font-weight: 800;
       font-size: 0.95rem;
       margin-bottom: 10px;
-      box-shadow: 0 1px 3px rgba(3, 105, 161, 0.1);
     }
     .q-text-content { font-weight: 700; font-size: 1rem; color: var(--text); line-height: 1.4; margin-bottom: 10px; }
 
@@ -434,11 +433,11 @@
   </div>
 </div>
 
-<!-- ॲडमिन आकृती प्रश्न संपादक (Visual Editor Q1-20 - Full Problem Image + 4 Options) MODAL -->
+<!-- ॲडमिन आकृती प्रश्न संपादक (Visual Editor Q1-20) MODAL -->
 <div id="adminVisualEditorModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(15,43,72,0.85); z-index:3900; justify-content:center; align-items:center; backdrop-filter:blur(4px); padding:12px;">
   <div style="background:#ffffff; border-radius:16px; max-width:700px; width:100%; max-height:90vh; overflow-y:auto; padding:24px 20px; box-shadow:0 12px 35px rgba(0,0,0,0.3); border-top:5px solid #0284c7;">
     <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; border-bottom:2px solid #e2e8f0; padding-bottom:10px;">
-      <h3 style="color:#0284c7; font-weight:800; font-size:1.15rem;">🖼️ आकृती प्रश्न संपादक (Q1-20 Full Image + 4 Options)</h3>
+      <h3 style="color:#0284c7; font-weight:800; font-size:1.15rem;">🖼️ आकृती प्रश्न संपादक (Q1-20 Visual Editor)</h3>
       <button onclick="closeAdminVisualEditorModal()" style="background:#fee2e2; color:#991b1b; border:none; padding:4px 10px; border-radius:8px; font-weight:800; cursor:pointer;">✕ बंद करा</button>
     </div>
 
@@ -459,7 +458,6 @@
         <input type="text" id="vEditQText">
       </div>
 
-      <!-- संपूर्ण प्रश्नासाठी एकच मुख्य आकृती इमेज अपलोड व प्रीव्ह्यू -->
       <div class="form-group" style="background:#f8fafc; padding:10px; border-radius:8px; border:1px solid #cbd5e1;">
         <label style="color:#0f2b48; font-weight:800;">संपूर्ण प्रश्न आकृती (Main Problem Image):</label>
         <input type="file" id="vProbImgFile" accept="image/*" onchange="previewImage(this, 'vProbPreview')" style="margin-bottom:6px;">
@@ -470,7 +468,6 @@
         <input type="text" id="vProbImgUrl" placeholder="https://..." oninput="updateUrlPreview(this.value, 'vProbPreview')" style="margin-top:4px;">
       </div>
 
-      <!-- केवळ खाली ४ पर्यायांची (A, B, C, D) निवड / मजकूर -->
       <label style="color:#0f2b48; font-weight:800; display:block; margin-bottom:6px;">खालील ४ पर्याय (क्लिक करण्यासाठी):</label>
       <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:12px;">
         <div class="form-group" style="background:#f8fafc; padding:8px; border-radius:8px; margin-bottom:0;">
@@ -843,7 +840,6 @@
     }).catch(() => {});
   }
 
-  // --- ॲडमिन Toppers Modal फंगशन्स ---
   function openAdminToppersModal() {
     document.getElementById("adminToppersModal").style.display = "flex";
     const sel = document.getElementById("adminTestSelector");
@@ -981,7 +977,7 @@
       .catch(() => alert("एक्सेल डाउनलोड करताना त्रुटी आली."));
   }
 
-  // --- ॲडमिन Visual Editor (Q1-20 - Main Image + 4 Options Text) ---
+  // --- ॲडमिन Visual Editor (Q1-20 - Main Image + 4 Options) ---
   function openAdminVisualEditorModal() {
     document.getElementById("adminVisualEditorModal").style.display = "flex";
     const sel = document.getElementById("vEditTestId");
@@ -1086,7 +1082,7 @@
     closeAdminVisualEditorModal();
   }
 
-  // --- ॲडमिन प्रश्न क्र. 21 ते 80 संपादक फंक्शन्स ---
+  // --- ॲडमिन प्रश्न क्र. 21 ते 80 संपादक ---
   function openAdminQuestionEditorModal() {
     document.getElementById("adminQuestionEditorModal").style.display = "flex";
     const sel = document.getElementById("editTestIdSelect");
@@ -1330,7 +1326,7 @@
       });
       opts += '</div>';
 
-      // प्रश्न क्रमांकासाठी स्वतंत्र स्पष्ट डबा (Badge Box) आणि मूळ प्रश्न मजकूर एकदाच (डबल रिपीट नाही)
+      // प्रश्न क्रमांक फक्‍त एकाच वेगळ्या डब्यात (Badge Box) आणि मजकूर एकदाच
       qDiv.innerHTML = `${pText}<div class="q-badge-box">प्रश्न ${q.id}</div><div class="q-text-content">${q.text}</div>${figHtml}${opts}`;
       container.appendChild(qDiv);
     });
