@@ -100,18 +100,56 @@
 
     .exam-topbar { background: #e2e8f0; padding: 12px 16px; border-radius: 12px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
     
-    .section-selector { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin-bottom: 14px; width: 100%; }
+    /* --- आकर्षक, हलके कलरफुल आणि मॉडर्न विभाग निवडक (Section Selector) डिझाईन --- */
+    .section-selector { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 16px; width: 100%; }
     .section-selector button {
-      width: 100%; background: #ffffff; border: 1.5px solid #cbd5e1; padding: 6px 4px; border-radius: 8px;
-      font-weight: 700; cursor: pointer; color: #334155; font-size: 0.85rem; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 50px;
+      width: 100%;
+      background: #ffffff;
+      border: 2px solid #e2e8f0;
+      padding: 8px 6px;
+      border-radius: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      color: #334155;
+      font-size: 0.88rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 54px;
+      transition: all 0.25s ease;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.02);
     }
-    .section-selector button span.sec-sub { font-size: 0.74rem; font-weight: 600; opacity: 0.85; margin-top: 2px; }
-    .section-selector button.active { background: var(--secondary); color: white; border-color: var(--secondary); }
-    .section-selector button.active span.sec-sub { color: #fef08a; }
+    .section-selector button:hover {
+      border-color: #94a3b8;
+      transform: translateY(-1px);
+    }
+    .section-selector button span.sec-sub { font-size: 0.74rem; font-weight: 600; opacity: 0.8; margin-top: 2px; }
+    
+    /* प्रत्येक घटकासाठी आकर्षक हलके कलरफुल ग्रेडियंट्स (Soft Colorful Gradients) */
+    #tab-sec1 { background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border-color: #93c5fd; color: #1e40af; }
+    #tab-sec1.active { background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%); color: white; border-color: #1e40af; box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3); }
+
+    #tab-sec2 { background: linear-gradient(135deg, #fdf4ff 0%, #fae8ff 100%); border-color: #f0abfc; color: #86198f; }
+    #tab-sec2.active { background: linear-gradient(135deg, #c026d3 0%, #a21caf 100%); color: white; border-color: #86198f; box-shadow: 0 4px 12px rgba(192, 38, 211, 0.3); }
+
+    #tab-sec3 { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border-color: #86efac; color: #166534; }
+    #tab-sec3.active { background: linear-gradient(135deg, #16a34a 0%, #15803d 100%); color: white; border-color: #166534; box-shadow: 0 4px 12px rgba(22, 163, 74, 0.3); }
+
+    /* उत्तरपत्रिकेतील टॅबसाठी देखील कलरफुल डिझाईन */
+    #ak-tab-sec1 { background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border-color: #93c5fd; color: #1e40af; }
+    #ak-tab-sec1.active { background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%); color: white; box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3); }
+
+    #ak-tab-sec2 { background: linear-gradient(135deg, #fdf4ff 0%, #fae8ff 100%); border-color: #f0abfc; color: #86198f; }
+    #ak-tab-sec2.active { background: linear-gradient(135deg, #c026d3 0%, #a21caf 100%); color: white; box-shadow: 0 4px 12px rgba(192, 38, 211, 0.3); }
+
+    #ak-tab-sec3 { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border-color: #86efac; color: #166534; }
+    #ak-tab-sec3.active { background: linear-gradient(135deg, #16a34a 0%, #15803d 100%); color: white; box-shadow: 0 4px 12px rgba(22, 163, 74, 0.3); }
+    
+    .section-selector button.active span.sec-sub { color: #fef08a; opacity: 1; }
     
     .question-card { background: white; border-radius: 12px; padding: 16px; border: 1px solid var(--border); margin-bottom: 16px; }
     
-    /* प्रश्न क्रमांक फक्त एकदाच दाखवणारा स्वतंत्र डबा */
     .q-badge-box {
       display: inline-block;
       background: #e0f2fe;
@@ -272,12 +310,6 @@
         <button class="btn-action" style="background:#7c3aed; color:#fff;" onclick="openAdminVipModal()">⭐ VIP मोबाईल नंबर</button>
         <button class="btn-action btn-start" onclick="downloadStudentsExcel()">📥 एक्सेल डाउनलोड</button>
       </div>
-    </div>
-
-    <div style="background: #e0f2fe; border: 1px solid #bae6fd; border-left: 5px solid #0284c7; border-radius: 10px; padding: 12px 14px; margin-bottom: 14px;">
-      <p style="font-size: 0.92rem; font-weight: 700; color: #0369a1; line-height: 1.4;">
-        📌 सूचना: सामान्य विद्यार्थ्यांना चाचणीसाठी ४ प्रयत्नांची मर्यादा आहे, तर <b>VIP विद्यार्थ्यांना अमर्याद (Unlimited) प्रयत्न</b> उपलब्ध आहेत.
-      </p>
     </div>
 
     <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
@@ -698,7 +730,6 @@
       }
     });
 
-    // Recent Apps / Background switch protection (Auto-Save state)
     document.addEventListener("visibilitychange", () => {
       if (document.visibilityState === "hidden" && currentScreen === 'exam') {
         saveCurrentExamProgress();
@@ -978,7 +1009,6 @@
       .catch(() => alert("एक्सेल डाउनलोड करताना त्रुटी आली."));
   }
 
-  // --- ॲडमिन Visual Editor (Q1-20) ---
   function openAdminVisualEditorModal() {
     document.getElementById("adminVisualEditorModal").style.display = "flex";
     const sel = document.getElementById("vEditTestId");
@@ -1083,7 +1113,6 @@
     closeAdminVisualEditorModal();
   }
 
-  // --- ॲडमिन प्रश्न क्र. 21 ते 80 संपादक ---
   function openAdminQuestionEditorModal() {
     document.getElementById("adminQuestionEditorModal").style.display = "flex";
     const sel = document.getElementById("editTestIdSelect");
@@ -1152,7 +1181,7 @@
 
   function renderDashboard() {
     currentScreen = 'dashboard';
-    history.pushState({ screen: 'dashboard' }, "");
+    history.replaceState({ screen: 'dashboard' }, "");
 
     document.getElementById("registrationCard").style.display = "none";
     document.getElementById("guidelinesArea").style.display = "none";
@@ -1188,14 +1217,10 @@
       let actionArea = "";
       if (!isAccessible) {
         actionArea = `<button class="btn-action btn-locked">🔒 ${item.dateMarathi} रोजी अनलॉक</button>`;
-      } else if (!isUserVip && attemptCount >= MAX_ATTEMPTS) {
-        actionArea = `<div><span style="font-weight:800; color:#1a4a75; font-size:0.9rem;">सर्वोत्तम गुण: ${savedScore || 0}/100</span><button class="btn-action btn-locked" style="background:#fee2e2; color:#991b1b;">🔒 मर्यादा संपली (4/4)</button></div>`;
-      } else if (isUserVip && attemptCount >= MAX_ATTEMPTS) {
-        actionArea = `<div><span style="font-weight:800; color:#7c3aed; font-size:0.9rem;">⭐ VIP अमर्याद (गुण: ${savedScore || 0})</span><button class="btn-action btn-retry" onclick="openTestGuideline(${item.id})">पुन्हा सोडवा</button></div>`;
       } else if (inProg) {
         actionArea = `<button class="btn-action btn-resume" onclick="resumeTest(${item.id})">⚡ अर्धवट चाचणी पूर्ण करा</button>`;
       } else if (savedScore !== undefined) {
-        actionArea = `<div><span style="font-weight:800; color:#1a4a75; font-size:0.9rem;">गुण: ${savedScore}/100 (${attemptCount}/${isUserVip?'∞':MAX_ATTEMPTS})</span><button class="btn-action btn-retry" onclick="openTestGuideline(${item.id})">पुन्हा सोडवा</button></div>`;
+        actionArea = `<div><span style="font-weight:800; color:#1a4a75; font-size:0.9rem;">गुण: ${savedScore}/100</span><button class="btn-action btn-retry" onclick="openTestGuideline(${item.id})">पुन्हा सोडवा</button></div>`;
       } else {
         actionArea = `<button class="btn-action btn-start" onclick="openTestGuideline(${item.id})">चाचणी सोडवा</button>`;
       }
@@ -1327,8 +1352,9 @@
       });
       opts += '</div>';
 
-      // --- येथे सुधारणा: प्रश्न क्रमांक फक्त एकदाच वरच्या डब्यात येईल आणि मजकुरातून "प्रश्न X:" हा भाग पूर्णपणे काढला आहे जेणेकरून तो दोनदा दिसणार नाही ---
-      let cleanText = (q.text || "").replace(/^प्रश्न\s*\d+[:|-]?\s*/i, "");
+      let rawText = q.text || "";
+      let cleanText = rawText.replace(/^(प्रश्न|Question)\s*\d+[\s\.:\-\)]*/gi, "").trim();
+      if (!cleanText) cleanText = rawText;
 
       qDiv.innerHTML = `${pText}<div class="q-badge-box">प्रश्न ${q.id}</div><div class="q-text-content">${cleanText}</div>${figHtml}${opts}`;
       container.appendChild(qDiv);
@@ -1481,7 +1507,9 @@
       });
       opts += '</div>';
 
-      let cleanText = (q.text || "").replace(/^प्रश्न\s*\d+[:|-]?\s*/i, "");
+      let cleanText = (q.text || "").replace(/^(प्रश्न|Question)\s*\d+[\s\.:\-\)]*/gi, "").trim();
+      if (!cleanText) cleanText = q.text || "";
+
       qDiv.innerHTML = `<div class="q-badge-box">प्रश्न ${q.id}</div><div class="q-text-content">${cleanText}</div>${opts}<div class="exp-box">💡 <b>स्पष्टीकरण:</b> ${q.exp}</div>`;
       container.appendChild(qDiv);
     });
