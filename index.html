@@ -169,14 +169,14 @@
 
     .passage-box { background: #fffbeb; border: 1px solid #fde68a; border-radius: 10px; padding: 14px; margin-bottom: 14px; font-size: 0.95rem; line-height: 1.65; color: #92400e; }
     
-    /* --- मोबाईल आणि लॅपटॉप दोन्हीवर आकृती पूर्ण कार्डच्या साइज एवढी (Full Width & Stretch) दिसेल --- */
+    /* --- मोबाईल आणि लॅपटॉप दोन्हीवर आकृती कार्डच्या पूर्ण रुंदीएवढी (Full Width) आणि स्क्रीननुसार ऑटोमॅटिक सेट होणारी --- */
     .fig-container { display: flex; flex-direction: column; gap: 12px; margin: 14px 0; background: #f8fafc; padding: 10px; border-radius: 12px; align-items: center; justify-content: center; border: 1px dashed #cbd5e1; width: 100%; }
     .fig-box { 
       width: 100% !important; 
       max-width: 100% !important; 
       height: auto !important; 
-      min-height: 180px;
-      max-height: 420px;
+      min-height: 200px;
+      max-height: 480px;
       border: 2px solid #cbd5e1; 
       background: #fff; 
       display: flex; 
@@ -191,8 +191,8 @@
     .fig-box img { 
       width: 100% !important; 
       height: auto !important; 
-      max-height: 400px;
-      object-fit: fill !important; 
+      max-height: 460px;
+      object-fit: contain !important; 
       display: block;
     }
     .fig-box svg { 
@@ -228,6 +228,7 @@
 
     .ak-correct { background: #ecfdf5 !important; border-color: #34d399 !important; color: #065f46; font-weight: 700; }
     .ak-wrong { background: #fef2f2 !important; border-color: #f87171 !important; color: #991b1b; font-weight: 700; }
+    .ak-student-choice { border: 2px dashed #d97706 !important; }
 
     #exitToast { display: none; position: fixed; bottom: 25px; left: 50%; transform: translateX(-50%); background: rgba(15, 43, 72, 0.92); color: #ffffff; padding: 10px 20px; border-radius: 25px; font-size: 0.9rem; font-weight: 700; z-index: 3000; border: 1px solid #fbbf24; }
 
@@ -1327,7 +1328,6 @@
   function startExamFromGuideline() {
     if (!currentPendingTest) return;
     
-    // इन्स्टंट स्पीडसाठी प्रथम लोकल स्टोरेजमधील ओव्हरराइड्स वापरून चाचणी अवघ्या १ सेकंदात सुरू करा
     fetch(currentPendingTest.file)
       .then(res => res.json())
       .then(data => {
@@ -1412,7 +1412,7 @@
 
       let figHtml = "";
       if (q.problemFig) {
-        let probContent = q.problemFig.startsWith("http") || q.problemFig.startsWith("data:") ? `<img src="${q.problemFig}" style="width:100%; height:100%; object-fit:contain;">` : q.problemFig;
+        let probContent = q.problemFig.startsWith("http") || q.problemFig.startsWith("data:") ? `<img src="${q.problemFig}">` : q.problemFig;
         figHtml += '<div class="fig-box">' + probContent + '</div>';
       }
 
@@ -1573,9 +1573,23 @@
       qDiv.className = "question-card";
       let opts = '<div class="options-grid">';
       q.options.forEach((opt, idx) => {
-        let optClass = idx === q.correct ? "ak-correct" : "";
+        let optClass = "";
+        let choiceBadge = "";
+        
+        // विद्यार्थीने दिलेले उत्तर आणि अचूक उत्तर तपासणे
+        const studentChoice = recordedChoices[q.id];
+        
+        if (idx === q.correct) {
+          optClass = "ak-correct";
+          choiceBadge = ' <b style="color:var(--success);">[अचूक उत्तर]</b>';
+        }
+        if (studentChoice === idx) {
+          optClass += " ak-student-choice";
+          choiceBadge += ' <b style="color:var(--accent);">[तुमचे उत्तर]</b>';
+        }
+
         let optDisplay = opt.startsWith("http") || opt.startsWith("data:") ? `<img src="${opt}" style="max-height:35px; object-fit:contain;">` : `<span>${opt}</span>`;
-        opts += `<div class="opt-label ${optClass}">${optDisplay} ${idx === q.correct ? '<b>[अचूक]</b>' : ''}</div>`;
+        opts += `<div class="opt-label ${optClass}">${optDisplay} ${choiceBadge}</div>`;
       });
       opts += '</div>';
 
