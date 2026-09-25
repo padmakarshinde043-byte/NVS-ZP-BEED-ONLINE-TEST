@@ -168,10 +168,25 @@
     .q-text-content { font-weight: 700; font-size: 1rem; color: var(--text); line-height: 1.4; margin-bottom: 10px; }
 
     .passage-box { background: #fffbeb; border: 1px solid #fde68a; border-radius: 10px; padding: 14px; margin-bottom: 14px; font-size: 0.95rem; line-height: 1.65; color: #92400e; }
-    .fig-container { display: flex; flex-wrap: wrap; gap: 12px; margin: 12px 0; background: #f8fafc; padding: 12px; border-radius: 10px; align-items: center; justify-content: center; border: 1px dashed #cbd5e1; }
-    .fig-box { width: 72px; height: 72px; border: 2px solid #334155; background: #fff; display: flex; align-items: center; justify-content: center; margin: 0 auto 4px auto; border-radius: 8px; }
+    
+    /* --- आकृती आता पूर्ण रुंदीत आणि मोठ्या आकारात (प्रश्नाच्या लांबीएवढी) दिसेल --- */
+    .fig-container { display: flex; flex-direction: column; gap: 12px; margin: 14px 0; background: #f8fafc; padding: 14px; border-radius: 12px; align-items: center; justify-content: center; border: 1px dashed #cbd5e1; }
+    .fig-box { 
+      width: 100% !important; 
+      max-width: 100%; 
+      height: 240px !important; 
+      border: 2px solid #cbd5e1; 
+      background: #fff; 
+      display: flex; 
+      align-items: center; 
+      justify-content: center; 
+      margin: 0 auto 6px auto; 
+      border-radius: 10px; 
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
     .fig-box img { width: 100%; height: 100%; object-fit: contain; }
-    .fig-box svg { width: 60px; height: 60px; }
+    .fig-box svg { width: 100%; height: 100%; }
     
     .options-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 12px; }
     .opt-label { display: flex; align-items: center; padding: 12px 14px; border: 1.5px solid var(--border); border-radius: 10px; cursor: pointer; background: #fff; font-size: 0.95rem; }
@@ -1345,7 +1360,7 @@
       let figHtml = "";
       if (q.problemFig) {
         let probContent = q.problemFig.startsWith("http") || q.problemFig.startsWith("data:") ? `<img src="${q.problemFig}" style="width:100%; height:100%; object-fit:contain;">` : q.problemFig;
-        figHtml += '<div class="fig-box" style="width:140px; height:120px; margin-bottom:12px;">' + probContent + '</div>';
+        figHtml += '<div class="fig-box">' + probContent + '</div>';
       }
 
       let opts = '<div class="options-grid">';
