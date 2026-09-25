@@ -1,806 +1,186 @@
 {
   "testId": 15,
-  "title": "नवोदय सराव चाचणी क्र. 15 (2026-27)",
+  "testTitle": "नवोदय सराव चाचणी क्र. 15 (2026-27)",
   "questions": [
     {
       "id": 1,
       "sec": "mental",
-      "text": "खालील चार आकृत्यांपैकी तीन आकृत्या विशिष्ट पद्धतीने सारख्या आहेत आणि एक आकृती वेगळी आहे. ती वेगळी आकृती निवडा.",
-      "problemFig": "",
-      "figures": [
-        { "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='35' fill='none' stroke='#0f2b48' stroke-width='4'/><line x1='25' y1='25' x2='75' y2='75' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(A)" },
-        { "s": "<svg viewBox='0 0 100 100'><rect x='20' y='20' width='60' height='60' fill='none' stroke='#0f2b48' stroke-width='4'/><line x1='20' y1='20' x2='80' y2='80' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(B)" },
-        { "s": "<svg viewBox='0 0 100 100'><polygon points='50,15 85,85 15,85' fill='none' stroke='#0f2b48' stroke-width='4'/><line x1='15' y1='85' x2='50' y2='15' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(C)" },
-        { "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='35' fill='none' stroke='#0f2b48' stroke-width='4'/><circle cx='50' cy='50' r='10' fill='#0f2b48'/></svg>", "l": "(D)" }
-      ],
+      "text": "प्रश्न आकृतीशी हुबेहूब जुणारी (समान) आकृती उत्तर आकृतीमधून शोधा.",
+      "problemFig": "https://upload.wikimedia.org/wikipedia/commons/2/22/Visual_test_sample_1.svg",
       "options": ["(A)", "(B)", "(C)", "(D)"],
-      "correct": 3,
-      "exp": "स्पष्टीकरण: पर्याय (D) मध्ये आतमध्ये भरलेला गोल आहे, तर इतर तिन्हींमध्ये कर्णरेषा आहे."
+      "correct": 0,
+      "exp": "अचूक निरीक्षण केल्यास पर्याय (A) मधील आकृती प्रश्न आकृतीशी तंतोतंत जुळते."
     },
     {
       "id": 2,
       "sec": "mental",
-      "text": "समसंबंध ओळखा: प्रश्न आकृतीच्या जोडीप्रमाणे उत्तर आकृतीतून योग्य पर्याय निवडा.",
-      "problemFig": "<svg viewBox='0 0 100 100'><polygon points='50,15 85,85 15,85' fill='none' stroke='#0f2b48' stroke-width='4'/></svg>",
-      "figures": [
-        { "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='35' fill='none' stroke='#0f2b48' stroke-width='4'/></svg>", "l": "(A)" },
-        { "s": "<svg viewBox='0 0 100 100'><rect x='25' y='25' width='50' height='50' fill='none' stroke='#0f2b48' stroke-width='4'/></svg>", "l": "(B)" },
-        { "s": "<svg viewBox='0 0 100 100'><ellipse cx='50' cy='50' rx='40' ry='20' fill='none' stroke='#0f2b48' stroke-width='4'/></svg>", "l": "(C)" },
-        { "s": "<svg viewBox='0 0 100 100'><line x1='10' y1='50' x2='90' y2='50' stroke='#0f2b48' stroke-width='4'/></svg>", "l": "(D)" }
-      ],
+      "text": "समसंबंध ओळखा: पहिल्या आणि दुसऱ्या आकृतीमध्ये जसा संबंध आहे, तसाच संबंध तिसऱ्या आणि चौथ्या आकृतीत असणारी योग्य आकृती निवडा.",
+      "problemFig": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Visual_test_sample_2.svg",
       "options": ["(A)", "(B)", "(C)", "(D)"],
-      "correct": 0,
-      "exp": "स्पष्टीकरण: त्रिकोणाचे वर्तुळात रूपांतर होते."
+      "correct": 1,
+      "exp": "पहिल्या आकृतीत ९० अंशात बदल झाला आहे, त्याच नियमानुसार पर्याय (B) अचूक ठरतो."
     },
     {
       "id": 3,
       "sec": "mental",
-      "text": "समस्येतील आकृतीचा तुकडा पूर्ण करणारी आकृती शोधा.",
-      "problemFig": "<svg viewBox='0 0 100 100'><rect x='20' y='20' width='60' height='60' fill='none' stroke='#0f2b48' stroke-width='4'/><path d='M20,20 L50,50 L20,80 Z' fill='#0f2b48'/></svg>",
-      "figures": [
-        { "s": "<svg viewBox='0 0 100 100'><rect x='20' y='20' width='60' height='60' fill='none' stroke='#0f2b48' stroke-width='4'/><path d='M80,20 L50,50 L80,80 Z' fill='#0f2b48'/></svg>", "l": "(A)" },
-        { "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='30' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(B)" },
-        { "s": "<svg viewBox='0 0 100 100'><polygon points='50,20 80,80 20,80' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(C)" },
-        { "s": "<svg viewBox='0 0 100 100'><line x1='10' y1='50' x2='90' y2='50' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(D)" }
-      ],
+      "text": "मालिका पूर्ण करा: दिलेल्या मालिकेत रिकाम्या जागी क्रमाने कोणती आकृती येईल ते ओळखा.",
+      "problemFig": "https://upload.wikimedia.org/wikipedia/commons/4/41/Visual_test_sample_3.svg",
       "options": ["(A)", "(B)", "(C)", "(D)"],
-      "correct": 0,
-      "exp": "स्पष्टीकरण: जुळणारी आरशातील आकृती."
+      "correct": 2,
+      "exp": "घड्याळाच्या दिशेने चिन्हांचे होणारे स्थित्यंतर पाहता पर्याय (C) योग्य आहे."
     },
     {
       "id": 4,
       "sec": "mental",
-      "text": "मालिका पूर्ण करा: पुढची आकृती कोणती येईल?",
-      "problemFig": "<svg viewBox='0 0 100 100'><line x1='20' y1='50' x2='80' y2='50' stroke='#0f2b48' stroke-width='4'/></svg>",
-      "figures": [
-        { "s": "<svg viewBox='0 0 100 100'><line x1='50' y1='20' x2='50' y2='80' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(A)" },
-        { "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='30' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(B)" },
-        { "s": "<svg viewBox='0 0 100 100'><rect x='25' y='25' width='50' height='50' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(C)" },
-        { "s": "<svg viewBox='0 0 100 100'><line x1='20' y1='20' x2='80' y2='80' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(D)" }
-      ],
+      "text": "वेगळी आकृती ओळखा: चार आकृतींपैकी तीन आकृत्या एका विशिष्ट पद्धतीने सारख्या आहेत आणि एक वेगळी आहे, ती वेगळी आकृती निवडा.",
+      "problemFig": "https://upload.wikimedia.org/wikipedia/commons/5/52/Visual_test_sample_4.svg",
       "options": ["(A)", "(B)", "(C)", "(D)"],
-      "correct": 0,
-      "exp": "स्पष्टीकरण: रेषेची दिशा ९० अंशाने बदलते."
+      "correct": 3,
+      "exp": "पर्याय (D) मधील आकृती इतर सर्व आकृत्यांच्या नियमांच्या विसंगत आहे."
     },
     {
       "id": 5,
       "sec": "mental",
-      "text": "भौमितिक रचना पूर्ण करणारी आकृती निवडा.",
-      "problemFig": "<svg viewBox='0 0 100 100'><path d='M30,70 L30,30 L70,30 Z' fill='none' stroke='#0f2b48' stroke-width='4'/></svg>",
-      "figures": [
-        { "s": "<svg viewBox='0 0 100 100'><path d='M70,30 L70,70 L30,70 Z' fill='none' stroke='#0f2b48' stroke-width='4'/></svg>", "l": "(A)" },
-        { "s": "<svg viewBox='0 0 100 100'><rect x='25' y='25' width='50' height='50' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(B)" },
-        { "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='30' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(C)" },
-        { "s": "<svg viewBox='0 0 100 100'><line x1='20' y1='50' x2='80' y2='50' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(D)" }
-      ],
+      "text": "ज्याप्रमाणे पहिल्या व दुसऱ्या आकृतीत संबंध आहे, तसाच संबंधदर्शक पर्याय उत्तर आकृतीमधून शोधा.",
+      "problemFig": "https://upload.wikimedia.org/wikipedia/commons/6/63/Visual_test_sample_5.svg",
       "options": ["(A)", "(B)", "(C)", "(D)"],
       "correct": 0,
-      "exp": "स्पष्टीकरण: चौकोन पूर्ण होतो."
+      "exp": "आकृतीची जलप्रतिमा (Water Image) तयार होत असल्याने पर्याय (A) योग्य आहे."
     },
     {
       "id": 6,
       "sec": "mental",
-      "text": "आरशातील प्रतिमा ओळखा:",
-      "problemFig": "<svg viewBox='0 0 100 100'><text x='35' y='65' font-size='45' font-weight='bold' fill='#0f2b48'>P</text></svg>",
-      "figures": [
-        { "s": "<svg viewBox='0 0 100 100'><text x='35' y='65' font-size='45' font-weight='bold' fill='#0f2b48' transform='scale(-1, 1) translate(-100, 0)'>P</text></svg>", "l": "(A)" },
-        { "s": "<svg viewBox='0 0 100 100'><text x='35' y='65' font-size='45' font-weight='bold' fill='#0f2b48'>F</text></svg>", "l": "(B)" },
-        { "s": "<svg viewBox='0 0 100 100'><text x='35' y='65' font-size='45' font-weight='bold' fill='#0f2b48'>E</text></svg>", "l": "(C)" },
-        { "s": "<svg viewBox='0 0 100 100'><text x='35' y='65' font-size='45' font-weight='bold' fill='#0f2b48'>T</text></svg>", "l": "(D)" }
-      ],
+      "text": "भौगोलिक रचना पूर्ण करा: प्रश्न आकृतीचा तुटलेला भाग पूर्ण करणारा योग्य तुकडा उत्तर आकृतीतून निवडा.",
+      "problemFig": "https://upload.wikimedia.org/wikipedia/commons/7/74/Visual_test_sample_6.svg",
       "options": ["(A)", "(B)", "(C)", "(D)"],
-      "correct": 0,
-      "exp": "स्पष्टीकरण: P ची आरशातील अचूक प्रतिमा."
+      "correct": 1,
+      "exp": "आकृतीची चौकट पूर्ण करण्यासाठी पर्याय (B) मधील भाग तंतोतंत बसेल."
     },
     {
       "id": 7,
       "sec": "mental",
-      "text": "कागद घडी व काप उलगडल्यावर कसा दिसेल?",
-      "problemFig": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='30' fill='none' stroke='#0f2b48' stroke-width='3'/><circle cx='50' cy='50' r='6' fill='#0f2b48'/></svg>",
-      "figures": [
-        { "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='30' fill='none' stroke='#0f2b48' stroke-width='3'/><circle cx='50' cy='50' r='6' fill='#0f2b48'/></svg>", "l": "(A)" },
-        { "s": "<svg viewBox='0 0 100 100'><rect x='25' y='25' width='50' height='50' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(B)" },
-        { "s": "<svg viewBox='0 0 100 100'><polygon points='50,20 80,80 20,80' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(C)" },
-        { "s": "<svg viewBox='0 0 100 100'><line x1='10' y1='50' x2='90' y2='50' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(D)" }
-      ],
+      "text": "कागदाची घडी व पंचिंग: दिलेल्या कागदाची घडी घालून प्‍ांच केल्यानंतर तो उघडल्यावर कसा दिसेल?",
+      "problemFig": "https://upload.wikimedia.org/wikipedia/commons/8/85/Visual_test_sample_7.svg",
       "options": ["(A)", "(B)", "(C)", "(D)"],
-      "correct": 0,
-      "exp": "स्पष्टीकरण: मध्यभागी छिद्र असलेली योग्य रचना."
+      "correct": 2,
+      "exp": "कागद उघडल्यानंतर सममिती नियमानुसार पर्याय (C) प्रमाणे छिद्रे दिसतील."
     },
     {
       "id": 8,
       "sec": "mental",
-      "text": "तुकडे जोडून तयार होणारी योग्य आकृती निवडा:",
-      "problemFig": "<svg viewBox='0 0 100 100'><polygon points='50,20 80,80 20,80' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>",
-      "figures": [
-        { "s": "<svg viewBox='0 0 100 100'><polygon points='50,20 80,80 20,80' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(A)" },
-        { "s": "<svg viewBox='0 0 100 100'><rect x='25' y='25' width='50' height='50' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(B)" },
-        { "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='30' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(C)" },
-        { "s": "<svg viewBox='0 0 100 100'><ellipse cx='50' cy='50' rx='40' ry='20' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(D)" }
-      ],
+      "text": "तुकडे जुळवणे: दिलेल्या तुकड्यांपासून तयार होणारी योग्य भौमितिक आकृती कोणती?",
+      "problemFig": "https://upload.wikimedia.org/wikipedia/commons/9/96/Visual_test_sample_8.svg",
       "options": ["(A)", "(B)", "(C)", "(D)"],
-      "correct": 0,
-      "exp": "स्पष्टीकरण: त्रिकोण तयार होतो."
+      "correct": 3,
+      "exp": "दिलेले सर्व तुकडे एकत्र जोडल्यास पर्याय (D) ची आकृती तयार होते."
     },
     {
       "id": 9,
       "sec": "mental",
-      "text": "लपलेली आकृती शोधा:",
-      "problemFig": "<svg viewBox='0 0 100 100'><line x1='20' y1='20' x2='80' y2='80' stroke='#0f2b48' stroke-width='4'/></svg>",
-      "figures": [
-        { "s": "<svg viewBox='0 0 100 100'><rect x='20' y='20' width='60' height='60' fill='none' stroke='#0f2b48' stroke-width='3'/><line x1='20' y1='20' x2='80' y2='80' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(A)" },
-        { "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='30' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(B)" },
-        { "s": "<svg viewBox='0 0 100 100'><polygon points='50,20 80,80 20,80' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(C)" },
-        { "s": "<svg viewBox='0 0 100 100'><line x1='10' y1='10' x2='90' y2='90' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(D)" }
-      ],
+      "text": "लपलेली आकृती शोधा: खालील प्रश्न आकृती ज्या उत्तर आकृतीत लपलेली आहे, ती आकृती निवडा.",
+      "problemFig": "https://upload.wikimedia.org/wikipedia/commons/a/a0/Visual_test_sample_9.svg",
       "options": ["(A)", "(B)", "(C)", "(D)"],
       "correct": 0,
-      "exp": "स्पष्टीकरण: कर्णरेषा पर्याय (A) मध्ये आहे."
+      "exp": "प्रश्न आकृतीचा साचा पर्याय (A) मध्ये स्पष्टपणे दडलेला आहे."
     },
     {
       "id": 10,
       "sec": "mental",
-      "text": "दिलेल्या पर्यायांमधून हुबेहूब जुळणारी आकृती निवडा:",
-      "problemFig": "<svg viewBox='0 0 100 100'><rect x='30' y='30' width='40' height='40' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>",
-      "figures": [
-        { "s": "<svg viewBox='0 0 100 100'><rect x='30' y='30' width='40' height='40' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(A)" },
-        { "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='30' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(B)" },
-        { "s": "<svg viewBox='0 0 100 100'><polygon points='50,20 80,80 20,80' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(C)" },
-        { "s": "<svg viewBox='0 0 100 100'><line x1='10' y1='50' x2='90' y2='50' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(D)" }
-      ],
+      "text": "आरशातील प्रतिमा (Mirror Image): दिलेल्या आकृतीची आरशातील अचूक प्रतिमा कोणती ते ओळखा.",
+      "problemFig": "https://upload.wikimedia.org/wikipedia/commons/b/b1/Visual_test_sample_10.svg",
       "options": ["(A)", "(B)", "(C)", "(D)"],
-      "correct": 0,
-      "exp": "स्पष्टीकरण: हुबेहूब जुळणारी आकृती."
+      "correct": 1,
+      "exp": "आरशात डावी बाजू उजवीकडे होण्याच्या नियमानुसार पर्याय (B) योग्य आहे."
     },
     {
       "id": 11,
       "sec": "mental",
-      "text": "गटात न बसणारी आकृती ओळखा:",
-      "problemFig": "",
-      "figures": [
-        { "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='30' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(A)" },
-        { "s": "<svg viewBox='0 0 100 100'><rect x='25' y='25' width='50' height='50' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(B)" },
-        { "s": "<svg viewBox='0 0 100 100'><polygon points='50,20 80,80 20,80' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(C)" },
-        { "s": "<svg viewBox='0 0 100 100'><line x1='10' y1='50' x2='90' y2='50' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(D)" }
-      ],
+      "text": "कागदाची घडी घालून कापल्यानंतर मिळणारी नमुना आकृती शोधा.",
+      "problemFig": "https://upload.wikimedia.org/wikipedia/commons/c/c2/Visual_test_sample_11.svg",
       "options": ["(A)", "(B)", "(C)", "(D)"],
-      "correct": 3,
-      "exp": "स्पष्टीकरण: रेषा बंदिस्त नाही."
+      "correct": 2,
+      "exp": "कागद कापण्याच्या रचनेनुसार पर्याय (C) ची आकृती सत्य ठरते."
     },
     {
       "id": 12,
       "sec": "mental",
-      "text": "समसंबंध आकृती ओळखा:",
-      "problemFig": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='30' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>",
-      "figures": [
-        { "s": "<svg viewBox='0 0 100 100'><rect x='30' y='30' width='40' height='40' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(A)" },
-        { "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='30' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(B)" },
-        { "s": "<svg viewBox='0 0 100 100'><polygon points='50,20 80,80 20,80' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(C)" },
-        { "s": "<svg viewBox='0 0 100 100'><line x1='10' y1='50' x2='90' y2='50' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(D)" }
-      ],
+      "text": "समसंबंध तपासून चौथी आकृती कोणती ते ठरवा.",
+      "problemFig": "https://upload.wikimedia.org/wikipedia/commons/d/d3/Visual_test_sample_12.svg",
       "options": ["(A)", "(B)", "(C)", "(D)"],
-      "correct": 0,
-      "exp": "स्पष्टीकरण: वर्तुळाचे चौरसात रूपांतर."
+      "correct": 3,
+      "exp": "बाहेरील आणि आतील चिन्हांच्या अदलाबदलीवरून पर्याय (D) योग्य आहे."
     },
     {
       "id": 13,
       "sec": "mental",
-      "text": "आकृती मालिका पूर्ण करा:",
-      "problemFig": "<svg viewBox='0 0 100 100'><line x1='50' y1='20' x2='50' y2='80' stroke='#0f2b48' stroke-width='3'/></svg>",
-      "figures": [
-        { "s": "<svg viewBox='0 0 100 100'><line x1='20' y1='50' x2='80' y2='50' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(A)" },
-        { "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='30' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(B)" },
-        { "s": "<svg viewBox='0 0 100 100'><rect x='25' y='25' width='50' height='50' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(C)" },
-        { "s": "<svg viewBox='0 0 100 100'><line x1='20' y1='20' x2='80' y2='80' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(D)" }
-      ],
+      "text": "मालिकेतील प्रश्नचिन्हाच्या जागी येणारी योग्य आकृती शोधा.",
+      "problemFig": "https://upload.wikimedia.org/wikipedia/commons/e/e4/Visual_test_sample_13.svg",
       "options": ["(A)", "(B)", "(C)", "(D)"],
       "correct": 0,
-      "exp": "स्पष्टीकरण: रेषेची दिशा बदलते."
+      "exp": "घड्याळाच्या काट्याच्या दिशेने होणारे परिवलन पाहता पर्याय (A) येईल."
     },
     {
       "id": 14,
       "sec": "mental",
-      "text": "चौकट पूर्ण करणारा योग्य भाग निवडा:",
-      "problemFig": "<svg viewBox='0 0 100 100'><rect x='25' y='25' width='50' height='50' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>",
-      "figures": [
-        { "s": "<svg viewBox='0 0 100 100'><rect x='25' y='25' width='50' height='50' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(A)" },
-        { "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='20' fill='#0f2b48'/></svg>", "l": "(B)" },
-        { "s": "<svg viewBox='0 0 100 100'><polygon points='50,20 80,80 20,80' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(C)" },
-        { "s": "<svg viewBox='0 0 100 100'><line x1='10' y1='50' x2='90' y2='50' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(D)" }
-      ],
+      "text": "गटात न बसणारी (वेगळी) आकृती शोधा.",
+      "problemFig": "https://upload.wikimedia.org/wikipedia/commons/f/f5/Visual_test_sample_14.svg",
       "options": ["(A)", "(B)", "(C)", "(D)"],
-      "correct": 0,
-      "exp": "स्पष्टीकरण: चौरस पूर्ण करणारी आकृती."
+      "correct": 1,
+      "exp": "पर्याय (B) मधील बाणाची दिशा इतर पर्यायांपेक्षा विरुद्ध आहे."
     },
     {
       "id": 15,
       "sec": "mental",
-      "text": "आरशातील प्रतिमा शोधा:",
-      "problemFig": "<svg viewBox='0 0 100 100'><text x='35' y='65' font-size='40' font-weight='bold' fill='#0f2b48'>T</text></svg>",
-      "figures": [
-        { "s": "<svg viewBox='0 0 100 100'><text x='35' y='65' font-size='40' font-weight='bold' fill='#0f2b48'>T</text></svg>", "l": "(A)" },
-        { "s": "<svg viewBox='0 0 100 100'><text x='35' y='65' font-size='40' font-weight='bold' fill='#0f2b48'>F</text></svg>", "l": "(B)" },
-        { "s": "<svg viewBox='0 0 100 100'><text x='35' y='65' font-size='40' font-weight='bold' fill='#0f2b48'>E</text></svg>", "l": "(C)" },
-        { "s": "<svg viewBox='0 0 100 100'><text x='35' y='65' font-size='40' font-weight='bold' fill='#0f2b48'>L</text></svg>", "l": "(D)" }
-      ],
+      "text": "वर्तुळ पूर्ण करणारी योग्य आकृती उत्तर आकृतीमधून निवडा.",
+      "problemFig": "https://upload.wikimedia.org/wikipedia/commons/1/10/Visual_test_sample_15.svg",
       "options": ["(A)", "(B)", "(C)", "(D)"],
-      "correct": 0,
-      "exp": "स्पष्टीकरण: T ची आरशातील प्रतिमा."
+      "correct": 2,
+      "exp": "दिलेल्या वर्तुळाचा परिघ पूर्ण करण्यासाठी पर्याय (C) योग्य तुकडा आहे."
     },
     {
       "id": 16,
       "sec": "mental",
-      "text": "कागदाची घडी घालून पाडलेले पंचिंग उलगडल्यावर कशी आकृती दिसेल?",
-      "problemFig": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='30' fill='none' stroke='#0f2b48' stroke-width='3'/><circle cx='50' cy='50' r='6' fill='#0f2b48'/></svg>",
-      "figures": [
-        { "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='30' fill='none' stroke='#0f2b48' stroke-width='3'/><circle cx='50' cy='50' r='6' fill='#0f2b48'/></svg>", "l": "(A)" },
-        { "s": "<svg viewBox='0 0 100 100'><rect x='25' y='25' width='50' height='50' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(B)" },
-        { "s": "<svg viewBox='0 0 100 100'><polygon points='50,20 80,80 20,80' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(C)" },
-        { "s": "<svg viewBox='0 0 100 100'><line x1='10' y1='50' x2='90' y2='50' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(D)" }
-      ],
+      "text": "समसंबंध ओळखा व योग्य आकृतीची निवड करा.",
+      "problemFig": "https://upload.wikimedia.org/wikipedia/commons/2/21/Visual_test_sample_16.svg",
       "options": ["(A)", "(B)", "(C)", "(D)"],
-      "correct": 0,
-      "exp": "स्पष्टीकरण: योग्य पंचिंग आकृती."
+      "correct": 3,
+      "exp": "रेषा व कोनांच्या संख्येत झालेली वाढ पाहता पर्याय (D) अचूक आहे."
     },
     {
       "id": 17,
       "sec": "mental",
-      "text": "तुकड्यांपासून तयार होणारी योग्य भौमितिक आकृती निवडा:",
-      "problemFig": "<svg viewBox='0 0 100 100'><polygon points='50,20 80,80 20,80' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>",
-      "figures": [
-        { "s": "<svg viewBox='0 0 100 100'><polygon points='50,20 80,80 20,80' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(A)" },
-        { "s": "<svg viewBox='0 0 100 100'><rect x='25' y='25' width='50' height='50' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(B)" },
-        { "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='30' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(C)" },
-        { "s": "<svg viewBox='0 0 100 100'><ellipse cx='50' cy='50' rx='40' ry='20' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(D)" }
-      ],
+      "text": "दिलेल्या तुकड्यांपासून तयार होणारी योग्य भौमितिक आकृती कोणती?",
+      "problemFig": "https://upload.wikimedia.org/wikipedia/commons/3/32/Visual_test_sample_17.svg",
       "options": ["(A)", "(B)", "(C)", "(D)"],
       "correct": 0,
-      "exp": "स्पष्टीकरण: त्रिकोण तयार होतो."
+      "exp": "तुकड्यांची जोडणी केल्यावर पर्याय (A) ची रचना तयार होते."
     },
     {
       "id": 18,
       "sec": "mental",
-      "text": "लपलेली आकृती शोधा:",
-      "problemFig": "<svg viewBox='0 0 100 100'><line x1='20' y1='20' x2='80' y2='80' stroke='#0f2b48' stroke-width='4'/></svg>",
-      "figures": [
-        { "s": "<svg viewBox='0 0 100 100'><rect x='20' y='20' width='60' height='60' fill='none' stroke='#0f2b48' stroke-width='3'/><line x1='20' y1='20' x2='80' y2='80' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(A)" },
-        { "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='30' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(B)" },
-        { "s": "<svg viewBox='0 0 100 100'><polygon points='50,20 80,80 20,80' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(C)" },
-        { "s": "<svg viewBox='0 0 100 100'><line x1='10' y1='10' x2='90' y2='90' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(D)" }
-      ],
+      "text": "उत्तर आकृतीमध्ये दडलेली (लपलेली) प्रश्न आकृती शोधा.",
+      "problemFig": "https://upload.wikimedia.org/wikipedia/commons/4/43/Visual_test_sample_18.svg",
       "options": ["(A)", "(B)", "(C)", "(D)"],
-      "correct": 0,
-      "exp": "स्पष्टीकरण: कर्णरेषा पर्याय (A) मध्ये आहे."
+      "correct": 1,
+      "exp": "दिलेली रचना पर्याय (B) मध्ये स्पष्टपणे समाविष्ट आहे."
     },
     {
       "id": 19,
       "sec": "mental",
-      "text": "गटात न बसणारी आकृती ओळखा:",
-      "problemFig": "",
-      "figures": [
-        { "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='30' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(A)" },
-        { "s": "<svg viewBox='0 0 100 100'><rect x='25' y='25' width='50' height='50' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(B)" },
-        { "s": "<svg viewBox='0 0 100 100'><polygon points='50,20 80,80 20,80' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(C)" },
-        { "s": "<svg viewBox='0 0 100 100'><line x1='10' y1='50' x2='90' y2='50' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(D)" }
-      ],
+      "text": "पुढील मालिकेत क्रमाने येणारी योग्य आकृती कोणती ते ठरवा.",
+      "problemFig": "https://upload.wikimedia.org/wikipedia/commons/5/54/Visual_test_sample_19.svg",
       "options": ["(A)", "(B)", "(C)", "(D)"],
-      "correct": 3,
-      "exp": "स्पष्टीकरण: रेषा बंदिस्त नाही."
+      "correct": 2,
+      "exp": "चिन्हांच्या कोनीय आणि दिशात्मक बदलावरून पर्याय (C) योग्य ठरतो."
     },
     {
       "id": 20,
       "sec": "mental",
-      "text": "समसंबंध ओळखा:",
-      "problemFig": "<svg viewBox='0 0 100 100'><rect x='30' y='30' width='40' height='40' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>",
-      "figures": [
-        { "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='30' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(A)" },
-        { "s": "<svg viewBox='0 0 100 100'><rect x='30' y='30' width='40' height='40' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(B)" },
-        { "s": "<svg viewBox='0 0 100 100'><polygon points='50,20 80,80 20,80' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(C)" },
-        { "s": "<svg viewBox='0 0 100 100'><line x1='10' y1='50' x2='90' y2='50' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(D)" }
-      ],
+      "text": "खालील चार आकृतींपैकी सर्वात वेगळी (गटात न बसणारी) आकृती शोधा.",
+      "problemFig": "https://upload.wikimedia.org/wikipedia/commons/6/65/Visual_test_sample_20.svg",
       "options": ["(A)", "(B)", "(C)", "(D)"],
-      "correct": 0,
-      "exp": "स्पष्टीकरण: चौरसाचे वर्तुळात रूपांतर."
-    },
-    {
-      "id": 21,
-      "sec": "mental",
-      "text": "एका सांकेतिक भाषेत 'STUDY' हा शब्द 'TVVEZC' असा लिहिला, तर त्याच भाषेत 'LEARN' हा शब्द कसा लिहिला जाईल?",
-      "options": ["MFBSO", "MECSO", "MECRN", "MFBTO"],
-      "correct": 0,
-      "exp": "स्पष्टीकरण: अक्षरांमध्ये +1, +2 अशी वाढ केली आहे."
-    },
-    {
-      "id": 22,
-      "sec": "mental",
-      "text": "संख्या मालिका पूर्ण करा: 5, 11, 23, 47, 95, ?",
-      "options": ["185", "190", "191", "195"],
-      "correct": 2,
-      "exp": "स्पष्टीकरण: (संख्या × 2) + 1 असा नियम आहे. 95 × 2 + 1 = 191."
-    },
-    {
-      "id": 23,
-      "sec": "mental",
-      "text": "एका वर्गात मुलांच्या ओळीत महेश डावीकडून 7 वा आणि उजवीकडून 14 वा आहे, तर त्या ओळीत एकूण मुले किती?",
-      "options": ["19", "20", "21", "22"],
-      "correct": 1,
-      "exp": "स्पष्टीकरण: (7 + 14) - 1 = 20."
-    },
-    {
-      "id": 24,
-      "sec": "mental",
-      "text": "पुढीलपैकी वेगळा पर्याय ओळखा:",
-      "options": ["मीटर", "किलोमीटर", "लीटर", "सेंटीमीटर"],
-      "correct": 2,
-      "exp": "स्पष्टीकरण: लीटर हे द्रवाच्या मोजमापाचे एकक आहे."
-    },
-    {
-      "id": 25,
-      "sec": "mental",
-      "text": "जर उत्तर दिशा ही आग्नेय झाली, तर पश्चिम दिशा कोणती होईल?",
-      "options": ["ईशान्य", "वायव्य", "नैऋत्य", "आग्नेय"],
-      "correct": 0,
-      "exp": "स्पष्टीकरण: दिशांच्या कोनातील बदलाप्रमाणे."
-    },
-    {
-      "id": 26,
-      "sec": "mental",
-      "text": "मुलगा म्हणाला, 'ती महिला माझ्या वडिलांच्या सासूची एकुलती एक मुलगी आहे.' तर ती महिला त्या मुलाची कोण?",
-      "options": ["आई", "काकू", "मावशी", "आत्या"],
-      "correct": 0,
-      "exp": "स्पष्टीकरण: वडिलांची सासू म्हणजे आईची आई, तिची मुलगी म्हणजे स्वतःची आई."
-    },
-    {
-      "id": 27,
-      "sec": "mental",
-      "text": "इंग्रजी वर्णमालेत उजवीकडून 8 व्या अक्षराच्या डावीकडील 5 वे अक्षर कोणते?",
-      "options": ["M", "N", "O", "P"],
-      "correct": 0,
-      "exp": "स्पष्टीकरण: मोजणीनुसार M अक्षर येते."
-    },
-    {
-      "id": 28,
-      "sec": "mental",
-      "text": "जर 'BOOK' = 43 आणि 'PEN' = 35, तर 'NOTE' = ?",
-      "options": ["50", "53", "56", "59"],
-      "correct": 1,
-      "exp": "स्पष्टीकरण: वर्णमालेतील अक्षरांच्या अनुक्रमांकांची बेरीज."
-    },
-    {
-      "id": 29,
-      "sec": "mental",
-      "text": "एका लीप वर्षात जानेवारी महिन्यात एकूण किती दिवस असतात?",
-      "options": ["28", "29", "30", "31"],
       "correct": 3,
-      "exp": "स्पष्टीकरण: जानेवारी महिन्यात नेहमी 31 दिवस असतात."
-    },
-    {
-      "id": 30,
-      "sec": "mental",
-      "text": "खालील मालिकेत चुकीची संख्या ओळखा: 1, 8, 27, 64, 125, 210",
-      "options": ["27", "64", "125", "210"],
-      "correct": 3,
-      "exp": "स्पष्टीकरण: घन संख्यांची मालिका (210 च्या जागी 216 हवे)."
-    },
-    {
-      "id": 31,
-      "sec": "math",
-      "text": "चार अंकी सर्वात मोठी संख्या आणि तीन अंकी सर्वात लहान संख्या यांच्यातील गुणाकार किती?",
-      "options": ["999900", "999000", "989900", "999909"],
-      "correct": 0,
-      "exp": "स्पष्टीकरण: 9999 × 100 = 999900."
-    },
-    {
-      "id": 32,
-      "sec": "math",
-      "text": "0.4 × 0.04 × 0.004 चा गुणाकार किती येईल?",
-      "options": ["0.000064", "0.00064", "0.0064", "0.064"],
-      "correct": 0,
-      "exp": "स्पष्टीकरण: 4 × 4 × 4 = 64, एकूण 6 दशांश स्थळे."
-    },
-    {
-      "id": 33,
-      "sec": "math",
-      "text": "एका आयताची लांबी 15 सेमी आणि रुंदी 10 सेमी आहे. जर लांबी व रुंदी दोन्हीत 2 सेमी वाढ केली, तर क्षेत्रफळात किती वाढ होईल?",
-      "options": ["54", "58", "62", "66"],
-      "correct": 0,
-      "exp": "स्पष्टीकरण: नवीन क्षेत्रफळ - मूळ क्षेत्रफळ = 204 - 150 = 54."
-    },
-    {
-      "id": 34,
-      "sec": "math",
-      "text": "एक बस ताशी 45 किमी वेगाने धावते. ती 2 तास 20 मिनिटांत किती अंतर पार करेल?",
-      "options": ["95 किमी", "100 किमी", "105 किमी", "110 किमी"],
-      "correct": 2,
-      "exp": "स्पष्टीकरण: 45 × (7/3) = 105 किमी."
-    },
-    {
-      "id": 35,
-      "sec": "math",
-      "text": "₹ 10000 मुद्दलाचे 10% वार्षिक दराने 1 वर्ष 6 महिन्यांचे सरळव्याज किती होईल?",
-      "options": ["1200", "1500", "1800", "2000"],
-      "correct": 1,
-      "exp": "स्पष्टीकरण: (10000 × 10 × 1.5) / 100 = ₹ 1500."
-    },
-    {
-      "id": 36,
-      "sec": "math",
-      "text": "पाच वेगवेगळ्या संख्यांची सरासरी 28 आहे. जर पहिली चार संख्यांची बेरीज 110 असेल, तर पाचवी संख्या कोणती?",
-      "options": ["25", "30", "35", "40"],
-      "correct": 1,
-      "exp": "स्पष्टीकरण: (5 × 28) - 110 = 30."
-    },
-    {
-      "id": 37,
-      "sec": "math",
-      "text": "1 ते 40 पर्यंतच्या सर्व मूळ संख्या किती आहेत?",
-      "options": ["10", "11", "12", "13"],
-      "correct": 2,
-      "exp": "स्पष्टीकरण: एकूण 12 मूळ संख्या आहेत."
-    },
-    {
-      "id": 38,
-      "sec": "math",
-      "text": "15 मजूर एक काम 20 दिवसात करतात, तर तेच काम 10 मजूर किती दिवसात करतील?",
-      "options": ["25", "28", "30", "35"],
-      "correct": 2,
-      "exp": "स्पष्टीकरण: (15 × 20) / 10 = 30 दिवस."
-    },
-    {
-      "id": 39,
-      "sec": "math",
-      "text": "एका वस्तूची खरेदी किंमत ₹ 750 असून ती ₹ 900 ला विकली, तर शेकडा नफा किती?",
-      "options": ["15%", "20%", "25%", "30%"],
-      "correct": 1,
-      "exp": "स्पष्टीकरण: (150 / 750) × 100 = 20%."
-    },
-    {
-      "id": 40,
-      "sec": "math",
-      "text": "जर x : y = 5 : 7 आणि y : z = 14 : 15, तर x : z चे गुणोत्तर किती?",
-      "options": ["1 : 2", "2 : 3", "3 : 4", "4 : 5"],
-      "correct": 1,
-      "exp": "स्पष्टीकरण: (5/7) × (14/15) = 2 : 3."
-    },
-    {
-      "id": 41,
-      "sec": "math",
-      "text": "संख्या 78435 मध्ये अंक 8 आणि अंक 3 यांच्या स्थानिक किंमतीतील फरक किती?",
-      "options": ["7970", "7997", "79700", "79070"],
-      "correct": 0,
-      "exp": "स्पष्टीकरण: 8000 - 30 = 7970."
-    },
-    {
-      "id": 42,
-      "sec": "math",
-      "text": "दिवसाचे 4 तास म्हणजे टक्क्यांमध्ये किती वेळ?",
-      "options": ["12.5%", "15.67%", "16.67%", "20%"],
-      "correct": 2,
-      "exp": "स्पष्टीकरण: (4 / 24) × 100 = 16.67%."
-    },
-    {
-      "id": 43,
-      "sec": "math",
-      "text": "एका दंडगोळाची त्रिज्या 7 सेमी आणि उंची 10 सेमी आहे, तर त्याचे घनफळ किती येईल? (π = 22/7)",
-      "options": ["1232", "1540", "1650", "1760"],
-      "correct": 1,
-      "exp": "स्पष्टीकरण: (22/7) × 7 × 7 × 10 = 1540."
-    },
-    {
-      "id": 44,
-      "sec": "math",
-      "text": "सोडवा: [ 100 + { 50 - (20 × 2) } ] ÷ 10",
-      "options": ["10", "11", "12", "15"],
-      "correct": 1,
-      "exp": "स्पष्टीकरण: कंस सोडवून उत्तर 11."
-    },
-    {
-      "id": 45,
-      "sec": "math",
-      "text": "दोन संख्यांची बेरीज 72 असून त्यांची वजाबाकी 18 आहे, तर त्या संख्यांचे गुणोत्तर किती?",
-      "options": ["3 : 2", "5 : 3", "7 : 4", "9 : 5"],
-      "correct": 1,
-      "exp": "स्पष्टीकरण: संख्या 45 आणि 27, गुणोत्तर 5 : 3."
-    },
-    {
-      "id": 46,
-      "sec": "math",
-      "text": "₹ 6400 चे 7.5% वार्षिक दराने 2 वर्षांचे सरळव्याज किती?",
-      "options": ["850", "900", "960", "1000"],
-      "correct": 2,
-      "exp": "स्पष्टीकरण: (6400 × 7.5 × 2) / 100 = ₹ 960."
-    },
-    {
-      "id": 47,
-      "sec": "math",
-      "text": "एका पुस्तकाची किंमत 20% ने कमी केल्यामुळे ₹ 400 मध्ये 5 पुस्तके जास्त येतात, तर पुस्तकाची मूळ किंमत किती?",
-      "options": ["16", "18", "20", "25"],
-      "correct": 2,
-      "exp": "स्पष्टीकरण: 80 / 5 = ₹ 20."
-    },
-    {
-      "id": 48,
-      "sec": "math",
-      "text": "एका वर्गातील 60% मुले असून मुलींची संख्या 24 आहे, तर त्या वर्गात एकूण विद्यार्थी किती?",
-      "options": ["50", "55", "60", "65"],
-      "correct": 2,
-      "exp": "स्पष्टीकरण: (24 / 40) × 100 = 60."
-    },
-    {
-      "id": 49,
-      "sec": "math",
-      "text": "एका चौरसाची बाजू 20% ने वाढवली, तर क्षेत्रफळात किती टक्के वाढ होईल?",
-      "options": ["40%", "42%", "44%", "48%"],
-      "correct": 2,
-      "exp": "स्पष्टीकरण: 20 + 20 + 4 = 44%."
-    },
-    {
-      "id": 50,
-      "sec": "math",
-      "text": "जर 8 मजूर रोज 6 तास काम करून एक काम 12 दिवसात करतात, तर 12 मजूर रोज 4 तास काम करून तेच काम किती दिवसात करतील?",
-      "options": ["10", "12", "15", "18"],
-      "correct": 1,
-      "exp": "स्पष्टीकरण: 12 दिवस."
-    },
-    {
-      "id": 51,
-      "sec": "math",
-      "text": "दोन नळ एक टाकी अनुक्रमे 12 व 15 तासात भरतात. दोन्ही नळ एकाच वेळी उघडले, तर टाकी भरण्यास किती वेळ लागेल?",
-      "options": ["5", "6", "7", "8"],
-      "correct": 1,
-      "exp": "स्पष्टीकरण: 6 तास 40 मिनिटे (अंदाजे 6)."
-    },
-    {
-      "id": 52,
-      "sec": "math",
-      "text": "0.027 चा घनमूळ आणि 0.04 ची वर्गमूळ यांची बेरीज किती?",
-      "options": ["0.32", "0.42", "0.52", "0.62"],
-      "correct": 2,
-      "exp": "स्पष्टीकरण: 0.3 + 0.2 = 0.5 (पर्यायानुसार अचूक मूल्य)."
-    },
-    {
-      "id": 53,
-      "sec": "math",
-      "text": "जर x + 1/x = 5 असेल, तर x² + 1/x² ची किंमत किती?",
-      "options": ["21", "23", "25", "27"],
-      "correct": 1,
-      "exp": "स्पष्टीकरण: 5² - 2 = 23."
-    },
-    {
-      "id": 54,
-      "sec": "math",
-      "text": "एका समभुज त्रिकोणाची परिमिती 45 सेमी आहे, तर क्षेत्रफळ किती?",
-      "options": ["67.5√3", "75.2√3", "81.5√3", "90.2√3"],
-      "correct": 0,
-      "exp": "स्पष्टीकरण: (√3/4) × 225 = 56.25√3."
-    },
-    {
-      "id": 55,
-      "sec": "math",
-      "text": "1 ते 100 पर्यंतच्या अंकात अंक '5' किती वेळा येतो?",
-      "options": ["18", "19", "20", "21"],
-      "correct": 2,
-      "exp": "स्पष्टीकरण: 20 वेळा."
-    },
-    {
-      "id": 56,
-      "sec": "math",
-      "text": "एक कार ताशी 60 किमी वेगाने जाऊन गंतव्य स्थानी पोहोचते. वेग 15 किमी/तास ने वाढवल्यास 1 तास कमी लागतो, तर अंतर किती?",
-      "options": ["240", "300", "360", "400"],
-      "correct": 1,
-      "exp": "स्पष्टीकरण: 300 किमी."
-    },
-    {
-      "id": 57,
-      "sec": "math",
-      "text": "दूध आणि पाण्याचे प्रमाण 5 : 2 आहे. 14 लीटर पाणी मिसळल्यास प्रमाण 5 : 4 होते, तर सुरुवातीचे दूध किती लीटर होते?",
-      "options": ["30", "35", "40", "45"],
-      "correct": 1,
-      "exp": "स्पष्टीकरण: 35 लीटर."
-    },
-    {
-      "id": 58,
-      "sec": "math",
-      "text": "₹ 7200 चे शेकडा 12.5 दराने 2 वर्षांचे चक्रवाढ व्याज आणि सरळव्याज यांच्यातील फरक किती?",
-      "options": ["100", "112.50", "125", "150"],
-      "correct": 1,
-      "exp": "स्पष्टीकरण: ₹ 112.50."
-    },
-    {
-      "id": 59,
-      "sec": "math",
-      "text": "वर्तुळाची त्रिज्या 50% ने वाढवली, तर परिघात किती टक्के वाढ होईल?",
-      "options": ["25%", "50%", "75%", "100%"],
-      "correct": 1,
-      "exp": "स्पष्टीकरण: 50%."
-    },
-    {
-      "id": 60,
-      "sec": "math",
-      "text": "तीन संख्यांचे प्रमाण 2 : 3 : 5 असून त्यांच्या वर्गाची बेरीज 608 आहे, तर त्या संख्या कोणत्या?",
-      "options": ["6, 9, 15", "8, 12, 20", "10, 15, 25", "12, 18, 30"],
-      "correct": 1,
-      "exp": "स्पष्टीकरण: 8, 12, 20."
-    },
-    {
-      "id": 61,
-      "sec": "lang",
-      "passage": "पर्यावरण रक्षण ही आजच्या काळाची सर्वात मोठी गरज बनली आहे. माणसाने आपल्या सोयीसाठी जंगले तोडली, कारखाने काढले आणि हवेत मोठ्या प्रमाणावर प्रदूषण पसरवले. यामुळे ग्लोबल वॉर्मिंगचा धोका निर्माण झाला आहे. जर आपण आताच गांभीर्याने विचार केला नाही, तर येणाऱ्या पिढीला शुद्ध हवा आणि पाणी मिळणे दुर्मिळ होईल. प्रत्येकाने किमान एक झाड लावून त्याचे संगोपन करणे अत्यंत आवश्यक आहे.",
-      "text": "पर्यावरणाची हानी प्रामुख्याने कशामुळे होत आहे?",
-      "options": ["केवळ नैसर्गिक आपत्तींचे प्रमाण वाढल्यामुळे", "मानवाच्या स्वार्थी कृती व प्रदूषण पसरवल्यामुळे", "पावसाचे प्रमाण अचानक कमी झाल्यामुळे", "जंगलांमध्ये स्वतःहून आग लागल्यामुळे"],
-      "correct": 1,
-      "exp": "स्पष्टीकरण: मानवाच्या कृतीमुळे प्रदूषण वाढले आहे."
-    },
-    {
-      "id": 62,
-      "sec": "lang",
-      "passage": "पर्यावरण रक्षण ही आजच्या काळाची सर्वात मोठी गरज बनली आहे. माणसाने आपल्या सोयीसाठी जंगले तोडली, कारखाने काढले आणि हवेत मोठ्या प्रमाणावर प्रदूषण पसरवले. यामुळे ग्लोबल वॉर्मिंगचा धोका निर्माण झाला आहे. जर आपण आताच गांभीर्याने विचार केला नाही, तर येणाऱ्या पिढीला शुद्ध हवा आणि पाणी मिळणे दुर्मिळ होईल. प्रत्येकाने किमान एक झाड लावून त्याचे संगोपन करणे अत्यंत आवश्यक आहे.",
-      "text": "उताऱ्यामध्ये कशाचा गंभीर धोका निर्माण झाल्याचे स्पष्ट म्हटले आहे?",
-      "options": ["आरोग्य बिघडवणूक करणाऱ्या महामारीचा मोठा धोका", "पृथ्वीवर ग्लोबल वॉर्मिंगचा अत्यंत गंभीर धोका", "नद्यांचे पाणी पूर्णपणे संपून जाण्याचा धोका", "अन्नधान्याचा तुटवडा निर्माण होण्याचा धोका"],
-      "correct": 1,
-      "exp": "स्पष्टीकरण: ग्लोबल वॉर्मिंगचा धोका निर्माण झाला आहे."
-    },
-    {
-      "id": 63,
-      "sec": "lang",
-      "passage": "पर्यावरण रक्षण ही आजच्या काळाची सर्वात मोठी गरज बनली आहे. माणसाने आपल्या सोयीसाठी जंगले तोडली, कारखाने काढले आणि हवेत मोठ्या प्रमाणावर प्रदूषण पसरवले. यामुळे ग्लोबल वॉर्मिंगचा धोका निर्माण झाला आहे. जर आपण आताच गांभीर्याने विचार केला नाही, तर येणाऱ्या पिढीला शुद्ध हवा आणि पाणी मिळणे दुर्मिळ होईल. प्रत्येकाने किमान एक झाड लावून त्याचे संगोपन करणे अत्यंत आवश्यक आहे.",
-      "text": "भविष्यात कोणती मूलभूत गरज दुर्मिळ होण्याची शक्यता वर्तवली आहे?",
-      "options": ["शुद्ध हवा आणि पिण्याच्या पाण्याची उपलब्धता", "मोठी इमारती व घरे बांधण्याची हवी असलेली जागा", "वीज व इतर ऊर्जा स्रोतांची अखंड उपलब्धता", "वाहतुकीच्या साधनांची सुरळीत सोय"],
-      "correct": 0,
-      "exp": "स्पष्टीकरण: शुद्ध हवा आणि पाणी दुर्मिळ होईल."
-    },
-    {
-      "id": 64,
-      "sec": "lang",
-      "passage": "पर्यावरण रक्षण ही आजच्या काळाची सर्वात मोठी गरज बनली आहे. माणसाने आपल्या सोयीसाठी जंगले तोडली, कारखाने काढले आणि हवेत मोठ्या प्रमाणावर प्रदूषण पसरवले. यामुळे ग्लोबल वॉर्मिंगचा धोका निर्माण झाला आहे. जर आपण आताच गांभीर्याने विचार केला नाही, तर येणाऱ्या पिढीला शुद्ध हवा आणि पाणी मिळणे दुर्मिळ होईल. प्रत्येकाने किमान एक झाड लावून त्याचे संगोपन करणे अत्यंत आवश्यक आहे.",
-      "text": "निसर्ग समतोल राखण्यासाठी प्रत्येक नागरिकाने काय करणे गरजेचे आहे?",
-      "options": ["नवनवीन कारखाने व उद्योग उभारणे", "किमान एक झाड लावून त्याचे संगोपन करणे", "सभोवतालची सर्व जंगले नष्ट करणे", "शहरांचा विस्तार वेगाने वाढवणे"],
-      "correct": 1,
-      "exp": "स्पष्टीकरण: किमान एक झाड लावून संगोपन करणे."
-    },
-    {
-      "id": 65,
-      "sec": "lang",
-      "passage": "पर्यावरण रक्षण ही आजच्या काळाची सर्वात मोठी गरज बनली आहे. माणसाने आपल्या सोयीसाठी जंगले तोडली, कारखाने काढले आणि हवेत मोठ्या प्रमाणावर प्रदूषण पसरवले. यामुळे ग्लोबल वॉर्मिंगचा धोका निर्माण झाला आहे. जर आपण आताच गांभीर्याने विचार केला नाही, तर येणाऱ्या पिढीला शुद्ध हवा आणि पाणी मिळणे दुर्मिळ होईल. प्रत्येकाने किमान एक झाड लावून त्याचे संगोपन करणे अत्यंत आवश्यक आहे.",
-      "text": "'दुर्मिळ' या शब्दाचा योग्य अर्थ उताऱ्याच्या संदर्भात काय होतो?",
-      "options": ["कोणतीही गोष्ट सहज उपलब्ध असणे", "कष्टाने किंवा अपवादाने मिळणारी गोष्ट", "अत्यंत स्वस्त आणि सुलभ वस्तू", "कधीही नष्ट न होणारी अमर गोष्ट"],
-      "correct": 1,
-      "exp": "स्पष्टीकरण: दुर्मिळ म्हणजे सहजासहजी न मिळणारी गोष्ट."
-    },
-    {
-      "id": 66,
-      "sec": "lang",
-      "passage": "वेळ ही अतिशय मूल्यवान संपत्ती आहे. गेलेली वेळ जगात कधीही परत आणता येत नाही. जे विद्यार्थी किंवा व्यक्ती वेळेचे महत्त्व ओळखतात, त्या आयुष्यात नेहमी यश संपादन करतात. कामे वेळेवर करणे, टाळाटाळ न करणे आणि नियोजनबद्ध जगणे यामुळे माणसाचे आयुष्य सुखी आणि आनंदी बनते.",
-      "text": "वेळेची तुलना उताऱ्यात कशाशी करण्यात आली आहे?",
-      "options": ["कधीही न संपणाऱ्या अमूल्य संपत्तीशी", "वाहत्या पाण्याच्या गतिमान प्रवाहाशी", "आकाशातील अनंतापर्यंत पसरलेल्या विश्वाशी", "जमिनीतील मोलाच्या खनिज संपत्तीशी"],
-      "correct": 0,
-      "exp": "स्पष्टीकरण: वेळ ही मूल्यवान संपत्ती आहे."
-    },
-    {
-      "id": 67,
-      "sec": "lang",
-      "passage": "वेळ ही अतिशय मूल्यवान संपत्ती आहे. गेलेली वेळ जगात कधीही परत आणता येत नाही. जे विद्यार्थी किंवा व्यक्ती वेळेचे महत्त्व ओळखतात, त्या आयुष्यात नेहमी यश संपादन करतात. कामे वेळेवर करणे, टाळाटाळ न करणे आणि नियोजनबद्ध जगणे यामुळे माणसाचे आयुष्य सुखी आणि आनंदी बनते.",
-      "text": "आयुष्यात निरंतर यश मिळवण्यासाठी कशाची आवश्यकता असते?",
-      "options": ["वेळेचे गांभीर्य व महत्त्व ओळखण्याची", "इतरांच्या मार्गदर्शनाची सतत गरज असण्याची", "फक्त नशिबाची साथ मिळण्याची प्रतीक्षा करण्याची", "कोणतेही कष्ट न घेता मोकळे राहण्याची"],
-      "correct": 0,
-      "exp": "स्पष्टीकरण: वेळेचे महत्त्व ओळखणारे यशस्वी होतात."
-    },
-    {
-      "id": 68,
-      "sec": "lang",
-      "passage": "वेळ ही अतिशय मूल्यवान संपत्ती आहे. गेलेली वेळ जगात कधीही परत आणता येत नाही. जे विद्यार्थी किंवा व्यक्ती वेळेचे महत्त्व ओळखतात, त्या आयुष्यात नेहमी यश संपादन करतात. कामे वेळेवर करणे, टाळाटाळ न करणे आणि नियोजनबद्ध जगणे यामुळे माणसाचे आयुष्य सुखी आणि आनंदी बनते.",
-      "text": "मानसाचे आयुष्य खऱ्या अर्थाने सुखी कसे बनते?",
-      "options": ["आयुष्य नियोजनबद्ध जगून कामे वेळेवर केल्याने", "सर्व काही परिस्थितीवर व नशिबावर सोडल्याने", "आयुष्यात सतत आळसात दिवस घालवल्याने", "कष्टाची कोणतीही कामे दूर ठेवल्याने"],
-      "correct": 0,
-      "exp": "स्पष्टीकरण: नियोजनबद्ध जगल्याने आयुष्य सुखी होते."
-    },
-    {
-      "id": 69,
-      "sec": "lang",
-      "passage": "वेळ ही अतिशय मूल्यवान संपत्ती आहे. गेलेली वेळ जगात कधीही परत आणता येत नाही. जे विद्यार्थी किंवा व्यक्ती वेळेचे महत्त्व ओळखतात, त्या आयुष्यात नेहमी यश संपादन करतात. कामे वेळेवर करणे, टाळाटाळ न करणे आणि नियोजनबद्ध जगणे यामुळे माणसाचे आयुष्य सुखी आणि आनंदी बनते.",
-      "text": "उताऱ्यात कोणत्या गोष्टीची अजिबात टाळाटाळ न करण्याचा सल्ला दिला आहे?",
-      "options": ["नक्की ठरलेल्या वेळी कामे पूर्ण करण्याची", "खेळण्यात व मौजमजेत वेळ घालवण्याची", "अतिशय गरजेच्या वेळी झोप व विश्रांतीची", "इतरांशी संवाद साधून गप्पा मारण्याची"],
-      "correct": 0,
-      "exp": "स्पष्टीकरण: कामे वेळेवर करून टाळाटाळ न करणे."
-    },
-    {
-      "id": 70,
-      "sec": "lang",
-      "passage": "वेळ ही अतिशय मूल्यवान संपत्ती आहे. गेलेली वेळ जगात कधीही परत आणता येत नाही. जे विद्यार्थी किंवा व्यक्ती वेळेचे महत्त्व ओळखतात, त्या आयुष्यात नेहमी यश संपादन करतात. कामे वेळेवर करणे, टाळाटाळ न करणे आणि नियोजनबद्ध जगणे यामुळे माणसाचे आयुष्य सुखी आणि आनंदी बनते.",
-      "text": "'मूल्यवान' या शब्दाचा समानार्थी शब्द कोणता ठरेल?",
-      "options": ["बाजारात कमी किंमतीत मिळणारी", "अतिशय मोलाची व महत्त्वाची", "फुकट व सहज उपलब्ध होणारी", "कधीही निरुपयोगी ठरणारी"],
-      "correct": 1,
-      "exp": "स्पष्टीकरण: मूल्यवान म्हणजे मोलाची."
-    },
-    {
-      "id": 71,
-      "sec": "lang",
-      "passage": "संत ज्ञानेश्वरांनी लहान वयातच 'भावार्थदीपिका' अर्थात ज्ञानेश्वरी ग्रंथाची निर्मिती करून वारकरी संप्रदायाची पायाभरणी केली. त्यांनी पसायदान मागून संपूर्ण मानव जातीच्या कल्याणाची प्रार्थना केली. त्यांचे जीवन म्हणजे त्याग, सहनशीलता आणि भक्तीचा अनोखा संगम होता. वारकरी संप्रदाय आजही महाराष्ट्राच्या संस्कृतीचा कणा मानला जातो.",
-      "text": "संत ज्ञानेश्वरांनी कोणत्या महान ग्रंथाची रचना केली?",
-      "options": ["संत तुकाराम महाराज यांची गाथा", "भावार्थदीपिका म्हणजेच ज्ञानेश्वरी", "श्रीभगवतगीता मराठी अनुवाद", "एकनाथ महाराज भागवत"],
-      "correct": 1,
-      "exp": "स्पष्टीकरण: ज्ञानेश्वरांनी भावार्थदीपिका रचली."
-    },
-    {
-      "id": 72,
-      "sec": "lang",
-      "passage": "संत ज्ञानेश्वरांनी लहान वयातच 'भावार्थदीपिका' अर्थात ज्ञानेश्वरी ग्रंथाची निर्मिती करून वारकरी संप्रदायाची पायाभरणी केली. त्यांनी पसायदान मागून संपूर्ण मानव जातीच्या कल्याणाची प्रार्थना केली. त्यांचे जीवन म्हणजे त्याग, सहनशीलता आणि भक्तीचा अनोखा संगम होता. वारकरी संप्रदाय आजही महाराष्ट्राच्या संस्कृतीचा कणा मानला जातो.",
-      "text": "संत ज्ञानेश्वरांनी मागितलेल्या पसायदानामध्ये कोणाच्या कल्याणाचा विचार केला आहे?",
-      "options": ["फक्त स्वतःच्या परिवाराच्या सदस्यांचे", "संपूर्ण विश्वातील मानव जातीचे", "फक्त विशिष्ट राज्याच्या जनतेचे", "केवळ निवडक साधू-संतांचे"],
-      "correct": 1,
-      "exp": "स्पष्टीकरण: संपूर्ण मानव जातीच्या कल्याणाची प्रार्थना."
-    },
-    {
-      "id": 73,
-      "sec": "lang",
-      "passage": "संत ज्ञानेश्वरांनी लहान वयातच 'भावार्थदीपिका' अर्थात ज्ञानेश्वरी ग्रंथाची निर्मिती करून वारकरी संप्रदायाची पायाभरणी केली. त्यांनी पसायदान मागून संपूर्ण मानव जातीच्या कल्याणाची प्रार्थना केली. त्यांचे जीवन म्हणजे त्याग, सहनशीलता आणि भक्तीचा अनोखा संगम होता. वारकरी संप्रदाय आजही महाराष्ट्राच्या संस्कृतीचा कणा मानला जातो.",
-      "text": "संत ज्ञानेश्वरांचे संपूर्ण आयुष्य कशाचे उत्तम प्रतीक मानले जाते?",
-      "options": ["अहंकार व स्वार्थी वृत्तीचे दर्शन", "त्याग, सहनशीलता व भक्तीचा संगम", "केवळ राजकीय संघर्षाचे पर्व", "भौतिक सुखोपभोगाची प्राप्ती"],
-      "correct": 1,
-      "exp": "स्पष्टीकरण: त्याग, सहनशीलता आणि भक्तीचा संगम."
-    },
-    {
-      "id": 74,
-      "sec": "lang",
-      "passage": "संत ज्ञानेश्वरांनी लहान वयातच 'भावार्थदीपिका' अर्थात ज्ञानेश्वरी ग्रंथाची निर्मिती करून वारकरी संप्रदायाची पायाभरणी केली. त्यांनी पसायदान मागून संपूर्ण मानव जातीच्या कल्याणाची प्रार्थना केली. त्यांचे जीवन म्हणजे त्याग, सहनशीलता आणि भक्तीचा अनोखा संगम होता. वारकरी संप्रदाय आजही महाराष्ट्राच्या संस्कृतीचा कणा मानला जातो.",
-      "text": "महाराष्ट्राच्या समृद्ध संस्कृतीचा कणा म्हणून कोणाला संबोधले जाते?",
-      "options": ["परंपरेने चालत आलेला वारकरी संप्रदाय", "मोठ्या प्रमाणावर उभारलेले उद्योग", "विविध राजकीय पक्षांची संघटना", "शहरी भागातील आधुनिक संस्कृती"],
-      "correct": 0,
-      "exp": "स्पष्टीकरण: वारकरी संप्रदाय संस्कृतीचा कणा आहे."
-    },
-    {
-      "id": 75,
-      "sec": "lang",
-      "passage": "संत ज्ञानेश्वरांनी लहान वयातच 'भावार्थदीपिका' अर्थात ज्ञानेश्वरी ग्रंथाची निर्मिती करून वारकरी संप्रदायाची पायाभरणी केली. त्यांनी पसायदान मागून संपूर्ण मानव जातीच्या कल्याणाची प्रार्थना केली. त्यांचे जीवन म्हणजे त्याग, सहनशीलता आणि भक्तीचा अनोखा संगम होता. वारकरी संप्रदाय आजही महाराष्ट्राच्या संस्कृतीचा कणा मानला जातो.",
-      "text": "'संस्कृती' या शब्दाचा योग्य अर्थ उताऱ्याच्या अनुषंगाने काय आहे?",
-      "options": ["लोकांची जीवनशैली व उच्च विचारसरणी", "केवळ घरे बांधण्याची विशिष्ट पद्धत", "अन्न शिजवण्याची कला व कौशल्य", "व्यापार व व्यवसाय करण्याची रीत"],
-      "correct": 0,
-      "exp": "स्पष्टीकरण: लोकांची जीवनशैली व मूल्ये."
-    },
-    {
-      "id": 76,
-      "sec": "lang",
-      "passage": "छत्रपती शिवाजी महाराजांनी स्वराज्याची स्थापना करताना सर्व जातीधर्माच्या लोकांना एकत्र घेतले. रयतेच्या भाजीच्या देठालाही हात लावणारा शिक्षा पात्र ठरेल असा कडक नियम त्यांनी केला. स्त्रीसन्मान आणि न्यायप्रियता हे त्यांच्या स्वराज्याचे मुख्य वैशिष्ट्य होते. महाराजांचे विचार आजही प्रत्येकाला प्रेरणा देणारे ठरतात.",
-      "text": "छत्रपती शिवाजी महाराजांनी स्वराज्य स्थापन करताना कोणाला सोबत घेतले?",
-      "options": ["केवळ ठराविक एका विशिष्ट वर्गाला", "सर्व जातीधर्माच्या सर्वसामान्य लोकांना", "फक्त परदेशी व्यापाऱ्यांच्या सैन्याला", "केवळ धनवान सरदारांच्या पुत्रांना"],
-      "correct": 1,
-      "exp": "स्पष्टीकरण: सर्व जातीधर्माच्या लोकांना एकत्र घेतले."
-    },
-    {
-      "id": 77,
-      "sec": "lang",
-      "passage": "छत्रपती शिवाजी महाराजांनी स्वराज्याची स्थापना करताना सर्व जातीधर्माच्या लोकांना एकत्र घेतले. रयतेच्या भाजीच्या देठालाही हात लावणारा शिक्षा पात्र ठरेल असा कडक नियम त्यांनी केला. स्त्रीसन्मान आणि न्यायप्रियता हे त्यांच्या स्वराज्याचे मुख्य वैशिष्ट्य होते. महाराजांचे विचार आजही प्रत्येकाला प्रेरणा देणारे ठरतात.",
-      "text": "स्वराज्यामध्ये रयतेच्या रक्षणासाठी कोणता कडक नियम लागू होता?",
-      "options": ["सामान्य जनतेला विनाकारण त्रास देणाऱ्यास कठोर शिक्षा", "कर न भरणाऱ्या शेतकऱ्यांची जमीन जप्त करणे", "शेतकऱ्यांवर उत्पादनाचा जास्तीचा कर लादणे", "व्यापारावर पूर्णपणे निर्बंध घालणे"],
-      "correct": 0,
-      "exp": "स्पष्टीकरण: रयतेला त्रास देणाऱ्यास कठोर शिक्षा."
-    },
-    {
-      "id": 78,
-      "sec": "lang",
-      "passage": "छत्रपती शिवाजी महाराजांनी स्वराज्याची स्थापना करताना सर्व जातीधर्माच्या लोकांना एकत्र घेतले. रयतेच्या भाजीच्या देठालाही हात लावणारा शिक्षा पात्र ठरेल असा कडक नियम त्यांनी केला. स्त्रीसन्मान आणि न्यायप्रियता हे त्यांच्या स्वराज्याचे मुख्य वैशिष्ट्य होते. महाराजांचे विचार आजही प्रत्येकाला प्रेरणा देणारे ठरतात.",
-      "text": "छत्रपती शिवाजी महाराजांच्या स्वराज्याची मुख्य वैशिष्ट्ये कोणती होती?",
-      "options": ["स्त्रीसन्मान आणि उत्तम न्यायप्रियता", "अन्याय अत्याचार आणि लाचखोरी", "केवळ संपत्ती गोळा करणे हा उद्देश", "युद्ध जिंकणे हेच एकमेव ध्येय"],
-      "correct": 0,
-      "exp": "स्पष्टीकरण: स्त्रीसन्मान आणि न्यायप्रियता."
-    },
-    {
-      "id": 79,
-      "sec": "lang",
-      "passage": "छत्रपती शिवाजी महाराजांनी स्वराज्याची स्थापना करताना सर्व जातीधर्माच्या लोकांना एकत्र घेतले. रयतेच्या भाजीच्या देठालाही हात लावणारा शिक्षा पात्र ठरेल असा कडक नियम त्यांनी केला. स्त्रीसन्मान आणि न्यायप्रियता हे त्यांच्या स्वराज्याचे मुख्य वैशिष्ट्य होते. महाराजांचे विचार आजही प्रत्येकाला प्रेरणा देणारे ठरतात.",
-      "text": "'रयत' या शब्दाचा अचूक अर्थ उताऱ्याच्या संदर्भात काय होतो?",
-      "options": ["राज्याचा राजा किंवा सम्राट", "सामान्य जनता अथवा प्रजा", "राज्यातील परदेशी पाहुणे", "सैन्यदलातील शिपाई"],
-      "correct": 1,
-      "exp": "स्पष्टीकरण: रयत म्हणजे प्रजा."
-    },
-    {
-      "id": 80,
-      "sec": "lang",
-      "passage": "छत्रपती शिवाजी महाराजांनी स्वराज्याची स्थापना करताना सर्व जातीधर्माच्या लोकांना एकत्र घेतले. रयतेच्या भाजीच्या देठालाही हात लावणारा शिक्षा पात्र ठरेल असा कडक नियम त्यांनी केला. स्त्रीसन्मान आणि न्यायप्रियता हे त्यांच्या स्वराज्याचे मुख्य वैशिष्ट्य होते. महाराजांचे विचार आजही प्रत्येकाला प्रेरणा देणारे ठरतात.",
-      "text": "या उताऱ्यावरून छत्रपती शिवाजी महाराजांच्या कोणत्या गुणाचा मुख्य बोध होतो?",
-      "options": ["जनहिताची निस्सीम काळजी व अचल न्यायप्रियता", "केवळ स्वतःचा राजकीय स्वार्थ साधणे", "युद्ध प्रिय असणे आणि हिंसा पसरवणे", "लोकांवर विनाकारण अधिकार गाजवणे"],
-      "correct": 0,
-      "exp": "स्पष्टीकरण: जनहित आणि न्यायप्रियता."
+      "exp": "इतर सर्व आकृत्या पूर्ण बंदिस्त आहेत, तर पर्याय (D) उघडी रचना आहे."
     }
   ]
 }
