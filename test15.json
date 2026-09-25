@@ -135,7 +135,7 @@
       ],
       "options": ["(A)", "(B)", "(C)", "(D)"],
       "correct": 0,
-      "exp": "स्पष्टीकरण: कर्णरेषा पर्याय (A) मध्ये अंतर्भूत आहे."
+      "exp": "स्पष्टीकरण: कर्णरेषा पर्याय (A) मध्ये आहे."
     },
     {
       "id": 10,
@@ -216,16 +216,16 @@
       "id": 15,
       "sec": "mental",
       "text": "आरशातील प्रतिमा शोधा:",
-      "problemFig": "<svg viewBox='0 0 100 100'><text x='35' y='65' font-size='40' font-weight='bold' fill='#0f2b48'>G</text></svg>",
+      "problemFig": "<svg viewBox='0 0 100 100'><text x='35' y='65' font-size='40' font-weight='bold' fill='#0f2b48'>T</text></svg>",
       "figures": [
-        { "s": "<svg viewBox='0 0 100 100'><text x='35' y='65' font-size='40' font-weight='bold' fill='#0f2b48' transform='scale(-1, 1) translate(-100, 0)'>G</text></svg>", "l": "(A)" },
+        { "s": "<svg viewBox='0 0 100 100'><text x='35' y='65' font-size='40' font-weight='bold' fill='#0f2b48'>T</text></svg>", "l": "(A)" },
         { "s": "<svg viewBox='0 0 100 100'><text x='35' y='65' font-size='40' font-weight='bold' fill='#0f2b48'>F</text></svg>", "l": "(B)" },
         { "s": "<svg viewBox='0 0 100 100'><text x='35' y='65' font-size='40' font-weight='bold' fill='#0f2b48'>E</text></svg>", "l": "(C)" },
         { "s": "<svg viewBox='0 0 100 100'><text x='35' y='65' font-size='40' font-weight='bold' fill='#0f2b48'>L</text></svg>", "l": "(D)" }
       ],
       "options": ["(A)", "(B)", "(C)", "(D)"],
       "correct": 0,
-      "exp": "स्पष्टीकरण: G ची आरशातील प्रतिमा."
+      "exp": "स्पष्टीकरण: T ची आरशातील प्रतिमा."
     },
     {
       "id": 16,
