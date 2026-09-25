@@ -1,66 +1,117 @@
 {
-  "testId": 15,
-  "title": "नवोदय सराव चाचणी क्र. 15 (2026-27)",
+  "testId": 1,
+  "title": "नवोदय सराव चाचणी क्र. 01 (2026-27)",
   "questions": [
     {
       "id": 1,
       "sec": "mental",
-      "text": "खालील चार आकृत्यांपैकी तीन आकृत्या विशिष्ट पद्धतीने सारख्या आहेत आणि एक आकृती वेगळी आहे. ती वेगळी आकृती निवडा.",
-      "problemFig": "",
-      "figures": [
-        { "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='35' fill='none' stroke='#0f2b48' stroke-width='4'/><line x1='25' y1='25' x2='75' y2='75' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(A)" },
-        { "s": "<svg viewBox='0 0 100 100'><rect x='20' y='20' width='60' height='60' fill='none' stroke='#0f2b48' stroke-width='4'/><line x1='20' y1='20' x2='80' y2='80' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(B)" },
-        { "s": "<svg viewBox='0 0 100 100'><polygon points='50,15 85,85 15,85' fill='none' stroke='#0f2b48' stroke-width='4'/><line x1='15' y1='85' x2='50' y2='15' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(C)" },
-        { "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='35' fill='none' stroke='#0f2b48' stroke-width='4'/><circle cx='50' cy='50' r='10' fill='#0f2b48'/></svg>", "l": "(D)" }
+      "text": "प्रश्न 1: डाव्या बाजूला एक 'प्रश्न आकृती' दिली आहे, जिचा एक भाग लुप्त (गहाळ) आहे. उजव्या बाजूला दिलेल्या (A), (B), (C) आणि (D) या उत्तर आकृत्यांचे नीट निरीक्षण करा आणि अशी आकृती शोधा, जी तिची दिशा न बदलता प्रश्न आकृतीचा नमुना पूर्ण करण्यासाठी रिकाम्या जागी तंतोतंत बसेल ?",
+      "problemFig": "data:image/jpeg;base64,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CiiigAooooAKKKKACiiigAoopDQB83/s4OR+35+0JF93Nt4dfP8A2yvq+kV6V82fs6Db/wAFCf2gv9rTvDjdP9i/H9K+kx0oAKKKKACiiigAooooAKKKKAI2zn/69BXcf8akooAQLiloooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAIzQBiiigAooooAKKKKACiiigAooooAKKKKACgjIoooATZSgYoooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAprU6igDkPDHwh0nwr8UfEXiyzjkGreKIbS3v5GbIdLYSCIAf9tX/OuvUYFIq7TS0AFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQB//Z",
+      "figures": null,
+      "options": [
+        "(A)",
+        "(B)",
+        "(C)",
+        "(D)"
       ],
-      "options": ["(A)", "(B)", "(C)", "(D)"],
-      "correct": 3,
-      "exp": "स्पष्टीकरण: पर्याय (D) मध्ये आतमध्ये भरलेला गोल आहे, तर इतर तिन्हींमध्ये कर्णरेषा आहे."
+      "correct": 2,
+      "exp": "पर्याय (A), (B) आणि (D) या सरळ रेषांनी बनलेल्या बहुभुज आकृत्या आहेत, तर पर्याय (C) हे वक्ररेषेचे वर्तुळ आहे."
     },
     {
       "id": 2,
       "sec": "mental",
       "text": "समसंबंध ओळखा: प्रश्न आकृतीच्या जोडीप्रमाणे उत्तर आकृतीतून योग्य पर्याय निवडा.",
-      "problemFig": "<svg viewBox='0 0 100 100'><polygon points='50,15 85,85 15,85' fill='none' stroke='#0f2b48' stroke-width='4'/></svg>",
+      "problemFig": "<svg viewBox='0 0 100 100'><rect x='30' y='30' width='40' height='40' fill='none' stroke='#0f2b48' stroke-width='4'/><line x1='30' y1='30' x2='70' y2='70' stroke='#0f2b48' stroke-width='3'/></svg>",
       "figures": [
-        { "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='35' fill='none' stroke='#0f2b48' stroke-width='4'/></svg>", "l": "(A)" },
-        { "s": "<svg viewBox='0 0 100 100'><rect x='25' y='25' width='50' height='50' fill='none' stroke='#0f2b48' stroke-width='4'/></svg>", "l": "(B)" },
-        { "s": "<svg viewBox='0 0 100 100'><ellipse cx='50' cy='50' rx='40' ry='20' fill='none' stroke='#0f2b48' stroke-width='4'/></svg>", "l": "(C)" },
-        { "s": "<svg viewBox='0 0 100 100'><line x1='10' y1='50' x2='90' y2='50' stroke='#0f2b48' stroke-width='4'/></svg>", "l": "(D)" }
+        {
+          "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='30' fill='none' stroke='#0f2b48' stroke-width='4'/><line x1='30' y1='30' x2='70' y2='70' stroke='#0f2b48' stroke-width='3'/></svg>",
+          "l": "(A)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='30' fill='none' stroke='#0f2b48' stroke-width='4'/></svg>",
+          "l": "(B)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><rect x='30' y='30' width='40' height='40' fill='none' stroke='#0f2b48' stroke-width='4'/></svg>",
+          "l": "(C)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><polygon points='50,20 80,80 20,80' fill='none' stroke='#0f2b48' stroke-width='4'/></svg>",
+          "l": "(D)"
+        }
       ],
-      "options": ["(A)", "(B)", "(C)", "(D)"],
+      "options": [
+        "(A)",
+        "(B)",
+        "(C)",
+        "(D)"
+      ],
       "correct": 0,
-      "exp": "स्पष्टीकरण: त्रिकोणाचे वर्तुळात रूपांतर होते."
+      "exp": "स्पष्टीकरण: चौकोनाचा वर्तुळ होऊन आतील रेषा कायम राहते."
     },
     {
       "id": 3,
       "sec": "mental",
       "text": "समस्येतील आकृतीचा तुकडा पूर्ण करणारी आकृती शोधा.",
-      "problemFig": "<svg viewBox='0 0 100 100'><rect x='20' y='20' width='60' height='60' fill='none' stroke='#0f2b48' stroke-width='4'/><path d='M20,20 L50,50 L20,80 Z' fill='#0f2b48'/></svg>",
+      "problemFig": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='35' fill='none' stroke='#0f2b48' stroke-width='4'/><path d='M50,15 A35,35 0 0,1 85,50 L50,50 Z' fill='#0f2b48'/></svg>",
       "figures": [
-        { "s": "<svg viewBox='0 0 100 100'><rect x='20' y='20' width='60' height='60' fill='none' stroke='#0f2b48' stroke-width='4'/><path d='M80,20 L50,50 L80,80 Z' fill='#0f2b48'/></svg>", "l": "(A)" },
-        { "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='30' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(B)" },
-        { "s": "<svg viewBox='0 0 100 100'><polygon points='50,20 80,80 20,80' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(C)" },
-        { "s": "<svg viewBox='0 0 100 100'><line x1='10' y1='50' x2='90' y2='50' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(D)" }
+        {
+          "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='35' fill='none' stroke='#0f2b48' stroke-width='4'/><path d='M50,50 L85,50 A35,35 0 0,1 50,85 Z' fill='#0f2b48'/></svg>",
+          "l": "(A)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='35' fill='none' stroke='#0f2b48' stroke-width='4'/><path d='M15,50 A35,35 0 0,0 50,85 L50,50 Z' fill='#0f2b48'/></svg>",
+          "l": "(B)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='35' fill='none' stroke='#0f2b48' stroke-width='4'/><path d='M50,15 A35,35 0 0,0 15,50 L50,50 Z' fill='#0f2b48'/></svg>",
+          "l": "(C)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='35' fill='none' stroke='#0f2b48' stroke-width='4'/><circle cx='50' cy='50' r='15' fill='#0f2b48'/></svg>",
+          "l": "(D)"
+        }
       ],
-      "options": ["(A)", "(B)", "(C)", "(D)"],
-      "correct": 0,
-      "exp": "स्पष्टीकरण: जुळणारी आरशातील आकृती."
+      "options": [
+        "(A)",
+        "(B)",
+        "(C)",
+        "(D)"
+      ],
+      "correct": 2,
+      "exp": "स्पष्टीकरण: वर्तुळाचा उरलेला चतुर्थांश भाग जुळवून आकृती पूर्ण होईल."
     },
     {
       "id": 4,
       "sec": "mental",
       "text": "मालिका पूर्ण करा: पुढची आकृती कोणती येईल?",
-      "problemFig": "<svg viewBox='0 0 100 100'><line x1='20' y1='50' x2='80' y2='50' stroke='#0f2b48' stroke-width='4'/></svg>",
+      "problemFig": "<svg viewBox='0 0 100 100'><rect x='25' y='25' width='50' height='50' fill='none' stroke='#0f2b48' stroke-width='4'/><line x1='25' y1='25' x2='75' y2='75' stroke='#0f2b48' stroke-width='3'/></svg>",
       "figures": [
-        { "s": "<svg viewBox='0 0 100 100'><line x1='50' y1='20' x2='50' y2='80' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(A)" },
-        { "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='30' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(B)" },
-        { "s": "<svg viewBox='0 0 100 100'><rect x='25' y='25' width='50' height='50' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(C)" },
-        { "s": "<svg viewBox='0 0 100 100'><line x1='20' y1='20' x2='80' y2='80' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(D)" }
+        {
+          "s": "<svg viewBox='0 0 100 100'><rect x='25' y='25' width='50' height='50' fill='none' stroke='#0f2b48' stroke-width='4'/><line x1='25' y1='75' x2='75' y2='25' stroke='#0f2b48' stroke-width='3'/></svg>",
+          "l": "(A)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><rect x='25' y='25' width='50' height='50' fill='none' stroke='#0f2b48' stroke-width='4'/><line x1='50' y1='25' x2='50' y2='75' stroke='#0f2b48' stroke-width='3'/></svg>",
+          "l": "(B)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='30' fill='none' stroke='#0f2b48' stroke-width='4'/></svg>",
+          "l": "(C)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><rect x='25' y='25' width='50' height='50' fill='none' stroke='#0f2b48' stroke-width='4'/></svg>",
+          "l": "(D)"
+        }
       ],
-      "options": ["(A)", "(B)", "(C)", "(D)"],
+      "options": [
+        "(A)",
+        "(B)",
+        "(C)",
+        "(D)"
+      ],
       "correct": 0,
-      "exp": "स्पष्टीकरण: रेषेची दिशा ९० अंशाने बदलते."
+      "exp": "स्पष्टीकरण: कर्णरेषा बदलून मालिकेची रचना पुढे जाते."
     },
     {
       "id": 5,
@@ -68,89 +119,191 @@
       "text": "भौमितिक रचना पूर्ण करणारी आकृती निवडा.",
       "problemFig": "<svg viewBox='0 0 100 100'><path d='M30,70 L30,30 L70,30 Z' fill='none' stroke='#0f2b48' stroke-width='4'/></svg>",
       "figures": [
-        { "s": "<svg viewBox='0 0 100 100'><path d='M70,30 L70,70 L30,70 Z' fill='none' stroke='#0f2b48' stroke-width='4'/></svg>", "l": "(A)" },
-        { "s": "<svg viewBox='0 0 100 100'><rect x='25' y='25' width='50' height='50' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(B)" },
-        { "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='30' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(C)" },
-        { "s": "<svg viewBox='0 0 100 100'><line x1='20' y1='50' x2='80' y2='50' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(D)" }
+        {
+          "s": "<svg viewBox='0 0 100 100'><path d='M70,30 L70,70 L30,70 Z' fill='none' stroke='#0f2b48' stroke-width='4'/></svg>",
+          "l": "(A)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><rect x='30' y='30' width='40' height='40' fill='none' stroke='#0f2b48' stroke-width='4'/></svg>",
+          "l": "(B)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='30' fill='none' stroke='#0f2b48' stroke-width='4'/></svg>",
+          "l": "(C)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><line x1='20' y1='50' x2='80' y2='50' stroke='#0f2b48' stroke-width='4'/></svg>",
+          "l": "(D)"
+        }
       ],
-      "options": ["(A)", "(B)", "(C)", "(D)"],
+      "options": [
+        "(A)",
+        "(B)",
+        "(C)",
+        "(D)"
+      ],
       "correct": 0,
-      "exp": "स्पष्टीकरण: चौकोन पूर्ण होतो."
+      "exp": "स्पष्टीकरण: त्रिकोणाचा उरलेला भाग जोडल्यास चौकोन तयार होईल."
     },
     {
       "id": 6,
       "sec": "mental",
       "text": "आरशातील प्रतिमा ओळखा:",
-      "problemFig": "<svg viewBox='0 0 100 100'><text x='35' y='65' font-size='45' font-weight='bold' fill='#0f2b48'>P</text></svg>",
+      "problemFig": "<svg viewBox='0 0 100 100'><text x='35' y='65' font-size='45' font-weight='bold' fill='#0f2b48'>N</text></svg>",
       "figures": [
-        { "s": "<svg viewBox='0 0 100 100'><text x='35' y='65' font-size='45' font-weight='bold' fill='#0f2b48' transform='scale(-1, 1) translate(-100, 0)'>P</text></svg>", "l": "(A)" },
-        { "s": "<svg viewBox='0 0 100 100'><text x='35' y='65' font-size='45' font-weight='bold' fill='#0f2b48'>F</text></svg>", "l": "(B)" },
-        { "s": "<svg viewBox='0 0 100 100'><text x='35' y='65' font-size='45' font-weight='bold' fill='#0f2b48'>E</text></svg>", "l": "(C)" },
-        { "s": "<svg viewBox='0 0 100 100'><text x='35' y='65' font-size='45' font-weight='bold' fill='#0f2b48'>T</text></svg>", "l": "(D)" }
+        {
+          "s": "<svg viewBox='0 0 100 100'><text x='35' y='65' font-size='45' font-weight='bold' fill='#0f2b48' transform='scale(-1, 1) translate(-100, 0)'>N</text></svg>",
+          "l": "(A)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><text x='35' y='65' font-size='45' font-weight='bold' fill='#0f2b48'>Z</text></svg>",
+          "l": "(B)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><text x='35' y='65' font-size='45' font-weight='bold' fill='#0f2b48'>M</text></svg>",
+          "l": "(C)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><text x='35' y='65' font-size='45' font-weight='bold' fill='#0f2b48'>V</text></svg>",
+          "l": "(D)"
+        }
       ],
-      "options": ["(A)", "(B)", "(C)", "(D)"],
+      "options": [
+        "(A)",
+        "(B)",
+        "(C)",
+        "(D)"
+      ],
       "correct": 0,
-      "exp": "स्पष्टीकरण: P ची आरशातील अचूक प्रतिमा."
+      "exp": "स्पष्टीकरण: N ची अचूक आरशातील प्रतिमा पर्याय (A) मध्ये आहे."
     },
     {
       "id": 7,
       "sec": "mental",
       "text": "कागद घडी व काप उलगडल्यावर कसा दिसेल?",
-      "problemFig": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='30' fill='none' stroke='#0f2b48' stroke-width='3'/><circle cx='50' cy='50' r='6' fill='#0f2b48'/></svg>",
+      "problemFig": "<svg viewBox='0 0 100 100'><rect x='30' y='30' width='40' height='40' fill='none' stroke='#0f2b48' stroke-width='3'/><circle cx='50' cy='35' r='4' fill='#0f2b48'/><circle cx='50' cy='65' r='4' fill='#0f2b48'/></svg>",
       "figures": [
-        { "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='30' fill='none' stroke='#0f2b48' stroke-width='3'/><circle cx='50' cy='50' r='6' fill='#0f2b48'/></svg>", "l": "(A)" },
-        { "s": "<svg viewBox='0 0 100 100'><rect x='25' y='25' width='50' height='50' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(B)" },
-        { "s": "<svg viewBox='0 0 100 100'><polygon points='50,20 80,80 20,80' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(C)" },
-        { "s": "<svg viewBox='0 0 100 100'><line x1='10' y1='50' x2='90' y2='50' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(D)" }
+        {
+          "s": "<svg viewBox='0 0 100 100'><rect x='30' y='30' width='40' height='40' fill='none' stroke='#0f2b48' stroke-width='3'/><circle cx='50' cy='35' r='4' fill='#0f2b48'/><circle cx='50' cy='65' r='4' fill='#0f2b48'/></svg>",
+          "l": "(A)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='30' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>",
+          "l": "(B)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><polygon points='50,20 80,80 20,80' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>",
+          "l": "(C)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><line x1='20' y1='50' x2='80' y2='50' stroke='#0f2b48' stroke-width='3'/></svg>",
+          "l": "(D)"
+        }
       ],
-      "options": ["(A)", "(B)", "(C)", "(D)"],
+      "options": [
+        "(A)",
+        "(B)",
+        "(C)",
+        "(D)"
+      ],
       "correct": 0,
-      "exp": "स्पष्टीकरण: मध्यभागी छिद्र असलेली योग्य रचना."
+      "exp": "स्पष्टीकरण: कागद उलगडल्यावर छिद्रांची योग्य रचना दिसेल."
     },
     {
       "id": 8,
       "sec": "mental",
       "text": "तुकडे जोडून तयार होणारी योग्य आकृती निवडा:",
-      "problemFig": "<svg viewBox='0 0 100 100'><polygon points='50,20 80,80 20,80' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>",
+      "problemFig": "<svg viewBox='0 0 100 100'><rect x='30' y='30' width='40' height='40' fill='none' stroke='#0f2b48' stroke-width='4'/></svg>",
       "figures": [
-        { "s": "<svg viewBox='0 0 100 100'><polygon points='50,20 80,80 20,80' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(A)" },
-        { "s": "<svg viewBox='0 0 100 100'><rect x='25' y='25' width='50' height='50' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(B)" },
-        { "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='30' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(C)" },
-        { "s": "<svg viewBox='0 0 100 100'><ellipse cx='50' cy='50' rx='40' ry='20' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(D)" }
+        {
+          "s": "<svg viewBox='0 0 100 100'><rect x='30' y='30' width='40' height='40' fill='none' stroke='#0f2b48' stroke-width='4'/></svg>",
+          "l": "(A)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='30' fill='none' stroke='#0f2b48' stroke-width='4'/></svg>",
+          "l": "(B)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><polygon points='50,20 80,80 20,80' fill='none' stroke='#0f2b48' stroke-width='4'/></svg>",
+          "l": "(C)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><ellipse cx='50' cy='50' rx='40' ry='20' fill='none' stroke='#0f2b48' stroke-width='4'/></svg>",
+          "l": "(D)"
+        }
       ],
-      "options": ["(A)", "(B)", "(C)", "(D)"],
+      "options": [
+        "(A)",
+        "(B)",
+        "(C)",
+        "(D)"
+      ],
       "correct": 0,
-      "exp": "स्पष्टीकरण: त्रिकोण तयार होतो."
+      "exp": "स्पष्टीकरण: तुकडे जुळवून चौरस तयार होतो."
     },
     {
       "id": 9,
       "sec": "mental",
       "text": "लपलेली आकृती शोधा:",
-      "problemFig": "<svg viewBox='0 0 100 100'><line x1='20' y1='20' x2='80' y2='80' stroke='#0f2b48' stroke-width='4'/></svg>",
+      "problemFig": "<svg viewBox='0 0 100 100'><path d='M25,75 L50,25 L75,75 Z' fill='none' stroke='#0f2b48' stroke-width='4'/></svg>",
       "figures": [
-        { "s": "<svg viewBox='0 0 100 100'><rect x='20' y='20' width='60' height='60' fill='none' stroke='#0f2b48' stroke-width='3'/><line x1='20' y1='20' x2='80' y2='80' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(A)" },
-        { "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='30' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(B)" },
-        { "s": "<svg viewBox='0 0 100 100'><polygon points='50,20 80,80 20,80' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(C)" },
-        { "s": "<svg viewBox='0 0 100 100'><line x1='10' y1='10' x2='90' y2='90' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(D)" }
+        {
+          "s": "<svg viewBox='0 0 100 100'><rect x='15' y='15' width='70' height='70' fill='none' stroke='#0f2b48' stroke-width='3'/><path d='M25,75 L50,25 L75,75 Z' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>",
+          "l": "(A)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='35' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>",
+          "l": "(B)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><line x1='10' y1='10' x2='90' y2='90' stroke='#0f2b48' stroke-width='3'/></svg>",
+          "l": "(C)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><rect x='20' y='20' width='60' height='60' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>",
+          "l": "(D)"
+        }
       ],
-      "options": ["(A)", "(B)", "(C)", "(D)"],
+      "options": [
+        "(A)",
+        "(B)",
+        "(C)",
+        "(D)"
+      ],
       "correct": 0,
-      "exp": "स्पष्टीकरण: कर्णरेषा पर्याय (A) मध्ये आहे."
+      "exp": "स्पष्टीकरण: समस्येतील त्रिकोण पर्याय (A) मध्ये लपलेला आहे."
     },
     {
       "id": 10,
       "sec": "mental",
       "text": "दिलेल्या पर्यायांमधून हुबेहूब जुळणारी आकृती निवडा:",
-      "problemFig": "<svg viewBox='0 0 100 100'><rect x='30' y='30' width='40' height='40' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>",
+      "problemFig": "<svg viewBox='0 0 100 100'><polygon points='50,20 80,80 20,80' fill='none' stroke='#0f2b48' stroke-width='4'/></svg>",
       "figures": [
-        { "s": "<svg viewBox='0 0 100 100'><rect x='30' y='30' width='40' height='40' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(A)" },
-        { "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='30' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(B)" },
-        { "s": "<svg viewBox='0 0 100 100'><polygon points='50,20 80,80 20,80' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(C)" },
-        { "s": "<svg viewBox='0 0 100 100'><line x1='10' y1='50' x2='90' y2='50' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(D)" }
+        {
+          "s": "<svg viewBox='0 0 100 100'><polygon points='50,20 80,80 20,80' fill='none' stroke='#0f2b48' stroke-width='4'/></svg>",
+          "l": "(A)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><rect x='25' y='25' width='50' height='50' fill='none' stroke='#0f2b48' stroke-width='4'/></svg>",
+          "l": "(B)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='30' fill='none' stroke='#0f2b48' stroke-width='4'/></svg>",
+          "l": "(C)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><polygon points='50,80 80,20 20,20' fill='none' stroke='#0f2b48' stroke-width='4'/></svg>",
+          "l": "(D)"
+        }
       ],
-      "options": ["(A)", "(B)", "(C)", "(D)"],
+      "options": [
+        "(A)",
+        "(B)",
+        "(C)",
+        "(D)"
+      ],
       "correct": 0,
-      "exp": "स्पष्टीकरण: हुबेहूब जुळणारी आकृती."
+      "exp": "स्पष्टीकरण: हुबेहूब जुळणारी आकृती पर्याय (A) आहे."
     },
     {
       "id": 11,
@@ -158,119 +311,255 @@
       "text": "गटात न बसणारी आकृती ओळखा:",
       "problemFig": "",
       "figures": [
-        { "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='30' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(A)" },
-        { "s": "<svg viewBox='0 0 100 100'><rect x='25' y='25' width='50' height='50' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(B)" },
-        { "s": "<svg viewBox='0 0 100 100'><polygon points='50,20 80,80 20,80' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(C)" },
-        { "s": "<svg viewBox='0 0 100 100'><line x1='10' y1='50' x2='90' y2='50' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(D)" }
+        {
+          "s": "<svg viewBox='0 0 100 100'><line x1='20' y1='20' x2='80' y2='80' stroke='#0f2b48' stroke-width='4'/></svg>",
+          "l": "(A)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><line x1='20' y1='80' x2='80' y2='20' stroke='#0f2b48' stroke-width='4'/></svg>",
+          "l": "(B)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><line x1='50' y1='20' x2='50' y2='80' stroke='#0f2b48' stroke-width='4'/></svg>",
+          "l": "(C)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='30' fill='#0f2b48'/></svg>",
+          "l": "(D)"
+        }
       ],
-      "options": ["(A)", "(B)", "(C)", "(D)"],
+      "options": [
+        "(A)",
+        "(B)",
+        "(C)",
+        "(D)"
+      ],
       "correct": 3,
-      "exp": "स्पष्टीकरण: रेषा बंदिस्त नाही."
+      "exp": "स्पष्टीकरण: पर्याय (D) मध्ये वर्तुळ भरलेले आहे, तर इतर तिन्हीमध्ये फक्त रेषा आहेत."
     },
     {
       "id": 12,
       "sec": "mental",
       "text": "समसंबंध आकृती ओळखा:",
-      "problemFig": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='30' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>",
+      "problemFig": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='30' fill='none' stroke='#0f2b48' stroke-width='4'/><line x1='50' y1='20' x2='50' y2='80' stroke='#0f2b48' stroke-width='3'/></svg>",
       "figures": [
-        { "s": "<svg viewBox='0 0 100 100'><rect x='30' y='30' width='40' height='40' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(A)" },
-        { "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='30' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(B)" },
-        { "s": "<svg viewBox='0 0 100 100'><polygon points='50,20 80,80 20,80' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(C)" },
-        { "s": "<svg viewBox='0 0 100 100'><line x1='10' y1='50' x2='90' y2='50' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(D)" }
+        {
+          "s": "<svg viewBox='0 0 100 100'><rect x='25' y='25' width='50' height='50' fill='none' stroke='#0f2b48' stroke-width='4'/><line x1='50' y1='25' x2='50' y2='75' stroke='#0f2b48' stroke-width='3'/></svg>",
+          "l": "(A)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='30' fill='none' stroke='#0f2b48' stroke-width='4'/></svg>",
+          "l": "(B)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><rect x='25' y='25' width='50' height='50' fill='none' stroke='#0f2b48' stroke-width='4'/></svg>",
+          "l": "(C)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><polygon points='50,20 80,80 20,80' fill='none' stroke='#0f2b48' stroke-width='4'/></svg>",
+          "l": "(D)"
+        }
       ],
-      "options": ["(A)", "(B)", "(C)", "(D)"],
+      "options": [
+        "(A)",
+        "(B)",
+        "(C)",
+        "(D)"
+      ],
       "correct": 0,
-      "exp": "स्पष्टीकरण: वर्तुळाचे चौरसात रूपांतर."
+      "exp": "स्पष्टीकरण: वर्तुळाचा चौरस होऊन आतील रेषा तशीच राहते."
     },
     {
       "id": 13,
       "sec": "mental",
       "text": "आकृती मालिका पूर्ण करा:",
-      "problemFig": "<svg viewBox='0 0 100 100'><line x1='50' y1='20' x2='50' y2='80' stroke='#0f2b48' stroke-width='3'/></svg>",
+      "problemFig": "<svg viewBox='0 0 100 100'><polygon points='50,20 80,80 20,80' fill='none' stroke='#0f2b48' stroke-width='4'/></svg>",
       "figures": [
-        { "s": "<svg viewBox='0 0 100 100'><line x1='20' y1='50' x2='80' y2='50' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(A)" },
-        { "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='30' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(B)" },
-        { "s": "<svg viewBox='0 0 100 100'><rect x='25' y='25' width='50' height='50' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(C)" },
-        { "s": "<svg viewBox='0 0 100 100'><line x1='20' y1='20' x2='80' y2='80' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(D)" }
+        {
+          "s": "<svg viewBox='0 0 100 100'><polygon points='50,80 80,20 20,20' fill='none' stroke='#0f2b48' stroke-width='4'/></svg>",
+          "l": "(A)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><rect x='25' y='25' width='50' height='50' fill='none' stroke='#0f2b48' stroke-width='4'/></svg>",
+          "l": "(B)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='30' fill='none' stroke='#0f2b48' stroke-width='4'/></svg>",
+          "l": "(C)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><line x1='20' y1='50' x2='80' y2='50' stroke='#0f2b48' stroke-width='4'/></svg>",
+          "l": "(D)"
+        }
       ],
-      "options": ["(A)", "(B)", "(C)", "(D)"],
+      "options": [
+        "(A)",
+        "(B)",
+        "(C)",
+        "(D)"
+      ],
       "correct": 0,
-      "exp": "स्पष्टीकरण: रेषेची दिशा बदलते."
+      "exp": "स्पष्टीकरण: त्रिकोण उलटा होतो."
     },
     {
       "id": 14,
       "sec": "mental",
       "text": "चौकट पूर्ण करणारा योग्य भाग निवडा:",
-      "problemFig": "<svg viewBox='0 0 100 100'><rect x='25' y='25' width='50' height='50' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>",
+      "problemFig": "<svg viewBox='0 0 100 100'><rect x='25' y='25' width='50' height='50' fill='none' stroke='#0f2b48' stroke-width='4'/><line x1='25' y1='25' x2='75' y2='75' stroke='#0f2b48' stroke-width='3'/></svg>",
       "figures": [
-        { "s": "<svg viewBox='0 0 100 100'><rect x='25' y='25' width='50' height='50' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(A)" },
-        { "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='20' fill='#0f2b48'/></svg>", "l": "(B)" },
-        { "s": "<svg viewBox='0 0 100 100'><polygon points='50,20 80,80 20,80' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(C)" },
-        { "s": "<svg viewBox='0 0 100 100'><line x1='10' y1='50' x2='90' y2='50' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(D)" }
+        {
+          "s": "<svg viewBox='0 0 100 100'><rect x='25' y='25' width='50' height='50' fill='none' stroke='#0f2b48' stroke-width='4'/></svg>",
+          "l": "(A)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><line x1='25' y1='25' x2='75' y2='75' stroke='#0f2b48' stroke-width='3'/></svg>",
+          "l": "(B)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='20' fill='#0f2b48'/></svg>",
+          "l": "(C)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><line x1='50' y1='20' x2='50' y2='80' stroke='#0f2b48' stroke-width='3'/></svg>",
+          "l": "(D)"
+        }
       ],
-      "options": ["(A)", "(B)", "(C)", "(D)"],
+      "options": [
+        "(A)",
+        "(B)",
+        "(C)",
+        "(D)"
+      ],
       "correct": 0,
-      "exp": "स्पष्टीकरण: चौरस पूर्ण करणारी आकृती."
+      "exp": "स्पष्टीकरण: संपूर्ण चौरस आणि कर्णरेषा जुळली पाहिजे."
     },
     {
       "id": 15,
       "sec": "mental",
       "text": "आरशातील प्रतिमा शोधा:",
-      "problemFig": "<svg viewBox='0 0 100 100'><text x='35' y='65' font-size='40' font-weight='bold' fill='#0f2b48'>T</text></svg>",
+      "problemFig": "<svg viewBox='0 0 100 100'><text x='35' y='65' font-size='40' font-weight='bold' fill='#0f2b48'>K</text></svg>",
       "figures": [
-        { "s": "<svg viewBox='0 0 100 100'><text x='35' y='65' font-size='40' font-weight='bold' fill='#0f2b48'>T</text></svg>", "l": "(A)" },
-        { "s": "<svg viewBox='0 0 100 100'><text x='35' y='65' font-size='40' font-weight='bold' fill='#0f2b48'>F</text></svg>", "l": "(B)" },
-        { "s": "<svg viewBox='0 0 100 100'><text x='35' y='65' font-size='40' font-weight='bold' fill='#0f2b48'>E</text></svg>", "l": "(C)" },
-        { "s": "<svg viewBox='0 0 100 100'><text x='35' y='65' font-size='40' font-weight='bold' fill='#0f2b48'>L</text></svg>", "l": "(D)" }
+        {
+          "s": "<svg viewBox='0 0 100 100'><text x='35' y='65' font-size='40' font-weight='bold' fill='#0f2b48' transform='scale(-1, 1) translate(-100, 0)'>K</text></svg>",
+          "l": "(A)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><text x='35' y='65' font-size='40' font-weight='bold' fill='#0f2b48'>M</text></svg>",
+          "l": "(B)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><text x='35' y='65' font-size='40' font-weight='bold' fill='#0f2b48'>L</text></svg>",
+          "l": "(C)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><text x='35' y='65' font-size='40' font-weight='bold' fill='#0f2b48'>S</text></svg>",
+          "l": "(D)"
+        }
       ],
-      "options": ["(A)", "(B)", "(C)", "(D)"],
+      "options": [
+        "(A)",
+        "(B)",
+        "(C)",
+        "(D)"
+      ],
       "correct": 0,
-      "exp": "स्पष्टीकरण: T ची आरशातील प्रतिमा."
+      "exp": "स्पष्टीकरण: K ची आरशातील प्रतिमा उजवीकडून डावीकडे उलट होईल."
     },
     {
       "id": 16,
       "sec": "mental",
       "text": "कागदाची घडी घालून पाडलेले पंचिंग उलगडल्यावर कशी आकृती दिसेल?",
-      "problemFig": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='30' fill='none' stroke='#0f2b48' stroke-width='3'/><circle cx='50' cy='50' r='6' fill='#0f2b48'/></svg>",
+      "problemFig": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='35' fill='none' stroke='#0f2b48' stroke-width='3'/><circle cx='50' cy='50' r='8' fill='#0f2b48'/></svg>",
       "figures": [
-        { "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='30' fill='none' stroke='#0f2b48' stroke-width='3'/><circle cx='50' cy='50' r='6' fill='#0f2b48'/></svg>", "l": "(A)" },
-        { "s": "<svg viewBox='0 0 100 100'><rect x='25' y='25' width='50' height='50' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(B)" },
-        { "s": "<svg viewBox='0 0 100 100'><polygon points='50,20 80,80 20,80' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(C)" },
-        { "s": "<svg viewBox='0 0 100 100'><line x1='10' y1='50' x2='90' y2='50' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(D)" }
+        {
+          "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='35' fill='none' stroke='#0f2b48' stroke-width='3'/><circle cx='50' cy='50' r='8' fill='#0f2b48'/></svg>",
+          "l": "(A)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><rect x='25' y='25' width='50' height='50' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>",
+          "l": "(B)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><polygon points='50,20 80,80 20,80' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>",
+          "l": "(C)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><line x1='10' y1='50' x2='90' y2='50' stroke='#0f2b48' stroke-width='3'/></svg>",
+          "l": "(D)"
+        }
       ],
-      "options": ["(A)", "(B)", "(C)", "(D)"],
+      "options": [
+        "(A)",
+        "(B)",
+        "(C)",
+        "(D)"
+      ],
       "correct": 0,
-      "exp": "स्पष्टीकरण: योग्य पंचिंग आकृती."
+      "exp": "स्पष्टीकरण: मध्यभागी छिद्र असलेली आकृती योग्य आहे."
     },
     {
       "id": 17,
       "sec": "mental",
       "text": "तुकड्यांपासून तयार होणारी योग्य भौमितिक आकृती निवडा:",
-      "problemFig": "<svg viewBox='0 0 100 100'><polygon points='50,20 80,80 20,80' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>",
+      "problemFig": "<svg viewBox='0 0 100 100'><rect x='30' y='30' width='40' height='40' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>",
       "figures": [
-        { "s": "<svg viewBox='0 0 100 100'><polygon points='50,20 80,80 20,80' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(A)" },
-        { "s": "<svg viewBox='0 0 100 100'><rect x='25' y='25' width='50' height='50' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(B)" },
-        { "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='30' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(C)" },
-        { "s": "<svg viewBox='0 0 100 100'><ellipse cx='50' cy='50' rx='40' ry='20' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(D)" }
+        {
+          "s": "<svg viewBox='0 0 100 100'><rect x='30' y='30' width='40' height='40' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>",
+          "l": "(A)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='30' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>",
+          "l": "(B)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><polygon points='50,20 80,80 20,80' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>",
+          "l": "(C)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><ellipse cx='50' cy='50' rx='40' ry='20' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>",
+          "l": "(D)"
+        }
       ],
-      "options": ["(A)", "(B)", "(C)", "(D)"],
+      "options": [
+        "(A)",
+        "(B)",
+        "(C)",
+        "(D)"
+      ],
       "correct": 0,
-      "exp": "स्पष्टीकरण: त्रिकोण तयार होतो."
+      "exp": "स्पष्टीकरण: तुकडे जुळवून चौरस तयार होतो."
     },
     {
       "id": 18,
       "sec": "mental",
       "text": "लपलेली आकृती शोधा:",
-      "problemFig": "<svg viewBox='0 0 100 100'><line x1='20' y1='20' x2='80' y2='80' stroke='#0f2b48' stroke-width='4'/></svg>",
+      "problemFig": "<svg viewBox='0 0 100 100'><line x1='20' y1='50' x2='80' y2='50' stroke='#0f2b48' stroke-width='4'/></svg>",
       "figures": [
-        { "s": "<svg viewBox='0 0 100 100'><rect x='20' y='20' width='60' height='60' fill='none' stroke='#0f2b48' stroke-width='3'/><line x1='20' y1='20' x2='80' y2='80' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(A)" },
-        { "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='30' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(B)" },
-        { "s": "<svg viewBox='0 0 100 100'><polygon points='50,20 80,80 20,80' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(C)" },
-        { "s": "<svg viewBox='0 0 100 100'><line x1='10' y1='10' x2='90' y2='90' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(D)" }
+        {
+          "s": "<svg viewBox='0 0 100 100'><rect x='20' y='20' width='60' height='60' fill='none' stroke='#0f2b48' stroke-width='3'/><line x1='20' y1='50' x2='80' y2='50' stroke='#0f2b48' stroke-width='3'/></svg>",
+          "l": "(A)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='30' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>",
+          "l": "(B)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><polygon points='50,15 85,85 15,85' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>",
+          "l": "(C)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><line x1='10' y1='10' x2='90' y2='90' stroke='#0f2b48' stroke-width='3'/></svg>",
+          "l": "(D)"
+        }
       ],
-      "options": ["(A)", "(B)", "(C)", "(D)"],
+      "options": [
+        "(A)",
+        "(B)",
+        "(C)",
+        "(D)"
+      ],
       "correct": 0,
-      "exp": "स्पष्टीकरण: कर्णरेषा पर्याय (A) मध्ये आहे."
+      "exp": "स्पष्टीकरण: क्षितीज रेषा पर्याय (A) मध्ये अंतर्भूत आहे."
     },
     {
       "id": 19,
@@ -278,14 +567,31 @@
       "text": "गटात न बसणारी आकृती ओळखा:",
       "problemFig": "",
       "figures": [
-        { "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='30' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(A)" },
-        { "s": "<svg viewBox='0 0 100 100'><rect x='25' y='25' width='50' height='50' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(B)" },
-        { "s": "<svg viewBox='0 0 100 100'><polygon points='50,20 80,80 20,80' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(C)" },
-        { "s": "<svg viewBox='0 0 100 100'><line x1='10' y1='50' x2='90' y2='50' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(D)" }
+        {
+          "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='30' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>",
+          "l": "(A)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><rect x='25' y='25' width='50' height='50' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>",
+          "l": "(B)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><polygon points='50,20 80,80 20,80' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>",
+          "l": "(C)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><line x1='20' y1='50' x2='80' y2='50' stroke='#0f2b48' stroke-width='3'/></svg>",
+          "l": "(D)"
+        }
       ],
-      "options": ["(A)", "(B)", "(C)", "(D)"],
+      "options": [
+        "(A)",
+        "(B)",
+        "(C)",
+        "(D)"
+      ],
       "correct": 3,
-      "exp": "स्पष्टीकरण: रेषा बंदिस्त नाही."
+      "exp": "स्पष्टीकरण: रेषा ही बंदिस्त आकृती नाही, तर बाकी सर्व बंदिस्त भौमितिक आकार आहेत."
     },
     {
       "id": 20,
@@ -293,514 +599,831 @@
       "text": "समसंबंध ओळखा:",
       "problemFig": "<svg viewBox='0 0 100 100'><rect x='30' y='30' width='40' height='40' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>",
       "figures": [
-        { "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='30' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(A)" },
-        { "s": "<svg viewBox='0 0 100 100'><rect x='30' y='30' width='40' height='40' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(B)" },
-        { "s": "<svg viewBox='0 0 100 100'><polygon points='50,20 80,80 20,80' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(C)" },
-        { "s": "<svg viewBox='0 0 100 100'><line x1='10' y1='50' x2='90' y2='50' stroke='#0f2b48' stroke-width='3'/></svg>", "l": "(D)" }
+        {
+          "s": "<svg viewBox='0 0 100 100'><circle cx='50' cy='50' r='30' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>",
+          "l": "(A)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><rect x='30' y='30' width='40' height='40' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>",
+          "l": "(B)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><polygon points='50,20 80,80 20,80' fill='none' stroke='#0f2b48' stroke-width='3'/></svg>",
+          "l": "(C)"
+        },
+        {
+          "s": "<svg viewBox='0 0 100 100'><line x1='20' y1='50' x2='80' y2='50' stroke='#0f2b48' stroke-width='3'/></svg>",
+          "l": "(D)"
+        }
       ],
-      "options": ["(A)", "(B)", "(C)", "(D)"],
+      "options": [
+        "(A)",
+        "(B)",
+        "(C)",
+        "(D)"
+      ],
       "correct": 0,
-      "exp": "स्पष्टीकरण: चौरसाचे वर्तुळात रूपांतर."
+      "exp": "स्पष्टीकरण: चौरसाचे वर्तुळात रूपांतर होते."
     },
     {
       "id": 21,
       "sec": "mental",
-      "text": "एका सांकेतिक भाषेत 'STUDY' हा शब्द 'TVVEZC' असा लिहिला, तर त्याच भाषेत 'LEARN' हा शब्द कसा लिहिला जाईल?",
-      "options": ["MFBSO", "MECSO", "MECRN", "MFBTO"],
+      "text": "एका सांकेतिक भाषेत 'SCHOOL' हा शब्द 'TIDPPM' असा लिहिला, तर त्याच भाषेत 'STUDENT' हा शब्द कसा लिहिला जाईल?",
+      "options": [
+        "TVWEGQX",
+        "TUVEFQX",
+        "SUVDGPW",
+        "TVXFHRY"
+      ],
       "correct": 0,
-      "exp": "स्पष्टीकरण: अक्षरांमध्ये +1, +2 अशी वाढ केली आहे."
+      "exp": "स्पष्टीकरण: अक्षरांमध्ये क्रमाने वाढ केली आहे."
     },
     {
       "id": 22,
       "sec": "mental",
-      "text": "संख्या मालिका पूर्ण करा: 5, 11, 23, 47, 95, ?",
-      "options": ["185", "190", "191", "195"],
-      "correct": 2,
-      "exp": "स्पष्टीकरण: (संख्या × 2) + 1 असा नियम आहे. 95 × 2 + 1 = 191."
+      "text": "संख्या मालिका पूर्ण करा: 3, 7, 15, 31, 63, ?",
+      "options": [
+        "125",
+        "127",
+        "129",
+        "131"
+      ],
+      "correct": 1,
+      "exp": "स्पष्टीकरण: दुप्पट करून एक मिळवण्याची पद्धत आहे."
     },
     {
       "id": 23,
       "sec": "mental",
-      "text": "एका वर्गात मुलांच्या ओळीत महेश डावीकडून 7 वा आणि उजवीकडून 14 वा आहे, तर त्या ओळीत एकूण मुले किती?",
-      "options": ["19", "20", "21", "22"],
+      "text": "एका रांगेत अमित डावीकडून 15 वा आणि उजवीकडून 18 वा आहे, तर त्या रांगेत एकूण मुले किती?",
+      "options": [
+        "31",
+        "32",
+        "33",
+        "34"
+      ],
       "correct": 1,
-      "exp": "स्पष्टीकरण: (7 + 14) - 1 = 20."
+      "exp": "स्पष्टीकरण: (15 + 18) - 1 = 32."
     },
     {
       "id": 24,
       "sec": "mental",
-      "text": "पुढीलपैकी वेगळा पर्याय ओळखा:",
-      "options": ["मीटर", "किलोमीटर", "लीटर", "सेंटीमीटर"],
+      "text": "पुढीलपैकी वेगळा शब्द ओळखा:",
+      "options": [
+        "तांबे",
+        "लोखंड",
+        "पारा",
+        "सोने"
+      ],
       "correct": 2,
-      "exp": "स्पष्टीकरण: लीटर हे द्रवाच्या मोजमापाचे एकक आहे."
+      "exp": "स्पष्टीकरण: पारा हा द्रव स्वरूपात असतो."
     },
     {
       "id": 25,
       "sec": "mental",
-      "text": "जर उत्तर दिशा ही आग्नेय झाली, तर पश्चिम दिशा कोणती होईल?",
-      "options": ["ईशान्य", "वायव्य", "नैऋत्य", "आग्नेय"],
-      "correct": 0,
-      "exp": "स्पष्टीकरण: दिशांच्या कोनातील बदलाप्रमाणे."
+      "text": "जर दक्षिण दिशा ही पश्चिम झाली आणि पूर्व दिशा ही उत्तर झाली, तर उत्तर दिशा कोणती होईल?",
+      "options": [
+        "पूर्व",
+        "पश्चिम",
+        "दक्षिण",
+        "आग्नेय"
+      ],
+      "correct": 1,
+      "exp": "स्पष्टीकरण: दिशांच्या कोनात बदल केला आहे."
     },
     {
       "id": 26,
       "sec": "mental",
-      "text": "मुलगा म्हणाला, 'ती महिला माझ्या वडिलांच्या सासूची एकुलती एक मुलगी आहे.' तर ती महिला त्या मुलाची कोण?",
-      "options": ["आई", "काकू", "मावशी", "आत्या"],
-      "correct": 0,
-      "exp": "स्पष्टीकरण: वडिलांची सासू म्हणजे आईची आई, तिची मुलगी म्हणजे स्वतःची आई."
+      "text": "एका व्यक्तीने एका मुलाकडे बोट दाखवून म्हटले, 'तो माझ्या वडिलांच्या एकुलत्या एका मुलाचा मुलगा आहे.' तर नाते काय?",
+      "options": [
+        "काका",
+        "वडील",
+        "भाऊ",
+        "मामा"
+      ],
+      "correct": 1,
+      "exp": "स्पष्टीकरण: तो स्वतःचा मुलगा आहे."
     },
     {
       "id": 27,
       "sec": "mental",
-      "text": "इंग्रजी वर्णमालेत उजवीकडून 8 व्या अक्षराच्या डावीकडील 5 वे अक्षर कोणते?",
-      "options": ["M", "N", "O", "P"],
+      "text": "इंग्रजी वर्णमालेत डावीकडून 10 व्या अक्षराच्या उजवीकडील 7 वे अक्षर कोणते?",
+      "options": [
+        "Q",
+        "P",
+        "R",
+        "S"
+      ],
       "correct": 0,
-      "exp": "स्पष्टीकरण: मोजणीनुसार M अक्षर येते."
+      "exp": "स्पष्टीकरण: मोजणीनुसार Q अक्षर येते."
     },
     {
       "id": 28,
       "sec": "mental",
-      "text": "जर 'BOOK' = 43 आणि 'PEN' = 35, तर 'NOTE' = ?",
-      "options": ["50", "53", "56", "59"],
-      "correct": 1,
-      "exp": "स्पष्टीकरण: वर्णमालेतील अक्षरांच्या अनुक्रमांकांची बेरीज."
+      "text": "जर 'PEN' = 35 आणि 'CAT' = 24, तर 'DOG' = ?",
+      "options": [
+        "26",
+        "28",
+        "30",
+        "32"
+      ],
+      "correct": 0,
+      "exp": "स्पष्टीकरण: अक्षरांच्या अनुक्रमांकांची बेरीज."
     },
     {
       "id": 29,
       "sec": "mental",
-      "text": "एका लीप वर्षात जानेवारी महिन्यात एकूण किती दिवस असतात?",
-      "options": ["28", "29", "30", "31"],
-      "correct": 3,
-      "exp": "स्पष्टीकरण: जानेवारी महिन्यात नेहमी 31 दिवस असतात."
+      "text": "एका लीप वर्षात फेब्रुवारी महिन्यात एकूण किती दिवस असतात?",
+      "options": [
+        "28",
+        "29",
+        "30",
+        "31"
+      ],
+      "correct": 1,
+      "exp": "स्पष्टीकरण: लीप वर्षात 29 दिवस असतात."
     },
     {
       "id": 30,
       "sec": "mental",
-      "text": "खालील मालिकेत चुकीची संख्या ओळखा: 1, 8, 27, 64, 125, 210",
-      "options": ["27", "64", "125", "210"],
-      "correct": 3,
-      "exp": "स्पष्टीकरण: घन संख्यांची मालिका (210 च्या जागी 216 हवे)."
+      "text": "खालील मालिकेत चुकीची संख्या ओळखा: 2, 6, 12, 20, 30, 42, 55",
+      "options": [
+        "30",
+        "42",
+        "55",
+        "20"
+      ],
+      "correct": 2,
+      "exp": "स्पष्टीकरण: 55 च्या जागी 56 यायला हवे."
     },
     {
       "id": 31,
       "sec": "math",
-      "text": "चार अंकी सर्वात मोठी संख्या आणि तीन अंकी सर्वात लहान संख्या यांच्यातील गुणाकार किती?",
-      "options": ["999900", "999000", "989900", "999909"],
-      "correct": 0,
-      "exp": "स्पष्टीकरण: 9999 × 100 = 999900."
+      "text": "दोन संख्यांचा मसावि 12 असून गुणाकार 2160 आहे, तर लसावि किती?",
+      "options": [
+        "150",
+        "180",
+        "210",
+        "240"
+      ],
+      "correct": 1,
+      "exp": "स्पष्टीकरण: 2160 / 12 = 180."
     },
     {
       "id": 32,
       "sec": "math",
-      "text": "0.4 × 0.04 × 0.004 चा गुणाकार किती येईल?",
-      "options": ["0.000064", "0.00064", "0.0064", "0.064"],
+      "text": "0.03 × 0.3 × 3 चा गुणाकार किती येईल?",
+      "options": [
+        "0.027",
+        "0.27",
+        "0.0027",
+        "2.7"
+      ],
       "correct": 0,
-      "exp": "स्पष्टीकरण: 4 × 4 × 4 = 64, एकूण 6 दशांश स्थळे."
+      "exp": "स्पष्टीकरण: दशांश स्थळांची अचूक मांडणी."
     },
     {
       "id": 33,
       "sec": "math",
-      "text": "एका आयताची लांबी 15 सेमी आणि रुंदी 10 सेमी आहे. जर लांबी व रुंदी दोन्हीत 2 सेमी वाढ केली, तर क्षेत्रफळात किती वाढ होईल?",
-      "options": ["54", "58", "62", "66"],
+      "text": "एका आयताची लांबी रुंदीच्या दुप्पट आहे. परिमिती 72 सेमी असल्यास क्षेत्रफळ किती?",
+      "options": [
+        "288",
+        "320",
+        "256",
+        "300"
+      ],
       "correct": 0,
-      "exp": "स्पष्टीकरण: नवीन क्षेत्रफळ - मूळ क्षेत्रफळ = 204 - 150 = 54."
+      "exp": "स्पष्टीकरण: लांबी 24 व रुंदी 12, क्षेत्रफळ 288."
     },
     {
       "id": 34,
       "sec": "math",
-      "text": "एक बस ताशी 45 किमी वेगाने धावते. ती 2 तास 20 मिनिटांत किती अंतर पार करेल?",
-      "options": ["95 किमी", "100 किमी", "105 किमी", "110 किमी"],
-      "correct": 2,
-      "exp": "स्पष्टीकरण: 45 × (7/3) = 105 किमी."
+      "text": "एक ट्रेन ताशी 72 किमी वेगाने धावते. ती 300 मीटर बोगदा 30 सेकंदात ओलांडते, तर ट्रेनची लांबी किती?",
+      "options": [
+        "250",
+        "300",
+        "350",
+        "400"
+      ],
+      "correct": 1,
+      "exp": "स्पष्टीकरण: एकूण अंतर 600 - 300 = 300 मीटर."
     },
     {
       "id": 35,
       "sec": "math",
-      "text": "₹ 10000 मुद्दलाचे 10% वार्षिक दराने 1 वर्ष 6 महिन्यांचे सरळव्याज किती होईल?",
-      "options": ["1200", "1500", "1800", "2000"],
+      "text": "₹ 5000 चे 8% दराने 2 वर्षांचे चक्रवाढ व्याज किती?",
+      "options": [
+        "800",
+        "832",
+        "864",
+        "900"
+      ],
       "correct": 1,
-      "exp": "स्पष्टीकरण: (10000 × 10 × 1.5) / 100 = ₹ 1500."
+      "exp": "स्पष्टीकरण: चक्रवाढ व्याजाचे सूत्र वापरून."
     },
     {
       "id": 36,
       "sec": "math",
-      "text": "पाच वेगवेगळ्या संख्यांची सरासरी 28 आहे. जर पहिली चार संख्यांची बेरीज 110 असेल, तर पाचवी संख्या कोणती?",
-      "options": ["25", "30", "35", "40"],
+      "text": "40 विद्यार्थ्यांची सरासरी 75 आहे. शिक्षकाचे गुण मिळवल्यास सरासरी 1 ने वाढते, तर शिक्षकाचे गुण किती?",
+      "options": [
+        "115",
+        "116",
+        "120",
+        "125"
+      ],
       "correct": 1,
-      "exp": "स्पष्टीकरण: (5 × 28) - 110 = 30."
+      "exp": "स्पष्टीकरण: 3116 - 3000 = 116."
     },
     {
       "id": 37,
       "sec": "math",
-      "text": "1 ते 40 पर्यंतच्या सर्व मूळ संख्या किती आहेत?",
-      "options": ["10", "11", "12", "13"],
+      "text": "1 ते 50 पर्यंतच्या सर्व सम संख्यांची बेरीज किती?",
+      "options": [
+        "600",
+        "625",
+        "650",
+        "675"
+      ],
       "correct": 2,
-      "exp": "स्पष्टीकरण: एकूण 12 मूळ संख्या आहेत."
+      "exp": "स्पष्टीकरण: 25 × 26 = 650."
     },
     {
       "id": 38,
       "sec": "math",
-      "text": "15 मजूर एक काम 20 दिवसात करतात, तर तेच काम 10 मजूर किती दिवसात करतील?",
-      "options": ["25", "28", "30", "35"],
-      "correct": 2,
-      "exp": "स्पष्टीकरण: (15 × 20) / 10 = 30 दिवस."
+      "text": "12 मजूर 15 दिवसात काम करतात, तर 20 मजूर किती दिवसात करतील?",
+      "options": [
+        "8",
+        "9",
+        "10",
+        "12"
+      ],
+      "correct": 1,
+      "exp": "स्पष्टीकरण: (12 × 15) / 20 = 9 दिवस."
     },
     {
       "id": 39,
       "sec": "math",
-      "text": "एका वस्तूची खरेदी किंमत ₹ 750 असून ती ₹ 900 ला विकली, तर शेकडा नफा किती?",
-      "options": ["15%", "20%", "25%", "30%"],
+      "text": "छापील किंमत ₹ 1200 वर 20% सूट देऊनही 20% नफा होतो, तर खरेदी किंमत किती?",
+      "options": [
+        "750",
+        "800",
+        "850",
+        "900"
+      ],
       "correct": 1,
-      "exp": "स्पष्टीकरण: (150 / 750) × 100 = 20%."
+      "exp": "स्पष्टीकरण: 960 × (100 / 120) = ₹ 800."
     },
     {
       "id": 40,
       "sec": "math",
-      "text": "जर x : y = 5 : 7 आणि y : z = 14 : 15, तर x : z चे गुणोत्तर किती?",
-      "options": ["1 : 2", "2 : 3", "3 : 4", "4 : 5"],
+      "text": "जर a : b = 3 : 4 आणि b : c = 8 : 9, तर a : c किती?",
+      "options": [
+        "1 : 2",
+        "2 : 3",
+        "3 : 4",
+        "4 : 5"
+      ],
       "correct": 1,
-      "exp": "स्पष्टीकरण: (5/7) × (14/15) = 2 : 3."
+      "exp": "स्पष्टीकरण: गुणोत्तर 2 : 3 येते."
     },
     {
       "id": 41,
       "sec": "math",
-      "text": "संख्या 78435 मध्ये अंक 8 आणि अंक 3 यांच्या स्थानिक किंमतीतील फरक किती?",
-      "options": ["7970", "7997", "79700", "79070"],
-      "correct": 0,
-      "exp": "स्पष्टीकरण: 8000 - 30 = 7970."
+      "text": "पाच अंकी सर्वात मोठी आणि चार अंकी सर्वात लहान संख्या यातील फरक किती?",
+      "options": [
+        "89999",
+        "98999",
+        "99000",
+        "99999"
+      ],
+      "correct": 1,
+      "exp": "स्पष्टीकरण: 99999 - 1000 = 98999."
     },
     {
       "id": 42,
       "sec": "math",
-      "text": "दिवसाचे 4 तास म्हणजे टक्क्यांमध्ये किती वेळ?",
-      "options": ["12.5%", "15.67%", "16.67%", "20%"],
-      "correct": 2,
-      "exp": "स्पष्टीकरण: (4 / 24) × 100 = 16.67%."
+      "text": "3 तास 45 मिनिटे म्हणजे सेकंदांमध्ये किती वेळ?",
+      "options": [
+        "12500",
+        "13500",
+        "14200",
+        "15000"
+      ],
+      "correct": 1,
+      "exp": "स्पष्टीकरण: 10800 + 2700 = 13500 सेकंद."
     },
     {
       "id": 43,
       "sec": "math",
-      "text": "एका दंडगोळाची त्रिज्या 7 सेमी आणि उंची 10 सेमी आहे, तर त्याचे घनफळ किती येईल? (π = 22/7)",
-      "options": ["1232", "1540", "1650", "1760"],
-      "correct": 1,
-      "exp": "स्पष्टीकरण: (22/7) × 7 × 7 × 10 = 1540."
+      "text": "एका वर्तुळाचा परिघ 88 सेमी आहे, तर क्षेत्रफळ किती चौ.सेमी येईल? (π = 22/7)",
+      "options": [
+        "616",
+        "1232",
+        "308",
+        "154"
+      ],
+      "correct": 0,
+      "exp": "स्पष्टीकरण: परिघ = 88 => त्रिज्या r = 14 सेमी. क्षेत्रफळ = (22/7) × 14 × 14 = 616."
     },
     {
       "id": 44,
       "sec": "math",
-      "text": "सोडवा: [ 100 + { 50 - (20 × 2) } ] ÷ 10",
-      "options": ["10", "11", "12", "15"],
+      "text": "सोडवा: 50 - [20 + {15 - (10 ÷ 2)}]",
+      "options": [
+        "10",
+        "15",
+        "20",
+        "25"
+      ],
       "correct": 1,
-      "exp": "स्पष्टीकरण: कंस सोडवून उत्तर 11."
+      "exp": "स्पष्टीकरण: कंसाचे नियम सोडवल्यास उत्तर 15 येते."
     },
     {
       "id": 45,
       "sec": "math",
-      "text": "दोन संख्यांची बेरीज 72 असून त्यांची वजाबाकी 18 आहे, तर त्या संख्यांचे गुणोत्तर किती?",
-      "options": ["3 : 2", "5 : 3", "7 : 4", "9 : 5"],
+      "text": "एक संख्या आणि तिच्या व्यस्त संख्येची बेरीज 17/4 आहे, तर ती संख्या कोणती?",
+      "options": [
+        "3",
+        "4",
+        "5",
+        "2"
+      ],
       "correct": 1,
-      "exp": "स्पष्टीकरण: संख्या 45 आणि 27, गुणोत्तर 5 : 3."
+      "exp": "स्पष्टीकरण: 4 + 1/4 = 17/4."
     },
     {
       "id": 46,
       "sec": "math",
-      "text": "₹ 6400 चे 7.5% वार्षिक दराने 2 वर्षांचे सरळव्याज किती?",
-      "options": ["850", "900", "960", "1000"],
-      "correct": 2,
-      "exp": "स्पष्टीकरण: (6400 × 7.5 × 2) / 100 = ₹ 960."
+      "text": "₹ 4800 चे 6.25% दराने 9 महिन्यांचे सरळव्याज किती होईल?",
+      "options": [
+        "200",
+        "225",
+        "250",
+        "275"
+      ],
+      "correct": 1,
+      "exp": "स्पष्टीकरण: (4800 × 6.25 × 0.75) / 100 = ₹ 225."
     },
     {
       "id": 47,
       "sec": "math",
-      "text": "एका पुस्तकाची किंमत 20% ने कमी केल्यामुळे ₹ 400 मध्ये 5 पुस्तके जास्त येतात, तर पुस्तकाची मूळ किंमत किती?",
-      "options": ["16", "18", "20", "25"],
-      "correct": 2,
-      "exp": "स्पष्टीकरण: 80 / 5 = ₹ 20."
+      "text": "कोणत्या संख्येच्या 35% मध्ये 35 मिळवल्यास तीच संख्या उत्तर येते?",
+      "options": [
+        "50",
+        "54",
+        "60",
+        "75"
+      ],
+      "correct": 1,
+      "exp": "स्पष्टीकरण: 0.35x + 35 = x समीकरण सोडवून उत्तर मिळते."
     },
     {
       "id": 48,
       "sec": "math",
-      "text": "एका वर्गातील 60% मुले असून मुलींची संख्या 24 आहे, तर त्या वर्गात एकूण विद्यार्थी किती?",
-      "options": ["50", "55", "60", "65"],
+      "text": "24 पिवळे, 16 हिरवे आणि 10 लाल गोल असल्यास पिवळ्या गोलांचे शेकडा प्रमाण किती?",
+      "options": [
+        "40%",
+        "45%",
+        "48%",
+        "50%"
+      ],
       "correct": 2,
-      "exp": "स्पष्टीकरण: (24 / 40) × 100 = 60."
+      "exp": "स्पष्टीकरण: (24 / 50) × 100 = 48%."
     },
     {
       "id": 49,
       "sec": "math",
-      "text": "एका चौरसाची बाजू 20% ने वाढवली, तर क्षेत्रफळात किती टक्के वाढ होईल?",
-      "options": ["40%", "42%", "44%", "48%"],
-      "correct": 2,
-      "exp": "स्पष्टीकरण: 20 + 20 + 4 = 44%."
+      "text": "दोन घनांच्या बाजूंचे गुणोत्तर 2 : 3 आहे, तर पृष्ठभागाच्या क्षेत्रफळाचे गुणोत्तर किती?",
+      "options": [
+        "2 : 3",
+        "4 : 9",
+        "8 : 27",
+        "9 : 4"
+      ],
+      "correct": 1,
+      "exp": "स्पष्टीकरण: बाजूंच्या वर्गाचे गुणोत्तर = 2² : 3² = 4 : 9."
     },
     {
       "id": 50,
       "sec": "math",
-      "text": "जर 8 मजूर रोज 6 तास काम करून एक काम 12 दिवसात करतात, तर 12 मजूर रोज 4 तास काम करून तेच काम किती दिवसात करतील?",
-      "options": ["10", "12", "15", "18"],
+      "text": "जर 15 पुस्तकांची किंमत ₹ 1350 असेल, तर अशा 22 पुस्तकांची किंमत किती?",
+      "options": [
+        "1800",
+        "1980",
+        "2050",
+        "2100"
+      ],
       "correct": 1,
-      "exp": "स्पष्टीकरण: 12 दिवस."
+      "exp": "स्पष्टीकरण: 22 × 90 = ₹ 1980."
     },
     {
       "id": 51,
       "sec": "math",
-      "text": "दोन नळ एक टाकी अनुक्रमे 12 व 15 तासात भरतात. दोन्ही नळ एकाच वेळी उघडले, तर टाकी भरण्यास किती वेळ लागेल?",
-      "options": ["5", "6", "7", "8"],
+      "text": "पहिला नळ 6 तासात भरतो आणि दुसरा 4 तासात रिकामी करतो. दोन्ही नळ उघडल्यास टाकी किती तासात रिकामी होईल?",
+      "options": [
+        "10",
+        "12",
+        "15",
+        "20"
+      ],
       "correct": 1,
-      "exp": "स्पष्टीकरण: 6 तास 40 मिनिटे (अंदाजे 6)."
+      "exp": "स्पष्टीकरण: 1/6 - 1/4 = -1/12, म्हणजेच 12 तासात रिकामी होईल."
     },
     {
       "id": 52,
       "sec": "math",
-      "text": "0.027 चा घनमूळ आणि 0.04 ची वर्गमूळ यांची बेरीज किती?",
-      "options": ["0.32", "0.42", "0.52", "0.62"],
-      "correct": 2,
-      "exp": "स्पष्टीकरण: 0.3 + 0.2 = 0.5 (पर्यायानुसार अचूक मूल्य)."
+      "text": "0.008 चा घनमूळ किती?",
+      "options": [
+        "0.02",
+        "0.2",
+        "2.0",
+        "0.002"
+      ],
+      "correct": 1,
+      "exp": "स्पष्टीकरण: 0.2 चा घन 0.008 आहे."
     },
     {
       "id": 53,
       "sec": "math",
-      "text": "जर x + 1/x = 5 असेल, तर x² + 1/x² ची किंमत किती?",
-      "options": ["21", "23", "25", "27"],
+      "text": "जर a * b = a² + b² - ab, तर 5 * 3 ची किंमत किती?",
+      "options": [
+        "15",
+        "19",
+        "21",
+        "25"
+      ],
       "correct": 1,
-      "exp": "स्पष्टीकरण: 5² - 2 = 23."
+      "exp": "स्पष्टीकरण: 25 + 9 - 15 = 19."
     },
     {
       "id": 54,
       "sec": "math",
-      "text": "एका समभुज त्रिकोणाची परिमिती 45 सेमी आहे, तर क्षेत्रफळ किती?",
-      "options": ["67.5√3", "75.2√3", "81.5√3", "90.2√3"],
+      "text": "समभुज त्रिकोणाची बाजू 12 सेमी असल्यास क्षेत्रफळ किती?",
+      "options": [
+        "36√3",
+        "18√3",
+        "72",
+        "144"
+      ],
       "correct": 0,
-      "exp": "स्पष्टीकरण: (√3/4) × 225 = 56.25√3."
+      "exp": "स्पष्टीकरण: (√3/4) × 144 = 36√3."
     },
     {
       "id": 55,
       "sec": "math",
-      "text": "1 ते 100 पर्यंतच्या अंकात अंक '5' किती वेळा येतो?",
-      "options": ["18", "19", "20", "21"],
+      "text": "प्रश्न 55: बाजू 4 सेमी असलेल्या घनाचे घनफळ किती ?",
+      "options": [
+        "16",
+        "32",
+        "64",
+        "128"
+      ],
       "correct": 2,
-      "exp": "स्पष्टीकरण: 20 वेळा."
+      "exp": "घनफळ = बाजू³ = 4 × 4 × 4 = 64 घन सेमी."
     },
     {
       "id": 56,
       "sec": "math",
-      "text": "एक कार ताशी 60 किमी वेगाने जाऊन गंतव्य स्थानी पोहोचते. वेग 15 किमी/तास ने वाढवल्यास 1 तास कमी लागतो, तर अंतर किती?",
-      "options": ["240", "300", "360", "400"],
+      "text": "मोटार सायकलची किंमत दरवर्षी 10% ने कमी होते. आज ₹ 72000 असल्यास 2 वर्षांपूर्वी किंमत किती होती?",
+      "options": [
+        "85000",
+        "90000",
+        "95000",
+        "100000"
+      ],
       "correct": 1,
-      "exp": "स्पष्टीकरण: 300 किमी."
+      "exp": "स्पष्टीकरण: x × 0.81 = 72000 => x = ₹ 90000."
     },
     {
       "id": 57,
       "sec": "math",
-      "text": "दूध आणि पाण्याचे प्रमाण 5 : 2 आहे. 14 लीटर पाणी मिसळल्यास प्रमाण 5 : 4 होते, तर सुरुवातीचे दूध किती लीटर होते?",
-      "options": ["30", "35", "40", "45"],
+      "text": "1 लिटर दुधात 200 मिली पाणी मिसळल्यास पाण्याचे शेकडा प्रमाण किती?",
+      "options": [
+        "15%",
+        "16.67%",
+        "20%",
+        "25%"
+      ],
       "correct": 1,
-      "exp": "स्पष्टीकरण: 35 लीटर."
+      "exp": "स्पष्टीकरण: (200 / 1200) × 100 = 16.67%."
     },
     {
       "id": 58,
       "sec": "math",
-      "text": "₹ 7200 चे शेकडा 12.5 दराने 2 वर्षांचे चक्रवाढ व्याज आणि सरळव्याज यांच्यातील फरक किती?",
-      "options": ["100", "112.50", "125", "150"],
-      "correct": 1,
-      "exp": "स्पष्टीकरण: ₹ 112.50."
+      "text": "जर 8 गोळ्यांची किंमत ₹ 24 असेल, तर अशा 35 गोळ्यांची किंमत किती?",
+      "options": [
+        "95",
+        "100",
+        "105",
+        "110"
+      ],
+      "correct": 2,
+      "exp": "स्पष्टीकरण: 35 × 3 = ₹ 105."
     },
     {
       "id": 59,
       "sec": "math",
-      "text": "वर्तुळाची त्रिज्या 50% ने वाढवली, तर परिघात किती टक्के वाढ होईल?",
-      "options": ["25%", "50%", "75%", "100%"],
-      "correct": 1,
-      "exp": "स्पष्टीकरण: 50%."
+      "text": "चौकोनाच्या कोनांचे प्रमाण 1 : 2 : 3 : 4 असल्यास मोठ्या कोनाचे माप किती?",
+      "options": [
+        "108°",
+        "120°",
+        "144°",
+        "150°"
+      ],
+      "correct": 2,
+      "exp": "स्पष्टीकरण: 4x = 4 × 36° = 144°."
     },
     {
       "id": 60,
       "sec": "math",
-      "text": "तीन संख्यांचे प्रमाण 2 : 3 : 5 असून त्यांच्या वर्गाची बेरीज 608 आहे, तर त्या संख्या कोणत्या?",
-      "options": ["6, 9, 15", "8, 12, 20", "10, 15, 25", "12, 18, 30"],
-      "correct": 1,
-      "exp": "स्पष्टीकरण: 8, 12, 20."
+      "text": "दोन संख्यांची बेरीज 45 व वजाबाकी 9 असल्यास गुणोत्तर किती?",
+      "options": [
+        "3 : 2",
+        "4 : 3",
+        "5 : 4",
+        "7 : 5"
+      ],
+      "correct": 0,
+      "exp": "स्पष्टीकरण: संख्या 27 आणि 18 आहेत, गुणोत्तर 3 : 2."
     },
     {
       "id": 61,
       "sec": "lang",
-      "passage": "पर्यावरण रक्षण ही आजच्या काळाची सर्वात मोठी गरज बनली आहे. माणसाने आपल्या सोयीसाठी जंगले तोडली, कारखाने काढले आणि हवेत मोठ्या प्रमाणावर प्रदूषण पसरवले. यामुळे ग्लोबल वॉर्मिंगचा धोका निर्माण झाला आहे. जर आपण आताच गांभीर्याने विचार केला नाही, तर येणाऱ्या पिढीला शुद्ध हवा आणि पाणी मिळणे दुर्मिळ होईल. प्रत्येकाने किमान एक झाड लावून त्याचे संगोपन करणे अत्यंत आवश्यक आहे.",
-      "text": "पर्यावरणाची हानी प्रामुख्याने कशामुळे होत आहे?",
-      "options": ["केवळ नैसर्गिक आपत्तींचे प्रमाण वाढल्यामुळे", "मानवाच्या स्वार्थी कृती व प्रदूषण पसरवल्यामुळे", "पावसाचे प्रमाण अचानक कमी झाल्यामुळे", "जंगलांमध्ये स्वतःहून आग लागल्यामुळे"],
+      "passage": "वृक्ष आपल्या जीवनाचा मूळ आधार आहेत. ते आपल्याला ऑक्सिजन, फळे, फुले आणि सावली देतात. वृक्षांमुळेच पाऊस पडतो आणि पर्यावरणाचा समतोल राखला जातो. आजच्या काळात वृक्षतोड मोठ्या प्रमाणावर होत असून यामुळे वसुंधरेचे सौंदर्य नष्ट होत आहे. आपण सर्वांनी मिळून अधिकाधिक झाडे लावली पाहिजेत आणि त्यांचे जतन केले पाहिजे.",
+      "text": "वृक्ष आपल्याला प्रामुख्याने काय पुरवतात?",
+      "options": [
+        "फक्त लाकूड पुरवणे",
+        "ऑक्सिजन आणि फळे देणे",
+        "विषारी हवा सोडणे",
+        "कारखान्याचा धूर"
+      ],
       "correct": 1,
-      "exp": "स्पष्टीकरण: मानवाच्या कृतीमुळे प्रदूषण वाढले आहे."
+      "exp": "स्पष्टीकरण: उताऱ्यात नमूद केल्याप्रमाणे वृक्ष ऑक्सिजन आणि फळे पुरवतात."
     },
     {
       "id": 62,
       "sec": "lang",
-      "passage": "पर्यावरण रक्षण ही आजच्या काळाची सर्वात मोठी गरज बनली आहे. माणसाने आपल्या सोयीसाठी जंगले तोडली, कारखाने काढले आणि हवेत मोठ्या प्रमाणावर प्रदूषण पसरवले. यामुळे ग्लोबल वॉर्मिंगचा धोका निर्माण झाला आहे. जर आपण आताच गांभीर्याने विचार केला नाही, तर येणाऱ्या पिढीला शुद्ध हवा आणि पाणी मिळणे दुर्मिळ होईल. प्रत्येकाने किमान एक झाड लावून त्याचे संगोपन करणे अत्यंत आवश्यक आहे.",
-      "text": "उताऱ्यामध्ये कशाचा गंभीर धोका निर्माण झाल्याचे स्पष्ट म्हटले आहे?",
-      "options": ["आरोग्य बिघडवणूक करणाऱ्या महामारीचा मोठा धोका", "पृथ्वीवर ग्लोबल वॉर्मिंगचा अत्यंत गंभीर धोका", "नद्यांचे पाणी पूर्णपणे संपून जाण्याचा धोका", "अन्नधान्याचा तुटवडा निर्माण होण्याचा धोका"],
+      "passage": "वृक्ष आपल्या जीवनाचा मूळ आधार आहेत. ते आपल्याला ऑक्सिजन, फळे, फुले आणि सावली देतात. वृक्षांमुळेच पाऊस पडतो आणि पर्यावरणाचा समतोल राखला जातो. आजच्या काळात वृक्षतोड मोठ्या प्रमाणावर होत असून यामुळे वसुंधरेचे सौंदर्य नष्ट होत आहे. आपण सर्वांनी मिळून अधिकाधिक झाडे लावली पाहिजेत आणि त्यांचे जतन केले पाहिजे.",
+      "text": "उताऱ्यात 'वसुंधरा' या शब्दाचा समानार्थी शब्द कोणता सुचवला आहे?",
+      "options": [
+        "आकाश आणि पाळणे",
+        "पृथ्वी ही आपली माता",
+        "पाण्याचा मोठा साठा",
+        "वारा वाहणारी दिशा"
+      ],
       "correct": 1,
-      "exp": "स्पष्टीकरण: ग्लोबल वॉर्मिंगचा धोका निर्माण झाला आहे."
+      "exp": "स्पष्टीकरण: वसुंधरा म्हणजे पृथ्वी."
     },
     {
       "id": 63,
       "sec": "lang",
-      "passage": "पर्यावरण रक्षण ही आजच्या काळाची सर्वात मोठी गरज बनली आहे. माणसाने आपल्या सोयीसाठी जंगले तोडली, कारखाने काढले आणि हवेत मोठ्या प्रमाणावर प्रदूषण पसरवले. यामुळे ग्लोबल वॉर्मिंगचा धोका निर्माण झाला आहे. जर आपण आताच गांभीर्याने विचार केला नाही, तर येणाऱ्या पिढीला शुद्ध हवा आणि पाणी मिळणे दुर्मिळ होईल. प्रत्येकाने किमान एक झाड लावून त्याचे संगोपन करणे अत्यंत आवश्यक आहे.",
-      "text": "भविष्यात कोणती मूलभूत गरज दुर्मिळ होण्याची शक्यता वर्तवली आहे?",
-      "options": ["शुद्ध हवा आणि पिण्याच्या पाण्याची उपलब्धता", "मोठी इमारती व घरे बांधण्याची हवी असलेली जागा", "वीज व इतर ऊर्जा स्रोतांची अखंड उपलब्धता", "वाहतुकीच्या साधनांची सुरळीत सोय"],
-      "correct": 0,
-      "exp": "स्पष्टीकरण: शुद्ध हवा आणि पाणी दुर्मिळ होईल."
+      "passage": "वृक्ष आपल्या जीवनाचा मूळ आधार आहेत. ते आपल्याला ऑक्सिजन, फळे, फुले आणि सावली देतात. वृक्षांमुळेच पाऊस पडतो आणि पर्यावरणाचा समतोल राखला जातो. आजच्या काळात वृक्षतोड मोठ्या प्रमाणावर होत असून यामुळे वसुंधरेचे सौंदर्य नष्ट होत आहे. आपण सर्वांनी मिळून अधिकाधिक झाडे लावली पाहिजेत आणि त्यांचे जतन केले पाहिजे.",
+      "text": "वृक्षतोडीमुळे कशावर वाईट परिणाम होत आहे?",
+      "options": [
+        "मोठ्या कारखान्यांवर",
+        "पर्यावरणाचा समतोल",
+        "रस्त्यांच्या निर्मितीवर",
+        "कामे थांबण्यावर"
+      ],
+      "correct": 1,
+      "exp": "स्पष्टीकरण: वृक्षतोडीमुळे वसुंधरेचे सौंदर्य आणि समतोल बिघडतो."
     },
     {
       "id": 64,
       "sec": "lang",
-      "passage": "पर्यावरण रक्षण ही आजच्या काळाची सर्वात मोठी गरज बनली आहे. माणसाने आपल्या सोयीसाठी जंगले तोडली, कारखाने काढले आणि हवेत मोठ्या प्रमाणावर प्रदूषण पसरवले. यामुळे ग्लोबल वॉर्मिंगचा धोका निर्माण झाला आहे. जर आपण आताच गांभीर्याने विचार केला नाही, तर येणाऱ्या पिढीला शुद्ध हवा आणि पाणी मिळणे दुर्मिळ होईल. प्रत्येकाने किमान एक झाड लावून त्याचे संगोपन करणे अत्यंत आवश्यक आहे.",
-      "text": "निसर्ग समतोल राखण्यासाठी प्रत्येक नागरिकाने काय करणे गरजेचे आहे?",
-      "options": ["नवनवीन कारखाने व उद्योग उभारणे", "किमान एक झाड लावून त्याचे संगोपन करणे", "सभोवतालची सर्व जंगले नष्ट करणे", "शहरांचा विस्तार वेगाने वाढवणे"],
-      "correct": 1,
-      "exp": "स्पष्टीकरण: किमान एक झाड लावून संगोपन करणे."
+      "passage": "वृक्ष आपल्या जीवनाचा मूळ आधार आहेत. ते आपल्याला ऑक्सिजन, फळे, फुले आणि सावली देतात. वृक्षांमुळेच पाऊस पडतो आणि पर्यावरणाचा समतोल राखला जातो. आजच्या काळात वृक्षतोड मोठ्या प्रमाणावर होत असून यामुळे वसुंधरेचे सौंदर्य नष्ट होत आहे. आपण सर्वांनी मिळून अधिकाधिक झाडे लावली पाहिजेत आणि त्यांचे जतन केले पाहिजे.",
+      "text": "उताऱ्याच्या शेवटी काय करण्याचा संदेश दिला आहे?",
+      "options": [
+        "झाडे तोडून टाकणे",
+        "झाडे न लावले तरी चालणे",
+        "अधिक झाडे लावून जतन करणे",
+        "जंगल पूर्णपणे नष्ट करणे"
+      ],
+      "correct": 2,
+      "exp": "स्पष्टीकरण: अधिकाधिक झाडे लावून त्यांचे जतन करण्याचा संदेश दिला आहे."
     },
     {
       "id": 65,
       "sec": "lang",
-      "passage": "पर्यावरण रक्षण ही आजच्या काळाची सर्वात मोठी गरज बनली आहे. माणसाने आपल्या सोयीसाठी जंगले तोडली, कारखाने काढले आणि हवेत मोठ्या प्रमाणावर प्रदूषण पसरवले. यामुळे ग्लोबल वॉर्मिंगचा धोका निर्माण झाला आहे. जर आपण आताच गांभीर्याने विचार केला नाही, तर येणाऱ्या पिढीला शुद्ध हवा आणि पाणी मिळणे दुर्मिळ होईल. प्रत्येकाने किमान एक झाड लावून त्याचे संगोपन करणे अत्यंत आवश्यक आहे.",
-      "text": "'दुर्मिळ' या शब्दाचा योग्य अर्थ उताऱ्याच्या संदर्भात काय होतो?",
-      "options": ["कोणतीही गोष्ट सहज उपलब्ध असणे", "कष्टाने किंवा अपवादाने मिळणारी गोष्ट", "अत्यंत स्वस्त आणि सुलभ वस्तू", "कधीही नष्ट न होणारी अमर गोष्ट"],
+      "passage": "वृक्ष आपल्या जीवनाचा मूळ आधार आहेत. ते आपल्याला ऑक्सिजन, फळे, फुले आणि सावली देतात. वृक्षांमुळेच पाऊस पडतो आणि पर्यावरणाचा समतोल राखला जातो. आजच्या काळात वृक्षतोड मोठ्या प्रमाणावर होत असून यामुळे वसुंधरेचे सौंदर्य नष्ट होत आहे. आपण सर्वांनी मिळून अधिकाधिक झाडे लावली पाहिजेत आणि त्यांचे जतन केले पाहिजे.",
+      "text": "या उताऱ्यासाठी योग्य शीर्षक कोणते राहील?",
+      "options": [
+        "कारखान्यांचे मोठे जाळे",
+        "वृक्षांचे महत्त्व व संवर्धन",
+        "पावसाची गाणी गाणे",
+        "लाकडाचा व्यापार करणे"
+      ],
       "correct": 1,
-      "exp": "स्पष्टीकरण: दुर्मिळ म्हणजे सहजासहजी न मिळणारी गोष्ट."
+      "exp": "स्पष्टीकरण: उताऱ्याचा मुख्य विषय वृक्षांचे महत्त्व आणि संवर्धन हा आहे."
     },
     {
       "id": 66,
       "sec": "lang",
-      "passage": "वेळ ही अतिशय मूल्यवान संपत्ती आहे. गेलेली वेळ जगात कधीही परत आणता येत नाही. जे विद्यार्थी किंवा व्यक्ती वेळेचे महत्त्व ओळखतात, त्या आयुष्यात नेहमी यश संपादन करतात. कामे वेळेवर करणे, टाळाटाळ न करणे आणि नियोजनबद्ध जगणे यामुळे माणसाचे आयुष्य सुखी आणि आनंदी बनते.",
-      "text": "वेळेची तुलना उताऱ्यात कशाशी करण्यात आली आहे?",
-      "options": ["कधीही न संपणाऱ्या अमूल्य संपत्तीशी", "वाहत्या पाण्याच्या गतिमान प्रवाहाशी", "आकाशातील अनंतापर्यंत पसरलेल्या विश्वाशी", "जमिनीतील मोलाच्या खनिज संपत्तीशी"],
-      "correct": 0,
-      "exp": "स्पष्टीकरण: वेळ ही मूल्यवान संपत्ती आहे."
+      "passage": "खेळ आपल्या आयुष्यात अत्यंत महत्त्वाचे स्थान राखतात. खेळल्यामुळे शारीरिक व मानसिक आरोग्य उत्तम राहते. खेळांमुळे मुलांमध्ये जिद्द, अनुशासन, सांघिक भावना आणि सहकार्याची वृत्ती निर्माण होते. आजकाल मुले मैदानी खेळांऐवजी मोबाईलवर व्हिडिओ गेम्स खेळण्यात जास्त वेळ घालवतात, जे आरोग्यासाठी हानिकारक आहे.",
+      "text": "खेळल्यामुळे शरीरावर काय परिणाम होतो?",
+      "options": [
+        "आरोग्य पूर्ण बिघडणे",
+        "शारीरिक स्वास्थ्य सुधारणे",
+        "सतत आळस वाढणे",
+        "खूप जास्त थकवा येणे"
+      ],
+      "correct": 1,
+      "exp": "स्पष्टीकरण: खेळल्याने शारीरिक व मानसिक आरोग्य उत्तम राहते."
     },
     {
       "id": 67,
       "sec": "lang",
-      "passage": "वेळ ही अतिशय मूल्यवान संपत्ती आहे. गेलेली वेळ जगात कधीही परत आणता येत नाही. जे विद्यार्थी किंवा व्यक्ती वेळेचे महत्त्व ओळखतात, त्या आयुष्यात नेहमी यश संपादन करतात. कामे वेळेवर करणे, टाळाटाळ न करणे आणि नियोजनबद्ध जगणे यामुळे माणसाचे आयुष्य सुखी आणि आनंदी बनते.",
-      "text": "आयुष्यात निरंतर यश मिळवण्यासाठी कशाची आवश्यकता असते?",
-      "options": ["वेळेचे गांभीर्य व महत्त्व ओळखण्याची", "इतरांच्या मार्गदर्शनाची सतत गरज असण्याची", "फक्त नशिबाची साथ मिळण्याची प्रतीक्षा करण्याची", "कोणतेही कष्ट न घेता मोकळे राहण्याची"],
-      "correct": 0,
-      "exp": "स्पष्टीकरण: वेळेचे महत्त्व ओळखणारे यशस्वी होतात."
+      "passage": "खेळ आपल्या आयुष्यात अत्यंत महत्त्वाचे स्थान राखतात. खेळल्यामुळे शारीरिक व मानसिक आरोग्य उत्तम राहते. खेळांमुळे मुलांमध्ये जिद्द, अनुशासन, सांघिक भावना आणि सहकार्याची वृत्ती निर्माण होते. आजकाल मुले मैदानी खेळांऐवजी मोबाईलवर व्हिडिओ गेम्स खेळण्यात जास्त वेळ घालवतात, जे आरोग्यासाठी हानिकारक आहे.",
+      "text": "मुलांमध्ये कोणती भावना खेळांमुळे विकसित होते?",
+      "options": [
+        "केवळ स्वार्थी वृत्ती",
+        "सांघिक व सहकार्य वृत्ती",
+        "इतरांबद्दल द्वेष",
+        "सतत भीती बाळगणे"
+      ],
+      "correct": 1,
+      "exp": "स्पष्टीकरण: खेळांमुळे सांघिक भावना वाढीस लागते."
     },
     {
       "id": 68,
       "sec": "lang",
-      "passage": "वेळ ही अतिशय मूल्यवान संपत्ती आहे. गेलेली वेळ जगात कधीही परत आणता येत नाही. जे विद्यार्थी किंवा व्यक्ती वेळेचे महत्त्व ओळखतात, त्या आयुष्यात नेहमी यश संपादन करतात. कामे वेळेवर करणे, टाळाटाळ न करणे आणि नियोजनबद्ध जगणे यामुळे माणसाचे आयुष्य सुखी आणि आनंदी बनते.",
-      "text": "मानसाचे आयुष्य खऱ्या अर्थाने सुखी कसे बनते?",
-      "options": ["आयुष्य नियोजनबद्ध जगून कामे वेळेवर केल्याने", "सर्व काही परिस्थितीवर व नशिबावर सोडल्याने", "आयुष्यात सतत आळसात दिवस घालवल्याने", "कष्टाची कोणतीही कामे दूर ठेवल्याने"],
-      "correct": 0,
-      "exp": "स्पष्टीकरण: नियोजनबद्ध जगल्याने आयुष्य सुखी होते."
+      "passage": "खेळ आपल्या आयुष्यात अत्यंत महत्त्वाचे स्थान राखतात. खेळल्यामुळे शारीरिक व मानसिक आरोग्य उत्तम राहते. खेळांमुळे मुलांमध्ये जिद्द, अनुशासन, सांघिक भावना आणि सहकार्याची वृत्ती निर्माण होते. आजकाल मुले मैदानी खेळांऐवजी मोबाईलवर व्हिडिओ गेम्स खेळण्यात जास्त वेळ घालवतात, जे आरोग्यासाठी हानिकारक आहे.",
+      "text": "आजकाल मुले कोणता पर्याय जास्त निवडत आहेत?",
+      "options": [
+        "पारंपारिक मैदानी खेळ",
+        "मोबाईलवरील व्हिडिओ गेम्स",
+        "नियमित योगसाधाना",
+        "सकाळचा लांब वॉक"
+      ],
+      "correct": 1,
+      "exp": "स्पष्टीकरण: मुले मोबाईल गेम्समध्ये वेळ घालवत आहेत."
     },
     {
       "id": 69,
       "sec": "lang",
-      "passage": "वेळ ही अतिशय मूल्यवान संपत्ती आहे. गेलेली वेळ जगात कधीही परत आणता येत नाही. जे विद्यार्थी किंवा व्यक्ती वेळेचे महत्त्व ओळखतात, त्या आयुष्यात नेहमी यश संपादन करतात. कामे वेळेवर करणे, टाळाटाळ न करणे आणि नियोजनबद्ध जगणे यामुळे माणसाचे आयुष्य सुखी आणि आनंदी बनते.",
-      "text": "उताऱ्यात कोणत्या गोष्टीची अजिबात टाळाटाळ न करण्याचा सल्ला दिला आहे?",
-      "options": ["नक्की ठरलेल्या वेळी कामे पूर्ण करण्याची", "खेळण्यात व मौजमजेत वेळ घालवण्याची", "अतिशय गरजेच्या वेळी झोप व विश्रांतीची", "इतरांशी संवाद साधून गप्पा मारण्याची"],
-      "correct": 0,
-      "exp": "स्पष्टीकरण: कामे वेळेवर करून टाळाटाळ न करणे."
+      "passage": "खेळ आपल्या आयुष्यात अत्यंत महत्त्वाचे स्थान राखतात. खेळल्यामुळे शारीरिक व मानसिक आरोग्य उत्तम राहते. खेळांमुळे मुलांमध्ये जिद्द, अनुशासन, सांघिक भावना आणि सहकार्याची वृत्ती निर्माण होते. आजकाल मुले मैदानी खेळांऐवजी मोबाईलवर व्हिडिओ गेम्स खेळण्यात जास्त वेळ घालवतात, जे आरोग्यासाठी हानिकारक आहे.",
+      "text": "उताऱ्यात हानिकारक कशाला म्हटले आहे?",
+      "options": [
+        "सर्व मैदानी खेळांना",
+        "मोबाईल व्हिडिओ गेम्सना",
+        "शाळेतील अभ्यासाला",
+        "सकाळच्या व्यायामाला"
+      ],
+      "correct": 1,
+      "exp": "स्पष्टीकरण: मोबाईल गेम्स आरोग्यासाठी हानिकारक असल्याचे म्हटले आहे."
     },
     {
       "id": 70,
       "sec": "lang",
-      "passage": "वेळ ही अतिशय मूल्यवान संपत्ती आहे. गेलेली वेळ जगात कधीही परत आणता येत नाही. जे विद्यार्थी किंवा व्यक्ती वेळेचे महत्त्व ओळखतात, त्या आयुष्यात नेहमी यश संपादन करतात. कामे वेळेवर करणे, टाळाटाळ न करणे आणि नियोजनबद्ध जगणे यामुळे माणसाचे आयुष्य सुखी आणि आनंदी बनते.",
-      "text": "'मूल्यवान' या शब्दाचा समानार्थी शब्द कोणता ठरेल?",
-      "options": ["बाजारात कमी किंमतीत मिळणारी", "अतिशय मोलाची व महत्त्वाची", "फुकट व सहज उपलब्ध होणारी", "कधीही निरुपयोगी ठरणारी"],
+      "passage": "खेळ आपल्या आयुष्यात अत्यंत महत्त्वाचे स्थान राखतात. खेळल्यामुळे शारीरिक व मानसिक आरोग्य उत्तम राहते. खेळांमुळे मुलांमध्ये जिद्द, अनुशासन, सांघिक भावना आणि सहकार्याची वृत्ती निर्माण होते. आजकाल मुले मैदानी खेळांऐवजी मोबाईलवर व्हिडिओ गेम्स खेळण्यात जास्त वेळ घालवतात, जे आरोग्यासाठी हानिकारक आहे.",
+      "text": "'आरोग्य' या शब्दाचा विरुद्धार्थी शब्द काय होईल?",
+      "options": [
+        "निरोगीपणा राखणे",
+        "अनारोग्यकारक स्थिती",
+        "तंदुरुस्त राहणे",
+        "बलवान बनणे"
+      ],
       "correct": 1,
-      "exp": "स्पष्टीकरण: मूल्यवान म्हणजे मोलाची."
+      "exp": "स्पष्टीकरण: आरोग्याचा विरुद्धार्थी शब्द अनारोग्य असा आहे."
     },
     {
       "id": 71,
       "sec": "lang",
-      "passage": "संत ज्ञानेश्वरांनी लहान वयातच 'भावार्थदीपिका' अर्थात ज्ञानेश्वरी ग्रंथाची निर्मिती करून वारकरी संप्रदायाची पायाभरणी केली. त्यांनी पसायदान मागून संपूर्ण मानव जातीच्या कल्याणाची प्रार्थना केली. त्यांचे जीवन म्हणजे त्याग, सहनशीलता आणि भक्तीचा अनोखा संगम होता. वारकरी संप्रदाय आजही महाराष्ट्राच्या संस्कृतीचा कणा मानला जातो.",
-      "text": "संत ज्ञानेश्वरांनी कोणत्या महान ग्रंथाची रचना केली?",
-      "options": ["संत तुकाराम महाराज यांची गाथा", "भावार्थदीपिका म्हणजेच ज्ञानेश्वरी", "श्रीभगवतगीता मराठी अनुवाद", "एकनाथ महाराज भागवत"],
+      "passage": "ग्रंथ हे आपले खरे गुरु आणि मित्र आहेत. पुस्तकांमुळे माणसाचे ज्ञान समृद्ध होते आणि विचार करण्याची कुवत वाढते. वाचनाने कल्पनाशक्तीला पंख फुटतात. इतिहासातील महान व्यक्तींचे जीवनचरित्र वाचून आपल्याला प्रेरणा मिळते. म्हणूनच वाचनाची सवय ही आयुष्यातील सर्वात मोठी संपत्ती आहे.",
+      "text": "आपले खरे गुरु आणि मित्र कोण आहेत?",
+      "options": [
+        "संगणक व गॅजेट्स",
+        "ग्रंथ व पुस्तके",
+        "मोबाईल स्क्रीन",
+        "टेविी चॅनेल्स"
+      ],
       "correct": 1,
-      "exp": "स्पष्टीकरण: ज्ञानेश्वरांनी भावार्थदीपिका रचली."
+      "exp": "स्पष्टीकरण: पुस्तकांना आपले खरे गुरु म्हटले आहे."
     },
     {
       "id": 72,
       "sec": "lang",
-      "passage": "संत ज्ञानेश्वरांनी लहान वयातच 'भावार्थदीपिका' अर्थात ज्ञानेश्वरी ग्रंथाची निर्मिती करून वारकरी संप्रदायाची पायाभरणी केली. त्यांनी पसायदान मागून संपूर्ण मानव जातीच्या कल्याणाची प्रार्थना केली. त्यांचे जीवन म्हणजे त्याग, सहनशीलता आणि भक्तीचा अनोखा संगम होता. वारकरी संप्रदाय आजही महाराष्ट्राच्या संस्कृतीचा कणा मानला जातो.",
-      "text": "संत ज्ञानेश्वरांनी मागितलेल्या पसायदानामध्ये कोणाच्या कल्याणाचा विचार केला आहे?",
-      "options": ["फक्त स्वतःच्या परिवाराच्या सदस्यांचे", "संपूर्ण विश्वातील मानव जातीचे", "फक्त विशिष्ट राज्याच्या जनतेचे", "केवळ निवडक साधू-संतांचे"],
+      "passage": "ग्रंथ हे आपले खरे गुरु आणि मित्र आहेत. पुस्तकांमुळे माणसाचे ज्ञान समृद्ध होते आणि विचार करण्याची कुवत वाढते. वाचनाने कल्पनाशक्तीला पंख फुटतात. इतिहासातील महान व्यक्तींचे जीवनचरित्र वाचून आपल्याला प्रेरणा मिळते. म्हणूनच वाचनाची सवय ही आयुष्यातील सर्वात मोठी संपत्ती आहे.",
+      "text": "वाचनामुळे कशाला चालना मिळते?",
+      "options": [
+        "मनाचा आळस वाढवणे",
+        "विस्तीर्ण कल्पनाशक्ती",
+        "इतरांची चोरी करणे",
+        "नको ते रागवणे"
+      ],
       "correct": 1,
-      "exp": "स्पष्टीकरण: संपूर्ण मानव जातीच्या कल्याणाची प्रार्थना."
+      "exp": "स्पष्टीकरण: वाचनाने कल्पनाशक्ती विस्तारते."
     },
     {
       "id": 73,
       "sec": "lang",
-      "passage": "संत ज्ञानेश्वरांनी लहान वयातच 'भावार्थदीपिका' अर्थात ज्ञानेश्वरी ग्रंथाची निर्मिती करून वारकरी संप्रदायाची पायाभरणी केली. त्यांनी पसायदान मागून संपूर्ण मानव जातीच्या कल्याणाची प्रार्थना केली. त्यांचे जीवन म्हणजे त्याग, सहनशीलता आणि भक्तीचा अनोखा संगम होता. वारकरी संप्रदाय आजही महाराष्ट्राच्या संस्कृतीचा कणा मानला जातो.",
-      "text": "संत ज्ञानेश्वरांचे संपूर्ण आयुष्य कशाचे उत्तम प्रतीक मानले जाते?",
-      "options": ["अहंकार व स्वार्थी वृत्तीचे दर्शन", "त्याग, सहनशीलता व भक्तीचा संगम", "केवळ राजकीय संघर्षाचे पर्व", "भौतिक सुखोपभोगाची प्राप्ती"],
+      "passage": "ग्रंथ हे आपले खरे गुरु आणि मित्र आहेत. पुस्तकांमुळे माणसाचे ज्ञान समृद्ध होते आणि विचार करण्याची कुवत वाढते. वाचनाने कल्पनाशक्तीला पंख फुटतात. इतिहासातील महान व्यक्तींचे जीवनचरित्र वाचून आपल्याला प्रेरणा मिळते. म्हणूनच वाचनाची सवय ही आयुष्यातील सर्वात मोठी संपत्ती आहे.",
+      "text": "महान व्यक्तींच्या चरित्रातून आपल्याला काय मिळते?",
+      "options": [
+        "मानसिक निराशा",
+        "योग्य ती प्रेरणा",
+        "विविध त्रास",
+        "वेळ वाया घालवणे"
+      ],
       "correct": 1,
-      "exp": "स्पष्टीकरण: त्याग, सहनशीलता आणि भक्तीचा संगम."
+      "exp": "स्पष्टीकरण: चरित्रातून आपल्याला प्रेरणा मिळते."
     },
     {
       "id": 74,
       "sec": "lang",
-      "passage": "संत ज्ञानेश्वरांनी लहान वयातच 'भावार्थदीपिका' अर्थात ज्ञानेश्वरी ग्रंथाची निर्मिती करून वारकरी संप्रदायाची पायाभरणी केली. त्यांनी पसायदान मागून संपूर्ण मानव जातीच्या कल्याणाची प्रार्थना केली. त्यांचे जीवन म्हणजे त्याग, सहनशीलता आणि भक्तीचा अनोखा संगम होता. वारकरी संप्रदाय आजही महाराष्ट्राच्या संस्कृतीचा कणा मानला जातो.",
-      "text": "महाराष्ट्राच्या समृद्ध संस्कृतीचा कणा म्हणून कोणाला संबोधले जाते?",
-      "options": ["परंपरेने चालत आलेला वारकरी संप्रदाय", "मोठ्या प्रमाणावर उभारलेले उद्योग", "विविध राजकीय पक्षांची संघटना", "शहरी भागातील आधुनिक संस्कृती"],
-      "correct": 0,
-      "exp": "स्पष्टीकरण: वारकरी संप्रदाय संस्कृतीचा कणा आहे."
+      "passage": "ग्रंथ हे आपले खरे गुरु आणि मित्र आहेत. पुस्तकांमुळे माणसाचे ज्ञान समृद्ध होते आणि विचार करण्याची कुवत वाढते. वाचनाने कल्पनाशक्तीला पंख फुटतात. इतिहासातील महान व्यक्तींचे जीवनचरित्र वाचून आपल्याला प्रेरणा मिळते. म्हणूनच वाचनाची सवय ही आयुष्यातील सर्वात मोठी संपत्ती आहे.",
+      "text": "आयुष्यातील सर्वात मोठी संपत्ती कोणती?",
+      "options": [
+        "खूप सारा पैसा",
+        "नियमित वाचन सवय",
+        "मोठी आलिशान गाडी",
+        "सोन्याचे दागिने"
+      ],
+      "correct": 1,
+      "exp": "स्पष्टीकरण: वाचनाची सवय ही सर्वात मोठी संपत्ती आहे."
     },
     {
       "id": 75,
       "sec": "lang",
-      "passage": "संत ज्ञानेश्वरांनी लहान वयातच 'भावार्थदीपिका' अर्थात ज्ञानेश्वरी ग्रंथाची निर्मिती करून वारकरी संप्रदायाची पायाभरणी केली. त्यांनी पसायदान मागून संपूर्ण मानव जातीच्या कल्याणाची प्रार्थना केली. त्यांचे जीवन म्हणजे त्याग, सहनशीलता आणि भक्तीचा अनोखा संगम होता. वारकरी संप्रदाय आजही महाराष्ट्राच्या संस्कृतीचा कणा मानला जातो.",
-      "text": "'संस्कृती' या शब्दाचा योग्य अर्थ उताऱ्याच्या अनुषंगाने काय आहे?",
-      "options": ["लोकांची जीवनशैली व उच्च विचारसरणी", "केवळ घरे बांधण्याची विशिष्ट पद्धत", "अन्न शिजवण्याची कला व कौशल्य", "व्यापार व व्यवसाय करण्याची रीत"],
-      "correct": 0,
-      "exp": "स्पष्टीकरण: लोकांची जीवनशैली व मूल्ये."
+      "passage": "ग्रंथ हे आपले खरे गुरु आणि मित्र आहेत. पुस्तकांमुळे माणसाचे ज्ञान समृद्ध होते आणि विचार करण्याची कुवत वाढते. वाचनाने कल्पनाशक्तीला पंख फुटतात. इतिहासातील महान व्यक्तींचे जीवनचरित्र वाचून आपल्याला प्रेरणा मिळते. म्हणूनच वाचनाची सवय ही आयुष्यातील सर्वात मोठी संपत्ती आहे.",
+      "text": "'संपत्ती' या शब्दाचा समानार्थी शब्द कोणता?",
+      "options": [
+        "गरीबीची अवस्था",
+        "धन व ऐश्वर्य",
+        "कर्जाचा डोंगर",
+        "मोठे नुकसान"
+      ],
+      "correct": 1,
+      "exp": "स्पष्टीकरण: संपत्ती म्हणजे धन."
     },
     {
       "id": 76,
       "sec": "lang",
-      "passage": "छत्रपती शिवाजी महाराजांनी स्वराज्याची स्थापना करताना सर्व जातीधर्माच्या लोकांना एकत्र घेतले. रयतेच्या भाजीच्या देठालाही हात लावणारा शिक्षा पात्र ठरेल असा कडक नियम त्यांनी केला. स्त्रीसन्मान आणि न्यायप्रियता हे त्यांच्या स्वराज्याचे मुख्य वैशिष्ट्य होते. महाराजांचे विचार आजही प्रत्येकाला प्रेरणा देणारे ठरतात.",
-      "text": "छत्रपती शिवाजी महाराजांनी स्वराज्य स्थापन करताना कोणाला सोबत घेतले?",
-      "options": ["केवळ ठराविक एका विशिष्ट वर्गाला", "सर्व जातीधर्माच्या सर्वसामान्य लोकांना", "फक्त परदेशी व्यापाऱ्यांच्या सैन्याला", "केवळ धनवान सरदारांच्या पुत्रांना"],
+      "passage": "पाणी हे जीवन आहे. पृथ्वीवर पाण्याचा साठा भरपूर असला तरी पिण्यायोग्य गोड्या पाण्याचे प्रमाण अत्यंत अल्प आहे. पाण्याचा अपव्यय न करता त्याचा साठा करणे आणि जलसंधारण करणे काळाची गरज आहे. 'पाणी आडवा, पाणी जिरवा' या मंत्राचा अवलंब करून आपण जलसाठे सुरक्षित राखले पाहिजे.",
+      "text": "पृथ्वीवर पिण्यायोग्य पाण्याचे प्रमाण कसे आहे?",
+      "options": [
+        "अफाट व भरपूर",
+        "अत्यंत अल्प प्रमाणात",
+        "अमर्याद साठा",
+        "खूप जास्त उपलब्ध"
+      ],
       "correct": 1,
-      "exp": "स्पष्टीकरण: सर्व जातीधर्माच्या लोकांना एकत्र घेतले."
+      "exp": "स्पष्टीकरण: गोड्या पाण्याचे प्रमाण अत्यंत अल्प आहे."
     },
     {
       "id": 77,
       "sec": "lang",
-      "passage": "छत्रपती शिवाजी महाराजांनी स्वराज्याची स्थापना करताना सर्व जातीधर्माच्या लोकांना एकत्र घेतले. रयतेच्या भाजीच्या देठालाही हात लावणारा शिक्षा पात्र ठरेल असा कडक नियम त्यांनी केला. स्त्रीसन्मान आणि न्यायप्रियता हे त्यांच्या स्वराज्याचे मुख्य वैशिष्ट्य होते. महाराजांचे विचार आजही प्रत्येकाला प्रेरणा देणारे ठरतात.",
-      "text": "स्वराज्यामध्ये रयतेच्या रक्षणासाठी कोणता कडक नियम लागू होता?",
-      "options": ["सामान्य जनतेला विनाकारण त्रास देणाऱ्यास कठोर शिक्षा", "कर न भरणाऱ्या शेतकऱ्यांची जमीन जप्त करणे", "शेतकऱ्यांवर उत्पादनाचा जास्तीचा कर लादणे", "व्यापारावर पूर्णपणे निर्बंध घालणे"],
-      "correct": 0,
-      "exp": "स्पष्टीकरण: रयतेला त्रास देणाऱ्यास कठोर शिक्षा."
+      "passage": "पाणी हे जीवन आहे. पृथ्वीवर पाण्याचा साठा भरपूर असला तरी पिण्यायोग्य गोड्या पाण्याचे प्रमाण अत्यंत अल्प आहे. पाण्याचा अपव्यय न करता त्याचा साठा करणे आणि जलसंधारण करणे काळाची गरज आहे. 'पाणी आडवा, पाणी जिरवा' या मंत्राचा अवलंब करून आपण जलसाठे सुरक्षित राखले पाहिजे.",
+      "text": "काळाची गरज काय आहे?",
+      "options": [
+        "पाण्याचा अपव्यय करणे",
+        "योग्य जलसंधारण करणे",
+        "नद्यांचे प्रदूषण करणे",
+        "पाणी वाया घालवणे"
+      ],
+      "correct": 1,
+      "exp": "स्पष्टीकरण: जलसंधारण करणे काळाची गरज आहे."
     },
     {
       "id": 78,
       "sec": "lang",
-      "passage": "छत्रपती शिवाजी महाराजांनी स्वराज्याची स्थापना करताना सर्व जातीधर्माच्या लोकांना एकत्र घेतले. रयतेच्या भाजीच्या देठालाही हात लावणारा शिक्षा पात्र ठरेल असा कडक नियम त्यांनी केला. स्त्रीसन्मान आणि न्यायप्रियता हे त्यांच्या स्वराज्याचे मुख्य वैशिष्ट्य होते. महाराजांचे विचार आजही प्रत्येकाला प्रेरणा देणारे ठरतात.",
-      "text": "छत्रपती शिवाजी महाराजांच्या स्वराज्याची मुख्य वैशिष्ट्ये कोणती होती?",
-      "options": ["स्त्रीसन्मान आणि उत्तम न्यायप्रियता", "अन्याय अत्याचार आणि लाचखोरी", "केवळ संपत्ती गोळा करणे हा उद्देश", "युद्ध जिंकणे हेच एकमेव ध्येय"],
+      "passage": "पाणी हे जीवन आहे. पृथ्वीवर पाण्याचा साठा भरपूर असला तरी पिण्यायोग्य गोड्या पाण्याचे प्रमाण अत्यंत अल्प आहे. पाण्याचा अपव्यय न करता त्याचा साठा करणे आणि जलसंधारण करणे काळाची गरज आहे. 'पाणी आडवा, पाणी जिरवा' या मंत्राचा अवलंब करून आपण जलसाठे सुरक्षित राखले पाहिजे.",
+      "text": "उताऱ्यात कोणता मंत्र दिला आहे?",
+      "options": [
+        "पाणी आडवा व जिरवा",
+        "पाणी पूर्ण संपवा",
+        "वीज मोठ्याने वाचवा",
+        "झाडे ताबडतोब तोडा"
+      ],
       "correct": 0,
-      "exp": "स्पष्टीकरण: स्त्रीसन्मान आणि न्यायप्रियता."
+      "exp": "स्पष्टीकरण: पाणी आडवा, पाणी जिरवा हा मंत्र दिला आहे."
     },
     {
       "id": 79,
       "sec": "lang",
-      "passage": "छत्रपती शिवाजी महाराजांनी स्वराज्याची स्थापना करताना सर्व जातीधर्माच्या लोकांना एकत्र घेतले. रयतेच्या भाजीच्या देठालाही हात लावणारा शिक्षा पात्र ठरेल असा कडक नियम त्यांनी केला. स्त्रीसन्मान आणि न्यायप्रियता हे त्यांच्या स्वराज्याचे मुख्य वैशिष्ट्य होते. महाराजांचे विचार आजही प्रत्येकाला प्रेरणा देणारे ठरतात.",
-      "text": "'रयत' या शब्दाचा अचूक अर्थ उताऱ्याच्या संदर्भात काय होतो?",
-      "options": ["राज्याचा राजा किंवा सम्राट", "सामान्य जनता अथवा प्रजा", "राज्यातील परदेशी पाहुणे", "सैन्यदलातील शिपाई"],
-      "correct": 1,
-      "exp": "स्पष्टीकरण: रयत म्हणजे प्रजा."
+      "passage": "पाणी हे जीवन आहे. पृथ्वीवर पाण्याचा साठा भरपूर असला तरी पिण्यायोग्य गोड्या पाण्याचे प्रमाण अत्यंत अल्प आहे. पाण्याचा अपव्यय न करता त्याचा साठा करणे आणि जलसंधारण करणे काळाची गरज आहे. 'पाणी आडवा, पाणी जिरवा' या मंत्राचा अवलंब करून आपण जलसाठे सुरक्षित राखले पाहिजे.",
+      "text": "'जीवन' या शब्दाचा अर्थ उताऱ्याच्या संदर्भात काय होतो?",
+      "options": [
+        "मानवी आयुष्य व प्राण",
+        "खाण्यासाठी अन्न",
+        "राहण्यासाठी घर",
+        "पेरण्यासाठी कापड"
+      ],
+      "correct": 0,
+      "exp": "स्पष्टीकरण: जीवनाचा अर्थ आयुष्य असा आहे."
     },
     {
       "id": 80,
       "sec": "lang",
-      "passage": "छत्रपती शिवाजी महाराजांनी स्वराज्याची स्थापना करताना सर्व जातीधर्माच्या लोकांना एकत्र घेतले. रयतेच्या भाजीच्या देठालाही हात लावणारा शिक्षा पात्र ठरेल असा कडक नियम त्यांनी केला. स्त्रीसन्मान आणि न्यायप्रियता हे त्यांच्या स्वराज्याचे मुख्य वैशिष्ट्य होते. महाराजांचे विचार आजही प्रत्येकाला प्रेरणा देणारे ठरतात.",
-      "text": "या उताऱ्यावरून छत्रपती शिवाजी महाराजांच्या कोणत्या गुणाचा मुख्य बोध होतो?",
-      "options": ["जनहिताची निस्सीम काळजी व अचल न्यायप्रियता", "केवळ स्वतःचा राजकीय स्वार्थ साधणे", "युद्ध प्रिय असणे आणि हिंसा पसरवणे", "लोकांवर विनाकारण अधिकार गाजवणे"],
-      "correct": 0,
-      "exp": "स्पष्टीकरण: जनहित आणि न्यायप्रियता."
+      "passage": "पाणी हे जीवन आहे. पृथ्वीवर पाण्याचा साठा भरपूर असला तरी पिण्यायोग्य गोड्या पाण्याचे प्रमाण अत्यंत अल्प आहे. पाण्याचा अपव्यय न करता त्याचा साठा करणे आणि जलसंधारण करणे काळाची गरज आहे. 'पाणी आडवा, पाणी जिरवा' या मंत्राचा अवलंब करून आपण जलसाठे सुरक्षित राखले पाहिजे.",
+      "text": "या उताऱ्याचा मुख्य संदेश काय आहे?",
+      "options": [
+        "पाणी प्रदूषित करणे",
+        "पाण्याची बचत व संधारण",
+        "पाण्याची व्यावसायिक विक्री",
+        "पावसात सतत भिजणे"
+      ],
+      "correct": 1,
+      "exp": "स्पष्टीकरण: पाण्याची बचत व जलसंधारण करणे हा मुख्य संदेश आहे."
     }
   ]
 }
