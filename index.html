@@ -607,7 +607,7 @@
 <div id="showJsonModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(15,43,72,0.85); z-index:3700; justify-content:center; align-items:center; backdrop-filter:blur(4px); padding:12px;">
   <div style="background:#ffffff; border-radius:16px; max-width:700px; width:100%; max-height:90vh; display:flex; flex-direction:column; padding:20px; box-shadow:0 12px 35px rgba(0,0,0,0.3); border-top:5px solid #0284c7;">
     <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; border-bottom:2px solid #e2e8f0; padding-bottom:8px;">
-      <h3 style="color:#0284c7; font-weight:800; font-size:1.15rem;">📋 चाचणीचा JSON कोड</h3>
+      <h3 style="color:#0284c7; font-weight:800; font-size:1.15rem;">📋 चाचणीचा संपूर्ण JSON कोड (बदलांसह)</h3>
       <button onclick="closeShowJsonModal()" style="background:#fee2e2; color:#991b1b; border:none; padding:4px 10px; border-radius:8px; font-weight:800; cursor:pointer;">✕ बंद करा</button>
     </div>
     
@@ -619,7 +619,7 @@
     <textarea id="jsonOutputArea" readonly style="flex:1; width:100%; height:320px; padding:10px; font-family:monospace; font-size:0.85rem; border:1.5px solid #cbd5e1; border-radius:8px; background:#f8fafc; resize:none;"></textarea>
 
     <div style="display:flex; gap:10px; margin-top:12px;">
-      <button class="btn-main" style="background:#16a34a;" onclick="copyJsonToClipboard()">📋 JSON कोड कॉपी करा</button>
+      <button class="btn-main" style="background:#16a34a;" onclick="copyJsonToClipboard()">📋 सर्व बदलांसह JSON कोड कॉपी करा</button>
     </div>
   </div>
 </div>
@@ -1251,7 +1251,7 @@
     const testId = parseInt(document.getElementById("jsonExportTestId").value);
     const testMeta = EXAM_SCHEDULE.find(t => t.id === testId);
     const textarea = document.getElementById("jsonOutputArea");
-    textarea.value = "लोड होत आहे...";
+    textarea.value = "तुमचे बदल गोळा करून JSON तयार होत आहे...";
 
     try {
       const res = await fetch(testMeta.file);
@@ -1284,7 +1284,7 @@
     textarea.select();
     textarea.setSelectionRange(0, 99999);
     navigator.clipboard.writeText(textarea.value).then(() => {
-      alert("JSON कोड यशस्वीरीत्या कॉपी झाला!");
+      alert("सर्व बदलांसह JSON कोड यशस्वीरीत्या कॉपी झाला!");
     }).catch(() => {
       alert("कॉपी करण्यात अयशस्वी.");
     });
