@@ -169,33 +169,35 @@
 
     .passage-box { background: #fffbeb; border: 1px solid #fde68a; border-radius: 10px; padding: 14px; margin-bottom: 14px; font-size: 0.95rem; line-height: 1.65; color: #92400e; }
     
-    /* --- आकृती पूर्ण रुंदीत आणि मोठ्या आकारात (प्रश्नाच्या लांबीएवढी) सर्व मोबाईल व लॅपटॉपवर दिसेल --- */
-    .fig-container { display: flex; flex-direction: column; gap: 12px; margin: 14px 0; background: #f8fafc; padding: 14px; border-radius: 12px; align-items: center; justify-content: center; border: 1px dashed #cbd5e1; }
+    /* --- मोबाईल आणि लॅपटॉप दोन्हीवर आकृती पूर्ण कार्डच्या साइज एवढी (Full Width & Stretch) दिसेल --- */
+    .fig-container { display: flex; flex-direction: column; gap: 12px; margin: 14px 0; background: #f8fafc; padding: 10px; border-radius: 12px; align-items: center; justify-content: center; border: 1px dashed #cbd5e1; width: 100%; }
     .fig-box { 
       width: 100% !important; 
-      max-width: 100%; 
-      min-height: 200px;
+      max-width: 100% !important; 
       height: auto !important; 
+      min-height: 180px;
+      max-height: 420px;
       border: 2px solid #cbd5e1; 
       background: #fff; 
       display: flex; 
       align-items: center; 
       justify-content: center; 
-      margin: 0 auto 6px auto; 
+      margin: 0 auto; 
       border-radius: 10px; 
       overflow: hidden;
       box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-      padding: 8px;
+      padding: 4px;
     }
     .fig-box img { 
-      width: 100%; 
-      height: auto; 
-      max-height: 380px;
-      object-fit: contain; 
+      width: 100% !important; 
+      height: auto !important; 
+      max-height: 400px;
+      object-fit: fill !important; 
+      display: block;
     }
     .fig-box svg { 
-      width: 100%; 
-      height: 100%; 
+      width: 100% !important; 
+      height: 100% !important; 
     }
     
     .options-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 12px; }
@@ -1325,7 +1327,7 @@
   function startExamFromGuideline() {
     if (!currentPendingTest) return;
     
-    // इन्स्टंट स्पीडसाठी प्रथम लोकल स्टोरेजमधील ओव्हरराइड्स वापरून JSON लोड करा
+    // इन्स्टंट स्पीडसाठी प्रथम लोकल स्टोरेजमधील ओव्हरराइड्स वापरून चाचणी अवघ्या १ सेकंदात सुरू करा
     fetch(currentPendingTest.file)
       .then(res => res.json())
       .then(data => {
