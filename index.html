@@ -169,12 +169,13 @@
 
     .passage-box { background: #fffbeb; border: 1px solid #fde68a; border-radius: 10px; padding: 14px; margin-bottom: 14px; font-size: 0.95rem; line-height: 1.65; color: #92400e; }
     
-    /* --- आकृती आता पूर्ण रुंदीत आणि मोठ्या आकारात (प्रश्नाच्या लांबीएवढी) दिसेल --- */
+    /* --- आकृती आता पूर्ण रुंदीत आणि मोठ्या आकारात (प्रश्नाच्या लांबीएवढी) सर्व मोबाईल व लॅपटॉपवर दिसेल --- */
     .fig-container { display: flex; flex-direction: column; gap: 12px; margin: 14px 0; background: #f8fafc; padding: 14px; border-radius: 12px; align-items: center; justify-content: center; border: 1px dashed #cbd5e1; }
     .fig-box { 
       width: 100% !important; 
       max-width: 100%; 
-      height: 240px !important; 
+      min-height: 200px;
+      height: auto !important; 
       border: 2px solid #cbd5e1; 
       background: #fff; 
       display: flex; 
@@ -184,9 +185,18 @@
       border-radius: 10px; 
       overflow: hidden;
       box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      padding: 8px;
     }
-    .fig-box img { width: 100%; height: 100%; object-fit: contain; }
-    .fig-box svg { width: 100%; height: 100%; }
+    .fig-box img { 
+      width: 100%; 
+      height: auto; 
+      max-height: 380px;
+      object-fit: contain; 
+    }
+    .fig-box svg { 
+      width: 100%; 
+      height: 100%; 
+    }
     
     .options-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 12px; }
     .opt-label { display: flex; align-items: center; padding: 12px 14px; border: 1.5px solid var(--border); border-radius: 10px; cursor: pointer; background: #fff; font-size: 0.95rem; }
@@ -1072,33 +1082,56 @@
     if (qId < 1 || qId > 20) { alert("प्रश्न क्र. 1 ते 20 निवडा."); return; }
 
     const testMeta = EXAM_SCHEDULE.find(t => t.id === testId);
-    fetch(testMeta.file)
+    
+    // प्रथम Firebase मधून आकृती आणण्याचा प्रयत्न करा, नसल्यास JSON किंवा LocalStorage वरून
+    fetch(`${FIREBASE_DB_URL}/overrides/t${testId}_q${qId}.json`)
       .then(res => res.json())
-      .then(data => {
-        const savedOverride = localStorage.getItem(`jnv_override_t${testId}_q${qId}`);
-        let qObj = savedOverride ? JSON.parse(savedOverride) : data.questions.find(q => q.id === qId);
-
-        if (qObj) {
-          document.getElementById("vEditorFormContainer").style.display = "block";
-          document.getElementById("vEditQText").value = qObj.text || "";
-          document.getElementById("vEditCorrect").value = qObj.correct !== undefined ? qObj.correct : 0;
-          document.getElementById("vEditExp").value = qObj.exp || "";
-
-          const probFig = qObj.problemFig || "";
-          document.getElementById("vProbImgUrl").value = probFig.startsWith("http") || probFig.startsWith("data:") ? probFig : "";
-          if (probFig.startsWith("http") || probFig.startsWith("data:")) {
-            updateUrlPreview(probFig, 'vProbPreview');
+      .then(firebaseObj => {
+        if (firebaseObj) {
+          populateVisualEditorForm(firebaseObj);
+        } else {
+          // लोकल स्टोरेज किंवा फाईल तपासा
+          const savedOverride = localStorage.getItem(`jnv_override_t${testId}_q${qId}`);
+          if (savedOverride) {
+            populateVisualEditorForm(JSON.parse(savedOverride));
           } else {
-            document.getElementById("vProbPreview").innerHTML = probFig ? probFig : "[Image]";
-            document.getElementById("vProbPreview").dataset.imgSrc = probFig;
-          }
-
-          for (let i = 0; i < 4; i++) {
-            const optText = (qObj.options && qObj.options[i]) ? qObj.options[i] : `(${String.fromCharCode(65+i)})`;
-            document.getElementById(`vOptText${i}`).value = optText;
+            fetch(testMeta.file)
+              .then(res => res.json())
+              .then(data => {
+                let qObj = data.questions.find(q => q.id === qId);
+                if (qObj) populateVisualEditorForm(qObj);
+              });
           }
         }
+      }).catch(() => {
+        fetch(testMeta.file)
+          .then(res => res.json())
+          .then(data => {
+            let qObj = data.questions.find(q => q.id === qId);
+            if (qObj) populateVisualEditorForm(qObj);
+          });
       });
+  }
+
+  function populateVisualEditorForm(qObj) {
+    document.getElementById("vEditorFormContainer").style.display = "block";
+    document.getElementById("vEditQText").value = qObj.text || "";
+    document.getElementById("vEditCorrect").value = qObj.correct !== undefined ? qObj.correct : 0;
+    document.getElementById("vEditExp").value = qObj.exp || "";
+
+    const probFig = qObj.problemFig || "";
+    document.getElementById("vProbImgUrl").value = probFig.startsWith("http") || probFig.startsWith("data:") ? probFig : "";
+    if (probFig.startsWith("http") || probFig.startsWith("data:")) {
+      updateUrlPreview(probFig, 'vProbPreview');
+    } else {
+      document.getElementById("vProbPreview").innerHTML = probFig ? probFig : "[Image]";
+      document.getElementById("vProbPreview").dataset.imgSrc = probFig;
+    }
+
+    for (let i = 0; i < 4; i++) {
+      const optText = (qObj.options && qObj.options[i]) ? qObj.options[i] : `(${String.fromCharCode(65+i)})`;
+      document.getElementById(`vOptText${i}`).value = optText;
+    }
   }
 
   function saveVisualEditedQuestion() {
@@ -1127,9 +1160,18 @@
       exp: expText
     };
 
-    localStorage.setItem(`jnv_override_t${testId}_q${qId}`, JSON.stringify(updatedQ));
-    alert(`चाचणी क्र. ${testId} मधील प्रश्न क्र. ${qId} (मुख्य इमेज व ४ पर्याय) यशस्वीरीत्या सेव्ह झाला!`);
-    closeAdminVisualEditorModal();
+    // मोबाईलवर आणि सर्व विद्यार्थ्यांसाठी लाईव्ह करण्यासाठी Firebase मध्ये सेव्ह करा
+    fetch(`${FIREBASE_DB_URL}/overrides/t${testId}_q${qId}.json`, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(updatedQ)
+    }).then(() => {
+      localStorage.setItem(`jnv_override_t${testId}_q${qId}`, JSON.stringify(updatedQ));
+      alert(`चाचणी क्र. ${testId} मधील प्रश्न क्र. ${qId} (आकृती व पर्याय) यशस्वीरीत्या लाईव्ह सेव्ह झाला!`);
+      closeAdminVisualEditorModal();
+    }).catch(err => {
+      alert("सेव्ह करताना त्रुटी आली: " + err);
+    });
   }
 
   function openAdminQuestionEditorModal() {
@@ -1287,11 +1329,23 @@
     if (!currentPendingTest) return;
     fetch(currentPendingTest.file)
       .then(res => res.json())
-      .then(data => {
-        data.questions.forEach((q, idx) => {
-          const savedOverride = localStorage.getItem(`jnv_override_t${data.testId}_q${q.id}`);
-          if (savedOverride) { data.questions[idx] = JSON.parse(savedOverride); }
-        });
+      .then(async data => {
+        for (let idx = 0; idx < data.questions.length; idx++) {
+          let q = data.questions[idx];
+          try {
+            let fbRes = await fetch(`${FIREBASE_DB_URL}/overrides/t${data.testId}_q${q.id}.json`);
+            let fbData = await fbRes.json();
+            if (fbData) {
+              data.questions[idx] = fbData;
+            } else {
+              const savedOverride = localStorage.getItem(`jnv_override_t${data.testId}_q${q.id}`);
+              if (savedOverride) { data.questions[idx] = JSON.parse(savedOverride); }
+            }
+          } catch(e) {
+            const savedOverride = localStorage.getItem(`jnv_override_t${data.testId}_q${q.id}`);
+            if (savedOverride) { data.questions[idx] = JSON.parse(savedOverride); }
+          }
+        }
         document.getElementById("guidelinesArea").style.display = "none";
         launchTestWithData(data, false);
       })
@@ -1302,11 +1356,23 @@
     const testMeta = EXAM_SCHEDULE.find(t => t.id === testId);
     fetch(testMeta.file)
       .then(res => res.json())
-      .then(data => {
-        data.questions.forEach((q, idx) => {
-          const savedOverride = localStorage.getItem(`jnv_override_t${data.testId}_q${q.id}`);
-          if (savedOverride) { data.questions[idx] = JSON.parse(savedOverride); }
-        });
+      .then(async data => {
+        for (let idx = 0; idx < data.questions.length; idx++) {
+          let q = data.questions[idx];
+          try {
+            let fbRes = await fetch(`${FIREBASE_DB_URL}/overrides/t${data.testId}_q${q.id}.json`);
+            let fbData = await fbRes.json();
+            if (fbData) {
+              data.questions[idx] = fbData;
+            } else {
+              const savedOverride = localStorage.getItem(`jnv_override_t${data.testId}_q${q.id}`);
+              if (savedOverride) { data.questions[idx] = JSON.parse(savedOverride); }
+            }
+          } catch(e) {
+            const savedOverride = localStorage.getItem(`jnv_override_t${data.testId}_q${q.id}`);
+            if (savedOverride) { data.questions[idx] = JSON.parse(savedOverride); }
+          }
+        }
         launchTestWithData(data, true);
       });
   }
@@ -1529,7 +1595,7 @@
       let cleanText = (q.text || "").replace(/^(प्रश्न|Question)\s*\d+[\s\.:\-\)]*/gi, "").trim();
       if (!cleanText) cleanText = q.text || "";
 
-      qDiv.innerHTML = `<div class="q-badge-box">प्रश्न ${q.id}</div><div class="q-text-content">${cleanText}</div>${opts}<div class="exp-box">💡 <b>स्पष्टीकरण:</b> ${q.exp}</div>`;
+      qDiv.innerHTML = `<div class="q-badge-box">प्रश्न ${q.id}</div><div class="q-text-content">${cleanTest}</div>${opts}<div class="exp-box">💡 <b>स्पष्टीकरण:</b> ${q.exp}</div>`;
       container.appendChild(qDiv);
     });
   }
