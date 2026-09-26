@@ -1087,17 +1087,12 @@
         if (firebaseObj) {
           populateVisualEditorForm(firebaseObj);
         } else {
-          const savedOverride = localStorage.getItem(`jnv_override_t${testId}_q${qId}`);
-          if (savedOverride) {
-            populateVisualEditorForm(JSON.parse(savedOverride));
-          } else {
-            fetch(testMeta.file)
-              .then(res => res.json())
-              .then(data => {
-                let qObj = data.questions.find(q => q.id === qId);
-                if (qObj) populateVisualEditorForm(qObj);
-              });
-          }
+          fetch(testMeta.file)
+            .then(res => res.json())
+            .then(data => {
+              let qObj = data.questions.find(q => q.id === qId);
+              if (qObj) populateVisualEditorForm(qObj);
+            });
         }
       }).catch(() => {
         fetch(testMeta.file)
@@ -1130,6 +1125,7 @@
     }
   }
 
+  /* QuotaExceededError टाळण्यासाठी थेट Firebase वर सेव्ह करणे */
   function saveVisualEditedQuestion() {
     const testId = parseInt(document.getElementById("vEditTestId").value);
     const qId = parseInt(document.getElementById("vEditQId").value);
@@ -1161,7 +1157,6 @@
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(updatedQ)
     }).then(() => {
-      localStorage.setItem(`jnv_override_t${testId}_q${qId}`, JSON.stringify(updatedQ));
       alert(`चाचणी क्र. ${testId} मधील प्रश्न क्र. ${qId} यशस्वीरीत्या सेव्ह झाला!`);
       closeAdminVisualEditorModal();
     }).catch(err => {
@@ -1196,19 +1191,21 @@
     fetch(testMeta.file)
       .then(res => res.json())
       .then(data => {
-        const savedOverride = localStorage.getItem(`jnv_override_t${testId}_q${qId}`);
-        let qObj = savedOverride ? JSON.parse(savedOverride) : data.questions.find(q => q.id === qId);
-
-        if (qObj) {
-          document.getElementById("editorFormContainer").style.display = "block";
-          document.getElementById("editQText").value = qObj.text || "";
-          document.getElementById("editOpt0").value = (qObj.options && qObj.options[0]) || "";
-          document.getElementById("editOpt1").value = (qObj.options && qObj.options[1]) || "";
-          document.getElementById("editOpt2").value = (qObj.options && qObj.options[2]) || "";
-          document.getElementById("editOpt3").value = (qObj.options && qObj.options[3]) || "";
-          document.getElementById("editQCorrect").value = qObj.correct !== undefined ? qObj.correct : 0;
-          document.getElementById("editQExp").value = qObj.exp || "";
-        }
+        fetch(`${FIREBASE_DB_URL}/overrides/t${testId}_q${qId}.json`)
+          .then(res => res.json())
+          .then(fbObj => {
+            let qObj = fbObj ? fbObj : data.questions.find(q => q.id === qId);
+            if (qObj) {
+              document.getElementById("editorFormContainer").style.display = "block";
+              document.getElementById("editQText").value = qObj.text || "";
+              document.getElementById("editOpt0").value = (qObj.options && qObj.options[0]) || "";
+              document.getElementById("editOpt1").value = (qObj.options && qObj.options[1]) || "";
+              document.getElementById("editOpt2").value = (qObj.options && qObj.options[2]) || "";
+              document.getElementById("editOpt3").value = (qObj.options && qObj.options[3]) || "";
+              document.getElementById("editQCorrect").value = qObj.correct !== undefined ? qObj.correct : 0;
+              document.getElementById("editQExp").value = qObj.exp || "";
+            }
+          });
       });
   }
 
@@ -1230,9 +1227,16 @@
       exp: document.getElementById("editQExp").value
     };
 
-    localStorage.setItem(`jnv_override_t${testId}_q${qId}`, JSON.stringify(updatedQ));
-    alert(`चाचणी क्र. ${testId} मधील प्रश्न क्र. ${qId} यशस्वीरीत्या सेव्ह झाला!`);
-    closeAdminQuestionEditorModal();
+    fetch(`${FIREBASE_DB_URL}/overrides/t${testId}_q${qId}.json`, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(updatedQ)
+    }).then(() => {
+      alert(`चाचणी क्र. ${testId} मधील प्रश्न क्र. ${qId} यशस्वीरीत्या सेव्ह झाला!`);
+      closeAdminQuestionEditorModal();
+    }).catch(err => {
+      alert("सेव्ह करताना त्रुटी आली: " + err);
+    });
   }
 
   function openShowJsonModal() {
@@ -1269,11 +1273,6 @@
           const fbData = await fbRes.json();
           if (fbData) {
             data.questions[idx] = fbData;
-          } else {
-            const savedOverride = localStorage.getItem(`jnv_override_t${testId}_q${q.id}`);
-            if (savedOverride) {
-              data.questions[idx] = JSON.parse(savedOverride);
-            }
           }
         } catch(e) {}
       });
@@ -1394,11 +1393,6 @@
           const fbData = await fbRes.json();
           if (fbData) {
             data.questions[idx] = fbData;
-          } else {
-            const savedOverride = localStorage.getItem(`jnv_override_t${data.testId}_q${q.id}`);
-            if (savedOverride) {
-              data.questions[idx] = JSON.parse(savedOverride);
-            }
           }
         } catch(e) {}
       });
@@ -1423,11 +1417,6 @@
           const fbData = await fbRes.json();
           if (fbData) {
             data.questions[idx] = fbData;
-          } else {
-            const savedOverride = localStorage.getItem(`jnv_override_t${testId}_q${q.id}`);
-            if (savedOverride) {
-              data.questions[idx] = JSON.parse(savedOverride);
-            }
           }
         } catch(e) {}
       });
