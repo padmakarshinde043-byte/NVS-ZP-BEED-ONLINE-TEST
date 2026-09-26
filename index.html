@@ -157,7 +157,6 @@
 
     .passage-box { background: #fffbeb; border: 1px solid #fde68a; border-radius: 10px; padding: 14px; margin-bottom: 14px; font-size: 0.95rem; line-height: 1.65; color: #92400e; }
     
-    /* आकृती कंटेनर - मोबाईलवर पूर्ण कार्ड भरून दिसण्यासाठी */
     .fig-container { display: flex; flex-direction: column; gap: 12px; margin: 14px 0; background: #f8fafc; padding: 10px; border-radius: 12px; align-items: center; justify-content: center; border: 1px dashed #cbd5e1; width: 100%; }
     .fig-box { 
       width: 100% !important; max-width: 100% !important; height: auto !important; 
@@ -188,10 +187,8 @@
     .badge-unsolved { background: #fee2e2; color: #991b1b; font-weight: 800; padding: 3px 8px; border-radius: 6px; }
 
     .congrats-header { font-size: 1.7rem; font-weight: 800; color: #b45309; margin-bottom: 8px; }
-    
-    /* फुलांचे फोटो मोकळे आणि मोठ्या आकारात दाखवण्यासाठी */
     .flower-banner-box { display: flex; justify-content: center; align-items: center; gap: 20px; margin-bottom: 14px; flex-wrap: wrap; }
-    .flower-banner-box img { max-height: 150px; width: auto; border-radius: 14px; object-fit: contain; box-shadow: 0 8px 20px rgba(0,0,0,0.12); background: transparent; }
+    .flower-banner-box img { max-height: 150px; width: auto; border-radius: 14px; object-fit: contain; background: transparent; }
 
     .report-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.95rem; }
     .report-table th, .report-table td { border: 1px solid #cbd5e1; padding: 10px; text-align: center; }
@@ -349,14 +346,14 @@
       </thead>
       <tbody>
         <tr>
-          <td style="text-align:left; font-weight:600;">भाग 1: मानसिक क्षमता चाचणी (प्रश्न 1 ते 40)</td>
-          <td>40</td>
-          <td>50</td>
+          <td style="text-align:left; font-weight:600;">भाग 1: मानसिक क्षमता चाचणी (प्रश्न 1 ते 30)</td>
+          <td>30</td>
+          <td>37.5</td>
         </tr>
         <tr>
-          <td style="text-align:left; font-weight:600;">भाग 2: अंकगणित चाचणी (प्रश्न 41 ते 60)</td>
-          <td>20</td>
-          <td>25</td>
+          <td style="text-align:left; font-weight:600;">भाग 2: अंकगणित चाचणी (प्रश्न 31 ते 60)</td>
+          <td>30</td>
+          <td>37.5</td>
         </tr>
         <tr>
           <td style="text-align:left; font-weight:600;">भाग 3: भाषा चाचणी - मराठी (प्रश्न 61 ते 80)</td>
@@ -389,11 +386,11 @@
     <div class="section-selector">
       <button id="tab-sec1" class="active" onclick="displaySection('mental')">
         <span>भाग १: मानसिक क्षमता</span>
-        <span class="sec-sub">(1 ते 40)</span>
+        <span class="sec-sub">(1 ते 30)</span>
       </button>
       <button id="tab-sec2" onclick="displaySection('math')">
         <span>भाग २: अंकगणित</span>
-        <span class="sec-sub">(41 ते 60)</span>
+        <span class="sec-sub">(31 ते 60)</span>
       </button>
       <button id="tab-sec3" onclick="displaySection('lang')">
         <span>भाग ३: भाषा चाचणी</span>
@@ -408,7 +405,6 @@
   <!-- निकाल स्क्रीन -->
   <div id="resultCertArea" style="display:none;" class="card" style="text-align:center;">
     <div style="text-align:center; padding:10px 0;">
-      <!-- flower1.jpg आणि flower2.jpg बिना बॉक्सचे मोकळे आणि मोठ्या आकारात -->
       <div class="flower-banner-box">
         <img src="flower1.jpg" alt="पुष्पगुच्छ १" onerror="this.style.display='none';">
         <img src="flower2.jpg" alt="पुष्पगुच्छ २" onerror="this.style.display='none';">
@@ -456,11 +452,11 @@
     <div class="section-selector">
       <button id="ak-tab-sec1" class="active" onclick="displayAkSection('mental')">
         <span>भाग १: मानसिक क्षमता</span>
-        <span class="sec-sub">(1 ते 40)</span>
+        <span class="sec-sub">(1 ते 30)</span>
       </button>
       <button id="ak-tab-sec2" onclick="displayAkSection('math')">
         <span>भाग २: अंकगणित</span>
-        <span class="sec-sub">(41 ते 60)</span>
+        <span class="sec-sub">(31 ते 60)</span>
       </button>
       <button id="ak-tab-sec3" onclick="displayAkSection('lang')">
         <span>भाग ३: भाषा चाचणी</span>
@@ -697,7 +693,7 @@
     { id: 4, title: "नवोदय सराव चाचणी क्र. 04 (2026-27)", dateISO: "2026-11-14", dateMarathi: "14 नोव्हेंबर 2026", file: "test4.json" },
     { id: 5, title: "नवोदय सराव चाचणी क्र. 05 (2026-27)", dateISO: "2026-11-15", dateMarathi: "15 नोव्हेंबर 2026", file: "test5.json" },
     { id: 6, title: "नवोदय सराव चाचणी क्र. 06 (2026-27)", dateISO: "2026-11-16", dateMarathi: "16 नोव्हेंबर 2026", file: "test6.json" },
-    { id: 7, title: "नवोदय सराव चाचणी क्र. 07 (2026-27)", dateISO: "2026-11-17", dateMarathi: "17 नोव्हेंबर 2026", file: "test7.json" },
+    { id: 7, title: "नवोदय sराव चाचणी क्र. 07 (2026-27)", dateISO: "2026-11-17", dateMarathi: "17 नोव्हेंबर 2026", file: "test7.json" },
     { id: 8, title: "नवोदय सराव चाचणी क्र. 08 (2026-27)", dateISO: "2026-11-18", dateMarathi: "18 नोव्हेंबर 2026", file: "test8.json" },
     { id: 9, title: "नवोदय सराव चाचणी क्र. 09 (2026-27)", dateISO: "2026-11-19", dateMarathi: "19 नोव्हेंबर 2026", file: "test9.json" },
     { id: 10, title: "नवोदय सराव चाचणी क्र. 10 (2026-27)", dateISO: "2026-11-20", dateMarathi: "20 नोव्हेंबर 2026", file: "test10.json" },
@@ -1214,9 +1210,12 @@
     const testId = parseInt(document.getElementById("editTestIdSelect").value);
     const qId = parseInt(document.getElementById("editQuestionIdInput").value);
 
+    // अचूक विभाग (Section) निश्चित करणे: १ ते ३० मानसिक, ३१ ते ६० अंकगणित, ६१ ते ८० भाषा
+    const calculatedSec = qId <= 30 ? "mental" : (qId <= 60 ? "math" : "lang");
+
     const updatedQ = {
       id: qId,
-      sec: qId <= 40 ? "mental" : (qId <= 60 ? "math" : "lang"),
+      sec: calculatedSec,
       text: document.getElementById("editQText").value,
       options: [
         document.getElementById("editOpt0").value,
@@ -1269,10 +1268,18 @@
       const data = await res.json();
 
       const promises = data.questions.map(async (q, idx) => {
+        // प्रत्येक प्रश्नाचा विभाग (sec) त्याच्या नव्या id नुसार अचूक असण्याची खात्री करणे (1-30 mental, 31-60 math, 61-80 lang)
+        if (q.id <= 30) q.sec = "mental";
+        else if (q.id <= 60) q.sec = "math";
+        else if (q.id <= 80) q.sec = "lang";
+
         try {
           const fbRes = await fetch(`${FIREBASE_DB_URL}/overrides/t${testId}_q${q.id}.json`);
           const fbData = await fbRes.json();
           if (fbData) {
+            if (fbData.id <= 30) fbData.sec = "mental";
+            else if (fbData.id <= 60) fbData.sec = "math";
+            else if (fbData.id <= 80) fbData.sec = "lang";
             data.questions[idx] = fbData;
           }
         } catch(e) {}
@@ -1389,10 +1396,17 @@
       const data = await res.json();
       
       const promises = data.questions.map(async (q, idx) => {
+        if (q.id <= 30) q.sec = "mental";
+        else if (q.id <= 60) q.sec = "math";
+        else if (q.id <= 80) q.sec = "lang";
+
         try {
           const fbRes = await fetch(`${FIREBASE_DB_URL}/overrides/t${data.testId}_q${q.id}.json`);
           const fbData = await fbRes.json();
           if (fbData) {
+            if (fbData.id <= 30) fbData.sec = "mental";
+            else if (fbData.id <= 60) fbData.sec = "math";
+            else if (fbData.id <= 80) fbData.sec = "lang";
             data.questions[idx] = fbData;
           }
         } catch(e) {}
@@ -1413,10 +1427,17 @@
       const data = await res.json();
 
       const promises = data.questions.map(async (q, idx) => {
+        if (q.id <= 30) q.sec = "mental";
+        else if (q.id <= 60) q.sec = "math";
+        else if (q.id <= 80) q.sec = "lang";
+
         try {
           const fbRes = await fetch(`${FIREBASE_DB_URL}/overrides/t${testId}_q${q.id}.json`);
           const fbData = await fbRes.json();
           if (fbData) {
+            if (fbData.id <= 30) fbData.sec = "mental";
+            else if (fbData.id <= 60) fbData.sec = "math";
+            else if (fbData.id <= 80) fbData.sec = "lang";
             data.questions[idx] = fbData;
           }
         } catch(e) {}
@@ -1462,7 +1483,13 @@
     const container = document.getElementById("questionsHost");
     container.innerHTML = "";
 
-    const filtered = currentQuizData.questions.filter(q => q.sec === secKey);
+    const filtered = currentQuizData.questions.filter(q => {
+      if (q.id <= 30) q.sec = "mental";
+      else if (q.id <= 60) q.sec = "math";
+      else if (q.id <= 80) q.sec = "lang";
+      return q.sec === secKey;
+    });
+
     let lastPassage = "";
 
     filtered.forEach(q => {
@@ -1531,8 +1558,16 @@
   function confirmSubmission() {
     currentScreen = 'summary';
     let counts = { mental: { total: 0, solved: 0 }, math: { total: 0, solved: 0 }, lang: { total: 0, solved: 0 } };
+    
     currentQuizData.questions.forEach(q => {
-      if (counts[q.sec]) { counts[q.sec].total++; if (recordedChoices[q.id] !== undefined) counts[q.sec].solved++; }
+      if (q.id <= 30) q.sec = "mental";
+      else if (q.id <= 60) q.sec = "math";
+      else if (q.id <= 80) q.sec = "lang";
+
+      if (counts[q.sec]) { 
+        counts[q.sec].total++; 
+        if (recordedChoices[q.id] !== undefined) counts[q.sec].solved++; 
+      }
     });
 
     const totalQ = counts.mental.total + counts.math.total + counts.lang.total;
@@ -1564,6 +1599,10 @@
     let mentalCorrect = 0, mathCorrect = 0, langCorrect = 0;
 
     currentQuizData.questions.forEach(q => {
+      if (q.id <= 30) q.sec = "mental";
+      else if (q.id <= 60) q.sec = "math";
+      else if (q.id <= 80) q.sec = "lang";
+
       if (recordedChoices[q.id] === q.correct) {
         if (q.sec === "mental") mentalCorrect++;
         else if (q.sec === "math") mathCorrect++;
@@ -1571,7 +1610,11 @@
       }
     });
 
-    const totalMarks = (mentalCorrect + mathCorrect + langCorrect) * 1.25;
+    // 1 ते 30 मानसिक (30 प्रश्न = 37.5 गुण), 31 ते 60 अंकगणित (30 प्रश्न = 37.5 गुण), 61 ते 80 भाषा (20 प्रश्न = 25 गुण)
+    const mentalMarks = mentalCorrect * 1.25;
+    const mathMarks = mathCorrect * 1.25;
+    const langMarks = langCorrect * 1.25;
+    const totalMarks = mentalMarks + mathMarks + langMarks;
     const perc = totalMarks.toFixed(1);
 
     loggedInUser.history = loggedInUser.history || {};
@@ -1605,9 +1648,9 @@
     document.getElementById("cPerc").innerText = perc;
 
     document.getElementById("cReportCardBody").innerHTML = `
-      <tr><td>मानसिक क्षमता चाचणी</td><td>40</td><td>${mentalCorrect}</td><td>${mentalCorrect * 1.25} / 50</td></tr>
-      <tr><td>अंकगणित चाचणी</td><td>20</td><td>${mathCorrect}</td><td>${mathCorrect * 1.25} / 25</td></tr>
-      <tr><td>भाषा चाचणी (मराठी)</td><td>20</td><td>${langCorrect}</td><td>${langCorrect * 1.25} / 25</td></tr>
+      <tr><td>मानसिक क्षमता चाचणी</td><td>30</td><td>${mentalCorrect}</td><td>${mentalMarks.toFixed(2)} / 37.5</td></tr>
+      <tr><td>अंकगणित चाचणी</td><td>30</td><td>${mathCorrect}</td><td>${mathMarks.toFixed(2)} / 37.5</td></tr>
+      <tr><td>भाषा चाचणी (मराठी)</td><td>20</td><td>${langCorrect}</td><td>${langMarks.toFixed(2)} / 25</td></tr>
     `;
 
     try { confetti({ particleCount: 100, spread: 70, origin: { y: 0.6 } }); } catch(e) {}
@@ -1631,7 +1674,12 @@
 
     const container = document.getElementById("akQuestionsHost");
     container.innerHTML = "";
-    const filtered = currentQuizData.questions.filter(q => q.sec === secKey);
+    const filtered = currentQuizData.questions.filter(q => {
+      if (q.id <= 30) q.sec = "mental";
+      else if (q.id <= 60) q.sec = "math";
+      else if (q.id <= 80) q.sec = "lang";
+      return q.sec === secKey;
+    });
 
     filtered.forEach(q => {
       const qDiv = document.createElement("div");
