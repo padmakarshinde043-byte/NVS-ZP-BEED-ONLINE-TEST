@@ -2,7 +2,7 @@
 <html lang="mr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
   <meta name="theme-color" content="#0f2b48">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -31,7 +31,7 @@
       --border: #cbd5e1;
     }
     * { box-sizing: border-box; font-family: 'Mukta', sans-serif; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
-    html, body { width: 100%; background-color: var(--bg); color: var(--text); font-size: 16px; overflow-x: hidden; }
+    html, body { width: 100%; background-color: var(--bg); color: var(--text); font-size: 16px; overflow-x: hidden; touch-action: manipulation; }
     body { display: flex; flex-direction: column; min-height: 100vh; }
     
     header {
@@ -157,27 +157,16 @@
 
     .passage-box { background: #fffbeb; border: 1px solid #fde68a; border-radius: 10px; padding: 14px; margin-bottom: 14px; font-size: 0.95rem; line-height: 1.65; color: #92400e; }
     
-    /* आकृती कंटेनर - मोबाईलवर पूर्ण कार्ड व्यापण्यासाठी */
+    /* आकृती कंटेनर - मोबाईलवर पूर्ण कार्ड भरून दिसण्यासाठी */
     .fig-container { display: flex; flex-direction: column; gap: 12px; margin: 14px 0; background: #f8fafc; padding: 10px; border-radius: 12px; align-items: center; justify-content: center; border: 1px dashed #cbd5e1; width: 100%; }
     .fig-box { 
       width: 100% !important; max-width: 100% !important; height: auto !important; 
-      min-height: 240px; max-height: 520px; border: 2px solid #cbd5e1; background: #fff; 
+      min-height: 240px; max-height: 500px; border: 2px solid #cbd5e1; background: #fff; 
       display: flex; align-items: center; justify-content: center; margin: 0 auto; 
       border-radius: 10px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.06); padding: 8px;
-      cursor: zoom-in; position: relative;
     }
-    .fig-box::after {
-      content: "🔍 मोठी करा"; position: absolute; bottom: 6px; right: 8px; background: rgba(15,43,72,0.8); color: #fff; font-size: 0.7rem; padding: 2px 6px; border-radius: 4px; pointer-events: none;
-    }
-    .fig-box img { width: 100% !important; height: auto !important; max-height: 500px; object-fit: contain !important; display: block; }
+    .fig-box img { width: 100% !important; height: auto !important; max-height: 480px; object-fit: contain !important; display: block; }
     .fig-box svg { width: 100% !important; height: 100% !important; }
-
-    /* इमेज झूम (Lightbox Modal) साठी CSS */
-    #imageModalOverlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15, 43, 72, 0.9); z-index: 4000; justify-content: center; align-items: center; backdrop-filter: blur(5px); padding: 16px; }
-    .image-modal-content { background: #ffffff; border-radius: 16px; max-width: 90vw; max-height: 90vh; width: 100%; display: flex; flex-direction: column; padding: 16px; box-shadow: 0 15px 40px rgba(0,0,0,0.4); border-top: 5px solid var(--accent); }
-    .image-modal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; }
-    .image-modal-body { flex: 1; display: flex; align-items: center; justify-content: center; overflow: auto; max-height: 75vh; background: #f8fafc; border-radius: 10px; padding: 10px; }
-    .image-modal-body img { max-width: 100%; max-height: 70vh; object-fit: contain; border-radius: 8px; }
     
     .options-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 12px; }
     .opt-label { display: flex; align-items: center; padding: 12px 14px; border: 1.5px solid var(--border); border-radius: 10px; cursor: pointer; background: #fff; font-size: 0.95rem; }
@@ -199,7 +188,8 @@
     .badge-unsolved { background: #fee2e2; color: #991b1b; font-weight: 800; padding: 3px 8px; border-radius: 6px; }
 
     .congrats-header { font-size: 1.7rem; font-weight: 800; color: #b45309; margin-bottom: 8px; }
-    .flower-badge { font-size: 2.8rem; margin-bottom: 6px; display: inline-block; }
+    .flower-banner-box { display: flex; justify-content: center; align-items: center; gap: 12px; margin-bottom: 10px; flex-wrap: wrap; }
+    .flower-banner-box img { max-height: 110px; width: auto; border-radius: 10px; object-fit: contain; border: 2px solid #fde047; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
 
     .report-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.95rem; }
     .report-table th, .report-table td { border: 1px solid #cbd5e1; padding: 10px; text-align: center; }
@@ -271,7 +261,7 @@
 
     <div class="form-group">
       <label>विद्यार्थ्याचे संपूर्ण नाव:</label>
-      <input type="text" id="sName" placeholder="उदा. ओंकार प्रकाश देशमुख">
+      <input type="text" id="sName" placeholder="उदा. पदमाकर चंद्रकांत शिंदे">
     </div>
     <div class="form-group">
       <label>पालकांचा खरा मोबाईल नंबर (10 अंकी):</label>
@@ -416,7 +406,11 @@
   <!-- निकाल स्क्रीन -->
   <div id="resultCertArea" style="display:none;" class="card" style="text-align:center;">
     <div style="text-align:center; padding:10px 0;">
-      <div class="flower-badge">🌸 🌺 💐 🌻</div>
+      <!-- GitHub वर अपलोड केलेले flower1.jpg आणि flower2.jpg फोटो -->
+      <div class="flower-banner-box">
+        <img src="flower1.jpg" alt="पुष्पगुच्छ १" onerror="this.style.display='none';">
+        <img src="flower2.jpg" alt="पुष्पगुच्छ २" onerror="this.style.display='none';">
+      </div>
       <div class="congrats-header">🎉 मनःपूर्वक अभिनंदन! 🎉</div>
       <p style="font-size:1.05rem; font-weight:700; color:#0f2b48;">आपली नवोदय सराव चाचणी यशस्वीरीत्या पूर्ण झाली आहे!</p>
     </div>
@@ -474,19 +468,6 @@
 
     <div id="akQuestionsHost"></div>
     <div id="akSectionNavFooter" class="section-nav-footer"></div>
-  </div>
-</div>
-
-<!-- इमेज झूम पाहण्यासाठी लाईटबॉक्स मोडल (Lightbox Modal) -->
-<div id="imageModalOverlay" onclick="closeImageModal()">
-  <div class="image-modal-content" onclick="event.stopPropagation()">
-    <div class="image-modal-header">
-      <h3 style="color:#0f2b48; font-weight:800; font-size:1.05rem;">🔍 आकृती मोठी दृश्य</h3>
-      <button onclick="closeImageModal()" style="background:#fee2e2; color:#991b1b; border:none; padding:6px 12px; border-radius:8px; font-weight:800; cursor:pointer;">✕ बंद करा</button>
-    </div>
-    <div class="image-modal-body" id="modalImageContainer">
-      <!-- इथे आकृती लोड होईल -->
-    </div>
   </div>
 </div>
 
@@ -1315,27 +1296,6 @@
     });
   }
 
-  /* इमेज झूम (Lightbox) फंक्शन्स */
-  function openImageModal(imgElement) {
-    const modal = document.getElementById("imageModalOverlay");
-    const container = document.getElementById("modalImageContainer");
-    container.innerHTML = "";
-    
-    // इमेज किंवा एसव्हीजी क्लोन करून मोडलमध्ये टाकणे
-    const clone = imgElement.cloneNode(true);
-    clone.style.width = "100%";
-    clone.style.height = "auto";
-    clone.style.maxHeight = "70vh";
-    clone.style.objectFit = "contain";
-    container.appendChild(clone);
-    
-    modal.style.display = "flex";
-  }
-
-  function closeImageModal() {
-    document.getElementById("imageModalOverlay").style.display = "none";
-  }
-
   function renderDashboard() {
     currentScreen = 'dashboard';
     history.replaceState({ screen: 'dashboard' }, "");
@@ -1464,7 +1424,7 @@
           if (fbData) {
             data.questions[idx] = fbData;
           } else {
-            const savedOverride = localStorage.getItem(`jnv_override_t${data.testId}_q${q.id}`);
+            const savedOverride = localStorage.getItem(`jnv_override_t${testId}_q${q.id}`);
             if (savedOverride) {
               data.questions[idx] = JSON.parse(savedOverride);
             }
@@ -1528,8 +1488,7 @@
       let figHtml = "";
       if (q.problemFig) {
         let probContent = q.problemFig.startsWith("http") || q.problemFig.startsWith("data:") ? `<img src="${q.problemFig}" onerror="this.onerror=null; this.src='https://upload.wikimedia.org/wikipedia/commons/3/3a/Visual_test_sample_2.svg';">` : q.problemFig;
-        // आकृतीवर क्लिक केल्यावर openImageModal फंक्शन कॉल होईल
-        figHtml += `<div class="fig-box" onclick="openImageModal(this)">${probContent}</div>`;
+        figHtml += `<div class="fig-box">${probContent}</div>`;
       }
 
       let opts = '<div class="options-grid">';
