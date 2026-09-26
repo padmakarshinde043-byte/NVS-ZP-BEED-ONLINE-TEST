@@ -188,8 +188,10 @@
     .badge-unsolved { background: #fee2e2; color: #991b1b; font-weight: 800; padding: 3px 8px; border-radius: 6px; }
 
     .congrats-header { font-size: 1.7rem; font-weight: 800; color: #b45309; margin-bottom: 8px; }
-    .flower-banner-box { display: flex; justify-content: center; align-items: center; gap: 12px; margin-bottom: 10px; flex-wrap: wrap; }
-    .flower-banner-box img { max-height: 110px; width: auto; border-radius: 10px; object-fit: contain; border: 2px solid #fde047; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+    
+    /* फुलांचे फोटो मोकळे आणि मोठ्या आकारात दाखवण्यासाठी */
+    .flower-banner-box { display: flex; justify-content: center; align-items: center; gap: 20px; margin-bottom: 14px; flex-wrap: wrap; }
+    .flower-banner-box img { max-height: 150px; width: auto; border-radius: 14px; object-fit: contain; box-shadow: 0 8px 20px rgba(0,0,0,0.12); background: transparent; }
 
     .report-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.95rem; }
     .report-table th, .report-table td { border: 1px solid #cbd5e1; padding: 10px; text-align: center; }
@@ -406,7 +408,7 @@
   <!-- निकाल स्क्रीन -->
   <div id="resultCertArea" style="display:none;" class="card" style="text-align:center;">
     <div style="text-align:center; padding:10px 0;">
-      <!-- GitHub वर अपलोड केलेले flower1.jpg आणि flower2.jpg फोटो -->
+      <!-- flower1.jpg आणि flower2.jpg बिना बॉक्सचे मोकळे आणि मोठ्या आकारात -->
       <div class="flower-banner-box">
         <img src="flower1.jpg" alt="पुष्पगुच्छ १" onerror="this.style.display='none';">
         <img src="flower2.jpg" alt="पुष्पगुच्छ २" onerror="this.style.display='none';">
@@ -1125,7 +1127,6 @@
     }
   }
 
-  /* QuotaExceededError टाळण्यासाठी थेट Firebase वर सेव्ह करणे */
   function saveVisualEditedQuestion() {
     const testId = parseInt(document.getElementById("vEditTestId").value);
     const qId = parseInt(document.getElementById("vEditQId").value);
