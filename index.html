@@ -346,14 +346,14 @@
       </thead>
       <tbody>
         <tr>
-          <td style="text-align:left; font-weight:600;">भाग 1: मानसिक क्षमता चाचणी (प्रश्न 1 ते 30)</td>
-          <td>30</td>
-          <td>37.5</td>
+          <td style="text-align:left; font-weight:600;">भाग 1: मानसिक क्षमता व परिसर अभ्यास (प्रश्न 1 ते 40)</td>
+          <td>40</td>
+          <td>50</td>
         </tr>
         <tr>
-          <td style="text-align:left; font-weight:600;">भाग 2: अंकगणित चाचणी (प्रश्न 31 ते 60)</td>
-          <td>30</td>
-          <td>37.5</td>
+          <td style="text-align:left; font-weight:600;">भाग 2: अंकगणित चाचणी (प्रश्न 41 ते 60)</td>
+          <td>20</td>
+          <td>25</td>
         </tr>
         <tr>
           <td style="text-align:left; font-weight:600;">भाग 3: भाषा चाचणी - मराठी (प्रश्न 61 ते 80)</td>
@@ -383,15 +383,15 @@
       </div>
     </div>
 
-    <!-- सुधारित टॅब रचना (मानसिक क्षमता १ ते ३०, अंकगणित ३१ ते ६०, भाषा ६१ ते ८०) -->
+    <!-- सुधारित टॅब रचना (मानसिक क्षमता व EVS 1 ते 40, अंकगणित 41 ते 60, भाषा 61 ते 80) -->
     <div class="section-selector">
       <button id="tab-sec1" class="active" onclick="displaySection('mental')">
-        <span>भाग १: मानसिक क्षमता</span>
-        <span class="sec-sub">(1 ते 30)</span>
+        <span>भाग १: मानसिक क्षमता व EVS</span>
+        <span class="sec-sub">(1 ते 40)</span>
       </button>
       <button id="tab-sec2" onclick="displaySection('math')">
         <span>भाग २: अंकगणित</span>
-        <span class="sec-sub">(31 ते 60)</span>
+        <span class="sec-sub">(41 ते 60)</span>
       </button>
       <button id="tab-sec3" onclick="displaySection('lang')">
         <span>भाग ३: भाषा चाचणी</span>
@@ -452,12 +452,12 @@
 
     <div class="section-selector">
       <button id="ak-tab-sec1" class="active" onclick="displayAkSection('mental')">
-        <span>भाग १: मानसिक क्षमता</span>
-        <span class="sec-sub">(1 ते 30)</span>
+        <span>भाग १: मानसिक क्षमता व EVS</span>
+        <span class="sec-sub">(1 ते 40)</span>
       </button>
       <button id="ak-tab-sec2" onclick="displayAkSection('math')">
         <span>भाग २: अंकगणित</span>
-        <span class="sec-sub">(31 ते 60)</span>
+        <span class="sec-sub">(41 ते 60)</span>
       </button>
       <button id="ak-tab-sec3" onclick="displayAkSection('lang')">
         <span>भाग ३: भाषा चाचणी</span>
@@ -1211,8 +1211,8 @@
     const testId = parseInt(document.getElementById("editTestIdSelect").value);
     const qId = parseInt(document.getElementById("editQuestionIdInput").value);
 
-    // अचूक विभाग (Section) निश्चित करणे: १ ते ३० मानसिक, ३१ ते ६० अंकगणित, ६१ ते ८० भाषा
-    const calculatedSec = qId <= 30 ? "mental" : (qId <= 60 ? "math" : "lang");
+    // विभाग (Section) अचूक ठरवणे: 1 ते 40 मानसिक/EVS, 41 ते 60 अंकगणित, 61 ते 80 भाषा
+    const calculatedSec = qId <= 40 ? "mental" : (qId <= 60 ? "math" : "lang");
 
     const updatedQ = {
       id: qId,
@@ -1269,8 +1269,8 @@
       const data = await res.json();
 
       const promises = data.questions.map(async (q, idx) => {
-        // प्रत्येक प्रश्नाचा विभाग (sec) त्याच्या नव्या id नुसार अचूक असण्याची खात्री करणे (1-30 mental, 31-60 math, 61-80 lang)
-        if (q.id <= 30) q.sec = "mental";
+        // 1 ते 40 मानसिक, 41 ते 60 अंकगणित, 61 ते 80 भाषा
+        if (q.id <= 40) q.sec = "mental";
         else if (q.id <= 60) q.sec = "math";
         else if (q.id <= 80) q.sec = "lang";
 
@@ -1278,7 +1278,7 @@
           const fbRes = await fetch(`${FIREBASE_DB_URL}/overrides/t${testId}_q${q.id}.json`);
           const fbData = await fbRes.json();
           if (fbData) {
-            if (fbData.id <= 30) fbData.sec = "mental";
+            if (fbData.id <= 40) fbData.sec = "mental";
             else if (fbData.id <= 60) fbData.sec = "math";
             else if (fbData.id <= 80) fbData.sec = "lang";
             data.questions[idx] = fbData;
@@ -1397,7 +1397,7 @@
       const data = await res.json();
       
       const promises = data.questions.map(async (q, idx) => {
-        if (q.id <= 30) q.sec = "mental";
+        if (q.id <= 40) q.sec = "mental";
         else if (q.id <= 60) q.sec = "math";
         else if (q.id <= 80) q.sec = "lang";
 
@@ -1405,7 +1405,7 @@
           const fbRes = await fetch(`${FIREBASE_DB_URL}/overrides/t${data.testId}_q${q.id}.json`);
           const fbData = await fbRes.json();
           if (fbData) {
-            if (fbData.id <= 30) fbData.sec = "mental";
+            if (fbData.id <= 40) fbData.sec = "mental";
             else if (fbData.id <= 60) fbData.sec = "math";
             else if (fbData.id <= 80) fbData.sec = "lang";
             data.questions[idx] = fbData;
@@ -1428,7 +1428,7 @@
       const data = await res.json();
 
       const promises = data.questions.map(async (q, idx) => {
-        if (q.id <= 30) q.sec = "mental";
+        if (q.id <= 40) q.sec = "mental";
         else if (q.id <= 60) q.sec = "math";
         else if (q.id <= 80) q.sec = "lang";
 
@@ -1436,7 +1436,7 @@
           const fbRes = await fetch(`${FIREBASE_DB_URL}/overrides/t${testId}_q${q.id}.json`);
           const fbData = await fbRes.json();
           if (fbData) {
-            if (fbData.id <= 30) fbData.sec = "mental";
+            if (fbData.id <= 40) fbData.sec = "mental";
             else if (fbData.id <= 60) fbData.sec = "math";
             else if (fbData.id <= 80) fbData.sec = "lang";
             data.questions[idx] = fbData;
@@ -1485,8 +1485,8 @@
     container.innerHTML = "";
 
     const filtered = currentQuizData.questions.filter(q => {
-      // इथे प्रत्येक प्रश्न त्याच्या ID नुसार अचूक विभागात फिल्टर होईल (1-30 mental, 31-60 math, 61-80 lang)
-      if (q.id <= 30) q.sec = "mental";
+      // नवीन विभागणी नियमानुसार ID सेट करणे (1 ते 40 मानसिक, 41 ते 60 अंकगणित, 61 ते 80 भाषा)
+      if (q.id <= 40) q.sec = "mental";
       else if (q.id <= 60) q.sec = "math";
       else if (q.id <= 80) q.sec = "lang";
       return q.sec === secKey;
@@ -1562,7 +1562,7 @@
     let counts = { mental: { total: 0, solved: 0 }, math: { total: 0, solved: 0 }, lang: { total: 0, solved: 0 } };
     
     currentQuizData.questions.forEach(q => {
-      if (q.id <= 30) q.sec = "mental";
+      if (q.id <= 40) q.sec = "mental";
       else if (q.id <= 60) q.sec = "math";
       else if (q.id <= 80) q.sec = "lang";
 
@@ -1577,7 +1577,7 @@
     const totalRem = totalQ - totalS;
 
     document.getElementById("summaryTableBody").innerHTML = `
-      <tr><td style="text-align:left; font-weight:700;">मानसिक क्षमता</td><td>${counts.mental.total}</td><td><span class="badge-solved">${counts.mental.solved}</span></td><td><span class="${counts.mental.total-counts.mental.solved>0?'badge-unsolved':'badge-solved'}">${counts.mental.total-counts.mental.solved}</span></td></tr>
+      <tr><td style="text-align:left; font-weight:700;">मानसिक क्षमता व EVS</td><td>${counts.mental.total}</td><td><span class="badge-solved">${counts.mental.solved}</span></td><td><span class="${counts.mental.total-counts.mental.solved>0?'badge-unsolved':'badge-solved'}">${counts.mental.total-counts.mental.solved}</span></td></tr>
       <tr><td style="text-align:left; font-weight:700;">अंकगणित</td><td>${counts.math.total}</td><td><span class="badge-solved">${counts.math.solved}</span></td><td><span class="${counts.math.total-counts.math.solved>0?'badge-unsolved':'badge-solved'}">${counts.math.total-counts.math.solved}</span></td></tr>
       <tr><td style="text-align:left; font-weight:700;">भाषा चाचणी</td><td>${counts.lang.total}</td><td><span class="badge-solved">${counts.lang.solved}</span></td><td><span class="${counts.lang.total-counts.lang.solved>0?'badge-unsolved':'badge-solved'}">${counts.lang.total-counts.lang.solved}</span></td></tr>
     `;
@@ -1601,7 +1601,7 @@
     let mentalCorrect = 0, mathCorrect = 0, langCorrect = 0;
 
     currentQuizData.questions.forEach(q => {
-      if (q.id <= 30) q.sec = "mental";
+      if (q.id <= 40) q.sec = "mental";
       else if (q.id <= 60) q.sec = "math";
       else if (q.id <= 80) q.sec = "lang";
 
@@ -1612,7 +1612,7 @@
       }
     });
 
-    // 1 ते 30 मानसिक (30 प्रश्न = 37.5 गुण), 31 ते 60 अंकगणित (30 प्रश्न = 37.5 गुण), 61 ते 80 भाषा (20 प्रश्न = 25 गुण)
+    // 1 ते 40 मानसिक/EVS (40 प्रश्न = 50 गुण), 41 ते 60 अंकगणित (20 प्रश्न = 25 गुण), 61 ते 80 भाषा (20 प्रश्न = 25 गुण)
     const mentalMarks = mentalCorrect * 1.25;
     const mathMarks = mathCorrect * 1.25;
     const langMarks = langCorrect * 1.25;
@@ -1650,8 +1650,8 @@
     document.getElementById("cPerc").innerText = perc;
 
     document.getElementById("cReportCardBody").innerHTML = `
-      <tr><td>मानसिक क्षमता चाचणी (1 ते 30)</td><td>30</td><td>${mentalCorrect}</td><td>${mentalMarks.toFixed(2)} / 37.5</td></tr>
-      <tr><td>अंकगणित चाचणी (31 ते 60)</td><td>30</td><td>${mathCorrect}</td><td>${mathMarks.toFixed(2)} / 37.5</td></tr>
+      <tr><td>मानसिक क्षमता व परिसर अभ्यास (1 ते 40)</td><td>40</td><td>${mentalCorrect}</td><td>${mentalMarks.toFixed(2)} / 50</td></tr>
+      <tr><td>अंकगणित चाचणी (41 ते 60)</td><td>20</td><td>${mathCorrect}</td><td>${mathMarks.toFixed(2)} / 25</td></tr>
       <tr><td>भाषा चाचणी (61 ते 80)</td><td>20</td><td>${langCorrect}</td><td>${langMarks.toFixed(2)} / 25</td></tr>
     `;
 
@@ -1677,7 +1677,7 @@
     const container = document.getElementById("akQuestionsHost");
     container.innerHTML = "";
     const filtered = currentQuizData.questions.filter(q => {
-      if (q.id <= 30) q.sec = "mental";
+      if (q.id <= 40) q.sec = "mental";
       else if (q.id <= 60) q.sec = "math";
       else if (q.id <= 80) q.sec = "lang";
       return q.sec === secKey;
@@ -1686,7 +1686,6 @@
     filtered.forEach(q => {
       const qDiv = document.createElement("div");
       qDiv.className = "question-card";
-      let opts = '<script class="options-grid">'; // typo fix handled in loop
       let optsGrid = '<div class="options-grid">';
       q.options.forEach((opt, idx) => {
         let optClass = "";
@@ -1696,7 +1695,7 @@
         
         if (idx === q.correct) {
           optClass = "ak-correct";
-          choiceBadge = ' <b style="color:var(--success);">[अचूक उत्तर]</b>';
+          choice = ' <b style="color:var(--success);">[अचूक उत्तर]</b>';
         }
         if (studentChoice === idx) {
           optClass += " ak-student-choice";
