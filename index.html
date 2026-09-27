@@ -383,6 +383,7 @@
       </div>
     </div>
 
+    <!-- सुधारित टॅब रचना (मानसिक क्षमता १ ते ३०, अंकगणित ३१ ते ६०, भाषा ६१ ते ८०) -->
     <div class="section-selector">
       <button id="tab-sec1" class="active" onclick="displaySection('mental')">
         <span>भाग १: मानसिक क्षमता</span>
@@ -693,13 +694,13 @@
     { id: 4, title: "नवोदय सराव चाचणी क्र. 04 (2026-27)", dateISO: "2026-11-14", dateMarathi: "14 नोव्हेंबर 2026", file: "test4.json" },
     { id: 5, title: "नवोदय सराव चाचणी क्र. 05 (2026-27)", dateISO: "2026-11-15", dateMarathi: "15 नोव्हेंबर 2026", file: "test5.json" },
     { id: 6, title: "नवोदय सराव चाचणी क्र. 06 (2026-27)", dateISO: "2026-11-16", dateMarathi: "16 नोव्हेंबर 2026", file: "test6.json" },
-    { id: 7, title: "नवोदय sराव चाचणी क्र. 07 (2026-27)", dateISO: "2026-11-17", dateMarathi: "17 नोव्हेंबर 2026", file: "test7.json" },
+    { id: 7, title: "नवोदय सराव चाचणी क्र. 07 (2026-27)", dateISO: "2026-11-17", dateMarathi: "17 नोव्हेंबर 2026", file: "test7.json" },
     { id: 8, title: "नवोदय सराव चाचणी क्र. 08 (2026-27)", dateISO: "2026-11-18", dateMarathi: "18 नोव्हेंबर 2026", file: "test8.json" },
     { id: 9, title: "नवोदय सराव चाचणी क्र. 09 (2026-27)", dateISO: "2026-11-19", dateMarathi: "19 नोव्हेंबर 2026", file: "test9.json" },
     { id: 10, title: "नवोदय सराव चाचणी क्र. 10 (2026-27)", dateISO: "2026-11-20", dateMarathi: "20 नोव्हेंबर 2026", file: "test10.json" },
     { id: 11, title: "नवोदय सराव चाचणी क्र. 11 (2026-27)", dateISO: "2026-11-21", dateMarathi: "21 नोव्हेंबर 2026", file: "test11.json" },
     { id: 12, title: "नवोदय सराव चाचणी क्र. 12 (2026-27)", dateISO: "2026-11-22", dateMarathi: "22 नोव्हेंबर 2026", file: "test12.json" },
-    { id: 13, title: "नवोदय सराव चाचणी क्र. 13 (2026-27)", dateISO: "2026-11-23", dateMarathi: "23 नोव्हेंबर 2026", file: "test13.json" },
+    { id: 13, title: "नवोदय sराव चाचणी क्र. 13 (2026-27)", dateISO: "2026-11-23", dateMarathi: "23 नोव्हेंबर 2026", file: "test13.json" },
     { id: 14, title: "नवोदय सराव चाचणी क्र. 14 (2026-27)", dateISO: "2026-11-24", dateMarathi: "24 नोव्हेंबर 2026", file: "test14.json" },
     { id: 15, title: "नवोदय सराव चाचणी क्र. 15 (2026-27)", dateISO: "2026-11-25", dateMarathi: "25 नोव्हेंबर 2026", file: "test15.json" }
   ];
@@ -1484,6 +1485,7 @@
     container.innerHTML = "";
 
     const filtered = currentQuizData.questions.filter(q => {
+      // इथे प्रत्येक प्रश्न त्याच्या ID नुसार अचूक विभागात फिल्टर होईल (1-30 mental, 31-60 math, 61-80 lang)
       if (q.id <= 30) q.sec = "mental";
       else if (q.id <= 60) q.sec = "math";
       else if (q.id <= 80) q.sec = "lang";
@@ -1648,9 +1650,9 @@
     document.getElementById("cPerc").innerText = perc;
 
     document.getElementById("cReportCardBody").innerHTML = `
-      <tr><td>मानसिक क्षमता चाचणी</td><td>30</td><td>${mentalCorrect}</td><td>${mentalMarks.toFixed(2)} / 37.5</td></tr>
-      <tr><td>अंकगणित चाचणी</td><td>30</td><td>${mathCorrect}</td><td>${mathMarks.toFixed(2)} / 37.5</td></tr>
-      <tr><td>भाषा चाचणी (मराठी)</td><td>20</td><td>${langCorrect}</td><td>${langMarks.toFixed(2)} / 25</td></tr>
+      <tr><td>मानसिक क्षमता चाचणी (1 ते 30)</td><td>30</td><td>${mentalCorrect}</td><td>${mentalMarks.toFixed(2)} / 37.5</td></tr>
+      <tr><td>अंकगणित चाचणी (31 ते 60)</td><td>30</td><td>${mathCorrect}</td><td>${mathMarks.toFixed(2)} / 37.5</td></tr>
+      <tr><td>भाषा चाचणी (61 ते 80)</td><td>20</td><td>${langCorrect}</td><td>${langMarks.toFixed(2)} / 25</td></tr>
     `;
 
     try { confetti({ particleCount: 100, spread: 70, origin: { y: 0.6 } }); } catch(e) {}
@@ -1684,7 +1686,8 @@
     filtered.forEach(q => {
       const qDiv = document.createElement("div");
       qDiv.className = "question-card";
-      let opts = '<div class="options-grid">';
+      let opts = '<script class="options-grid">'; // typo fix handled in loop
+      let optsGrid = '<div class="options-grid">';
       q.options.forEach((opt, idx) => {
         let optClass = "";
         let choiceBadge = "";
@@ -1701,14 +1704,14 @@
         }
 
         let optDisplay = opt.startsWith("http") || opt.startsWith("data:") ? `<img src="${opt}" style="max-height:35px; object-fit:contain;" onerror="this.onerror=null; this.src='';">` : `<span>${opt}</span>`;
-        opts += `<div class="opt-label ${optClass}">${optDisplay} ${choiceBadge}</div>`;
+        optsGrid += `<div class="opt-label ${optClass}">${optDisplay} ${choiceBadge}</div>`;
       });
-      opts += '</div>';
+      optsGrid += '</div>';
 
       let cleanText = (q.text || "").replace(/^(प्रश्न|Question)\s*\d+[\s\.:\-\)]*/gi, "").trim();
       if (!cleanText) cleanText = q.text || "";
 
-      qDiv.innerHTML = `<div class="q-badge-box">प्रश्न ${q.id}</div><div class="q-text-content">${cleanText}</div>${opts}<div class="exp-box">💡 <b>स्पष्टीकरण:</b> ${q.exp}</div>`;
+      qDiv.innerHTML = `<div class="q-badge-box">प्रश्न ${q.id}</div><div class="q-text-content">${cleanText}</div>${optsGrid}<div class="exp-box">💡 <b>स्पष्टीकरण:</b> ${q.exp}</div>`;
       container.appendChild(qDiv);
     });
   }
