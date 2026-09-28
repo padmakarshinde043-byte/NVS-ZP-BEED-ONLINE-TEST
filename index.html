@@ -472,10 +472,13 @@
 
 <!-- ॲडमिन नोंदणीकृत युझर्स व्यवस्थापन MODAL -->
 <div id="adminRegisteredUsersModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(15,43,72,0.85); z-index:3650; justify-content:center; align-items:center; backdrop-filter:blur(4px); padding:12px;">
-  <div style="background:#ffffff; border-radius:16px; max-width:800px; width:100%; max-height:90vh; overflow-y:auto; padding:24px 20px; box-shadow:0 12px 35px rgba(0,0,0,0.3); border-top:5px solid #dc2626;">
+  <div style="background:#ffffff; border-radius:16px; max-width:850px; width:100%; max-height:90vh; overflow-y:auto; padding:24px 20px; box-shadow:0 12px 35px rgba(0,0,0,0.3); border-top:5px solid #dc2626;">
     <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; border-bottom:2px solid #e2e8f0; padding-bottom:10px;">
-      <h3 style="color:#dc2626; font-weight:800; font-size:1.2rem;">👥 नोंदणीकृत विद्यार्थी व्यवस्थापन (Delete Users)</h3>
+      <h3 style="color:#dc2626; font-weight:800; font-size:1.2rem;">👥 नोंदणीकृत विद्यार्थी व्यवस्थापन (Bulk Delete)</h3>
       <button onclick="closeAdminRegisteredUsersModal()" style="background:#fee2e2; color:#991b1b; border:none; padding:4px 10px; border-radius:8px; font-weight:800; cursor:pointer;">✕ बंद करा</button>
+    </div>
+    <div style="display:flex; gap:10px; margin-bottom:12px; align-items:center; flex-wrap:wrap;">
+      <button class="btn-action" style="background:#dc2626; color:#fff;" onclick="deleteSelectedRegisteredUsers()">🗑️ निवडलेले युझर्स डिलीट करा</button>
     </div>
     <div id="registeredUsersTableHost" style="overflow-x:auto;"></div>
   </div>
@@ -626,12 +629,13 @@
 <div id="adminToppersModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(15,43,72,0.85); z-index:3500; justify-content:center; align-items:center; backdrop-filter:blur(4px); padding:12px;">
   <div style="background:#ffffff; border-radius:16px; max-width:850px; width:100%; max-height:90vh; overflow-y:auto; padding:24px 20px; box-shadow:0 12px 35px rgba(0,0,0,0.3); border-top:5px solid #ea580c;">
     <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; border-bottom:2px solid #e2e8f0; padding-bottom:10px;">
-      <h3 style="color:#0f2b48; font-weight:800; font-size:1.2rem;">🏆 Top 50 गुणवंत विद्यार्थी (Delete Result Option)</h3>
+      <h3 style="color:#0f2b48; font-weight:800; font-size:1.2rem;">🏆 Top 50 गुणवंत विद्यार्थी (Bulk Delete)</h3>
       <button onclick="closeAdminToppersModal()" style="background:#fee2e2; color:#991b1b; border:none; padding:4px 10px; border-radius:8px; font-weight:800; cursor:pointer;">✕ बंद करा</button>
     </div>
     <div style="display:flex; gap:10px; margin-bottom:14px; align-items:center; flex-wrap:wrap;">
       <label style="font-weight:700; color:#334155;">चाचणी निवडा:</label>
       <select id="adminTestSelector" onchange="loadToppersForSelectedTest()" style="padding:8px 12px; border:1.5px solid #cbd5e1; border-radius:8px; font-weight:700;"></select>
+      <button class="btn-action" style="background:#dc2626; color:#fff;" onclick="deleteSelectedToppers()">🗑️ निवडलेले निकाल डिलीट करा</button>
       <button class="btn-action btn-start" style="padding:8px 14px;" onclick="downloadToppersExcel()">📥 एक्सेल डाऊनलोड</button>
     </div>
     <div id="toppersTableHost" style="overflow-x:auto;"></div>
@@ -891,7 +895,7 @@
     }).catch(() => {});
   }
 
-  // ------------------ Top 50 Management & Deletion ------------------
+  // ------------------ Top 50 Management & Bulk Deletion ------------------
   function openAdminToppersModal() {
     document.getElementById("adminToppersModal").style.display = "flex";
     const sel = document.getElementById("adminTestSelector");
@@ -936,6 +940,7 @@
         let rows = "";
         toppers.forEach((t, i) => {
           rows += `<tr>
+            <td><input type="checkbox" class="topper-checkbox" value="${t.firebaseKey}" style="width:18px; height:18px; cursor:pointer;"></td>
             <td style="font-weight:800;">#${i + 1}</td>
             <td style="text-align:left; font-weight:700;">${t.name}</td>
             <td>${t.taluka}</td>
@@ -946,13 +951,52 @@
           </tr>`;
         });
 
-        host.innerHTML = `<table class="report-table" style="margin:0;"><thead><tr><th>रँक</th><th style="text-align:left;">नाव</th><th>तालुका</th><th>मोबाईल</th><th>गुण</th><th>टक्के</th><th>कृती</th></tr></thead><tbody>${rows}</tbody></table>`;
+        host.innerHTML = `
+          <table class="report-table" style="margin:0;">
+            <thead>
+              <tr>
+                <th><input type="checkbox" id="selectAllToppers" onclick="toggleSelectAllToppers(this)" style="width:18px; height:18px; cursor:pointer;" title="सर्व निवडा"></th>
+                <th>रँक</th>
+                <th style="text-align:left;">नाव</th>
+                <th>तालुका</th>
+                <th>मोबाईल</th>
+                <th>गुण</th>
+                <th>टक्के</th>
+                <th>कृती</th>
+              </tr>
+            </thead>
+            <tbody>${rows}</tbody>
+          </table>`;
       })
       .catch(() => { host.innerHTML = "<p style='text-align:center; color:red;'>माहिती आणताना त्रुटी आली.</p>"; });
   }
 
+  function toggleSelectAllToppers(source) {
+    const checkboxes = document.querySelectorAll('.topper-checkbox');
+    checkboxes.forEach(cb => cb.checked = source.checked);
+  }
+
+  function deleteSelectedToppers() {
+    const checkboxes = document.querySelectorAll('.topper-checkbox:checked');
+    if (checkboxes.length === 0) { alert("कृपया डिलीट करण्यासाठी किमान एक विद्यार्थी निवडा."); return; }
+
+    if (confirm(`निश्चितच निवडलेले ${checkboxes.length} निकाल डिलीट करायचे आहेत का?`)) {
+      const deletePromises = Array.from(checkboxes).map(cb => 
+        fetch(`${FIREBASE_DB_URL}/results/${cb.value}.json`, { method: "DELETE" })
+      );
+
+      Promise.all(deletePromises)
+        .then(() => {
+          alert("निवडलेले निकाल यशस्वीरित्या डिलीट झाले!");
+          loadToppersForSelectedTest();
+          fetchAdminDashboardData();
+        })
+        .catch(() => alert("डेटा डिलीट करताना त्रुटी आली."));
+    }
+  }
+
   function deleteResultEntry(firebaseKey) {
-    if (confirm("हा निकाल/एन्ट्री निश्चित डिलीट करायची आहे का?")) {
+    if (confirm("हा निकाल निश्चित डिलीट करायचा आहे का?")) {
       fetch(`${FIREBASE_DB_URL}/results/${firebaseKey}.json`, { method: "DELETE" })
         .then(() => {
           alert("निकाल यशस्वीरित्या डिलीट केला!");
@@ -963,7 +1007,7 @@
     }
   }
 
-  // ------------------ Registered Users Management & Deletion ------------------
+  // ------------------ Registered Users Management & Bulk Deletion ------------------
   function openAdminRegisteredUsersModal() {
     document.getElementById("adminRegisteredUsersModal").style.display = "flex";
     loadRegisteredUsersTable();
@@ -989,6 +1033,7 @@
         let rows = "";
         entries.forEach(([key, st], idx) => {
           rows += `<tr>
+            <td><input type="checkbox" class="student-checkbox" value="${key}" style="width:18px; height:18px; cursor:pointer;"></td>
             <td style="font-weight:800;">${idx + 1}</td>
             <td style="text-align:left; font-weight:700;">${st.name || '-'}</td>
             <td>${st.taluka || '-'}</td>
@@ -998,9 +1043,47 @@
           </tr>`;
         });
 
-        host.innerHTML = `<table class="report-table" style="margin:0;"><thead><tr><th>अ.क्र.</th><th style="text-align:left;">नाव</th><th>तालुका</th><th>मोबाईल नंबर</th><th>नोंदणी वेळ</th><th>कृती</th></tr></thead><tbody>${rows}</tbody></table>`;
+        host.innerHTML = `
+          <table class="report-table" style="margin:0;">
+            <thead>
+              <tr>
+                <th><input type="checkbox" id="selectAllStudents" onclick="toggleSelectAllStudents(this)" style="width:18px; height:18px; cursor:pointer;" title="सर्व निवडा"></th>
+                <th>अ.क्र.</th>
+                <th style="text-align:left;">नाव</th>
+                <th>तालुका</th>
+                <th>मोबाईल नंबर</th>
+                <th>नोंदणी वेळ</th>
+                <th>कृती</th>
+              </tr>
+            </thead>
+            <tbody>${rows}</tbody>
+          </table>`;
       })
       .catch(() => { host.innerHTML = "<p style='text-align:center; color:red;'>विद्यार्थ्यांची यादी लोड करण्यात त्रुटी आली.</p>"; });
+  }
+
+  function toggleSelectAllStudents(source) {
+    const checkboxes = document.querySelectorAll('.student-checkbox');
+    checkboxes.forEach(cb => cb.checked = source.checked);
+  }
+
+  function deleteSelectedRegisteredUsers() {
+    const checkboxes = document.querySelectorAll('.student-checkbox:checked');
+    if (checkboxes.length === 0) { alert("कृपया डिलीट करण्यासाठी किमान एक विद्यार्थी निवडा."); return; }
+
+    if (confirm(`निश्चितच निवडलेले ${checkboxes.length} विद्यार्थी डिलीट करायचे आहेत का?`)) {
+      const deletePromises = Array.from(checkboxes).map(cb => 
+        fetch(`${FIREBASE_DB_URL}/students/${cb.value}.json`, { method: "DELETE" })
+      );
+
+      Promise.all(deletePromises)
+        .then(() => {
+          alert("निवडलेले विद्यार्थी यशस्वीरित्या डिलीट झाले!");
+          loadRegisteredUsersTable();
+          fetchAdminDashboardData();
+        })
+        .catch(() => alert("विद्यार्थी डिलीट करताना त्रुटी आली."));
+    }
   }
 
   function deleteRegisteredUser(firebaseKey) {
