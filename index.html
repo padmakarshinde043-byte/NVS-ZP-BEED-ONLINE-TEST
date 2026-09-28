@@ -305,6 +305,7 @@
       </div>
       <div style="display:flex; gap:10px; margin-top:12px; flex-wrap:wrap;">
         <button class="btn-action btn-resume" onclick="openAdminToppersModal()">🏆 Top 50 Toppers</button>
+        <button class="btn-action" style="background:#dc2626; color:#fff;" onclick="openAdminRegisteredUsersModal()">👥 नोंदणीकृत युझर्स (Manage)</button>
         <button class="btn-action" style="background:#0284c7; color:#fff;" onclick="openAdminVisualEditorModal()">🖼️ आकृती प्रश्न संपादक (Q1-20)</button>
         <button class="btn-action" style="background:#0d9488; color:#fff;" onclick="openAdminQuestionEditorModal()">✏️ प्रश्न क्र. 21-80 संपादक</button>
         <button class="btn-action" style="background:#0284c7; color:#fff;" onclick="openShowJsonModal()">📋 Show JSON</button>
@@ -383,7 +384,6 @@
       </div>
     </div>
 
-    <!-- सुधारित टॅब रचना (मानसिक क्षमता व EVS 1 ते 40, अंकगणित 41 ते 60, भाषा 61 ते 80) -->
     <div class="section-selector">
       <button id="tab-sec1" class="active" onclick="displaySection('mental')">
         <span>भाग १: मानसिक क्षमता व EVS</span>
@@ -470,7 +470,18 @@
   </div>
 </div>
 
-<!-- ॲडमिन आकृती प्रश्न संपादक (Visual Editor Q1-20) MODAL -->
+<!-- ॲडमिन नोंदणीकृत युझर्स व्यवस्थापन MODAL -->
+<div id="adminRegisteredUsersModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(15,43,72,0.85); z-index:3650; justify-content:center; align-items:center; backdrop-filter:blur(4px); padding:12px;">
+  <div style="background:#ffffff; border-radius:16px; max-width:800px; width:100%; max-height:90vh; overflow-y:auto; padding:24px 20px; box-shadow:0 12px 35px rgba(0,0,0,0.3); border-top:5px solid #dc2626;">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; border-bottom:2px solid #e2e8f0; padding-bottom:10px;">
+      <h3 style="color:#dc2626; font-weight:800; font-size:1.2rem;">👥 नोंदणीकृत विद्यार्थी व्यवस्थापन (Delete Users)</h3>
+      <button onclick="closeAdminRegisteredUsersModal()" style="background:#fee2e2; color:#991b1b; border:none; padding:4px 10px; border-radius:8px; font-weight:800; cursor:pointer;">✕ बंद करा</button>
+    </div>
+    <div id="registeredUsersTableHost" style="overflow-x:auto;"></div>
+  </div>
+</div>
+
+<!-- ॲडमिन आकृती प्रश्न संपादक MODAL -->
 <div id="adminVisualEditorModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(15,43,72,0.85); z-index:3900; justify-content:center; align-items:center; backdrop-filter:blur(4px); padding:12px;">
   <div style="background:#ffffff; border-radius:16px; max-width:700px; width:100%; max-height:90vh; overflow-y:auto; padding:24px 20px; box-shadow:0 12px 35px rgba(0,0,0,0.3); border-top:5px solid #0284c7;">
     <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; border-bottom:2px solid #e2e8f0; padding-bottom:10px;">
@@ -505,23 +516,23 @@
         <input type="text" id="vProbImgUrl" placeholder="https://..." oninput="updateUrlPreview(this.value, 'vProbPreview')" style="margin-top:4px;">
       </div>
 
-      <label style="color:#0f2b48; font-weight:800; display:block; margin-bottom:6px;">खालील ४ पर्याय (क्लिक करण्यासाठी):</label>
+      <label style="color:#0f2b48; font-weight:800; display:block; margin-bottom:6px;">खालील ४ पर्याय:</label>
       <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:12px;">
         <div class="form-group" style="background:#f8fafc; padding:8px; border-radius:8px; margin-bottom:0;">
-          <label style="font-size:0.82rem; font-weight:700;">पर्याय (A) मजकूर / आकृती:</label>
-          <input type="text" id="vOptText0" placeholder="उदा. (A) किंवा इमेज URL">
+          <label style="font-size:0.82rem; font-weight:700;">पर्याय (A):</label>
+          <input type="text" id="vOptText0">
         </div>
         <div class="form-group" style="background:#f8fafc; padding:8px; border-radius:8px; margin-bottom:0;">
-          <label style="font-size:0.82rem; font-weight:700;">पर्याय (B) मजकूर / आकृती:</label>
-          <input type="text" id="vOptText1" placeholder="उदा. (B) किंवा इमेज URL">
+          <label style="font-size:0.82rem; font-weight:700;">पर्याय (B):</label>
+          <input type="text" id="vOptText1">
         </div>
         <div class="form-group" style="background:#f8fafc; padding:8px; border-radius:8px; margin-bottom:0;">
-          <label style="font-size:0.82rem; font-weight:700;">पर्याय (C) मजकूर / आकृती:</label>
-          <input type="text" id="vOptText2" placeholder="उदा. (C) किंवा इमेज URL">
+          <label style="font-size:0.82rem; font-weight:700;">पर्याय (C):</label>
+          <input type="text" id="vOptText2">
         </div>
         <div class="form-group" style="background:#f8fafc; padding:8px; border-radius:8px; margin-bottom:0;">
-          <label style="font-size:0.82rem; font-weight:700;">पर्याय (D) मजकूर / आकृती:</label>
-          <input type="text" id="vOptText3" placeholder="उदा. (D) किंवा इमेज URL">
+          <label style="font-size:0.82rem; font-weight:700;">पर्याय (D):</label>
+          <input type="text" id="vOptText3">
         </div>
       </div>
 
@@ -568,27 +579,15 @@
 
     <div id="editorFormContainer" style="display:none;">
       <div class="form-group">
-        <label>प्रश्न मजकूर (Text):</label>
+        <label>प्रश्न मजकूर:</label>
         <textarea id="editQText" rows="3"></textarea>
       </div>
+      <div class="form-group"><label>पर्याय 1 (A):</label><input type="text" id="editOpt0"></div>
+      <div class="form-group"><label>पर्याय 2 (B):</label><input type="text" id="editOpt1"></div>
+      <div class="form-group"><label>पर्याय 3 (C):</label><input type="text" id="editOpt2"></div>
+      <div class="form-group"><label>पर्याय 4 (D):</label><input type="text" id="editOpt3"></div>
       <div class="form-group">
-        <label>पर्याय 1 (A):</label>
-        <input type="text" id="editOpt0">
-      </div>
-      <div class="form-group">
-        <label>पर्याय 2 (B):</label>
-        <input type="text" id="editOpt1">
-      </div>
-      <div class="form-group">
-        <label>पर्याय 3 (C):</label>
-        <input type="text" id="editOpt2">
-      </div>
-      <div class="form-group">
-        <label>पर्याय 4 (D):</label>
-        <input type="text" id="editOpt3">
-      </div>
-      <div class="form-group">
-        <label>अचूक उत्तर पर्याय (0 = A, 1 = B, 2 = C, 3 = D):</label>
+        <label>अचूक उत्तर:</label>
         <select id="editQCorrect" style="padding:8px; border:1.5px solid #cbd5e1; border-radius:8px; font-weight:700; width:100%;">
           <option value="0">पर्याय 1 (A)</option>
           <option value="1">पर्याय 2 (B)</option>
@@ -596,10 +595,7 @@
           <option value="3">पर्याय 4 (D)</option>
         </select>
       </div>
-      <div class="form-group">
-        <label>सविस्तर स्पष्टीकरण:</label>
-        <textarea id="editQExp" rows="2"></textarea>
-      </div>
+      <div class="form-group"><label>स्पष्टीकरण:</label><textarea id="editQExp" rows="2"></textarea></div>
 
       <button class="btn-main" style="background:#0d9488; margin-top:10px;" onclick="saveEditedQuestion()">
         ✓ हा प्रश्न व स्पष्टीकरण सेव्ह करा
@@ -612,7 +608,7 @@
 <div id="showJsonModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(15,43,72,0.85); z-index:3700; justify-content:center; align-items:center; backdrop-filter:blur(4px); padding:12px;">
   <div style="background:#ffffff; border-radius:16px; max-width:700px; width:100%; max-height:90vh; display:flex; flex-direction:column; padding:20px; box-shadow:0 12px 35px rgba(0,0,0,0.3); border-top:5px solid #0284c7;">
     <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; border-bottom:2px solid #e2e8f0; padding-bottom:8px;">
-      <h3 style="color:#0284c7; font-weight:800; font-size:1.15rem;">📋 चाचणीचा संपूर्ण JSON कोड (बदलांसह)</h3>
+      <h3 style="color:#0284c7; font-weight:800; font-size:1.15rem;">📋 चाचणीचा संपूर्ण JSON कोड</h3>
       <button onclick="closeShowJsonModal()" style="background:#fee2e2; color:#991b1b; border:none; padding:4px 10px; border-radius:8px; font-weight:800; cursor:pointer;">✕ बंद करा</button>
     </div>
     
@@ -620,19 +616,17 @@
       <label style="font-weight:700; font-size:0.85rem; color:#334155;">चाचणी निवडा:</label>
       <select id="jsonExportTestId" onchange="generateTestJsonCode()" style="padding:8px; border:1.5px solid #cbd5e1; border-radius:8px; font-weight:700; width:100%; margin-top:4px;"></select>
     </div>
-
     <textarea id="jsonOutputArea" readonly style="flex:1; width:100%; height:320px; padding:10px; font-family:monospace; font-size:0.85rem; border:1.5px solid #cbd5e1; border-radius:8px; background:#f8fafc; resize:none;"></textarea>
-
     <div style="display:flex; gap:10px; margin-top:12px;">
-      <button class="btn-main" style="background:#16a34a;" onclick="copyJsonToClipboard()">📋 सर्व बदलांसह JSON कोड कॉपी करा</button>
+      <button class="btn-main" style="background:#16a34a;" onclick="copyJsonToClipboard()">📋 JSON कोड कॉपी करा</button>
     </div>
   </div>
 </div>
 
 <div id="adminToppersModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(15,43,72,0.85); z-index:3500; justify-content:center; align-items:center; backdrop-filter:blur(4px); padding:12px;">
-  <div style="background:#ffffff; border-radius:16px; max-width:800px; width:100%; max-height:90vh; overflow-y:auto; padding:24px 20px; box-shadow:0 12px 35px rgba(0,0,0,0.3); border-top:5px solid #ea580c;">
+  <div style="background:#ffffff; border-radius:16px; max-width:850px; width:100%; max-height:90vh; overflow-y:auto; padding:24px 20px; box-shadow:0 12px 35px rgba(0,0,0,0.3); border-top:5px solid #ea580c;">
     <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; border-bottom:2px solid #e2e8f0; padding-bottom:10px;">
-      <h3 style="color:#0f2b48; font-weight:800; font-size:1.25rem;">🏆 चाचणीनिहाय Top 50 गुणवंत विद्यार्थी (Toppers)</h3>
+      <h3 style="color:#0f2b48; font-weight:800; font-size:1.2rem;">🏆 Top 50 गुणवंत विद्यार्थी (Delete Result Option)</h3>
       <button onclick="closeAdminToppersModal()" style="background:#fee2e2; color:#991b1b; border:none; padding:4px 10px; border-radius:8px; font-weight:800; cursor:pointer;">✕ बंद करा</button>
     </div>
     <div style="display:flex; gap:10px; margin-bottom:14px; align-items:center; flex-wrap:wrap;">
@@ -647,7 +641,7 @@
 <div id="adminVipModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(15,43,72,0.85); z-index:3600; justify-content:center; align-items:center; backdrop-filter:blur(4px); padding:12px;">
   <div style="background:#ffffff; border-radius:16px; max-width:620px; width:100%; max-height:90vh; overflow-y:auto; padding:24px 20px; box-shadow:0 12px 35px rgba(0,0,0,0.3); border-top:5px solid #7c3aed;">
     <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; border-bottom:2px solid #e2e8f0; padding-bottom:10px;">
-      <h3 style="color:#6d28d9; font-weight:800; font-size:1.2rem;">⭐ विशेष VIP मोबाईल नंबर (अमर्याद चाचण्या)</h3>
+      <h3 style="color:#6d28d9; font-weight:800; font-size:1.2rem;">⭐ विशेष VIP मोबाईल नंबर</h3>
       <button onclick="closeAdminVipModal()" style="background:#fee2e2; color:#991b1b; border:none; padding:4px 10px; border-radius:8px; font-weight:800; cursor:pointer;">✕ बंद करा</button>
     </div>
     <div style="display:flex; gap:8px; margin-bottom:14px; flex-wrap:wrap;">
@@ -685,7 +679,6 @@
 
 <script>
   const FIREBASE_DB_URL = "https://nvs-zp-beed-online-test-default-rtdb.firebaseio.com";
-  const MAX_ATTEMPTS = 4;
 
   const EXAM_SCHEDULE = [
     { id: 1, title: "नवोदय सराव चाचणी क्र. 01 (2026-27)", dateISO: "2026-11-11", dateMarathi: "11 नोव्हेंबर 2026", file: "test1.json" },
@@ -700,7 +693,7 @@
     { id: 10, title: "नवोदय सराव चाचणी क्र. 10 (2026-27)", dateISO: "2026-11-20", dateMarathi: "20 नोव्हेंबर 2026", file: "test10.json" },
     { id: 11, title: "नवोदय सराव चाचणी क्र. 11 (2026-27)", dateISO: "2026-11-21", dateMarathi: "21 नोव्हेंबर 2026", file: "test11.json" },
     { id: 12, title: "नवोदय सराव चाचणी क्र. 12 (2026-27)", dateISO: "2026-11-22", dateMarathi: "22 नोव्हेंबर 2026", file: "test12.json" },
-    { id: 13, title: "नवोदय sराव चाचणी क्र. 13 (2026-27)", dateISO: "2026-11-23", dateMarathi: "23 नोव्हेंबर 2026", file: "test13.json" },
+    { id: 13, title: "नवोदय सराव चाचणी क्र. 13 (2026-27)", dateISO: "2026-11-23", dateMarathi: "23 नोव्हेंबर 2026", file: "test13.json" },
     { id: 14, title: "नवोदय सराव चाचणी क्र. 14 (2026-27)", dateISO: "2026-11-24", dateMarathi: "24 नोव्हेंबर 2026", file: "test14.json" },
     { id: 15, title: "नवोदय सराव चाचणी क्र. 15 (2026-27)", dateISO: "2026-11-25", dateMarathi: "25 नोव्हेंबर 2026", file: "test15.json" }
   ];
@@ -882,7 +875,7 @@
     }).catch(() => {});
 
     fetch(`${FIREBASE_DB_URL}/results.json`).then(res => res.json()).then(data => {
-      allFirebaseResults = data ? Object.values(data) : [];
+      allFirebaseResults = data ? Object.entries(data).map(([k, v]) => ({ firebaseKey: k, ...v })) : [];
     }).catch(() => {});
   }
 
@@ -898,6 +891,7 @@
     }).catch(() => {});
   }
 
+  // ------------------ Top 50 Management & Deletion ------------------
   function openAdminToppersModal() {
     document.getElementById("adminToppersModal").style.display = "flex";
     const sel = document.getElementById("adminTestSelector");
@@ -924,7 +918,7 @@
     fetch(`${FIREBASE_DB_URL}/results.json`)
       .then(res => res.json())
       .then(data => {
-        const results = data ? Object.values(data) : [];
+        const results = data ? Object.entries(data).map(([k, v]) => ({ firebaseKey: k, ...v })) : [];
         const filtered = results.filter(r => r.testTitle === selectedTitle);
         
         if (filtered.length === 0) {
@@ -941,12 +935,84 @@
         const toppers = Object.values(studentBest).sort((a, b) => b.score - a.score).slice(0, 50);
         let rows = "";
         toppers.forEach((t, i) => {
-          rows += `<tr><td style="font-weight:800;">#${i + 1}</td><td style="text-align:left; font-weight:700;">${t.name}</td><td>${t.taluka}</td><td>${t.mobile}</td><td style="font-weight:800; color:#16a34a;">${t.score} / 100</td><td>${t.percentage}%</td></tr>`;
+          rows += `<tr>
+            <td style="font-weight:800;">#${i + 1}</td>
+            <td style="text-align:left; font-weight:700;">${t.name}</td>
+            <td>${t.taluka}</td>
+            <td>${t.mobile}</td>
+            <td style="font-weight:800; color:#16a34a;">${t.score} / 100</td>
+            <td>${t.percentage}%</td>
+            <td><button onclick="deleteResultEntry('${t.firebaseKey}')" style="background:#fee2e2; color:#991b1b; border:none; padding:4px 8px; border-radius:6px; cursor:pointer; font-weight:700;">डिलीट</button></td>
+          </tr>`;
         });
 
-        host.innerHTML = `<table class="report-table" style="margin:0;"><thead><tr><th>रँक</th><th style="text-align:left;">नाव</th><th>तालुका</th><th>मोबाईल</th><th>गुण</th><th>टक्के</th></tr></thead><tbody>${rows}</tbody></table>`;
+        host.innerHTML = `<table class="report-table" style="margin:0;"><thead><tr><th>रँक</th><th style="text-align:left;">नाव</th><th>तालुका</th><th>मोबाईल</th><th>गुण</th><th>टक्के</th><th>कृती</th></tr></thead><tbody>${rows}</tbody></table>`;
       })
       .catch(() => { host.innerHTML = "<p style='text-align:center; color:red;'>माहिती आणताना त्रुटी आली.</p>"; });
+  }
+
+  function deleteResultEntry(firebaseKey) {
+    if (confirm("हा निकाल/एन्ट्री निश्चित डिलीट करायची आहे का?")) {
+      fetch(`${FIREBASE_DB_URL}/results/${firebaseKey}.json`, { method: "DELETE" })
+        .then(() => {
+          alert("निकाल यशस्वीरित्या डिलीट केला!");
+          loadToppersForSelectedTest();
+          fetchAdminDashboardData();
+        })
+        .catch(() => alert("डेटा डिलीट करताना त्रुटी आली."));
+    }
+  }
+
+  // ------------------ Registered Users Management & Deletion ------------------
+  function openAdminRegisteredUsersModal() {
+    document.getElementById("adminRegisteredUsersModal").style.display = "flex";
+    loadRegisteredUsersTable();
+  }
+
+  function closeAdminRegisteredUsersModal() {
+    document.getElementById("adminRegisteredUsersModal").style.display = "none";
+  }
+
+  function loadRegisteredUsersTable() {
+    const host = document.getElementById("registeredUsersTableHost");
+    host.innerHTML = "<p style='text-align:center; padding:15px; color:#64748b;'>विद्यार्थ्यांची यादी लोड होत आहे...</p>";
+
+    fetch(`${FIREBASE_DB_URL}/students.json`)
+      .then(res => res.json())
+      .then(data => {
+        if (!data) {
+          host.innerHTML = "<p style='text-align:center; padding:20px; color:#dc2626; font-weight:700;'>कोणताही नोंदणीकृत विद्यार्थी उपलब्ध नाही.</p>";
+          return;
+        }
+
+        const entries = Object.entries(data);
+        let rows = "";
+        entries.forEach(([key, st], idx) => {
+          rows += `<tr>
+            <td style="font-weight:800;">${idx + 1}</td>
+            <td style="text-align:left; font-weight:700;">${st.name || '-'}</td>
+            <td>${st.taluka || '-'}</td>
+            <td>${st.mobile || '-'}</td>
+            <td>${st.timestamp || '-'}</td>
+            <td><button onclick="deleteRegisteredUser('${key}')" style="background:#fee2e2; color:#991b1b; border:none; padding:4px 8px; border-radius:6px; cursor:pointer; font-weight:700;">डिलीट</button></td>
+          </tr>`;
+        });
+
+        host.innerHTML = `<table class="report-table" style="margin:0;"><thead><tr><th>अ.क्र.</th><th style="text-align:left;">नाव</th><th>तालुका</th><th>मोबाईल नंबर</th><th>नोंदणी वेळ</th><th>कृती</th></tr></thead><tbody>${rows}</tbody></table>`;
+      })
+      .catch(() => { host.innerHTML = "<p style='text-align:center; color:red;'>विद्यार्थ्यांची यादी लोड करण्यात त्रुटी आली.</p>"; });
+  }
+
+  function deleteRegisteredUser(firebaseKey) {
+    if (confirm("हा नोंदणीकृत युझर डिलीट करायचा आहे का?")) {
+      fetch(`${FIREBASE_DB_URL}/students/${firebaseKey}.json`, { method: "DELETE" })
+        .then(() => {
+          alert("युझर यशस्वीरित्या डिलीट केला!");
+          loadRegisteredUsersTable();
+          fetchAdminDashboardData();
+        })
+        .catch(() => alert("विद्यार्थी डिलीट करताना त्रुटी आली."));
+    }
   }
 
   function downloadToppersExcel() {
@@ -1211,7 +1277,6 @@
     const testId = parseInt(document.getElementById("editTestIdSelect").value);
     const qId = parseInt(document.getElementById("editQuestionIdInput").value);
 
-    // विभाग (Section) अचूक ठरवणे: 1 ते 40 मानसिक/EVS, 41 ते 60 अंकगणित, 61 ते 80 भाषा
     const calculatedSec = qId <= 40 ? "mental" : (qId <= 60 ? "math" : "lang");
 
     const updatedQ = {
@@ -1269,7 +1334,6 @@
       const data = await res.json();
 
       const promises = data.questions.map(async (q, idx) => {
-        // 1 ते 40 मानसिक, 41 ते 60 अंकगणित, 61 ते 80 भाषा
         if (q.id <= 40) q.sec = "mental";
         else if (q.id <= 60) q.sec = "math";
         else if (q.id <= 80) q.sec = "lang";
@@ -1333,7 +1397,6 @@
     EXAM_SCHEDULE.forEach(item => {
       let isAccessible = isUserVip || (globalUnlockedTests[item.id] !== undefined ? globalUnlockedTests[item.id] : (todayDate >= item.dateISO));
       const savedScore = loggedInUser.history && loggedInUser.history[item.id];
-      const attemptCount = (loggedInUser.attempts && loggedInUser.attempts[item.id]) || 0;
       const inProg = loggedInUser.inProgress && loggedInUser.inProgress[item.id];
 
       const card = document.createElement("div");
@@ -1485,7 +1548,6 @@
     container.innerHTML = "";
 
     const filtered = currentQuizData.questions.filter(q => {
-      // नवीन विभागणी नियमानुसार ID सेट करणे (1 ते 40 मानसिक, 41 ते 60 अंकगणित, 61 ते 80 भाषा)
       if (q.id <= 40) q.sec = "mental";
       else if (q.id <= 60) q.sec = "math";
       else if (q.id <= 80) q.sec = "lang";
@@ -1612,7 +1674,6 @@
       }
     });
 
-    // 1 ते 40 मानसिक/EVS (40 प्रश्न = 50 गुण), 41 ते 60 अंकगणित (20 प्रश्न = 25 गुण), 61 ते 80 भाषा (20 प्रश्न = 25 गुण)
     const mentalMarks = mentalCorrect * 1.25;
     const mathMarks = mathCorrect * 1.25;
     const langMarks = langCorrect * 1.25;
