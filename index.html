@@ -309,7 +309,7 @@
         <button class="btn-action" style="background:#0284c7; color:#fff;" onclick="openAdminVisualEditorModal()">🖼️ आकृती प्रश्न संपादक (Q1-20)</button>
         <button class="btn-action" style="background:#0d9488; color:#fff;" onclick="openAdminQuestionEditorModal()">✏️ प्रश्न क्र. 21-80 संपादक</button>
         <button class="btn-action" style="background:#0284c7; color:#fff;" onclick="openShowJsonModal()">📋 Show JSON</button>
-        <button class="btn-action" style="background:#7c3aed; color:#fff;" onclick="openAdminVipModal()">⭐ VIP मोबाईल नंबर</button>
+        <button class="btn-action" style="background:#7c3aed; color:#fff;" onclick="openAdminVipModal()">⭐ Teacher Module नंबर</button>
         <button class="btn-action btn-start" onclick="downloadStudentsExcel()">📥 एक्सेल डाउनलोड</button>
       </div>
     </div>
@@ -645,12 +645,12 @@
 <div id="adminVipModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(15,43,72,0.85); z-index:3600; justify-content:center; align-items:center; backdrop-filter:blur(4px); padding:12px;">
   <div style="background:#ffffff; border-radius:16px; max-width:620px; width:100%; max-height:90vh; overflow-y:auto; padding:24px 20px; box-shadow:0 12px 35px rgba(0,0,0,0.3); border-top:5px solid #7c3aed;">
     <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; border-bottom:2px solid #e2e8f0; padding-bottom:10px;">
-      <h3 style="color:#6d28d9; font-weight:800; font-size:1.2rem;">⭐ विशेष VIP मोबाईल नंबर</h3>
+      <h3 style="color:#6d28d9; font-weight:800; font-size:1.2rem;">⭐ Teacher Module नंबर व्यवस्थापन</h3>
       <button onclick="closeAdminVipModal()" style="background:#fee2e2; color:#991b1b; border:none; padding:4px 10px; border-radius:8px; font-weight:800; cursor:pointer;">✕ बंद करा</button>
     </div>
     <div style="display:flex; gap:8px; margin-bottom:14px; flex-wrap:wrap;">
       <input type="tel" id="inVipMobile" maxlength="10" placeholder="१० अंकी मोबाईल नंबर" oninput="this.value = this.value.replace(/[^0-9]/g, '')" style="flex:1.5; min-width:200px; padding:10px; border:1.5px solid #cbd5e1; border-radius:8px; font-weight:700;">
-      <button class="btn-action" style="background:#7c3aed; color:#fff;" onclick="addVipStudent()">+ VIP नंबर जोडा</button>
+      <button class="btn-action" style="background:#7c3aed; color:#fff;" onclick="addVipStudent()">+ Teacher Module नंबर जोडा</button>
     </div>
     <div id="vipListHost"></div>
   </div>
@@ -1137,14 +1137,14 @@
     const host = document.getElementById("vipListHost");
     const keys = Object.keys(whitelistedMobiles);
     if (keys.length === 0) {
-      host.innerHTML = "<p style='text-align:center; padding:15px; color:#64748b;'>अद्याप कोणताही VIP नंबर जोडलेला नाही.</p>";
+      host.innerHTML = "<p style='text-align:center; padding:15px; color:#64748b;'>अद्याप कोणताही Teacher Module नंबर जोडलेला नाही.</p>";
       return;
     }
     let rows = "";
     keys.forEach((mob, idx) => {
       rows += `<tr><td style="text-align:center;">${idx + 1}</td><td style="font-weight:800; color:#0f2b48;">${mob}</td><td style="text-align:center;"><span style="background:#f3e8ff; color:#7c3aed; padding:3px 8px; border-radius:6px; font-size:0.8rem;">अमर्याद प्रयत्न</span></td><td style="text-align:center;"><button onclick="removeVipStudent('${mob}')" style="background:#fee2e2; color:#991b1b; border:none; padding:4px 10px; border-radius:6px; font-weight:700; cursor:pointer;">हटवा ✕</button></td></tr>`;
     });
-    host.innerHTML = `<table class="report-table" style="margin:0;"><thead><tr><th>अ.क्र.</th><th>VIP मोबाईल नंबर</th><th>सवलत दर्जा</th><th>कृती</th></tr></thead><tbody>${rows}</tbody></table>`;
+    host.innerHTML = `<table class="report-table" style="margin:0;"><thead><tr><th>अ.क्र.</th><th>Teacher Module नंबर</th><th>सवलत दर्जा</th><th>कृती</th></tr></thead><tbody>${rows}</tbody></table>`;
   }
 
   function addVipStudent() {
@@ -1153,7 +1153,7 @@
     whitelistedMobiles[mob] = true;
     renderVipList();
     document.getElementById("inVipMobile").value = "";
-    fetch(`${FIREBASE_DB_URL}/whitelisted_mobiles/${mob}.json`, { method: "PUT", body: JSON.stringify(true) }).then(() => alert("VIP नंबर यशस्वी जोडला गेला!"));
+    fetch(`${FIREBASE_DB_URL}/whitelisted_mobiles/${mob}.json`, { method: "PUT", body: JSON.stringify(true) }).then(() => alert("Teacher Module नंबर यशस्वी जोडला गेला!"));
   }
 
   function removeVipStudent(mob) {
@@ -1462,7 +1462,9 @@
     document.getElementById("answerKeyArea").style.display = "none";
     document.getElementById("dashboardArea").style.display = "block";
 
-    document.getElementById("displayStudentName").innerText = loggedInUser.name;
+    const isUserVip = loggedInUser && loggedInUser.mobile && (whitelistedMobiles[loggedInUser.mobile] !== undefined);
+
+    document.getElementById("displayStudentName").innerText = loggedInUser.name + (isUserVip ? " (Teacher Module)" : "");
     document.getElementById("displayStudentMeta").innerText = "मोबाईल: " + loggedInUser.mobile + " | तालुका: " + loggedInUser.taluka;
 
     if (isAdminMode) {
@@ -1475,7 +1477,6 @@
     const container = document.getElementById("testsScheduleList");
     container.innerHTML = "";
     const todayDate = new Date().toISOString().split("T")[0];
-    const isUserVip = loggedInUser && loggedInUser.mobile && (whitelistedMobiles[loggedInUser.mobile] !== undefined);
 
     EXAM_SCHEDULE.forEach(item => {
       let isAccessible = isUserVip || (globalUnlockedTests[item.id] !== undefined ? globalUnlockedTests[item.id] : (todayDate >= item.dateISO));
@@ -1500,7 +1501,7 @@
 
       card.innerHTML = `
         <div>
-          <h4 style="font-weight:700; font-size:1rem; color:#0f2b48;">${item.title} ${isUserVip ? '<span style="color:#7c3aed; font-size:0.75rem;">(⭐ VIP)</span>' : ''}</h4>
+          <h4 style="font-weight:700; font-size:1rem; color:#0f2b48;">${item.title}</h4>
           <span style="font-size:0.8rem; color:#64748b;">दिनांक: ${item.dateMarathi} | 80 प्रश्न | 100 गुण</span>
         </div>
         <div style="display:flex; align-items:center;">${actionArea}${adminToggleHtml}</div>
@@ -1831,7 +1832,6 @@
       const qDiv = document.createElement("div");
       qDiv.className = "question-card";
 
-      // स्पष्टीकरणामध्ये प्रश्न क्र. १ ते २० मधील मुख्य आकृती (problemFig) दाखवणारा भाग
       let figHtml = "";
       if (q.problemFig) {
         let probContent = q.problemFig.startsWith("http") || q.problemFig.startsWith("data:") ? `<img src="${q.problemFig}" onerror="this.onerror=null; this.src='https://upload.wikimedia.org/wikipedia/commons/3/3a/Visual_test_sample_2.svg';">` : q.problemFig;
