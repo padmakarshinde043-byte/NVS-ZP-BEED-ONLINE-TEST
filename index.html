@@ -509,7 +509,7 @@
         <input type="text" id="vEditQText">
       </div>
 
-      <div class="form-group" style="background:#f8fafc; padding:10px; border-radius:8px; border:1px solid #cbd5e1;">
+      <div class="form-group" style="background:#f8fafc; padding:10px; border-radius:8px; border:1.5px solid #cbd5e1;">
         <label style="color:#0f2b48; font-weight:800;">संपूर्ण प्रश्न आकृती (Main Problem Image):</label>
         <input type="file" id="vProbImgFile" accept="image/*" onchange="previewImage(this, 'vProbPreview')" style="margin-bottom:6px;">
         <div style="display:flex; align-items:center; gap:10px;">
@@ -1830,6 +1830,14 @@
     filtered.forEach(q => {
       const qDiv = document.createElement("div");
       qDiv.className = "question-card";
+
+      // स्पष्टीकरणामध्ये प्रश्न क्र. १ ते २० मधील मुख्य आकृती (problemFig) दाखवणारा भाग
+      let figHtml = "";
+      if (q.problemFig) {
+        let probContent = q.problemFig.startsWith("http") || q.problemFig.startsWith("data:") ? `<img src="${q.problemFig}" onerror="this.onerror=null; this.src='https://upload.wikimedia.org/wikipedia/commons/3/3a/Visual_test_sample_2.svg';">` : q.problemFig;
+        figHtml += `<div class="fig-box" style="margin: 10px 0;">${probContent}</div>`;
+      }
+
       let optsGrid = '<div class="options-grid">';
       q.options.forEach((opt, idx) => {
         let optClass = "";
@@ -1839,7 +1847,6 @@
         
         if (idx === q.correct) {
           optClass = "ak-correct";
-          choice = ' <b style="color:var(--success);">[अचूक उत्तर]</b>';
         }
         if (studentChoice === idx) {
           optClass += " ak-student-choice";
@@ -1854,7 +1861,13 @@
       let cleanText = (q.text || "").replace(/^(प्रश्न|Question)\s*\d+[\s\.:\-\)]*/gi, "").trim();
       if (!cleanText) cleanText = q.text || "";
 
-      qDiv.innerHTML = `<div class="q-badge-box">प्रश्न ${q.id}</div><div class="q-text-content">${cleanText}</div>${optsGrid}<div class="exp-box">💡 <b>स्पष्टीकरण:</b> ${q.exp}</div>`;
+      qDiv.innerHTML = `
+        <div class="q-badge-box">प्रश्न ${q.id}</div>
+        <div class="q-text-content">${cleanText}</div>
+        ${figHtml}
+        ${optsGrid}
+        <div class="exp-box">💡 <b>स्पष्टीकरण:</b> ${q.exp}</div>
+      `;
       container.appendChild(qDiv);
     });
   }
