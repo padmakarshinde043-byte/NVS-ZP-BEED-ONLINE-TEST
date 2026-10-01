@@ -933,21 +933,22 @@
         const studentBest = {};
         filtered.forEach(item => {
           const key = item.uid || makeStudentId(item.mobile, item.name);
-          if (!studentBest[key] || item.score > studentBest[key].score) { studentBest[key] = item; }
+          if (!studentBest[key] || item.score >= studentBest[key].score) { studentBest[key] = item; }
         });
 
         const toppers = Object.values(studentBest).sort((a, b) => b.score - a.score).slice(0, 50);
         let rows = "";
         toppers.forEach((t, i) => {
+          const fKey = t.firebaseKey || '';
           rows += `<tr>
-            <td><input type="checkbox" class="topper-checkbox" value="${t.firebaseKey}" style="width:18px; height:18px; cursor:pointer;"></td>
+            <td><input type="checkbox" class="topper-checkbox" value="${fKey}" style="width:18px; height:18px; cursor:pointer;"></td>
             <td style="font-weight:800;">#${i + 1}</td>
             <td style="text-align:left; font-weight:700;">${t.name}</td>
             <td>${t.taluka}</td>
             <td>${t.mobile}</td>
             <td style="font-weight:800; color:#16a34a;">${t.score} / 100</td>
             <td>${t.percentage}%</td>
-            <td><button onclick="deleteResultEntry('${t.firebaseKey}')" style="background:#fee2e2; color:#991b1b; border:none; padding:4px 8px; border-radius:6px; cursor:pointer; font-weight:700;">डिलीट</button></td>
+            <td><button onclick="deleteResultEntry('${fKey}')" style="background:#fee2e2; color:#991b1b; border:none; padding:4px 8px; border-radius:6px; cursor:pointer; font-weight:700;">डिलीट</button></td>
           </tr>`;
         });
 
@@ -996,6 +997,7 @@
   }
 
   function deleteResultEntry(firebaseKey) {
+    if (!firebaseKey) { alert("चुकीची की (Key) आढळली!"); return; }
     if (confirm("हा निकाल निश्चित डिलीट करायचा आहे का?")) {
       fetch(`${FIREBASE_DB_URL}/results/${firebaseKey}.json`, { method: "DELETE" })
         .then(() => {
