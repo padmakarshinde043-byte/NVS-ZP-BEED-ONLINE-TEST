@@ -939,16 +939,16 @@
         const toppers = Object.values(studentBest).sort((a, b) => b.score - a.score).slice(0, 50);
         let rows = "";
         toppers.forEach((t, i) => {
-          const fKey = t.firebaseKey || '';
+          const uniquePayload = encodeURIComponent(JSON.stringify({ key: t.firebaseKey, mobile: t.mobile, name: t.name, testTitle: t.testTitle }));
           rows += `<tr>
-            <td><input type="checkbox" class="topper-checkbox" value="${fKey}" style="width:18px; height:18px; cursor:pointer;"></td>
+            <td><input type="checkbox" class="topper-checkbox" value="${uniquePayload}" style="width:18px; height:18px; cursor:pointer;"></td>
             <td style="font-weight:800;">#${i + 1}</td>
             <td style="text-align:left; font-weight:700;">${t.name}</td>
             <td>${t.taluka}</td>
             <td>${t.mobile}</td>
             <td style="font-weight:800; color:#16a34a;">${t.score} / 100</td>
             <td>${t.percentage}%</td>
-            <td><button onclick="deleteResultEntry('${fKey}')" style="background:#fee2e2; color:#991b1b; border:none; padding:4px 8px; border-radius:6px; cursor:pointer; font-weight:700;">डिलीट</button></td>
+            <td><button onclick="deleteResultEntry('${t.firebaseKey}', '${t.mobile}', '${t.name}', '${t.testTitle}')" style="background:#fee2e2; color:#991b1b; border:none; padding:4px 8px; border-radius:6px; cursor:pointer; font-weight:700;">डिलीट</button></td>
           </tr>`;
         });
 
@@ -982,32 +982,53 @@
     if (checkboxes.length === 0) { alert("कृपया डिलीट करण्यासाठी किमान एक विद्यार्थी निवडा."); return; }
 
     if (confirm(`निश्चितच निवडलेले ${checkboxes.length} निकाल डिलीट करायचे आहेत का?`)) {
-      const deletePromises = Array.from(checkboxes).map(cb => {
-        const key = cb.value;
-        if (!key) return Promise.resolve();
-        return fetch(`${FIREBASE_DB_URL}/results/${key}.json`, { method: "DELETE" });
-      });
+      fetch(`${FIREBASE_DB_URL}/results.json`)
+        .then(res => res.json())
+        .then(allData => {
+          if (!allData) return;
+          const deletePromises = [];
 
-      Promise.all(deletePromises)
-        .then(() => {
-          alert("निवडलेले निकाल यशस्वीरित्या डिलीट झाले!");
-          loadToppersForSelectedTest();
-          fetchAdminDashboardData();
-        })
-        .catch(() => alert("डेटा डिलीट करताना त्रुटी आली."));
+          checkboxes.forEach(cb => {
+            try {
+              const info = JSON.parse(decodeURIComponent(cb.value));
+              Object.entries(allData).forEach(([dbKey, val]) => {
+                if (dbKey === info.key || (val.mobile === info.mobile && val.name === info.name && val.testTitle === info.testTitle)) {
+                  deletePromises.push(fetch(`${FIREBASE_DB_URL}/results/${dbKey}.json`, { method: "DELETE" }));
+                }
+              });
+            } catch(e) {}
+          });
+
+          Promise.all(deletePromises)
+            .then(() => {
+              alert("निवडलेले निकाल यशस्वीरित्या डिलीट झाले!");
+              loadToppersForSelectedTest();
+              fetchAdminDashboardData();
+            })
+            .catch(() => alert("डेटा डिलीट करताना त्रुटी आली."));
+        });
     }
   }
 
-  function deleteResultEntry(firebaseKey) {
-    if (!firebaseKey) { alert("चुकीची की (Key) आढळली!"); return; }
+  function deleteResultEntry(firebaseKey, mobile, name, testTitle) {
     if (confirm("हा निकाल निश्चित डिलीट करायचा आहे का?")) {
-      fetch(`${FIREBASE_DB_URL}/results/${firebaseKey}.json`, { method: "DELETE" })
-        .then(() => {
-          alert("निकाल यशस्वीरित्या डिलीट केला!");
-          loadToppersForSelectedTest();
-          fetchAdminDashboardData();
-        })
-        .catch(() => alert("डेटा डिलीट करताना त्रुटी आली."));
+      fetch(`${FIREBASE_DB_URL}/results.json`)
+        .then(res => res.json())
+        .then(allData => {
+          if (!allData) return;
+          const deletePromises = [];
+          Object.entries(allData).forEach(([dbKey, val]) => {
+            if (dbKey === firebaseKey || (val.mobile === mobile && val.name === name && val.testTitle === testTitle)) {
+              deletePromises.push(fetch(`${FIREBASE_DB_URL}/results/${dbKey}.json`, { method: "DELETE" }));
+            }
+          });
+
+          Promise.all(deletePromises).then(() => {
+            alert("निकाल यशस्वीरित्या डिलीट केला!");
+            loadToppersForSelectedTest();
+            fetchAdminDashboardData();
+          });
+        });
     }
   }
 
