@@ -982,9 +982,11 @@
     if (checkboxes.length === 0) { alert("कृपया डिलीट करण्यासाठी किमान एक विद्यार्थी निवडा."); return; }
 
     if (confirm(`निश्चितच निवडलेले ${checkboxes.length} निकाल डिलीट करायचे आहेत का?`)) {
-      const deletePromises = Array.from(checkboxes).map(cb => 
-        fetch(`${FIREBASE_DB_URL}/results/${cb.value}.json`, { method: "DELETE" })
-      );
+      const deletePromises = Array.from(checkboxes).map(cb => {
+        const key = cb.value;
+        if (!key) return Promise.resolve();
+        return fetch(`${FIREBASE_DB_URL}/results/${key}.json`, { method: "DELETE" });
+      });
 
       Promise.all(deletePromises)
         .then(() => {
