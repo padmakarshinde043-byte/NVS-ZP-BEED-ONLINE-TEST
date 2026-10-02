@@ -56,7 +56,6 @@
     .main-wrapper { flex: 1; max-width: 860px; width: 100%; margin: 16px auto; padding: 0 16px; }
     .card { background: var(--card-bg); border-radius: 16px; padding: 22px; box-shadow: 0 4px 20px rgba(15, 43, 72, 0.06); margin-bottom: 16px; border: 1px solid var(--border); }
 
-    /* प्रोफेशनल व आकर्षक लॉगिन कार्ड डिझाईन */
     .login-card {
       background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
       border: 1px solid #e2e8f0;
@@ -282,7 +281,7 @@
 </header>
 
 <div class="main-wrapper">
-  <!-- नोंदणी कार्ड (सुविधा ३ नुसार अधिक आकर्षक आणि जिल्हा परिषद बीड व जवाहर नवोदय लोगोयुक्त) -->
+  <!-- नोंदणी कार्ड (सुविधा ३ नुसार आकर्षक आणि जिल्हा परिषद बीड व जवाहर नवोदय लोगोयुक्त) -->
   <div id="registrationCard" class="card login-card">
     <div class="login-logos-container">
       <div class="login-logo-box">
@@ -1580,7 +1579,7 @@
         document.getElementById("editOpt3").value
       ],
       correct: parseInt(document.getElementById("editQCorrect").value),
-      exp: document.getElementById("editQExp.value") || document.getElementById("editQExp").value
+      exp: document.getElementById("editQExp").value
     };
 
     fetch(`${FIREBASE_DB_URL}/overrides/t${testId}_q${qId}.json`, {
