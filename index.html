@@ -1,17 +1,3 @@
-तुम्ही पाठवलेल्या स्क्रीनशॉटमध्ये (Image 2de2a4.png) ब्राउझरच्या वरील टॅबवर निळे गोल सतत फिरत असल्याचे दिसत आहे, ज्याचा अर्थ **चाचणी सुरू असताना किंवा सबमिट करताना कोणतीतरी स्क्रिप्ट किंवा फेच (Fetch) रिक्वेस्ट अडकली आहे (Infinite Loop किंवा Pending Network Request)**, ज्यामुळे चाचणी सबमिट होत नाही.
-
-या समस्येचे मुख्य कारण म्हणजे `confirmSubmission()` फंक्शनमधील खालील ओळ:
-
-```javascript
-currentQuizData.questions.questions.forEach(q => {});
-
-```
-
-या ओळीमुळे कोडमध्ये एरर (Error) येत आहे आणि जावास्क्रिप्ट पुढे चालत नाही, परिणामी टॅब सतत लोड होत राहतो आणि सबमिट बटण काम करत नाही.
-
-या समस्येचे **तातडीने निवारण (Fix)** करण्यासाठी खालीलप्रमाणे सुधारित आणि परिपूर्ण `index.html` कोड दिला आहे. हा कोड तुमच्या प्रोजेक्टमध्ये जसाच्या तसा टाका, म्हणजे फिरणारे गोल थांबतील आणि चाचणी अगदी सुरळीत सबमिट होईल:
-
-```html
 <!DOCTYPE html>
 <html lang="mr">
 <head>
@@ -446,7 +432,7 @@ currentQuizData.questions.questions.forEach(q => {});
 
     <div style="display:flex; gap:10px; margin-top:16px;">
       <button class="btn-main" style="background:#475569; flex:1;" onclick="cancelGuideline()">रद्द करा</button>
-      <button id="btnStartRealExam" class="btn-main" style="background:var(--success); flex:2;" onclick="startExamFromGuideline()">
+      <button id="btnStartRealExam" class="btn-main" style="background:var(--success); flex:2;" onclick="startExamInstant()">
         चाचणी सुरू करा ➔
       </button>
     </div>
@@ -829,6 +815,9 @@ currentQuizData.questions.questions.forEach(q => {});
   let allFirebaseResults = [];
   let allFirebaseStudents = [];
 
+  // प्री-कॅशेसाठी ग्लोबल मेमरी
+  window.preloadedExams = {};
+
   function makeStudentId(mobile, name) {
     const cleanName = (name || "").trim().toLowerCase().replace(/[^a-z0-9\u0900-\u097F]/g, "_");
     return `${mobile}_${cleanName}`;
@@ -837,6 +826,7 @@ currentQuizData.questions.questions.forEach(q => {});
   window.addEventListener("DOMContentLoaded", () => {
     fetchGlobalLockStatus();
     fetchWhitelistedMobiles();
+    preloadAllExamFiles(); // बॅकग्राउंडला फाईल्स पटकन लोड करून ठेवणे जेणेकरून विलंब होणार नाही
 
     const stored = localStorage.getItem("jnv_beed_active_user");
     if (stored) {
@@ -894,6 +884,15 @@ currentQuizData.questions.questions.forEach(q => {});
       }
     });
   });
+
+  // बॅकग्राउंडला सर्व परीक्षा फाईल्स आधीच डाऊनलोड करून ठेवणे (Preloading)
+  function preloadAllExamFiles() {
+    EXAM_SCHEDULE.forEach(t => {
+      fetch(t.file).then(res => res.json()).then(data => {
+        window.preloadedExams[t.id] = data;
+      }).catch(() => {});
+    });
+  }
 
   function isValidIndianMobile(mobile) {
     const regex = /^[6-9]\d{9}$/;
@@ -1841,43 +1840,54 @@ currentQuizData.questions.questions.forEach(q => {});
     renderDashboard();
   }
 
-  async function startExamFromGuideline() {
+  // तत्काळ (Instant) चाचणी सुरू करण्याचे फंक्शन (प्रि-लोड केलेल्या डेटाचा वापर करून)
+  async function startExamInstant() {
     if (!currentPendingTest) return;
     
-    try {
-      const res = await fetch(currentPendingTest.file);
-      const data = await res.json();
-      
-      const promises = data.questions.map(async (q, idx) => {
-        if (q.id <= 40) q.sec = "mental";
-        else if (q.id <= 60) q.sec = "math";
-        else if (q.id <= 80) q.sec = "lang";
+    document.getElementById("guidelinesArea").style.display = "none";
 
-        try {
-          const fbRes = await fetch(`${FIREBASE_DB_URL}/overrides/t${data.testId}_q${q.id}.json`);
-          const fbData = await fbRes.json();
-          if (fbData) {
-            if (fbData.id <= 40) fbData.sec = "mental";
-            else if (fbData.id <= 60) fbData.sec = "math";
-            else if (fbData.id <= 80) fbData.sec = "lang";
-            data.questions[idx] = fbData;
-          }
-        } catch(e) {}
-      });
-
-      await Promise.all(promises);
-      document.getElementById("guidelinesArea").style.display = "none";
-      launchTestWithData(data, false);
-    } catch(err) {
-      alert("चाचणी फाईल लोड करण्यात अडचण आली.");
+    // जर आधीच बॅकग्राउंडला फाईल प्री-लोड झाली असेल तर तात्काळ वापरा, अन्यथा फेच करा
+    let data = window.preloadedExams[currentPendingTest.id];
+    if (!data) {
+      try {
+        const res = await fetch(currentPendingTest.file);
+        data = await res.json();
+      } catch(err) {
+        alert("चाचणी फाईल लोड करण्यात अडचण आली.");
+        return;
+      }
     }
+
+    // ओव्हरराईड्स (अडमिनने बदल केलेले प्रश्न) जलद पद्धतीने मर्ज करणे
+    const promises = data.questions.map(async (q, idx) => {
+      if (q.id <= 40) q.sec = "mental";
+      else if (q.id <= 60) q.sec = "math";
+      else if (q.id <= 80) q.sec = "lang";
+
+      try {
+        const fbRes = await fetch(`${FIREBASE_DB_URL}/overrides/t${data.testId}_q${q.id}.json`);
+        const fbData = await fbRes.json();
+        if (fbData) {
+          if (fbData.id <= 40) fbData.sec = "mental";
+          else if (fbData.id <= 60) fbData.sec = "math";
+          else if (fbData.id <= 80) fbData.sec = "lang";
+          data.questions[idx] = fbData;
+        }
+      } catch(e) {}
+    });
+
+    await Promise.all(promises);
+    launchTestWithData(data, false);
   }
 
   async function resumeTest(testId) {
     const testMeta = EXAM_SCHEDULE.find(t => t.id === testId);
+    let data = window.preloadedExams[testId];
     try {
-      const res = await fetch(testMeta.file);
-      const data = await res.json();
+      if (!data) {
+        const res = await fetch(testMeta.file);
+        data = await res.json();
+      }
 
       const promises = data.questions.map(async (q, idx) => {
         if (q.id <= 40) q.sec = "mental";
@@ -2022,7 +2032,6 @@ currentQuizData.questions.questions.forEach(q => {});
     currentScreen = 'summary';
     let counts = { mental: { total: 0, solved: 0 }, math: { total: 0, solved: 0 }, lang: { total: 0, solved: 0 } };
     
-    // (दुरुस्ती: आधीची चुकीची ओळ काढून इथे योग्य लूप लावला आहे)
     currentQuizData.questions.forEach(q => {
       if (q.id <= 40) q.sec = "mental";
       else if (q.id <= 60) q.sec = "math";
@@ -2185,7 +2194,7 @@ currentQuizData.questions.questions.forEach(q => {});
       if (!cleanText) cleanText = q.text || "";
 
       qDiv.innerHTML = `
-        <div class="q-badge-box">प्रश्न ${q.id} दाबा</div>
+        <div class="q-badge-box">प्रश्न ${q.id}</div>
         <div class="q-text-content">${cleanText}</div>
         ${figHtml}
         ${optsGrid}
@@ -2199,5 +2208,3 @@ currentQuizData.questions.questions.forEach(q => {});
 </script>
 </body>
 </html>
-
-```
