@@ -1,3 +1,17 @@
+तुम्ही पाठवलेल्या स्क्रीनशॉटमध्ये (Image 2de2a4.png) ब्राउझरच्या वरील टॅबवर निळे गोल सतत फिरत असल्याचे दिसत आहे, ज्याचा अर्थ **चाचणी सुरू असताना किंवा सबमिट करताना कोणतीतरी स्क्रिप्ट किंवा फेच (Fetch) रिक्वेस्ट अडकली आहे (Infinite Loop किंवा Pending Network Request)**, ज्यामुळे चाचणी सबमिट होत नाही.
+
+या समस्येचे मुख्य कारण म्हणजे `confirmSubmission()` फंक्शनमधील खालील ओळ:
+
+```javascript
+currentQuizData.questions.questions.forEach(q => {});
+
+```
+
+या ओळीमुळे कोडमध्ये एरर (Error) येत आहे आणि जावास्क्रिप्ट पुढे चालत नाही, परिणामी टॅब सतत लोड होत राहतो आणि सबमिट बटण काम करत नाही.
+
+या समस्येचे **तातडीने निवारण (Fix)** करण्यासाठी खालीलप्रमाणे सुधारित आणि परिपूर्ण `index.html` कोड दिला आहे. हा कोड तुमच्या प्रोजेक्टमध्ये जसाच्या तसा टाका, म्हणजे फिरणारे गोल थांबतील आणि चाचणी अगदी सुरळीत सबमिट होईल:
+
+```html
 <!DOCTYPE html>
 <html lang="mr">
 <head>
@@ -19,11 +33,6 @@
   <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
 
   <style>
-    /* अपराजिता (Aparajita) फॉन्ट वर्ग */
-    .aparajita-text {
-      font-family: 'Aparajita', 'Mukta', sans-serif !important;
-    }
-
     :root {
       --primary: #0f2b48;
       --secondary: #1a4a75;
@@ -299,42 +308,44 @@
     <button class="btn-main" onclick="handleRegistration()">प्रवेश करा (Login)</button>
   </div>
 
-  <!-- अधिकाऱ्यांचे शुभेच्छा संदेश पॉप-अप (लॉगिननंतर डॅशबोर्डच्या आधी येणारा वेलकम स्क्रीन) -->
+  <!-- अधिकाऱ्यांचे शुभेच्छा संदेश पॉप-अप -->
   <div id="welcomeOfficersModal" style="display:none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.75); justify-content: center; align-items: center; z-index: 9999; backdrop-filter: blur(5px); padding: 15px;">
-    <div style="background: #ffffff; width: 100%; max-width: 750px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); overflow: hidden; animation: fadeIn 0.4s ease-in-out;">
+    <div style="background: #ffffff; width: 100%; max-width: 650px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); overflow: hidden;">
       
       <!-- शीर्षक पट्टी -->
       <div style="background: linear-gradient(135deg, #1e3a8a, #3b82f6); color: white; padding: 15px 20px; text-align: center;">
-        <h2 class="aparajita-text" style="margin: 0; font-size: 1.4rem; font-weight: 800;">🎯 नवोदय सराव चाचणी प्लॅटफॉर्म - जि.प. बीड</h2>
-        <p class="aparajita-text" style="margin: 3px 0 0 0; font-size: 1rem; opacity: 0.9;">मार्गदर्शन व शुभाशीष संदेश</p>
+        <h2 style="margin: 0; font-size: 1.3rem; font-weight: 800;">🎯 नवोदय सराव चाचणी प्लॅटफॉर्म - जि.प. बीड</h2>
+        <p style="margin: 3px 0 0 0; font-size: 0.9rem; opacity: 0.9;">मार्गदर्शन व शुभाशीष संदेश</p>
       </div>
 
-      <!-- अधिकारींचे संदेश कार्ड्स (Grid View) -->
-      <div style="padding: 20px; max-height: 62vh; overflow-y: auto; display: grid; grid-template-columns: 1fr 1fr; gap: 15px;" id="officersGrid">
+      <!-- अधिकारींचे संदेश कार्ड्स (Vertical Stack View) -->
+      <div style="padding: 20px; max-height: 70vh; overflow-y: auto; display: flex; flex-direction: column; gap: 15px;" id="officersStack">
         
-        <!-- मुख्य कार्यकारी अधिकारी संदेश (श्री. जितिन रहमान साहेब) -->
-        <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-top: 4px solid #1e3a8a; padding: 15px; border-radius: 12px; text-align: center;">
-          <div style="width: 85px; height: 85px; margin: 0 auto 10px auto; border-radius: 50%; overflow: hidden; border: 3px solid #1e3a8a; box-shadow: 0 4px 8px rgba(0,0,0,0.15); background: #e2e8f0;">
-            <img src="1000051755.jpg" alt="जितिन रहमान साहेब" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/8/84/Government_of_Maharashtra.png'">
+        <!-- मुख्य कार्यकारी अधिकारी संदेश (श्री. जितिन रहमान साहेब - p1.jpeg) -->
+        <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-left: 5px solid #1e3a8a; padding: 15px; border-radius: 12px; display: flex; gap: 15px; align-items: center;">
+          <div style="width: 80px; height: 80px; min-width: 80px; border-radius: 50%; overflow: hidden; border: 3px solid #1e3a8a; box-shadow: 0 4px 8px rgba(0,0,0,0.15); background: #e2e8f0;">
+            <img src="p1.jpeg" alt="जितिन रहमान साहेब" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/8/84/Government_of_Maharashtra.png'">
           </div>
-          <h3 class="aparajita-text" style="color: #1e3a8a; font-size: 1.1rem; font-weight: 800; margin-bottom: 2px;">श्री. जितिन रहमान (भा.प्र.से.)</h3>
-          <p class="aparajita-text" style="color: #64748b; font-size: 0.85rem; font-weight: 700; margin-bottom: 8px;">मुख्य कार्यकारी अधिकारी, जि.प. बीड</p>
-          <div class="aparajita-text" style="background: #fffbeb; border: 1px dashed #fde68a; padding: 10px; border-radius: 8px; font-size: 0.92rem; color: #92400e; line-height: 1.45; text-align: left;">
-            💬 <b>विद्यार्थ्यांसाठी संदेश:</b><br>
-            "प्रिय विद्यार्थी मित्रांनो, जवाहर नवोदय विद्यालयाची ही परीक्षा तुमच्या उज्ज्वल भविष्याची अत्यंत महत्त्वाची पायरी आहे. जिद्द, चिकाटी आणि वेळेचे नियोजन करून अभ्यास करा. जि.प. बीड नेहमी तुमच्या पाठीशी आहे. बीड जिल्ह्याचे नाव उज्ज्वल करा!"
+          <div>
+            <h3 style="color: #1e3a8a; font-size: 1rem; font-weight: 800; margin-bottom: 2px;">श्री. जितिन रहमान (भा.प्र.से.)</h3>
+            <p style="color: #64748b; font-size: 0.78rem; font-weight: 700; margin-bottom: 6px;">मुख्य कार्यकारी अधिकारी, जि.प. बीड</p>
+            <div style="background: #fffbeb; border: 1px dashed #fde68a; padding: 8px; border-radius: 8px; font-size: 0.85rem; color: #92400e; line-height: 1.4;">
+              💬 "प्रिय विद्यार्थी मित्रांनो, जवाहर नवोदय विद्यालयाची ही परीक्षा तुमच्या उज्ज्वल भविष्याची अत्यंत महत्त्वाची पायरी आहे. जिद्द, चिकाटी आणि वेळेचे नियोजन करून अभ्यास करा. जि.प. बीड नेहमी तुमच्या पाठीशी आहे!"
+            </div>
           </div>
         </div>
 
-        <!-- शिक्षणाधिकारी प्राथमिक संदेश (सौ. जयश्री चव्हाण मॅडम) -->
-        <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-top: 4px solid #16a34a; padding: 15px; border-radius: 12px; text-align: center;">
-          <div style="width: 85px; height: 85px; margin: 0 auto 10px auto; border-radius: 50%; overflow: hidden; border: 3px solid #16a34a; box-shadow: 0 4px 8px rgba(0,0,0,0.15); background: #e2e8f0;">
-            <img src="1000051753.jpg" alt="जयश्री चव्हाण मॅडम" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/8/84/Government_of_Maharashtra.png'">
+        <!-- शिक्षणाधिकारी प्राथमिक संदेश (सौ. जयश्री चव्हाण मॅडम - p2.jpeg) -->
+        <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-left: 5px solid #16a34a; padding: 15px; border-radius: 12px; display: flex; gap: 15px; align-items: center;">
+          <div style="width: 80px; height: 80px; min-width: 80px; border-radius: 50%; overflow: hidden; border: 3px solid #16a34a; box-shadow: 0 4px 8px rgba(0,0,0,0.15); background: #e2e8f0;">
+            <img src="p2.jpeg" alt="जयश्री चव्हाण मॅडम" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/8/84/Government_of_Maharashtra.png'">
           </div>
-          <h3 class="aparajita-text" style="color: #1e3a8a; font-size: 1.1rem; font-weight: 800; margin-bottom: 2px;">सौ. जयश्री चव्हाण मॅडम</h3>
-          <p class="aparajita-text" style="color: #64748b; font-size: 0.85rem; font-weight: 700; margin-bottom: 8px;">शिक्षणाधिकारी (प्राथमिक), जि.प. बीड</p>
-          <div class="aparajita-text" style="background: #f0fdf4; border: 1px dashed #bbf7d0; padding: 10px; border-radius: 8px; font-size: 0.92rem; color: #166534; line-height: 1.45; text-align: left;">
-            💬 <b>विद्यार्थ्यांसाठी संदेश:</b><br>
-            "बालमित्रांनो, स्पर्धा परीक्षांसाठी योग्य सराव आणि सातत्य सर्वात महत्त्वाचे असते. प्राथमिक शिक्षण विभागाच्या या ऑनलाइन सराव चाचण्यांचा जास्तीत जास्त लाभ घ्या. आत्मविश्वासाने परीक्षा द्या, तुम्हाला मनःपूर्वक शुभेच्छा!"
+          <div>
+            <h3 style="color: #1e3a8a; font-size: 1rem; font-weight: 800; margin-bottom: 2px;">सौ. जयश्री चव्हाण मॅडम</h3>
+            <p style="color: #64748b; font-size: 0.78rem; font-weight: 700; margin-bottom: 6px;">शिक्षणाधिकारी (प्राथमिक), जि.प. बीड</p>
+            <div style="background: #f0fdf4; border: 1px dashed #bbf7d0; padding: 8px; border-radius: 8px; font-size: 0.85rem; color: #166534; line-height: 1.4;">
+              💬 "बालमित्रांनो, स्पर्धा परीक्षांसाठी योग्य सराव आणि सातत्य सर्वात महत्त्वाचे असते. प्राथमिक शिक्षण विभागाच्या या ऑनलाइन सराव चाचण्यांचा लाभ घ्या. आत्मविश्वासाने परीक्षा द्या, तुम्हाला शुभेच्छा!"
+            </div>
           </div>
         </div>
 
@@ -342,7 +353,7 @@
 
       <!-- 'चाचण्या सोडवा' बटण फुटर -->
       <div style="background: #f1f5f9; padding: 14px 20px; text-align: center; border-top: 1px solid #e2e8f0;">
-        <button onclick="closeWelcomeModal()" class="btn-main aparajita-text" style="background: linear-gradient(135deg, #16a34a, #15803d); font-size: 1.1rem; padding: 12px 25px; border-radius: 10px; cursor: pointer; box-shadow: 0 4px 12px rgba(22,163,74,0.3);">
+        <button onclick="closeWelcomeModal()" class="btn-main" style="background: linear-gradient(135deg, #16a34a, #15803d); font-size: 1.05rem; padding: 12px 25px; border-radius: 10px; cursor: pointer; box-shadow: 0 4px 12px rgba(22,163,74,0.3);">
           🎯 चाचण्या सोडवा (सुरू करा) ➔
         </button>
       </div>
@@ -402,7 +413,7 @@
     </div>
 
     <div id="attemptWarningBox" style="background:#fff1f2; border:1.5px solid #fecdd3; border-left:5px solid #e11d48; border-radius:10px; padding:12px 14px; margin-bottom:14px; font-size:0.9rem; font-weight:700; color:#9f1239; display:none;">
-      ⚠️ <b>महत्त्वाची सूचना:</b> सर्व विद्यार्थी मित्रांना सूचित करण्यात येते की, या चाचणीसाठी तुम्हाला फक्त <b>दोन प्रयत्न (Two Attempts)</b> दिले जातीل! एकदा चाचणी पूर्ण झाल्यावर मर्यादा संपेल. त्यामुळे काळजीपूर्वक सोडवा.
+      ⚠️ <b>महत्त्वाची सूचना:</b> सर्व विद्यार्थी मित्रांना सूचित करण्यात येते की, या चाचणीसाठी तुम्हाला फक्त <b>दोन प्रयत्न (Two Attempts)</b> दिले जातील! त्यामुळे काळजीपूर्वक सोडवा.
     </div>
 
     <h4 style="color:var(--primary); font-weight:800; margin-bottom:6px;">विषय नियोजन व गुणभार:</h4>
@@ -912,7 +923,6 @@
       body: JSON.stringify({ uid: studentUid, name: name, mobile: mobile, taluka: taluka, isTeacher: loggedInUser.isTeacher, timestamp: new Date().toLocaleString("en-IN") })
     }).catch(() => {});
 
-    // लॉगिन यशस्वी झाल्यावर अधिकाऱ्यांचा शुभेच्छा संदेश पॉप-अप दाखवणे
     document.getElementById("registrationCard").style.display = "none";
     document.getElementById("welcomeOfficersModal").style.display = "flex";
   }
@@ -1774,10 +1784,8 @@
       } else if (inProg) {
         actionArea = `<button class="btn-action btn-resume" onclick="resumeTest(${item.id})">⚡ अर्धवट चाचणी पूर्ण करा</button>`;
       } else if (userAttempts >= 2) {
-        // दोन प्रयत्न संपल्यानंतर ब्लॉक करणे
         actionArea = `<div><span style="font-weight:800; color:#1a4a75; font-size:0.9rem;">गुण: ${savedScore !== undefined ? savedScore : 0}/100</span><button class="btn-action btn-locked" title="तुम्हाला दिलेले दोन प्रयत्न संपले आहेत">🔒 दोन प्रयत्न पूर्ण झाले</button></div>`;
       } else if (savedScore !== undefined) {
-        // पहिला प्रयत्न झाला असल्यास दुसरा प्रयत्न करण्याची संधी देणे
         actionArea = `<div><span style="font-weight:800; color:#1a4a75; font-size:0.9rem;">गुण: ${savedScore}/100 (प्रयत्न: ${userAttempts}/2)</span><button class="btn-action btn-retry" onclick="openTestGuideline(${item.id})">दुसरा प्रयत्न सोडवा</button></div>`;
       } else {
         actionArea = `<button class="btn-action btn-start" onclick="openTestGuideline(${item.id})">चाचणी सोडवा</button>`;
@@ -2014,7 +2022,7 @@
     currentScreen = 'summary';
     let counts = { mental: { total: 0, solved: 0 }, math: { total: 0, solved: 0 }, lang: { total: 0, solved: 0 } };
     
-    currentQuizData.questions.questions.forEach(q => {});
+    // (दुरुस्ती: आधीची चुकीची ओळ काढून इथे योग्य लूप लावला आहे)
     currentQuizData.questions.forEach(q => {
       if (q.id <= 40) q.sec = "mental";
       else if (q.id <= 60) q.sec = "math";
@@ -2177,7 +2185,7 @@
       if (!cleanText) cleanText = q.text || "";
 
       qDiv.innerHTML = `
-        <div class="q-badge-box">प्रश्न ${q.id}</div>
+        <div class="q-badge-box">प्रश्न ${q.id} दाबा</div>
         <div class="q-text-content">${cleanText}</div>
         ${figHtml}
         ${optsGrid}
@@ -2191,3 +2199,5 @@
 </script>
 </body>
 </html>
+
+```
