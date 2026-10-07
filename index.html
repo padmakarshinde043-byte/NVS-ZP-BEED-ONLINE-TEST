@@ -19,6 +19,11 @@
   <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
 
   <style>
+    /* अपराजिता (Aparajita) फॉन्ट वर्ग */
+    .aparajita-text {
+      font-family: 'Aparajita', 'Mukta', sans-serif !important;
+    }
+
     :root {
       --primary: #0f2b48;
       --secondary: #1a4a75;
@@ -294,6 +299,57 @@
     <button class="btn-main" onclick="handleRegistration()">प्रवेश करा (Login)</button>
   </div>
 
+  <!-- अधिकाऱ्यांचे शुभेच्छा संदेश पॉप-अप (लॉगिननंतर डॅशबोर्डच्या आधी येणारा वेलकम स्क्रीन) -->
+  <div id="welcomeOfficersModal" style="display:none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.75); justify-content: center; align-items: center; z-index: 9999; backdrop-filter: blur(5px); padding: 15px;">
+    <div style="background: #ffffff; width: 100%; max-width: 750px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); overflow: hidden; animation: fadeIn 0.4s ease-in-out;">
+      
+      <!-- शीर्षक पट्टी -->
+      <div style="background: linear-gradient(135deg, #1e3a8a, #3b82f6); color: white; padding: 15px 20px; text-align: center;">
+        <h2 class="aparajita-text" style="margin: 0; font-size: 1.4rem; font-weight: 800;">🎯 नवोदय सराव चाचणी प्लॅटफॉर्म - जि.प. बीड</h2>
+        <p class="aparajita-text" style="margin: 3px 0 0 0; font-size: 1rem; opacity: 0.9;">मार्गदर्शन व शुभाशीष संदेश</p>
+      </div>
+
+      <!-- अधिकारींचे संदेश कार्ड्स (Grid View) -->
+      <div style="padding: 20px; max-height: 62vh; overflow-y: auto; display: grid; grid-template-columns: 1fr 1fr; gap: 15px;" id="officersGrid">
+        
+        <!-- मुख्य कार्यकारी अधिकारी संदेश (श्री. जितिन रहमान साहेब) -->
+        <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-top: 4px solid #1e3a8a; padding: 15px; border-radius: 12px; text-align: center;">
+          <div style="width: 85px; height: 85px; margin: 0 auto 10px auto; border-radius: 50%; overflow: hidden; border: 3px solid #1e3a8a; box-shadow: 0 4px 8px rgba(0,0,0,0.15); background: #e2e8f0;">
+            <img src="1000051755.jpg" alt="जितिन रहमान साहेब" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/8/84/Government_of_Maharashtra.png'">
+          </div>
+          <h3 class="aparajita-text" style="color: #1e3a8a; font-size: 1.1rem; font-weight: 800; margin-bottom: 2px;">श्री. जितिन रहमान (भा.प्र.से.)</h3>
+          <p class="aparajita-text" style="color: #64748b; font-size: 0.85rem; font-weight: 700; margin-bottom: 8px;">मुख्य कार्यकारी अधिकारी, जि.प. बीड</p>
+          <div class="aparajita-text" style="background: #fffbeb; border: 1px dashed #fde68a; padding: 10px; border-radius: 8px; font-size: 0.92rem; color: #92400e; line-height: 1.45; text-align: left;">
+            💬 <b>विद्यार्थ्यांसाठी संदेश:</b><br>
+            "प्रिय विद्यार्थी मित्रांनो, जवाहर नवोदय विद्यालयाची ही परीक्षा तुमच्या उज्ज्वल भविष्याची अत्यंत महत्त्वाची पायरी आहे. जिद्द, चिकाटी आणि वेळेचे नियोजन करून अभ्यास करा. जि.प. बीड नेहमी तुमच्या पाठीशी आहे. बीड जिल्ह्याचे नाव उज्ज्वल करा!"
+          </div>
+        </div>
+
+        <!-- शिक्षणाधिकारी प्राथमिक संदेश (सौ. जयश्री चव्हाण मॅडम) -->
+        <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-top: 4px solid #16a34a; padding: 15px; border-radius: 12px; text-align: center;">
+          <div style="width: 85px; height: 85px; margin: 0 auto 10px auto; border-radius: 50%; overflow: hidden; border: 3px solid #16a34a; box-shadow: 0 4px 8px rgba(0,0,0,0.15); background: #e2e8f0;">
+            <img src="1000051753.jpg" alt="जयश्री चव्हाण मॅडम" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/8/84/Government_of_Maharashtra.png'">
+          </div>
+          <h3 class="aparajita-text" style="color: #1e3a8a; font-size: 1.1rem; font-weight: 800; margin-bottom: 2px;">सौ. जयश्री चव्हाण मॅडम</h3>
+          <p class="aparajita-text" style="color: #64748b; font-size: 0.85rem; font-weight: 700; margin-bottom: 8px;">शिक्षणाधिकारी (प्राथमिक), जि.प. बीड</p>
+          <div class="aparajita-text" style="background: #f0fdf4; border: 1px dashed #bbf7d0; padding: 10px; border-radius: 8px; font-size: 0.92rem; color: #166534; line-height: 1.45; text-align: left;">
+            💬 <b>विद्यार्थ्यांसाठी संदेश:</b><br>
+            "बालमित्रांनो, स्पर्धा परीक्षांसाठी योग्य सराव आणि सातत्य सर्वात महत्त्वाचे असते. प्राथमिक शिक्षण विभागाच्या या ऑनलाइन सराव चाचण्यांचा जास्तीत जास्त लाभ घ्या. आत्मविश्वासाने परीक्षा द्या, तुम्हाला मनःपूर्वक शुभेच्छा!"
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 'चाचण्या सोडवा' बटण फुटर -->
+      <div style="background: #f1f5f9; padding: 14px 20px; text-align: center; border-top: 1px solid #e2e8f0;">
+        <button onclick="closeWelcomeModal()" class="btn-main aparajita-text" style="background: linear-gradient(135deg, #16a34a, #15803d); font-size: 1.1rem; padding: 12px 25px; border-radius: 10px; cursor: pointer; box-shadow: 0 4px 12px rgba(22,163,74,0.3);">
+          🎯 चाचण्या सोडवा (सुरू करा) ➔
+        </button>
+      </div>
+
+    </div>
+  </div>
+
   <!-- डॅशबोर्ड -->
   <div id="dashboardArea" style="display:none;">
     <div class="student-bar">
@@ -346,7 +402,7 @@
     </div>
 
     <div id="attemptWarningBox" style="background:#fff1f2; border:1.5px solid #fecdd3; border-left:5px solid #e11d48; border-radius:10px; padding:12px 14px; margin-bottom:14px; font-size:0.9rem; font-weight:700; color:#9f1239; display:none;">
-      ⚠️ <b>महत्त्वाची सूचना:</b> सर्व विद्यार्थी मित्रांना सूचित करण्यात येते की, या चाचणीसाठी तुम्हाला फक्त <b>एकच (Single) संधी</b> दिली जाईल! एकदा चाचणी सबमिट केल्यानंतर ती पुन्हा सोडवता येणार नाही. त्यामुळे काळजीपूर्वक सोडवा.
+      ⚠️ <b>महत्त्वाची सूचना:</b> सर्व विद्यार्थी मित्रांना सूचित करण्यात येते की, या चाचणीसाठी तुम्हाला फक्त <b>दोन प्रयत्न (Two Attempts)</b> दिले जातीل! एकदा चाचणी पूर्ण झाल्यावर मर्यादा संपेल. त्यामुळे काळजीपूर्वक सोडवा.
     </div>
 
     <h4 style="color:var(--primary); font-weight:800; margin-bottom:6px;">विषय नियोजन व गुणभार:</h4>
@@ -601,10 +657,9 @@
       </div>
     </div>
 
-    <!-- मॅन्युअल शफल पर्याय (सुविधा ४ साठी) -->
     <div style="background:#f8fafc; border:1.5px solid #cbd5e1; border-radius:10px; padding:12px; margin-bottom:14px;">
       <div style="font-weight:800; color:#0f2b48; font-size:0.95rem; margin-bottom:6px;">🔀 मॅन्युअल प्रश्न शफल (Manual Shuffle Q21-40 & Q41-60):</div>
-      <p style="font-size:0.8rem; color:#64748b; margin-bottom:8px;">निवडलेल्या चाचणीमधील प्रश्न क्रमांक आपोआप खाली-वर (Swap) करण्यासाठी खालील बटण दाबा:</p>
+      <p style="font-size:0.8rem; color:#64748b; margin-bottom:8px;">निवडलेल्या चाचणीमधील प्रश्न क्रमांक आपोआप खाली-वर करण्यासाठी खालील बटण दाबा:</p>
       <div style="display:flex; gap:8px; flex-wrap:wrap;">
         <button class="btn-action" style="background:#0284c7; color:#fff;" onclick="manualShuffleRange(21, 40)">🔀 प्रश्न २१ ते ४० शफल करा</button>
         <button class="btn-action" style="background:#7c3aed; color:#fff;" onclick="manualShuffleRange(41, 60)">🔀 प्रश्न ४१ ते ६० शफल करा</button>
@@ -638,7 +693,7 @@
   </div>
 </div>
 
-<!-- ॲडमिन COMMENTS / अभिप्राय Modal (सुविधा ३ साठी) -->
+<!-- ॲडमिन COMMENTS / अभिप्राय Modal -->
 <div id="adminCommentsModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(15,43,72,0.85); z-index:3850; justify-content:center; align-items:center; backdrop-filter:blur(4px); padding:12px;">
   <div style="background:#ffffff; border-radius:16px; max-width:850px; width:100%; max-height:90vh; overflow-y:auto; padding:24px 20px; box-shadow:0 12px 35px rgba(0,0,0,0.3); border-top:5px solid #0284c7;">
     <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; border-bottom:2px solid #e2e8f0; padding-bottom:10px;">
@@ -857,6 +912,13 @@
       body: JSON.stringify({ uid: studentUid, name: name, mobile: mobile, taluka: taluka, isTeacher: loggedInUser.isTeacher, timestamp: new Date().toLocaleString("en-IN") })
     }).catch(() => {});
 
+    // लॉगिन यशस्वी झाल्यावर अधिकाऱ्यांचा शुभेच्छा संदेश पॉप-अप दाखवणे
+    document.getElementById("registrationCard").style.display = "none";
+    document.getElementById("welcomeOfficersModal").style.display = "flex";
+  }
+
+  function closeWelcomeModal() {
+    document.getElementById("welcomeOfficersModal").style.display = "none";
     renderDashboard();
   }
 
@@ -939,7 +1001,6 @@
     }).catch(() => {});
   }
 
-  // ------------------ Top 50 Management (सुविधा ३ नुसार शिक्षकांचे गुण वगळणे) ------------------
   function openAdminToppersModal() {
     document.getElementById("adminToppersModal").style.display = "flex";
     const sel = document.getElementById("adminTestSelector");
@@ -967,7 +1028,6 @@
       .then(res => res.json())
       .then(data => {
         const results = data ? Object.entries(data).map(([k, v]) => ({ firebaseKey: k, ...v })) : [];
-        // सुविधा ३: जर युझर शिक्षक असेल (isTeacher === true) तर त्याचे गुण top 50 मध्ये मोजताना वगळणे
         const filtered = results.filter(r => r.testTitle === selectedTitle && !r.isTeacher);
         
         if (filtered.length === 0) {
@@ -1077,7 +1137,6 @@
     }
   }
 
-  // ------------------ सुविध ३: Comments / अभिप्राय Admin Panel ------------------
   function openAdminCommentsModal() {
     document.getElementById("adminCommentsModal").style.display = "flex";
     loadAdminCommentsTable();
@@ -1099,7 +1158,7 @@
           return;
         }
 
-        const entries = Object.entries(data).reverse(); // नवीन अभिप्राय वरती दाखवणे
+        const entries = Object.entries(data).reverse();
         let rows = "";
         entries.forEach(([key, cm], idx) => {
           rows += `<tr>
@@ -1168,7 +1227,6 @@
     });
   }
 
-  // ------------------ Registered Users Management & Bulk Deletion ------------------
   function openAdminRegisteredUsersModal() {
     document.getElementById("adminRegisteredUsersModal").style.display = "flex";
     loadRegisteredUsersTable();
@@ -1239,7 +1297,7 @@
 
       Promise.all(deletePromises)
         .then(() => {
-          alert("निवडलेले विद्यार्थी यशस्वीरित्या डिलीट झाले!");
+          alert("निवडलेले विद्यार्थी यशस्वीरीत्या डिलीट झाले!");
           loadRegisteredUsersTable();
           fetchAdminDashboardData();
         })
@@ -1251,7 +1309,7 @@
     if (confirm("हा नोंदणीकृत युझर डिलीट करायचा आहे का?")) {
       fetch(`${FIREBASE_DB_URL}/students/${firebaseKey}.json`, { method: "DELETE" })
         .then(() => {
-          alert("युझर यशस्वीरित्या डिलीट केला!");
+          alert("युझर यशस्वीरीत्या डिलीट केला!");
           loadRegisteredUsersTable();
           fetchAdminDashboardData();
         })
@@ -1303,7 +1361,7 @@
     }
     let rows = "";
     keys.forEach((mob, idx) => {
-      rows += `<tr><td style="text-align:center;">${idx + 1}</td><td style="font-weight:800; color:#0f2b48;">${mob}</td><td style="text-align:center;"><span style="background:#f3e8ff; color:#7c3aed; padding:3px 8px; border-radius:6px; font-size:0.8rem;">अमर्याद प्रयत्न</span></td><td style="text-align:center;"><button onclick="removeVipStudent('${mob}')" style="background:#fee2e2; color:#991b1b; border:none; padding:4px 10px; border-radius:6px; font-weight:700; cursor:pointer;">हटवा ✕</button></td></tr>`;
+      rows += `<tr><td style="text-align:center;">${idx + 1}</td><td style="font-weight:800; color:#0f2b48;">${mob}</td><td style="text-align:center;"><span style="background:#f3e8ff; color:#7c3aed; padding:3px 8px; border-radius:6px; font-size:0.8rem;">दोन प्रयत्न (Two Attempts)</span></td><td style="text-align:center;"><button onclick="removeVipStudent('${mob}')" style="background:#fee2e2; color:#991b1b; border:none; padding:4px 10px; border-radius:6px; font-weight:700; cursor:pointer;">हटवा ✕</button></td></tr>`;
     });
     host.innerHTML = `<table class="report-table" style="margin:0;"><thead><tr><th>अ.क्र.</th><th>Teacher Module नंबर</th><th>सवलत दर्जा</th><th>कृती</th></tr></thead><tbody>${rows}</tbody></table>`;
   }
@@ -1549,19 +1607,17 @@
     });
   }
 
-  // ------------------ सुविधा ४: Manual Shuffle for Q21-40 & Q41-60 ------------------
   async function manualShuffleRange(startId, endId) {
     const testId = parseInt(document.getElementById("editTestIdSelect").value);
     const testMeta = EXAM_SCHEDULE.find(t => t.id === testId);
     if (!testMeta) return;
 
-    if (!confirm(`तुम्हाला चाचणी क्र. ${testId} मधील प्रश्न क्र. ${startId} ते ${endId} चे क्रम मॅन्युअली शफल (बदलायचे) करायचे आहेत का?`)) return;
+    if (!confirm(`तुम्हाला चाचणी क्र. ${testId} मधील प्रश्न क्र. ${startId} ते ${endId} चे क्रम मॅन्युअली शफल करायचे आहेत का?`)) return;
 
     try {
       const res = await fetch(testMeta.file);
       const data = await res.json();
 
-      // मूळ किंवा ओव्हरराईड केलेले प्रश्न गोळा करणे
       let rangeQuestions = [];
       for (let id = startId; id <= endId; id++) {
         let qObj = data.questions.find(q => q.id === id);
@@ -1572,18 +1628,15 @@
         } catch(e) {}
         
         if (qObj) {
-          // मूळ प्रश्न आयडी सुरक्षित ठेवून क्लोन करणे
           rangeQuestions.push({ ...qObj, originalId: id });
         }
       }
 
-      // फिशर-येट्स शफल अल्गोरिदम (Fisher-Yates Shuffle)
       for (let i = rangeQuestions.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [rangeQuestions[i], rangeQuestions[j]] = [rangeQuestions[j], rangeQuestions[i]];
       }
 
-      // शफल केल्यानंतर प्रश्न क्रमांक (id) मूळ क्रमानेच ठेवणे, पण आतील मजकूर आणि पर्याय बदलणे (प्रश्न क्रमांक शफल नको या सूचनेनुसार)
       const savePromises = rangeQuestions.map((q, idx) => {
         const targetId = startId + idx;
         const updatedQ = {
@@ -1688,7 +1741,6 @@
     let displayName = loggedInUser.name;
     if (isUserTeacher) {
       displayName += " (शिक्षक - Teacher Login)";
-      // सुविधा ३: शिक्षकाने लॉगिन केले तर त्याला चाचणी सुरु असताना त्याच्या नावापुढे शिक्षक लॉगिन अशी सूचना पूर्णवेळ दाखवणे
     } else if (isUserVip) {
       displayName += " (Teacher Module)";
     }
@@ -1711,6 +1763,7 @@
       let isAccessible = isUserVip || isUserTeacher || (globalUnlockedTests[item.id] !== undefined ? globalUnlockedTests[item.id] : (todayDate >= item.dateISO));
       const savedScore = loggedInUser.history && loggedInUser.history[item.id];
       const inProg = loggedInUser.inProgress && loggedInUser.inProgress[item.id];
+      const userAttempts = loggedInUser.attempts && loggedInUser.attempts[item.id] ? loggedInUser.attempts[item.id] : 0;
 
       const card = document.createElement("div");
       card.className = "test-item " + (isAccessible ? "unlocked" : "");
@@ -1720,13 +1773,12 @@
         actionArea = `<button class="btn-action btn-locked">🔒 ${item.dateMarathi} रोजी अनलॉक</button>`;
       } else if (inProg) {
         actionArea = `<button class="btn-action btn-resume" onclick="resumeTest(${item.id})">⚡ अर्धवट चाचणी पूर्ण करा</button>`;
+      } else if (userAttempts >= 2) {
+        // दोन प्रयत्न संपल्यानंतर ब्लॉक करणे
+        actionArea = `<div><span style="font-weight:800; color:#1a4a75; font-size:0.9rem;">गुण: ${savedScore !== undefined ? savedScore : 0}/100</span><button class="btn-action btn-locked" title="तुम्हाला दिलेले दोन प्रयत्न संपले आहेत">🔒 दोन प्रयत्न पूर्ण झाले</button></div>`;
       } else if (savedScore !== undefined) {
-        // सुविधा २: जर चाचणी आधीच सोडवली असेल आणि विद्यार्थी पुन्हा सोडवण्याचा प्रयत्न करत असेल तर एकच संधी असल्यामुळे ब्लॉक करणे (शिक्षकांसाठी अमर्याद किंवा हवी असल्यास पुन्हा)
-        if (!isUserTeacher) {
-          actionArea = `<div><span style="font-weight:800; color:#1a4a75; font-size:0.9rem;">गुण: ${savedScore}/100</span><button class="btn-action btn-locked" title="या चाचणीसाठी तुम्हाला एकच संधी होती">🔒 चाचणी पूर्ण झाली (एकच संधी)</button></div>`;
-        } else {
-          actionArea = `<div><span style="font-weight:800; color:#1a4a75; font-size:0.9rem;">गुण: ${savedScore}/100</span><button class="btn-action btn-retry" onclick="openTestGuideline(${item.id})">पुन्हा सोडवा</button></div>`;
-        }
+        // पहिला प्रयत्न झाला असल्यास दुसरा प्रयत्न करण्याची संधी देणे
+        actionArea = `<div><span style="font-weight:800; color:#1a4a75; font-size:0.9rem;">गुण: ${savedScore}/100 (प्रयत्न: ${userAttempts}/2)</span><button class="btn-action btn-retry" onclick="openTestGuideline(${item.id})">दुसरा प्रयत्न सोडवा</button></div>`;
       } else {
         actionArea = `<button class="btn-action btn-start" onclick="openTestGuideline(${item.id})">चाचणी सोडवा</button>`;
       }
@@ -1757,10 +1809,9 @@
   function openTestGuideline(testId) {
     currentPendingTest = EXAM_SCHEDULE.find(t => t.id === testId);
     
-    // सुविधा २: सर्व विद्यार्थ्यांना चाचणी सोडवण्यासाठी एकच संधी द्या, तसा उल्लेख फक्त चाचणी सुरु करताना (Guideline स्क्रीनवर) करा
-    const savedScore = loggedInUser.history && loggedInUser.history[currentPendingTest.id];
-    if (savedScore !== undefined && !loggedInUser.isTeacher) {
-      alert("या चाचणीसाठी तुम्हाला नियमानुसार फक्त एकच संधी होती, जी तुम्ही आधीच पूर्ण केली आहे!");
+    const userAttempts = loggedInUser.attempts && loggedInUser.attempts[currentPendingTest.id] ? loggedInUser.attempts[currentPendingTest.id] : 0;
+    if (userAttempts >= 2) {
+      alert("या चाचणीसाठी तुम्हाला दिलेले दोन्ही प्रयत्न संपले आहेत!");
       return;
     }
 
@@ -1770,13 +1821,8 @@
     document.getElementById("guidelinesArea").style.display = "block";
     document.getElementById("guideTestTitle").innerText = currentPendingTest.title;
 
-    // फक्त विद्यार्थ्यांसाठीच एकच संधी असल्याची सूचना दाखवणे, शिक्षकांसाठी नाही
     const warningBox = document.getElementById("attemptWarningBox");
-    if (!loggedInUser.isTeacher) {
-      warningBox.style.display = "block";
-    } else {
-      warningBox.style.display = "none";
-    }
+    warningBox.style.display = "block";
 
     window.scrollTo(0, 0);
   }
@@ -1867,7 +1913,6 @@
     document.getElementById("dashboardArea").style.display = "none";
     document.getElementById("testArena").style.display = "block";
     
-    // सुविधा ५: संपूर्ण चाचणी सुरु असताना हेडरमध्ये चाचणीचा क्रमांक आणि विद्यार्थी नाव पूर्णवेळ दिसणे (+ शिक्षक लॉगिन असल्यास सूचना)
     updateHeaderDisplay(testData.title);
 
     displaySection('mental');
@@ -1969,6 +2014,7 @@
     currentScreen = 'summary';
     let counts = { mental: { total: 0, solved: 0 }, math: { total: 0, solved: 0 }, lang: { total: 0, solved: 0 } };
     
+    currentQuizData.questions.questions.forEach(q => {});
     currentQuizData.questions.forEach(q => {
       if (q.id <= 40) q.sec = "mental";
       else if (q.id <= 60) q.sec = "math";
@@ -2069,7 +2115,6 @@
 
   function showAnswerKeyView() {
     currentScreen = 'answerkey';
-    // सुविधा ५: उत्तरपत्रिका पाहतानाही हेडरमध्ये चाचणीचा क्रमांक आणि विद्यार्थी नाव पूर्णवेळ दिसणे
     updateHeaderDisplay(currentQuizData ? currentQuizData.title : "उत्तरपत्रिका");
     document.getElementById("resultCertArea").style.display = "none";
     document.getElementById("answerKeyArea").style.display = "block";
