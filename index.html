@@ -548,7 +548,7 @@
   </div>
 </div>
 
-<!-- ॲडमिन नोंदणीकृत युझर्स व्यवस्थापन MODAL (दिनांक व वेळेनुसार क्रमवारी) -->
+<!-- ॲडमिन नोंदणीकृत युझर्स व्यवस्थापन MODAL -->
 <div id="adminRegisteredUsersModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(15,43,72,0.85); z-index:3650; justify-content:center; align-items:center; backdrop-filter:blur(4px); padding:12px;">
   <div style="background:#ffffff; border-radius:16px; max-width:850px; width:100%; max-height:90vh; overflow-y:auto; padding:24px 20px; box-shadow:0 12px 35px rgba(0,0,0,0.3); border-top:5px solid #dc2626;">
     <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; border-bottom:2px solid #e2e8f0; padding-bottom:10px;">
@@ -1248,7 +1248,6 @@
     document.getElementById("adminRegisteredUsersModal").style.display = "none";
   }
 
-  // दिनांक आणि वेळेनुसार (नवीन नोंदणी वर/क्रमाने) सॉर्टिंग करून यादी दाखवणे
   function loadRegisteredUsersTable() {
     const host = document.getElementById("registeredUsersTableHost");
     host.innerHTML = "<p style='text-align:center; padding:15px; color:#64748b;'>विद्यार्थ्यांची यादी लोड होत आहे...</p>";
@@ -1262,12 +1261,10 @@
         }
 
         let entries = Object.values(data);
-        
-        // दिनांक आणि वेळेनुसार सॉर्ट करणे (नवीन नोंदी क्रमाने लावणे)
         entries.sort((a, b) => {
           let timeA = a.timestamp ? new Date(a.timestamp).getTime() : 0;
           let timeB = b.timestamp ? new Date(b.timestamp).getTime() : 0;
-          return timeB - timeA; // उतरता क्रम (नवीन नोंद सर्वात वर)
+          return timeB - timeA;
         });
 
         let rows = "";
@@ -1361,7 +1358,6 @@
     }
   }
 
-  // दिनांक व वेळेनुसार क्रमाने लावून एक्सेल डाऊनलोड करणे
   function downloadSortedStudentsExcel() {
     fetch(`${FIREBASE_DB_URL}/students.json`)
       .then(res => res.json())
@@ -1453,23 +1449,7 @@
   }
 
   function downloadStudentsExcel() {
-    fetch(`${FIREBASE_DB_URL}/students.json`)
-      .then(res => res.json())
-      .then(data => {
-        if (!data) { alert("नोंदणीकृत विद्यार्थी नाहीत."); return; }
-        const uniqueMap = {};
-        Object.values(data).forEach(st => {
-          if (st && st.name && st.mobile) { uniqueMap[makeStudentId(st.mobile, st.name)] = st; }
-        });
-        const list = Object.values(uniqueMap);
-        const wsData = [["अ.क्र.", "विद्यार्थ्याचे नाव", "मोबाईल नंबर", "तालुका", "नोंदणी वेळ"]];
-        list.forEach((st, idx) => { wsData.push([idx + 1, st.name, st.mobile, st.taluka, st.timestamp]); });
-        const ws = XLSX.utils.aoa_to_sheet(wsData);
-        const wb = XLSX.utils.book_new();
-        XLSX.utils.book_append_sheet(wb, ws, "Students");
-        XLSX.writeFile(wb, "NVS_Registered_Students.xlsx");
-      })
-      .catch(() => alert("एक्सेल डाउनलोड करताना त्रुटी आली."));
+    downloadSortedStudentsExcel();
   }
 
   function openAdminVisualEditorModal() {
