@@ -298,13 +298,11 @@
   <div id="welcomeOfficersModal" style="display:none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.75); justify-content: center; align-items: center; z-index: 9999; backdrop-filter: blur(5px); padding: 15px;">
     <div style="background: #ffffff; width: 100%; max-width: 650px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); overflow: hidden;">
       
-      <!-- शीर्षक पट्टी -->
       <div style="background: linear-gradient(135deg, #1e3a8a, #3b82f6); color: white; padding: 15px 20px; text-align: center;">
         <h2 style="margin: 0; font-size: 1.3rem; font-weight: 800;">🎯 नवोदय सराव चाचणी प्लॅटफॉर्म - जि.प. बीड</h2>
         <p style="margin: 3px 0 0 0; font-size: 0.9rem; opacity: 0.9;">मार्गदर्शन व शुभाशीष संदेश</p>
       </div>
 
-      <!-- अधिकारींचे संदेश कार्ड्स (श्री आणि सौ काढलेले व ग्रामीण विद्यार्थ्यांच्या संदर्भासह) -->
       <div style="padding: 20px; max-height: 70vh; overflow-y: auto; display: flex; flex-direction: column; gap: 15px;" id="officersStack">
         
         <!-- मुख्य कार्यकारी अधिकारी संदेश (जितिन रहमान साहेब - p1.jpeg) -->
@@ -337,7 +335,6 @@
 
       </div>
 
-      <!-- 'चाचण्या सोडवा' बटण फुटर -->
       <div style="background: #f1f5f9; padding: 14px 20px; text-align: center; border-top: 1px solid #e2e8f0;">
         <button onclick="closeWelcomeModal()" class="btn-main" style="background: linear-gradient(135deg, #16a34a, #15803d); font-size: 1.05rem; padding: 12px 25px; border-radius: 10px; cursor: pointer; box-shadow: 0 4px 12px rgba(22,163,74,0.3);">
           🎯 चाचण्या सोडवा (सुरू करा) ➔
@@ -551,15 +548,16 @@
   </div>
 </div>
 
-<!-- ॲडमिन नोंदणीकृत युझर्स व्यवस्थापन MODAL -->
+<!-- ॲडमिन नोंदणीकृत युझर्स व्यवस्थापन MODAL (दिनांक व वेळेनुसार क्रमवारी) -->
 <div id="adminRegisteredUsersModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(15,43,72,0.85); z-index:3650; justify-content:center; align-items:center; backdrop-filter:blur(4px); padding:12px;">
   <div style="background:#ffffff; border-radius:16px; max-width:850px; width:100%; max-height:90vh; overflow-y:auto; padding:24px 20px; box-shadow:0 12px 35px rgba(0,0,0,0.3); border-top:5px solid #dc2626;">
     <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; border-bottom:2px solid #e2e8f0; padding-bottom:10px;">
-      <h3 style="color:#dc2626; font-weight:800; font-size:1.2rem;">👥 नोंदणीकृत विद्यार्थी व्यवस्थापन (Bulk Delete)</h3>
+      <h3 style="color:#dc2626; font-weight:800; font-size:1.2rem;">👥 नोंदणीकृत विद्यार्थी व्यवस्थापन (दिनांक व वेळेनुसार क्रमाने)</h3>
       <button onclick="closeAdminRegisteredUsersModal()" style="background:#fee2e2; color:#991b1b; border:none; padding:4px 10px; border-radius:8px; font-weight:800; cursor:pointer;">✕ बंद करा</button>
     </div>
     <div style="display:flex; gap:10px; margin-bottom:12px; align-items:center; flex-wrap:wrap;">
       <button class="btn-action" style="background:#dc2626; color:#fff;" onclick="deleteSelectedRegisteredUsers()">🗑️ निवडलेले युझर्स डिलीट करा</button>
+      <button class="btn-action btn-start" style="padding:8px 14px;" onclick="downloadSortedStudentsExcel()">📥 एक्सेल डाऊनलोड (क्रमाने)</button>
     </div>
     <div id="registeredUsersTableHost" style="overflow-x:auto;"></div>
   </div>
@@ -1250,6 +1248,7 @@
     document.getElementById("adminRegisteredUsersModal").style.display = "none";
   }
 
+  // दिनांक आणि वेळेनुसार (नवीन नोंदणी वर/क्रमाने) सॉर्टिंग करून यादी दाखवणे
   function loadRegisteredUsersTable() {
     const host = document.getElementById("registeredUsersTableHost");
     host.innerHTML = "<p style='text-align:center; padding:15px; color:#64748b;'>विद्यार्थ्यांची यादी लोड होत आहे...</p>";
@@ -1262,9 +1261,18 @@
           return;
         }
 
-        const entries = Object.entries(data);
+        let entries = Object.values(data);
+        
+        // दिनांक आणि वेळेनुसार सॉर्ट करणे (नवीन नोंदी क्रमाने लावणे)
+        entries.sort((a, b) => {
+          let timeA = a.timestamp ? new Date(a.timestamp).getTime() : 0;
+          let timeB = b.timestamp ? new Date(b.timestamp).getTime() : 0;
+          return timeB - timeA; // उतरता क्रम (नवीन नोंद सर्वात वर)
+        });
+
         let rows = "";
-        entries.forEach(([key, st], idx) => {
+        entries.forEach((st, idx) => {
+          const key = st.uid || makeStudentId(st.mobile, st.name);
           rows += `<tr>
             <td><input type="checkbox" class="student-checkbox" value="${key}" style="width:18px; height:18px; cursor:pointer;"></td>
             <td style="font-weight:800;">${idx + 1}</td>
@@ -1272,7 +1280,7 @@
             <td>${st.taluka || '-'}</td>
             <td>${st.mobile || '-'}</td>
             <td>${st.timestamp || '-'}</td>
-            <td><button onclick="deleteRegisteredUser('${key}')" style="background:#fee2e2; color:#991b1b; border:none; padding:4px 8px; border-radius:6px; cursor:pointer; font-weight:700;">डिलीट</button></td>
+            <td><button onclick="deleteRegisteredUserByKey('${key}', '${st.mobile}', '${st.name}')" style="background:#fee2e2; color:#991b1b; border:none; padding:4px 8px; border-radius:6px; cursor:pointer; font-weight:700;">डिलीट</button></td>
           </tr>`;
         });
 
@@ -1305,30 +1313,77 @@
     if (checkboxes.length === 0) { alert("कृपया डिलीट करण्यासाठी किमान एक विद्यार्थी निवडा."); return; }
 
     if (confirm(`निश्चितच निवडलेले ${checkboxes.length} विद्यार्थी डिलीट करायचे आहेत का?`)) {
-      const deletePromises = Array.from(checkboxes).map(cb => 
-        fetch(`${FIREBASE_DB_URL}/students/${cb.value}.json`, { method: "DELETE" })
-      );
+      fetch(`${FIREBASE_DB_URL}/students.json`)
+        .then(res => res.json())
+        .then(allData => {
+          if (!allData) return;
+          const deletePromises = [];
+          checkboxes.forEach(cb => {
+            Object.entries(allData).forEach(([dbKey, val]) => {
+              const uKey = val.uid || makeStudentId(val.mobile, val.name);
+              if (dbKey === cb.value || uKey === cb.value) {
+                deletePromises.push(fetch(`${FIREBASE_DB_URL}/students/${dbKey}.json`, { method: "DELETE" }));
+              }
+            });
+          });
 
-      Promise.all(deletePromises)
-        .then(() => {
-          alert("निवडलेले विद्यार्थी यशस्वीरीत्या डिलीट झाले!");
-          loadRegisteredUsersTable();
-          fetchAdminDashboardData();
-        })
-        .catch(() => alert("विद्यार्थी डिलीट करताना त्रुटी आली."));
+          Promise.all(deletePromises)
+            .then(() => {
+              alert("निवडलेले विद्यार्थी यशस्वीरित्या डिलीट झाले!");
+              loadRegisteredUsersTable();
+              fetchAdminDashboardData();
+            })
+            .catch(() => alert("विद्यार्थी डिलीट करताना त्रुटी आली."));
+        });
     }
   }
 
-  function deleteRegisteredUser(firebaseKey) {
+  function deleteRegisteredUserByKey(uidKey, mobile, name) {
     if (confirm("हा नोंदणीकृत युझर डिलीट करायचा आहे का?")) {
-      fetch(`${FIREBASE_DB_URL}/students/${firebaseKey}.json`, { method: "DELETE" })
-        .then(() => {
-          alert("युझर यशस्वीरित्या डिलीट केला!");
-          loadRegisteredUsersTable();
-          fetchAdminDashboardData();
-        })
-        .catch(() => alert("विद्यार्थी डिलीट करताना त्रुटी आली."));
+      fetch(`${FIREBASE_DB_URL}/students.json`)
+        .then(res => res.json())
+        .then(allData => {
+          if (!allData) return;
+          const deletePromises = [];
+          Object.entries(allData).forEach(([dbKey, val]) => {
+            const uKey = val.uid || makeStudentId(val.mobile, val.name);
+            if (dbKey === uidKey || uKey === uidKey || (val.mobile === mobile && val.name === name)) {
+              deletePromises.push(fetch(`${FIREBASE_DB_URL}/students/${dbKey}.json`, { method: "DELETE" }));
+            }
+          });
+
+          Promise.all(deletePromises).then(() => {
+            alert("युझर यशस्वीरित्या डिलीट केला!");
+            loadRegisteredUsersTable();
+            fetchAdminDashboardData();
+          });
+        });
     }
+  }
+
+  // दिनांक व वेळेनुसार क्रमाने लावून एक्सेल डाऊनलोड करणे
+  function downloadSortedStudentsExcel() {
+    fetch(`${FIREBASE_DB_URL}/students.json`)
+      .then(res => res.json())
+      .then(data => {
+        if (!data) { alert("नोंदणीकृत विद्यार्थी नाहीत."); return; }
+        
+        let list = Object.values(data);
+        list.sort((a, b) => {
+          let timeA = a.timestamp ? new Date(a.timestamp).getTime() : 0;
+          let timeB = b.timestamp ? new Date(b.timestamp).getTime() : 0;
+          return timeB - timeA;
+        });
+
+        const wsData = [["अ.क्र.", "विद्यार्थ्याचे नाव", "मोबाईल नंबर", "तालुका", "नोंदणी वेळ"]];
+        list.forEach((st, idx) => { wsData.push([idx + 1, st.name, st.mobile, st.taluka, st.timestamp]); });
+        
+        const ws = XLSX.utils.aoa_to_sheet(wsData);
+        const wb = XLSX.utils.book_new();
+        XLSX.utils.book_append_sheet(wb, ws, "Students");
+        XLSX.writeFile(wb, "NVS_Sorted_Registered_Students.xlsx");
+      })
+      .catch(() => alert("एक्सेल डाउनलोड करताना त्रुटी आली."));
   }
 
   function downloadToppersExcel() {
@@ -1849,7 +1904,7 @@
   async function startExamInstant() {
     if (!currentPendingTest) return;
     
-    document.getElementById("guidelinesArea").style.display = "none";
+    // सूचना स्क्रीनवरच राहून लगेच डेटा लोड करणे
     let data = window.preloadedExams[currentPendingTest.id];
     if (!data) {
       try {
@@ -1879,6 +1934,7 @@
     });
 
     await Promise.all(promises);
+    document.getElementById("guidelinesArea").style.display = "none";
     launchTestWithData(data, false);
   }
 
