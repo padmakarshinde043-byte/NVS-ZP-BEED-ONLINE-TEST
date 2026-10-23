@@ -1902,8 +1902,7 @@
     container.innerHTML = "";
     const todayDate = new Date().toISOString().split("T")[0];
 
-    EXAM_SCHEDULE.forEach((item, index) => {
-      let isAccessible = isUserVip || isUserTeacher || (globalUnlockedTests[item.id] !== undefined ? globalUnlockedTests[item.id] : (todayDate >= item.dateISO));
+    EXAM_SCHEDULE.forEach((item, index) => {let isAccessible = isUserVip || (globalUnlockedTests[item.id] !== undefined ? globalUnlockedTests[item.id] : (todayDate >= item.dateISO));
       const savedScore = loggedInUser.history && loggedInUser.history[item.id];
       const inProg = loggedInUser.inProgress && loggedInUser.inProgress[item.id];
       const userAttempts = loggedInUser.attempts && loggedInUser.attempts[item.id] ? loggedInUser.attempts[item.id] : 0;
