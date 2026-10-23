@@ -903,7 +903,7 @@
     return { valid: true };
   }
 
-  function handleRegistration() {
+function handleRegistration() {
     const name = document.getElementById("sName").value.trim();
     const mobile = document.getElementById("sMobile").value.trim();
     const taluka = document.getElementById("sTaluka").value;
@@ -951,11 +951,16 @@
     }
   }
 
-  function saveUserVault() {
+function saveUserVault() {
     if (!loggedInUser || !loggedInUser.uid) return;
     localStorage.setItem("jnv_vault_" + loggedInUser.uid, JSON.stringify({
-      history: loggedInUser.history || {}, attempts: loggedInUser.attempts || {}, attemptHistory: loggedInUser.attemptHistory || {}, inProgress: loggedInUser.inProgress || {}, isTeacher: loggedInUser.isTeacher || false
+      history: loggedInUser.history || {}, 
+      attempts: loggedInUser.attempts || {}, 
+      attemptHistory: loggedInUser.attemptHistory || {}, 
+      inProgress: loggedInUser.inProgress || {}, 
+      isTeacher: loggedInUser.isTeacher || false
     }));
+    // ऍक्टिव्ह लॉगिन सेशन नेहमी सुरक्षित ठेवणे
     localStorage.setItem("jnv_beed_active_user", JSON.stringify(loggedInUser));
   }
 
@@ -1878,14 +1883,12 @@
     document.getElementById("answerKeyArea").style.display = "none";
     document.getElementById("dashboardArea").style.display = "block";
 
-    const isUserTeacher = loggedInUser && loggedInUser.isTeacher;
+const isUserTeacher = loggedInUser && (loggedInUser.isTeacher === true || loggedInUser.isTeacher === "true");
     const isUserVip = loggedInUser && loggedInUser.mobile && (whitelistedMobiles[loggedInUser.mobile] !== undefined);
 
     let displayName = loggedInUser.name;
-    if (isUserTeacher) {
-      displayName += " (शिक्षक - Teacher Login)";
-    } else if (isUserVip) {
-      displayName += " (Teacher Module)";
+    if (isUserTeacher || isUserVip) {
+      displayName += " [Teacher Mode]";
     }
 
     document.getElementById("displayStudentName").innerText = displayName;
@@ -2120,9 +2123,12 @@ async function startExamInstant() {
 
   function updateHeaderDisplay(testTitle) {
     const headerTitleEl = document.getElementById("headerTestTitle");
-    let userInfoStr = loggedInUser ? ` | विद्यार्थी: ${loggedInUser.name}` : "";
-    if (loggedInUser && loggedInUser.isTeacher) {
-      userInfoStr += " [शिक्षक लॉगिन - Teacher Mode]";
+    let userInfoStr = "";
+    if (loggedInUser) {
+      const isTeacher = (loggedInUser.isTeacher === true || loggedInUser.isTeacher === "true" || (whitelistedMobiles && whitelistedMobiles[loggedInUser.mobile] !== undefined));
+      userInfoStr = isTeacher 
+        ? ` | ${loggedInUser.name} [Teacher Mode]`
+        : ` | विद्यार्थी: ${loggedInUser.name}`;
     }
     headerTitleEl.innerText = `${testTitle}${userInfoStr}`;
   }
