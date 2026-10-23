@@ -263,58 +263,67 @@
     <button class="btn-main" onclick="handleRegistration()">प्रवेश करा (Login)</button>
   </div>
   <!-- अधिकाऱ्यांचे शुभेच्छा संदेश पॉप-अप -->
-  <div id="welcomeOfficersModal" style="display:none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15, 23, 42, 0.82); justify-content: center; align-items: center; z-index: 9999; backdrop-filter: blur(8px); padding: 14px;">
-    <div style="background: #ffffff; width: 100%; max-width: 680px; border-radius: 20px; box-shadow: 0 20px 45px rgba(0,0,0,0.35); overflow: hidden; border: 1.5px solid #cbd5e1;">
+  <!-- अधिकाऱ्यांचे शुभेच्छा संदेश पॉप-अप (कॉम्पॅक्ट व फुल-विड्थ मांडणी) -->
+  <div id="welcomeOfficersModal" style="display:none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15, 23, 42, 0.85); justify-content: center; align-items: center; z-index: 9999; backdrop-filter: blur(5px); padding: 8px;">
+    <div style="background: #ffffff; width: 100%; max-width: 650px; border-radius: 14px; box-shadow: 0 10px 30px rgba(0,0,0,0.35); overflow: hidden; border: 1.5px solid #cbd5e1; display: flex; flex-direction: column; max-height: 96vh;">
       
-      <!-- हेडर विभाग -->
-      <div style="background: linear-gradient(135deg, #091a2c 0%, #0f2b48 60%, #1a4a75 100%); color: white; padding: 16px 20px; text-align: center; border-bottom: 3.5px solid #d97706;">
-        <h2 style="margin: 0; font-size: 1.35rem; font-weight: 800; color: #fef08a;">🎯 नवोदय सराव चाचणी प्लॅटफॉर्म - जि.प. बीड</h2>
-        <p style="margin: 4px 0 0 0; font-size: 0.92rem; font-weight: 600; color: #f8fafc;">वरिष्ठ अधिकाऱ्यांचे प्रेरणादायी मार्गदर्शन व शुभाशीष संदेश</p>
+      <!-- कॉम्पॅक्ट हेडर (वरचा भाग न कट होण्यासाठी) -->
+      <div style="background: linear-gradient(135deg, #091a2c 0%, #0f2b48 60%, #1a4a75 100%); color: white; padding: 8px 12px; text-align: center; border-bottom: 3px solid #d97706;">
+        <h2 style="margin: 0; font-size: 1.05rem; font-weight: 800; color: #fef08a;">🎯 नवोदय सराव चाचणी प्लॅटफॉर्म - जि.प. बीड</h2>
+        <p style="margin: 2px 0 0 0; font-size: 0.78rem; font-weight: 600; color: #f8fafc; opacity: 0.95;">वरिष्ठ अधिकाऱ्यांचे प्रेरणादायी मार्गदर्शन व शुभाशीष संदेश</p>
       </div>
 
-      <!-- अधिकारी कार्ड्स कंटेनर -->
-      <div style="padding: 18px; max-height: 72vh; overflow-y: auto; display: flex; flex-direction: column; gap: 16px;" id="officersStack">
+      <!-- अधिकारी कार्ड्स कंटेनर (कमी अंतर व स्क्रोलची गरज नाही) -->
+      <div style="padding: 8px 10px; display: flex; flex-direction: column; gap: 8px; overflow-y: auto;" id="officersStack">
         
         <!-- कार्ड १: मुख्य कार्यकारी अधिकारी (CEO) -->
-        <div style="background: #ffffff; border: 1.5px solid #93c5fd; border-left: 6px solid #1e3a8a; padding: 16px; border-radius: 14px; display: flex; gap: 16px; align-items: center; box-shadow: 0 4px 14px rgba(15, 43, 72, 0.06);">
-          <div style="width: 100px; height: 100px; min-width: 100px; border-radius: 50%; overflow: hidden; border: 3.5px solid #1e3a8a; box-shadow: 0 4px 10px rgba(0,0,0,0.2); background: #e2e8f0;">
-            <img src="p1.jpeg" alt="जितिन रहमान (भा.प्र.से.)" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/8/84/Government_of_Maharashtra.png'">
-          </div>
-          <div style="flex: 1;">
-            <h3 style="color: #0f2b48; font-size: 1.12rem; font-weight: 800; margin-bottom: 2px;">जितिन रहमान (भा.प्र.से.)</h3>
-            <p style="color: #1e40af; font-size: 0.86rem; font-weight: 700; margin-bottom: 8px;">मुख्य कार्यकारी अधिकारी, जिल्हा परिषद बीड</p>
-            <div style="background: #fffbeb; border: 1.5px solid #fde68a; border-left: 4px solid #d97706; padding: 10px 12px; border-radius: 8px; font-size: 0.92rem; font-weight: 600; color: #78350f; line-height: 1.55;">
-              💬 "जिल्हा परिषदेच्या ग्रामीण भागातील सर्वसामान्य कुटुंबातील विद्यार्थ्यांना जवाहर नवोदय विद्यालयाच्या परीक्षेचा उत्तम सराव व्हावा, म्हणून या चाचणीची रचना करण्यात आलेली आहे. <b>जिद्द, चिकाटी आणि वेळेचे नियोजन</b> करून सराव करा. जिल्हा परिषद बीड नेहमी आपल्या पाठीशी खंबीरपणे उभी आहे!"
+        <div style="background: #ffffff; border: 1px solid #bfdbfe; border-left: 5px solid #1e3a8a; padding: 8px 10px; border-radius: 10px; box-shadow: 0 2px 6px rgba(15, 43, 72, 0.05);">
+          <!-- वरची ओळ: डाव्या बाजूला फोटो + उजव्या बाजूला नाव व हुद्दा -->
+          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 6px;">
+            <div style="width: 50px; height: 50px; min-width: 50px; border-radius: 50%; overflow: hidden; border: 2px solid #1e3a8a; box-shadow: 0 2px 5px rgba(0,0,0,0.15); background: #e2e8f0;">
+              <img src="p1.jpeg" alt="जितिन रहमान (भा.प्र.से.)" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/8/84/Government_of_Maharashtra.png'">
             </div>
+            <div>
+              <h3 style="color: #0f2b48; font-size: 0.95rem; font-weight: 800; margin: 0; line-height: 1.2;">जितिन रहमान (भा.प्र.से.)</h3>
+              <p style="color: #1e40af; font-size: 0.76rem; font-weight: 700; margin: 2px 0 0 0;">मुख्य कार्यकारी अधिकारी, जिल्हा परिषद बीड</p>
+            </div>
+          </div>
+          <!-- खालची ओळ: संपूर्ण रुंद संदेश चौकट -->
+          <div style="background: #fffbeb; border: 1px solid #fde68a; border-left: 3px solid #d97706; padding: 6px 8px; border-radius: 6px; font-size: 0.8rem; font-weight: 600; color: #78350f; line-height: 1.4; width: 100%; box-sizing: border-box;">
+            💬 "जिल्हा परिषदेच्या ग्रामीण भागातील सर्वसामान्य कुटुंबातील विद्यार्थ्यांना नवोदय परीक्षेचा उत्तम सराव व्हावा, म्हणून या चाचणीची रचना केलेली आहे. <b>जिद्द, चिकाटी आणि वेळेचे नियोजन</b> करून सराव करा. जिल्हा परिषद बीड नेहमी आपल्या पाठीशी आहे!"
           </div>
         </div>
 
         <!-- कार्ड २: शिक्षणाधिकारी (प्राथमिक) -->
-        <div style="background: #ffffff; border: 1.5px solid #86efac; border-left: 6px solid #16a34a; padding: 16px; border-radius: 14px; display: flex; gap: 16px; align-items: center; box-shadow: 0 4px 14px rgba(22, 163, 74, 0.06);">
-          <div style="width: 100px; height: 100px; min-width: 100px; border-radius: 50%; overflow: hidden; border: 3.5px solid #16a34a; box-shadow: 0 4px 10px rgba(0,0,0,0.2); background: #e2e8f0;">
-            <img src="p2.jpeg" alt="जयश्री चव्हाण" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/8/84/Government_of_Maharashtra.png'">
-          </div>
-          <div style="flex: 1;">
-            <h3 style="color: #0f2b48; font-size: 1.12rem; font-weight: 800; margin-bottom: 2px;">जयश्री चव्हाण</h3>
-            <p style="color: #15803d; font-size: 0.86rem; font-weight: 700; margin-bottom: 8px;">शिक्षणाधिकारी (प्राथमिक), जिल्हा परिषद बीड</p>
-            <div style="background: #f0fdf4; border: 1.5px solid #bbf7d0; border-left: 4px solid #16a34a; padding: 10px 12px; border-radius: 8px; font-size: 0.92rem; font-weight: 600; color: #14532d; line-height: 1.55;">
-              💬 "ग्रामीण भागातील विद्यार्थ्यांमध्ये स्पर्धा परीक्षेची गोडी निर्माण व्हावी व त्यांचा पाया मजबूत व्हावा, यासाठी प्राथमिक शिक्षण विभागामार्फत हा डिजिटल उपक्रम सुरू करण्यात आला आहे. <b>आत्मविश्वासाने नियमित सराव करा</b>, यश नक्कीच तुमचे असेल!"
+        <div style="background: #ffffff; border: 1px solid #bbf7d0; border-left: 5px solid #16a34a; padding: 8px 10px; border-radius: 10px; box-shadow: 0 2px 6px rgba(22, 163, 74, 0.05);">
+          <!-- वरची ओळ: डाव्या बाजूला फोटो + उजव्या बाजूला नाव व हुद्दा -->
+          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 6px;">
+            <div style="width: 50px; height: 50px; min-width: 50px; border-radius: 50%; overflow: hidden; border: 2px solid #16a34a; box-shadow: 0 2px 5px rgba(0,0,0,0.15); background: #e2e8f0;">
+              <img src="p2.jpeg" alt="जयश्री चव्हाण" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/8/84/Government_of_Maharashtra.png'">
             </div>
+            <div>
+              <h3 style="color: #0f2b48; font-size: 0.95rem; font-weight: 800; margin: 0; line-height: 1.2;">जयश्री चव्हाण</h3>
+              <p style="color: #15803d; font-size: 0.76rem; font-weight: 700; margin: 2px 0 0 0;">शिक्षणाधिकारी (प्राथमिक), जिल्हा परिषद बीड</p>
+            </div>
+          </div>
+          <!-- खालची ओळ: संपूर्ण रुंद संदेश चौकट -->
+          <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-left: 3px solid #16a34a; padding: 6px 8px; border-radius: 6px; font-size: 0.8rem; font-weight: 600; color: #14532d; line-height: 1.4; width: 100%; box-sizing: border-box;">
+            💬 "ग्रामीण भागातील विद्यार्थ्यांमध्ये स्पर्धा परीक्षेची गोडी निर्माण व्हावी व पाया मजबूत व्हावा, यासाठी प्राथमिक शिक्षण विभागामार्फत हा डिजिटल उपक्रम सुरू केला आहे. <b>आत्मविश्वासाने नियमित सराव करा</b>, यश नक्कीच तुमचे असेल!"
           </div>
         </div>
 
       </div>
 
-      <!-- फुटर बटण -->
-      <div style="background: #f8fafc; padding: 14px 20px; text-align: center; border-top: 1.5px solid #e2e8f0;">
-        <button onclick="closeWelcomeModal()" class="btn-main" style="background: linear-gradient(135deg, #16a34a 0%, #15803d 100%); font-size: 1.1rem; font-weight: 800; padding: 12px 32px; border-radius: 10px; cursor: pointer; box-shadow: 0 4px 14px rgba(22, 163, 74, 0.35); border: none; color: #ffffff;">
+      <!-- कॉम्पॅक्ट फुटर बटण -->
+      <div style="background: #f8fafc; padding: 8px 12px; text-align: center; border-top: 1px solid #e2e8f0;">
+        <button onclick="closeWelcomeModal()" class="btn-main" style="background: linear-gradient(135deg, #16a34a 0%, #15803d 100%); font-size: 0.95rem; font-weight: 800; padding: 8px 24px; border-radius: 8px; cursor: pointer; box-shadow: 0 3px 10px rgba(22, 163, 74, 0.3); border: none; color: #ffffff; width: 100%; max-width: 320px;">
           🎯 चाचण्या सोडवा (सुरू करा) ➔
         </button>
       </div>
 
     </div>
   </div>
-
+  
   <!-- डॅशबोर्ड -->
   <div id="dashboardArea" style="display:none;">
     <div class="student-bar">
