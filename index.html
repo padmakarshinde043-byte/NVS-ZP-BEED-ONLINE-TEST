@@ -1998,40 +1998,66 @@
     renderDashboard();
   }
 
-  async function startExamInstant() {
+async function startExamInstant() {
     if (!currentPendingTest) return;
-    
-    let data = window.preloadedExams[currentPendingTest.id];
-    if (!data) {
-      try {
-        const res = await fetch(currentPendingTest.file);
-        data = await res.json();
-      } catch(err) {
-        alert("चाचणी फाईल लोड करण्यात अडचण आली.");
-        return;
-      }
+
+    const btn = document.getElementById("btnStartRealExam");
+    if (btn) {
+      btn.disabled = true;
+      btn.innerText = "चाचणी उघडत आहे... ⏳";
     }
 
-    const promises = data.questions.map(async (q, idx) => {
-      if (q.id <= 40) q.sec = "mental";
-      else if (q.id <= 60) q.sec = "math";
-      else if (q.id <= 80) q.sec = "lang";
+    try {
+      const testId = currentPendingTest.id;
+      let data = window.preloadedExams[testId];
+      if (!data) {
+        const res = await fetch(currentPendingTest.file);
+        data = await res.json();
+      }
+
+      // डीप कॉपी (मूळ प्रीलोड डेटा सुरक्षित ठेवण्यासाठी)
+      const testData = JSON.parse(JSON.stringify(data));
+
+      // ८० स्वतंत्र कॉल्स ऐवजी संपूर्ण overrides एकाच कॉलमध्ये आणणे (२ सेकंद टाईमआऊटसह)
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 2000);
 
       try {
-        const fbRes = await fetch(`${FIREBASE_DB_URL}/overrides/t${currentPendingTest.id}_q${q.id}.json`);
-        const fbData = await fbRes.json();
-        if (fbData) {
-          if (fbData.id <= 40) fbData.sec = "mental";
-          else if (fbData.id <= 60) fbData.sec = "math";
-          else if (fbData.id <= 80) fbData.sec = "lang";
-          data.questions[idx] = fbData;
-        }
-      } catch(e) {}
-    });
+        const fbRes = await fetch(`${FIREBASE_DB_URL}/overrides.json`, { signal: controller.signal });
+        clearTimeout(timeoutId);
+        const allOverrides = await fbRes.json();
 
-    await Promise.all(promises);
-    document.getElementById("guidelinesArea").style.display = "none";
-    launchTestWithData(data, false);
+        if (allOverrides) {
+          testData.questions.forEach((q, idx) => {
+            const overrideKey = `t${testId}_q${q.id}`;
+            if (allOverrides[overrideKey]) {
+              testData.questions[idx] = { ...q, ...allOverrides[overrideKey] };
+            }
+          });
+        }
+      } catch (e) {
+        // इंटरनेट स्लो असल्यास किंवा एरर आल्यास चाचणी न अडकता त्वरित मूळ प्रश्नांसह सुरू होईल
+        console.warn("ओव्हरराइड्स फेच वेळेत झाले नाहीत, चाचणी त्वरित सुरू करत आहोत.");
+      }
+
+      // विषय विभाग (Sections) निश्चित करणे
+      testData.questions.forEach(q => {
+        if (q.id <= 40) q.sec = "mental";
+        else if (q.id <= 60) q.sec = "math";
+        else if (q.id <= 80) q.sec = "lang";
+      });
+
+      document.getElementById("guidelinesArea").style.display = "none";
+      launchTestWithData(testData, false);
+
+    } catch (err) {
+      alert("चाचणी फाईल लोड करण्यात अडचण आली.");
+    } finally {
+      if (btn) {
+        btn.disabled = false;
+        btn.innerText = "चाचणी सुरू करा ➔";
+      }
+    }
   }
 
   async function resumeTest(testId) {
