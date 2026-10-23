@@ -263,46 +263,51 @@
     <button class="btn-main" onclick="handleRegistration()">प्रवेश करा (Login)</button>
   </div>
   <!-- अधिकाऱ्यांचे शुभेच्छा संदेश पॉप-अप -->
-  <div id="welcomeOfficersModal" style="display:none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.75); justify-content: center; align-items: center; z-index: 9999; backdrop-filter: blur(5px); padding: 15px;">
-    <div style="background: #ffffff; width: 100%; max-width: 650px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); overflow: hidden;">
+  <div id="welcomeOfficersModal" style="display:none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15, 23, 42, 0.82); justify-content: center; align-items: center; z-index: 9999; backdrop-filter: blur(8px); padding: 14px;">
+    <div style="background: #ffffff; width: 100%; max-width: 680px; border-radius: 20px; box-shadow: 0 20px 45px rgba(0,0,0,0.35); overflow: hidden; border: 1.5px solid #cbd5e1;">
       
-      <div style="background: linear-gradient(135deg, #1e3a8a, #3b82f6); color: white; padding: 15px 20px; text-align: center;">
-        <h2 style="margin: 0; font-size: 1.3rem; font-weight: 800;">🎯 नवोदय सराव चाचणी प्लॅटफॉर्म - जि.प. बीड</h2>
-        <p style="margin: 3px 0 0 0; font-size: 0.9rem; opacity: 0.9;">मार्गदर्शन व शुभाशीष संदेश</p>
+      <!-- हेडर विभाग -->
+      <div style="background: linear-gradient(135deg, #091a2c 0%, #0f2b48 60%, #1a4a75 100%); color: white; padding: 16px 20px; text-align: center; border-bottom: 3.5px solid #d97706;">
+        <h2 style="margin: 0; font-size: 1.35rem; font-weight: 800; color: #fef08a;">🎯 नवोदय सराव चाचणी प्लॅटफॉर्म - जि.प. बीड</h2>
+        <p style="margin: 4px 0 0 0; font-size: 0.92rem; font-weight: 600; color: #f8fafc;">वरिष्ठ अधिकाऱ्यांचे प्रेरणादायी मार्गदर्शन व शुभाशीष संदेश</p>
       </div>
 
-      <div style="padding: 20px; max-height: 70vh; overflow-y: auto; display: flex; flex-direction: column; gap: 15px;" id="officersStack">
+      <!-- अधिकारी कार्ड्स कंटेनर -->
+      <div style="padding: 18px; max-height: 72vh; overflow-y: auto; display: flex; flex-direction: column; gap: 16px;" id="officersStack">
         
-        <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-left: 5px solid #1e3a8a; padding: 15px; border-radius: 12px; display: flex; gap: 15px; align-items: center;">
-          <div style="width: 80px; height: 80px; min-width: 80px; border-radius: 50%; overflow: hidden; border: 3px solid #1e3a8a; box-shadow: 0 4px 8px rgba(0,0,0,0.15); background: #e2e8f0;">
-            <img src="p1.jpeg" alt="जितिन रहमान" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/8/84/Government_of_Maharashtra.png'">
+        <!-- कार्ड १: मुख्य कार्यकारी अधिकारी (CEO) -->
+        <div style="background: #ffffff; border: 1.5px solid #93c5fd; border-left: 6px solid #1e3a8a; padding: 16px; border-radius: 14px; display: flex; gap: 16px; align-items: center; box-shadow: 0 4px 14px rgba(15, 43, 72, 0.06);">
+          <div style="width: 100px; height: 100px; min-width: 100px; border-radius: 50%; overflow: hidden; border: 3.5px solid #1e3a8a; box-shadow: 0 4px 10px rgba(0,0,0,0.2); background: #e2e8f0;">
+            <img src="p1.jpeg" alt="जितिन रहमान (भा.प्र.से.)" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/8/84/Government_of_Maharashtra.png'">
           </div>
-          <div>
-            <h3 style="color: #1e3a8a; font-size: 1rem; font-weight: 800; margin-bottom: 2px;">जितिन रहमान (भा.प्र.से.)</h3>
-            <p style="color: #64748b; font-size: 0.78rem; font-weight: 700; margin-bottom: 6px;">मुख्य कार्यकारी अधिकारी, जि.प. बीड</p>
-            <div style="background: #fffbeb; border: 1px dashed #fde68a; padding: 8px; border-radius: 8px; font-size: 0.85rem; color: #92400e; line-height: 1.4;">
-              💬 "जिल्हा परिषदेच्या ग्रामीण भागातील सर्वसामान्य कुटुंबातील विद्यार्थ्यांना जवाहर नवोदय विद्यालयाच्या परीक्षेचा उत्तम सराव व्हावा, म्हणून या चाचणीची रचना करण्यात आलेली आहे. जिद्द, चिकाटी आणि वेळेचे नियोजन करून अभ्यास करा. जि.प. बीड नेहमी तुमच्या पाठीशी आहे!"
+          <div style="flex: 1;">
+            <h3 style="color: #0f2b48; font-size: 1.12rem; font-weight: 800; margin-bottom: 2px;">जितिन रहमान (भा.प्र.से.)</h3>
+            <p style="color: #1e40af; font-size: 0.86rem; font-weight: 700; margin-bottom: 8px;">मुख्य कार्यकारी अधिकारी, जिल्हा परिषद बीड</p>
+            <div style="background: #fffbeb; border: 1.5px solid #fde68a; border-left: 4px solid #d97706; padding: 10px 12px; border-radius: 8px; font-size: 0.92rem; font-weight: 600; color: #78350f; line-height: 1.55;">
+              💬 "जिल्हा परिषदेच्या ग्रामीण भागातील सर्वसामान्य कुटुंबातील विद्यार्थ्यांना जवाहर नवोदय विद्यालयाच्या परीक्षेचा उत्तम सराव व्हावा, म्हणून या चाचणीची रचना करण्यात आलेली आहे. <b>जिद्द, चिकाटी आणि वेळेचे नियोजन</b> करून सराव करा. जिल्हा परिषद बीड नेहमी आपल्या पाठीशी खंबीरपणे उभी आहे!"
             </div>
           </div>
         </div>
 
-        <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-left: 5px solid #16a34a; padding: 15px; border-radius: 12px; display: flex; gap: 15px; align-items: center;">
-          <div style="width: 80px; height: 80px; min-width: 80px; border-radius: 50%; overflow: hidden; border: 3px solid #16a34a; box-shadow: 0 4px 8px rgba(0,0,0,0.15); background: #e2e8f0;">
+        <!-- कार्ड २: शिक्षणाधिकारी (प्राथमिक) -->
+        <div style="background: #ffffff; border: 1.5px solid #86efac; border-left: 6px solid #16a34a; padding: 16px; border-radius: 14px; display: flex; gap: 16px; align-items: center; box-shadow: 0 4px 14px rgba(22, 163, 74, 0.06);">
+          <div style="width: 100px; height: 100px; min-width: 100px; border-radius: 50%; overflow: hidden; border: 3.5px solid #16a34a; box-shadow: 0 4px 10px rgba(0,0,0,0.2); background: #e2e8f0;">
             <img src="p2.jpeg" alt="जयश्री चव्हाण" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/8/84/Government_of_Maharashtra.png'">
           </div>
-          <div>
-            <h3 style="color: #1e3a8a; font-size: 1rem; font-weight: 800; margin-bottom: 2px;">जयश्री चव्हाण</h3>
-            <p style="color: #64748b; font-size: 0.78rem; font-weight: 700; margin-bottom: 6px;">शिक्षणाधिकारी (प्राथमिक), जि.प. बीड</p>
-            <div style="background: #f0fdf4; border: 1px dashed #bbf7d0; padding: 8px; border-radius: 8px; font-size: 0.85rem; color: #166534; line-height: 1.4;">
-              💬 "ग्रामीण भागातील विद्यार्थ्यांमध्ये स्पर्धा परीक्षेची गोडी निर्माण व्हावी व त्यांचा पाया मजबूत व्हावा यासाठी प्राथमिक शिक्षण विभागामार्फत हा डिजिटल उपक्रम सुरू केला आहे. आत्मविश्वासाने सराव करा, तुम्हाला यश नक्कीच मिळेल!"
+          <div style="flex: 1;">
+            <h3 style="color: #0f2b48; font-size: 1.12rem; font-weight: 800; margin-bottom: 2px;">जयश्री चव्हाण</h3>
+            <p style="color: #15803d; font-size: 0.86rem; font-weight: 700; margin-bottom: 8px;">शिक्षणाधिकारी (प्राथमिक), जिल्हा परिषद बीड</p>
+            <div style="background: #f0fdf4; border: 1.5px solid #bbf7d0; border-left: 4px solid #16a34a; padding: 10px 12px; border-radius: 8px; font-size: 0.92rem; font-weight: 600; color: #14532d; line-height: 1.55;">
+              💬 "ग्रामीण भागातील विद्यार्थ्यांमध्ये स्पर्धा परीक्षेची गोडी निर्माण व्हावी व त्यांचा पाया मजबूत व्हावा, यासाठी प्राथमिक शिक्षण विभागामार्फत हा डिजिटल उपक्रम सुरू करण्यात आला आहे. <b>आत्मविश्वासाने नियमित सराव करा</b>, यश नक्कीच तुमचे असेल!"
             </div>
           </div>
         </div>
 
       </div>
 
-      <div style="background: #f1f5f9; padding: 14px 20px; text-align: center; border-top: 1px solid #e2e8f0;">
-        <button onclick="closeWelcomeModal()" class="btn-main" style="background: linear-gradient(135deg, #16a34a, #15803d); font-size: 1.05rem; padding: 12px 25px; border-radius: 10px; cursor: pointer; box-shadow: 0 4px 12px rgba(22,163,74,0.3);">
+      <!-- फुटर बटण -->
+      <div style="background: #f8fafc; padding: 14px 20px; text-align: center; border-top: 1.5px solid #e2e8f0;">
+        <button onclick="closeWelcomeModal()" class="btn-main" style="background: linear-gradient(135deg, #16a34a 0%, #15803d 100%); font-size: 1.1rem; font-weight: 800; padding: 12px 32px; border-radius: 10px; cursor: pointer; box-shadow: 0 4px 14px rgba(22, 163, 74, 0.35); border: none; color: #ffffff;">
           🎯 चाचण्या सोडवा (सुरू करा) ➔
         </button>
       </div>
