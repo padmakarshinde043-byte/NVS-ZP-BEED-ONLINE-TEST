@@ -2004,23 +2004,31 @@ async function startExamInstant() {
     const btn = document.getElementById("btnStartRealExam");
     if (btn) {
       btn.disabled = true;
-      btn.innerText = "चाचणी उघडत आहे... ⏳";
+      btn.innerText = "सुरू होत आहे...";
     }
 
+    const testId = currentPendingTest.id;
+    let data = window.preloadedExams[testId];
+
     try {
-      const testId = currentPendingTest.id;
-      let data = window.preloadedExams[testId];
+      // १. फाईल प्रीलोड नसेल तरच फेच करा
       if (!data) {
         const res = await fetch(currentPendingTest.file);
         data = await res.json();
       }
 
-      // डीप कॉपी (मूळ प्रीलोड डेटा सुरक्षित ठेवण्यासाठी)
       const testData = JSON.parse(JSON.stringify(data));
 
-      // ८० स्वतंत्र कॉल्स ऐवजी संपूर्ण overrides एकाच कॉलमध्ये आणणे (२ सेकंद टाईमआऊटसह)
+      // २. विषय विभाग निश्चित करणे
+      testData.questions.forEach(q => {
+        if (q.id <= 40) q.sec = "mental";
+        else if (q.id <= 60) q.sec = "math";
+        else if (q.id <= 80) q.sec = "lang";
+      });
+
+      // ३. कमाल १ सेकंदाचा टाईमआऊट (नेटवर्क फास्ट असेल तरच ओव्हरराइड्स येतील, नाहीतर चाचणी अडकणार नाही)
       const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), 2000);
+      const timeoutId = setTimeout(() => controller.abort(), 1000);
 
       try {
         const fbRes = await fetch(`${FIREBASE_DB_URL}/overrides.json`, { signal: controller.signal });
@@ -2036,22 +2044,15 @@ async function startExamInstant() {
           });
         }
       } catch (e) {
-        // इंटरनेट स्लो असल्यास किंवा एरर आल्यास चाचणी न अडकता त्वरित मूळ प्रश्नांसह सुरू होईल
-        console.warn("ओव्हरराइड्स फेच वेळेत झाले नाहीत, चाचणी त्वरित सुरू करत आहोत.");
+        // नेटवर्क स्लो असल्यास थेट मूळ डेटासह पुढे जाणे
       }
 
-      // विषय विभाग (Sections) निश्चित करणे
-      testData.questions.forEach(q => {
-        if (q.id <= 40) q.sec = "mental";
-        else if (q.id <= 60) q.sec = "math";
-        else if (q.id <= 80) q.sec = "lang";
-      });
-
+      // ४. चाचणी तात्काळ सुरू करणे
       document.getElementById("guidelinesArea").style.display = "none";
       launchTestWithData(testData, false);
 
     } catch (err) {
-      alert("चाचणी फाईल लोड करण्यात अडचण आली.");
+      alert("चाचणी सुरू करताना अडचण आली: " + err.message);
     } finally {
       if (btn) {
         btn.disabled = false;
