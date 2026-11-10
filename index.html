@@ -1954,7 +1954,13 @@ const isUserTeacher = loggedInUser && (loggedInUser.isTeacher === true || logged
       } else if (inProg) {
         actionArea = `<button class="btn-action btn-resume" style="margin-top:10px;" onclick="resumeTest(${item.id})">⚡ अर्धवट चाचणी पूर्ण करा</button>`;
       } else if (userAttempts >= 2) {
-        actionArea = `<div style="margin-top:10px;"><button class="btn-action btn-locked" title="तुम्हाला दिलेले दोन प्रयत्न संपले आहेत">🔒 दोन प्रयत्न पूर्ण झाले</button></div>`;
+        actionArea = `
+          <div style="margin-top:10px; display:flex; flex-direction:column; gap:6px; align-items:center;">
+            <button class="btn-action btn-locked" style="background:#f1f5f9; color:#94a3b8; border:1px solid #cbd5e1; cursor:default;" title="तुम्हाला दिलेले दोन प्रयत्न संपले आहेत">🔒 दोन प्रयत्न पूर्ण झाले</button>
+            <button class="btn-action" style="background:linear-gradient(135deg, #1e3a8a, #0284c7); color:#ffffff; border:none; padding:8px 16px; border-radius:8px; font-weight:800; cursor:pointer; font-size:0.95rem; box-shadow:0 3px 8px rgba(2,132,199,0.25);" onclick="viewQuestionPaperOnly(${item.id})">
+              📖 प्रश्नपत्रिका व उत्तरे पहा (Review)
+            </button>
+          </div>`;
       } else if (savedScore !== undefined) {
         actionArea = `<div style="margin-top:10px;"><button class="btn-action btn-retry" onclick="openTestGuideline(${item.id})">दुसरा प्रयत्न सोडवा</button></div>`;
       } else {
@@ -2341,6 +2347,28 @@ async function startExamInstant() {
   }
 
   function performLogout() { localStorage.removeItem("jnv_beed_active_user"); location.reload(); }
+  // दोन प्रयत्न पूर्ण झाल्यावर प्रश्नपत्रिका व उत्तरे केवळ पाहण्यासाठी
+function viewQuestionPaperOnly(testId) {
+  if (!loggedInUser || !loggedInUser.uid) return;
+  const studentUid = loggedInUser.uid;
+  const vault = JSON.parse(localStorage.getItem("jnv_vault_" + studentUid) || "{}");
+  const testHistory = (vault.attemptHistory && vault.attemptHistory[testId]) ? vault.attemptHistory[testId] : [];
+
+  currentTestId = testId;
+
+  if (testHistory.length > 0) {
+    const lastAttempt = testHistory[testHistory.length - 1];
+    showAnswerKey(lastAttempt.userAnswers || {}, lastAttempt.score || 0, lastAttempt.correctCount || 0);
+  } else {
+    fetch(`test${testId}.json`)
+      .then(res => res.json())
+      .then(testData => {
+        activeQuestions = testData.questions || testData;
+        showAnswerKey({}, 0, 0);
+      })
+      .catch(() => alert("प्रश्नपत्रिका उघडताना तांत्रिक अडचण आली."));
+  }
+}
 </script>
 </body>
 </html>
