@@ -2347,7 +2347,7 @@ async function startExamInstant() {
   }
 
   function performLogout() { localStorage.removeItem("jnv_beed_active_user"); location.reload(); }
-// दोन प्रयत्न पूर्ण झाल्यावर अधिकृत उत्तरसूची व स्पष्टीकरणे कायमस्वरूपी दाखवणे
+// दोन प्रयत्न पूर्ण झाल्यावर अधिकृत उत्तरसूची, सर्व आकृत्या व स्पष्टीकरणे अचूक दाखवणे
 async function viewQuestionPaperOnly(testId) {
   const dashArea = document.getElementById("dashboardArea");
   const ansArea = document.getElementById("answerKeyArea");
@@ -2355,7 +2355,6 @@ async function viewQuestionPaperOnly(testId) {
   const resultCert = document.getElementById("resultCertArea");
   const regCard = document.getElementById("registrationCard");
 
-  // स्क्रीन बदलणे
   if (dashArea) dashArea.style.display = "none";
   if (arenaArea) arenaArea.style.display = "none";
   if (resultCert) resultCert.style.display = "none";
@@ -2365,11 +2364,10 @@ async function viewQuestionPaperOnly(testId) {
   currentTestId = testId;
   window.scrollTo(0, 0);
 
-  // सुरुवातीला लोडिंग दाखवणे
   ansArea.innerHTML = `
     <div style="text-align:center; padding:50px 20px; font-family:'Mukta', sans-serif;">
-      <h3 style="color:#0f2b48;">प्रश्नपत्रिका व उत्तरसूची उघडत आहे, कृपया प्रतीक्षा करा...</h3>
-      <div style="font-size:2rem; margin-top:10px;">⏳</div>
+      <h3 style="color:#0f2b48;">प्रश्नपत्रिका, आकृत्या व अधिकृत उत्तरसूची उघडत आहे...</h3>
+      <div style="font-size:2.2rem; margin-top:12px;">⏳</div>
     </div>`;
 
   try {
@@ -2382,15 +2380,14 @@ async function viewQuestionPaperOnly(testId) {
       throw new Error("No questions found");
     }
 
-    // संपूर्ण उत्तरपत्रिका थेट HTML स्वरूपात तयार करणे
     let html = `
-      <div style="max-width:900px; margin:20px auto; padding:20px; background:#ffffff; border-radius:12px; box-shadow:0 4px 15px rgba(0,0,0,0.08); font-family:'Mukta', sans-serif;">
-        <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid #e2e8f0; padding-bottom:15px; margin-bottom:20px;">
+      <div style="max-width:920px; margin:20px auto; padding:20px; background:#ffffff; border-radius:12px; box-shadow:0 4px 18px rgba(0,0,0,0.08); font-family:'Mukta', sans-serif;">
+        <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid #e2e8f0; padding-bottom:15px; margin-bottom:20px; flex-wrap:wrap; gap:10px;">
           <div>
-            <h2 style="color:#0f2b48; margin:0; font-size:1.4rem; font-weight:800;">सराव चाचणी क्र. ${testId} - सविस्तर उत्तरसूची व स्पष्टीकरण</h2>
-            <span style="color:#64748b; font-size:0.95rem;">एकूण प्रश्न: ${questions.length} | अभ्यास व रिव्हिजन मोड</span>
+            <h2 style="color:#0f2b48; margin:0; font-size:1.4rem; font-weight:800;">सराव चाचणी क्र. ${testId} - सविस्तर उत्तरसूची व प्रश्नपत्रिका</h2>
+            <span style="color:#64748b; font-size:0.95rem; font-weight:600;">एकूण प्रश्न: ${questions.length} | वाचन व रिव्हिजन मोड</span>
           </div>
-          <button onclick="backToDashboardFromReview()" style="background:#16a34a; color:#ffffff; border:none; padding:10px 18px; border-radius:8px; font-weight:700; cursor:pointer; font-size:0.95rem;">
+          <button onclick="backToDashboardFromReview()" style="background:#16a34a; color:#ffffff; border:none; padding:10px 20px; border-radius:8px; font-weight:800; cursor:pointer; font-size:0.95rem; box-shadow:0 3px 8px rgba(22,163,74,0.3);">
             ⬅️ डॅशबोर्डवर परत जा
           </button>
         </div>
@@ -2398,42 +2395,86 @@ async function viewQuestionPaperOnly(testId) {
     `;
 
     questions.forEach((q, idx) => {
-      const qNum = q.id || (idx + 1);
-      const qText = q.question || q.text || "";
-      const qImg = q.image || q.fig || "";
-      const explanation = q.explanation || q.exp || "या प्रश्नाचे उत्तर अधिकृत उत्तरसूचीनुसार निश्चित केलेले आहे.";
-      const correctAns = (q.answer || q.correct || "").toString().trim().toUpperCase();
-
-      let optionsHtml = `<div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:10px; margin:12px 0;">`;
+      const qNum = q.id || q.qId || (idx + 1);
+      const qText = q.question || q.text || q.qText || "";
       
-      const opts = q.options || [q.A, q.B, q.C, q.D];
+      // १. प्रश्नाची मुख्य आकृती शोधणे
+      const mainImg = q.image || q.fig || q.questionImage || q.qImg || q.img || "";
+
+      // २. योग्य उत्तर शोधणे (वेगवेगळ्या फॉरमॅटसाठी सपोर्ट)
+      let correctRaw = q.answer !== undefined ? q.answer : (q.ans !== undefined ? q.ans : (q.correct !== undefined ? q.correct : q.key));
+      let correctLetter = "";
+      
+      if (typeof correctRaw === "number") {
+        correctLetter = ["A", "B", "C", "D"][correctRaw] || "";
+      } else if (typeof correctRaw === "string") {
+        correctLetter = correctRaw.trim().toUpperCase();
+        if (["1", "2", "3", "4"].includes(correctLetter)) {
+          correctLetter = { "1": "A", "2": "B", "3": "C", "4": "D" }[correctLetter];
+        }
+      }
+
+      // ३. चारही पर्याय व पर्यायांच्या आकृत्या शोधणे
       const optKeys = ["A", "B", "C", "D"];
+      let optionsHtml = `<div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:12px; margin:15px 0;">`;
 
       optKeys.forEach((key, optIdx) => {
-        let optVal = Array.isArray(opts) ? opts[optIdx] : q[key];
-        if (!optVal && q.options && q.options[key]) optVal = q.options[key];
+        let optText = "";
+        let optImg = "";
 
-        const isCorrect = (key === correctAns);
-        const bgStyle = isCorrect ? "background:#dcfce7; border:2px solid #16a34a; color:#14532d; font-weight:700;" : "background:#f8fafc; border:1px solid #cbd5e1; color:#334155;";
+        // पर्यायाचा मजकूर किंवा आकृती तपासणे
+        if (q.options && Array.isArray(q.options)) {
+          const itemVal = q.options[optIdx];
+          if (typeof itemVal === "object" && itemVal !== null) {
+            optText = itemVal.text || "";
+            optImg = itemVal.image || itemVal.img || "";
+          } else {
+            optText = itemVal || "";
+          }
+        } else if (q.options && typeof q.options === "object") {
+          optText = q.options[key] || "";
+        } else {
+          optText = q[key] || q["option" + key] || q["opt" + key] || "";
+        }
+
+        // स्वतंत्र पर्याय आकृत्या (optA_img, optA, इ.)
+        if (!optImg) {
+          optImg = q[key + "_img"] || q["img_" + key] || q["opt" + key + "Img"] || "";
+          if (!optImg && typeof optText === "string" && (optText.startsWith("http") || optText.startsWith("data:image") || optText.endsWith(".png") || optText.endsWith(".jpg"))) {
+            optImg = optText;
+            optText = "";
+          }
+        }
+
+        const isCorrect = (key === correctLetter);
+        const cardStyle = isCorrect
+          ? "background:#dcfce7; border:2px solid #16a34a; box-shadow:0 0 8px rgba(22,163,74,0.25);"
+          : "background:#f8fafc; border:1px solid #cbd5e1;";
 
         optionsHtml += `
-          <div style="padding:10px 14px; border-radius:8px; display:flex; align-items:center; gap:8px; ${bgStyle}">
-            <span style="display:inline-block; width:26px; height:26px; line-height:26px; text-align:center; border-radius:50%; background:${isCorrect ? '#16a34a' : '#94a3b8'}; color:#fff; font-size:0.85rem; font-weight:800;">${key}</span>
-            <span>${optVal || ""}</span>
-            ${isCorrect ? '<span style="margin-left:auto; color:#16a34a; font-weight:800;">✓ योग्य उत्तर</span>' : ''}
+          <div style="padding:12px; border-radius:8px; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; position:relative; ${cardStyle}">
+            <div style="display:flex; align-items:center; width:100%; justify-content:space-between; margin-bottom:6px;">
+              <span style="display:inline-block; width:28px; height:28px; line-height:28px; text-align:center; border-radius:50%; background:${isCorrect ? '#16a34a' : '#64748b'}; color:#fff; font-size:0.9rem; font-weight:800;">${key}</span>
+              ${isCorrect ? '<span style="color:#15803d; font-weight:800; font-size:0.85rem; background:#bbf7d0; padding:2px 8px; border-radius:4px;">✓ अचूक पर्याय</span>' : ''}
+            </div>
+            ${optImg ? `<div style="margin:6px 0;"><img src="${optImg}" style="max-width:100%; max-height:100px; object-fit:contain; border-radius:4px;"></div>` : ''}
+            ${optText ? `<span style="font-size:1rem; font-weight:${isCorrect ? '700' : '600'}; color:${isCorrect ? '#14532d' : '#1e293b'};">${optText}</span>` : ''}
           </div>`;
       });
+
       optionsHtml += `</div>`;
 
+      const explanation = q.explanation || q.exp || q.solution || "अधिकृत उत्तरसूचीनुसार हा पर्याय योग्य आहे.";
+
       html += `
-        <div style="padding:16px; margin-bottom:18px; border:1px solid #e2e8f0; border-radius:10px; background:#fafafa;">
+        <div style="padding:18px; margin-bottom:20px; border:1px solid #e2e8f0; border-radius:10px; background:#ffffff; box-shadow:0 2px 6px rgba(0,0,0,0.03);">
           <div style="display:flex; gap:10px; align-items:flex-start;">
-            <span style="background:#0f2b48; color:#fff; padding:3px 10px; border-radius:6px; font-weight:800; font-size:0.9rem;">प्रश्न ${qNum}</span>
-            <div style="font-size:1.05rem; font-weight:700; color:#1e293b; line-height:1.5;">${qText}</div>
+            <span style="background:#0f2b48; color:#fff; padding:4px 12px; border-radius:6px; font-weight:800; font-size:0.9rem; white-space:nowrap;">प्रश्न ${qNum}</span>
+            <div style="font-size:1.1rem; font-weight:700; color:#1e293b; line-height:1.5;">${qText}</div>
           </div>
-          ${qImg ? `<div style="margin:12px 0; text-align:center;"><img src="${qImg}" style="max-width:100%; max-height:220px; border-radius:6px; border:1px solid #e2e8f0;"></div>` : ''}
+          ${mainImg ? `<div style="margin:14px 0; text-align:center; background:#f8fafc; padding:10px; border-radius:8px; border:1px dashed #cbd5e1;"><img src="${mainImg}" style="max-width:100%; max-height:220px; object-fit:contain;"></div>` : ''}
           ${optionsHtml}
-          <div style="background:#f1f5f9; border-left:4px solid #3b82f6; padding:10px 14px; margin-top:10px; border-radius:0 8px 8px 0; font-size:0.95rem; color:#1e293b;">
+          <div style="background:#f1f5f9; border-left:4px solid #0284c7; padding:10px 14px; margin-top:12px; border-radius:0 8px 8px 0; font-size:0.95rem; color:#0f172a;">
             💡 <b>स्पष्टीकरण:</b> ${explanation}
           </div>
         </div>
@@ -2442,8 +2483,8 @@ async function viewQuestionPaperOnly(testId) {
 
     html += `
         </div>
-        <div style="text-align:center; margin-top:25px;">
-          <button onclick="backToDashboardFromReview()" style="background:#16a34a; color:#ffffff; border:none; padding:12px 28px; border-radius:8px; font-weight:800; cursor:pointer; font-size:1.05rem;">
+        <div style="text-align:center; margin:25px 0 10px 0;">
+          <button onclick="backToDashboardFromReview()" style="background:#16a34a; color:#ffffff; border:none; padding:12px 30px; border-radius:8px; font-weight:800; cursor:pointer; font-size:1.05rem; box-shadow:0 4px 12px rgba(22,163,74,0.3);">
             ⬅️ डॅशबोर्डवर परत जा
           </button>
         </div>
@@ -2454,7 +2495,7 @@ async function viewQuestionPaperOnly(testId) {
 
   } catch (err) {
     console.error(err);
-    alert("प्रश्नपत्रिका लोड करताना त्रुटी आली. कृपया इंटरनेट तपासा.");
+    alert("प्रश्नपत्रिका लोड करताना तांत्रिक त्रुटी आली. कृपया इंटरनेट तपासा.");
     if (dashArea) dashArea.style.display = "block";
     if (ansArea) ansArea.style.display = "none";
   }
