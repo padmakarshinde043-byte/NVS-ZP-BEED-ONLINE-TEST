@@ -2347,13 +2347,8 @@ async function startExamInstant() {
   }
 
   function performLogout() { localStorage.removeItem("jnv_beed_active_user"); location.reload(); }
-// दोन प्रयत्न पूर्ण झाल्यावर प्रश्नपत्रिका व उत्तरे हमखास उघडण्यासाठी
+// दोन प्रयत्न पूर्ण झाल्यावर अधिकृत उत्तरसूची व स्पष्टीकरणे कायमस्वरूपी दाखवणे
 async function viewQuestionPaperOnly(testId) {
-  if (!loggedInUser || !loggedInUser.uid) {
-    alert("कृपया प्रथम लॉगिन करा.");
-    return;
-  }
-
   const dashArea = document.getElementById("dashboardArea");
   const ansArea = document.getElementById("answerKeyArea");
   const arenaArea = document.getElementById("testArena");
@@ -2370,53 +2365,108 @@ async function viewQuestionPaperOnly(testId) {
   currentTestId = testId;
   window.scrollTo(0, 0);
 
-  // १. आधीच्या प्रयत्नांची उत्तरे मिळवणे
-  const studentUid = loggedInUser.uid;
-  const vault = JSON.parse(localStorage.getItem("jnv_vault_" + studentUid) || "{}");
-  const testHistory = (vault.attemptHistory && vault.attemptHistory[testId]) ? vault.attemptHistory[testId] : [];
-  
-  let userAns = {};
-  let userScore = 0;
-  let correctCnt = 0;
-
-  if (testHistory.length > 0) {
-    const lastAttempt = testHistory[testHistory.length - 1];
-    userAns = lastAttempt.userAnswers || {};
-    userScore = lastAttempt.score || 0;
-    correctCnt = lastAttempt.correctCount || 0;
-  }
+  // सुरुवातीला लोडिंग दाखवणे
+  ansArea.innerHTML = `
+    <div style="text-align:center; padding:50px 20px; font-family:'Mukta', sans-serif;">
+      <h3 style="color:#0f2b48;">प्रश्नपत्रिका व उत्तरसूची उघडत आहे, कृपया प्रतीक्षा करा...</h3>
+      <div style="font-size:2rem; margin-top:10px;">⏳</div>
+    </div>`;
 
   try {
-    // २. प्रश्नपत्रिका थेट test json फाईलवरून आणणे
     const res = await fetch(`test${testId}.json`);
     if (!res.ok) throw new Error("File not found");
     const testData = await res.json();
-    
-    // प्रश्नांची यादी सेट करणे
-    activeQuestions = testData.questions || (Array.isArray(testData) ? testData : []);
+    const questions = testData.questions || (Array.isArray(testData) ? testData : []);
 
-    // ३. आन्सर की रेंडर करणे
-    if (typeof showAnswerKey === "function") {
-      showAnswerKey(userAns, userScore, correctCnt);
+    if (!questions || questions.length === 0) {
+      throw new Error("No questions found");
     }
 
-    // ४. वरील बटण 'डॅशबोर्डवर परत जा' असे बदलणे
-    const backBtn = document.querySelector("#answerKeyArea button");
-    if (backBtn) {
-      backBtn.textContent = "डॅशबोर्डवर परत जा";
-      backBtn.onclick = function() {
-        if (ansArea) ansArea.style.display = "none";
-        if (dashArea) dashArea.style.display = "block";
-        window.scrollTo(0, 0);
-      };
-    }
+    // संपूर्ण उत्तरपत्रिका थेट HTML स्वरूपात तयार करणे
+    let html = `
+      <div style="max-width:900px; margin:20px auto; padding:20px; background:#ffffff; border-radius:12px; box-shadow:0 4px 15px rgba(0,0,0,0.08); font-family:'Mukta', sans-serif;">
+        <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid #e2e8f0; padding-bottom:15px; margin-bottom:20px;">
+          <div>
+            <h2 style="color:#0f2b48; margin:0; font-size:1.4rem; font-weight:800;">सराव चाचणी क्र. ${testId} - सविस्तर उत्तरसूची व स्पष्टीकरण</h2>
+            <span style="color:#64748b; font-size:0.95rem;">एकूण प्रश्न: ${questions.length} | अभ्यास व रिव्हिजन मोड</span>
+          </div>
+          <button onclick="backToDashboardFromReview()" style="background:#16a34a; color:#ffffff; border:none; padding:10px 18px; border-radius:8px; font-weight:700; cursor:pointer; font-size:0.95rem;">
+            ⬅️ डॅशबोर्डवर परत जा
+          </button>
+        </div>
+        <div id="reviewQuestionsList">
+    `;
+
+    questions.forEach((q, idx) => {
+      const qNum = q.id || (idx + 1);
+      const qText = q.question || q.text || "";
+      const qImg = q.image || q.fig || "";
+      const explanation = q.explanation || q.exp || "या प्रश्नाचे उत्तर अधिकृत उत्तरसूचीनुसार निश्चित केलेले आहे.";
+      const correctAns = (q.answer || q.correct || "").toString().trim().toUpperCase();
+
+      let optionsHtml = `<div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:10px; margin:12px 0;">`;
+      
+      const opts = q.options || [q.A, q.B, q.C, q.D];
+      const optKeys = ["A", "B", "C", "D"];
+
+      optKeys.forEach((key, optIdx) => {
+        let optVal = Array.isArray(opts) ? opts[optIdx] : q[key];
+        if (!optVal && q.options && q.options[key]) optVal = q.options[key];
+
+        const isCorrect = (key === correctAns);
+        const bgStyle = isCorrect ? "background:#dcfce7; border:2px solid #16a34a; color:#14532d; font-weight:700;" : "background:#f8fafc; border:1px solid #cbd5e1; color:#334155;";
+
+        optionsHtml += `
+          <div style="padding:10px 14px; border-radius:8px; display:flex; align-items:center; gap:8px; ${bgStyle}">
+            <span style="display:inline-block; width:26px; height:26px; line-height:26px; text-align:center; border-radius:50%; background:${isCorrect ? '#16a34a' : '#94a3b8'}; color:#fff; font-size:0.85rem; font-weight:800;">${key}</span>
+            <span>${optVal || ""}</span>
+            ${isCorrect ? '<span style="margin-left:auto; color:#16a34a; font-weight:800;">✓ योग्य उत्तर</span>' : ''}
+          </div>`;
+      });
+      optionsHtml += `</div>`;
+
+      html += `
+        <div style="padding:16px; margin-bottom:18px; border:1px solid #e2e8f0; border-radius:10px; background:#fafafa;">
+          <div style="display:flex; gap:10px; align-items:flex-start;">
+            <span style="background:#0f2b48; color:#fff; padding:3px 10px; border-radius:6px; font-weight:800; font-size:0.9rem;">प्रश्न ${qNum}</span>
+            <div style="font-size:1.05rem; font-weight:700; color:#1e293b; line-height:1.5;">${qText}</div>
+          </div>
+          ${qImg ? `<div style="margin:12px 0; text-align:center;"><img src="${qImg}" style="max-width:100%; max-height:220px; border-radius:6px; border:1px solid #e2e8f0;"></div>` : ''}
+          ${optionsHtml}
+          <div style="background:#f1f5f9; border-left:4px solid #3b82f6; padding:10px 14px; margin-top:10px; border-radius:0 8px 8px 0; font-size:0.95rem; color:#1e293b;">
+            💡 <b>स्पष्टीकरण:</b> ${explanation}
+          </div>
+        </div>
+      `;
+    });
+
+    html += `
+        </div>
+        <div style="text-align:center; margin-top:25px;">
+          <button onclick="backToDashboardFromReview()" style="background:#16a34a; color:#ffffff; border:none; padding:12px 28px; border-radius:8px; font-weight:800; cursor:pointer; font-size:1.05rem;">
+            ⬅️ डॅशबोर्डवर परत जा
+          </button>
+        </div>
+      </div>
+    `;
+
+    ansArea.innerHTML = html;
 
   } catch (err) {
     console.error(err);
-    alert("प्रश्नपत्रिका लोड करताना अडचण आली: test" + testId + ".json");
+    alert("प्रश्नपत्रिका लोड करताना त्रुटी आली. कृपया इंटरनेट तपासा.");
     if (dashArea) dashArea.style.display = "block";
     if (ansArea) ansArea.style.display = "none";
   }
+}
+
+// डॅशबोर्डवर परत जाण्यासाठीचे फंक्शन
+function backToDashboardFromReview() {
+  const dashArea = document.getElementById("dashboardArea");
+  const ansArea = document.getElementById("answerKeyArea");
+  if (ansArea) ansArea.style.display = "none";
+  if (dashArea) dashArea.style.display = "block";
+  window.scrollTo(0, 0);
 }
 </script>
 </body>
