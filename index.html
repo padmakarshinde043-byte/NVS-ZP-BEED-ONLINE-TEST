@@ -2349,12 +2349,26 @@ async function startExamInstant() {
   function performLogout() { localStorage.removeItem("jnv_beed_active_user"); location.reload(); }
   // दोन प्रयत्न पूर्ण झाल्यावर प्रश्नपत्रिका व उत्तरे केवळ पाहण्यासाठी
 function viewQuestionPaperOnly(testId) {
-  if (!loggedInUser || !loggedInUser.uid) return;
+  if (!loggedInUser || !loggedInUser.uid) {
+    alert("कृपया प्रथम लॉगिन करा.");
+    return;
+  }
+
+  // डॅशबोर्ड लपवून आन्सर की विभाग दाखवणे
+  const dashArea = document.getElementById("dashboardArea");
+  const ansArea = document.getElementById("answerKeyArea");
+  const arenaArea = document.getElementById("testArena");
+
+  if (dashArea) dashArea.style.display = "none";
+  if (arenaArea) arenaArea.style.display = "none";
+  if (ansArea) ansArea.style.display = "block";
+
+  currentTestId = testId;
+  window.scrollTo(0, 0);
+
   const studentUid = loggedInUser.uid;
   const vault = JSON.parse(localStorage.getItem("jnv_vault_" + studentUid) || "{}");
   const testHistory = (vault.attemptHistory && vault.attemptHistory[testId]) ? vault.attemptHistory[testId] : [];
-
-  currentTestId = testId;
 
   if (testHistory.length > 0) {
     const lastAttempt = testHistory[testHistory.length - 1];
@@ -2366,7 +2380,12 @@ function viewQuestionPaperOnly(testId) {
         activeQuestions = testData.questions || testData;
         showAnswerKey({}, 0, 0);
       })
-      .catch(() => alert("प्रश्नपत्रिका उघडताना तांत्रिक अडचण आली."));
+      .catch(err => {
+        console.error(err);
+        alert("प्रश्नपत्रिका लोड करताना अडचण आली.");
+        if (dashArea) dashArea.style.display = "block";
+        if (ansArea) ansArea.style.display = "none";
+      });
   }
 }
 </script>
