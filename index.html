@@ -2085,7 +2085,7 @@ async function startExamInstant() {
     let data = window.preloadedExams[testId];
 
     try {
-      // १. फाईल प्रीलोड नसेल तरच फेच करा
+      // १. प्रश्नपत्रिका थेट GitHub फाईलवरून घेणे (Firebase कडून ० बाईट डाऊनलोड)
       if (!data) {
         const res = await fetch(currentPendingTest.file);
         data = await res.json();
@@ -2100,28 +2100,7 @@ async function startExamInstant() {
         else if (q.id <= 80) q.sec = "lang";
       });
 
-      // ३. कमाल १ सेकंदाचा टाईमआऊट (नेटवर्क फास्ट असेल तरच ओव्हरराइड्स येतील, नाहीतर चाचणी अडकणार नाही)
-      const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), 1000);
-
-      try {
-        const fbRes = await fetch(`${FIREBASE_DB_URL}/overrides.json`, { signal: controller.signal });
-        clearTimeout(timeoutId);
-        const allOverrides = await fbRes.json();
-
-        if (allOverrides) {
-          testData.questions.forEach((q, idx) => {
-            const overrideKey = `t${testId}_q${q.id}`;
-            if (allOverrides[overrideKey]) {
-              testData.questions[idx] = { ...q, ...allOverrides[overrideKey] };
-            }
-          });
-        }
-      } catch (e) {
-        // नेटवर्क स्लो असल्यास थेट मूळ डेटासह पुढे जाणे
-      }
-
-      // ४. चाचणी तात्काळ सुरू करणे
+      // ३. चाचणी तात्काळ सुरू करणे
       document.getElementById("guidelinesArea").style.display = "none";
       launchTestWithData(testData, false);
 
@@ -2134,7 +2113,6 @@ async function startExamInstant() {
       }
     }
   }
-
   async function resumeTest(testId) {
     currentPendingTest = EXAM_SCHEDULE.find(t => t.id === testId);
     let data = window.preloadedExams[testId];
