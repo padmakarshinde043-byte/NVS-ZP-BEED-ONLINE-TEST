@@ -2122,30 +2122,19 @@ async function startExamInstant() {
         data = await res.json();
       }
 
-      const promises = data.questions.map(async (q, idx) => {
+      const testData = JSON.parse(JSON.stringify(data));
+      testData.questions.forEach(q => {
         if (q.id <= 40) q.sec = "mental";
         else if (q.id <= 60) q.sec = "math";
         else if (q.id <= 80) q.sec = "lang";
-
-        try {
-          const fbRes = await fetch(`${FIREBASE_DB_URL}/overrides/t${testId}_q${q.id}.json`);
-          const fbData = await fbRes.json();
-          if (fbData) {
-            if (fbData.id <= 40) fbData.sec = "mental";
-            else if (fbData.id <= 60) fbData.sec = "math";
-            else if (fbData.id <= 80) fbData.sec = "lang";
-            data.questions[idx] = fbData;
-          }
-        } catch(e) {}
       });
 
-      await Promise.all(promises);
-      launchTestWithData(data, true);
+      launchTestWithData(testData, true);
     } catch(err) {
+      console.error("Resume error:", err);
       alert("चाचणी रिझ्युम करताना अडचण आली.");
     }
   }
-
   function launchTestWithData(testData, isResume) {
     let remTime = 120 * 60;
     recordedChoices = {};
@@ -2218,11 +2207,16 @@ async function startExamInstant() {
       }
 
       let opts = '<div class="options-grid">';
-      q.options.forEach((opt, idx) => {
-        const isSel = recordedChoices[q.id] === idx ? "checked" : "";
-        let optDisplay = opt.startsWith("http") || opt.startsWith("data:") ? `<img src="${opt}" style="max-height:40px; object-fit:contain;" onerror="this.onerror=null; this.src='';">` : `<span>${opt}</span>`;
-        opts += `<label class="opt-label"><input type="radio" name="q_${q.id}" value="${idx}" ${isSel} onchange="markAnswer(${q.id}, ${idx})">${optDisplay}</label>`;
-      });
+      if (Array.isArray(q.options)) {
+        q.options.forEach((opt, idx) => {
+          const isSel = recordedChoices[q.id] === idx ? "checked" : "";
+          const optStr = String(opt !== undefined && opt !== null ? opt : "");
+          let optDisplay = optStr.startsWith("http") || optStr.startsWith("data:") 
+            ? `<img src="${optStr}" style="max-height:40px; object-fit:contain;" onerror="this.onerror=null; this.src='';">` 
+            : `<span>${optStr}</span>`;
+          opts += `<label class="opt-label"><input type="radio" name="q_${q.id}" value="${idx}" ${isSel} onchange="markAnswer(${q.id}, ${idx})">${optDisplay}</label>`;
+        });
+      }
       opts += '</div>';
 
       let rawText = q.text || "";
