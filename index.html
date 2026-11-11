@@ -1054,11 +1054,23 @@ function saveUserVault() {
     const host = document.getElementById("toppersTableHost");
     host.innerHTML = "<p style='text-align:center; padding:15px; color:#64748b;'>माहिती शोधत आहे...</p>";
 
+    // निवडलेल्या चाचणीचा आयडी शोधणे
+    const matchedTest = EXAM_SCHEDULE.find(t => t.title === selectedTitle);
+    const selectedTestId = matchedTest ? matchedTest.id : null;
+
     fetch(`${FIREBASE_DB_URL}/results.json`)
       .then(res => res.json())
       .then(data => {
         const results = data ? Object.entries(data).map(([k, v]) => ({ firebaseKey: k, ...v })) : [];
-        const filtered = results.filter(r => r.testTitle === selectedTitle && !r.isTeacher);
+
+        // अचूक व लवचिक फिल्टर: शिक्षक नसलेले आणि आयडी किंवा शीर्षक जुळणारे निकाल
+        const filtered = results.filter(r => {
+          const isTeacherUser = (r.isTeacher === true || r.isTeacher === "true");
+          const matchesTitle = (r.testTitle && r.testTitle.trim() === selectedTitle.trim());
+          const matchesId = (selectedTestId !== null && (r.testId == selectedTestId || r.testId == String(selectedTestId)));
+          
+          return !isTeacherUser && (matchesTitle || matchesId);
+        });
         
         if (filtered.length === 0) {
           host.innerHTML = "<p style='text-align:center; padding:20px; color:#dc2626; font-weight:700;'>या चाचणीसाठी अद्याप विद्यार्थ्यांचे निकाल उपलब्ध नाही.</p>";
@@ -1068,7 +1080,10 @@ function saveUserVault() {
         const studentBest = {};
         filtered.forEach(item => {
           const key = item.uid || makeStudentId(item.mobile, item.name);
-          if (!studentBest[key] || item.score >= studentBest[key].score) { studentBest[key] = item; }
+          const scoreNum = parseFloat(item.score) || 0;
+          if (!studentBest[key] || scoreNum > (parseFloat(studentBest[key].score) || 0)) {
+            studentBest[key] = { ...item, score: scoreNum };
+          }
         });
 
         const toppers = Object.values(studentBest).sort((a, b) => b.score - a.score).slice(0, 50);
@@ -1079,8 +1094,8 @@ function saveUserVault() {
             <td><input type="checkbox" class="topper-checkbox" value="${uniquePayload}" style="width:18px; height:18px; cursor:pointer;"></td>
             <td style="font-weight:800;">#${i + 1}</td>
             <td style="text-align:left; font-weight:700;">${t.name}</td>
-            <td>${t.taluka}</td>
-            <td>${t.mobile}</td>
+            <td>${t.taluka || '-'}</td>
+            <td>${t.mobile || '-'}</td>
             <td style="font-weight:800; color:#16a34a;">${t.score} / 100</td>
             <td>${t.percentage}%</td>
             <td><button onclick="deleteResultEntry('${t.firebaseKey}', '${t.mobile}', '${t.name}', '${t.testTitle}')" style="background:#fee2e2; color:#991b1b; border:none; padding:4px 8px; border-radius:6px; cursor:pointer; font-weight:700;">डिलीट</button></td>
@@ -1402,27 +1417,65 @@ function saveUserVault() {
 
   function downloadToppersExcel() {
     const selectedTitle = document.getElementById("adminTestSelector").value;
+    const matchedTest = EXAM_SCHEDULE.find(t => t.title === selectedTitle);
+    const selectedTestId = matchedTest ? matchedTest.id : null;
+
     fetch(`${FIREBASE_DB_URL}/results.json`)
       .then(res => res.json())
       .then(data => {
         const results = data ? Object.values(data) : [];
-        const filtered = results.filter(r => r.testTitle === selectedTitle && !r.isTeacher);
-        if (filtered.length === 0) { alert("डेटा उपलब्ध नाही."); return; }
+        
+        // अचूक फिल्टर: शिक्षक नसलेले आणि निवडलेली चाचणी (ID किंवा Title जुळणारे)
+        const filtered = results.filter(r => {
+          const isTeacherUser = (r.isTeacher === true || r.isTeacher === "true");
+          const matchesTitle = (r.testTitle && r.testTitle.trim() === selectedTitle.trim());
+          const matchesId = (selectedTestId !== null && (r.testId == selectedTestId || r.testId == String(selectedTestId)));
+          return !isTeacherUser && (matchesTitle || matchesId);
+        });
 
+        if (filtered.length === 0) { 
+          alert("या चाचणीसाठी डाऊनलोड करण्यासाठी कोणताही विद्यार्थी निकाल उपलब्ध नाही."); 
+          return; 
+        }
+
+        // प्रत्येक विद्यार्थ्याचा सर्वोत्तम गुण (Best Score) निश्चित करणे
         const studentBest = {};
         filtered.forEach(item => {
           const key = item.uid || makeStudentId(item.mobile, item.name);
-          if (!studentBest[key] || item.score > studentBest[key].score) { studentBest[key] = item; }
+          const scoreNum = parseFloat(item.score) || 0;
+          if (!studentBest[key] || scoreNum > (parseFloat(studentBest[key].score) || 0)) {
+            studentBest[key] = { ...item, score: scoreNum };
+          }
         });
 
+        // सर्वाधिक गुणांनुसार उतरत्या क्रमाने Top 50 निवडणे
         const toppers = Object.values(studentBest).sort((a, b) => b.score - a.score).slice(0, 50);
+        
+        // एक्सेल शीट तयार करणे
         const wsData = [["रँक", "विद्यार्थ्याचे नाव", "तालुका", "मोबाईल नंबर", "गुण", "टक्केवारी", "दिनांक"]];
-        toppers.forEach((t, i) => { wsData.push([i + 1, t.name, t.taluka, t.mobile, t.score, t.percentage + "%", t.timestamp]); });
+        toppers.forEach((t, i) => { 
+          wsData.push([
+            i + 1, 
+            t.name || "-", 
+            t.taluka || "-", 
+            t.mobile || "-", 
+            t.score, 
+            (t.percentage !== undefined ? t.percentage : ((t.score / 100) * 100).toFixed(1)) + "%", 
+            t.timestamp || "-"
+          ]); 
+        });
 
         const ws = XLSX.utils.aoa_to_sheet(wsData);
         const wb = XLSX.utils.book_new();
         XLSX.utils.book_append_sheet(wb, ws, "Toppers");
-        XLSX.writeFile(wb, `${selectedTitle}_Toppers.xlsx`);
+        
+        // सुरक्षित फाईल नाव
+        const safeTitle = selectedTitle.replace(/[^a-zA-Z0-9\u0900-\u097F]/g, "_");
+        XLSX.writeFile(wb, `${safeTitle}_Top50.xlsx`);
+      })
+      .catch(err => {
+        console.error(err);
+        alert("एक्सेल फाईल डाऊनलोड करताना त्रुटी आली. कृपया इंटरनेट तपासा.");
       });
   }
 
