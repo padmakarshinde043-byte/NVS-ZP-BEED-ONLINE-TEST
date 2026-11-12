@@ -2534,6 +2534,50 @@ function backToDashboardFromReview() {
   if (dashArea) dashArea.style.display = "block";
   window.scrollTo(0, 0);
 }
+  // === १ प्रयत्न मर्यादा (Single-Paste Patch) ===
+document.addEventListener("DOMContentLoaded", () => {
+  const warnBox = document.getElementById("attemptWarningBox");
+  if (warnBox) {
+    warnBox.innerHTML = '⚠️ <b>महत्त्वाची सूचना:</b> सर्व विद्यार्थी व शिक्षकांना सूचित करण्यात येते की, या चाचणीसाठी तुम्हाला फक्त <b>एकच प्रयत्न (Only One Attempt)</b> दिला जाईल! त्यामुळे काळजीपूर्वक सोडवा.';
+  }
+});
+
+const _origOpenGuideline = openTestGuideline;
+openTestGuideline = function(testId) {
+  const att = (loggedInUser && loggedInUser.attempts && loggedInUser.attempts[testId]) || 0;
+  if (att >= 1) {
+    alert("या चाचणीसाठी तुम्हाला दिलेला एकमेव प्रयत्न पूर्ण झाला आहे!");
+    return;
+  }
+  _origOpenGuideline(testId);
+};
+
+const _origRenderDashboard = renderDashboard;
+renderDashboard = function() {
+  _origRenderDashboard();
+  document.querySelectorAll("#testsScheduleList .test-item").forEach((card, idx) => {
+    const item = EXAM_SCHEDULE[idx];
+    if (!item || !loggedInUser) return;
+    const att = (loggedInUser.attempts && loggedInUser.attempts[item.id]) || 0;
+    const saved = loggedInUser.history && loggedInUser.history[item.id];
+    const badgeBox = card.querySelector(".attempt-badge-container");
+
+    if (att >= 1 || saved !== undefined) {
+      const score = (loggedInUser.attemptHistory && loggedInUser.attemptHistory[item.id] && loggedInUser.attemptHistory[item.id][0] !== undefined) ? loggedInUser.attemptHistory[item.id][0] : (saved || 0);
+      if (badgeBox) badgeBox.innerHTML = `<span class="badge-attempt done">प्राप्त गुण: <b>${score}</b> / 100 (प्रयत्न पूर्ण)</span>`;
+      const retryBtn = card.querySelector(".btn-retry");
+      if (retryBtn) {
+        retryBtn.parentElement.innerHTML = `
+          <div style="display:flex; flex-direction:column; gap:6px; align-items:center;">
+            <button class="btn-action btn-locked" style="background:#f1f5f9; color:#94a3b8; border:1px solid #cbd5e1; cursor:default;">🔒 एक प्रयत्न पूर्ण झाला</button>
+            <button class="btn-action" style="background:linear-gradient(135deg, #1e3a8a, #0284c7); color:#ffffff; border:none; padding:8px 16px; border-radius:8px; font-weight:800; cursor:pointer; font-size:0.95rem;" onclick="viewQuestionPaperOnly(${item.id})">📖 प्रश्नपत्रिका व उत्तरे पहा (Review)</button>
+          </div>`;
+      }
+    } else if (badgeBox) {
+      badgeBox.innerHTML = `<span class="badge-attempt">Not attempted yet (1 attempt left)</span>`;
+    }
+  });
+};
 </script>
 </body>
 </html>
