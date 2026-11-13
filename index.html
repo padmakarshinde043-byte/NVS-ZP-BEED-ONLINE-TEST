@@ -2534,7 +2534,7 @@ function backToDashboardFromReview() {
   if (dashArea) dashArea.style.display = "block";
   window.scrollTo(0, 0);
 }
-  // === १ प्रयत्न मर्यादा व तत्काळ रिव्ह्यू पॅच (Updated Single-Paste Patch) ===
+  // === १ प्रयत्न मर्यादा व तत्काळ रिव्ह्यू पॅच (Final Fix) ===
 document.addEventListener("DOMContentLoaded", () => {
   const warnBox = document.getElementById("attemptWarningBox");
   if (warnBox) {
@@ -2574,7 +2574,7 @@ renderDashboard = function() {
         badgeBox.innerHTML = `<span class="badge-attempt done">प्राप्त गुण: <b>${score}</b> / 100 (प्रयत्न पूर्ण)</span>`;
       }
 
-      const targetBtn = card.querySelector(".btn-retry") || card.querySelector(".btn-locked");
+      const targetBtn = card.querySelector(".btn-retry") || card.querySelector(".btn-locked") || card.querySelector(".btn-start");
       
       const reviewHtml = `
         <div style="margin-top:10px; display:flex; flex-direction:column; gap:6px; align-items:center;">
