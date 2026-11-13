@@ -2534,7 +2534,7 @@ function backToDashboardFromReview() {
   if (dashArea) dashArea.style.display = "block";
   window.scrollTo(0, 0);
 }
-  // === १ प्रयत्न मर्यादा (Single-Paste Patch) ===
+  // === १ प्रयत्न मर्यादा व तत्काळ रिव्ह्यू पॅच (Updated Single-Paste Patch) ===
 document.addEventListener("DOMContentLoaded", () => {
   const warnBox = document.getElementById("attemptWarningBox");
   if (warnBox) {
@@ -2545,8 +2545,9 @@ document.addEventListener("DOMContentLoaded", () => {
 const _origOpenGuideline = openTestGuideline;
 openTestGuideline = function(testId) {
   const att = (loggedInUser && loggedInUser.attempts && loggedInUser.attempts[testId]) || 0;
-  if (att >= 1) {
-    alert("या चाचणीसाठी तुम्हाला दिलेला एकमेव प्रयत्न पूर्ण झाला आहे!");
+  const saved = loggedInUser && loggedInUser.history && loggedInUser.history[testId];
+  if (att >= 1 || saved !== undefined) {
+    alert("या चाचणीसाठी तुम्हाला दिलेला एकमेव प्रयत्न पूर्ण झाला आहे! तुम्ही डॅशबोर्डवरून प्रश्नपत्रिका व उत्तरे पाहू शकता.");
     return;
   }
   _origOpenGuideline(testId);
@@ -2558,22 +2559,35 @@ renderDashboard = function() {
   document.querySelectorAll("#testsScheduleList .test-item").forEach((card, idx) => {
     const item = EXAM_SCHEDULE[idx];
     if (!item || !loggedInUser) return;
+    
     const att = (loggedInUser.attempts && loggedInUser.attempts[item.id]) || 0;
     const saved = loggedInUser.history && loggedInUser.history[item.id];
+    const inProg = loggedInUser.inProgress && loggedInUser.inProgress[item.id];
     const badgeBox = card.querySelector(".attempt-badge-container");
 
-    if (att >= 1 || saved !== undefined) {
-      const score = (loggedInUser.attemptHistory && loggedInUser.attemptHistory[item.id] && loggedInUser.attemptHistory[item.id][0] !== undefined) ? loggedInUser.attemptHistory[item.id][0] : (saved || 0);
-      if (badgeBox) badgeBox.innerHTML = `<span class="badge-attempt done">प्राप्त गुण: <b>${score}</b> / 100 (प्रयत्न पूर्ण)</span>`;
-      const retryBtn = card.querySelector(".btn-retry");
-      if (retryBtn) {
-        retryBtn.parentElement.innerHTML = `
-          <div style="display:flex; flex-direction:column; gap:6px; align-items:center;">
-            <button class="btn-action btn-locked" style="background:#f1f5f9; color:#94a3b8; border:1px solid #cbd5e1; cursor:default;">🔒 एक प्रयत्न पूर्ण झाला</button>
-            <button class="btn-action" style="background:linear-gradient(135deg, #1e3a8a, #0284c7); color:#ffffff; border:none; padding:8px 16px; border-radius:8px; font-weight:800; cursor:pointer; font-size:0.95rem;" onclick="viewQuestionPaperOnly(${item.id})">📖 प्रश्नपत्रिका व उत्तरे पहा (Review)</button>
-          </div>`;
+    if (!inProg && (att >= 1 || saved !== undefined)) {
+      const score = (loggedInUser.attemptHistory && loggedInUser.attemptHistory[item.id] && loggedInUser.attemptHistory[item.id][0] !== undefined) 
+        ? loggedInUser.attemptHistory[item.id][0] 
+        : (saved || 0);
+        
+      if (badgeBox) {
+        badgeBox.innerHTML = `<span class="badge-attempt done">प्राप्त गुण: <b>${score}</b> / 100 (प्रयत्न पूर्ण)</span>`;
       }
-    } else if (badgeBox) {
+
+      const targetBtn = card.querySelector(".btn-retry") || card.querySelector(".btn-locked");
+      
+      const reviewHtml = `
+        <div style="margin-top:10px; display:flex; flex-direction:column; gap:6px; align-items:center;">
+          <button class="btn-action btn-locked" style="background:#f1f5f9; color:#94a3b8; border:1px solid #cbd5e1; cursor:default;">🔒 एक प्रयत्न पूर्ण झाला</button>
+          <button class="btn-action" style="background:linear-gradient(135deg, #1e3a8a, #0284c7); color:#ffffff; border:none; padding:8px 16px; border-radius:8px; font-weight:800; cursor:pointer; font-size:0.95rem; box-shadow:0 3px 8px rgba(2,132,199,0.25);" onclick="viewQuestionPaperOnly(${item.id})">
+            📖 प्रश्नपत्रिका व उत्तरे पहा (Review)
+          </button>
+        </div>`;
+
+      if (targetBtn && targetBtn.parentElement) {
+        targetBtn.parentElement.innerHTML = reviewHtml;
+      }
+    } else if (!inProg && badgeBox) {
       badgeBox.innerHTML = `<span class="badge-attempt">Not attempted yet (1 attempt left)</span>`;
     }
   });
