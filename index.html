@@ -2534,7 +2534,9 @@ function backToDashboardFromReview() {
   if (dashArea) dashArea.style.display = "block";
   window.scrollTo(0, 0);
 }
-  // === १ प्रयत्न मर्यादा व तत्काळ रिव्ह्यू पॅच (Final Fix) ===
+  // === एकत्रित पॅच: १ प्रयत्न + तत्काळ रिव्ह्यू + On-Demand Admin Reports (शिक्षक वगळून) ===
+
+// भाग १: १ प्रयत्न मर्यादा व तत्काळ रिव्ह्यू (Review) सुविधा
 document.addEventListener("DOMContentLoaded", () => {
   const warnBox = document.getElementById("attemptWarningBox");
   if (warnBox) {
@@ -2591,6 +2593,79 @@ renderDashboard = function() {
       badgeBox.innerHTML = `<span class="badge-attempt">Not attempted yet (1 attempt left)</span>`;
     }
   });
+};
+
+// भाग २: On-Demand Admin Reports (सर्व संपादक बटणे सुरक्षित ठेवून)
+let _cacheResults = null;
+let _cacheStudents = null;
+let _cacheComments = null;
+
+// ॲडमिन पॅनेल उघडताच आपोआप होणारा बल्क डेटा वापर थांबवणे
+const _origFetchAdmin = typeof fetchAdminDashboardData === "function" ? fetchAdminDashboardData : null;
+fetchAdminDashboardData = function() {
+  // आपोआप डेटा लोड होणार नाही; फक्त बटणावर क्लिक केल्यावरच लोड होईल
+};
+
+// १. Top 50 Toppers (On-Demand + Cache + शिक्षकांना १००% वगळणे)
+const _origOpenToppers = typeof openToppersModal === "function" ? openToppersModal : null;
+openToppersModal = async function() {
+  if (!_cacheResults) {
+    try {
+      const res = await fetch(`${FIREBASE_DB_URL}/results.json`);
+      const rawData = (await res.json()) || {};
+      
+      // शिक्षकांचे रेकॉर्ड्स फिल्टर करून फक्त विद्यार्थी ठेवणे
+      const filteredStudentsOnly = {};
+      Object.keys(rawData).forEach(key => {
+        const item = rawData[key];
+        if (item && item.isTeacher !== true && item.isTeacher !== "true") {
+          filteredStudentsOnly[key] = item;
+        }
+      });
+      _cacheResults = filteredStudentsOnly;
+    } catch (e) {
+      alert("निकाल लोड करताना अडचण आली. Firebase Rules तपासा.");
+      return;
+    }
+  }
+  window.allAdminResults = _cacheResults;
+  if (_origOpenToppers) _origOpenToppers();
+};
+
+// २. नोंदणीकृत युझर्स (On-Demand + Cache)
+const _origOpenUsers = typeof openRegisteredUsersModal === "function" ? openRegisteredUsersModal : null;
+openRegisteredUsersModal = async function() {
+  if (!_cacheStudents) {
+    try {
+      const res = await fetch(`${FIREBASE_DB_URL}/students.json`);
+      _cacheStudents = (await res.json()) || {};
+      const badge = document.getElementById("totalRegCountBadge") || document.querySelector("#adminPanelArea span");
+      if (badge && badge.innerText.includes("एकूण नोंदणीकृत")) {
+        badge.innerHTML = `एकूण नोंदणीकृत विद्यार्थी: <b>${Object.keys(_cacheStudents).length}</b>`;
+      }
+    } catch (e) {
+      alert("विद्यार्थी यादी लोड करताना अडचण आली. Firebase Rules तपासा.");
+      return;
+    }
+  }
+  window.allRegisteredStudents = _cacheStudents;
+  if (_origOpenUsers) _origOpenUsers();
+};
+
+// ३. Comments / अभिप्राय (On-Demand + Cache)
+const _origOpenComments = typeof openCommentsModal === "function" ? openCommentsModal : null;
+openCommentsModal = async function() {
+  if (!_cacheComments) {
+    try {
+      const res = await fetch(`${FIREBASE_DB_URL}/comments.json`);
+      _cacheComments = (await res.json()) || {};
+    } catch (e) {
+      alert("अभिप्राय लोड करताना अडचण आली. Firebase Rules तपासा.");
+      return;
+    }
+  }
+  window.allAdminComments = _cacheComments;
+  if (_origOpenComments) _origOpenComments();
 };
 </script>
 </body>
