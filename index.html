@@ -2534,7 +2534,7 @@ function backToDashboardFromReview() {
   if (dashArea) dashArea.style.display = "block";
   window.scrollTo(0, 0);
 }
-  // === एकत्रित पॅच: १ प्रयत्न + तत्काळ रिव्ह्यू + On-Demand Admin Reports (शिक्षक वगळून) ===
+  // === अंतिम एकत्रित पॅच: १ प्रयत्न + रिव्ह्यू + अचूक Top 50 + चाचणी निहाय आकडेवारी बटण ===
 
 // भाग १: १ प्रयत्न मर्यादा व तत्काळ रिव्ह्यू (Review) सुविधा
 document.addEventListener("DOMContentLoaded", () => {
@@ -2558,6 +2558,19 @@ openTestGuideline = function(testId) {
 const _origRenderDashboard = renderDashboard;
 renderDashboard = function() {
   _origRenderDashboard();
+
+  // ॲडमिन पॅनेलमध्ये 'चाचणी निहाय विद्यार्थी संख्या' हे नवीन बटण जोडणे
+  const adminBtnRow = document.querySelector("#adminPanelArea > div:nth-child(2)");
+  if (adminBtnRow && !document.getElementById("btnTestWiseStats")) {
+    const statsBtn = document.createElement("button");
+    statsBtn.id = "btnTestWiseStats";
+    statsBtn.className = "btn-action";
+    statsBtn.style.cssText = "background:#ea580c; color:#ffffff;";
+    statsBtn.innerHTML = "📊 चाचणी निहाय विद्यार्थी संख्या";
+    statsBtn.onclick = openTestWiseStatsModal;
+    adminBtnRow.appendChild(statsBtn);
+  }
+
   document.querySelectorAll("#testsScheduleList .test-item").forEach((card, idx) => {
     const item = EXAM_SCHEDULE[idx];
     if (!item || !loggedInUser) return;
@@ -2595,78 +2608,215 @@ renderDashboard = function() {
   });
 };
 
-// भाग २: On-Demand Admin Reports (सर्व संपादक बटणे सुरक्षित ठेवून)
+// भाग २: On-Demand Admin Reports + अचूक Top 50 + चाचणी निहाय आकडेवारी मोडल
 let _cacheResults = null;
 let _cacheStudents = null;
-let _cacheComments = null;
 
-// ॲडमिन पॅनेल उघडताच आपोआप होणारा बल्क डेटा वापर थांबवणे
-const _origFetchAdmin = typeof fetchAdminDashboardData === "function" ? fetchAdminDashboardData : null;
 fetchAdminDashboardData = function() {
-  // आपोआप डेटा लोड होणार नाही; फक्त बटणावर क्लिक केल्यावरच लोड होईल
+  // ऑन-डिमांड मोड: आपोआप ० बाईट डेटा वापर
 };
 
-// १. Top 50 Toppers (On-Demand + Cache + शिक्षकांना १००% वगळणे)
-const _origOpenToppers = typeof openToppersModal === "function" ? openToppersModal : null;
-openToppersModal = async function() {
-  if (!_cacheResults) {
-    try {
+// निकाल फाईलमधून चाचणी जुळवण्याचे अचूक हेल्पर फंक्शन (शिक्षक वगळून)
+function filterResultsForTest(resultsList, selectedTitle) {
+  const matchedTest = EXAM_SCHEDULE.find(t => t.title === selectedTitle);
+  const selectedTestId = matchedTest ? matchedTest.id : null;
+  const paddedId = selectedTestId ? String(selectedTestId).padStart(2, '0') : "";
+
+  return resultsList.filter(r => {
+    if (!r) return false;
+    // केवळ शिक्षक मोड (isTeacher: true) वगळणे
+    if (r.isTeacher === true || r.isTeacher === "true") return false;
+
+    const rTitle = (r.testTitle || "").trim();
+    const matchesTitle = (rTitle === selectedTitle.trim()) ||
+                         (paddedId && rTitle.includes(`क्र. ${paddedId}`)) ||
+                         (selectedTestId && rTitle.includes(`क्र. ${selectedTestId}`));
+    const matchesId = (selectedTestId !== null && Number(r.testId) === Number(selectedTestId));
+    return matchesTitle || matchesId;
+  });
+}
+
+// १. अचूक Top 50 यादी लोड करणे (कॅशसह)
+loadToppersForSelectedTest = async function() {
+  const selectedTitle = document.getElementById("adminTestSelector").value;
+  const host = document.getElementById("toppersTableHost");
+  host.innerHTML = "<p style='text-align:center; padding:15px; color:#64748b;'>अचूक मेरिट यादी तयार होत आहे...</p>";
+
+  try {
+    if (!_cacheResults) {
       const res = await fetch(`${FIREBASE_DB_URL}/results.json`);
-      const rawData = (await res.json()) || {};
-      
-      // शिक्षकांचे रेकॉर्ड्स फिल्टर करून फक्त विद्यार्थी ठेवणे
-      const filteredStudentsOnly = {};
-      Object.keys(rawData).forEach(key => {
-        const item = rawData[key];
-        if (item && item.isTeacher !== true && item.isTeacher !== "true") {
-          filteredStudentsOnly[key] = item;
-        }
-      });
-      _cacheResults = filteredStudentsOnly;
-    } catch (e) {
-      alert("निकाल लोड करताना अडचण आली. Firebase Rules तपासा.");
+      const data = await res.json();
+      _cacheResults = data ? Object.entries(data).map(([k, v]) => ({ firebaseKey: k, ...v })) : [];
+    }
+
+    const filtered = filterResultsForTest(_cacheResults, selectedTitle);
+
+    if (filtered.length === 0) {
+      host.innerHTML = "<p style='text-align:center; padding:20px; color:#dc2626; font-weight:700;'>या चाचणीसाठी अद्याप विद्यार्थ्यांचे निकाल उपलब्ध नाहीत.</p>";
       return;
     }
-  }
-  window.allAdminResults = _cacheResults;
-  if (_origOpenToppers) _origOpenToppers();
-};
 
-// २. नोंदणीकृत युझर्स (On-Demand + Cache)
-const _origOpenUsers = typeof openRegisteredUsersModal === "function" ? openRegisteredUsersModal : null;
-openRegisteredUsersModal = async function() {
-  if (!_cacheStudents) {
-    try {
-      const res = await fetch(`${FIREBASE_DB_URL}/students.json`);
-      _cacheStudents = (await res.json()) || {};
-      const badge = document.getElementById("totalRegCountBadge") || document.querySelector("#adminPanelArea span");
-      if (badge && badge.innerText.includes("एकूण नोंदणीकृत")) {
-        badge.innerHTML = `एकूण नोंदणीकृत विद्यार्थी: <b>${Object.keys(_cacheStudents).length}</b>`;
+    const studentBest = {};
+    filtered.forEach(item => {
+      const key = makeStudentId(item.mobile, item.name);
+      const scoreNum = parseFloat(item.score) || 0;
+      if (!studentBest[key] || scoreNum > studentBest[key].score) {
+        studentBest[key] = { ...item, score: scoreNum };
       }
-    } catch (e) {
-      alert("विद्यार्थी यादी लोड करताना अडचण आली. Firebase Rules तपासा.");
-      return;
-    }
+    });
+
+    const toppers = Object.values(studentBest).sort((a, b) => b.score - a.score).slice(0, 50);
+    let rows = "";
+    toppers.forEach((t, i) => {
+      const uniquePayload = encodeURIComponent(JSON.stringify({ key: t.firebaseKey, mobile: t.mobile, name: t.name, testTitle: t.testTitle }));
+      rows += `<tr>
+        <td><input type="checkbox" class="topper-checkbox" value="${uniquePayload}" style="width:18px; height:18px; cursor:pointer;"></td>
+        <td style="font-weight:800;">#${i + 1}</td>
+        <td style="text-align:left; font-weight:700;">${t.name}</td>
+        <td>${t.taluka || '-'}</td>
+        <td>${t.mobile || '-'}</td>
+        <td style="font-weight:800; color:#16a34a;">${t.score} / 100</td>
+        <td>${t.percentage || t.score}%</td>
+        <td><button onclick="deleteResultEntry('${t.firebaseKey}', '${t.mobile}', '${t.name}', '${t.testTitle}')" style="background:#fee2e2; color:#991b1b; border:none; padding:4px 8px; border-radius:6px; cursor:pointer; font-weight:700;">डिलीट</button></td>
+      </tr>`;
+    });
+
+    host.innerHTML = `
+      <div style="margin-bottom:8px; font-size:0.85rem; color:#1e40af; font-weight:700; display:flex; justify-content:space-between; align-items:center;">
+        <span>एकूण चाचणी सोडवलेले विद्यार्थी: <b>${Object.keys(studentBest).length}</b> (पहिले ५० दाखवले आहेत)</span>
+        <button onclick="_cacheResults=null; loadToppersForSelectedTest();" style="background:#e0f2fe; color:#0369a1; border:1px solid #bae6fd; padding:3px 10px; border-radius:6px; cursor:pointer; font-weight:700;">↻ ताजा डेटा घ्या</button>
+      </div>
+      <table class="report-table" style="margin:0;">
+        <thead>
+          <tr>
+            <th><input type="checkbox" id="selectAllToppers" onclick="toggleSelectAllToppers(this)" style="width:18px; height:18px; cursor:pointer;"></th>
+            <th>रँक</th>
+            <th style="text-align:left;">नाव</th>
+            <th>तालुका</th>
+            <th>मोबाईल</th>
+            <th>गुण</th>
+            <th>टक्के</th>
+            <th>कृती</th>
+          </tr>
+        </thead>
+        <tbody>${rows}</tbody>
+      </table>`;
+  } catch (e) {
+    host.innerHTML = "<p style='text-align:center; color:red;'>माहिती आणताना त्रुटी आली. कृपया पुन्हा प्रयत्न करा.</p>";
   }
-  window.allRegisteredStudents = _cacheStudents;
-  if (_origOpenUsers) _origOpenUsers();
 };
 
-// ३. Comments / अभिप्राय (On-Demand + Cache)
-const _origOpenComments = typeof openCommentsModal === "function" ? openCommentsModal : null;
-openCommentsModal = async function() {
-  if (!_cacheComments) {
-    try {
-      const res = await fetch(`${FIREBASE_DB_URL}/comments.json`);
-      _cacheComments = (await res.json()) || {};
-    } catch (e) {
-      alert("अभिप्राय लोड करताना अडचण आली. Firebase Rules तपासा.");
-      return;
-    }
+// २. Top 50 एक्सेल डाऊनलोड (कॅशमधून)
+downloadToppersExcel = async function() {
+  const selectedTitle = document.getElementById("adminTestSelector").value;
+
+  if (!_cacheResults) {
+    const res = await fetch(`${FIREBASE_DB_URL}/results.json`);
+    const data = await res.json();
+    _cacheResults = data ? Object.entries(data).map(([k, v]) => ({ firebaseKey: k, ...v })) : [];
   }
-  window.allAdminComments = _cacheComments;
-  if (_origOpenComments) _origOpenComments();
+
+  const filtered = filterResultsForTest(_cacheResults, selectedTitle);
+  if (filtered.length === 0) { alert("डाऊनलोड करण्यासाठी निकाल उपलब्ध नाहीत."); return; }
+
+  const studentBest = {};
+  filtered.forEach(item => {
+    const key = makeStudentId(item.mobile, item.name);
+    const scoreNum = parseFloat(item.score) || 0;
+    if (!studentBest[key] || scoreNum > studentBest[key].score) {
+      studentBest[key] = { ...item, score: scoreNum };
+    }
+  });
+
+  const toppers = Object.values(studentBest).sort((a, b) => b.score - a.score).slice(0, 50);
+  const wsData = [["रँक", "विद्यार्थ्याचे नाव", "तालुका", "मोबाईल नंबर", "गुण", "टक्केवारी", "दिनांक"]];
+  toppers.forEach((t, i) => {
+    wsData.push([i + 1, t.name || "-", t.taluka || "-", t.mobile || "-", t.score, (t.percentage || t.score) + "%", t.timestamp || "-"]);
+  });
+
+  const ws = XLSX.utils.aoa_to_sheet(wsData);
+  const wb = XLSX.utils.book_new();
+  XLSX.utils.book_append_sheet(wb, ws, "Toppers");
+  const safeTitle = selectedTitle.replace(/[^a-zA-Z0-9\u0900-\u097F]/g, "_");
+  XLSX.writeFile(wb, `${safeTitle}_Top50.xlsx`);
 };
+
+// ३. नोंदणीकृत युझर्स कॅशिंगसह
+const _origLoadRegUsers = loadRegisteredUsersTable;
+loadRegisteredUsersTable = async function() {
+  if (!_cacheStudents) {
+    const res = await fetch(`${FIREBASE_DB_URL}/students.json`);
+    _cacheStudents = (await res.json()) || {};
+    const badge = document.getElementById("adminTotalStudentsBadge");
+    if (badge) badge.innerText = Object.keys(_cacheStudents).length;
+  }
+  _origLoadRegUsers();
+};
+
+// ४. नवीन सुविधा: चाचणी निहाय विद्यार्थी संख्या पाहण्याचा पॉप-अप (On-Demand + Cache)
+function openTestWiseStatsModal() {
+  let modal = document.getElementById("testWiseStatsModal");
+  if (!modal) {
+    modal = document.createElement("div");
+    modal.id = "testWiseStatsModal";
+    modal.style.cssText = "display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(15,43,72,0.85); z-index:3950; justify-content:center; align-items:center; backdrop-filter:blur(4px); padding:14px;";
+    
+    let optionsHtml = "";
+    EXAM_SCHEDULE.forEach(t => {
+      optionsHtml += `<option value="${t.title}">${t.title} (${t.dateMarathi})</option>`;
+    });
+
+    modal.innerHTML = `
+      <div style="background:#ffffff; border-radius:16px; max-width:520px; width:100%; padding:22px 20px; box-shadow:0 12px 35px rgba(0,0,0,0.35); border-top:5px solid #ea580c;">
+        <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid #e2e8f0; padding-bottom:10px; margin-bottom:14px;">
+          <h3 style="color:#0f2b48; font-weight:800; font-size:1.15rem;">📊 चाचणी निहाय विद्यार्थी संख्या</h3>
+          <button onclick="document.getElementById('testWiseStatsModal').style.display='none'" style="background:#fee2e2; color:#991b1b; border:none; padding:4px 10px; border-radius:8px; font-weight:800; cursor:pointer;">✕ बंद करा</button>
+        </div>
+        <div style="margin-bottom:14px;">
+          <label style="display:block; font-weight:700; color:#334155; margin-bottom:6px;">चाचणी निवडा:</label>
+          <select id="statsTestDropdown" onchange="calculateSelectedTestCount()" style="width:100%; padding:10px 12px; border:1.5px solid #cbd5e1; border-radius:10px; font-weight:700; font-size:0.95rem;">
+            ${optionsHtml}
+          </select>
+        </div>
+        <div id="testWiseCountResultBox" style="background:#f8fafc; border:1.5px solid #cbd5e1; border-radius:12px; padding:18px; text-align:center;">
+          माहिती लोड होत आहे...
+        </div>
+      </div>
+    `;
+    document.body.appendChild(modal);
+  }
+  modal.style.display = "flex";
+  calculateSelectedTestCount();
+}
+
+async function calculateSelectedTestCount() {
+  const selectedTitle = document.getElementById("statsTestDropdown").value;
+  const box = document.getElementById("testWiseCountResultBox");
+  box.innerHTML = "<p style='color:#64748b; font-weight:700;'>मोजणी सुरू आहे...</p>";
+
+  try {
+    if (!_cacheResults) {
+      const res = await fetch(`${FIREBASE_DB_URL}/results.json`);
+      const data = await res.json();
+      _cacheResults = data ? Object.entries(data).map(([k, v]) => ({ firebaseKey: k, ...v })) : [];
+    }
+
+    const filtered = filterResultsForTest(_cacheResults, selectedTitle);
+    const uniqueStudents = new Set();
+    filtered.forEach(item => {
+      uniqueStudents.add(makeStudentId(item.mobile, item.name));
+    });
+
+    box.innerHTML = `
+      <div style="font-size:0.95rem; font-weight:700; color:#475569; margin-bottom:6px;">${selectedTitle}</div>
+      <div style="font-size:2.4rem; font-weight:800; color:#16a34a; line-height:1.1;">${uniqueStudents.size}</div>
+      <div style="font-size:0.9rem; font-weight:700; color:#0f2b48; margin-top:4px;">एकूण चाचणी सोडवलेले विद्यार्थी (शिक्षक वगळून)</div>
+      <button onclick="_cacheResults=null; calculateSelectedTestCount();" style="margin-top:12px; background:#e0f2fe; color:#0369a1; border:1px solid #bae6fd; padding:5px 12px; border-radius:8px; cursor:pointer; font-weight:700; font-size:0.82rem;">↻ ताजी संख्या तपासा</button>
+    `;
+  } catch (e) {
+    box.innerHTML = "<p style='color:#dc2626; font-weight:700;'>डेटा लोड करताना त्रुटी आली. Firebase Rules तपासा.</p>";
+  }
+}
 </script>
 </body>
 </html>
