@@ -2817,6 +2817,406 @@ async function calculateSelectedTestCount() {
     box.innerHTML = "<p style='color:#dc2626; font-weight:700;'>डेटा लोड करताना त्रुटी आली. Firebase Rules तपासा.</p>";
   }
 }
+  // === एकत्रित पॅच: Top 100 (वेळेसह) + नोंदणीनंतर १ तासात संशयास्पद विद्यार्थी पडताळणी (On-Demand) ===
+
+let _currentExamStartMs = null;
+let _currentExamStartStr = "";
+let _activeTop100Tab = "top100";
+
+// १. चाचणी सुरू होताच अचूक वेळ नोंदवणे
+const _origLaunchTestWithData = launchTestWithData;
+launchTestWithData = function(testData, isResume) {
+  if (isResume && loggedInUser && loggedInUser.inProgress && loggedInUser.inProgress[testData.testId] && loggedInUser.inProgress[testData.testId].startMs) {
+    _currentExamStartMs = loggedInUser.inProgress[testData.testId].startMs;
+    _currentExamStartStr = loggedInUser.inProgress[testData.testId].startTimeStr || new Date(_currentExamStartMs).toLocaleTimeString("en-IN");
+  } else {
+    _currentExamStartMs = Date.now();
+    _currentExamStartStr = new Date(_currentExamStartMs).toLocaleTimeString("en-IN", { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true });
+  }
+  _origLaunchTestWithData(testData, isResume);
+};
+
+// अर्धवट चाचणी सेव्ह करताना सुरुवातीची वेळ सुरक्षित ठेवणे
+const _origSaveProgress = saveCurrentExamProgress;
+saveCurrentExamProgress = function() {
+  _origSaveProgress();
+  if (currentQuizData && loggedInUser && loggedInUser.inProgress && loggedInUser.inProgress[currentQuizData.id]) {
+    loggedInUser.inProgress[currentQuizData.id].startMs = _currentExamStartMs;
+    loggedInUser.inProgress[currentQuizData.id].startTimeStr = _currentExamStartStr;
+    saveUserVault();
+  }
+};
+
+// २. चाचणी सबमिट होताना सुरू वेळ, संपण्याची वेळ व एकूण वेळ निकालामध्ये जोडणे
+const _origFinalizeEval = finalizeEvaluation;
+finalizeEvaluation = function() {
+  const endMs = Date.now();
+  const endStr = new Date(endMs).toLocaleTimeString("en-IN", { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true });
+  const startMs = _currentExamStartMs || (endMs - ((120 * 60 - (currentQuizData ? currentQuizData.remainingSeconds : 0)) * 1000));
+  const startStr = _currentExamStartStr || new Date(startMs).toLocaleTimeString("en-IN", { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true });
+
+  const diffSec = Math.max(1, Math.round((endMs - startMs) / 1000));
+  const mins = Math.floor(diffSec / 60);
+  const secs = diffSec % 60;
+  const durationText = `${mins} मि. ${secs} से.`;
+
+  const _nativeFetch = window.fetch;
+  window.fetch = function(url, options) {
+    if (typeof url === "string" && url.includes("/results.json") && options && options.method === "POST" && options.body) {
+      try {
+        const parsedBody = JSON.parse(options.body);
+        parsedBody.startTime = startStr;
+        parsedBody.endTime = endStr;
+        parsedBody.totalSeconds = diffSec;
+        parsedBody.durationFormatted = durationText;
+        options.body = JSON.stringify(parsedBody);
+      } catch (e) {}
+    }
+    return _nativeFetch.apply(this, arguments);
+  };
+
+  try {
+    _origFinalizeEval();
+  } finally {
+    window.fetch = _nativeFetch;
+  }
+};
+
+// ३. ॲडमिन पॅनेलमध्ये नवीन बटण जोडणे (जुने Top 50 बटण तसेच सुरक्षित ठेवून)
+const _origRenderDashTop100Suite = renderDashboard;
+renderDashboard = function() {
+  _origRenderDashTop100Suite();
+  const adminBtnRow = document.querySelector("#adminPanelArea > div:nth-child(2)");
+  if (adminBtnRow && !document.getElementById("btnOpenTop100SuiteModal")) {
+    const btnSuite = document.createElement("button");
+    btnSuite.id = "btnOpenTop100SuiteModal";
+    btnSuite.className = "btn-action";
+    btnSuite.style.cssText = "background:linear-gradient(135deg, #1e3a8a, #1d4ed8); color:#ffffff; border:1px solid #93c5fd;";
+    btnSuite.innerHTML = "⏱️ Top 100 व संशयास्पद पडताळणी";
+    btnSuite.onclick = openAdminTop100SuiteModal;
+    adminBtnRow.appendChild(btnSuite);
+  }
+};
+
+// तारीख व वेळ अचूक मिलिसेकंदांमध्ये रूपांतरित करणारे हेल्पर फंक्शन (en-IN फॉरमॅटसाठी)
+function parseIndianTimestampToMs(tsStr) {
+  if (!tsStr || typeof tsStr !== "string") return null;
+  const direct = Date.parse(tsStr);
+  if (!isNaN(direct)) return direct;
+
+  // "13/11/2026, 10:15:30 am" फॉरमॅट हाताळणे
+  const m = tsStr.match(/(\d{1,2})\/(\d{1,2})\/(\d{4})[,\s]+(\d{1,2}):(\d{2})(?::(\d{2}))?\s*(am|pm|AM|PM)?/);
+  if (!m) return null;
+  const day = parseInt(m[1], 10);
+  const month = parseInt(m[2], 10) - 1;
+  const year = parseInt(m[3], 10);
+  let hour = parseInt(m[4], 10);
+  const min = parseInt(m[5], 10);
+  const sec = m[6] ? parseInt(m[6], 10) : 0;
+  const ampm = (m[7] || "").toLowerCase();
+
+  if (ampm === "pm" && hour < 12) hour += 12;
+  if (ampm === "am" && hour === 12) hour = 0;
+
+  const dt = new Date(year, month, day, hour, min, sec);
+  return isNaN(dt.getTime()) ? null : dt.getTime();
+}
+
+// ४. Top 100 आणि संशयास्पद विद्यार्थी पॉप-अप मोडल
+function openAdminTop100SuiteModal() {
+  let modal = document.getElementById("adminTop100SuiteModal");
+  if (!modal) {
+    modal = document.createElement("div");
+    modal.id = "adminTop100SuiteModal";
+    modal.style.cssText = "display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(15,43,72,0.88); z-index:3980; justify-content:center; align-items:center; backdrop-filter:blur(4px); padding:10px;";
+
+    let testOpts = "";
+    EXAM_SCHEDULE.forEach(t => {
+      testOpts += `<option value="${t.title}">${t.title}</option>`;
+    });
+
+    modal.innerHTML = `
+      <div style="background:#ffffff; border-radius:16px; max-width:1020px; width:100%; max-height:93vh; overflow-y:auto; padding:20px 16px; box-shadow:0 12px 35px rgba(0,0,0,0.35); border-top:5px solid #1d4ed8;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; border-bottom:2px solid #e2e8f0; padding-bottom:10px;">
+          <h3 style="color:#0f2b48; font-weight:800; font-size:1.15rem;">⏱️ Top 100 निकाल व संशयास्पद वेळ पडताळणी कक्ष</h3>
+          <button onclick="document.getElementById('adminTop100SuiteModal').style.display='none'" style="background:#fee2e2; color:#991b1b; border:none; padding:5px 12px; border-radius:8px; font-weight:800; cursor:pointer;">✕ बंद करा</button>
+        </div>
+
+        <!-- चाचणी निवड व कृती बटणे -->
+        <div style="display:flex; gap:10px; margin-bottom:12px; align-items:center; flex-wrap:wrap;">
+          <label style="font-weight:700; color:#334155;">चाचणी निवडा:</label>
+          <select id="adminSuiteTestSelector" onchange="renderActiveTop100SuiteTab()" style="padding:8px 12px; border:1.5px solid #cbd5e1; border-radius:8px; font-weight:700;">
+            ${testOpts}
+          </select>
+          <button class="btn-action btn-start" style="padding:8px 14px;" onclick="downloadActiveSuiteTabExcel()">📥 या टॅबची एक्सेल डाउनलोड करा</button>
+          <button onclick="_cacheResults=null; _cacheStudents=null; renderActiveTop100SuiteTab();" style="background:#e0f2fe; color:#0369a1; border:1px solid #bae6fd; padding:8px 12px; border-radius:8px; cursor:pointer; font-weight:700;">↻ ताजा डेटा घ्या</button>
+        </div>
+
+        <!-- दोन स्वतंत्र टॅब्स -->
+        <div style="display:flex; gap:8px; margin-bottom:14px; border-bottom:2px solid #cbd5e1; padding-bottom:8px; flex-wrap:wrap;">
+          <button id="tabBtnTop100" onclick="switchTop100SuiteTab('top100')" style="padding:9px 16px; border-radius:8px; border:none; font-weight:800; cursor:pointer; font-size:0.92rem; background:#1d4ed8; color:#ffffff;">
+            🏆 १. Top 100 गुणवंत यादी (चाचणी वेळेसह)
+          </button>
+          <button id="tabBtnSuspicious" onclick="switchTop100SuiteTab('suspicious')" style="padding:9px 16px; border-radius:8px; border:none; font-weight:800; cursor:pointer; font-size:0.92rem; background:#f1f5f9; color:#334155;">
+            🚨 २. नोंदणीनंतर १ तासात जास्त गुण (संशयास्पद यादी)
+          </button>
+        </div>
+
+        <div id="top100SuiteTableHost" style="overflow-x:auto;"></div>
+      </div>
+    `;
+    document.body.appendChild(modal);
+  }
+  modal.style.display = "flex";
+  renderActiveTop100SuiteTab();
+}
+
+function switchTop100SuiteTab(tabName) {
+  _activeTop100Tab = tabName;
+  const btn1 = document.getElementById("tabBtnTop100");
+  const btn2 = document.getElementById("tabBtnSuspicious");
+  if (tabName === "top100") {
+    btn1.style.background = "#1d4ed8"; btn1.style.color = "#ffffff";
+    btn2.style.background = "#f1f5f9"; btn2.style.color = "#334155";
+  } else {
+    btn2.style.background = "#dc2626"; btn2.style.color = "#ffffff";
+    btn1.style.background = "#f1f5f9"; btn1.style.color = "#334155";
+  }
+  renderActiveTop100SuiteTab();
+}
+
+function getFilteredTestResults(selectedTitle) {
+  const matchedTest = EXAM_SCHEDULE.find(t => t.title === selectedTitle);
+  const selectedTestId = matchedTest ? matchedTest.id : null;
+  const paddedId = selectedTestId ? String(selectedTestId).padStart(2, '0') : "";
+
+  const filtered = (_cacheResults || []).filter(r => {
+    if (!r) return false;
+    if (r.isTeacher === true || r.isTeacher === "true") return false;
+    const rTitle = (r.testTitle || "").trim();
+    const matchesTitle = (rTitle === selectedTitle.trim()) ||
+                         (paddedId && rTitle.includes(`क्र. ${paddedId}`)) ||
+                         (selectedTestId && rTitle.includes(`क्र. ${selectedTestId}`));
+    const matchesId = (selectedTestId !== null && Number(r.testId) === Number(selectedTestId));
+    return matchesTitle || matchesId;
+  });
+
+  const studentBest = {};
+  filtered.forEach(item => {
+    const key = makeStudentId(item.mobile, item.name);
+    const scoreNum = parseFloat(item.score) || 0;
+    if (!studentBest[key] || scoreNum > studentBest[key].score) {
+      studentBest[key] = { ...item, score: scoreNum, _uidKey: key };
+    }
+  });
+
+  return Object.values(studentBest).sort((a, b) => b.score - a.score);
+}
+
+// नोंदणीनंतर १ तासाच्या (६० मिनिटांच्या) आत जास्त गुण (८५+) मिळवलेले विद्यार्थी शोधणे
+function getSuspiciousRapidStudents(selectedTitle) {
+  const allTestStudents = getFilteredTestResults(selectedTitle);
+  const regMap = {};
+
+  if (_cacheStudents) {
+    Object.values(_cacheStudents).forEach(st => {
+      if (st && st.mobile && st.name) {
+        regMap[makeStudentId(st.mobile, st.name)] = st.timestamp || "";
+      }
+    });
+  }
+
+  const flagged = [];
+  allTestStudents.forEach(st => {
+    const regTs = regMap[st._uidKey] || "";
+    const subTs = st.timestamp || "";
+    const regMs = parseIndianTimestampToMs(regTs);
+    const subMs = parseIndianTimestampToMs(subTs);
+
+    let gapMinutes = null;
+    if (regMs !== null && subMs !== null && subMs >= regMs) {
+      gapMinutes = Math.round((subMs - regMs) / 60000);
+    }
+
+    // नोंदणीनंतर ६० मिनिटांच्या आत पेपर सबमिट केला असेल आणि गुण ८५ किंवा त्यापेक्षा जास्त असतील
+    if (gapMinutes !== null && gapMinutes <= 60 && st.score >= 85) {
+      flagged.push({
+        ...st,
+        regTimestamp: regTs,
+        subTimestamp: subTs,
+        gapMinutes: gapMinutes
+      });
+    }
+  });
+
+  return flagged.sort((a, b) => b.score - a.score || a.gapMinutes - b.gapMinutes);
+}
+
+async function renderActiveTop100SuiteTab() {
+  const selectedTitle = document.getElementById("adminSuiteTestSelector").value;
+  const host = document.getElementById("top100SuiteTableHost");
+  host.innerHTML = "<p style='text-align:center; padding:25px; color:#64748b; font-weight:700;'>माहिती तपासली जात आहे...</p>";
+
+  try {
+    if (!_cacheResults) {
+      const res = await fetch(`${FIREBASE_DB_URL}/results.json`);
+      const data = await res.json();
+      _cacheResults = data ? Object.entries(data).map(([k, v]) => ({ firebaseKey: k, ...v })) : [];
+    }
+
+    // जर संशयास्पद टॅब निवडला असेल तरच students.json एकदाच On-Demand वाचणे
+    if (_activeTop100Tab === "suspicious" && !_cacheStudents) {
+      const sRes = await fetch(`${FIREBASE_DB_URL}/students.json`);
+      _cacheStudents = (await sRes.json()) || {};
+    }
+
+    if (_activeTop100Tab === "top100") {
+      const top100 = getFilteredTestResults(selectedTitle).slice(0, 100);
+      if (top100.length === 0) {
+        host.innerHTML = "<p style='text-align:center; padding:20px; color:#dc2626; font-weight:700;'>या चाचणीसाठी निकाल उपलब्ध नाहीत.</p>";
+        return;
+      }
+
+      let rows = "";
+      top100.forEach((t, i) => {
+        const isFast = (t.totalSeconds !== undefined && t.totalSeconds < 1200);
+        const durBadge = t.durationFormatted
+          ? `<span style="background:${isFast ? '#fee2e2' : '#dcfce7'}; color:${isFast ? '#b91c1c' : '#166534'}; padding:3px 8px; border-radius:6px; font-weight:800; white-space:nowrap;">${t.durationFormatted}</span>`
+          : `<span style="color:#94a3b8;">जुनी चाचणी (नोंद नाही)</span>`;
+
+        rows += `<tr>
+          <td style="font-weight:800;">#${i + 1}</td>
+          <td style="text-align:left; font-weight:700;">${t.name || '-'}</td>
+          <td>${t.taluka || '-'}</td>
+          <td>${t.mobile || '-'}</td>
+          <td style="font-weight:800; color:#1e3a8a;">${t.score} / 100</td>
+          <td style="white-space:nowrap;">${t.startTime || '-'}</td>
+          <td style="white-space:nowrap;">${t.endTime || (t.timestamp ? (t.timestamp.split(',')[1] || t.timestamp) : '-')}</td>
+          <td>${durBadge}</td>
+        </tr>`;
+      });
+
+      host.innerHTML = `
+        <table class="report-table" style="margin:0; font-size:0.88rem;">
+          <thead>
+            <tr>
+              <th>रँक</th>
+              <th style="text-align:left;">विद्यार्थ्याचे नाव</th>
+              <th>तालुका</th>
+              <th>मोबाईल</th>
+              <th>गुण</th>
+              <th>चाचणी सुरू वेळ</th>
+              <th>चाचणी संपण्याची वेळ</th>
+              <th>चाचणीसाठी एकूण वेळ</th>
+            </tr>
+          </thead>
+          <tbody>${rows}</tbody>
+        </table>`;
+    } else {
+      // टॅब २: नोंदणीनंतर १ तासाच्या आत जास्त गुण मिळवलेले विद्यार्थी
+      const suspiciousList = getSuspiciousRapidStudents(selectedTitle);
+      if (suspiciousList.length === 0) {
+        host.innerHTML = `<div style="background:#f0fdf4; border:1.5px solid #86efac; border-radius:10px; padding:20px; text-align:center; color:#166534; font-weight:700;">
+          ✅ या चाचणीमध्ये नोंदणीनंतर १ तासाच्या आत संशयास्पदरीत्या जास्त गुण (८५+) मिळवलेला एकही विद्यार्थी आढळला नाही.
+        </div>`;
+        return;
+      }
+
+      let rows = "";
+      suspiciousList.forEach((t, i) => {
+        rows += `<tr style="background:#fff1f2;">
+          <td style="font-weight:800; color:#be123c;">${i + 1}</td>
+          <td style="text-align:left; font-weight:800; color:#0f2b48;">${t.name || '-'}</td>
+          <td style="font-weight:700;">${t.taluka || '-'}</td>
+          <td>${t.mobile || '-'}</td>
+          <td style="font-weight:800; color:#dc2626;">${t.score} / 100</td>
+          <td style="white-space:nowrap; font-size:0.84rem;">${t.regTimestamp || '-'}</td>
+          <td style="white-space:nowrap; font-size:0.84rem;">${t.subTimestamp || '-'}</td>
+          <td><span style="background:#dc2626; color:#ffffff; padding:3px 8px; border-radius:6px; font-weight:800; white-space:nowrap;">फक्त ${t.gapMinutes} मिनिटांत</span></td>
+        </tr>`;
+      });
+
+      host.innerHTML = `
+        <div style="background:#fef2f2; border:1px solid #fecaca; border-left:4px solid #dc2626; padding:8px 12px; border-radius:8px; font-size:0.85rem; color:#991b1b; margin-bottom:10px;">
+          ⚠️ <b>पडताळणी अहवाल:</b> खालील <b>${suspiciousList.length}</b> विद्यार्थ्यांनी नवीन नोंदणी केल्यानंतर अवघ्या ६० मिनिटांच्या आत पेपर सबमिट करून ८५ किंवा त्याहून अधिक गुण मिळवले आहेत:
+        </div>
+        <table class="report-table" style="margin:0; font-size:0.88rem;">
+          <thead>
+            <tr>
+              <th>अ.क्र.</th>
+              <th style="text-align:left;">विद्यार्थ्याचे नाव</th>
+              <th>तालुका</th>
+              <th>मोबाईल</th>
+              <th>मिळालेले गुण</th>
+              <th>नोंदणी झालेली वेळ</th>
+              <th>गुण मिळवलेली वेळ</th>
+              <th>नोंदणी ते निकाल अंतर</th>
+            </tr>
+          </thead>
+          <tbody>${rows}</tbody>
+        </table>`;
+    }
+  } catch (e) {
+    host.innerHTML = "<p style='text-align:center; color:#dc2626; font-weight:700;'>डेटा लोड करताना त्रुटी आली. कृपया पुन्हा प्रयत्न करा.</p>";
+  }
+}
+
+// ५. सक्रिय टॅबनुसार अचूक एक्सेल फाइल डाउनलोड करणे
+async function downloadActiveSuiteTabExcel() {
+  const selectedTitle = document.getElementById("adminSuiteTestSelector").value;
+  const safeTitle = selectedTitle.replace(/[^a-zA-Z0-9\u0900-\u097F]/g, "_");
+
+  if (!_cacheResults) {
+    const res = await fetch(`${FIREBASE_DB_URL}/results.json`);
+    const data = await res.json();
+    _cacheResults = data ? Object.entries(data).map(([k, v]) => ({ firebaseKey: k, ...v })) : [];
+  }
+
+  if (_activeTop100Tab === "top100") {
+    const top100 = getFilteredTestResults(selectedTitle).slice(0, 100);
+    if (top100.length === 0) { alert("डाउनलोड करण्यासाठी निकाल उपलब्ध नाहीत."); return; }
+
+    const wsData = [[
+      "रँक", "विद्यार्थ्याचे नाव", "तालुका", "मोबाईल नंबर", "गुण", "टक्केवारी",
+      "चाचणी सुरू वेळ", "चाचणी संपण्याची वेळ", "चाचणीसाठी एकूण वेळ", "दिनांक व वेळ"
+    ]];
+    top100.forEach((t, i) => {
+      wsData.push([
+        i + 1, t.name || "-", t.taluka || "-", t.mobile || "-", t.score,
+        (t.percentage || t.score) + "%", t.startTime || "-", t.endTime || "-",
+        t.durationFormatted || "-", t.timestamp || "-"
+      ]);
+    });
+
+    const ws = XLSX.utils.aoa_to_sheet(wsData);
+    const wb = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, "Top100_WithTime");
+    XLSX.writeFile(wb, `${safeTitle}_Top100_Time.xlsx`);
+  } else {
+    if (!_cacheStudents) {
+      const sRes = await fetch(`${FIREBASE_DB_URL}/students.json`);
+      _cacheStudents = (await sRes.json()) || {};
+    }
+    const suspiciousList = getSuspiciousRapidStudents(selectedTitle);
+    if (suspiciousList.length === 0) { alert("या चाचणीमध्ये संशयास्पद विद्यार्थी आढळले नाहीत."); return; }
+
+    const wsData = [[
+      "अ.क्र.", "विद्यार्थ्याचे नाव", "तालुका", "मोबाईल नंबर", "मिळालेले गुण",
+      "नोंदणी झालेली वेळ", "गुण मिळवलेली वेळ", "नोंदणी ते निकाल अंतर (मिनिटे)"
+    ]];
+    suspiciousList.forEach((t, i) => {
+      wsData.push([
+        i + 1, t.name || "-", t.taluka || "-", t.mobile || "-", t.score,
+        t.regTimestamp || "-", t.subTimestamp || "-", `${t.gapMinutes} मिनिटे`
+      ]);
+    });
+
+    const ws = XLSX.utils.aoa_to_sheet(wsData);
+    const wb = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, "Suspicious_Under1Hr");
+    XLSX.writeFile(wb, `${safeTitle}_Suspicious_1Hr_List.xlsx`);
+  }
+}
 </script>
 </body>
 </html>
